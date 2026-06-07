@@ -1,0 +1,1108 @@
+{
+  "_doc": "DB.broker_name 與 HiStock.broker_name 不一致的 broker_id（normalize 後比對：忽略 dash 與空白）",
+  "_mismatch_count": 220,
+  "_not_found_count": 0,
+  "not_found": [],
+  "mismatches": [
+    {
+      "broker_id": "102F",
+      "db": "合庫西台",
+      "histock": "合庫-西台中"
+    },
+    {
+      "broker_id": "1040",
+      "db": "臺    銀",
+      "histock": "臺銀證券"
+    },
+    {
+      "broker_id": "1110",
+      "db": "企    銀",
+      "histock": "台灣企銀"
+    },
+    {
+      "broker_id": "1111",
+      "db": "企銀台中",
+      "histock": "台灣企銀-台中"
+    },
+    {
+      "broker_id": "1112",
+      "db": "企銀台南",
+      "histock": "台灣企銀-台南"
+    },
+    {
+      "broker_id": "1113",
+      "db": "企銀九如",
+      "histock": "台灣企銀-九如"
+    },
+    {
+      "broker_id": "1114",
+      "db": "企銀嘉義",
+      "histock": "台灣企銀-嘉義"
+    },
+    {
+      "broker_id": "1115",
+      "db": "企銀太平",
+      "histock": "台灣企銀-太平"
+    },
+    {
+      "broker_id": "1116",
+      "db": "企銀屏東",
+      "histock": "台灣企銀-屏東"
+    },
+    {
+      "broker_id": "1117",
+      "db": "企銀竹北",
+      "histock": "台灣企銀-竹北"
+    },
+    {
+      "broker_id": "1118",
+      "db": "企銀豐原",
+      "histock": "台灣企銀-豐原"
+    },
+    {
+      "broker_id": "1119",
+      "db": "企銀岡山",
+      "histock": "台灣企銀-岡山"
+    },
+    {
+      "broker_id": "111A",
+      "db": "企銀民雄",
+      "histock": "台灣企銀-民雄"
+    },
+    {
+      "broker_id": "111B",
+      "db": "台企建成",
+      "histock": "台灣企銀-建成"
+    },
+    {
+      "broker_id": "111E",
+      "db": "企銀桃園",
+      "histock": "臺灣企銀-桃園"
+    },
+    {
+      "broker_id": "111F",
+      "db": "企銀北高",
+      "histock": "台灣企銀-北高雄"
+    },
+    {
+      "broker_id": "111G",
+      "db": "企銀埔墘",
+      "histock": "臺灣企銀-埔墘"
+    },
+    {
+      "broker_id": "1360",
+      "db": "港麥格理",
+      "histock": "港商麥格理"
+    },
+    {
+      "broker_id": "1470",
+      "db": "台灣摩根",
+      "histock": "台灣摩根士丹利"
+    },
+    {
+      "broker_id": "1650",
+      "db": "瑞銀",
+      "histock": "新加坡商瑞銀"
+    },
+    {
+      "broker_id": "2210",
+      "db": "2210",
+      "histock": "群益期貨"
+    },
+    {
+      "broker_id": "5380",
+      "db": "第一金證",
+      "histock": "第一金"
+    },
+    {
+      "broker_id": "5381",
+      "db": "第一員林",
+      "histock": "第一金-員林"
+    },
+    {
+      "broker_id": "5382",
+      "db": "第一台中",
+      "histock": "第一金-台中"
+    },
+    {
+      "broker_id": "5383",
+      "db": "第一高雄",
+      "histock": "第一金-高雄"
+    },
+    {
+      "broker_id": "5384",
+      "db": "第一台南",
+      "histock": "第一金-台南"
+    },
+    {
+      "broker_id": "5385",
+      "db": "第一桃園",
+      "histock": "第一金-桃園"
+    },
+    {
+      "broker_id": "5386",
+      "db": "第一彰化",
+      "histock": "第一金-彰化"
+    },
+    {
+      "broker_id": "5387",
+      "db": "第一澎湖",
+      "histock": "第一金-澎湖"
+    },
+    {
+      "broker_id": "5389",
+      "db": "第一中山",
+      "histock": "第一金-中山"
+    },
+    {
+      "broker_id": "538A",
+      "db": "第一新興",
+      "histock": "第一金-新興"
+    },
+    {
+      "broker_id": "538B",
+      "db": "第一新竹",
+      "histock": "第一金-新竹"
+    },
+    {
+      "broker_id": "538C",
+      "db": "第一光復",
+      "histock": "第一金-光復"
+    },
+    {
+      "broker_id": "538D",
+      "db": "第一忠孝",
+      "histock": "第一金-忠孝"
+    },
+    {
+      "broker_id": "538E",
+      "db": "第一自由",
+      "histock": "第一金-自由"
+    },
+    {
+      "broker_id": "538F",
+      "db": "第一稻埕",
+      "histock": "第一金-大稻埕"
+    },
+    {
+      "broker_id": "538I",
+      "db": "第一頭份",
+      "histock": "第一金-頭份"
+    },
+    {
+      "broker_id": "538M",
+      "db": "第一嘉義",
+      "histock": "第一金-嘉義"
+    },
+    {
+      "broker_id": "538N",
+      "db": "第一豐原",
+      "histock": "第一金-豐原"
+    },
+    {
+      "broker_id": "538P",
+      "db": "第一路竹",
+      "histock": "第一金-路竹"
+    },
+    {
+      "broker_id": "538W",
+      "db": "第一華江",
+      "histock": "第一金-華江"
+    },
+    {
+      "broker_id": "538Y",
+      "db": "第一中壢",
+      "histock": "第一金-中壢"
+    },
+    {
+      "broker_id": "6010",
+      "db": "犇    亞",
+      "histock": "犇亞證券"
+    },
+    {
+      "broker_id": "601d",
+      "db": "奔亞鑫豐",
+      "histock": "犇亞-鑫豐"
+    },
+    {
+      "broker_id": "6114",
+      "db": "中銀員林",
+      "histock": "台中銀-員林"
+    },
+    {
+      "broker_id": "6115",
+      "db": "中銀台北",
+      "histock": "台中銀-台北"
+    },
+    {
+      "broker_id": "6116",
+      "db": "中銀高雄",
+      "histock": "台中銀-高雄"
+    },
+    {
+      "broker_id": "611A",
+      "db": "中銀豐原",
+      "histock": "台中銀-豐原"
+    },
+    {
+      "broker_id": "6161",
+      "db": "中信三重",
+      "histock": "中國信託-三重"
+    },
+    {
+      "broker_id": "6162",
+      "db": "中信託忠",
+      "histock": "中國信託-忠孝"
+    },
+    {
+      "broker_id": "6163",
+      "db": "中信託永",
+      "histock": "中國信託-永康"
+    },
+    {
+      "broker_id": "6164",
+      "db": "中信託文",
+      "histock": "中國信託-文心"
+    },
+    {
+      "broker_id": "6165",
+      "db": "中信託新",
+      "histock": "中國信託-新竹"
+    },
+    {
+      "broker_id": "6167",
+      "db": "中信松江",
+      "histock": "中國信託-松江"
+    },
+    {
+      "broker_id": "6168",
+      "db": "中信嘉義",
+      "histock": "中國信託-嘉義"
+    },
+    {
+      "broker_id": "616A",
+      "db": "中信中壢",
+      "histock": "中國信託-中壢"
+    },
+    {
+      "broker_id": "616K",
+      "db": "中信託高",
+      "histock": "中國信託-高雄"
+    },
+    {
+      "broker_id": "7005",
+      "db": "兆豐中港",
+      "histock": "兆豐-台中港"
+    },
+    {
+      "broker_id": "700I",
+      "db": "兆豐北高",
+      "histock": "兆豐-北高雄"
+    },
+    {
+      "broker_id": "7790",
+      "db": "國票綜合",
+      "histock": "國票"
+    },
+    {
+      "broker_id": "779J",
+      "db": "國票北高",
+      "histock": "國票-北高雄"
+    },
+    {
+      "broker_id": "779c",
+      "db": "國票敦北",
+      "histock": "國票-敦北法人"
+    },
+    {
+      "broker_id": "8880",
+      "db": "國泰綜合",
+      "histock": "國泰"
+    },
+    {
+      "broker_id": "8960",
+      "db": "上海匯豐",
+      "histock": "香港上海匯豐"
+    },
+    {
+      "broker_id": "9100",
+      "db": "群益",
+      "histock": "群益金鼎"
+    },
+    {
+      "broker_id": "9101",
+      "db": "群益敦南",
+      "histock": "群益金鼎-敦南"
+    },
+    {
+      "broker_id": "9103",
+      "db": "群益松山",
+      "histock": "群益金鼎-松山"
+    },
+    {
+      "broker_id": "9105",
+      "db": "群益高盛",
+      "histock": "群益金鼎-高盛"
+    },
+    {
+      "broker_id": "9108",
+      "db": "群益海山",
+      "histock": "群益金鼎-海山"
+    },
+    {
+      "broker_id": "910D",
+      "db": "群益市府",
+      "histock": "群益金鼎-市府"
+    },
+    {
+      "broker_id": "9131",
+      "db": "群益民權",
+      "histock": "群益金鼎-民權"
+    },
+    {
+      "broker_id": "9134",
+      "db": "群益開元",
+      "histock": "群益金鼎-開元"
+    },
+    {
+      "broker_id": "9135",
+      "db": "群益東大",
+      "histock": "群益金鼎-東大"
+    },
+    {
+      "broker_id": "9136",
+      "db": "群益西松",
+      "histock": "群益金鼎-西松"
+    },
+    {
+      "broker_id": "9137",
+      "db": "群益士林",
+      "histock": "群益金鼎-士林"
+    },
+    {
+      "broker_id": "9138",
+      "db": "群益中港",
+      "histock": "群益金鼎-中港"
+    },
+    {
+      "broker_id": "913D",
+      "db": "群益潭子",
+      "histock": "群益金鼎-潭子"
+    },
+    {
+      "broker_id": "913E",
+      "db": "群益基隆",
+      "histock": "群益金鼎-基隆"
+    },
+    {
+      "broker_id": "913H",
+      "db": "群益屏東",
+      "histock": "群益金鼎-屏東"
+    },
+    {
+      "broker_id": "913I",
+      "db": "群益萬華",
+      "histock": "群益金鼎-萬華"
+    },
+    {
+      "broker_id": "913N",
+      "db": "群益土城",
+      "histock": "群益金鼎-土城"
+    },
+    {
+      "broker_id": "913R",
+      "db": "群益北高",
+      "histock": "群益金鼎-北高雄"
+    },
+    {
+      "broker_id": "913U",
+      "db": "群益崇德",
+      "histock": "群益金鼎-崇德"
+    },
+    {
+      "broker_id": "913Y",
+      "db": "群益館前",
+      "histock": "群益金鼎-館前"
+    },
+    {
+      "broker_id": "913g",
+      "db": "群益三重",
+      "histock": "群益金鼎-三重"
+    },
+    {
+      "broker_id": "9183",
+      "db": "群益高雄",
+      "histock": "群益金鼎-高雄"
+    },
+    {
+      "broker_id": "9184",
+      "db": "群益台中",
+      "histock": "群益金鼎-台中"
+    },
+    {
+      "broker_id": "9185",
+      "db": "群益台南",
+      "histock": "群益金鼎-台南"
+    },
+    {
+      "broker_id": "9186",
+      "db": "群益新竹",
+      "histock": "群益金鼎-新竹"
+    },
+    {
+      "broker_id": "9187",
+      "db": "群益彰化",
+      "histock": "群益金鼎-彰化"
+    },
+    {
+      "broker_id": "9188",
+      "db": "群益三民",
+      "histock": "群益金鼎-三民"
+    },
+    {
+      "broker_id": "9189",
+      "db": "群益桃園",
+      "histock": "群益金鼎-桃園"
+    },
+    {
+      "broker_id": "918A",
+      "db": "群益中壢",
+      "histock": "群益金鼎-中壢"
+    },
+    {
+      "broker_id": "918B",
+      "db": "群益板橋",
+      "histock": "群益金鼎-板橋"
+    },
+    {
+      "broker_id": "918C",
+      "db": "群益古亭",
+      "histock": "群益金鼎-古亭"
+    },
+    {
+      "broker_id": "918D",
+      "db": "群益東門",
+      "histock": "群益金鼎-東門"
+    },
+    {
+      "broker_id": "918E",
+      "db": "群益南京",
+      "histock": "群益金鼎-南京"
+    },
+    {
+      "broker_id": "918F",
+      "db": "群益新店",
+      "histock": "群益金鼎-新店"
+    },
+    {
+      "broker_id": "918G",
+      "db": "群益新莊",
+      "histock": "群益金鼎-新莊"
+    },
+    {
+      "broker_id": "918H",
+      "db": "群益中山",
+      "histock": "群益金鼎-中山"
+    },
+    {
+      "broker_id": "918J",
+      "db": "群益永和",
+      "histock": "群益金鼎-永和"
+    },
+    {
+      "broker_id": "918K",
+      "db": "群益東湖",
+      "histock": "群益金鼎-東湖"
+    },
+    {
+      "broker_id": "918L",
+      "db": "群益建成",
+      "histock": "群益金鼎-建成"
+    },
+    {
+      "broker_id": "918M",
+      "db": "群益嘉義",
+      "histock": "群益金鼎-嘉義"
+    },
+    {
+      "broker_id": "918P",
+      "db": "群益天母",
+      "histock": "群益金鼎-天母"
+    },
+    {
+      "broker_id": "918W",
+      "db": "群益忠孝",
+      "histock": "群益金鼎-忠孝"
+    },
+    {
+      "broker_id": "918X",
+      "db": "群益台北",
+      "histock": "群益金鼎-台北"
+    },
+    {
+      "broker_id": "918c",
+      "db": "群益鳳山",
+      "histock": "群益金鼎-鳳山"
+    },
+    {
+      "broker_id": "918d",
+      "db": "群益內湖",
+      "histock": "群益金鼎-內湖"
+    },
+    {
+      "broker_id": "918e",
+      "db": "群益大安",
+      "histock": "群益金鼎-大安"
+    },
+    {
+      "broker_id": "918g",
+      "db": "群益大甲",
+      "histock": "群益金鼎-大甲"
+    },
+    {
+      "broker_id": "918i",
+      "db": "群益竹南",
+      "histock": "群益金鼎-竹南"
+    },
+    {
+      "broker_id": "918s",
+      "db": "群益丹鳳",
+      "histock": "群益金鼎-丹鳳"
+    },
+    {
+      "broker_id": "918u",
+      "db": "群益瑞豐",
+      "histock": "群益金鼎-瑞豐"
+    },
+    {
+      "broker_id": "918x",
+      "db": "群益延平",
+      "histock": "群益金鼎-延平"
+    },
+    {
+      "broker_id": "918z",
+      "db": "群益宜蘭",
+      "histock": "群益金鼎-宜蘭"
+    },
+    {
+      "broker_id": "9215",
+      "db": "凱基高美",
+      "histock": "凱基-高美館"
+    },
+    {
+      "broker_id": "9302",
+      "db": "華南台中",
+      "histock": "華南永昌-台中"
+    },
+    {
+      "broker_id": "9303",
+      "db": "華南高雄",
+      "histock": "華南永昌-高雄"
+    },
+    {
+      "broker_id": "9305",
+      "db": "華南新莊",
+      "histock": "華南永昌-新莊"
+    },
+    {
+      "broker_id": "9306",
+      "db": "華南台南",
+      "histock": "華南永昌-台南"
+    },
+    {
+      "broker_id": "9307",
+      "db": "華南大安",
+      "histock": "華南永昌-大安"
+    },
+    {
+      "broker_id": "9308",
+      "db": "華南麻豆",
+      "histock": "華南永昌-麻豆"
+    },
+    {
+      "broker_id": "9309",
+      "db": "華南古亭",
+      "histock": "華南永昌-古亭"
+    },
+    {
+      "broker_id": "9312",
+      "db": "華南民權",
+      "histock": "華南永昌-民權"
+    },
+    {
+      "broker_id": "9314",
+      "db": "華南嘉義",
+      "histock": "華南永昌-嘉義"
+    },
+    {
+      "broker_id": "9315",
+      "db": "華南大甲",
+      "histock": "華南永昌-大甲"
+    },
+    {
+      "broker_id": "9316",
+      "db": "華南淡水",
+      "histock": "華南永昌-淡水"
+    },
+    {
+      "broker_id": "9317",
+      "db": "華南林口",
+      "histock": "華南永昌-林口"
+    },
+    {
+      "broker_id": "9319",
+      "db": "華南鶯歌",
+      "histock": "華南永昌-鶯歌"
+    },
+    {
+      "broker_id": "9322",
+      "db": "華南基隆",
+      "histock": "華南永昌-基隆"
+    },
+    {
+      "broker_id": "9323",
+      "db": "華南小港",
+      "histock": "華南永昌-小港"
+    },
+    {
+      "broker_id": "9324",
+      "db": "華南岡山",
+      "histock": "華南永昌-岡山"
+    },
+    {
+      "broker_id": "9325",
+      "db": "華南忠孝",
+      "histock": "華南永昌-忠孝"
+    },
+    {
+      "broker_id": "9326",
+      "db": "華南南京",
+      "histock": "華南永昌-南京"
+    },
+    {
+      "broker_id": "9327",
+      "db": "華南斗六",
+      "histock": "華南永昌-斗六"
+    },
+    {
+      "broker_id": "9328",
+      "db": "華南潮州",
+      "histock": "華南永昌-潮州"
+    },
+    {
+      "broker_id": "9329",
+      "db": "華南朴子",
+      "histock": "華南永昌-朴子"
+    },
+    {
+      "broker_id": "9331",
+      "db": "華南鳳山",
+      "histock": "華南永昌-鳳山"
+    },
+    {
+      "broker_id": "9332",
+      "db": "華南楠梓",
+      "histock": "華南永昌-楠梓"
+    },
+    {
+      "broker_id": "9333",
+      "db": "華南長虹",
+      "histock": "華南永昌-長虹"
+    },
+    {
+      "broker_id": "9334",
+      "db": "華南世貿",
+      "histock": "華南永昌-世貿"
+    },
+    {
+      "broker_id": "9337",
+      "db": "華南內壢",
+      "histock": "華南永昌-內壢"
+    },
+    {
+      "broker_id": "9339",
+      "db": "華南竹北",
+      "histock": "華南永昌-竹北"
+    },
+    {
+      "broker_id": "9343",
+      "db": "華南頭份",
+      "histock": "華南永昌-頭份"
+    },
+    {
+      "broker_id": "9347",
+      "db": "華南敦南",
+      "histock": "華南永昌-敦南"
+    },
+    {
+      "broker_id": "9349",
+      "db": "華南板橋",
+      "histock": "華南永昌-板橋"
+    },
+    {
+      "broker_id": "9352",
+      "db": "華南桃園",
+      "histock": "華南永昌-桃園"
+    },
+    {
+      "broker_id": "9358",
+      "db": "華南東勢",
+      "histock": "華南永昌-東勢"
+    },
+    {
+      "broker_id": "9359",
+      "db": "華南中正",
+      "histock": "華南永昌-中正"
+    },
+    {
+      "broker_id": "9362",
+      "db": "華南苗栗",
+      "histock": "華南永昌-苗栗"
+    },
+    {
+      "broker_id": "9363",
+      "db": "華南彰化",
+      "histock": "華南永昌-彰化"
+    },
+    {
+      "broker_id": "9366",
+      "db": "華南豐原",
+      "histock": "華南永昌-豐原"
+    },
+    {
+      "broker_id": "9369",
+      "db": "華南三重",
+      "histock": "華南永昌-三重"
+    },
+    {
+      "broker_id": "9377",
+      "db": "華南虎尾",
+      "histock": "華南永昌-虎尾"
+    },
+    {
+      "broker_id": "9386",
+      "db": "華南東昇",
+      "histock": "華南永昌-東昇"
+    },
+    {
+      "broker_id": "961R",
+      "db": "富邦南員",
+      "histock": "富邦-南員林"
+    },
+    {
+      "broker_id": "962Q",
+      "db": "富邦北高",
+      "histock": "富邦-北高雄"
+    },
+    {
+      "broker_id": "980R",
+      "db": "元大南海",
+      "histock": "元大-信義安和"
+    },
+    {
+      "broker_id": "980a",
+      "db": "元大中山北",
+      "histock": "元大-中山北路"
+    },
+    {
+      "broker_id": "981h",
+      "db": "元大屏東民",
+      "histock": "元大-屏東民生"
+    },
+    {
+      "broker_id": "9822",
+      "db": "元大學府",
+      "histock": "元大-土城學府"
+    },
+    {
+      "broker_id": "982F",
+      "db": "元大忠鼎",
+      "histock": "元大-忠孝鼎富"
+    },
+    {
+      "broker_id": "9835",
+      "db": "元大中山",
+      "histock": "元大-員林中山"
+    },
+    {
+      "broker_id": "983G",
+      "db": "元大上新",
+      "histock": "元大-上新莊"
+    },
+    {
+      "broker_id": "983W",
+      "db": "元大德芳",
+      "histock": "元大-大里德芳"
+    },
+    {
+      "broker_id": "984C",
+      "db": "元大新中",
+      "histock": "元大-新店中正"
+    },
+    {
+      "broker_id": "984E",
+      "db": "元大南勢",
+      "histock": "元大-南勢角"
+    },
+    {
+      "broker_id": "9854",
+      "db": "元大興安",
+      "histock": "元大-文心興安"
+    },
+    {
+      "broker_id": "9859",
+      "db": "元大經國",
+      "histock": "元大-新竹經國"
+    },
+    {
+      "broker_id": "9867",
+      "db": "元大民權",
+      "histock": "元大-內湖民權"
+    },
+    {
+      "broker_id": "986K",
+      "db": "元大基孝",
+      "histock": "元大-基隆孝二"
+    },
+    {
+      "broker_id": "9875",
+      "db": "元大永寧",
+      "histock": "元大-土城永寧"
+    },
+    {
+      "broker_id": "9879",
+      "db": "元大板三",
+      "histock": "元大-板橋三民"
+    },
+    {
+      "broker_id": "9888",
+      "db": "元大鑫永",
+      "histock": "元大-鑫永和"
+    },
+    {
+      "broker_id": "9893",
+      "db": "元大大天",
+      "histock": "元大-大天母"
+    },
+    {
+      "broker_id": "989B",
+      "db": "元大中港",
+      "histock": "元大-台中中港"
+    },
+    {
+      "broker_id": "989F",
+      "db": "元大高雄",
+      "histock": "元大-三民"
+    },
+    {
+      "broker_id": "989I",
+      "db": "元大蘆中",
+      "histock": "元大-蘆洲中正"
+    },
+    {
+      "broker_id": "989J",
+      "db": "元大彰生",
+      "histock": "元大-彰化民生"
+    },
+    {
+      "broker_id": "989V",
+      "db": "元大北重",
+      "histock": "元大-北三重"
+    },
+    {
+      "broker_id": "989W",
+      "db": "元大站前",
+      "histock": "元大-豐原站前"
+    },
+    {
+      "broker_id": "989X",
+      "db": "元大三民",
+      "histock": "元大-民生三民"
+    },
+    {
+      "broker_id": "9A61",
+      "db": "永豐鳳山",
+      "histock": "永豐金-鳳山"
+    },
+    {
+      "broker_id": "9A69",
+      "db": "永豐屏東",
+      "histock": "永豐金-屏東"
+    },
+    {
+      "broker_id": "9A79",
+      "db": "永豐埔里",
+      "histock": "永豐金-埔里"
+    },
+    {
+      "broker_id": "9A81",
+      "db": "永豐匯立",
+      "histock": "永豐金-匯立"
+    },
+    {
+      "broker_id": "9A89",
+      "db": "永豐敦北",
+      "histock": "永豐金-敦北"
+    },
+    {
+      "broker_id": "9A8F",
+      "db": "永豐敦南",
+      "histock": "永豐金-敦南"
+    },
+    {
+      "broker_id": "9A91",
+      "db": "永豐松山",
+      "histock": "永豐金-松山"
+    },
+    {
+      "broker_id": "9A92",
+      "db": "永豐萬盛",
+      "histock": "永豐金-萬盛"
+    },
+    {
+      "broker_id": "9A97",
+      "db": "永豐新竹",
+      "histock": "永豐金-新竹"
+    },
+    {
+      "broker_id": "9A98",
+      "db": "永豐大園",
+      "histock": "永豐金-大園"
+    },
+    {
+      "broker_id": "9A99",
+      "db": "永豐中壢",
+      "histock": "永豐金-中壢"
+    },
+    {
+      "broker_id": "9A9A",
+      "db": "永豐羅東",
+      "histock": "永豐金-羅東"
+    },
+    {
+      "broker_id": "9A9B",
+      "db": "永豐中和",
+      "histock": "永豐金-中和"
+    },
+    {
+      "broker_id": "9A9C",
+      "db": "永豐員林",
+      "histock": "永豐金-員林"
+    },
+    {
+      "broker_id": "9A9D",
+      "db": "永豐忠孝",
+      "histock": "永豐金-忠孝"
+    },
+    {
+      "broker_id": "9A9G",
+      "db": "永豐天母",
+      "histock": "永豐金-天母"
+    },
+    {
+      "broker_id": "9A9H",
+      "db": "永豐新莊",
+      "histock": "永豐金-新莊"
+    },
+    {
+      "broker_id": "9A9J",
+      "db": "永豐板新",
+      "histock": "永豐金-板新"
+    },
+    {
+      "broker_id": "9A9K",
+      "db": "永豐三重",
+      "histock": "永豐金-三重"
+    },
+    {
+      "broker_id": "9A9L",
+      "db": "永豐台中",
+      "histock": "永豐金-台中"
+    },
+    {
+      "broker_id": "9A9M",
+      "db": "永豐南投",
+      "histock": "永豐金-南投"
+    },
+    {
+      "broker_id": "9A9N",
+      "db": "永豐桃盛",
+      "histock": "永豐金-桃盛"
+    },
+    {
+      "broker_id": "9A9P",
+      "db": "永豐竹北",
+      "histock": "永豐金-竹北"
+    },
+    {
+      "broker_id": "9A9Q",
+      "db": "永豐豐原",
+      "histock": "永豐金-豐原"
+    },
+    {
+      "broker_id": "9A9R",
+      "db": "永豐信義",
+      "histock": "永豐金-信義"
+    },
+    {
+      "broker_id": "9A9S",
+      "db": "永豐南京",
+      "histock": "永豐金-南京"
+    },
+    {
+      "broker_id": "9A9U",
+      "db": "永豐中正",
+      "histock": "永豐金-中正"
+    },
+    {
+      "broker_id": "9A9W",
+      "db": "永豐市政",
+      "histock": "永豐金-市政"
+    },
+    {
+      "broker_id": "9A9X",
+      "db": "永豐竹科",
+      "histock": "永豐金-竹科"
+    },
+    {
+      "broker_id": "9A9Y",
+      "db": "永豐板盛",
+      "histock": "永豐金-板盛"
+    },
+    {
+      "broker_id": "9A9Z",
+      "db": "永豐復興",
+      "histock": "永豐金-復興"
+    },
+    {
+      "broker_id": "9A9q",
+      "db": "永豐金潮洲",
+      "histock": "永豐金-潮州"
+    },
+    {
+      "broker_id": "9A9r",
+      "db": "永豐金鹽埕",
+      "histock": "永豐金-北高雄"
+    },
+    {
+      "broker_id": "9B00",
+      "db": "台新證券",
+      "histock": "台新"
+    },
+    {
+      "broker_id": "9B25",
+      "db": "台新五權",
+      "histock": "台新-五權西"
+    },
+    {
+      "broker_id": "9B28",
+      "db": "台新北新",
+      "histock": "台新-北新莊"
+    },
+    {
+      "broker_id": "9B2L",
+      "db": "台新北壢",
+      "histock": "台新-北中壢"
+    }
+  ]
+}

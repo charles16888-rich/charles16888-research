@@ -1,0 +1,141 @@
+{
+  "schema_version": 2,
+  "categories": [
+    {
+      "id": "sectors",
+      "name_zh": "族群",
+      "name_en": "Sectors",
+      "tagline_zh": "族群輪動 × 資金焦點",
+      "tagline_en": "Where capital rotates",
+      "description": "1,857 檔股票按 74 個細分族群每日重組，捕捉資金題材的此消彼長",
+      "enabled": true,
+      "source_pipelines": [
+        "industry_map"
+      ],
+      "subcategories": [
+        {
+          "id": "daily",
+          "name_zh": "每日盤後",
+          "match_id_prefix": [
+            "sectors-daily"
+          ]
+        },
+        {
+          "id": "weekly",
+          "name_zh": "每週週報",
+          "match_id_prefix": [
+            "sectors-weekly"
+          ]
+        },
+        {
+          "id": "rotation",
+          "name_zh": "輪動偵測",
+          "match_id_prefix": [
+            "sectors-rotation"
+          ]
+        },
+        {
+          "id": "focus",
+          "name_zh": "焦點深度",
+          "match_id_prefix": [
+            "sectors-focus"
+          ]
+        }
+      ],
+      "report_types": [
+        {
+          "id": "daily",
+          "name_zh": "盤後快報",
+          "name_en": "Daily Brief"
+        },
+        {
+          "id": "weekly",
+          "name_zh": "週報",
+          "name_en": "Weekly"
+        },
+        {
+          "id": "rotation",
+          "name_zh": "輪動偵測",
+          "name_en": "Rotation Watch"
+        },
+        {
+          "id": "focus",
+          "name_zh": "焦點深度",
+          "name_en": "Focus Study"
+        }
+      ]
+    },
+    {
+      "id": "taiex",
+      "name_zh": "大盤",
+      "name_en": "Index",
+      "tagline_zh": "盤勢 × 期現對照",
+      "tagline_en": "Macro tape reading",
+      "description": "加權指數動能、籌碼結構與期現價差",
+      "enabled": true,
+      "source_pipelines": [
+        "industry_map"
+      ],
+      "subcategories": [
+        {
+          "id": "indicator",
+          "name_zh": "大盤指標",
+          "match_id_prefix": [
+            "market-pulse",
+            "turnover"
+          ]
+        },
+        {
+          "id": "deriv",
+          "name_zh": "期貨選擇權",
+          "match_id_prefix": [
+            "futures-basis",
+            "options-atm"
+          ]
+        }
+      ],
+      "report_types": [
+        {
+          "id": "pulse",
+          "name_zh": "市場脈動",
+          "name_en": "Market Pulse"
+        }
+      ]
+    },
+    {
+      "id": "chips",
+      "name_zh": "籌碼",
+      "name_en": "Flow",
+      "tagline_zh": "外資 × 投信 × 分點",
+      "tagline_en": "Institutional flow",
+      "description": "三大法人買賣超、分點進出、券商主力動向",
+      "enabled": true,
+      "source_pipelines": [
+        "stock_chip_crawler"
+      ],
+      "subcategories": [
+        {
+          "id": "market-scan",
+          "name_zh": "主力進出",
+          "match_id_prefix": [
+            "chip-concentration",
+            "tri-source-lamp",
+            "shareholder-divergence"
+          ]
+        },
+        {
+          "id": "deep-dive",
+          "name_zh": "個股深度",
+          "match_id_prefix": []
+        }
+      ],
+      "report_types": [
+        {
+          "id": "ranking",
+          "name_zh": "集中度排行",
+          "name_en": "Concentration Ranking"
+        }
+      ]
+    }
+  ]
+}

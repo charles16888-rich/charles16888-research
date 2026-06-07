@@ -1,0 +1,6 @@
+{
+  "_doc": "broker_id → 正確/業界常用中文名稱 override。DB 內 broker_name 是 TWSE 登記名，跟業界俗稱（HiStock 等）有時不同。broker_id 大小寫敏感（含 HEX 4 位），請完整照抄。",
+  "_updated": "2026-05-31",
+  "_lessons_learned": "不要看到名字就猜 broker_id；同一個券商會有 7008(三重) / 700b(中壢) 這種 4-char HEX 編號，差一個字就是不同分點。永遠先查 HiStock URL 的 bno= 後面那串才能確認。",
+  "overrides": {}
+}

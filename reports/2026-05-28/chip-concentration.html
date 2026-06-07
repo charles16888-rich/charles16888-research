@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>2026-05-28 籌碼集中度 — charles16888</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="../../assets/fonts.css" />
+  <link rel="stylesheet" href="../../assets/style.css" />
+  <style>
+    .chip-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin:14px 0 28px; }
+    .chip-col {
+      border:1px solid rgba(232,223,211,0.10);
+      padding:18px 20px 8px; background:rgba(232,223,211,0.02);
+    }
+    .chip-col__head {
+      display:flex; align-items:baseline; justify-content:space-between;
+      margin-bottom:14px; padding-bottom:10px;
+      border-bottom:1px solid rgba(212,175,55,0.30);
+    }
+    .chip-col__title {
+      font-family:'Noto Serif TC',serif; font-size:16px; font-weight:700;
+      color:#e8dfd3; margin:0;
+    }
+    .chip-col__title em { font-style:normal; color:#d4af37; }
+    .chip-col__meta {
+      font-family:'JetBrains Mono',monospace;
+      font-size:10px; color:#6e6350; letter-spacing:.12em;
+    }
+    .chip-row {
+      display:grid; grid-template-columns:28px 1fr auto; gap:10px; align-items:center;
+      padding:10px 0; border-bottom:1px dashed rgba(232,223,211,0.08);
+    }
+    .chip-row__rank {
+      font-family:'JetBrains Mono',monospace; font-size:10px;
+      color:#6e6350; text-align:right;
+    }
+    .chip-row__main { display:flex; flex-direction:column; gap:2px; min-width:0; }
+    .chip-row__title {
+      font-family:'Noto Serif TC',serif; font-size:14px; font-weight:600; color:#e8dfd3;
+      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+    }
+    .chip-row__title .chip-row__code {
+      font-family:'JetBrains Mono',monospace; font-size:11px;
+      color:#b8985c; margin-right:6px;
+    }
+    .chip-row__sub {
+      font-family:'JetBrains Mono',monospace; font-size:10px;
+      color:#6a6557; letter-spacing:.05em;
+    }
+    .chip-row__bar {
+      position:relative; width:100%; height:4px;
+      background:rgba(232,223,211,0.04); border-radius:1px; margin-top:4px; overflow:hidden;
+    }
+    .chip-row__bar::after {
+      content:""; position:absolute; top:0; left:0; height:100%;
+      width:var(--w,0%); background:var(--c,#d4af37);
+    }
+    .chip-row__pct {
+      font-family:'JetBrains Mono',monospace;
+      font-size:14px; font-weight:700; text-align:right; min-width:70px;
+    }
+    .chip-row__pct--up   { color:#e85a5a; }
+    .chip-row__pct--down { color:#5fb87a; }
+    .chip-row__price {
+      font-family:'JetBrains Mono',monospace; font-size:10px;
+      color:#6e6350; text-align:right; margin-top:2px;
+    }
+    .chip-row__price--up   { color:#e85a5a; }
+    .chip-row__price--down { color:#5fb87a; }
+    @media (max-width:760px) { .chip-grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body data-page="report">
+
+  <header class="masthead">
+    <div class="container">
+      <div class="masthead__row">
+        <a class="brand" href="../../index.html">
+          <span class="brand__mark">charles16888 <em>Research</em></span>
+          <span class="brand__plate">Market Edition · MMXXVI</span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a class="nav__link" href="../../category.html?cat=sectors">族群</a>
+          <a class="nav__link" href="../../category.html?cat=taiex">大盤</a>
+          <a class="nav__link nav__link--disabled" href="#" aria-disabled="true">選擇權</a>
+          <a class="nav__link is-active" href="../../category.html?cat=chips">籌碼</a>
+          <a class="nav__link" href="../../category.html?cat=stocks">個股</a>
+          <a class="nav__link" href="../../category.html?cat=news">新聞</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../../index.html">charles16888</a>
+      <span class="breadcrumb__sep">/</span>
+      <a href="../../category.html?cat=chips">籌碼</a>
+      <span class="breadcrumb__sep">/</span>
+      <span>2026-05-28 集中度</span>
+    </nav>
+
+    <section class="report-cover reveal reveal-d1">
+      <div class="report-meta-line">
+        <span><strong>籌碼</strong> · 分點集中度</span>
+        <span>2026-05-28</span>
+        <span>當日 1d Top 50 排行</span>
+      </div>
+      <h1 class="report-title">2026-05-28 籌碼<em>集中度</em></h1>
+      <p class="report-lead">前 15 大買超 / 賣超分點淨買賣量 ÷ 該股總成交量。+ = 主力大買 / − = 主力大賣。過濾成交量 &lt; 1,000 張的雜訊股。</p>
+    </section>
+
+    <div class="chip-grid">
+      <div class="chip-col">
+        <div class="chip-col__head">
+          <h2 class="chip-col__title">買超集中 <em>Top 50</em></h2>
+          <span class="chip-col__meta">2026-05-28</span>
+        </div>
+        
+      <div class="chip-row">
+        <div class="chip-row__rank">1.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">6284</span>佳邦
+          </div>
+          <div class="chip-row__sub">主力買 4,032 張 · 成交 5,071 張</div>
+          <div class="chip-row__bar" style="--w:100%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+53.8%</div>
+          <div class="chip-row__price chip-row__price--up">124.00　+9.73%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">2.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">3537</span>堡達
+          </div>
+          <div class="chip-row__sub">主力買 2,595 張 · 成交 3,553 張</div>
+          <div class="chip-row__bar" style="--w:86.26%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+43.1%</div>
+          <div class="chip-row__price chip-row__price--up">73.90　+9.97%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">3.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">3388</span>崇越電
+          </div>
+          <div class="chip-row__sub">主力買 2,493 張 · 成交 3,870 張</div>
+          <div class="chip-row__bar" style="--w:78.1%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+39.0%</div>
+          <div class="chip-row__price chip-row__price--up">111.00　+9.90%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">4.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">1584</span>精剛
+          </div>
+          <div class="chip-row__sub">主力買 826 張 · 成交 1,002 張</div>
+          <div class="chip-row__bar" style="--w:76.46%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+38.2%</div>
+          <div class="chip-row__price chip-row__price--up">19.80　+1.80%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">5.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">6126</span>信音
+          </div>
+          <div class="chip-row__sub">主力買 1,176 張 · 成交 1,680 張</div>
+          <div class="chip-row__bar" style="--w:76.16%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+38.1%</div>
+          <div class="chip-row__price chip-row__price--up">35.35　+0.71%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">6.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">6642</span>富致
+          </div>
+          <div class="chip-row__sub">主力買 1,707 張 · 成交 1,975 張</div>
+          <div class="chip-row__bar" style="--w:74.82%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+37.4%</div>
+          <div class="chip-row__price chip-row__price--up">91.90　+9.93%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">7.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">3556</span>禾瑞亞
+          </div>
+          <div class="chip-row__sub">主力買 1,769 張 · 成交 2,697 張</div>
+          <div class="chip-row__bar" style="--w:68.28%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+34.1%</div>
+          <div class="chip-row__price chip-row__price--up">61.10　+8.91%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">8.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">5302</span>太欣
+          </div>
+          <div class="chip-row__sub">主力買 921 張 · 成交 1,260 張</div>
+          <div class="chip-row__bar" style="--w:66.3%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+33.1%</div>
+          <div class="chip-row__price chip-row__price--up">10.95　+9.94%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">9.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">6411</span>晶焱
+          </div>
+          <div class="chip-row__sub">主力買 3,597 張 · 成交 7,129 張</div>
+          <div class="chip-row__bar" style="--w:65.82%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+32.9%</div>
+          <div class="chip-row__price chip-row__price--up">111.00　+9.90%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">10.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">5009</span>榮剛
+          </div>
+          <div class="chip-row__sub">主力買 1,606 張 · 成交 2,938 張</div>
+          <div class="chip-row__bar" style="--w:64.24%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+32.1%</div>
+          <div class="chip-row__price chip-row__price--up">35.50　+1.00%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">11.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">6187</span>萬潤
+          </div>
+          <div class="chip-row__sub">主力買 3,581 張 · 成交 4,180 張</div>
+          <div class="chip-row__bar" style="--w:60.86%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+30.4%</div>
+          <div class="chip-row__price chip-row__price--up">1,240.00　+9.73%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">12.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">4167</span>松瑞藥
+          </div>
+          <div class="chip-row__sub">主力買 898 張 · 成交 1,295 張</div>
+          <div class="chip-row__bar" style="--w:58.06%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+29.0%</div>
+          <div class="chip-row__price chip-row__price--up">19.20　+1.32%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">13.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">6127</span>九豪
+          </div>
+          <div class="chip-row__sub">主力買 14,636 張 · 成交 41,061 張</div>
+          <div class="chip-row__bar" style="--w:55.26%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+27.6%</div>
+          <div class="chip-row__price chip-row__price--up">61.20　+7.56%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">14.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">3131</span>弘塑
+          </div>
+          <div class="chip-row__sub">主力買 884 張 · 成交 1,600 張</div>
+          <div class="chip-row__bar" style="--w:55.2%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+27.6%</div>
+          <div class="chip-row__price chip-row__price--up">3,635.00　+6.13%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">15.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">3551</span>世禾
+          </div>
+          <div class="chip-row__sub">主力買 1,833 張 · 成交 4,615 張</div>
+          <div class="chip-row__bar" style="--w:53.84%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+26.9%</div>
+          <div class="chip-row__price chip-row__price--up">217.50　+4.82%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">16.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">6175</span>立敦
+          </div>
+          <div class="chip-row__sub">主力買 5,457 張 · 成交 15,111 張</div>
+          <div class="chip-row__bar" style="--w:49.96%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+25.0%</div>
+          <div class="chip-row__price chip-row__price--up">107.00　+9.86%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">17.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">6143</span>振曜
+          </div>
+          <div class="chip-row__sub">主力買 1,126 張 · 成交 2,036 張</div>
+          <div class="chip-row__bar" style="--w:49.84%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+24.9%</div>
+          <div class="chip-row__price chip-row__price--up">101.50　+1.50%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">18.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">6548</span>長科*
+          </div>
+          <div class="chip-row__sub">主力買 9,501 張 · 成交 28,394 張</div>
+          <div class="chip-row__bar" style="--w:49.7%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+24.9%</div>
+          <div class="chip-row__price chip-row__price--up">66.40　+8.67%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">19.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">6244</span>茂迪
+          </div>
+          <div class="chip-row__sub">主力買 4,621 張 · 成交 13,358 張</div>
+          <div class="chip-row__bar" style="--w:47.56%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+23.8%</div>
+          <div class="chip-row__price chip-row__price--up">30.10　+2.56%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">20.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">8044</span>網家
+          </div>
+          <div class="chip-row__sub">主力買 665 張 · 成交 1,082 張</div>
+          <div class="chip-row__bar" style="--w:46.2%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+23.1%</div>
+          <div class="chip-row__price chip-row__price--up">28.85　+1.94%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">21.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">3558</span>神準
+          </div>
+          <div class="chip-row__sub">主力買 560 張 · 成交 1,183 張</div>
+          <div class="chip-row__bar" style="--w:45.48%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+22.7%</div>
+          <div class="chip-row__price chip-row__price--up">141.50　+9.69%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">22.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">3264</span>欣銓
+          </div>
+          <div class="chip-row__sub">主力買 4,169 張 · 成交 14,097 張</div>
+          <div class="chip-row__bar" style="--w:45.32%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+22.7%</div>
+          <div class="chip-row__price chip-row__price--up">235.50　+2.61%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">23.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">6261</span>久元
+          </div>
+          <div class="chip-row__sub">主力買 1,353 張 · 成交 2,928 張</div>
+          <div class="chip-row__bar" style="--w:44.98%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+22.5%</div>
+          <div class="chip-row__price chip-row__price--up">118.00　+0.00%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">24.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">6237</span>驊訊
+          </div>
+          <div class="chip-row__sub">主力買 571 張 · 成交 1,098 張</div>
+          <div class="chip-row__bar" style="--w:40.76%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+20.4%</div>
+          <div class="chip-row__price chip-row__price--up">52.00　+1.76%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">25.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">6603</span>富強鑫
+          </div>
+          <div class="chip-row__sub">主力買 1,576 張 · 成交 2,425 張</div>
+          <div class="chip-row__bar" style="--w:40.26%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+20.1%</div>
+          <div class="chip-row__price chip-row__price--up">24.55　+9.84%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">26.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">3689</span>湧德
+          </div>
+          <div class="chip-row__sub">主力買 4,249 張 · 成交 10,207 張</div>
+          <div class="chip-row__bar" style="--w:37.98%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+19.0%</div>
+          <div class="chip-row__price chip-row__price--up">132.00　+1.15%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">27.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">5289</span>宜鼎
+          </div>
+          <div class="chip-row__sub">主力買 846 張 · 成交 2,500 張</div>
+          <div class="chip-row__bar" style="--w:37.62%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+18.8%</div>
+          <div class="chip-row__price chip-row__price--up">1,700.00　+0.00%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">28.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">8076</span>伍豐
+          </div>
+          <div class="chip-row__sub">主力買 735 張 · 成交 1,151 張</div>
+          <div class="chip-row__bar" style="--w:35.8%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+17.9%</div>
+          <div class="chip-row__price chip-row__price--up">23.60　+0.43%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">29.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">3675</span>德微
+          </div>
+          <div class="chip-row__sub">主力買 813 張 · 成交 1,611 張</div>
+          <div class="chip-row__bar" style="--w:33.8%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+16.9%</div>
+          <div class="chip-row__price chip-row__price--up">384.00　+5.21%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">30.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">5351</span>鈺創
+          </div>
+          <div class="chip-row__sub">主力買 5,737 張 · 成交 25,181 張</div>
+          <div class="chip-row__bar" style="--w:31.22%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+15.6%</div>
+          <div class="chip-row__price chip-row__price--up">82.60　+0.00%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">31.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">6290</span>良維
+          </div>
+          <div class="chip-row__sub">主力買 2,856 張 · 成交 10,565 張</div>
+          <div class="chip-row__bar" style="--w:30.76%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+15.4%</div>
+          <div class="chip-row__price chip-row__price--up">336.00　+2.28%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">32.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">4760</span>勤凱
+          </div>
+          <div class="chip-row__sub">主力買 989 張 · 成交 2,087 張</div>
+          <div class="chip-row__bar" style="--w:30.36%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+15.2%</div>
+          <div class="chip-row__price chip-row__price--up">425.50　+9.95%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">33.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">3709</span>鑫聯大投控
+          </div>
+          <div class="chip-row__sub">主力買 998 張 · 成交 1,791 張</div>
+          <div class="chip-row__bar" style="--w:28.0%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+14.0%</div>
+          <div class="chip-row__price chip-row__price--up">87.30　+1.16%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">34.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">5483</span>中美晶
+          </div>
+          <div class="chip-row__sub">主力買 6,828 張 · 成交 26,756 張</div>
+          <div class="chip-row__bar" style="--w:27.82%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+13.9%</div>
+          <div class="chip-row__price chip-row__price--down">160.50　-0.93%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">35.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">3221</span>台嘉碩
+          </div>
+          <div class="chip-row__sub">主力買 3,617 張 · 成交 16,748 張</div>
+          <div class="chip-row__bar" style="--w:27.8%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+13.9%</div>
+          <div class="chip-row__price chip-row__price--up">60.20　+6.74%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">36.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">5464</span>霖宏
+          </div>
+          <div class="chip-row__sub">主力買 1,633 張 · 成交 3,661 張</div>
+          <div class="chip-row__bar" style="--w:27.74%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+13.9%</div>
+          <div class="chip-row__price chip-row__price--up">75.50　+6.19%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">37.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">5425</span>台半
+          </div>
+          <div class="chip-row__sub">主力買 12,334 張 · 成交 64,408 張</div>
+          <div class="chip-row__bar" style="--w:27.68%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+13.8%</div>
+          <div class="chip-row__price chip-row__price--up">114.50　+9.57%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">38.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">6546</span>正基
+          </div>
+          <div class="chip-row__sub">主力買 474 張 · 成交 1,288 張</div>
+          <div class="chip-row__bar" style="--w:26.92%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+13.5%</div>
+          <div class="chip-row__price chip-row__price--up">80.80　+0.12%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">39.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">4939</span>亞電
+          </div>
+          <div class="chip-row__sub">主力買 3,922 張 · 成交 16,379 張</div>
+          <div class="chip-row__bar" style="--w:26.72%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+13.4%</div>
+          <div class="chip-row__price chip-row__price--up">45.95　+6.49%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">40.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">1815</span>富喬
+          </div>
+          <div class="chip-row__sub">主力買 7,547 張 · 成交 34,728 張</div>
+          <div class="chip-row__bar" style="--w:26.5%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+13.2%</div>
+          <div class="chip-row__price chip-row__price--up">103.50　+0.00%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">41.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">4123</span>晟德
+          </div>
+          <div class="chip-row__sub">主力買 870 張 · 成交 1,502 張</div>
+          <div class="chip-row__bar" style="--w:26.46%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+13.2%</div>
+          <div class="chip-row__price chip-row__price--up">37.80　+1.48%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">42.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">5536</span>聖暉*
+          </div>
+          <div class="chip-row__sub">主力買 1,333 張 · 成交 1,815 張</div>
+          <div class="chip-row__bar" style="--w:25.5%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+12.8%</div>
+          <div class="chip-row__price chip-row__price--down">1,035.00　-6.76%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">43.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">6667</span>信紘科
+          </div>
+          <div class="chip-row__sub">主力買 728 張 · 成交 1,625 張</div>
+          <div class="chip-row__bar" style="--w:24.0%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+12.0%</div>
+          <div class="chip-row__price chip-row__price--up">268.00　+1.32%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">44.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">8390</span>金益鼎
+          </div>
+          <div class="chip-row__sub">主力買 614 張 · 成交 1,043 張</div>
+          <div class="chip-row__bar" style="--w:23.24%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+11.6%</div>
+          <div class="chip-row__price chip-row__price--down">121.00　-0.41%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">45.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">4707</span>磐亞
+          </div>
+          <div class="chip-row__sub">主力買 542 張 · 成交 1,016 張</div>
+          <div class="chip-row__bar" style="--w:22.28%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+11.1%</div>
+          <div class="chip-row__price chip-row__price--down">14.85　-1.00%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">46.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">4534</span>慶騰
+          </div>
+          <div class="chip-row__sub">主力買 567 張 · 成交 1,011 張</div>
+          <div class="chip-row__bar" style="--w:21.96%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+11.0%</div>
+          <div class="chip-row__price chip-row__price--down">25.65　-0.39%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">47.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">6147</span>頎邦
+          </div>
+          <div class="chip-row__sub">主力買 20,118 張 · 成交 88,253 張</div>
+          <div class="chip-row__bar" style="--w:21.88%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+10.9%</div>
+          <div class="chip-row__price chip-row__price--up">278.00　+4.91%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">48.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">3577</span>泓格
+          </div>
+          <div class="chip-row__sub">主力買 596 張 · 成交 1,775 張</div>
+          <div class="chip-row__bar" style="--w:21.66%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+10.8%</div>
+          <div class="chip-row__price chip-row__price--up">161.00　+9.90%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">49.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">6509</span>聚和
+          </div>
+          <div class="chip-row__sub">主力買 1,214 張 · 成交 3,158 張</div>
+          <div class="chip-row__bar" style="--w:21.06%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+10.5%</div>
+          <div class="chip-row__price chip-row__price--down">50.00　-2.34%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">50.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">3455</span>由田
+          </div>
+          <div class="chip-row__sub">主力買 1,079 張 · 成交 2,472 張</div>
+          <div class="chip-row__bar" style="--w:20.46%;--c:rgba(232,90,90,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--up">+10.2%</div>
+          <div class="chip-row__price chip-row__price--down">241.50　-5.48%</div>
+        </div>
+      </div>
+    
+      </div>
+      <div class="chip-col">
+        <div class="chip-col__head">
+          <h2 class="chip-col__title">賣超集中 <em>Top 50</em></h2>
+          <span class="chip-col__meta">2026-05-28</span>
+        </div>
+        
+      <div class="chip-row">
+        <div class="chip-row__rank">1.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">6588</span>東典光電
+          </div>
+          <div class="chip-row__sub">主力賣 1,143 張 · 成交 1,611 張</div>
+          <div class="chip-row__bar" style="--w:93.58%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-46.8%</div>
+          <div class="chip-row__price chip-row__price--down">115.50　-9.77%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">2.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">3217</span>優群
+          </div>
+          <div class="chip-row__sub">主力賣 1,456 張 · 成交 2,625 張</div>
+          <div class="chip-row__bar" style="--w:78.32%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-39.2%</div>
+          <div class="chip-row__price chip-row__price--down">188.50　-4.56%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">3.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">4743</span>合一
+          </div>
+          <div class="chip-row__sub">主力賣 1,419 張 · 成交 2,305 張</div>
+          <div class="chip-row__bar" style="--w:75.04%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-37.5%</div>
+          <div class="chip-row__price chip-row__price--down">49.70　-2.17%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">4.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">4577</span>達航科技
+          </div>
+          <div class="chip-row__sub">主力賣 759 張 · 成交 1,196 張</div>
+          <div class="chip-row__bar" style="--w:74.96%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-37.5%</div>
+          <div class="chip-row__price chip-row__price--down">116.50　-9.34%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">5.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">4147</span>中裕
+          </div>
+          <div class="chip-row__sub">主力賣 800 張 · 成交 1,153 張</div>
+          <div class="chip-row__bar" style="--w:67.72%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-33.9%</div>
+          <div class="chip-row__price chip-row__price--down">47.10　-1.57%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">6.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">5291</span>邑昇
+          </div>
+          <div class="chip-row__sub">主力賣 838 張 · 成交 1,650 張</div>
+          <div class="chip-row__bar" style="--w:67.64%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-33.8%</div>
+          <div class="chip-row__price chip-row__price--down">71.00　-3.53%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">7.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">6538</span>倉和
+          </div>
+          <div class="chip-row__sub">主力賣 821 張 · 成交 1,127 張</div>
+          <div class="chip-row__bar" style="--w:66.16%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-33.1%</div>
+          <div class="chip-row__price chip-row__price--down">112.50　-8.54%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">8.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">6218</span>豪勉
+          </div>
+          <div class="chip-row__sub">主力賣 2,118 張 · 成交 4,831 張</div>
+          <div class="chip-row__bar" style="--w:66.08%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-33.0%</div>
+          <div class="chip-row__price chip-row__price--down">39.50　-8.56%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">9.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">3293</span>鈊象
+          </div>
+          <div class="chip-row__sub">主力賣 1,146 張 · 成交 2,070 張</div>
+          <div class="chip-row__bar" style="--w:58.76%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-29.4%</div>
+          <div class="chip-row__price chip-row__price--down">749.00　-0.93%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">10.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">3081</span>聯亞
+          </div>
+          <div class="chip-row__sub">主力賣 900 張 · 成交 1,993 張</div>
+          <div class="chip-row__bar" style="--w:57.2%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-28.6%</div>
+          <div class="chip-row__price chip-row__price--down">2,650.00　-8.15%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">11.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">4114</span>健喬
+          </div>
+          <div class="chip-row__sub">主力賣 852 張 · 成交 1,214 張</div>
+          <div class="chip-row__bar" style="--w:56.4%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-28.2%</div>
+          <div class="chip-row__price chip-row__price--down">30.05　-0.66%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">12.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">6435</span>大中
+          </div>
+          <div class="chip-row__sub">主力賣 670 張 · 成交 1,409 張</div>
+          <div class="chip-row__bar" style="--w:54.92%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-27.5%</div>
+          <div class="chip-row__price chip-row__price--down">278.00　-4.14%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">13.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">4991</span>環宇-KY
+          </div>
+          <div class="chip-row__sub">主力賣 2,201 張 · 成交 5,323 張</div>
+          <div class="chip-row__bar" style="--w:53.12%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-26.6%</div>
+          <div class="chip-row__price chip-row__price--down">705.00　-9.96%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">14.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">8440</span>綠電
+          </div>
+          <div class="chip-row__sub">主力賣 600 張 · 成交 1,112 張</div>
+          <div class="chip-row__bar" style="--w:53.04%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-26.5%</div>
+          <div class="chip-row__price chip-row__price--down">23.40　-3.31%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">15.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">8111</span>立碁
+          </div>
+          <div class="chip-row__sub">主力賣 856 張 · 成交 1,703 張</div>
+          <div class="chip-row__bar" style="--w:52.48%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-26.2%</div>
+          <div class="chip-row__price chip-row__price--down">64.40　-4.73%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">16.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">6727</span>亞泰金屬
+          </div>
+          <div class="chip-row__sub">主力賣 1,429 張 · 成交 3,651 張</div>
+          <div class="chip-row__bar" style="--w:52.02%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-26.0%</div>
+          <div class="chip-row__price chip-row__price--down">578.00　-8.11%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">17.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">6016</span>康和證
+          </div>
+          <div class="chip-row__sub">主力賣 13,207 張 · 成交 31,418 張</div>
+          <div class="chip-row__bar" style="--w:51.72%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-25.9%</div>
+          <div class="chip-row__price chip-row__price--up">26.95　+0.94%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">18.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">6188</span>廣明
+          </div>
+          <div class="chip-row__sub">主力賣 1,111 張 · 成交 1,950 張</div>
+          <div class="chip-row__bar" style="--w:50.8%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-25.4%</div>
+          <div class="chip-row__price chip-row__price--down">81.80　-2.50%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">19.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">6220</span>岳豐
+          </div>
+          <div class="chip-row__sub">主力賣 1,069 張 · 成交 1,723 張</div>
+          <div class="chip-row__bar" style="--w:49.84%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-24.9%</div>
+          <div class="chip-row__price chip-row__price--down">33.05　-5.30%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">20.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">5439</span>高技
+          </div>
+          <div class="chip-row__sub">主力賣 764 張 · 成交 1,948 張</div>
+          <div class="chip-row__bar" style="--w:48.9%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-24.4%</div>
+          <div class="chip-row__price chip-row__price--down">370.00　-4.02%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">21.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">6163</span>華電網
+          </div>
+          <div class="chip-row__sub">主力賣 1,184 張 · 成交 2,733 張</div>
+          <div class="chip-row__bar" style="--w:48.0%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-24.0%</div>
+          <div class="chip-row__price chip-row__price--down">48.20　-3.98%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">22.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">8155</span>博智
+          </div>
+          <div class="chip-row__sub">主力賣 531 張 · 成交 1,110 張</div>
+          <div class="chip-row__bar" style="--w:47.72%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-23.9%</div>
+          <div class="chip-row__price chip-row__price--down">393.50　-1.75%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">23.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">4908</span>前鼎
+          </div>
+          <div class="chip-row__sub">主力賣 1,528 張 · 成交 3,874 張</div>
+          <div class="chip-row__bar" style="--w:44.0%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-22.0%</div>
+          <div class="chip-row__price chip-row__price--down">239.00　-7.90%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">24.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">6179</span>亞通
+          </div>
+          <div class="chip-row__sub">主力賣 688 張 · 成交 1,240 張</div>
+          <div class="chip-row__bar" style="--w:43.12%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-21.6%</div>
+          <div class="chip-row__price chip-row__price--down">23.65　-0.63%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">25.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">3691</span>碩禾
+          </div>
+          <div class="chip-row__sub">主力賣 1,024 張 · 成交 3,056 張</div>
+          <div class="chip-row__bar" style="--w:40.98%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-20.5%</div>
+          <div class="chip-row__price chip-row__price--down">151.00　-2.89%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">26.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">3402</span>漢科
+          </div>
+          <div class="chip-row__sub">主力賣 513 張 · 成交 1,246 張</div>
+          <div class="chip-row__bar" style="--w:39.04%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-19.5%</div>
+          <div class="chip-row__price chip-row__price--down">146.00　-5.19%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">27.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">4923</span>力士
+          </div>
+          <div class="chip-row__sub">主力賣 1,361 張 · 成交 4,053 張</div>
+          <div class="chip-row__bar" style="--w:38.58%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-19.3%</div>
+          <div class="chip-row__price chip-row__price--down">48.85　-1.61%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">28.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">6485</span>點序
+          </div>
+          <div class="chip-row__sub">主力賣 749 張 · 成交 1,794 張</div>
+          <div class="chip-row__bar" style="--w:38.14%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-19.1%</div>
+          <div class="chip-row__price chip-row__price--down">103.00　-4.63%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">29.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">4903</span>聯光通
+          </div>
+          <div class="chip-row__sub">主力賣 781 張 · 成交 1,843 張</div>
+          <div class="chip-row__bar" style="--w:38.02%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-19.0%</div>
+          <div class="chip-row__price chip-row__price--down">43.70　-2.67%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">30.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">5340</span>建榮
+          </div>
+          <div class="chip-row__sub">主力賣 769 張 · 成交 2,240 張</div>
+          <div class="chip-row__bar" style="--w:37.72%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-18.9%</div>
+          <div class="chip-row__price chip-row__price--down">100.00　-2.91%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">31.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">4979</span>華星光
+          </div>
+          <div class="chip-row__sub">主力賣 1,780 張 · 成交 6,316 張</div>
+          <div class="chip-row__bar" style="--w:37.14%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-18.6%</div>
+          <div class="chip-row__price chip-row__price--down">604.00　-3.82%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">32.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">3441</span>聯一光
+          </div>
+          <div class="chip-row__sub">主力賣 680 張 · 成交 1,233 張</div>
+          <div class="chip-row__bar" style="--w:33.44%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-16.7%</div>
+          <div class="chip-row__price chip-row__price--down">50.20　-2.90%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">33.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">3372</span>典範
+          </div>
+          <div class="chip-row__sub">主力賣 1,221 張 · 成交 1,962 張</div>
+          <div class="chip-row__bar" style="--w:32.2%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-16.1%</div>
+          <div class="chip-row__price chip-row__price--down">21.50　-2.49%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">34.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">3680</span>家登
+          </div>
+          <div class="chip-row__sub">主力賣 692 張 · 成交 1,672 張</div>
+          <div class="chip-row__bar" style="--w:32.08%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-16.0%</div>
+          <div class="chip-row__price chip-row__price--down">535.00　-3.95%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">35.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">3088</span>艾訊
+          </div>
+          <div class="chip-row__sub">主力賣 645 張 · 成交 1,913 張</div>
+          <div class="chip-row__bar" style="--w:30.28%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-15.1%</div>
+          <div class="chip-row__price chip-row__price--down">140.00　-3.11%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">36.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">5314</span>世紀*
+          </div>
+          <div class="chip-row__sub">主力賣 694 張 · 成交 1,976 張</div>
+          <div class="chip-row__bar" style="--w:30.12%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-15.1%</div>
+          <div class="chip-row__price chip-row__price--down">61.20　-1.77%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">37.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">4157</span>太景*-KY
+          </div>
+          <div class="chip-row__sub">主力賣 475 張 · 成交 1,078 張</div>
+          <div class="chip-row__bar" style="--w:29.74%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-14.9%</div>
+          <div class="chip-row__price chip-row__price--down">9.01　-0.11%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">38.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">8240</span>華宏
+          </div>
+          <div class="chip-row__sub">主力賣 415 張 · 成交 1,020 張</div>
+          <div class="chip-row__bar" style="--w:29.36%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-14.7%</div>
+          <div class="chip-row__price chip-row__price--down">63.80　-6.45%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">39.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">3707</span>漢磊
+          </div>
+          <div class="chip-row__sub">主力賣 10,324 張 · 成交 49,670 張</div>
+          <div class="chip-row__bar" style="--w:29.32%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-14.7%</div>
+          <div class="chip-row__price chip-row__price--down">87.10　-2.46%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">40.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">6462</span>神盾
+          </div>
+          <div class="chip-row__sub">主力賣 889 張 · 成交 2,540 張</div>
+          <div class="chip-row__bar" style="--w:28.42%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-14.2%</div>
+          <div class="chip-row__price chip-row__price--down">125.00　-6.02%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">41.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">1595</span>川寶
+          </div>
+          <div class="chip-row__sub">主力賣 643 張 · 成交 1,722 張</div>
+          <div class="chip-row__bar" style="--w:27.7%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-13.8%</div>
+          <div class="chip-row__price chip-row__price--down">87.30　-4.69%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">42.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">6547</span>高端疫苗
+          </div>
+          <div class="chip-row__sub">主力賣 868 張 · 成交 2,224 張</div>
+          <div class="chip-row__bar" style="--w:27.44%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-13.7%</div>
+          <div class="chip-row__price chip-row__price--down">44.20　-2.64%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">43.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">6432</span>今展科
+          </div>
+          <div class="chip-row__sub">主力賣 1,570 張 · 成交 7,172 張</div>
+          <div class="chip-row__bar" style="--w:26.58%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-13.3%</div>
+          <div class="chip-row__price chip-row__price--up">70.00　+7.36%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">44.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">2641</span>正德
+          </div>
+          <div class="chip-row__sub">主力賣 853 張 · 成交 1,647 張</div>
+          <div class="chip-row__bar" style="--w:26.36%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-13.2%</div>
+          <div class="chip-row__price chip-row__price--down">17.55　-0.85%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">45.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">6207</span>雷科
+          </div>
+          <div class="chip-row__sub">主力賣 2,948 張 · 成交 12,617 張</div>
+          <div class="chip-row__bar" style="--w:25.8%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-12.9%</div>
+          <div class="chip-row__price chip-row__price--up">105.00　+1.45%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">46.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">8040</span>九暘
+          </div>
+          <div class="chip-row__sub">主力賣 941 張 · 成交 2,622 張</div>
+          <div class="chip-row__bar" style="--w:25.66%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-12.8%</div>
+          <div class="chip-row__price chip-row__price--down">109.50　-3.10%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">47.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">3580</span>友威科
+          </div>
+          <div class="chip-row__sub">主力賣 812 張 · 成交 1,988 張</div>
+          <div class="chip-row__bar" style="--w:25.22%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-12.6%</div>
+          <div class="chip-row__price chip-row__price--down">101.00　-5.61%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">48.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">3152</span>璟德
+          </div>
+          <div class="chip-row__sub">主力賣 610 張 · 成交 2,158 張</div>
+          <div class="chip-row__bar" style="--w:24.9%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-12.4%</div>
+          <div class="chip-row__price chip-row__price--down">197.00　-0.76%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">49.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">6292</span>迅德
+          </div>
+          <div class="chip-row__sub">主力賣 675 張 · 成交 1,684 張</div>
+          <div class="chip-row__bar" style="--w:24.24%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-12.1%</div>
+          <div class="chip-row__price chip-row__price--up">68.70　+9.92%</div>
+        </div>
+      </div>
+    
+      <div class="chip-row">
+        <div class="chip-row__rank">50.</div>
+        <div class="chip-row__main">
+          <div class="chip-row__title">
+            <span class="chip-row__code">6173</span>信昌電
+          </div>
+          <div class="chip-row__sub">主力賣 897 張 · 成交 1,596 張</div>
+          <div class="chip-row__bar" style="--w:23.38%;--c:rgba(95,184,122,0.55)"></div>
+        </div>
+        <div>
+          <div class="chip-row__pct chip-row__pct--down">-11.7%</div>
+          <div class="chip-row__price chip-row__price--down">219.50　-2.88%</div>
+        </div>
+      </div>
+    
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div id="footer-line" class="footer__row"></div>
+    </div>
+  </footer>
+
+  <script src="../../assets/main.js" defer></script>
+</body>
+</html>

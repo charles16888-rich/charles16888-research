@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>charles16888 — 台股市場觀察檔案</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="assets/fonts.css" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body data-page="index">
+
+  <header class="masthead">
+    <div class="container">
+      <div class="masthead__row">
+        <a class="brand" href="index.html">
+          <span class="brand__mark">charles<em>16888</em></span>
+          <span class="brand__plate">Market Edition · MMXXVI</span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a class="nav__link is-active" href="category.html?cat=sectors">族群</a>
+          <a class="nav__link" href="category.html?cat=taiex">大盤</a>
+          <a class="nav__link" href="category.html?cat=chips">籌碼</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="cover" aria-label="Cover">
+      <div id="cover-spec" class="cover__spec reveal reveal-d1"></div>
+
+      <h1 class="cover__headline reveal reveal-d2">
+        台股市場觀察<em>檔案</em>
+      </h1>
+
+      <p class="cover__subhead reveal reveal-d3">
+        Taiwan market observatory — sectors, index, institutional flow.
+      </p>
+
+      <p id="cover-dek" class="cover__dek reveal reveal-d4"></p>
+
+      <div id="cover-stats" class="stat-row reveal reveal-d5" aria-label="Market snapshot"></div>
+    </section>
+
+    <section class="section scroll-fade" aria-labelledby="today-title">
+      <div class="section__head">
+        <div class="section__label">
+          <span class="section__marker" aria-hidden="true"></span>
+          <h2 id="today-title" class="section__title">本日<em>歸檔</em></h2>
+        </div>
+        <span id="today-section-meta" class="section__meta">— · — ENTRIES</span>
+      </div>
+      <div class="reports-grid">
+        <div class="reports-grid__major" id="today-major"></div>
+        <div class="reports-grid__minor" id="today-minor"></div>
+      </div>
+    </section>
+
+    <section class="section scroll-fade" aria-labelledby="cat-title">
+      <div class="section__head">
+        <div class="section__label">
+          <span class="section__marker" aria-hidden="true"></span>
+          <h2 id="cat-title" class="section__title">分類<em>索引</em></h2>
+        </div>
+        <span class="section__meta">Archive by Category</span>
+      </div>
+      <div id="cat-index"></div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div id="footer-line" class="footer__row"></div>
+    </div>
+  </footer>
+
+  <script src="assets/main.js" defer></script>
+</body>
+</html>

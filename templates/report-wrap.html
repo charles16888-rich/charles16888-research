@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>{{ TITLE }} — charles16888</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="{{ ASSET_PREFIX }}assets/fonts.css" />
+  <link rel="stylesheet" href="{{ ASSET_PREFIX }}assets/style.css" />
+</head>
+<body data-page="report">
+
+  <header class="masthead">
+    <div class="container">
+      <div class="masthead__row">
+        <a class="brand" href="{{ ASSET_PREFIX }}index.html">
+          <span class="brand__mark">charles<em>16888</em></span>
+          <span class="brand__plate">Market Edition · MMXXVI</span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a class="nav__link" href="{{ ASSET_PREFIX }}category.html?cat=sectors">族群</a>
+          <a class="nav__link" href="{{ ASSET_PREFIX }}category.html?cat=taiex">大盤</a>
+          <a class="nav__link" href="{{ ASSET_PREFIX }}category.html?cat=chips">籌碼</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="{{ ASSET_PREFIX }}index.html">charles16888</a>
+      <span class="breadcrumb__sep">/</span>
+      <a href="{{ ASSET_PREFIX }}category.html?cat={{ CATEGORY_ID }}">{{ CATEGORY_NAME }}</a>
+      <span class="breadcrumb__sep">/</span>
+      <span>{{ DATE }}</span>
+    </nav>
+
+    <section class="report-cover reveal reveal-d1" aria-label="Report cover">
+      <div class="report-meta-line">
+        <span><strong>{{ CATEGORY_NAME }}</strong> · {{ TYPE_LABEL }}</span>
+        <span>{{ DATE }}{{ TIME_SPACED }}</span>
+        <span>VOLUME {{ VOLUME }}</span>
+      </div>
+
+      <h1 class="report-title">{{ HEADLINE_HTML }}</h1>
+
+      {{ LEAD_HTML }}
+
+      {{ STATS_HTML }}
+    </section>
+
+    <article class="report-body scroll-fade">
+      {{ CONTENT_HTML }}
+    </article>
+
+    {{ PREV_NEXT_HTML }}
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div id="footer-line" class="footer__row"></div>
+    </div>
+  </footer>
+
+  <script src="{{ ASSET_PREFIX }}assets/main.js" defer></script>
+</body>
+</html>

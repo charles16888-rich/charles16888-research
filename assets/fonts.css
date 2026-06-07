@@ -1,0 +1,23 @@
+/* ============================================================
+   Antigravity Private Edition — Type System
+   Loaded before style.css. Single import point for typefaces.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --font-display:  'Playfair Display', 'Noto Serif TC', Georgia, serif;
+  --font-serif-tc: 'Noto Serif TC', 'Playfair Display', Georgia, serif;
+  --font-sans:     'Inter', -apple-system, 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+  --font-mono:     'JetBrains Mono', 'SF Mono', Consolas, monospace;
+}
+
+/* tabular figures for all numeric contexts */
+.tnum,
+table,
+.mono,
+.stat-num,
+.stat-value {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum' 1, 'kern' 1;
+}

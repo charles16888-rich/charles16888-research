@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>分類索引 — charles16888</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="assets/fonts.css" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body data-page="category">
+
+  <header class="masthead">
+    <div class="container">
+      <div class="masthead__row">
+        <a class="brand" href="index.html">
+          <span class="brand__mark">charles<em>16888</em></span>
+          <span class="brand__plate">Market Edition · MMXXVI</span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a class="nav__link" href="category.html?cat=sectors">族群</a>
+          <a class="nav__link" href="category.html?cat=taiex">大盤</a>
+          <a class="nav__link" href="category.html?cat=chips">籌碼</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">charles16888</a>
+      <span class="breadcrumb__sep">/</span>
+      <span id="breadcrumb-cat">分類</span>
+    </nav>
+
+    <section id="cat-cover" class="cat-cover reveal reveal-d1" aria-label="Category cover"></section>
+
+    <!-- Sub-category nav (populated by main.js when cat has subcategories) -->
+    <nav id="sub-nav" class="sub-nav hidden" aria-label="次分類"></nav>
+
+    <!-- News-only: search & filter panel. Populated by main.js when cat=news. -->
+    <section id="news-search" class="search-panel hidden" aria-label="Search and filter"></section>
+
+    <!-- News-only: search results pane (replaces archive when filters active). -->
+    <section id="news-results" class="search-results hidden" aria-label="Search results"></section>
+
+    <section id="archive-section" class="section" aria-label="Archive">
+      <div class="section__head">
+        <div class="section__label">
+          <span class="section__marker" aria-hidden="true"></span>
+          <h2 class="section__title">編年<em>索引</em></h2>
+        </div>
+        <span class="section__meta">Chronological Archive</span>
+      </div>
+      <div id="cat-archive"></div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div id="footer-line" class="footer__row"></div>
+    </div>
+  </footer>
+
+  <script src="assets/main.js" defer></script>
+</body>
+</html>
