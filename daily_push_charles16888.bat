@@ -1,0 +1,73 @@
+@echo off
+chcp 65001 >nul
+set PYTHONIOENCODING=utf-8
+set PYTHONUTF8=1
+REM charles16888-research daily build + git push (all comments ASCII-only)
+REM cmd parses bat in cp950 before chcp 65001, any non-ASCII before chcp breaks bat
+
+setlocal
+
+set "REPO=%~dp0"
+set "LOG=%REPO%push_to_charles16888.log"
+
+echo. >> "%LOG%"
+echo ================================== >> "%LOG%"
+echo [%date% %time%] Start daily push to charles16888 >> "%LOG%"
+echo ================================== >> "%LOG%"
+
+REM 1) trading day check
+python "E:\stock_chip_crawler\is_trading_day.py" >> "%LOG%" 2>&1
+if errorlevel 1 (
+    echo [%date% %time%] non trading day, skip >> "%LOG%"
+    exit /b 0
+)
+
+REM 2) verify data completeness
+python "E:\stock_chip_crawler\verify_today_data.py" >> "%LOG%" 2>&1
+
+REM 3) build scripts (write to charles1688-research repo)
+cd /d "%REPO%"
+
+echo [%date% %time%] [1/7] build_sectors_assets >> "%LOG%"
+python tools\build_sectors_assets.py >> "%LOG%" 2>&1
+
+echo [%date% %time%] [2/7] build_market_chart >> "%LOG%"
+python tools\build_market_chart.py >> "%LOG%" 2>&1
+
+echo [%date% %time%] [3/7] build_futures_chart >> "%LOG%"
+python tools\build_futures_chart.py >> "%LOG%" 2>&1
+
+echo [%date% %time%] [4/7] build_options_chart >> "%LOG%"
+python tools\build_options_chart.py >> "%LOG%" 2>&1
+
+echo [%date% %time%] [5/7] build_chip_concentration >> "%LOG%"
+python tools\build_chip_concentration.py >> "%LOG%" 2>&1
+
+echo [%date% %time%] [6/7] build_view2_shareholder_divergence >> "%LOG%"
+python tools\build_view2_shareholder_divergence.py >> "%LOG%" 2>&1
+
+echo [%date% %time%] [7/7] build_view4_tri_source_lamp >> "%LOG%"
+python tools\build_view4_tri_source_lamp.py >> "%LOG%" 2>&1
+
+REM 4) git commit + push (PAT embedded in remote URL)
+echo [%date% %time%] git push charles16888-research >> "%LOG%"
+
+git add . >> "%LOG%" 2>&1
+
+git diff-index --quiet HEAD --
+if errorlevel 1 (
+    set "TODAY=%date:~0,10%"
+    git commit -m "daily: %TODAY% sectors + taiex + chips" >> "%LOG%" 2>&1
+    git push >> "%LOG%" 2>&1
+    if errorlevel 1 (
+        echo [%date% %time%] ERROR: git push failed >> "%LOG%"
+        exit /b 3
+    )
+    echo [%date% %time%] OK: pushed to GitHub, Cloudflare will deploy >> "%LOG%"
+) else (
+    echo [%date% %time%] SKIP: no changes to push >> "%LOG%"
+)
+
+echo [%date% %time%] DONE >> "%LOG%"
+endlocal
+exit /b 0

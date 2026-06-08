@@ -30,10 +30,10 @@ TIER_TOTAL     = 17   # sum of all tiers
 
 
 def _ro_conn() -> sqlite3.Connection:
-    # timeout=60s tolerates the crawler's brief write locks at 20:30 when
+    # timeout=300s tolerates the crawler's write locks at 19:30-21:00 when
     # this is driven from the daily push bat. Set CHIP_DB_PATH to use a
     # snapshot if you need to fully decouple from the live DB.
-    c = sqlite3.connect(f"file:{CHIP_DB}?mode=ro", uri=True, timeout=60)
+    c = sqlite3.connect(f"file:{CHIP_DB}?mode=ro", uri=True, timeout=300)
     # 分點拆庫後，broker_trading 在 broker_chip.db；ATTACH(ro) + 同名 temp view，
     # 讓 get_concentration_full_market() 等查詢的裸名 broker_trading 指向新 DB。
     c.execute(f"ATTACH DATABASE 'file:{BROKER_DB.as_posix()}?mode=ro' AS broker")

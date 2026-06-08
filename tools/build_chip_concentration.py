@@ -105,7 +105,7 @@ def get_price_info(codes: list[str], latest_date: str) -> dict[str, dict]:
     """
     if not codes:
         return {}
-    conn = sqlite3.connect(f"file:{CHIP_DB}?mode=ro", uri=True, timeout=5)
+    conn = sqlite3.connect(f"file:{CHIP_DB}?mode=ro", uri=True, timeout=300)
     placeholders = ",".join("?" * len(codes))
     rows = conn.execute(
         f"""
@@ -259,9 +259,26 @@ def main() -> int:
         print(f"[ERR] {CHIP_DB} not found")
         return 1
 
-    conn = sqlite3.connect(f"file:{CHIP_DB}?mode=ro", uri=True, timeout=60)
+    # Snapshot broker_chip.db to temp before reading.
+    # broker writer 從 16:00 跑到 21:00 hold sqlite write lock,
+    # readonly connect 在 Windows 仍會等鎖; sqlite3.backup() 強制讀一份 snapshot
+    # 之後讀 snapshot 完全跟 live DB 解耦。
+    import tempfile
+    snap_dir = Path(tempfile.gettempdir()) / "chip_snap"
+    snap_dir.mkdir(exist_ok=True)
+    broker_snap = snap_dir / "broker_chip.snap.db"
+    print(f"[INFO] snapshotting broker_chip.db -> {broker_snap}")
+    src_conn = sqlite3.connect(f"file:{BROKER_DB}?mode=ro", uri=True, timeout=10)
+    dst_conn = sqlite3.connect(str(broker_snap))
+    src_conn.backup(dst_conn)
+    src_conn.close()
+    dst_conn.close()
+    print(f"[OK] snapshot done ({broker_snap.stat().st_size / 1e6:.0f} MB)")
+
+    conn = sqlite3.connect(f"file:{CHIP_DB}?mode=ro", uri=True, timeout=300)
     # 分點拆庫：ATTACH broker_chip.db(ro) + 同名 temp view，broker_trading 查詢無痛指向新 DB
-    conn.execute(f"ATTACH DATABASE 'file:{BROKER_DB.as_posix()}?mode=ro' AS broker")
+    # 用 snapshot 而非 live DB（解耦 writer lock）
+    conn.execute(f"ATTACH DATABASE 'file:{broker_snap.as_posix()}?mode=ro' AS broker")
     conn.execute("CREATE TEMP VIEW IF NOT EXISTS broker_trading AS SELECT * FROM broker.broker_trading")
     dates = get_trading_dates(conn)
     if not dates:
