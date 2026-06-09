@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-06-09T19:43:03+08:00",
+  "updated_at": "2026-06-09T21:59:03+08:00",
   "today": "2026-06-09",
   "volume_number": 1,
   "market_summary": {
@@ -162,6 +162,123 @@
       ]
     },
     {
+      "id": "2026-06-09-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-06-09",
+      "time": "20:00",
+      "title": "2026-06-09 族群週報",
+      "title_em": "鏡頭光學",
+      "summary": "涵蓋 2026-06-03 ~ 2026-06-09。週領漲 鏡頭光學 +10.72%，週領跌 面板 -15.19%；資金焦點 晶圓代工。",
+      "tags": [
+        "鏡頭光學",
+        "面板",
+        "晶圓代工",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-06-09/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "鏡頭光學 +10.72%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "面板 -15.19%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "晶圓代工",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-06-09-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-06-09",
+      "time": "20:00",
+      "title": "2026-06-09 類股輪動偵測",
+      "title_em": "化合物半導體",
+      "summary": "最大轉強 化合物半導體 +11.40%（vs 5 日均），最大轉弱 證券期貨 -2.55%。",
+      "tags": [
+        "化合物半導體",
+        "證券期貨",
+        "輪動"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-06-09/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大轉強",
+          "value": "化合物半導體 +11.40%",
+          "color": "up"
+        },
+        {
+          "label": "最大轉弱",
+          "value": "證券期貨 -2.55%",
+          "color": "down"
+        },
+        {
+          "label": "對比基準",
+          "value": "5 日均",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-06-09-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-06-09",
+      "time": "20:00",
+      "title": "2026-06-09 族群盤後快報",
+      "title_em": "鏡頭光學",
+      "summary": "全 74 族群、成交 13480.3 億；領漲 鏡頭光學 +9.92%，領跌 面板 -2.13%；漲多族群 64/74，全族群均漲 +2.20%。",
+      "tags": [
+        "鏡頭光學",
+        "面板",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-06-09/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "鏡頭光學 +9.92%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "面板 -2.13%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "21.0%",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "tri-source-lamp",
+      "category": "chips",
+      "title": "三源混合燈號",
+      "subtitle": "2026-06-09 · 三同買 2 / 三同賣 4",
+      "date": "2026-06-09",
+      "url": "reports/tri-source-lamp.html",
+      "tags": [
+        "分點",
+        "大股東",
+        "三大法人",
+        "燈號"
+      ]
+    },
+    {
       "id": "2026-06-08-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -262,20 +379,6 @@
           "value": "2.5%",
           "color": "neutral"
         }
-      ]
-    },
-    {
-      "id": "tri-source-lamp",
-      "category": "chips",
-      "title": "三源混合燈號",
-      "subtitle": "2026-06-09 · 三同買 2 / 三同賣 4",
-      "date": "2026-06-09",
-      "url": "reports/tri-source-lamp.html",
-      "tags": [
-        "分點",
-        "大股東",
-        "三大法人",
-        "燈號"
       ]
     },
     {
