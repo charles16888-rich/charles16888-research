@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-06-09T21:59:03+08:00",
-  "today": "2026-06-09",
+  "updated_at": "2026-06-10T19:47:01+08:00",
+  "today": "2026-06-10",
   "volume_number": 1,
   "market_summary": {
     "date": "2026-05-22",
@@ -25,11 +25,11 @@
       "id": "chip-concentration",
       "category": "chips",
       "type": "ranking",
-      "date": "2026-06-09",
+      "date": "2026-06-10",
       "time": "21:00",
       "title": "籌碼集中度 · 分點 Top 50 排行",
       "title_em": "集中度",
-      "summary": "5 個時段 · 每邊 Top 50 · 過濾成交量 < 1,000 張。 今日買超集中 #1：2359 所羅門 +63.9%。 賣超集中 #1：2731 雄獅 -56.3%。",
+      "summary": "5 個時段 · 每邊 Top 50 · 過濾成交量 < 1,000 張。 今日買超集中 #1：8454 富邦媒 +60.4%。 賣超集中 #1：6770 力積電 -53.1%。",
       "tags": [
         "籌碼",
         "分點",
@@ -46,12 +46,12 @@
         },
         {
           "label": "Top 買超",
-          "value": "2359 +64%",
+          "value": "8454 +60%",
           "color": "up"
         },
         {
           "label": "Top 賣超",
-          "value": "2731 -56%",
+          "value": "6770 -53%",
           "color": "down"
         }
       ]
@@ -60,11 +60,11 @@
       "id": "options-atm",
       "category": "taiex",
       "type": "pulse",
-      "date": "2026-06-09",
+      "date": "2026-06-10",
       "time": "20:00",
       "title": "選擇權價平和 · 隱含波動代理",
       "title_em": "價平和",
-      "summary": "近 735 個交易日（2023-05-30 → 2026-06-09）TXO ATM Call+Put 加總。最新 (2026-06-09)：近期 665 點（到期 202606W2）、次遠期 1195 點。",
+      "summary": "近 736 個交易日（2023-05-30 → 2026-06-10）TXO ATM Call+Put 加總。最新 (2026-06-10)：近期 1530 點（到期 202606F2）、次遠期 2230 點。",
       "tags": [
         "選擇權",
         "TXO",
@@ -76,17 +76,17 @@
       "stats": [
         {
           "label": "近期 C+P",
-          "value": "665",
+          "value": "1530",
           "color": "neutral"
         },
         {
           "label": "次遠期 C+P",
-          "value": "1195",
+          "value": "2230",
           "color": "neutral"
         },
         {
           "label": "區間",
-          "value": "735 日",
+          "value": "736 日",
           "color": "neutral"
         }
       ]
@@ -95,11 +95,11 @@
       "id": "market-pulse",
       "category": "taiex",
       "type": "pulse",
-      "date": "2026-06-09",
+      "date": "2026-06-10",
       "time": "20:00",
       "title": "市場脈動 · 漲跌停 × 全族群均幅",
       "title_em": "脈動",
-      "summary": "近 36 個交易日漲跌停家數、總成交額、族群平均漲幅、漲停集中度。最新 (2026-06-09)：漲停 112、跌停 5、全族群均幅 +2.20%。",
+      "summary": "近 37 個交易日漲跌停家數、總成交額、族群平均漲幅、漲停集中度。最新 (2026-06-10)：漲停 35、跌停 46、全族群均幅 -2.15%。",
       "tags": [
         "市場脈動",
         "漲跌停",
@@ -110,17 +110,17 @@
       "stats": [
         {
           "label": "漲停",
-          "value": "112",
+          "value": "35",
           "color": "up"
         },
         {
           "label": "跌停",
-          "value": "5",
+          "value": "46",
           "color": "down"
         },
         {
           "label": "成交額",
-          "value": "13,480 億",
+          "value": "15,567 億",
           "color": "neutral"
         }
       ]
@@ -129,11 +129,11 @@
       "id": "futures-basis",
       "category": "taiex",
       "type": "pulse",
-      "date": "2026-06-09",
+      "date": "2026-06-10",
       "time": "20:00",
       "title": "期貨正逆價差 · 12 年期現對照",
       "title_em": "12 年",
-      "summary": "近 2996 個交易日（2014-02-14 → 2026-06-09）台指期 TXF1 vs 加權指數價差。最新 (2026-06-09)：基差 -39.4 點，加權收 44,704。",
+      "summary": "近 2997 個交易日（2014-02-14 → 2026-06-10）台指期 TXF1 vs 加權指數價差。最新 (2026-06-10)：基差 +196.5 點，加權收 43,226。",
       "tags": [
         "期貨",
         "基差",
@@ -146,19 +146,33 @@
       "stats": [
         {
           "label": "最新基差",
-          "value": "-39.4",
-          "color": "down"
+          "value": "+196.5",
+          "color": "up"
         },
         {
           "label": "加權",
-          "value": "44,704",
+          "value": "43,226",
           "color": "neutral"
         },
         {
           "label": "區間",
-          "value": "2996 日",
+          "value": "2997 日",
           "color": "neutral"
         }
+      ]
+    },
+    {
+      "id": "tri-source-lamp",
+      "category": "chips",
+      "title": "三源混合燈號",
+      "subtitle": "2026-06-10 · 三同買 7 / 三同賣 10",
+      "date": "2026-06-10",
+      "url": "reports/tri-source-lamp.html",
+      "tags": [
+        "分點",
+        "大股東",
+        "三大法人",
+        "燈號"
       ]
     },
     {
@@ -262,20 +276,6 @@
           "value": "21.0%",
           "color": "neutral"
         }
-      ]
-    },
-    {
-      "id": "tri-source-lamp",
-      "category": "chips",
-      "title": "三源混合燈號",
-      "subtitle": "2026-06-09 · 三同買 2 / 三同賣 4",
-      "date": "2026-06-09",
-      "url": "reports/tri-source-lamp.html",
-      "tags": [
-        "分點",
-        "大股東",
-        "三大法人",
-        "燈號"
       ]
     },
     {
@@ -482,6 +482,19 @@
           "value": "1.9%",
           "color": "neutral"
         }
+      ]
+    },
+    {
+      "id": "shareholder-divergence",
+      "category": "chips",
+      "title": "大股東 vs 股價背離掃描",
+      "subtitle": "2026-05-29 → 2026-06-05 週對週 · 2030 檔",
+      "date": "2026-06-05",
+      "url": "reports/shareholder-divergence.html",
+      "tags": [
+        "大股東",
+        "TDCC",
+        "背離"
       ]
     },
     {
@@ -1032,19 +1045,6 @@
           "value": "22.2%",
           "color": "neutral"
         }
-      ]
-    },
-    {
-      "id": "shareholder-divergence",
-      "category": "chips",
-      "title": "大股東 vs 股價背離掃描",
-      "subtitle": "2026-05-22 → 2026-05-29 週對週 · 2008 檔",
-      "date": "2026-05-29",
-      "url": "reports/shareholder-divergence.html",
-      "tags": [
-        "大股東",
-        "TDCC",
-        "背離"
       ]
     },
     {
