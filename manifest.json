@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-06-10T19:47:01+08:00",
+  "updated_at": "2026-06-10T22:08:07+08:00",
   "today": "2026-06-10",
   "volume_number": 1,
   "market_summary": {
@@ -162,10 +162,113 @@
       ]
     },
     {
+      "id": "2026-06-10-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-06-10",
+      "time": "20:00",
+      "title": "2026-06-10 族群週報",
+      "title_em": "鏡頭光學",
+      "summary": "涵蓋 2026-06-04 ~ 2026-06-10。週領漲 鏡頭光學 +8.08%，週領跌 面板 -27.54%；資金焦點 晶圓代工。",
+      "tags": [
+        "鏡頭光學",
+        "面板",
+        "晶圓代工",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-06-10/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "鏡頭光學 +8.08%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "面板 -27.54%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "晶圓代工",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-06-10-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-06-10",
+      "time": "20:00",
+      "title": "2026-06-10 類股輪動偵測",
+      "title_em": "建材營造",
+      "summary": "最大轉強 建材營造 +3.01%（vs 5 日均），最大轉弱 電源供應 -9.46%。",
+      "tags": [
+        "建材營造",
+        "電源供應",
+        "輪動"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-06-10/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大轉強",
+          "value": "建材營造 +3.01%",
+          "color": "up"
+        },
+        {
+          "label": "最大轉弱",
+          "value": "電源供應 -9.46%",
+          "color": "down"
+        },
+        {
+          "label": "對比基準",
+          "value": "5 日均",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-06-10-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-06-10",
+      "time": "20:00",
+      "title": "2026-06-10 族群盤後快報",
+      "title_em": "建材營造",
+      "summary": "全 74 族群、成交 15567.2 億；領漲 建材營造 +3.43%，領跌 電源供應 -8.90%；漲多族群 17/74，全族群均漲 -2.15%。",
+      "tags": [
+        "建材營造",
+        "電源供應",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-06-10/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "建材營造 +3.43%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "電源供應 -8.90%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "1.3%",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "tri-source-lamp",
       "category": "chips",
       "title": "三源混合燈號",
-      "subtitle": "2026-06-10 · 三同買 7 / 三同賣 10",
+      "subtitle": "2026-06-10 · 三同買 9 / 三同賣 10",
       "date": "2026-06-10",
       "url": "reports/tri-source-lamp.html",
       "tags": [
