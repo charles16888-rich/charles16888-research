@@ -335,6 +335,51 @@ charles16888 今日最新 commit：
 4bad0a5 2026-06-11 19:44:13 +0800 daily: sectors + taiex + chips
 ```
 
+## 8.1 GitHub Credential Manager 帳號選擇視窗修復
+
+2026-06-11 21:xx 另外發現 Windows Git Credential Manager 會跳出 GitHub `Select an account` 視窗，帳號包含：
+
+```text
+ehulordking-alt
+charles16888-rich
+```
+
+原因：
+
+```text
+同一台 Windows 裡有多個 GitHub 帳號。
+若 remote URL 未指定 username，或憑證 scope 不明確，Git Credential Manager 會要求人工選帳號。
+背景排程若遇到這個視窗，可能卡住或失敗。
+```
+
+已執行修復：
+
+```powershell
+# Lynus 固定使用 ehulordking-alt，不在 remote URL 寫 token
+git -C E:\Lynus remote set-url origin https://ehulordking-alt@github.com/ehulordking-alt/Lynus-research.git
+git -C E:\Lynus config credential.useHttpPath false
+
+# charles16888 固定使用 charles16888-rich，並移除 remote URL 內嵌 PAT
+git -C E:\charles1688-research remote set-url origin https://charles16888-rich@github.com/charles16888-rich/charles16888-research.git
+git -C E:\charles1688-research config credential.useHttpPath false
+```
+
+驗證方式：
+
+```powershell
+git -C E:\Lynus -c credential.interactive=false push --dry-run origin main
+git -C E:\charles1688-research -c credential.interactive=false push --dry-run origin main
+```
+
+驗證結果：
+
+```text
+Lynus: Everything up-to-date
+charles16888: Everything up-to-date
+```
+
+這表示兩個 repo 在非互動模式下都能完成 push 權限檢查；排程比較不會再被 GitHub 帳號選擇視窗卡住。
+
 ## 9. 明天是否會成功
 
 這次的 `fetch first` / non-fast-forward 問題，已經針對性修復。  
@@ -423,4 +468,3 @@ git fetch origin main
 git rebase origin/main
 git push origin main
 ```
-
