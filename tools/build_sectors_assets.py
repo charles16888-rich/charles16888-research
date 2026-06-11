@@ -776,6 +776,35 @@ def _sector_card(row: dict, rank: int, turnover_pct: float, variant: str) -> str
     </article>"""
 
 
+def _quadrant_label(row: dict, turnover_pct: float) -> str:
+    chg = _num(row.get("cum_chg"))
+    if chg >= 0 and turnover_pct >= 50:
+        return "價量齊揚"
+    if chg >= 0:
+        return "漲強量小"
+    if turnover_pct >= 50:
+        return "量大價跌"
+    return "弱勢冷門"
+
+
+def _member_preview(row: dict, limit=3) -> str:
+    members = row.get("members") or []
+    if not members:
+        return "成分股：&#8212;"
+    shown = "、".join(_h(m) for m in members[:limit])
+    more = f"、+{len(members) - limit}" if len(members) > limit else ""
+    return f"成分股：{shown}{more}"
+
+
+def _scatter_focus_list(rows: list[dict], turnover_pct: dict[int, float]) -> str:
+    items = []
+    for idx, row in enumerate(rows, 1):
+        items.append(
+            f"""<li><b>{idx}</b><div><strong>{_h(row.get('name'))}</strong><em class="{_tone_class(row.get('cum_chg'))}">{_fmt_pct(row.get('cum_chg'))}&#xff5c;{_fmt_money(row.get('avg_turnover'))}</em><span>{_quadrant_label(row, turnover_pct[id(row)])}</span><small>{_member_preview(row)}</small></div></li>"""
+        )
+    return "".join(items)
+
+
 def _render_enhanced_weekly_md(md_text: str) -> str:
     match = _WEEKLY_DATA_RE.search(md_text)
     if not match:
@@ -833,16 +862,27 @@ def _render_enhanced_weekly_md(md_text: str) -> str:
         diverging_rows.append(f"""<div class="sector-rank-row"><div class="sector-rank-row__left"><span>{_h(l.get("name"))}</span><i style="width:{abs(_num(l.get("cum_chg"))) / max_abs * 100:.1f}%"></i><em class="num-down">{_fmt_pct(l.get("cum_chg"))}&#xff5c;{_fmt_money(l.get("avg_turnover"))}</em></div><div class="sector-rank-row__right"><span>{_h(g.get("name"))}</span><i style="width:{abs(_num(g.get("cum_chg"))) / max_abs * 100:.1f}%"></i><em class="num-up">{_fmt_pct(g.get("cum_chg"))}&#xff5c;{_fmt_money(g.get("avg_turnover"))}</em></div></div>""")
     max_members = max((int(r.get("n_stocks") or len(r.get("members") or []) or 1) for r in sectors), default=1)
     scatter_abs = max(max(abs(_num(r.get("cum_chg"))) for r in sectors), 5.0)
-    label_names = {r["name"] for r in gainers[:2] + losers[:2] + sorted(sectors, key=lambda r: _num(r.get("avg_turnover")), reverse=True)[:5]}
+    money_top = sorted(sectors, key=lambda r: _num(r.get("avg_turnover")), reverse=True)[:5]
+    scatter_focus, seen_focus = [], set()
+    for row in [strongest, weakest, money] + money_top + gainers[:3] + losers[:3]:
+        name = row.get("name")
+        if name and name not in seen_focus:
+            seen_focus.add(name)
+            scatter_focus.append(row)
+        if len(scatter_focus) >= 9:
+            break
+    focus_index = {r.get("name"): i for i, r in enumerate(scatter_focus, 1)}
     points = []
     for r in sectors:
         x = (_num(r.get("cum_chg")) + scatter_abs) / (2 * scatter_abs) * 100
         y = turnover_pct[id(r)]
         n = int(r.get("n_stocks") or len(r.get("members") or []) or 1)
         size = 10 + (n / max_members) ** 0.5 * 22
-        label = f'<span>{_h(r.get("name"))}</span>' if r.get("name") in label_names else ""
+        label_no = focus_index.get(r.get("name"))
+        label = f'<span class="sector-scatter__badge">{label_no}</span>' if label_no else ""
+        focus_class = " sector-scatter__point--focus" if label_no else ""
         tone = "up" if _num(r.get("cum_chg")) > 0 else ("down" if _num(r.get("cum_chg")) < 0 else "flat")
-        points.append(f'<b class="sector-scatter__point sector-scatter__point--{tone}" style="left:{x:.2f}%; bottom:{y:.2f}%; width:{size:.1f}px; height:{size:.1f}px" title="{_h(r.get("name"))} {_fmt_pct(r.get("cum_chg"))}&#xff5c;{_fmt_money(r.get("avg_turnover"))}">{label}</b>')
+        points.append(f'<b class="sector-scatter__point sector-scatter__point--{tone}{focus_class}" style="left:{x:.2f}%; bottom:{y:.2f}%; width:{size:.1f}px; height:{size:.1f}px" title="{_h(r.get("name"))} {_fmt_pct(r.get("cum_chg"))}&#xff5c;{_fmt_money(r.get("avg_turnover"))}">{label}</b>')
     high_turnover = [r for r in sectors if turnover_pct[id(r)] >= 75]
     high_turnover_up = sorted((r for r in high_turnover if _num(r.get("cum_chg")) > 0), key=lambda r: _num(r.get("avg_turnover")), reverse=True)
     high_turnover_down = sorted((r for r in high_turnover if _num(r.get("cum_chg")) < 0), key=lambda r: _num(r.get("avg_turnover")), reverse=True)
@@ -861,15 +901,24 @@ def _render_enhanced_weekly_md(md_text: str) -> str:
         f"最大方塊是 <strong>{_h(money.get('name'))}</strong>，代表成交額最大；"
         f"前 18 大成交族群中有 {len(heat_down)} 個下跌，若大方塊多為綠色，代表資金集中區偏弱。"
     )
-    money_top = sorted(sectors, key=lambda r: _num(r.get("avg_turnover")), reverse=True)[:5]
+    takeaway_items = [
+        ("市場廣度", f"74 個族群中，上漲 {up_count} 個、下跌 {down_count} 個，5 日漲跌幅中位數為 {_fmt_pct(median)}，盤面不是全面轉強。"),
+        ("漲跌分布", f"{dist_note}"),
+        ("價量位置", f"{scatter_note}"),
+        ("資金結構", f"{heat_note}"),
+        ("下週觀察", f"先看 {_h(money.get('name'))}、{_h(weakest.get('name'))} 等高成交下跌族群能不能止穩；若右上象限沒有擴散，短線仍偏資金分歧。"),
+    ]
+    takeaway_html = "".join(f"<li><strong>{title}</strong><span>{body}</span></li>" for title, body in takeaway_items)
+    scatter_focus_html = _scatter_focus_list(scatter_focus, turnover_pct)
     card_groups = [("&#x6f32;&#x5e45;&#x524d; 5", gainers, "up"), ("&#x8dcc;&#x5e45;&#x524d; 5", losers, "down"), ("&#x8cc7;&#x91d1;&#x7126;&#x9ede;&#x524d; 5", money_top, "money")]
     cards_html = "".join(f'<section class="sector-card-group"><h3>{title}</h3><div class="sector-card-grid">' + "".join(_sector_card(r, i, turnover_pct[id(r)], variant) for i, r in enumerate(rows, 1)) + '</div></section>' for title, rows, variant in card_groups)
     h1 = re.search(r"^#\s+(.+)$", md_text, re.MULTILINE)
     title = h1.group(0) if h1 else f"# &#x65cf;&#x7fa4;&#x9031;&#x5831; {data.get('end_date', '')}"
     html_block = f"""
 <section class="sector-weekly"><section class="sector-thermo"><div class="sector-section-head"><span>&#x4e00;&#x3001;&#x672c;&#x9031;&#x5e02;&#x5834;&#x7e3d;&#x89bd;</span><h2>&#x672c;&#x9031;&#x65cf;&#x7fa4;&#x6eab;&#x5ea6;&#x8a08;</h2><p>{conclusion}</p></div><div class="sector-thermo__grid"><div><span>&#x6db5;&#x84cb;&#x65cf;&#x7fa4;</span><strong>{total}</strong></div><div><span>&#x4e0a;&#x6f32;&#x65cf;&#x7fa4;</span><strong class="num-up">{up_count} / {total}</strong></div><div><span>&#x4e0b;&#x8dcc;&#x65cf;&#x7fa4;</span><strong class="num-down">{down_count} / {total}</strong></div><div><span>5 &#x65e5;&#x6f32;&#x8dcc;&#x5e45;&#x4e2d;&#x4f4d;&#x6578;</span><strong class="{_tone_class(median)}">{_fmt_pct(median)}</strong></div><div><span>&#x6210;&#x4ea4;&#x984d;&#x96c6;&#x4e2d;&#x5ea6;</span><strong>{concentration:.1f}%</strong></div><div><span>&#x6700;&#x5f37;&#x65cf;&#x7fa4;</span><strong class="num-up">{_h(strongest.get('name'))} {_fmt_pct(strongest.get('cum_chg'))}</strong></div><div><span>&#x6700;&#x5f31;&#x65cf;&#x7fa4;</span><strong class="num-down">{_h(weakest.get('name'))} {_fmt_pct(weakest.get('cum_chg'))}</strong></div><div><span>&#x8cc7;&#x91d1;&#x7126;&#x9ede;</span><strong>{_h(money.get('name'))} {_fmt_money(money.get('avg_turnover'))}</strong></div></div></section>
+<section class="sector-takeaway"><div class="sector-section-head"><span>&#x5716;&#x8868;&#x7e3d;&#x7d50;</span><h2>&#x672c;&#x9031;&#x91cd;&#x9ede;&#x7d50;&#x8ad6;</h2></div><ol>{takeaway_html}</ol></section>
 <section class="sector-panel"><div class="sector-section-head"><span>&#x4e8c;&#x3001;&#x65cf;&#x7fa4;&#x6f32;&#x8dcc;&#x5206;&#x5e03;</span><h2>74 &#x65cf;&#x7fa4;&#x5206;&#x5e03;&#x8207;&#x5f37;&#x5f31;&#x6392;&#x884c;</h2></div><div class="sector-two-col"><div class="sector-dist">{dist_html}</div><div class="sector-rank-chart"><div class="sector-rank-chart__labels"><span>&#x8dcc;&#x5e45;&#x65cf;&#x7fa4;</span><span>&#x6f32;&#x5e45;&#x65cf;&#x7fa4;</span></div>{''.join(diverging_rows)}</div></div></section>
-<section class="sector-panel"><div class="sector-section-head"><span>&#x4e09;&#x3001;&#x50f9;&#x91cf;&#x56db;&#x8c61;&#x9650;</span><h2>&#x50f9;&#x91cf;&#x56db;&#x8c61;&#x9650;&#x5716;</h2></div><div class="sector-scatter" aria-label="&#x50f9;&#x91cf;&#x56db;&#x8c61;&#x9650;&#x5716;"><div class="sector-scatter__axis sector-scatter__axis--x"></div><div class="sector-scatter__axis sector-scatter__axis--y"></div><span class="sector-scatter__q sector-scatter__q1">&#x50f9;&#x91cf;&#x9f4a;&#x63da;<br>&#x4e3b;&#x7dda;&#x5019;&#x9078;</span><span class="sector-scatter__q sector-scatter__q2">&#x91cf;&#x5927;&#x50f9;&#x8dcc;<br>&#x64a4;&#x9000;&#x6216;&#x5206;&#x6b67;</span><span class="sector-scatter__q sector-scatter__q3">&#x6f32;&#x5f37;&#x91cf;&#x5c0f;<br>&#x77ed;&#x7dda;&#x8f2a;&#x52d5;</span><span class="sector-scatter__q sector-scatter__q4">&#x5f31;&#x52e2;&#x51b7;&#x9580;<br>&#x66ab;&#x975e;&#x7126;&#x9ede;</span>{''.join(points)}</div></section>
+<section class="sector-panel"><div class="sector-section-head"><span>&#x4e09;&#x3001;&#x50f9;&#x91cf;&#x56db;&#x8c61;&#x9650;</span><h2>&#x50f9;&#x91cf;&#x56db;&#x8c61;&#x9650;&#x5716;</h2></div><div class="sector-axis-guide"><div><strong>X &#x8ef8;</strong><span>5 &#x65e5;&#x7d2f;&#x8a08;&#x6f32;&#x8dcc;&#x5e45;&#xff1a;&#x5de6;&#x908a;&#x8d8a;&#x5f31;&#x3001;&#x53f3;&#x908a;&#x8d8a;&#x5f37;&#xff0c;&#x4e2d;&#x7dda;&#x70ba; 0%</span></div><div><strong>Y &#x8ef8;</strong><span>&#x65e5;&#x5747;&#x6210;&#x4ea4;&#x984d;&#x6392;&#x540d;&#x767e;&#x5206;&#x4f4d;&#xff1a;&#x8d8a;&#x4e0a;&#x65b9;&#x4ee3;&#x8868;&#x6210;&#x4ea4;&#x984d;&#x8d8a;&#x5927;</span></div><div><strong>&#x6ce1;&#x6ce1;</strong><span>&#x5713;&#x8d8a;&#x5927;&#x4ee3;&#x8868;&#x6210;&#x5206;&#x80a1;&#x6578;&#x8d8a;&#x591a;&#xff1b;&#x7de8;&#x865f;&#x5c0d;&#x61c9;&#x53f3;&#x5074;&#x91cd;&#x9ede;&#x6e05;&#x55ae;</span></div></div><div class="sector-scatter-layout"><div class="sector-scatter" aria-label="&#x50f9;&#x91cf;&#x56db;&#x8c61;&#x9650;&#x5716;"><div class="sector-scatter__axis sector-scatter__axis--x"></div><div class="sector-scatter__axis sector-scatter__axis--y"></div><span class="sector-scatter__q sector-scatter__q1">&#x50f9;&#x91cf;&#x9f4a;&#x63da;<br>&#x4e3b;&#x7dda;&#x5019;&#x9078;</span><span class="sector-scatter__q sector-scatter__q2">&#x91cf;&#x5927;&#x50f9;&#x8dcc;<br>&#x64a4;&#x9000;&#x6216;&#x5206;&#x6b67;</span><span class="sector-scatter__q sector-scatter__q3">&#x6f32;&#x5f37;&#x91cf;&#x5c0f;<br>&#x77ed;&#x7dda;&#x8f2a;&#x52d5;</span><span class="sector-scatter__q sector-scatter__q4">&#x5f31;&#x52e2;&#x51b7;&#x9580;<br>&#x66ab;&#x975e;&#x7126;&#x9ede;</span>{''.join(points)}</div><aside class="sector-scatter-focus"><h3>&#x5716;&#x4e0a;&#x7de8;&#x865f;&#x91cd;&#x9ede;</h3><ol>{scatter_focus_html}</ol></aside></div></section>
 <section class="sector-panel"><div class="sector-section-head"><span>&#x56db;&#x3001;&#x8cc7;&#x91d1;&#x71b1;&#x529b;&#x5716;</span><h2>&#x65e5;&#x5747;&#x6210;&#x4ea4;&#x984d; Treemap</h2></div><div class="sector-treemap">{''.join(tiles)}</div></section>
 <section class="sector-panel"><div class="sector-section-head"><span>&#x4e94;&#x3001;&#x5f37;&#x5f31;&#x65cf;&#x7fa4;&#x5361;&#x7247;</span><h2>&#x5f37;&#x5f31;&#x8207;&#x8cc7;&#x91d1;&#x7126;&#x9ede;</h2></div>{cards_html}</section>
 <section class="sector-panel sector-observation"><div class="sector-section-head"><span>&#x516d;&#x3001;&#x7814;&#x7a76;&#x89c0;&#x5bdf;</span><h2>&#x672c;&#x9031;&#x89c0;&#x5bdf;</h2></div><ul><li>&#x672c;&#x9031;&#x4e3b;&#x7dda;&#xff1a;{_h(strongest.get('name'))} &#x662f;&#x6700;&#x5f37;&#x65cf;&#x7fa4;&#xff0c;5 &#x65e5;&#x7d2f;&#x8a08; {_fmt_pct(strongest.get('cum_chg'))}&#x3002;</li><li>&#x8cc7;&#x91d1;&#x64a4;&#x9000;&#x5340;&#xff1a;{_h(weakest.get('name'))} &#x8207;&#x9ad8;&#x6210;&#x4ea4;&#x4e0b;&#x8dcc;&#x65cf;&#x7fa4;&#x9700;&#x512a;&#x5148;&#x89c0;&#x5bdf;&#x662f;&#x5426;&#x6b62;&#x7a69;&#x3002;</li><li>&#x8cc7;&#x91d1;&#x7126;&#x9ede;&#xff1a;{_h(money.get('name'))} &#x65e5;&#x5747;&#x6210;&#x4ea4;&#x984d; {_fmt_money(money.get('avg_turnover'))}&#xff0c;&#x524d; 5 &#x5927;&#x65cf;&#x7fa4;&#x4f54; {concentration:.1f}%&#x3002;</li><li>&#x4e0b;&#x9031;&#x8ffd;&#x8e64;&#xff1a;&#x7559;&#x610f;&#x53f3;&#x4e0a;&#x8c61;&#x9650;&#x662f;&#x5426;&#x64f4;&#x6563;&#xff0c;&#x6216;&#x5de6;&#x4e0a;&#x8c61;&#x9650;&#x7684;&#x5927;&#x578b;&#x96fb;&#x5b50;&#x65cf;&#x7fa4;&#x662f;&#x5426;&#x5ef6;&#x7e8c;&#x4fee;&#x6b63;&#x3002;</li></ul></section></section>
