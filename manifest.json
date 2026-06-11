@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-06-11T11:51:03+08:00",
-  "today": "2026-06-10",
+  "updated_at": "2026-06-11T19:42:51+08:00",
+  "today": "2026-06-11",
   "volume_number": 1,
   "market_summary": {
     "date": "2026-05-22",
@@ -25,11 +25,11 @@
       "id": "chip-concentration",
       "category": "chips",
       "type": "ranking",
-      "date": "2026-06-10",
+      "date": "2026-06-11",
       "time": "21:00",
       "title": "籌碼集中度 · 分點 Top 50 排行",
       "title_em": "集中度",
-      "summary": "5 個時段 · 每邊 Top 50 · 過濾成交量 < 1,000 張。 今日買超集中 #1：8454 富邦媒 +60.4%。 賣超集中 #1：6770 力積電 -53.1%。",
+      "summary": "5 個時段 · 每邊 Top 50 · 過濾成交量 < 1,000 張。 今日買超集中 #1：2425 承啟 +60.2%。 賣超集中 #1：1218 泰山 -43.2%。",
       "tags": [
         "籌碼",
         "分點",
@@ -46,12 +46,12 @@
         },
         {
           "label": "Top 買超",
-          "value": "8454 +60%",
+          "value": "2425 +60%",
           "color": "up"
         },
         {
           "label": "Top 賣超",
-          "value": "6770 -53%",
+          "value": "1218 -43%",
           "color": "down"
         }
       ]
@@ -60,11 +60,11 @@
       "id": "options-atm",
       "category": "taiex",
       "type": "pulse",
-      "date": "2026-06-10",
+      "date": "2026-06-11",
       "time": "20:00",
       "title": "選擇權價平和 · 隱含波動代理",
       "title_em": "價平和",
-      "summary": "近 736 個交易日（2023-05-30 → 2026-06-10）TXO ATM Call+Put 加總。最新 (2026-06-10)：近期 1530 點（到期 202606F2）、次遠期 2230 點。",
+      "summary": "近 737 個交易日（2023-05-30 → 2026-06-11）TXO ATM Call+Put 加總。最新 (2026-06-11)：近期 871 點（到期 202606F2）、次遠期 1840 點。",
       "tags": [
         "選擇權",
         "TXO",
@@ -76,17 +76,17 @@
       "stats": [
         {
           "label": "近期 C+P",
-          "value": "1530",
+          "value": "871",
           "color": "neutral"
         },
         {
           "label": "次遠期 C+P",
-          "value": "2230",
+          "value": "1840",
           "color": "neutral"
         },
         {
           "label": "區間",
-          "value": "736 日",
+          "value": "737 日",
           "color": "neutral"
         }
       ]
@@ -95,11 +95,11 @@
       "id": "market-pulse",
       "category": "taiex",
       "type": "pulse",
-      "date": "2026-06-10",
+      "date": "2026-06-11",
       "time": "20:00",
       "title": "市場脈動 · 漲跌停 × 全族群均幅",
       "title_em": "脈動",
-      "summary": "近 37 個交易日漲跌停家數、總成交額、族群平均漲幅、漲停集中度。最新 (2026-06-10)：漲停 35、跌停 46、全族群均幅 -2.15%。",
+      "summary": "近 38 個交易日漲跌停家數、總成交額、族群平均漲幅、漲停集中度。最新 (2026-06-11)：漲停 45、跌停 13、全族群均幅 +0.21%。",
       "tags": [
         "市場脈動",
         "漲跌停",
@@ -110,17 +110,17 @@
       "stats": [
         {
           "label": "漲停",
-          "value": "35",
+          "value": "45",
           "color": "up"
         },
         {
           "label": "跌停",
-          "value": "46",
+          "value": "13",
           "color": "down"
         },
         {
           "label": "成交額",
-          "value": "15,567 億",
+          "value": "14,395 億",
           "color": "neutral"
         }
       ]
@@ -129,11 +129,11 @@
       "id": "futures-basis",
       "category": "taiex",
       "type": "pulse",
-      "date": "2026-06-10",
+      "date": "2026-06-11",
       "time": "20:00",
       "title": "期貨正逆價差 · 12 年期現對照",
       "title_em": "12 年",
-      "summary": "近 2997 個交易日（2014-02-14 → 2026-06-10）台指期 TXF1 vs 加權指數價差。最新 (2026-06-10)：基差 +196.5 點，加權收 43,226。",
+      "summary": "近 2998 個交易日（2014-02-14 → 2026-06-11）台指期 TXF1 vs 加權指數價差。最新 (2026-06-11)：基差 +91.5 點，加權收 43,149。",
       "tags": [
         "期貨",
         "基差",
@@ -146,17 +146,120 @@
       "stats": [
         {
           "label": "最新基差",
-          "value": "+196.5",
+          "value": "+91.5",
           "color": "up"
         },
         {
           "label": "加權",
-          "value": "43,226",
+          "value": "43,149",
           "color": "neutral"
         },
         {
           "label": "區間",
-          "value": "2997 日",
+          "value": "2998 日",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-06-11-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-06-11",
+      "time": "20:00",
+      "title": "2026-06-11 族群週報",
+      "title_em": "自行車",
+      "summary": "涵蓋 2026-06-05 ~ 2026-06-11。週領漲 自行車 +7.34%，週領跌 面板 -22.54%；資金焦點 晶圓代工。",
+      "tags": [
+        "自行車",
+        "面板",
+        "晶圓代工",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-06-11/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "自行車 +7.34%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "面板 -22.54%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "晶圓代工",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-06-11-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-06-11",
+      "time": "20:00",
+      "title": "2026-06-11 每日族群輪動雷達",
+      "title_em": "面板",
+      "summary": "今日相對升溫以 面板 最明顯，相對降溫以 ABF載板 壓力最大；今日轉強力道大於轉弱力道。",
+      "tags": [
+        "面板",
+        "ABF載板",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-06-11/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "面板 +8.02 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "ABF載板 -2.91 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-06-11-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-06-11",
+      "time": "20:00",
+      "title": "2026-06-11 族群盤後快報",
+      "title_em": "餐飲連鎖",
+      "summary": "全 74 族群、成交 14395.2 億；領漲 餐飲連鎖 +6.60%，領跌 ABF載板 -4.78%；漲多族群 35/74，全族群均漲 +0.21%。",
+      "tags": [
+        "餐飲連鎖",
+        "ABF載板",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-06-11/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "餐飲連鎖 +6.60%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "ABF載板 -4.78%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "4.2%",
           "color": "neutral"
         }
       ]
@@ -268,8 +371,8 @@
       "id": "tri-source-lamp",
       "category": "chips",
       "title": "三源混合燈號",
-      "subtitle": "2026-06-10 · 三同買 9 / 三同賣 10",
-      "date": "2026-06-10",
+      "subtitle": "2026-06-11 · 三同買 9 / 三同賣 7",
+      "date": "2026-06-11",
       "url": "reports/tri-source-lamp.html",
       "tags": [
         "分點",
