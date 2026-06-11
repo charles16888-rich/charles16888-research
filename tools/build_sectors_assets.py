@@ -731,6 +731,16 @@ def _tag_html(row: dict, turnover_pct: float) -> str:
     return "".join(f'<span>{t}</span>' for t in tags[:4])
 
 
+def _names_join(rows: list[dict], limit=3) -> str:
+    names = [_h(r.get("name")) for r in rows if r.get("name")]
+    if not names:
+        return "&#8212;"
+    shown = "、".join(names[:limit])
+    if len(names) > limit:
+        shown += "等族群"
+    return shown
+
+
 def _treemap(items: list[dict], x=0.0, y=0.0, w=100.0, h=100.0) -> list[tuple[dict, float, float, float, float]]:
     items = [i for i in items if _num(i.get("avg_turnover")) > 0]
     if not items:
@@ -807,6 +817,13 @@ def _render_enhanced_weekly_md(md_text: str) -> str:
         max_bin = max(max_bin, count)
         dist_rows.append((label, count))
     dist_html = "".join(f'<div class="sector-dist__row"><span>{_h(label)}</span><div><i style="width:{count / max_bin * 100:.1f}%"></i></div><em>{count}</em></div>' for label, count in dist_rows)
+    dominant_label, dominant_count = max(dist_rows, key=lambda item: item[1])
+    positive_count = sum(count for label, count in dist_rows if not label.startswith("-") and not label.startswith("<"))
+    negative_count = total - positive_count
+    dist_note = (
+        f"本週最多族群落在 <strong>{_h(dominant_label)}</strong> 區間，共 <strong>{dominant_count}</strong> 個；"
+        f"下跌區間 {negative_count} 個、上漲區間 {positive_count} 個，用來判斷是全面性行情，還是少數族群撐住盤面。"
+    )
     gainers = sectors[:5]
     losers = sorted(sectors, key=lambda r: _num(r.get("cum_chg")))[:5]
     max_abs = max(abs(_num(r.get("cum_chg"))) for r in gainers + losers) or 1.0
@@ -826,10 +843,24 @@ def _render_enhanced_weekly_md(md_text: str) -> str:
         label = f'<span>{_h(r.get("name"))}</span>' if r.get("name") in label_names else ""
         tone = "up" if _num(r.get("cum_chg")) > 0 else ("down" if _num(r.get("cum_chg")) < 0 else "flat")
         points.append(f'<b class="sector-scatter__point sector-scatter__point--{tone}" style="left:{x:.2f}%; bottom:{y:.2f}%; width:{size:.1f}px; height:{size:.1f}px" title="{_h(r.get("name"))} {_fmt_pct(r.get("cum_chg"))}&#xff5c;{_fmt_money(r.get("avg_turnover"))}">{label}</b>')
+    high_turnover = [r for r in sectors if turnover_pct[id(r)] >= 75]
+    high_turnover_up = sorted((r for r in high_turnover if _num(r.get("cum_chg")) > 0), key=lambda r: _num(r.get("avg_turnover")), reverse=True)
+    high_turnover_down = sorted((r for r in high_turnover if _num(r.get("cum_chg")) < 0), key=lambda r: _num(r.get("avg_turnover")), reverse=True)
+    if high_turnover_down and len(high_turnover_down) >= len(high_turnover_up):
+        scatter_note = f"高成交額區偏向量大價跌，先看「{_names_join(high_turnover_down)}」是否止穩；這代表資金密集處正在修正或分歧。"
+    elif high_turnover_up:
+        scatter_note = f"高成交額區有「{_names_join(high_turnover_up)}」撐在右上，這些是主線延續的優先觀察名單。"
+    else:
+        scatter_note = "高成交額區沒有明顯上攻族群，盤面比較像資金輪動而非主線擴散。"
     heat_items = sorted(sectors, key=lambda r: _num(r.get("avg_turnover")), reverse=True)[:18]
     tiles = []
     for r, x, y, w, h in _treemap(heat_items):
         tiles.append(f"""<div class="sector-treemap__tile" style="left:{x:.3f}%; top:{y:.3f}%; width:{w:.3f}%; height:{h:.3f}%; {_heat_style(r.get("cum_chg"))}"><strong>{_h(r.get("name"))}</strong><span>{_fmt_pct(r.get("cum_chg"))}</span><em>{_fmt_money(r.get("avg_turnover"))}</em></div>""")
+    heat_down = [r for r in heat_items if _num(r.get("cum_chg")) < 0]
+    heat_note = (
+        f"最大方塊是 <strong>{_h(money.get('name'))}</strong>，代表成交額最大；"
+        f"前 18 大成交族群中有 {len(heat_down)} 個下跌，若大方塊多為綠色，代表資金集中區偏弱。"
+    )
     money_top = sorted(sectors, key=lambda r: _num(r.get("avg_turnover")), reverse=True)[:5]
     card_groups = [("&#x6f32;&#x5e45;&#x524d; 5", gainers, "up"), ("&#x8dcc;&#x5e45;&#x524d; 5", losers, "down"), ("&#x8cc7;&#x91d1;&#x7126;&#x9ede;&#x524d; 5", money_top, "money")]
     cards_html = "".join(f'<section class="sector-card-group"><h3>{title}</h3><div class="sector-card-grid">' + "".join(_sector_card(r, i, turnover_pct[id(r)], variant) for i, r in enumerate(rows, 1)) + '</div></section>' for title, rows, variant in card_groups)
@@ -843,6 +874,18 @@ def _render_enhanced_weekly_md(md_text: str) -> str:
 <section class="sector-panel"><div class="sector-section-head"><span>&#x4e94;&#x3001;&#x5f37;&#x5f31;&#x65cf;&#x7fa4;&#x5361;&#x7247;</span><h2>&#x5f37;&#x5f31;&#x8207;&#x8cc7;&#x91d1;&#x7126;&#x9ede;</h2></div>{cards_html}</section>
 <section class="sector-panel sector-observation"><div class="sector-section-head"><span>&#x516d;&#x3001;&#x7814;&#x7a76;&#x89c0;&#x5bdf;</span><h2>&#x672c;&#x9031;&#x89c0;&#x5bdf;</h2></div><ul><li>&#x672c;&#x9031;&#x4e3b;&#x7dda;&#xff1a;{_h(strongest.get('name'))} &#x662f;&#x6700;&#x5f37;&#x65cf;&#x7fa4;&#xff0c;5 &#x65e5;&#x7d2f;&#x8a08; {_fmt_pct(strongest.get('cum_chg'))}&#x3002;</li><li>&#x8cc7;&#x91d1;&#x64a4;&#x9000;&#x5340;&#xff1a;{_h(weakest.get('name'))} &#x8207;&#x9ad8;&#x6210;&#x4ea4;&#x4e0b;&#x8dcc;&#x65cf;&#x7fa4;&#x9700;&#x512a;&#x5148;&#x89c0;&#x5bdf;&#x662f;&#x5426;&#x6b62;&#x7a69;&#x3002;</li><li>&#x8cc7;&#x91d1;&#x7126;&#x9ede;&#xff1a;{_h(money.get('name'))} &#x65e5;&#x5747;&#x6210;&#x4ea4;&#x984d; {_fmt_money(money.get('avg_turnover'))}&#xff0c;&#x524d; 5 &#x5927;&#x65cf;&#x7fa4;&#x4f54; {concentration:.1f}%&#x3002;</li><li>&#x4e0b;&#x9031;&#x8ffd;&#x8e64;&#xff1a;&#x7559;&#x610f;&#x53f3;&#x4e0a;&#x8c61;&#x9650;&#x662f;&#x5426;&#x64f4;&#x6563;&#xff0c;&#x6216;&#x5de6;&#x4e0a;&#x8c61;&#x9650;&#x7684;&#x5927;&#x578b;&#x96fb;&#x5b50;&#x65cf;&#x7fa4;&#x662f;&#x5426;&#x5ef6;&#x7e8c;&#x4fee;&#x6b63;&#x3002;</li></ul></section></section>
 """
+    thermo_guide = '<div class="sector-reader-note"><strong>怎麼看</strong><span>先看「上漲 / 下跌族群」和「中位數」，判斷市場是多數一起強還是一起弱；再看「成交額集中度」，判斷資金是否只壓在少數大族群。</span></div>'
+    dist_guide = f'<div class="sector-reader-note"><strong>這張圖回答</strong><span>{dist_note}</span></div><div class="sector-mini-legend"><span><i class="sector-legend__neutral"></i>長條越長，代表落在該漲跌幅區間的族群越多</span><span><i class="sector-legend__up"></i>右側排行看強勢</span><span><i class="sector-legend__down"></i>左側排行看弱勢</span></div>'
+    scatter_guide = f'<div class="sector-reader-note"><strong>讀圖順序</strong><span>X 軸越右代表 5 日漲幅越強；Y 軸越高代表成交額排名越前面；圓越大代表成分股越多。{scatter_note}</span></div><div class="sector-mini-legend"><span><i class="sector-legend__up"></i>紅點：上漲族群</span><span><i class="sector-legend__down"></i>綠點：下跌族群</span><span><i class="sector-legend__size"></i>圓越大：成分股越多</span></div>'
+    heat_guide = f'<div class="sector-reader-note"><strong>方塊怎麼看</strong><span>面積代表日均成交額，顏色代表 5 日漲跌幅；紅色越深代表漲幅越強，綠色越深代表跌幅越重。{heat_note}</span></div><div class="sector-mini-legend"><span><i class="sector-legend__up"></i>紅：資金在上漲族群</span><span><i class="sector-legend__down"></i>綠：資金在下跌族群</span><span><i class="sector-legend__neutral"></i>大方塊：成交額大</span></div>'
+    cards_guide = '<div class="sector-reader-note"><strong>卡片怎麼用</strong><span>先看標籤判斷「價強、價弱、量大價跌」；再展開成分股，確認族群是少數權值股帶動，還是整個族群一起動。</span></div>'
+    scatter_axis_labels = '<span class="sector-scatter__axis-label sector-scatter__axis-label--left">5 日跌幅較大</span><span class="sector-scatter__axis-label sector-scatter__axis-label--right">5 日漲幅較強</span><span class="sector-scatter__axis-label sector-scatter__axis-label--top">成交額較高</span><span class="sector-scatter__axis-label sector-scatter__axis-label--bottom">成交額較低</span>'
+    html_block = html_block.replace('</p></div><div class="sector-thermo__grid">', f'</p></div>{thermo_guide}<div class="sector-thermo__grid">', 1)
+    html_block = html_block.replace('</h2></div><div class="sector-two-col">', f'</h2></div>{dist_guide}<div class="sector-two-col">', 1)
+    html_block = html_block.replace('</h2></div><div class="sector-scatter"', f'</h2></div>{scatter_guide}<div class="sector-scatter"', 1)
+    html_block = html_block.replace('<div class="sector-scatter" aria-label="&#x50f9;&#x91cf;&#x56db;&#x8c61;&#x9650;&#x5716;">', '<div class="sector-scatter" aria-label="&#x50f9;&#x91cf;&#x56db;&#x8c61;&#x9650;&#x5716;">' + scatter_axis_labels, 1)
+    html_block = html_block.replace('</h2></div><div class="sector-treemap">', f'</h2></div>{heat_guide}<div class="sector-treemap">', 1)
+    html_block = html_block.replace('</h2></div><section class="sector-card-group">', f'</h2></div>{cards_guide}<section class="sector-card-group">', 1)
     return title + "\n\n" + html_block
 
 
