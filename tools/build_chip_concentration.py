@@ -68,6 +68,10 @@ WINDOWS = [
 ]
 
 
+def _truthy_env(name: str) -> bool:
+    return os.environ.get(name, "").strip().lower() in {"1", "true", "yes", "y", "on"}
+
+
 def get_trading_dates(conn: sqlite3.Connection) -> list[str]:
     rows = conn.execute(
         "SELECT DISTINCT date FROM broker_trading ORDER BY date DESC"
@@ -219,6 +223,80 @@ def compute_ranking_for_window(
     return records
 
 
+def load_recent_broker_frame(conn: sqlite3.Connection, start_date: str, end_date: str) -> pd.DataFrame:
+    """Load the recent broker rows once, then slice windows in memory."""
+    print(f"[INFO] loading broker rows once: {start_date} -> {end_date}")
+    return pd.read_sql(
+        """
+        SELECT date, code, broker_id, broker_name, net_vol, buy_vol, sell_vol
+        FROM broker_trading
+        WHERE date BETWEEN ? AND ?
+        """,
+        conn,
+        params=[start_date, end_date],
+    )
+
+
+def compute_ranking_from_frame(
+    raw_df: pd.DataFrame,
+    window_dates: list[str],
+    label: str,
+) -> list[dict]:
+    """Compute concentration from a preloaded recent broker frame."""
+    if not window_dates:
+        return []
+    start_date = window_dates[-1]
+    end_date = window_dates[0]
+    print(f"  [{label}] {start_date} → {end_date}")
+
+    win_df = raw_df[raw_df["date"].isin(window_dates)]
+    if win_df.empty:
+        return []
+
+    df = (
+        win_df
+        .groupby(["code", "broker_id"], as_index=False)
+        .agg({
+            "broker_name": "last",
+            "net_vol": "sum",
+            "buy_vol": "sum",
+            "sell_vol": "sum",
+        })
+    )
+
+    vol_buy = df.groupby("code")["buy_vol"].sum()
+    vol_sell = df.groupby("code")["sell_vol"].sum()
+
+    records = []
+    for code, group in df.groupby("code"):
+        sb, ss = int(vol_buy.loc[code]), int(vol_sell.loc[code])
+        total_vol_shares = max(sb, ss)
+        if total_vol_shares < MIN_VOLUME_SHARES:
+            continue
+        if min(sb, ss) < 0.5 * max(sb, ss):
+            continue
+
+        sorted_net = group["net_vol"].sort_values(ascending=False)
+        top_buy_brokers = sorted_net.head(TOP_BROKERS_PER_SIDE)
+        top_sell_brokers = sorted_net.tail(TOP_BROKERS_PER_SIDE)
+        main_buy_shares = int(top_buy_brokers[top_buy_brokers > 0].sum())
+        main_sell_shares = int(-top_sell_brokers[top_sell_brokers < 0].sum())
+        net_shares = main_buy_shares - main_sell_shares
+        concentration_pct = net_shares / total_vol_shares * 100 if total_vol_shares else 0
+        if abs(concentration_pct) > 150:
+            continue
+
+        records.append({
+            "code": code,
+            "vol": total_vol_shares // SHARES_PER_LOT,
+            "main_buy": main_buy_shares // SHARES_PER_LOT,
+            "main_sell": main_sell_shares // SHARES_PER_LOT,
+            "net": net_shares // SHARES_PER_LOT,
+            "concentration_pct": round(concentration_pct, 2),
+        })
+    return records
+
+
 def split_rankings(records: list[dict]) -> tuple[list[dict], list[dict]]:
     """Split into Top N buy-concentration and Top N sell-concentration."""
     records_sorted = sorted(records, key=lambda r: r["concentration_pct"], reverse=True)
@@ -246,6 +324,38 @@ def _update_history_index(latest_date: str) -> None:
     )
 
 
+def load_cached_window(key: str) -> dict | None:
+    """Load a previously computed window so daily runs can skip heavy full scans."""
+    candidates = [DATA_OUT]
+    idx_path = LYNUS_ROOT / "assets" / "chip_history" / HISTORY_DIR_NAME / "_index.json"
+    if idx_path.exists():
+        try:
+            dates = json.loads(idx_path.read_text(encoding="utf-8")).get("dates", [])
+            candidates.extend(
+                LYNUS_ROOT / "assets" / "chip_history" / HISTORY_DIR_NAME / f"{d}.json"
+                for d in dates
+            )
+        except Exception as e:
+            print(f"[WARN] could not read history index for cached {key}: {e}")
+
+    seen = set()
+    for path in candidates:
+        if path in seen or not path.exists():
+            continue
+        seen.add(path)
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+            for window in data.get("windows", []):
+                if window.get("key") == key:
+                    cached = dict(window)
+                    cached["cached"] = True
+                    cached["cache_source"] = str(path.relative_to(LYNUS_ROOT))
+                    return cached
+        except Exception as e:
+            print(f"[WARN] could not load cached {key} from {path}: {e}")
+    return None
+
+
 def main() -> int:
     import argparse
     p = argparse.ArgumentParser()
@@ -253,6 +363,8 @@ def main() -> int:
                    help="使用此日為窗口終點（預設用 broker_trading 最新日期）")
     p.add_argument("--history-only", action="store_true",
                    help="只寫歷史 dated JSON、不動主檔/manifest（給 backfill 用）")
+    p.add_argument("--refresh-all", action="store_true",
+                   help="強制重算 ALL 全部資料視窗；預設每日最新 run 會沿用快取以降低負載")
     args = p.parse_args()
 
     if not CHIP_DB.exists():
@@ -304,19 +416,41 @@ def main() -> int:
 
     is_latest_run = (latest_date == dates[0])
 
-    # Build every window.
+    refresh_all = args.refresh_all or _truthy_env("CHIP_REFRESH_ALL")
+
+    # Build every window. Latest daily runs reuse the cached ALL window by
+    # default; it is a long historical scan and does not need to be recomputed
+    # on every publish.
     out = {"windows": [], "generated_at": datetime.now(TPE).isoformat()}
+    recent_window_sizes = [n_days for key, n_days, _ in WINDOWS if n_days is not None]
+    recent_dates = sliced_dates[:max(recent_window_sizes)] if recent_window_sizes else []
+    recent_df = None
+    if recent_dates:
+        recent_df = load_recent_broker_frame(conn, recent_dates[-1], recent_dates[0])
 
     for key, n_days, label in WINDOWS:
+        if key == "all" and is_latest_run and not refresh_all:
+            cached = load_cached_window(key)
+            if cached:
+                print(
+                    f"[CACHE] reuse ALL window from {cached.get('cache_source')} "
+                    f"({cached.get('start_date')} -> {cached.get('end_date')})"
+                )
+                out["windows"].append(cached)
+                continue
+            print("[CACHE MISS] ALL window cache not found; recomputing")
+
         if n_days is None:
             window_dates = sliced_dates
+            records = compute_ranking_for_window(conn, window_dates[-1], window_dates[0], label)
         else:
             window_dates = sliced_dates[:n_days]
         if not window_dates:
             continue
         end_d = window_dates[0]
         start_d = window_dates[-1]
-        records = compute_ranking_for_window(conn, start_d, end_d, label)
+        if n_days is not None:
+            records = compute_ranking_from_frame(recent_df, window_dates, label)
         buy_top, sell_top = split_rankings(records)
         out["windows"].append({
             "key": key,
