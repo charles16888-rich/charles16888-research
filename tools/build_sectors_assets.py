@@ -26,6 +26,7 @@ from __future__ import annotations
 import argparse
 import html
 import json
+import math
 import re
 import sys
 from collections import defaultdict
@@ -52,6 +53,446 @@ TYPE_LABEL = {
 # Strip emoji + enclosed circle numerals from md so the editorial template
 # renders clean prose. Same family the wrap_report script uses.
 _DECO = re.compile("[\U0001F300-\U0001FAFF☀-➿①-⓿]")
+
+
+# ── rotation report helpers ────────────────────────────────────────────────
+
+def _pct(value: float | None, digits: int = 2, unit: str = "%") -> str:
+    if value is None:
+        return "—"
+    sign = "+" if value >= 0 else ""
+    return f"{sign}{value:.{digits}f}{unit}"
+
+
+def _num(text: str | None) -> float | None:
+    if text is None:
+        return None
+    try:
+        return float(text.replace(",", "").replace("+", "").strip())
+    except ValueError:
+        return None
+
+
+def _esc(value: object) -> str:
+    return html.escape(str(value if value is not None else "—"))
+
+
+def _sector_name(value: str) -> str:
+    value = _DECO.sub("", value or "")
+    value = re.sub(r"^\s*[\d一二三四五六七八九十]+[\.、\)]?\s*", "", value)
+    return value.strip()
+
+
+def _section(md: str, title: str) -> str:
+    m = re.search(rf"^##\s*.*{re.escape(title)}.*?$([\s\S]*?)(?=^##\s|\Z)", md, re.MULTILINE)
+    return m.group(1) if m else ""
+
+
+def parse_rotation_entries(md: str) -> list[dict]:
+    """Parse rotation Top 5 up/down entries from the upstream markdown."""
+    entries: list[dict] = []
+    for side, title in (("up", "突然轉強前 5"), ("down", "突然轉弱前 5")):
+        sec = _section(md, title)
+        for m in re.finditer(
+            r"^###\s*(\d+)\.\s*(.+?)\s*差距\s*\*\*([+\-]?\d+(?:\.\d+)?)%\*\*\s*([\s\S]*?)(?=^###\s*\d+\.|^##\s|\Z)",
+            sec,
+            re.MULTILINE,
+        ):
+            rank = int(m.group(1))
+            name = _sector_name(m.group(2))
+            diff = _num(m.group(3))
+            body = m.group(4)
+            today = base = None
+            m_perf = re.search(r"今日\s*([+\-]?\d+(?:\.\d+)?)%\s*[｜|]\s*5\s*日均\s*([+\-]?\d+(?:\.\d+)?)%", body)
+            if m_perf:
+                today = _num(m_perf.group(1))
+                base = _num(m_perf.group(2))
+            m_reps = re.search(r"(?:代表股|成員)[：:]\s*(.+)", body)
+            reps = m_reps.group(1).strip() if m_reps else ""
+            entries.append({
+                "side": side,
+                "rank": rank,
+                "name": name,
+                "diff": diff,
+                "today": today,
+                "base": base,
+                "representatives": reps,
+            })
+    return entries
+
+
+def parse_daily_sector_details(md: str) -> dict[str, dict]:
+    """Parse the daily report's sector blocks, which include N/median/turnover."""
+    out: dict[str, dict] = {}
+    for m in re.finditer(
+        r"^###\s*(.+?)\s*([+\-]?\d+(?:\.\d+)?)%\s*"
+        r"(?:\n>\s*)?(\d+)\s*檔[｜|]\s*(\d+)↑\s*(\d+)↓[｜|]\s*成交\s*([\d,\.]+)\s*億"
+        r".*?median\s*([+\-]?\d+(?:\.\d+)?)%"
+        r"([\s\S]*?)(?=^###\s|^##\s|\Z)",
+        md,
+        re.MULTILINE,
+    ):
+        name = _sector_name(m.group(1))
+        tail = m.group(8)
+        members = ""
+        leaders = ""
+        m_leaders = re.search(r"領[漲跌][：:]\s*(.+)", tail)
+        if m_leaders:
+            leaders = m_leaders.group(1).strip().lstrip("- ").strip()
+        m_members = re.search(r"成員[：:]\s*(.+)", tail)
+        if m_members:
+            members = m_members.group(1).strip().lstrip("- ").strip()
+        m_total = re.search(r"共\s*(\d+)\s*檔", members or tail)
+        count = int(m.group(3))
+        if m_total:
+            count = max(count, int(m_total.group(1)))
+        out[name] = {
+            "avg": _num(m.group(2)),
+            "count": count,
+            "up_count": int(m.group(4)),
+            "down_count": int(m.group(5)),
+            "turnover": _num(m.group(6)),
+            "median": _num(m.group(7)),
+            "leaders": leaders,
+            "members": members,
+        }
+    return out
+
+
+def parse_weekly_sector_strength(md: str) -> dict[str, dict]:
+    out: dict[str, dict] = {}
+    for side, title in (("strong", "5 日累計漲幅前 5"), ("weak", "5 日累計跌幅前 5")):
+        sec = _section(md, title)
+        for m in re.finditer(
+            r"^###\s*\d+\.\s*(.+?)\s*([+\-]?\d+(?:\.\d+)?)%([\s\S]*?)(?=^###\s*\d+\.|^##\s|\Z)",
+            sec,
+            re.MULTILINE,
+        ):
+            name = _sector_name(m.group(1))
+            m_turnover = re.search(r"日均成交額\s*\*\*([\d,\.]+)\s*億", m.group(3))
+            out[name] = {
+                "weekly_side": side,
+                "weekly_pct": _num(m.group(2)),
+                "avg_turnover_5d": _num(m_turnover.group(1)) if m_turnover else None,
+            }
+    money_sec = _section(md, "日均成交額前 5")
+    for m in re.finditer(
+        r"^###\s*\d+\.\s*(.+?)\s*([+\-]?\d+(?:\.\d+)?)%([\s\S]*?)(?=^###\s*\d+\.|^##\s|\Z)",
+        money_sec,
+        re.MULTILINE,
+    ):
+        name = _sector_name(m.group(1))
+        m_turnover = re.search(r"日均成交額\s*\*\*([\d,\.]+)\s*億", m.group(3))
+        row = out.setdefault(name, {})
+        row.setdefault("weekly_pct", _num(m.group(2)))
+        if m_turnover:
+            row["avg_turnover_5d"] = _num(m_turnover.group(1))
+    return out
+
+
+def parse_rotation_range(md: str) -> tuple[str | None, str | None]:
+    m = re.search(r"基準[：:]\s*前\s*5\s*個交易日[（(](\d{4}-\d{2}-\d{2})\s*~\s*(\d{4}-\d{2}-\d{2})", md)
+    if not m:
+        m = re.search(r"前\s*5\s*個交易日[（(](\d{4}-\d{2}-\d{2})\s*~\s*(\d{4}-\d{2}-\d{2})", md)
+    return (m.group(1), m.group(2)) if m else (None, None)
+
+
+def parse_daily_market_avg(md: str) -> float | None:
+    m = re.search(r"全族群平均漲幅：\*\*([+\-\d\.]+)%", md)
+    return _num(m.group(1)) if m else None
+
+
+def reliability_label(count: int | None) -> tuple[str, str, float]:
+    if count is None:
+        return "樣本數 N=—", "資料待補", 0.62
+    if count >= 20:
+        return f"樣本數 N={count}", "族群訊號", 1.0
+    if count >= 5:
+        return f"樣本數 N={count}", "中樣本", 0.82
+    return f"樣本數 N={count}", "低樣本", 0.55
+
+
+def classify_rotation(entry: dict) -> str:
+    today = entry.get("today")
+    base = entry.get("base")
+    diff = entry.get("diff") or 0
+    count = entry.get("count")
+    if count is not None and count < 5 and abs(diff) >= 2:
+        sample_suffix = "｜單股型" if count == 1 else "｜低樣本"
+    else:
+        sample_suffix = ""
+
+    if diff >= 0:
+        if today is not None and today > 0 and base is not None and base > 0 and diff >= 1:
+            return "強勢加速" + sample_suffix
+        if today is not None and today > 0 and base is not None and base <= 0 and base >= -0.35:
+            return "翻正轉強" + sample_suffix
+        if today is not None and today > 0 and base is not None and base < -0.35:
+            return "跌勢收斂" + sample_suffix
+        if diff < 1:
+            return "小幅升溫" + sample_suffix
+        return "弱轉強" + sample_suffix
+
+    if base is not None and base > 0 and today is not None and today < 0:
+        return "強轉弱" + sample_suffix
+    if base is not None and base < 0 and today is not None and today < base:
+        return "弱勢加速" + sample_suffix
+    if base is not None and base < 0 and today is not None and today < 0:
+        return "弱勢延續" + sample_suffix
+    if diff > -1:
+        return "小幅降溫" + sample_suffix
+    return "轉弱警訊" + sample_suffix
+
+
+def weekly_daily_label(entry: dict) -> str:
+    weekly_side = entry.get("weekly_side")
+    day_strong = (entry.get("diff") or 0) >= 0
+    if weekly_side == "strong" and day_strong:
+        return "週強 + 日強｜主線延續"
+    if weekly_side == "strong" and not day_strong:
+        return "週強 + 日弱｜主線降溫"
+    if weekly_side == "weak" and day_strong:
+        return "週弱 + 日強｜跌深反彈 / 轉強觀察"
+    if weekly_side == "weak" and not day_strong:
+        return "週弱 + 日弱｜弱勢延續"
+    return "週線狀態待補"
+
+
+def load_market_avg(date: str, start: str | None, end: str | None) -> tuple[float | None, float | None]:
+    path = LYNUS_ROOT / "assets" / "market_pulse.json"
+    if not path.exists():
+        return None, None
+    data = json.loads(path.read_text(encoding="utf-8"))
+    current = None
+    base_vals = []
+    for row in data:
+        row_date = row.get("date")
+        val = row.get("sectors_avg_pct")
+        if not isinstance(val, (int, float)):
+            continue
+        if row_date == date:
+            current = float(val)
+        if start and end and start <= row_date <= end:
+            base_vals.append(float(val))
+    base = sum(base_vals) / len(base_vals) if base_vals else None
+    return current, base
+
+
+def enrich_rotation_entries(md: str, date: str) -> tuple[list[dict], tuple[str | None, str | None]]:
+    entries = parse_rotation_entries(md)
+    start, end = parse_rotation_range(md)
+
+    daily_md = INDUSTRY_MAP_REPORTS / f"daily_{date}.md"
+    daily_text = daily_md.read_text(encoding="utf-8") if daily_md.exists() else ""
+    daily_details = parse_daily_sector_details(daily_text) if daily_text else {}
+    daily_market_avg = parse_daily_market_avg(daily_text) if daily_text else None
+
+    weekly_md = INDUSTRY_MAP_REPORTS / f"weekly_{date}.md"
+    weekly_details = parse_weekly_sector_strength(weekly_md.read_text(encoding="utf-8")) if weekly_md.exists() else {}
+
+    market_today, market_base = load_market_avg(date, start, end)
+    if market_today is None:
+        market_today = daily_market_avg
+    for entry in entries:
+        entry.update(daily_details.get(entry["name"], {}))
+        entry.update(weekly_details.get(entry["name"], {}))
+        count = entry.get("count")
+        sample, reliability, opacity = reliability_label(count)
+        entry["sample_label"] = sample
+        entry["reliability"] = reliability
+        entry["opacity"] = opacity
+        entry["state"] = classify_rotation(entry)
+        entry["weekly_daily"] = weekly_daily_label(entry)
+        if market_today is not None and market_base is not None and entry.get("today") is not None and entry.get("base") is not None:
+            entry["relative_diff"] = (entry["today"] - market_today) - (entry["base"] - market_base)
+        else:
+            entry["relative_diff"] = None
+        entry["up_ratio"] = (
+            entry["up_count"] / entry["count"] * 100
+            if entry.get("count") and entry.get("up_count") is not None
+            else None
+        )
+        entry["volume_heat"] = (
+            entry["turnover"] / entry["avg_turnover_5d"]
+            if entry.get("turnover") is not None and entry.get("avg_turnover_5d")
+            else None
+        )
+    return entries, (start, end)
+
+
+def summarize_rotation(entries: list[dict]) -> dict:
+    warm = [e for e in entries if e["side"] == "up"]
+    cool = [e for e in entries if e["side"] == "down"]
+    warm_avg = sum(e["diff"] for e in warm if e.get("diff") is not None) / max(1, len([e for e in warm if e.get("diff") is not None]))
+    cool_avg = sum(e["diff"] for e in cool if e.get("diff") is not None) / max(1, len([e for e in cool if e.get("diff") is not None]))
+    strongest = max(warm, key=lambda e: e.get("diff") or -999, default=None)
+    weakest = min(cool, key=lambda e: e.get("diff") or 999, default=None)
+    return {
+        "warm": warm,
+        "cool": cool,
+        "warm_avg": warm_avg,
+        "cool_avg": cool_avg,
+        "strongest": strongest,
+        "weakest": weakest,
+        "cool_dominates": abs(cool_avg) > abs(warm_avg),
+    }
+
+
+def rotation_summary_sentence(summary: dict) -> str:
+    strongest = summary.get("strongest") or {}
+    weakest = summary.get("weakest") or {}
+    force = "今日轉弱力道大於轉強力道" if summary["cool_dominates"] else "今日轉強力道大於轉弱力道"
+    return (
+        f"今日相對升溫以 {strongest.get('name', '—')} 最明顯，"
+        f"相對降溫以 {weakest.get('name', '—')} 壓力最大；{force}。"
+    )
+
+
+def render_rotation_report_html(entries: list[dict], date: str, base_range: tuple[str | None, str | None]) -> str:
+    summary = summarize_rotation(entries)
+    max_abs = max([abs(e.get("diff") or 0) for e in entries] + [1])
+    current_values = [v for e in entries for v in (e.get("today"), e.get("base")) if v is not None]
+    axis_min = math.floor(min(current_values + [-1]))
+    axis_max = math.ceil(max(current_values + [1]))
+    if axis_min == axis_max:
+        axis_min -= 1
+        axis_max += 1
+    span = axis_max - axis_min
+
+    def point_style(e: dict) -> str:
+        x = ((e.get("base") or 0) - axis_min) / span * 100
+        y = ((e.get("today") or 0) - axis_min) / span * 100
+        size = 14 + min(22, math.sqrt(max(e.get("turnover") or 0, 0)) * 1.1)
+        return f"left:{x:.2f}%;bottom:{y:.2f}%;width:{size:.1f}px;height:{size:.1f}px;opacity:{e.get('opacity', 0.8):.2f}"
+
+    def bar_row(e: dict) -> str:
+        diff = e.get("diff") or 0
+        width = abs(diff) / max_abs * 48
+        side_cls = "up" if diff >= 0 else "down"
+        return f"""
+        <div class="rotation-diverge__row">
+          <div class="rotation-diverge__name">{_esc(e['name'])}</div>
+          <div class="rotation-diverge__track">
+            <span class="rotation-diverge__bar rotation-diverge__bar--{side_cls}" style="--w:{width:.2f}%"></span>
+            <span class="rotation-diverge__value rotation-diverge__value--{side_cls}">{_pct(diff, unit=" pct")}</span>
+          </div>
+        </div>"""
+
+    def card(e: dict) -> str:
+        side_cls = "up" if e["side"] == "up" else "down"
+        count = e.get("count")
+        up_down = "—"
+        if count and e.get("up_count") is not None and e.get("down_count") is not None:
+            up_down = f"{e['up_count']}↑ / {e['down_count']}↓"
+        volume_heat = "量能待補"
+        if e.get("volume_heat") is not None:
+            volume_heat = f"{e['volume_heat']:.1f}x｜今日 {e['turnover']:.1f} 億"
+        elif e.get("turnover") is not None:
+            volume_heat = f"今日 {e['turnover']:.1f} 億"
+        members = e.get("members") or e.get("representatives") or "—"
+        leaders = e.get("leaders") or e.get("representatives") or "—"
+        return f"""
+        <article class="rotation-card rotation-card--{side_cls}">
+          <div class="rotation-card__top">
+            <span class="rotation-card__rank">#{e['rank']}</span>
+            <h3>{_esc(e['name'])}</h3>
+            <span class="rotation-tag rotation-tag--{side_cls}">{_esc(e['state'])}</span>
+          </div>
+          <div class="rotation-card__diff {_esc('num-up' if side_cls == 'up' else 'num-down')}">{_pct(e.get('diff'), unit=" pct")}</div>
+          <dl class="rotation-metrics">
+            <div><dt>今日</dt><dd>{_pct(e.get('today'))}</dd></div>
+            <div><dt>前 5 日均</dt><dd>{_pct(e.get('base'))}</dd></div>
+            <div><dt>中位數</dt><dd>{_pct(e.get('median'))}</dd></div>
+            <div><dt>上漲家數</dt><dd>{_esc(up_down)}</dd></div>
+            <div><dt>族群內上漲率</dt><dd>{_pct(e.get('up_ratio'))}</dd></div>
+            <div><dt>量能熱度</dt><dd>{_esc(volume_heat)}</dd></div>
+            <div><dt>相對大盤動能差</dt><dd>{_pct(e.get('relative_diff'), unit=" pct")}</dd></div>
+            <div><dt>日週共振</dt><dd>{_esc(e.get('weekly_daily'))}</dd></div>
+          </dl>
+          <div class="rotation-card__sample">
+            <span>{_esc(e.get('sample_label'))}</span>
+            <strong>{_esc(e.get('reliability'))}</strong>
+          </div>
+          <p class="rotation-card__members"><strong>代表股</strong>：{_esc(leaders)}</p>
+          <p class="rotation-card__members"><strong>成分</strong>：{_esc(members)}</p>
+        </article>"""
+
+    points = "\n".join(
+        f'<span class="rotation-point rotation-point--{"up" if e["side"] == "up" else "down"}" style="{point_style(e)}" title="{_esc(e["name"])}｜今日 {_pct(e.get("today"))}｜5 日均 {_pct(e.get("base"))}"><span>{_esc(e["name"][:2])}</span></span>'
+        for e in entries
+    )
+    base_label = f"{base_range[0]} ~ {base_range[1]}" if base_range[0] and base_range[1] else "前 5 個交易日"
+    quadrant_counts = {
+        "strong_accel": sum(1 for e in entries if (e.get("base") or 0) >= 0 and (e.get("today") or 0) >= (e.get("base") or 0)),
+        "turn_up": sum(1 for e in entries if (e.get("base") or 0) < 0 and (e.get("today") or 0) >= 0),
+        "turn_down": sum(1 for e in entries if (e.get("base") or 0) >= 0 and (e.get("today") or 0) < (e.get("base") or 0)),
+        "weak_accel": sum(1 for e in entries if (e.get("base") or 0) < 0 and (e.get("today") or 0) < 0),
+    }
+
+    heat_rows = "\n".join(
+        f"""
+        <div class="rotation-heat__row">
+          <span>{_esc(e['name'])}</span>
+          <i class="rotation-heat__cell {'is-up' if (e.get('base') or 0) >= 0 else 'is-down'}" style="--heat:{min(abs(e.get('base') or 0) / max_abs, 1):.2f}">{_pct(e.get('base'))}</i>
+          <i class="rotation-heat__cell {'is-up' if (e.get('today') or 0) >= 0 else 'is-down'} is-today" style="--heat:{min(abs(e.get('today') or 0) / max_abs, 1):.2f}">{_pct(e.get('today'))}</i>
+        </div>"""
+        for e in entries
+    )
+
+    return f"""
+      <section class="rotation-summary">
+        <p class="rotation-summary__headline">{_esc(rotation_summary_sentence(summary))}</p>
+        <div class="rotation-summary__grid">
+          <div><span>升溫前 5 平均動能差</span><strong class="num-up">{_pct(summary['warm_avg'], unit=" pct")}</strong></div>
+          <div><span>降溫前 5 平均動能差</span><strong class="num-down">{_pct(summary['cool_avg'], unit=" pct")}</strong></div>
+          <div><span>最大升溫</span><strong>{_esc((summary.get('strongest') or {}).get('name'))}</strong></div>
+          <div><span>最大降溫</span><strong>{_esc((summary.get('weakest') or {}).get('name'))}</strong></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>今日 vs 5 日均四象限</h2>
+        <p class="rotation-note">X 軸是前 5 日族群日均漲跌幅，Y 軸是今日族群平均漲跌幅；對角線上方代表今日比近 5 日更強。此圖先呈現輪動偵測揭露的升溫 / 降溫族群，若上游提供全 74 族群明細可直接擴充為全市場散點。</p>
+        <div class="rotation-quadrant" style="--zero:{((-axis_min) / span * 100):.2f}%">
+          <div class="rotation-quadrant__axis rotation-quadrant__axis--x"></div>
+          <div class="rotation-quadrant__axis rotation-quadrant__axis--y"></div>
+          <div class="rotation-quadrant__diag"></div>
+          <span class="rotation-quadrant__label rotation-quadrant__label--tr">強勢加速 · {quadrant_counts['strong_accel']}</span>
+          <span class="rotation-quadrant__label rotation-quadrant__label--tl">弱轉強 / 翻正 · {quadrant_counts['turn_up']}</span>
+          <span class="rotation-quadrant__label rotation-quadrant__label--br">強轉弱 · {quadrant_counts['turn_down']}</span>
+          <span class="rotation-quadrant__label rotation-quadrant__label--bl">弱勢加速 · {quadrant_counts['weak_accel']}</span>
+          {points}
+        </div>
+      </section>
+
+      <section>
+        <h2>發散式動能差排行榜</h2>
+        <p class="rotation-note">今日動能差 = 今日族群平均漲跌幅 - 前 5 日族群日均漲跌幅，單位為百分點（pct）。</p>
+        <div class="rotation-diverge">
+          <div class="rotation-diverge__head"><span>今日相對升溫</span><span>今日相對降溫</span></div>
+          {"".join(bar_row(e) for e in summary["warm"] + summary["cool"])}
+        </div>
+      </section>
+
+      <section>
+        <h2>族群訊號卡</h2>
+        <div class="rotation-card-grid">
+          {"".join(card(e) for e in summary["warm"])}
+        </div>
+        <div class="rotation-card-grid rotation-card-grid--down">
+          {"".join(card(e) for e in summary["cool"])}
+        </div>
+      </section>
+
+      <section>
+        <h2>5 日均 + 今日迷你熱力圖</h2>
+        <p class="rotation-note">目前上游輪動檔提供的是前 5 日平均與今日值；這裡先用「前 5 日均 / 今日」檢查單日突變，待上游提供 D-5 到 D-1 明細後可展開為 6 欄日序列。</p>
+        <div class="rotation-heat">
+          <div class="rotation-heat__row rotation-heat__row--head"><span>族群</span><b>{_esc(base_label)}</b><b>今日</b></div>
+          {heat_rows}
+        </div>
+      </section>
+    """
 
 
 # ── meta extractors per type ──────────────────────────────────────────────
@@ -145,32 +586,33 @@ def extract_weekly_meta(md: str, date: str) -> dict:
 
 
 def extract_rotation_meta(md: str, date: str) -> dict:
-    """Rotation — sudden strong / sudden weak relative to N-day average."""
-    # First 突然轉強
-    up = re.search(r"突然轉強前 5.*?###\s*\d+\.\s*(\S+)\s*差距\s*\*\*\+?([\d\.\-]+)%", md, re.DOTALL)
-    leader_up = up.group(1) if up else ""
-    leader_up_pct = up.group(2) if up else ""
+    """Rotation — daily momentum gap relative to the prior 5-day average."""
+    entries, base_range = enrich_rotation_entries(md, date)
+    summary_data = summarize_rotation(entries)
+    leader_up = (summary_data.get("strongest") or {}).get("name", "")
+    leader_up_pct = (summary_data.get("strongest") or {}).get("diff")
+    leader_dn = (summary_data.get("weakest") or {}).get("name", "")
+    leader_dn_pct = (summary_data.get("weakest") or {}).get("diff")
 
-    # First 突然轉弱
-    dn = re.search(r"突然轉弱前 5.*?###\s*\d+\.\s*(\S+)\s*差距\s*\*\*([\-\d\.]+)%", md, re.DOTALL)
-    leader_dn = dn.group(1) if dn else ""
-    leader_dn_pct = dn.group(2) if dn else ""
-
-    title = f"{date} 類股輪動偵測"
-    title_em = leader_up or "輪動"
-    summary = (
-        f"最大轉強 {leader_up} +{leader_up_pct}%（vs 5 日均），"
-        f"最大轉弱 {leader_dn} {leader_dn_pct}%。"
-    )
+    title = f"{date} 每日族群輪動雷達"
+    title_em = leader_up or "輪動雷達"
+    summary = rotation_summary_sentence(summary_data)
 
     stats = [
-        {"label": "最大轉強", "value": f"{leader_up} +{leader_up_pct}%" if leader_up else "—", "color": "up"},
-        {"label": "最大轉弱", "value": f"{leader_dn} {leader_dn_pct}%" if leader_dn else "—", "color": "down"},
-        {"label": "對比基準", "value": "5 日均", "color": "neutral"},
+        {"label": "最大升溫", "value": f"{leader_up} {_pct(leader_up_pct, unit=' pct')}" if leader_up else "—", "color": "up"},
+        {"label": "最大降溫", "value": f"{leader_dn} {_pct(leader_dn_pct, unit=' pct')}" if leader_dn else "—", "color": "down"},
+        {"label": "核心指標", "value": "今日動能差", "color": "neutral"},
     ]
-    tags = [c for c in (leader_up, leader_dn, "輪動") if c]
+    tags = [c for c in (leader_up, leader_dn, "輪動雷達") if c]
 
-    return {"title": title, "title_em": title_em, "summary": summary, "stats": stats, "tags": tags}
+    return {
+        "title": title,
+        "title_em": title_em,
+        "summary": summary,
+        "stats": stats,
+        "tags": tags,
+        "content_html": render_rotation_report_html(entries, date, base_range) if entries else None,
+    }
 
 
 def extract_focus_meta(md: str, date: str, slug: str) -> dict:
@@ -444,6 +886,7 @@ def process_md(md_path: Path) -> dict | None:
         "volume":        1,
         "asset_prefix":  "../../",
         "stats":         meta_extra["stats"],
+        "content_html":  meta_extra.get("content_html"),
     }
 
     # wrap_report's clean step strips emoji already; we still pre-clean so the

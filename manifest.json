@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-06-11T10:20:30+08:00",
+  "updated_at": "2026-06-11T10:30:17+08:00",
   "today": "2026-06-10",
   "volume_number": 1,
   "market_summary": {
@@ -202,30 +202,30 @@
       "type": "rotation",
       "date": "2026-06-10",
       "time": "20:00",
-      "title": "2026-06-10 類股輪動偵測",
+      "title": "2026-06-10 每日族群輪動雷達",
       "title_em": "建材營造",
-      "summary": "最大轉強 建材營造 +3.01%（vs 5 日均），最大轉弱 電源供應 -9.46%。",
+      "summary": "今日相對升溫以 建材營造 最明顯，相對降溫以 電源供應 壓力最大；今日轉弱力道大於轉強力道。",
       "tags": [
         "建材營造",
         "電源供應",
-        "輪動"
+        "輪動雷達"
       ],
       "source_pipeline": "industry_map",
       "url": "reports/2026-06-10/sectors-rotation.html",
       "stats": [
         {
-          "label": "最大轉強",
-          "value": "建材營造 +3.01%",
+          "label": "最大升溫",
+          "value": "建材營造 +3.01 pct",
           "color": "up"
         },
         {
-          "label": "最大轉弱",
-          "value": "電源供應 -9.46%",
+          "label": "最大降溫",
+          "value": "電源供應 -9.46 pct",
           "color": "down"
         },
         {
-          "label": "對比基準",
-          "value": "5 日均",
+          "label": "核心指標",
+          "value": "今日動能差",
           "color": "neutral"
         }
       ]
@@ -319,30 +319,30 @@
       "type": "rotation",
       "date": "2026-06-09",
       "time": "20:00",
-      "title": "2026-06-09 類股輪動偵測",
+      "title": "2026-06-09 每日族群輪動雷達",
       "title_em": "化合物半導體",
-      "summary": "最大轉強 化合物半導體 +11.40%（vs 5 日均），最大轉弱 證券期貨 -2.55%。",
+      "summary": "今日相對升溫以 化合物半導體 最明顯，相對降溫以 證券期貨 壓力最大；今日轉強力道大於轉弱力道。",
       "tags": [
         "化合物半導體",
         "證券期貨",
-        "輪動"
+        "輪動雷達"
       ],
       "source_pipeline": "industry_map",
       "url": "reports/2026-06-09/sectors-rotation.html",
       "stats": [
         {
-          "label": "最大轉強",
-          "value": "化合物半導體 +11.40%",
+          "label": "最大升溫",
+          "value": "化合物半導體 +11.40 pct",
           "color": "up"
         },
         {
-          "label": "最大轉弱",
-          "value": "證券期貨 -2.55%",
+          "label": "最大降溫",
+          "value": "證券期貨 -2.55 pct",
           "color": "down"
         },
         {
-          "label": "對比基準",
-          "value": "5 日均",
+          "label": "核心指標",
+          "value": "今日動能差",
           "color": "neutral"
         }
       ]
@@ -422,30 +422,30 @@
       "type": "rotation",
       "date": "2026-06-08",
       "time": "20:00",
-      "title": "2026-06-08 類股輪動偵測",
+      "title": "2026-06-08 每日族群輪動雷達",
       "title_em": "電源供應",
-      "summary": "最大轉強 電源供應 +-0.79%（vs 5 日均），最大轉弱 面板 -12.14%。",
+      "summary": "今日相對升溫以 電源供應 最明顯，相對降溫以 面板 壓力最大；今日轉弱力道大於轉強力道。",
       "tags": [
         "電源供應",
         "面板",
-        "輪動"
+        "輪動雷達"
       ],
       "source_pipeline": "industry_map",
       "url": "reports/2026-06-08/sectors-rotation.html",
       "stats": [
         {
-          "label": "最大轉強",
-          "value": "電源供應 +-0.79%",
+          "label": "最大升溫",
+          "value": "電源供應 -0.79 pct",
           "color": "up"
         },
         {
-          "label": "最大轉弱",
-          "value": "面板 -12.14%",
+          "label": "最大降溫",
+          "value": "面板 -12.14 pct",
           "color": "down"
         },
         {
-          "label": "對比基準",
-          "value": "5 日均",
+          "label": "核心指標",
+          "value": "今日動能差",
           "color": "neutral"
         }
       ]
@@ -525,30 +525,30 @@
       "type": "rotation",
       "date": "2026-06-05",
       "time": "20:00",
-      "title": "2026-06-05 類股輪動偵測",
+      "title": "2026-06-05 每日族群輪動雷達",
       "title_em": "被動元件",
-      "summary": "最大轉強 被動元件 +1.67%（vs 5 日均），最大轉弱 面板 -12.50%。",
+      "summary": "今日相對升溫以 被動元件 最明顯，相對降溫以 面板 壓力最大；今日轉弱力道大於轉強力道。",
       "tags": [
         "被動元件",
         "面板",
-        "輪動"
+        "輪動雷達"
       ],
       "source_pipeline": "industry_map",
       "url": "reports/2026-06-05/sectors-rotation.html",
       "stats": [
         {
-          "label": "最大轉強",
-          "value": "被動元件 +1.67%",
+          "label": "最大升溫",
+          "value": "被動元件 +1.67 pct",
           "color": "up"
         },
         {
-          "label": "最大轉弱",
-          "value": "面板 -12.50%",
+          "label": "最大降溫",
+          "value": "面板 -12.50 pct",
           "color": "down"
         },
         {
-          "label": "對比基準",
-          "value": "5 日均",
+          "label": "核心指標",
+          "value": "今日動能差",
           "color": "neutral"
         }
       ]
@@ -641,30 +641,30 @@
       "type": "rotation",
       "date": "2026-06-04",
       "time": "20:00",
-      "title": "2026-06-04 類股輪動偵測",
+      "title": "2026-06-04 每日族群輪動雷達",
       "title_em": "造紙",
-      "summary": "最大轉強 造紙 +4.81%（vs 5 日均），最大轉弱 面板 -11.02%。",
+      "summary": "今日相對升溫以 造紙 最明顯，相對降溫以 面板 壓力最大；今日轉弱力道大於轉強力道。",
       "tags": [
         "造紙",
         "面板",
-        "輪動"
+        "輪動雷達"
       ],
       "source_pipeline": "industry_map",
       "url": "reports/2026-06-04/sectors-rotation.html",
       "stats": [
         {
-          "label": "最大轉強",
-          "value": "造紙 +4.81%",
+          "label": "最大升溫",
+          "value": "造紙 +4.81 pct",
           "color": "up"
         },
         {
-          "label": "最大轉弱",
-          "value": "面板 -11.02%",
+          "label": "最大降溫",
+          "value": "面板 -11.02 pct",
           "color": "down"
         },
         {
-          "label": "對比基準",
-          "value": "5 日均",
+          "label": "核心指標",
+          "value": "今日動能差",
           "color": "neutral"
         }
       ]
@@ -744,30 +744,30 @@
       "type": "rotation",
       "date": "2026-06-03",
       "time": "20:00",
-      "title": "2026-06-03 類股輪動偵測",
+      "title": "2026-06-03 每日族群輪動雷達",
       "title_em": "光通訊",
-      "summary": "最大轉強 光通訊 +6.63%（vs 5 日均），最大轉弱 記憶體 -5.79%。",
+      "summary": "今日相對升溫以 光通訊 最明顯，相對降溫以 記憶體 壓力最大；今日轉強力道大於轉弱力道。",
       "tags": [
         "光通訊",
         "記憶體",
-        "輪動"
+        "輪動雷達"
       ],
       "source_pipeline": "industry_map",
       "url": "reports/2026-06-03/sectors-rotation.html",
       "stats": [
         {
-          "label": "最大轉強",
-          "value": "光通訊 +6.63%",
+          "label": "最大升溫",
+          "value": "光通訊 +6.63 pct",
           "color": "up"
         },
         {
-          "label": "最大轉弱",
-          "value": "記憶體 -5.79%",
+          "label": "最大降溫",
+          "value": "記憶體 -5.79 pct",
           "color": "down"
         },
         {
-          "label": "對比基準",
-          "value": "5 日均",
+          "label": "核心指標",
+          "value": "今日動能差",
           "color": "neutral"
         }
       ]
@@ -847,30 +847,30 @@
       "type": "rotation",
       "date": "2026-06-02",
       "time": "20:00",
-      "title": "2026-06-02 類股輪動偵測",
+      "title": "2026-06-02 每日族群輪動雷達",
       "title_em": "面板",
-      "summary": "最大轉強 面板 +3.16%（vs 5 日均），最大轉弱 ABF載板 -6.93%。",
+      "summary": "今日相對升溫以 面板 最明顯，相對降溫以 ABF載板 壓力最大；今日轉弱力道大於轉強力道。",
       "tags": [
         "面板",
         "ABF載板",
-        "輪動"
+        "輪動雷達"
       ],
       "source_pipeline": "industry_map",
       "url": "reports/2026-06-02/sectors-rotation.html",
       "stats": [
         {
-          "label": "最大轉強",
-          "value": "面板 +3.16%",
+          "label": "最大升溫",
+          "value": "面板 +3.16 pct",
           "color": "up"
         },
         {
-          "label": "最大轉弱",
-          "value": "ABF載板 -6.93%",
+          "label": "最大降溫",
+          "value": "ABF載板 -6.93 pct",
           "color": "down"
         },
         {
-          "label": "對比基準",
-          "value": "5 日均",
+          "label": "核心指標",
+          "value": "今日動能差",
           "color": "neutral"
         }
       ]
@@ -950,30 +950,30 @@
       "type": "rotation",
       "date": "2026-06-01",
       "time": "20:00",
-      "title": "2026-06-01 類股輪動偵測",
+      "title": "2026-06-01 每日族群輪動雷達",
       "title_em": "液冷散熱",
-      "summary": "最大轉強 液冷散熱 +6.65%（vs 5 日均），最大轉弱 面板級封裝FOPLP -8.94%。",
+      "summary": "今日相對升溫以 液冷散熱 最明顯，相對降溫以 面板級封裝FOPLP 壓力最大；今日轉強力道大於轉弱力道。",
       "tags": [
         "液冷散熱",
         "面板級封裝FOPLP",
-        "輪動"
+        "輪動雷達"
       ],
       "source_pipeline": "industry_map",
       "url": "reports/2026-06-01/sectors-rotation.html",
       "stats": [
         {
-          "label": "最大轉強",
-          "value": "液冷散熱 +6.65%",
+          "label": "最大升溫",
+          "value": "液冷散熱 +6.65 pct",
           "color": "up"
         },
         {
-          "label": "最大轉弱",
-          "value": "面板級封裝FOPLP -8.94%",
+          "label": "最大降溫",
+          "value": "面板級封裝FOPLP -8.94 pct",
           "color": "down"
         },
         {
-          "label": "對比基準",
-          "value": "5 日均",
+          "label": "核心指標",
+          "value": "今日動能差",
           "color": "neutral"
         }
       ]
@@ -1088,30 +1088,30 @@
       "type": "rotation",
       "date": "2026-05-29",
       "time": "20:00",
-      "title": "2026-05-29 類股輪動偵測",
+      "title": "2026-05-29 每日族群輪動雷達",
       "title_em": "AI伺服器代工",
-      "summary": "最大轉強 AI伺服器代工 +7.02%（vs 5 日均），最大轉弱 被動元件 -3.03%。",
+      "summary": "今日相對升溫以 AI伺服器代工 最明顯，相對降溫以 被動元件 壓力最大；今日轉強力道大於轉弱力道。",
       "tags": [
         "AI伺服器代工",
         "被動元件",
-        "輪動"
+        "輪動雷達"
       ],
       "source_pipeline": "industry_map",
       "url": "reports/2026-05-29/sectors-rotation.html",
       "stats": [
         {
-          "label": "最大轉強",
-          "value": "AI伺服器代工 +7.02%",
+          "label": "最大升溫",
+          "value": "AI伺服器代工 +7.02 pct",
           "color": "up"
         },
         {
-          "label": "最大轉弱",
-          "value": "被動元件 -3.03%",
+          "label": "最大降溫",
+          "value": "被動元件 -3.03 pct",
           "color": "down"
         },
         {
-          "label": "對比基準",
-          "value": "5 日均",
+          "label": "核心指標",
+          "value": "今日動能差",
           "color": "neutral"
         }
       ]
@@ -1226,30 +1226,30 @@
       "type": "rotation",
       "date": "2026-05-28",
       "time": "20:00",
-      "title": "2026-05-28 類股輪動偵測",
+      "title": "2026-05-28 每日族群輪動雷達",
       "title_em": "汽車零組件",
-      "summary": "最大轉強 汽車零組件 +3.43%（vs 5 日均），最大轉弱 電源供應 -10.83%。",
+      "summary": "今日相對升溫以 汽車零組件 最明顯，相對降溫以 電源供應 壓力最大；今日轉弱力道大於轉強力道。",
       "tags": [
         "汽車零組件",
         "電源供應",
-        "輪動"
+        "輪動雷達"
       ],
       "source_pipeline": "industry_map",
       "url": "reports/2026-05-28/sectors-rotation.html",
       "stats": [
         {
-          "label": "最大轉強",
-          "value": "汽車零組件 +3.43%",
+          "label": "最大升溫",
+          "value": "汽車零組件 +3.43 pct",
           "color": "up"
         },
         {
-          "label": "最大轉弱",
-          "value": "電源供應 -10.83%",
+          "label": "最大降溫",
+          "value": "電源供應 -10.83 pct",
           "color": "down"
         },
         {
-          "label": "對比基準",
-          "value": "5 日均",
+          "label": "核心指標",
+          "value": "今日動能差",
           "color": "neutral"
         }
       ]
@@ -1364,30 +1364,30 @@
       "type": "rotation",
       "date": "2026-05-27",
       "time": "20:00",
-      "title": "2026-05-27 類股輪動偵測",
+      "title": "2026-05-27 每日族群輪動雷達",
       "title_em": "證券期貨",
-      "summary": "最大轉強 證券期貨 +4.40%（vs 5 日均），最大轉弱 光通訊 -11.86%。",
+      "summary": "今日相對升溫以 證券期貨 最明顯，相對降溫以 光通訊 壓力最大；今日轉弱力道大於轉強力道。",
       "tags": [
         "證券期貨",
         "光通訊",
-        "輪動"
+        "輪動雷達"
       ],
       "source_pipeline": "industry_map",
       "url": "reports/2026-05-27/sectors-rotation.html",
       "stats": [
         {
-          "label": "最大轉強",
-          "value": "證券期貨 +4.40%",
+          "label": "最大升溫",
+          "value": "證券期貨 +4.40 pct",
           "color": "up"
         },
         {
-          "label": "最大轉弱",
-          "value": "光通訊 -11.86%",
+          "label": "最大降溫",
+          "value": "光通訊 -11.86 pct",
           "color": "down"
         },
         {
-          "label": "對比基準",
-          "value": "5 日均",
+          "label": "核心指標",
+          "value": "今日動能差",
           "color": "neutral"
         }
       ]
@@ -1502,30 +1502,30 @@
       "type": "rotation",
       "date": "2026-05-26",
       "time": "20:00",
-      "title": "2026-05-26 類股輪動偵測",
+      "title": "2026-05-26 每日族群輪動雷達",
       "title_em": "記憶體",
-      "summary": "最大轉強 記憶體 +3.73%（vs 5 日均），最大轉弱 面板 -8.88%。",
+      "summary": "今日相對升溫以 記憶體 最明顯，相對降溫以 面板 壓力最大；今日轉弱力道大於轉強力道。",
       "tags": [
         "記憶體",
         "面板",
-        "輪動"
+        "輪動雷達"
       ],
       "source_pipeline": "industry_map",
       "url": "reports/2026-05-26/sectors-rotation.html",
       "stats": [
         {
-          "label": "最大轉強",
-          "value": "記憶體 +3.73%",
+          "label": "最大升溫",
+          "value": "記憶體 +3.73 pct",
           "color": "up"
         },
         {
-          "label": "最大轉弱",
-          "value": "面板 -8.88%",
+          "label": "最大降溫",
+          "value": "面板 -8.88 pct",
           "color": "down"
         },
         {
-          "label": "對比基準",
-          "value": "5 日均",
+          "label": "核心指標",
+          "value": "今日動能差",
           "color": "neutral"
         }
       ]
@@ -1640,30 +1640,30 @@
       "type": "rotation",
       "date": "2026-05-25",
       "time": "20:00",
-      "title": "2026-05-25 類股輪動偵測",
+      "title": "2026-05-25 每日族群輪動雷達",
       "title_em": "電源供應",
-      "summary": "最大轉強 電源供應 +9.04%（vs 5 日均），最大轉弱 貨櫃航運 -4.05%。",
+      "summary": "今日相對升溫以 電源供應 最明顯，相對降溫以 貨櫃航運 壓力最大；今日轉強力道大於轉弱力道。",
       "tags": [
         "電源供應",
         "貨櫃航運",
-        "輪動"
+        "輪動雷達"
       ],
       "source_pipeline": "industry_map",
       "url": "reports/2026-05-25/sectors-rotation.html",
       "stats": [
         {
-          "label": "最大轉強",
-          "value": "電源供應 +9.04%",
+          "label": "最大升溫",
+          "value": "電源供應 +9.04 pct",
           "color": "up"
         },
         {
-          "label": "最大轉弱",
-          "value": "貨櫃航運 -4.05%",
+          "label": "最大降溫",
+          "value": "貨櫃航運 -4.05 pct",
           "color": "down"
         },
         {
-          "label": "對比基準",
-          "value": "5 日均",
+          "label": "核心指標",
+          "value": "今日動能差",
           "color": "neutral"
         }
       ]
@@ -1743,30 +1743,30 @@
       "type": "rotation",
       "date": "2026-05-22",
       "time": "20:00",
-      "title": "2026-05-22 類股輪動偵測",
+      "title": "2026-05-22 每日族群輪動雷達",
       "title_em": "化合物半導體",
-      "summary": "最大轉強 化合物半導體 +8.76%（vs 5 日均），最大轉弱 自行車 -2.55%。",
+      "summary": "今日相對升溫以 化合物半導體 最明顯，相對降溫以 自行車 壓力最大；今日轉強力道大於轉弱力道。",
       "tags": [
         "化合物半導體",
         "自行車",
-        "輪動"
+        "輪動雷達"
       ],
       "source_pipeline": "industry_map",
       "url": "reports/2026-05-22/sectors-rotation.html",
       "stats": [
         {
-          "label": "最大轉強",
-          "value": "化合物半導體 +8.76%",
+          "label": "最大升溫",
+          "value": "化合物半導體 +8.76 pct",
           "color": "up"
         },
         {
-          "label": "最大轉弱",
-          "value": "自行車 -2.55%",
+          "label": "最大降溫",
+          "value": "自行車 -2.55 pct",
           "color": "down"
         },
         {
-          "label": "對比基準",
-          "value": "5 日均",
+          "label": "核心指標",
+          "value": "今日動能差",
           "color": "neutral"
         }
       ]
@@ -1846,30 +1846,30 @@
       "type": "rotation",
       "date": "2026-05-21",
       "time": "20:00",
-      "title": "2026-05-21 類股輪動偵測",
+      "title": "2026-05-21 每日族群輪動雷達",
       "title_em": "面板",
-      "summary": "最大轉強 面板 +10.50%（vs 5 日均），最大轉弱 電信服務 -1.55%。",
+      "summary": "今日相對升溫以 面板 最明顯，相對降溫以 電信服務 壓力最大；今日轉強力道大於轉弱力道。",
       "tags": [
         "面板",
         "電信服務",
-        "輪動"
+        "輪動雷達"
       ],
       "source_pipeline": "industry_map",
       "url": "reports/2026-05-21/sectors-rotation.html",
       "stats": [
         {
-          "label": "最大轉強",
-          "value": "面板 +10.50%",
+          "label": "最大升溫",
+          "value": "面板 +10.50 pct",
           "color": "up"
         },
         {
-          "label": "最大轉弱",
-          "value": "電信服務 -1.55%",
+          "label": "最大降溫",
+          "value": "電信服務 -1.55 pct",
           "color": "down"
         },
         {
-          "label": "對比基準",
-          "value": "5 日均",
+          "label": "核心指標",
+          "value": "今日動能差",
           "color": "neutral"
         }
       ]
@@ -1949,30 +1949,30 @@
       "type": "rotation",
       "date": "2026-05-20",
       "time": "20:00",
-      "title": "2026-05-20 類股輪動偵測",
+      "title": "2026-05-20 每日族群輪動雷達",
       "title_em": "光通訊",
-      "summary": "最大轉強 光通訊 +6.73%（vs 5 日均），最大轉弱 鏡頭光學 -5.73%。",
+      "summary": "今日相對升溫以 光通訊 最明顯，相對降溫以 鏡頭光學 壓力最大；今日轉強力道大於轉弱力道。",
       "tags": [
         "光通訊",
         "鏡頭光學",
-        "輪動"
+        "輪動雷達"
       ],
       "source_pipeline": "industry_map",
       "url": "reports/2026-05-20/sectors-rotation.html",
       "stats": [
         {
-          "label": "最大轉強",
-          "value": "光通訊 +6.73%",
+          "label": "最大升溫",
+          "value": "光通訊 +6.73 pct",
           "color": "up"
         },
         {
-          "label": "最大轉弱",
-          "value": "鏡頭光學 -5.73%",
+          "label": "最大降溫",
+          "value": "鏡頭光學 -5.73 pct",
           "color": "down"
         },
         {
-          "label": "對比基準",
-          "value": "5 日均",
+          "label": "核心指標",
+          "value": "今日動能差",
           "color": "neutral"
         }
       ]
@@ -2052,30 +2052,30 @@
       "type": "rotation",
       "date": "2026-05-19",
       "time": "20:00",
-      "title": "2026-05-19 類股輪動偵測",
+      "title": "2026-05-19 每日族群輪動雷達",
       "title_em": "貨櫃航運",
-      "summary": "最大轉強 貨櫃航運 +3.03%（vs 5 日均），最大轉弱 記憶體 -8.98%。",
+      "summary": "今日相對升溫以 貨櫃航運 最明顯，相對降溫以 記憶體 壓力最大；今日轉弱力道大於轉強力道。",
       "tags": [
         "貨櫃航運",
         "記憶體",
-        "輪動"
+        "輪動雷達"
       ],
       "source_pipeline": "industry_map",
       "url": "reports/2026-05-19/sectors-rotation.html",
       "stats": [
         {
-          "label": "最大轉強",
-          "value": "貨櫃航運 +3.03%",
+          "label": "最大升溫",
+          "value": "貨櫃航運 +3.03 pct",
           "color": "up"
         },
         {
-          "label": "最大轉弱",
-          "value": "記憶體 -8.98%",
+          "label": "最大降溫",
+          "value": "記憶體 -8.98 pct",
           "color": "down"
         },
         {
-          "label": "對比基準",
-          "value": "5 日均",
+          "label": "核心指標",
+          "value": "今日動能差",
           "color": "neutral"
         }
       ]
@@ -2155,30 +2155,30 @@
       "type": "rotation",
       "date": "2026-05-18",
       "time": "20:00",
-      "title": "2026-05-18 類股輪動偵測",
+      "title": "2026-05-18 每日族群輪動雷達",
       "title_em": "被動元件",
-      "summary": "最大轉強 被動元件 +4.00%（vs 5 日均），最大轉弱 鏡頭光學 -7.81%。",
+      "summary": "今日相對升溫以 被動元件 最明顯，相對降溫以 鏡頭光學 壓力最大；今日轉弱力道大於轉強力道。",
       "tags": [
         "被動元件",
         "鏡頭光學",
-        "輪動"
+        "輪動雷達"
       ],
       "source_pipeline": "industry_map",
       "url": "reports/2026-05-18/sectors-rotation.html",
       "stats": [
         {
-          "label": "最大轉強",
-          "value": "被動元件 +4.00%",
+          "label": "最大升溫",
+          "value": "被動元件 +4.00 pct",
           "color": "up"
         },
         {
-          "label": "最大轉弱",
-          "value": "鏡頭光學 -7.81%",
+          "label": "最大降溫",
+          "value": "鏡頭光學 -7.81 pct",
           "color": "down"
         },
         {
-          "label": "對比基準",
-          "value": "5 日均",
+          "label": "核心指標",
+          "value": "今日動能差",
           "color": "neutral"
         }
       ]
@@ -2258,30 +2258,30 @@
       "type": "rotation",
       "date": "2026-05-15",
       "time": "20:00",
-      "title": "2026-05-15 類股輪動偵測",
+      "title": "2026-05-15 每日族群輪動雷達",
       "title_em": "面板級封裝FOPLP",
-      "summary": "最大轉強 面板級封裝FOPLP +6.14%（vs 5 日均），最大轉弱 ABF載板 -6.65%。",
+      "summary": "今日相對升溫以 面板級封裝FOPLP 最明顯，相對降溫以 ABF載板 壓力最大；今日轉弱力道大於轉強力道。",
       "tags": [
         "面板級封裝FOPLP",
         "ABF載板",
-        "輪動"
+        "輪動雷達"
       ],
       "source_pipeline": "industry_map",
       "url": "reports/2026-05-15/sectors-rotation.html",
       "stats": [
         {
-          "label": "最大轉強",
-          "value": "面板級封裝FOPLP +6.14%",
+          "label": "最大升溫",
+          "value": "面板級封裝FOPLP +6.14 pct",
           "color": "up"
         },
         {
-          "label": "最大轉弱",
-          "value": "ABF載板 -6.65%",
+          "label": "最大降溫",
+          "value": "ABF載板 -6.65 pct",
           "color": "down"
         },
         {
-          "label": "對比基準",
-          "value": "5 日均",
+          "label": "核心指標",
+          "value": "今日動能差",
           "color": "neutral"
         }
       ]
@@ -2361,30 +2361,30 @@
       "type": "rotation",
       "date": "2026-05-14",
       "time": "20:00",
-      "title": "2026-05-14 類股輪動偵測",
+      "title": "2026-05-14 每日族群輪動雷達",
       "title_em": "鏡頭光學",
-      "summary": "最大轉強 鏡頭光學 +7.96%（vs 5 日均），最大轉弱 面板 -10.17%。",
+      "summary": "今日相對升溫以 鏡頭光學 最明顯，相對降溫以 面板 壓力最大；今日轉弱力道大於轉強力道。",
       "tags": [
         "鏡頭光學",
         "面板",
-        "輪動"
+        "輪動雷達"
       ],
       "source_pipeline": "industry_map",
       "url": "reports/2026-05-14/sectors-rotation.html",
       "stats": [
         {
-          "label": "最大轉強",
-          "value": "鏡頭光學 +7.96%",
+          "label": "最大升溫",
+          "value": "鏡頭光學 +7.96 pct",
           "color": "up"
         },
         {
-          "label": "最大轉弱",
-          "value": "面板 -10.17%",
+          "label": "最大降溫",
+          "value": "面板 -10.17 pct",
           "color": "down"
         },
         {
-          "label": "對比基準",
-          "value": "5 日均",
+          "label": "核心指標",
+          "value": "今日動能差",
           "color": "neutral"
         }
       ]
@@ -2464,30 +2464,30 @@
       "type": "rotation",
       "date": "2026-05-13",
       "time": "20:00",
-      "title": "2026-05-13 類股輪動偵測",
+      "title": "2026-05-13 每日族群輪動雷達",
       "title_em": "自行車",
-      "summary": "最大轉強 自行車 +4.69%（vs 5 日均），最大轉弱 AI_ASIC設計 -8.79%。",
+      "summary": "今日相對升溫以 自行車 最明顯，相對降溫以 AI_ASIC設計 壓力最大；今日轉弱力道大於轉強力道。",
       "tags": [
         "自行車",
         "AI_ASIC設計",
-        "輪動"
+        "輪動雷達"
       ],
       "source_pipeline": "industry_map",
       "url": "reports/2026-05-13/sectors-rotation.html",
       "stats": [
         {
-          "label": "最大轉強",
-          "value": "自行車 +4.69%",
+          "label": "最大升溫",
+          "value": "自行車 +4.69 pct",
           "color": "up"
         },
         {
-          "label": "最大轉弱",
-          "value": "AI_ASIC設計 -8.79%",
+          "label": "最大降溫",
+          "value": "AI_ASIC設計 -8.79 pct",
           "color": "down"
         },
         {
-          "label": "對比基準",
-          "value": "5 日均",
+          "label": "核心指標",
+          "value": "今日動能差",
           "color": "neutral"
         }
       ]
@@ -2567,30 +2567,30 @@
       "type": "rotation",
       "date": "2026-05-12",
       "time": "20:00",
-      "title": "2026-05-12 類股輪動偵測",
+      "title": "2026-05-12 每日族群輪動雷達",
       "title_em": "鏡頭光學",
-      "summary": "最大轉強 鏡頭光學 +6.86%（vs 5 日均），最大轉弱 證券期貨 -4.74%。",
+      "summary": "今日相對升溫以 鏡頭光學 最明顯，相對降溫以 證券期貨 壓力最大；今日轉強力道大於轉弱力道。",
       "tags": [
         "鏡頭光學",
         "證券期貨",
-        "輪動"
+        "輪動雷達"
       ],
       "source_pipeline": "industry_map",
       "url": "reports/2026-05-12/sectors-rotation.html",
       "stats": [
         {
-          "label": "最大轉強",
-          "value": "鏡頭光學 +6.86%",
+          "label": "最大升溫",
+          "value": "鏡頭光學 +6.86 pct",
           "color": "up"
         },
         {
-          "label": "最大轉弱",
-          "value": "證券期貨 -4.74%",
+          "label": "最大降溫",
+          "value": "證券期貨 -4.74 pct",
           "color": "down"
         },
         {
-          "label": "對比基準",
-          "value": "5 日均",
+          "label": "核心指標",
+          "value": "今日動能差",
           "color": "neutral"
         }
       ]
@@ -2670,30 +2670,30 @@
       "type": "rotation",
       "date": "2026-05-11",
       "time": "20:00",
-      "title": "2026-05-11 類股輪動偵測",
+      "title": "2026-05-11 每日族群輪動雷達",
       "title_em": "ABF載板",
-      "summary": "最大轉強 ABF載板 +9.54%（vs 5 日均），最大轉弱 航運其他 -2.58%。",
+      "summary": "今日相對升溫以 ABF載板 最明顯，相對降溫以 航運其他 壓力最大；今日轉強力道大於轉弱力道。",
       "tags": [
         "ABF載板",
         "航運其他",
-        "輪動"
+        "輪動雷達"
       ],
       "source_pipeline": "industry_map",
       "url": "reports/2026-05-11/sectors-rotation.html",
       "stats": [
         {
-          "label": "最大轉強",
-          "value": "ABF載板 +9.54%",
+          "label": "最大升溫",
+          "value": "ABF載板 +9.54 pct",
           "color": "up"
         },
         {
-          "label": "最大轉弱",
-          "value": "航運其他 -2.58%",
+          "label": "最大降溫",
+          "value": "航運其他 -2.58 pct",
           "color": "down"
         },
         {
-          "label": "對比基準",
-          "value": "5 日均",
+          "label": "核心指標",
+          "value": "今日動能差",
           "color": "neutral"
         }
       ]
@@ -2773,30 +2773,30 @@
       "type": "rotation",
       "date": "2026-05-08",
       "time": "20:00",
-      "title": "2026-05-08 類股輪動偵測",
+      "title": "2026-05-08 每日族群輪動雷達",
       "title_em": "食品飲料",
-      "summary": "最大轉強 食品飲料 +1.54%（vs 5 日均），最大轉弱 ABF載板 -9.38%。",
+      "summary": "今日相對升溫以 食品飲料 最明顯，相對降溫以 ABF載板 壓力最大；今日轉弱力道大於轉強力道。",
       "tags": [
         "食品飲料",
         "ABF載板",
-        "輪動"
+        "輪動雷達"
       ],
       "source_pipeline": "industry_map",
       "url": "reports/2026-05-08/sectors-rotation.html",
       "stats": [
         {
-          "label": "最大轉強",
-          "value": "食品飲料 +1.54%",
+          "label": "最大升溫",
+          "value": "食品飲料 +1.54 pct",
           "color": "up"
         },
         {
-          "label": "最大轉弱",
-          "value": "ABF載板 -9.38%",
+          "label": "最大降溫",
+          "value": "ABF載板 -9.38 pct",
           "color": "down"
         },
         {
-          "label": "對比基準",
-          "value": "5 日均",
+          "label": "核心指標",
+          "value": "今日動能差",
           "color": "neutral"
         }
       ]
@@ -2876,30 +2876,30 @@
       "type": "rotation",
       "date": "2026-05-07",
       "time": "20:00",
-      "title": "2026-05-07 類股輪動偵測",
+      "title": "2026-05-07 每日族群輪動雷達",
       "title_em": "晶圓代工",
-      "summary": "最大轉強 晶圓代工 +4.84%（vs 5 日均），最大轉弱 LED -2.63%。",
+      "summary": "今日相對升溫以 晶圓代工 最明顯，相對降溫以 LED 壓力最大；今日轉強力道大於轉弱力道。",
       "tags": [
         "晶圓代工",
         "LED",
-        "輪動"
+        "輪動雷達"
       ],
       "source_pipeline": "industry_map",
       "url": "reports/2026-05-07/sectors-rotation.html",
       "stats": [
         {
-          "label": "最大轉強",
-          "value": "晶圓代工 +4.84%",
+          "label": "最大升溫",
+          "value": "晶圓代工 +4.84 pct",
           "color": "up"
         },
         {
-          "label": "最大轉弱",
-          "value": "LED -2.63%",
+          "label": "最大降溫",
+          "value": "LED -2.63 pct",
           "color": "down"
         },
         {
-          "label": "對比基準",
-          "value": "5 日均",
+          "label": "核心指標",
+          "value": "今日動能差",
           "color": "neutral"
         }
       ]
@@ -2979,30 +2979,30 @@
       "type": "rotation",
       "date": "2026-05-06",
       "time": "20:00",
-      "title": "2026-05-06 類股輪動偵測",
+      "title": "2026-05-06 每日族群輪動雷達",
       "title_em": "晶圓代工",
-      "summary": "最大轉強 晶圓代工 +4.85%（vs 5 日均），最大轉弱 ABF載板 -7.69%。",
+      "summary": "今日相對升溫以 晶圓代工 最明顯，相對降溫以 ABF載板 壓力最大；今日轉弱力道大於轉強力道。",
       "tags": [
         "晶圓代工",
         "ABF載板",
-        "輪動"
+        "輪動雷達"
       ],
       "source_pipeline": "industry_map",
       "url": "reports/2026-05-06/sectors-rotation.html",
       "stats": [
         {
-          "label": "最大轉強",
-          "value": "晶圓代工 +4.85%",
+          "label": "最大升溫",
+          "value": "晶圓代工 +4.85 pct",
           "color": "up"
         },
         {
-          "label": "最大轉弱",
-          "value": "ABF載板 -7.69%",
+          "label": "最大降溫",
+          "value": "ABF載板 -7.69 pct",
           "color": "down"
         },
         {
-          "label": "對比基準",
-          "value": "5 日均",
+          "label": "核心指標",
+          "value": "今日動能差",
           "color": "neutral"
         }
       ]
@@ -3082,30 +3082,30 @@
       "type": "rotation",
       "date": "2026-05-05",
       "time": "20:00",
-      "title": "2026-05-05 類股輪動偵測",
+      "title": "2026-05-05 每日族群輪動雷達",
       "title_em": "面板",
-      "summary": "最大轉強 面板 +5.78%（vs 5 日均），最大轉弱 電源供應 -3.87%。",
+      "summary": "今日相對升溫以 面板 最明顯，相對降溫以 電源供應 壓力最大；今日轉強力道大於轉弱力道。",
       "tags": [
         "面板",
         "電源供應",
-        "輪動"
+        "輪動雷達"
       ],
       "source_pipeline": "industry_map",
       "url": "reports/2026-05-05/sectors-rotation.html",
       "stats": [
         {
-          "label": "最大轉強",
-          "value": "面板 +5.78%",
+          "label": "最大升溫",
+          "value": "面板 +5.78 pct",
           "color": "up"
         },
         {
-          "label": "最大轉弱",
-          "value": "電源供應 -3.87%",
+          "label": "最大降溫",
+          "value": "電源供應 -3.87 pct",
           "color": "down"
         },
         {
-          "label": "對比基準",
-          "value": "5 日均",
+          "label": "核心指標",
+          "value": "今日動能差",
           "color": "neutral"
         }
       ]
@@ -3185,30 +3185,30 @@
       "type": "rotation",
       "date": "2026-05-04",
       "time": "20:00",
-      "title": "2026-05-04 類股輪動偵測",
+      "title": "2026-05-04 每日族群輪動雷達",
       "title_em": "面板級封裝FOPLP",
-      "summary": "最大轉強 面板級封裝FOPLP +8.31%（vs 5 日均），最大轉弱 塑化 -4.00%。",
+      "summary": "今日相對升溫以 面板級封裝FOPLP 最明顯，相對降溫以 塑化 壓力最大；今日轉強力道大於轉弱力道。",
       "tags": [
         "面板級封裝FOPLP",
         "塑化",
-        "輪動"
+        "輪動雷達"
       ],
       "source_pipeline": "industry_map",
       "url": "reports/2026-05-04/sectors-rotation.html",
       "stats": [
         {
-          "label": "最大轉強",
-          "value": "面板級封裝FOPLP +8.31%",
+          "label": "最大升溫",
+          "value": "面板級封裝FOPLP +8.31 pct",
           "color": "up"
         },
         {
-          "label": "最大轉弱",
-          "value": "塑化 -4.00%",
+          "label": "最大降溫",
+          "value": "塑化 -4.00 pct",
           "color": "down"
         },
         {
-          "label": "對比基準",
-          "value": "5 日均",
+          "label": "核心指標",
+          "value": "今日動能差",
           "color": "neutral"
         }
       ]
@@ -3288,30 +3288,30 @@
       "type": "rotation",
       "date": "2026-04-30",
       "time": "20:00",
-      "title": "2026-04-30 類股輪動偵測",
+      "title": "2026-04-30 每日族群輪動雷達",
       "title_em": "光通訊",
-      "summary": "最大轉強 光通訊 +7.83%（vs 5 日均），最大轉弱 記憶體 -5.62%。",
+      "summary": "今日相對升溫以 光通訊 最明顯，相對降溫以 記憶體 壓力最大；今日轉強力道大於轉弱力道。",
       "tags": [
         "光通訊",
         "記憶體",
-        "輪動"
+        "輪動雷達"
       ],
       "source_pipeline": "industry_map",
       "url": "reports/2026-04-30/sectors-rotation.html",
       "stats": [
         {
-          "label": "最大轉強",
-          "value": "光通訊 +7.83%",
+          "label": "最大升溫",
+          "value": "光通訊 +7.83 pct",
           "color": "up"
         },
         {
-          "label": "最大轉弱",
-          "value": "記憶體 -5.62%",
+          "label": "最大降溫",
+          "value": "記憶體 -5.62 pct",
           "color": "down"
         },
         {
-          "label": "對比基準",
-          "value": "5 日均",
+          "label": "核心指標",
+          "value": "今日動能差",
           "color": "neutral"
         }
       ]
@@ -3391,30 +3391,30 @@
       "type": "rotation",
       "date": "2026-04-29",
       "time": "20:00",
-      "title": "2026-04-29 類股輪動偵測",
+      "title": "2026-04-29 每日族群輪動雷達",
       "title_em": "LED",
-      "summary": "最大轉強 LED +4.44%（vs 5 日均），最大轉弱 ABF載板 -4.16%。",
+      "summary": "今日相對升溫以 LED 最明顯，相對降溫以 ABF載板 壓力最大；今日轉強力道大於轉弱力道。",
       "tags": [
         "LED",
         "ABF載板",
-        "輪動"
+        "輪動雷達"
       ],
       "source_pipeline": "industry_map",
       "url": "reports/2026-04-29/sectors-rotation.html",
       "stats": [
         {
-          "label": "最大轉強",
-          "value": "LED +4.44%",
+          "label": "最大升溫",
+          "value": "LED +4.44 pct",
           "color": "up"
         },
         {
-          "label": "最大轉弱",
-          "value": "ABF載板 -4.16%",
+          "label": "最大降溫",
+          "value": "ABF載板 -4.16 pct",
           "color": "down"
         },
         {
-          "label": "對比基準",
-          "value": "5 日均",
+          "label": "核心指標",
+          "value": "今日動能差",
           "color": "neutral"
         }
       ]
@@ -3494,30 +3494,30 @@
       "type": "rotation",
       "date": "2026-04-28",
       "time": "20:00",
-      "title": "2026-04-28 類股輪動偵測",
+      "title": "2026-04-28 每日族群輪動雷達",
       "title_em": "光通訊",
-      "summary": "最大轉強 光通訊 +7.27%（vs 5 日均），最大轉弱 ABF載板 -4.00%。",
+      "summary": "今日相對升溫以 光通訊 最明顯，相對降溫以 ABF載板 壓力最大；今日轉強力道大於轉弱力道。",
       "tags": [
         "光通訊",
         "ABF載板",
-        "輪動"
+        "輪動雷達"
       ],
       "source_pipeline": "industry_map",
       "url": "reports/2026-04-28/sectors-rotation.html",
       "stats": [
         {
-          "label": "最大轉強",
-          "value": "光通訊 +7.27%",
+          "label": "最大升溫",
+          "value": "光通訊 +7.27 pct",
           "color": "up"
         },
         {
-          "label": "最大轉弱",
-          "value": "ABF載板 -4.00%",
+          "label": "最大降溫",
+          "value": "ABF載板 -4.00 pct",
           "color": "down"
         },
         {
-          "label": "對比基準",
-          "value": "5 日均",
+          "label": "核心指標",
+          "value": "今日動能差",
           "color": "neutral"
         }
       ]
@@ -3597,30 +3597,30 @@
       "type": "rotation",
       "date": "2026-04-27",
       "time": "20:00",
-      "title": "2026-04-27 類股輪動偵測",
+      "title": "2026-04-27 每日族群輪動雷達",
       "title_em": "記憶體",
-      "summary": "最大轉強 記憶體 +4.94%（vs 5 日均），最大轉弱 液冷散熱 -6.29%。",
+      "summary": "今日相對升溫以 記憶體 最明顯，相對降溫以 液冷散熱 壓力最大；今日轉弱力道大於轉強力道。",
       "tags": [
         "記憶體",
         "液冷散熱",
-        "輪動"
+        "輪動雷達"
       ],
       "source_pipeline": "industry_map",
       "url": "reports/2026-04-27/sectors-rotation.html",
       "stats": [
         {
-          "label": "最大轉強",
-          "value": "記憶體 +4.94%",
+          "label": "最大升溫",
+          "value": "記憶體 +4.94 pct",
           "color": "up"
         },
         {
-          "label": "最大轉弱",
-          "value": "液冷散熱 -6.29%",
+          "label": "最大降溫",
+          "value": "液冷散熱 -6.29 pct",
           "color": "down"
         },
         {
-          "label": "對比基準",
-          "value": "5 日均",
+          "label": "核心指標",
+          "value": "今日動能差",
           "color": "neutral"
         }
       ]
@@ -3700,30 +3700,30 @@
       "type": "rotation",
       "date": "2026-04-24",
       "time": "20:00",
-      "title": "2026-04-24 類股輪動偵測",
+      "title": "2026-04-24 每日族群輪動雷達",
       "title_em": "ABF載板",
-      "summary": "最大轉強 ABF載板 +6.53%（vs 5 日均），最大轉弱 光通訊 -3.42%。",
+      "summary": "今日相對升溫以 ABF載板 最明顯，相對降溫以 光通訊 壓力最大；今日轉強力道大於轉弱力道。",
       "tags": [
         "ABF載板",
         "光通訊",
-        "輪動"
+        "輪動雷達"
       ],
       "source_pipeline": "industry_map",
       "url": "reports/2026-04-24/sectors-rotation.html",
       "stats": [
         {
-          "label": "最大轉強",
-          "value": "ABF載板 +6.53%",
+          "label": "最大升溫",
+          "value": "ABF載板 +6.53 pct",
           "color": "up"
         },
         {
-          "label": "最大轉弱",
-          "value": "光通訊 -3.42%",
+          "label": "最大降溫",
+          "value": "光通訊 -3.42 pct",
           "color": "down"
         },
         {
-          "label": "對比基準",
-          "value": "5 日均",
+          "label": "核心指標",
+          "value": "今日動能差",
           "color": "neutral"
         }
       ]
@@ -3803,30 +3803,30 @@
       "type": "rotation",
       "date": "2026-04-23",
       "time": "20:00",
-      "title": "2026-04-23 類股輪動偵測",
+      "title": "2026-04-23 每日族群輪動雷達",
       "title_em": "塑化",
-      "summary": "最大轉強 塑化 +1.69%（vs 5 日均），最大轉弱 化合物半導體 -12.25%。",
+      "summary": "今日相對升溫以 塑化 最明顯，相對降溫以 化合物半導體 壓力最大；今日轉弱力道大於轉強力道。",
       "tags": [
         "塑化",
         "化合物半導體",
-        "輪動"
+        "輪動雷達"
       ],
       "source_pipeline": "industry_map",
       "url": "reports/2026-04-23/sectors-rotation.html",
       "stats": [
         {
-          "label": "最大轉強",
-          "value": "塑化 +1.69%",
+          "label": "最大升溫",
+          "value": "塑化 +1.69 pct",
           "color": "up"
         },
         {
-          "label": "最大轉弱",
-          "value": "化合物半導體 -12.25%",
+          "label": "最大降溫",
+          "value": "化合物半導體 -12.25 pct",
           "color": "down"
         },
         {
-          "label": "對比基準",
-          "value": "5 日均",
+          "label": "核心指標",
+          "value": "今日動能差",
           "color": "neutral"
         }
       ]
@@ -3906,30 +3906,30 @@
       "type": "rotation",
       "date": "2026-04-22",
       "time": "20:00",
-      "title": "2026-04-22 類股輪動偵測",
+      "title": "2026-04-22 每日族群輪動雷達",
       "title_em": "IC設計",
-      "summary": "最大轉強 IC設計 +3.79%（vs 5 日均），最大轉弱 光通訊 -7.64%。",
+      "summary": "今日相對升溫以 IC設計 最明顯，相對降溫以 光通訊 壓力最大；今日轉弱力道大於轉強力道。",
       "tags": [
         "IC設計",
         "光通訊",
-        "輪動"
+        "輪動雷達"
       ],
       "source_pipeline": "industry_map",
       "url": "reports/2026-04-22/sectors-rotation.html",
       "stats": [
         {
-          "label": "最大轉強",
-          "value": "IC設計 +3.79%",
+          "label": "最大升溫",
+          "value": "IC設計 +3.79 pct",
           "color": "up"
         },
         {
-          "label": "最大轉弱",
-          "value": "光通訊 -7.64%",
+          "label": "最大降溫",
+          "value": "光通訊 -7.64 pct",
           "color": "down"
         },
         {
-          "label": "對比基準",
-          "value": "5 日均",
+          "label": "核心指標",
+          "value": "今日動能差",
           "color": "neutral"
         }
       ]
@@ -4009,30 +4009,30 @@
       "type": "rotation",
       "date": "2026-04-21",
       "time": "20:00",
-      "title": "2026-04-21 類股輪動偵測",
+      "title": "2026-04-21 每日族群輪動雷達",
       "title_em": "記憶體",
-      "summary": "最大轉強 記憶體 +7.68%（vs 5 日均），最大轉弱 LED -5.21%。",
+      "summary": "今日相對升溫以 記憶體 最明顯，相對降溫以 LED 壓力最大；今日轉強力道大於轉弱力道。",
       "tags": [
         "記憶體",
         "LED",
-        "輪動"
+        "輪動雷達"
       ],
       "source_pipeline": "industry_map",
       "url": "reports/2026-04-21/sectors-rotation.html",
       "stats": [
         {
-          "label": "最大轉強",
-          "value": "記憶體 +7.68%",
+          "label": "最大升溫",
+          "value": "記憶體 +7.68 pct",
           "color": "up"
         },
         {
-          "label": "最大轉弱",
-          "value": "LED -5.21%",
+          "label": "最大降溫",
+          "value": "LED -5.21 pct",
           "color": "down"
         },
         {
-          "label": "對比基準",
-          "value": "5 日均",
+          "label": "核心指標",
+          "value": "今日動能差",
           "color": "neutral"
         }
       ]
@@ -4112,30 +4112,30 @@
       "type": "rotation",
       "date": "2026-04-20",
       "time": "20:00",
-      "title": "2026-04-20 類股輪動偵測",
+      "title": "2026-04-20 每日族群輪動雷達",
       "title_em": "ABF載板",
-      "summary": "最大轉強 ABF載板 +7.61%（vs 5 日均），最大轉弱 LED -5.33%。",
+      "summary": "今日相對升溫以 ABF載板 最明顯，相對降溫以 LED 壓力最大；今日轉強力道大於轉弱力道。",
       "tags": [
         "ABF載板",
         "LED",
-        "輪動"
+        "輪動雷達"
       ],
       "source_pipeline": "industry_map",
       "url": "reports/2026-04-20/sectors-rotation.html",
       "stats": [
         {
-          "label": "最大轉強",
-          "value": "ABF載板 +7.61%",
+          "label": "最大升溫",
+          "value": "ABF載板 +7.61 pct",
           "color": "up"
         },
         {
-          "label": "最大轉弱",
-          "value": "LED -5.33%",
+          "label": "最大降溫",
+          "value": "LED -5.33 pct",
           "color": "down"
         },
         {
-          "label": "對比基準",
-          "value": "5 日均",
+          "label": "核心指標",
+          "value": "今日動能差",
           "color": "neutral"
         }
       ]

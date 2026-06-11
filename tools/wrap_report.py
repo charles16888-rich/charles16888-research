@@ -171,21 +171,24 @@ def fill_template(template: str, ctx: dict) -> str:
 # ── Main wrap function ───────────────────────────────────────────────────────
 
 def wrap_report(input_md: Path, output_html: Path, meta: dict) -> None:
-    raw = Path(input_md).read_text(encoding="utf-8")
+    if meta.get("content_html") is not None:
+        body_html = str(meta.get("content_html") or "")
+    else:
+        raw = Path(input_md).read_text(encoding="utf-8")
 
-    # Strip decorations + first H1.
-    cleaned = strip_decoration(raw)
-    body_md, _h1 = remove_first_h1(cleaned)
+        # Strip decorations + first H1.
+        cleaned = strip_decoration(raw)
+        body_md, _h1 = remove_first_h1(cleaned)
 
-    # Convert markdown.
-    md = md_lib.Markdown(
-        # md_in_html lets us write <details markdown="1">...</details> blocks
-        # in the source markdown and still have inner markdown processed.
-        extensions=["tables", "fenced_code", "attr_list", "sane_lists", "md_in_html"],
-        output_format="html5",
-    )
-    body_html = md.convert(body_md)
-    body_html = add_classes(body_html)
+        # Convert markdown.
+        md = md_lib.Markdown(
+            # md_in_html lets us write <details markdown="1">...</details> blocks
+            # in the source markdown and still have inner markdown processed.
+            extensions=["tables", "fenced_code", "attr_list", "sane_lists", "md_in_html"],
+            output_format="html5",
+        )
+        body_html = md.convert(body_md)
+        body_html = add_classes(body_html)
 
     # Build template context.
     time_str = meta.get("time") or ""
