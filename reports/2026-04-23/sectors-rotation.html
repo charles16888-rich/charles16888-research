@@ -80,7 +80,18 @@
       <section>
         <h2>今日 vs 5 日均四象限</h2>
         <p class="rotation-note">X 軸是前 5 日族群日均漲跌幅，Y 軸是今日族群平均漲跌幅；對角線上方代表今日比近 5 日更強。此圖先呈現輪動偵測揭露的升溫 / 降溫族群，若上游提供全 74 族群明細可直接擴充為全市場散點。</p>
-        <div class="rotation-quadrant" style="--zero:64.29%">
+        <div class="rotation-quadrant-legend">
+          <span>泡泡大小 = 今日成交額</span>
+          <span>透明度 = 樣本可靠度</span>
+          <span>紅色 = 升溫，綠色 = 降溫</span>
+        </div>
+        <div class="rotation-quadrant-wrap" data-rotation-zoom>
+          <div class="rotation-quadrant-toolbar">
+            <span>滑鼠滾輪縮放，雙擊重置</span>
+            <output class="rotation-quadrant__zoom-value">100%</output>
+          </div>
+          <div class="rotation-quadrant">
+            <div class="rotation-quadrant__stage" style="--zero:50%; --zoom:1">
           <div class="rotation-quadrant__axis rotation-quadrant__axis--x"></div>
           <div class="rotation-quadrant__axis rotation-quadrant__axis--y"></div>
           <div class="rotation-quadrant__diag"></div>
@@ -88,17 +99,57 @@
           <span class="rotation-quadrant__label rotation-quadrant__label--tl">弱轉強 / 翻正 · 2</span>
           <span class="rotation-quadrant__label rotation-quadrant__label--br">強轉弱 · 5</span>
           <span class="rotation-quadrant__label rotation-quadrant__label--bl">弱勢加速 · 2</span>
-          <span class="rotation-point rotation-point--up" style="left:57.14%;bottom:69.21%;width:27.2px;height:27.2px;opacity:0.82" title="塑化｜今日 +0.69%｜5 日均 -1.00%"><span>塑化</span></span>
-<span class="rotation-point rotation-point--up" style="left:65.07%;bottom:68.43%;width:18.4px;height:18.4px;opacity:0.82" title="證券期貨｜今日 +0.58%｜5 日均 +0.11%"><span>證券</span></span>
-<span class="rotation-point rotation-point--up" style="left:61.57%;bottom:62.93%;width:15.8px;height:15.8px;opacity:0.82" title="金融其他｜今日 -0.19%｜5 日均 -0.38%"><span>金融</span></span>
-<span class="rotation-point rotation-point--up" style="left:62.93%;bottom:64.29%;width:17.5px;height:17.5px;opacity:0.82" title="橡膠｜今日 +-0.00%｜5 日均 -0.19%"><span>橡膠</span></span>
-<span class="rotation-point rotation-point--up" style="left:61.21%;bottom:59.29%;width:14.0px;height:14.0px;opacity:0.62" title="貨櫃航運｜今日 -0.70%｜5 日均 -0.43%"><span>貨櫃</span></span>
-<span class="rotation-point rotation-point--down" style="left:94.50%;bottom:7.00%;width:33.6px;height:33.6px;opacity:0.55" title="化合物半導體｜今日 -8.02%｜5 日均 +4.23%"><span>化合</span></span>
-<span class="rotation-point rotation-point--down" style="left:84.93%;bottom:18.86%;width:36.0px;height:36.0px;opacity:0.82" title="光通訊｜今日 -6.36%｜5 日均 +2.89%"><span>光通</span></span>
-<span class="rotation-point rotation-point--down" style="left:82.21%;bottom:25.79%;width:24.4px;height:24.4px;opacity:0.55" title="矽晶圓｜今日 -5.39%｜5 日均 +2.51%"><span>矽晶</span></span>
-<span class="rotation-point rotation-point--down" style="left:67.14%;bottom:12.29%;width:31.5px;height:31.5px;opacity:0.82" title="網通設備｜今日 -7.28%｜5 日均 +0.40%"><span>網通</span></span>
-<span class="rotation-point rotation-point--down" style="left:71.21%;bottom:17.79%;width:31.9px;height:31.9px;opacity:0.82" title="被動元件｜今日 -6.51%｜5 日均 +0.97%"><span>被動</span></span>
+          <span class="rotation-point rotation-point--up" style="left:44.44%;bottom:53.83%;width:41.0px;height:41.0px;opacity:0.82" title="塑化｜今日 +0.69%｜5 日均 -1.00%"><span>塑化</span></span>
+<span class="rotation-point rotation-point--up" style="left:50.61%;bottom:53.22%;width:31.0px;height:31.0px;opacity:0.82" title="證券期貨｜今日 +0.58%｜5 日均 +0.11%"><span>證券</span></span>
+<span class="rotation-point rotation-point--up" style="left:47.89%;bottom:48.94%;width:28.1px;height:28.1px;opacity:0.82" title="金融其他｜今日 -0.19%｜5 日均 -0.38%"><span>金融</span></span>
+<span class="rotation-point rotation-point--up" style="left:48.94%;bottom:50.00%;width:30.0px;height:30.0px;opacity:0.82" title="橡膠｜今日 +-0.00%｜5 日均 -0.19%"><span>橡膠</span></span>
+<span class="rotation-point rotation-point--up" style="left:47.61%;bottom:46.11%;width:26.0px;height:26.0px;opacity:0.62" title="貨櫃航運｜今日 -0.70%｜5 日均 -0.43%"><span>貨櫃</span></span>
+<span class="rotation-point rotation-point--down" style="left:73.50%;bottom:5.44%;width:48.3px;height:48.3px;opacity:0.55" title="化合物半導體｜今日 -8.02%｜5 日均 +4.23%"><span>化合</span></span>
+<span class="rotation-point rotation-point--down" style="left:66.06%;bottom:14.67%;width:51.9px;height:51.9px;opacity:0.82" title="光通訊｜今日 -6.36%｜5 日均 +2.89%"><span>光通</span></span>
+<span class="rotation-point rotation-point--down" style="left:63.94%;bottom:20.06%;width:37.9px;height:37.9px;opacity:0.55" title="矽晶圓｜今日 -5.39%｜5 日均 +2.51%"><span>矽晶</span></span>
+<span class="rotation-point rotation-point--down" style="left:52.22%;bottom:9.56%;width:45.9px;height:45.9px;opacity:0.82" title="網通設備｜今日 -7.28%｜5 日均 +0.40%"><span>網通</span></span>
+<span class="rotation-point rotation-point--down" style="left:55.39%;bottom:13.83%;width:46.3px;height:46.3px;opacity:0.82" title="被動元件｜今日 -6.51%｜5 日均 +0.97%"><span>被動</span></span>
+            </div>
+          </div>
         </div>
+        <script>
+          (() => {
+            document.querySelectorAll('[data-rotation-zoom]').forEach((wrap) => {
+              const stage = wrap.querySelector('.rotation-quadrant__stage');
+              const viewport = wrap.querySelector('.rotation-quadrant');
+              const output = wrap.querySelector('.rotation-quadrant__zoom-value');
+              if (!stage || !viewport || !output || wrap.dataset.zoomReady === '1') return;
+              wrap.dataset.zoomReady = '1';
+              let zoom = 1;
+              const apply = () => {
+                const size = (zoom * 100).toFixed(0) + '%';
+                stage.style.width = size;
+                stage.style.height = size;
+                stage.style.setProperty('--zoom', zoom.toFixed(2));
+                output.textContent = Math.round(zoom * 100) + '%';
+              };
+              viewport.addEventListener('wheel', (event) => {
+                event.preventDefault();
+                const oldWidth = viewport.scrollWidth || 1;
+                const oldHeight = viewport.scrollHeight || 1;
+                const rect = viewport.getBoundingClientRect();
+                const cursorX = event.clientX - rect.left + viewport.scrollLeft;
+                const cursorY = event.clientY - rect.top + viewport.scrollTop;
+                zoom = Math.max(1, Math.min(3, zoom * (event.deltaY < 0 ? 1.12 : 0.89)));
+                apply();
+                requestAnimationFrame(() => {
+                  viewport.scrollLeft = (cursorX / oldWidth) * viewport.scrollWidth - (event.clientX - rect.left);
+                  viewport.scrollTop = (cursorY / oldHeight) * viewport.scrollHeight - (event.clientY - rect.top);
+                });
+              }, { passive: false });
+              wrap.addEventListener('dblclick', () => {
+                zoom = 1;
+                apply();
+              });
+              apply();
+            });
+          })();
+        </script>
       </section>
 
       <section>
@@ -109,71 +160,71 @@
           
         <div class="rotation-diverge__row">
           <div class="rotation-diverge__name">塑化</div>
-          <div class="rotation-diverge__track">
-            <span class="rotation-diverge__bar rotation-diverge__bar--up" style="--w:6.62%"></span>
+          <div class="rotation-diverge__track" style="--w:5.79%">
+            <span class="rotation-diverge__bar rotation-diverge__bar--up"></span>
             <span class="rotation-diverge__value rotation-diverge__value--up">+1.69 pct</span>
           </div>
         </div>
         <div class="rotation-diverge__row">
           <div class="rotation-diverge__name">證券期貨</div>
-          <div class="rotation-diverge__track">
-            <span class="rotation-diverge__bar rotation-diverge__bar--up" style="--w:1.84%"></span>
+          <div class="rotation-diverge__track" style="--w:1.61%">
+            <span class="rotation-diverge__bar rotation-diverge__bar--up"></span>
             <span class="rotation-diverge__value rotation-diverge__value--up">+0.47 pct</span>
           </div>
         </div>
         <div class="rotation-diverge__row">
           <div class="rotation-diverge__name">金融其他</div>
-          <div class="rotation-diverge__track">
-            <span class="rotation-diverge__bar rotation-diverge__bar--up" style="--w:0.74%"></span>
+          <div class="rotation-diverge__track" style="--w:0.65%">
+            <span class="rotation-diverge__bar rotation-diverge__bar--up"></span>
             <span class="rotation-diverge__value rotation-diverge__value--up">+0.19 pct</span>
           </div>
         </div>
         <div class="rotation-diverge__row">
           <div class="rotation-diverge__name">橡膠</div>
-          <div class="rotation-diverge__track">
-            <span class="rotation-diverge__bar rotation-diverge__bar--up" style="--w:0.74%"></span>
+          <div class="rotation-diverge__track" style="--w:0.65%">
+            <span class="rotation-diverge__bar rotation-diverge__bar--up"></span>
             <span class="rotation-diverge__value rotation-diverge__value--up">+0.19 pct</span>
           </div>
         </div>
         <div class="rotation-diverge__row">
           <div class="rotation-diverge__name">貨櫃航運</div>
-          <div class="rotation-diverge__track">
-            <span class="rotation-diverge__bar rotation-diverge__bar--down" style="--w:1.06%"></span>
+          <div class="rotation-diverge__track" style="--w:0.93%">
+            <span class="rotation-diverge__bar rotation-diverge__bar--down"></span>
             <span class="rotation-diverge__value rotation-diverge__value--down">-0.27 pct</span>
           </div>
         </div>
         <div class="rotation-diverge__row">
           <div class="rotation-diverge__name">化合物半導體</div>
-          <div class="rotation-diverge__track">
-            <span class="rotation-diverge__bar rotation-diverge__bar--down" style="--w:48.00%"></span>
+          <div class="rotation-diverge__track" style="--w:42.00%">
+            <span class="rotation-diverge__bar rotation-diverge__bar--down"></span>
             <span class="rotation-diverge__value rotation-diverge__value--down">-12.25 pct</span>
           </div>
         </div>
         <div class="rotation-diverge__row">
           <div class="rotation-diverge__name">光通訊</div>
-          <div class="rotation-diverge__track">
-            <span class="rotation-diverge__bar rotation-diverge__bar--down" style="--w:36.24%"></span>
+          <div class="rotation-diverge__track" style="--w:31.71%">
+            <span class="rotation-diverge__bar rotation-diverge__bar--down"></span>
             <span class="rotation-diverge__value rotation-diverge__value--down">-9.25 pct</span>
           </div>
         </div>
         <div class="rotation-diverge__row">
           <div class="rotation-diverge__name">矽晶圓</div>
-          <div class="rotation-diverge__track">
-            <span class="rotation-diverge__bar rotation-diverge__bar--down" style="--w:30.92%"></span>
+          <div class="rotation-diverge__track" style="--w:27.05%">
+            <span class="rotation-diverge__bar rotation-diverge__bar--down"></span>
             <span class="rotation-diverge__value rotation-diverge__value--down">-7.89 pct</span>
           </div>
         </div>
         <div class="rotation-diverge__row">
           <div class="rotation-diverge__name">網通設備</div>
-          <div class="rotation-diverge__track">
-            <span class="rotation-diverge__bar rotation-diverge__bar--down" style="--w:30.09%"></span>
+          <div class="rotation-diverge__track" style="--w:26.33%">
+            <span class="rotation-diverge__bar rotation-diverge__bar--down"></span>
             <span class="rotation-diverge__value rotation-diverge__value--down">-7.68 pct</span>
           </div>
         </div>
         <div class="rotation-diverge__row">
           <div class="rotation-diverge__name">被動元件</div>
-          <div class="rotation-diverge__track">
-            <span class="rotation-diverge__bar rotation-diverge__bar--down" style="--w:29.35%"></span>
+          <div class="rotation-diverge__track" style="--w:25.68%">
+            <span class="rotation-diverge__bar rotation-diverge__bar--down"></span>
             <span class="rotation-diverge__value rotation-diverge__value--down">-7.49 pct</span>
           </div>
         </div>

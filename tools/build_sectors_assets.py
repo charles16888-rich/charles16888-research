@@ -352,28 +352,26 @@ def render_rotation_report_html(entries: list[dict], date: str, base_range: tupl
     summary = summarize_rotation(entries)
     max_abs = max([abs(e.get("diff") or 0) for e in entries] + [1])
     current_values = [v for e in entries for v in (e.get("today"), e.get("base")) if v is not None]
-    axis_min = math.floor(min(current_values + [-1]))
-    axis_max = math.ceil(max(current_values + [1]))
-    if axis_min == axis_max:
-        axis_min -= 1
-        axis_max += 1
+    axis_abs = max(1, math.ceil(max(abs(v) for v in current_values) if current_values else 1))
+    axis_min = -axis_abs
+    axis_max = axis_abs
     span = axis_max - axis_min
 
     def point_style(e: dict) -> str:
         x = ((e.get("base") or 0) - axis_min) / span * 100
         y = ((e.get("today") or 0) - axis_min) / span * 100
-        size = 14 + min(22, math.sqrt(max(e.get("turnover") or 0, 0)) * 1.1)
+        size = 26 + min(30, math.sqrt(max(e.get("turnover") or 0, 0)) * 1.25)
         return f"left:{x:.2f}%;bottom:{y:.2f}%;width:{size:.1f}px;height:{size:.1f}px;opacity:{e.get('opacity', 0.8):.2f}"
 
     def bar_row(e: dict) -> str:
         diff = e.get("diff") or 0
-        width = abs(diff) / max_abs * 48
+        width = abs(diff) / max_abs * 42
         side_cls = "up" if diff >= 0 else "down"
         return f"""
         <div class="rotation-diverge__row">
           <div class="rotation-diverge__name">{_esc(e['name'])}</div>
-          <div class="rotation-diverge__track">
-            <span class="rotation-diverge__bar rotation-diverge__bar--{side_cls}" style="--w:{width:.2f}%"></span>
+          <div class="rotation-diverge__track" style="--w:{width:.2f}%">
+            <span class="rotation-diverge__bar rotation-diverge__bar--{side_cls}"></span>
             <span class="rotation-diverge__value rotation-diverge__value--{side_cls}">{_pct(diff, unit=" pct")}</span>
           </div>
         </div>"""
@@ -453,7 +451,18 @@ def render_rotation_report_html(entries: list[dict], date: str, base_range: tupl
       <section>
         <h2>今日 vs 5 日均四象限</h2>
         <p class="rotation-note">X 軸是前 5 日族群日均漲跌幅，Y 軸是今日族群平均漲跌幅；對角線上方代表今日比近 5 日更強。此圖先呈現輪動偵測揭露的升溫 / 降溫族群，若上游提供全 74 族群明細可直接擴充為全市場散點。</p>
-        <div class="rotation-quadrant" style="--zero:{((-axis_min) / span * 100):.2f}%">
+        <div class="rotation-quadrant-legend">
+          <span>泡泡大小 = 今日成交額</span>
+          <span>透明度 = 樣本可靠度</span>
+          <span>紅色 = 升溫，綠色 = 降溫</span>
+        </div>
+        <div class="rotation-quadrant-wrap" data-rotation-zoom>
+          <div class="rotation-quadrant-toolbar">
+            <span>滑鼠滾輪縮放，雙擊重置</span>
+            <output class="rotation-quadrant__zoom-value">100%</output>
+          </div>
+          <div class="rotation-quadrant">
+            <div class="rotation-quadrant__stage" style="--zero:50%; --zoom:1">
           <div class="rotation-quadrant__axis rotation-quadrant__axis--x"></div>
           <div class="rotation-quadrant__axis rotation-quadrant__axis--y"></div>
           <div class="rotation-quadrant__diag"></div>
@@ -462,7 +471,47 @@ def render_rotation_report_html(entries: list[dict], date: str, base_range: tupl
           <span class="rotation-quadrant__label rotation-quadrant__label--br">強轉弱 · {quadrant_counts['turn_down']}</span>
           <span class="rotation-quadrant__label rotation-quadrant__label--bl">弱勢加速 · {quadrant_counts['weak_accel']}</span>
           {points}
+            </div>
+          </div>
         </div>
+        <script>
+          (() => {{
+            document.querySelectorAll('[data-rotation-zoom]').forEach((wrap) => {{
+              const stage = wrap.querySelector('.rotation-quadrant__stage');
+              const viewport = wrap.querySelector('.rotation-quadrant');
+              const output = wrap.querySelector('.rotation-quadrant__zoom-value');
+              if (!stage || !viewport || !output || wrap.dataset.zoomReady === '1') return;
+              wrap.dataset.zoomReady = '1';
+              let zoom = 1;
+              const apply = () => {{
+                const size = (zoom * 100).toFixed(0) + '%';
+                stage.style.width = size;
+                stage.style.height = size;
+                stage.style.setProperty('--zoom', zoom.toFixed(2));
+                output.textContent = Math.round(zoom * 100) + '%';
+              }};
+              viewport.addEventListener('wheel', (event) => {{
+                event.preventDefault();
+                const oldWidth = viewport.scrollWidth || 1;
+                const oldHeight = viewport.scrollHeight || 1;
+                const rect = viewport.getBoundingClientRect();
+                const cursorX = event.clientX - rect.left + viewport.scrollLeft;
+                const cursorY = event.clientY - rect.top + viewport.scrollTop;
+                zoom = Math.max(1, Math.min(3, zoom * (event.deltaY < 0 ? 1.12 : 0.89)));
+                apply();
+                requestAnimationFrame(() => {{
+                  viewport.scrollLeft = (cursorX / oldWidth) * viewport.scrollWidth - (event.clientX - rect.left);
+                  viewport.scrollTop = (cursorY / oldHeight) * viewport.scrollHeight - (event.clientY - rect.top);
+                }});
+              }}, {{ passive: false }});
+              wrap.addEventListener('dblclick', () => {{
+                zoom = 1;
+                apply();
+              }});
+              apply();
+            }});
+          }})();
+        </script>
       </section>
 
       <section>

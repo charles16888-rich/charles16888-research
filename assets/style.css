@@ -1825,6 +1825,212 @@ h3, .h3 {
   }
 }
 
+/* Rotation radar interaction and readability overrides */
+.rotation-quadrant-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin-top: var(--sp-3);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--ink-muted);
+}
+
+.rotation-quadrant-legend span,
+.rotation-quadrant-toolbar output {
+  padding: 4px 8px;
+  border: var(--hairline) solid var(--rule);
+  background: var(--bg-elevated);
+}
+
+.rotation-quadrant-wrap {
+  margin-top: var(--sp-5);
+}
+
+.rotation-quadrant-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-2);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--ink-muted);
+}
+
+.rotation-quadrant-toolbar output {
+  font-family: var(--font-mono);
+  color: var(--ink);
+}
+
+.rotation-quadrant {
+  height: clamp(520px, 72vh, 760px);
+  min-height: 520px;
+  aspect-ratio: auto;
+  margin-top: 0;
+  background: transparent;
+  overflow: auto;
+  overscroll-behavior: contain;
+  cursor: zoom-in;
+}
+
+.rotation-quadrant::before,
+.rotation-quadrant::after {
+  display: none;
+}
+
+.rotation-quadrant__stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  background:
+    linear-gradient(to right, transparent calc(var(--zero) - 1px), var(--rule-strong) var(--zero), transparent calc(var(--zero) + 1px)),
+    linear-gradient(to top, transparent calc(var(--zero) - 1px), var(--rule-strong) var(--zero), transparent calc(var(--zero) + 1px)),
+    linear-gradient(90deg, rgba(29, 140, 74, 0.06) 0 50%, rgba(200, 48, 48, 0.06) 50% 100%);
+}
+
+.rotation-quadrant__stage::before,
+.rotation-quadrant__stage::after {
+  position: absolute;
+  z-index: 1;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--ink-dim);
+}
+
+.rotation-quadrant__stage::before {
+  content: '前 5 日均';
+  right: var(--sp-3);
+  bottom: var(--sp-2);
+}
+
+.rotation-quadrant__stage::after {
+  content: '今日';
+  left: var(--sp-3);
+  top: var(--sp-2);
+}
+
+.rotation-quadrant__axis {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.rotation-quadrant__axis--x {
+  left: 0;
+  right: 0;
+  bottom: var(--zero);
+  height: 1px;
+  background: var(--rule-strong);
+}
+
+.rotation-quadrant__axis--y {
+  top: 0;
+  bottom: 0;
+  left: var(--zero);
+  width: 1px;
+  background: var(--rule-strong);
+}
+
+.rotation-quadrant__diag {
+  background: linear-gradient(to top right, transparent calc(50% - 1px), rgba(138, 111, 43, 0.62) 50%, transparent calc(50% + 1px));
+}
+
+.rotation-quadrant__label {
+  z-index: 4;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.rotation-point {
+  min-width: 26px;
+  min-height: 26px;
+  border: 1px solid color-mix(in srgb, var(--bg) 72%, white);
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.22);
+}
+
+.rotation-point span {
+  max-width: calc(100% - 6px);
+  overflow: hidden;
+  font-size: 13px;
+  font-weight: 700;
+  text-overflow: clip;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
+}
+
+.rotation-diverge::before {
+  display: none;
+}
+
+.rotation-diverge__track {
+  height: 24px;
+}
+
+.rotation-diverge__track::before {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  top: -9px;
+  bottom: -9px;
+  left: 50%;
+  width: 1px;
+  background: var(--rule-gold-strong);
+}
+
+.rotation-diverge__bar {
+  z-index: 1;
+  top: 7px;
+  height: 10px;
+}
+
+.rotation-diverge__value {
+  z-index: 2;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 2px 6px;
+  border: var(--hairline) solid var(--rule-gold-strong);
+  background: var(--bg-elevated);
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.15;
+  white-space: nowrap;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.18);
+}
+
+.rotation-diverge__value--up {
+  left: calc(50% + var(--w) + 8px);
+  color: var(--up);
+}
+
+.rotation-diverge__value--down {
+  right: calc(50% + var(--w) + 8px);
+  color: var(--down);
+}
+
+@media (max-width: 760px) {
+  .rotation-quadrant {
+    min-height: 500px;
+  }
+
+  .rotation-quadrant-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .rotation-point span {
+    font-size: 12px;
+  }
+
+  .rotation-diverge__value {
+    font-size: 11px;
+  }
+}
+
 /* Pullquote */
 .pullquote {
   font-family: var(--font-display);
