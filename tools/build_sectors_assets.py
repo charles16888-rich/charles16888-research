@@ -1,4 +1,4 @@
-"""
+r"""
 build_sectors_assets.py
 =======================
 Convert industry_map's daily / weekly / rotation md reports into Lynus'
@@ -24,6 +24,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import html
 import json
 import re
 import sys
@@ -189,7 +190,219 @@ META_EXTRACTORS = {
 }
 
 
-# ── Process one md ─────────────────────────────────────────────────────────
+
+_WEEKLY_DATA_RE = re.compile(r"<!--\s*sector-weekly-data\s*(\{.*?\})\s*-->", re.DOTALL)
+
+
+def _h(value) -> str:
+    return html.escape(str(value), quote=True)
+
+
+def _num(value, default=0.0) -> float:
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return default
+
+
+def _fmt_pct(value) -> str:
+    return f"{_num(value):+.2f}%"
+
+
+def _fmt_money(value) -> str:
+    v = _num(value)
+    if v <= 0:
+        return "&#8212;"
+    return f"{v / 1e8:.1f} &#x5104;"
+
+
+def _tone_class(value) -> str:
+    v = _num(value)
+    if v > 0:
+        return "num-up"
+    if v < 0:
+        return "num-down"
+    return "num-neutral"
+
+
+def _heat_style(value) -> str:
+    v = max(-20.0, min(20.0, _num(value)))
+    alpha = 0.14 + min(abs(v) / 20.0, 1.0) * 0.5
+    if v >= 0:
+        return f"--heat-bg: rgba(200, 48, 48, {alpha:.3f}); --heat-border: rgba(200, 48, 48, 0.42);"
+    return f"--heat-bg: rgba(29, 140, 74, {alpha:.3f}); --heat-border: rgba(29, 140, 74, 0.42);"
+
+
+def _rhythm_html(row: dict) -> str:
+    marks = []
+    for value in row.get("rhythm", []):
+        if value > 0:
+            marks.append('<span class="sector-rhythm__dot sector-rhythm__dot--up">&uarr;</span>')
+        elif value < 0:
+            marks.append('<span class="sector-rhythm__dot sector-rhythm__dot--down">&darr;</span>')
+        else:
+            marks.append('<span class="sector-rhythm__dot sector-rhythm__dot--flat">&middot;</span>')
+    return '<span class="sector-rhythm" aria-label="5 &#x65e5;&#x7bc0;&#x594f;">' + "".join(marks) + "</span>"
+
+
+def _member_summary(row: dict, preview=6) -> str:
+    members = row.get("members") or []
+    prefix = "&#x6210;&#x5206;&#x80a1;&#xff1a;"
+    if not members:
+        return prefix + "&#8212;"
+    shown = "&#x3001;".join(_h(m) for m in members[:preview])
+    if len(members) > preview:
+        return f"{prefix}{shown}... &#x5171; {len(members)} &#x6a94;"
+    return f"{prefix}{shown}"
+
+
+def _member_details(row: dict) -> str:
+    members = row.get("members") or []
+    if not members:
+        return '<p class="sector-card__members">&#x6210;&#x5206;&#x80a1;&#xff1a;&#8212;</p>'
+    chips = "".join(f'<span>{_h(m)}</span>' for m in members)
+    return ('<details class="sector-members">' f'<summary>{_member_summary(row)}</summary>' f'<div class="sector-members__chips">{chips}</div>' '</details>')
+
+
+def _tag_html(row: dict, turnover_pct: float) -> str:
+    tags = []
+    chg = _num(row.get("cum_chg"))
+    n_stocks = int(row.get("n_stocks") or len(row.get("members") or []) or 0)
+    if chg >= 3:
+        tags.append("&#x50f9;&#x5f37;")
+    elif chg <= -3:
+        tags.append("&#x50f9;&#x5f31;")
+    else:
+        tags.append("&#x4e2d;&#x6027;&#x9707;&#x76ea;")
+    if turnover_pct >= 80:
+        tags.append("&#x91cf;&#x5927;")
+    elif turnover_pct >= 55:
+        tags.append("&#x6210;&#x4ea4;&#x4e2d;&#x9ad8;")
+    else:
+        tags.append("&#x91cf;&#x80fd;&#x666e;&#x901a;")
+    if chg < 0 and turnover_pct >= 80:
+        tags.append("&#x91cf;&#x5927;&#x50f9;&#x8dcc;")
+    elif chg > 0 and turnover_pct >= 80:
+        tags.append("&#x50f9;&#x91cf;&#x9f4a;&#x63da;")
+    if n_stocks <= 5:
+        tags.append("&#x6210;&#x5206;&#x96c6;&#x4e2d;")
+    return "".join(f'<span>{t}</span>' for t in tags[:4])
+
+
+def _treemap(items: list[dict], x=0.0, y=0.0, w=100.0, h=100.0) -> list[tuple[dict, float, float, float, float]]:
+    items = [i for i in items if _num(i.get("avg_turnover")) > 0]
+    if not items:
+        return []
+    if len(items) == 1:
+        return [(items[0], x, y, w, h)]
+    total = sum(_num(i.get("avg_turnover")) for i in items)
+    acc = 0.0
+    split = 1
+    for idx, item in enumerate(items, 1):
+        acc += _num(item.get("avg_turnover"))
+        split = idx
+        if acc >= total / 2:
+            break
+    a, b = items[:split], items[split:]
+    a_total = sum(_num(i.get("avg_turnover")) for i in a)
+    if not b:
+        return [(i, x, y, w / len(items), h) for i in items]
+    if w >= h:
+        aw = w * a_total / total
+        return _treemap(a, x, y, aw, h) + _treemap(b, x + aw, y, w - aw, h)
+    ah = h * a_total / total
+    return _treemap(a, x, y, w, ah) + _treemap(b, x, y + ah, w, h - ah)
+
+
+def _sector_card(row: dict, rank: int, turnover_pct: float, variant: str) -> str:
+    tone = _tone_class(row.get("cum_chg"))
+    return f"""
+    <article class="sector-card sector-card--{variant}">
+      <div class="sector-card__head"><span class="sector-card__rank">#{rank}</span><strong>{_h(row.get("name", ""))}</strong><em class="{tone}">{_fmt_pct(row.get("cum_chg"))}</em></div>
+      <div class="sector-card__meta"><span>&#x65e5;&#x5747;&#x6210;&#x4ea4;&#x984d; <strong>{_fmt_money(row.get("avg_turnover"))}</strong></span><span>5 &#x65e5;&#x7bc0;&#x594f; {_rhythm_html(row)}</span><span>&#x6f32;/&#x8dcc;&#x65e5; <strong>{int(row.get("up_days", 0))}/{int(row.get("down_days", 0))}</strong></span></div>
+      {_member_details(row)}<div class="sector-tags">{_tag_html(row, turnover_pct)}</div>
+    </article>"""
+
+
+def _render_enhanced_weekly_md(md_text: str) -> str:
+    match = _WEEKLY_DATA_RE.search(md_text)
+    if not match:
+        return md_text
+    try:
+        data = json.loads(match.group(1))
+    except json.JSONDecodeError:
+        return _WEEKLY_DATA_RE.sub("", md_text)
+    sectors = data.get("sectors") or []
+    if not sectors:
+        return _WEEKLY_DATA_RE.sub("", md_text)
+    sectors = sorted(sectors, key=lambda r: _num(r.get("cum_chg")), reverse=True)
+    total = len(sectors)
+    turnovers = sorted((_num(r.get("avg_turnover")) for r in sectors), reverse=True)
+    turnover_sum = sum(turnovers) or 1.0
+    turnover_ranked = sorted(sectors, key=lambda r: _num(r.get("avg_turnover")))
+    turnover_pct = {id(r): (i / max(total - 1, 1)) * 100 for i, r in enumerate(turnover_ranked)}
+    up_count = sum(1 for r in sectors if _num(r.get("cum_chg")) > 0)
+    down_count = sum(1 for r in sectors if _num(r.get("cum_chg")) < 0)
+    chgs = sorted(_num(r.get("cum_chg")) for r in sectors)
+    mid = total // 2
+    median = chgs[mid] if total % 2 else (chgs[mid - 1] + chgs[mid]) / 2
+    concentration = sum(turnovers[:5]) / turnover_sum * 100
+    strongest = max(sectors, key=lambda r: _num(r.get("cum_chg")))
+    weakest = min(sectors, key=lambda r: _num(r.get("cum_chg")))
+    money = max(sectors, key=lambda r: _num(r.get("avg_turnover")))
+    if median > 1 and up_count / total >= 0.6:
+        conclusion = "&#x5e02;&#x5834;&#x504f;&#x591a;&#x64f4;&#x6563;&#xff0c;&#x5f37;&#x52e2;&#x4e0d;&#x662f;&#x53ea;&#x96c6;&#x4e2d;&#x5728;&#x5c11;&#x6578;&#x65cf;&#x7fa4;&#x3002;"
+    elif median < -1 and down_count / total >= 0.6:
+        conclusion = "&#x5e02;&#x5834;&#x504f;&#x7a7a;&#x4fee;&#x6b63;&#xff0c;&#x8cc7;&#x91d1;&#x7126;&#x9ede;&#x8207;&#x50f9;&#x683c;&#x8868;&#x73fe;&#x51fa;&#x73fe;&#x5206;&#x6b67;&#x3002;"
+    elif concentration >= 45:
+        conclusion = "&#x6210;&#x4ea4;&#x984d;&#x9ad8;&#x5ea6;&#x96c6;&#x4e2d;&#xff0c;&#x9069;&#x5408;&#x512a;&#x5148;&#x89c0;&#x5bdf;&#x5927;&#x578b;&#x8cc7;&#x91d1;&#x5340;&#x7684;&#x5f37;&#x5f31;&#x8b8a;&#x5316;&#x3002;"
+    else:
+        conclusion = "&#x76e4;&#x9762;&#x9707;&#x76ea;&#x5206;&#x6b67;&#xff0c;&#x65cf;&#x7fa4;&#x8f2a;&#x52d5;&#x901f;&#x5ea6;&#x9ad8;&#x65bc;&#x6574;&#x9ad4;&#x8da8;&#x52e2;&#x3002;"
+    bins = [(-10**9, -15, "<-15%"), (-15, -10, "-15~-10%"), (-10, -5, "-10~-5%"), (-5, 0, "-5~0%"), (0, 5, "0~5%"), (5, 10, "5~10%"), (10, 10**9, ">10%")]
+    dist_rows, max_bin = [], 1
+    for lo, hi, label in bins:
+        count = sum(1 for r in sectors if _num(r.get("cum_chg")) >= lo and _num(r.get("cum_chg")) < hi)
+        max_bin = max(max_bin, count)
+        dist_rows.append((label, count))
+    dist_html = "".join(f'<div class="sector-dist__row"><span>{_h(label)}</span><div><i style="width:{count / max_bin * 100:.1f}%"></i></div><em>{count}</em></div>' for label, count in dist_rows)
+    gainers = sectors[:5]
+    losers = sorted(sectors, key=lambda r: _num(r.get("cum_chg")))[:5]
+    max_abs = max(abs(_num(r.get("cum_chg"))) for r in gainers + losers) or 1.0
+    diverging_rows = []
+    for i in range(5):
+        g, l = gainers[i], losers[i]
+        diverging_rows.append(f"""<div class="sector-rank-row"><div class="sector-rank-row__left"><span>{_h(l.get("name"))}</span><i style="width:{abs(_num(l.get("cum_chg"))) / max_abs * 100:.1f}%"></i><em class="num-down">{_fmt_pct(l.get("cum_chg"))}&#xff5c;{_fmt_money(l.get("avg_turnover"))}</em></div><div class="sector-rank-row__right"><span>{_h(g.get("name"))}</span><i style="width:{abs(_num(g.get("cum_chg"))) / max_abs * 100:.1f}%"></i><em class="num-up">{_fmt_pct(g.get("cum_chg"))}&#xff5c;{_fmt_money(g.get("avg_turnover"))}</em></div></div>""")
+    max_members = max((int(r.get("n_stocks") or len(r.get("members") or []) or 1) for r in sectors), default=1)
+    scatter_abs = max(max(abs(_num(r.get("cum_chg"))) for r in sectors), 5.0)
+    label_names = {r["name"] for r in gainers[:2] + losers[:2] + sorted(sectors, key=lambda r: _num(r.get("avg_turnover")), reverse=True)[:5]}
+    points = []
+    for r in sectors:
+        x = (_num(r.get("cum_chg")) + scatter_abs) / (2 * scatter_abs) * 100
+        y = turnover_pct[id(r)]
+        n = int(r.get("n_stocks") or len(r.get("members") or []) or 1)
+        size = 10 + (n / max_members) ** 0.5 * 22
+        label = f'<span>{_h(r.get("name"))}</span>' if r.get("name") in label_names else ""
+        tone = "up" if _num(r.get("cum_chg")) > 0 else ("down" if _num(r.get("cum_chg")) < 0 else "flat")
+        points.append(f'<b class="sector-scatter__point sector-scatter__point--{tone}" style="left:{x:.2f}%; bottom:{y:.2f}%; width:{size:.1f}px; height:{size:.1f}px" title="{_h(r.get("name"))} {_fmt_pct(r.get("cum_chg"))}&#xff5c;{_fmt_money(r.get("avg_turnover"))}">{label}</b>')
+    heat_items = sorted(sectors, key=lambda r: _num(r.get("avg_turnover")), reverse=True)[:18]
+    tiles = []
+    for r, x, y, w, h in _treemap(heat_items):
+        tiles.append(f"""<div class="sector-treemap__tile" style="left:{x:.3f}%; top:{y:.3f}%; width:{w:.3f}%; height:{h:.3f}%; {_heat_style(r.get("cum_chg"))}"><strong>{_h(r.get("name"))}</strong><span>{_fmt_pct(r.get("cum_chg"))}</span><em>{_fmt_money(r.get("avg_turnover"))}</em></div>""")
+    money_top = sorted(sectors, key=lambda r: _num(r.get("avg_turnover")), reverse=True)[:5]
+    card_groups = [("&#x6f32;&#x5e45;&#x524d; 5", gainers, "up"), ("&#x8dcc;&#x5e45;&#x524d; 5", losers, "down"), ("&#x8cc7;&#x91d1;&#x7126;&#x9ede;&#x524d; 5", money_top, "money")]
+    cards_html = "".join(f'<section class="sector-card-group"><h3>{title}</h3><div class="sector-card-grid">' + "".join(_sector_card(r, i, turnover_pct[id(r)], variant) for i, r in enumerate(rows, 1)) + '</div></section>' for title, rows, variant in card_groups)
+    h1 = re.search(r"^#\s+(.+)$", md_text, re.MULTILINE)
+    title = h1.group(0) if h1 else f"# &#x65cf;&#x7fa4;&#x9031;&#x5831; {data.get('end_date', '')}"
+    html_block = f"""
+<section class="sector-weekly"><section class="sector-thermo"><div class="sector-section-head"><span>&#x4e00;&#x3001;&#x672c;&#x9031;&#x5e02;&#x5834;&#x7e3d;&#x89bd;</span><h2>&#x672c;&#x9031;&#x65cf;&#x7fa4;&#x6eab;&#x5ea6;&#x8a08;</h2><p>{conclusion}</p></div><div class="sector-thermo__grid"><div><span>&#x6db5;&#x84cb;&#x65cf;&#x7fa4;</span><strong>{total}</strong></div><div><span>&#x4e0a;&#x6f32;&#x65cf;&#x7fa4;</span><strong class="num-up">{up_count} / {total}</strong></div><div><span>&#x4e0b;&#x8dcc;&#x65cf;&#x7fa4;</span><strong class="num-down">{down_count} / {total}</strong></div><div><span>5 &#x65e5;&#x6f32;&#x8dcc;&#x5e45;&#x4e2d;&#x4f4d;&#x6578;</span><strong class="{_tone_class(median)}">{_fmt_pct(median)}</strong></div><div><span>&#x6210;&#x4ea4;&#x984d;&#x96c6;&#x4e2d;&#x5ea6;</span><strong>{concentration:.1f}%</strong></div><div><span>&#x6700;&#x5f37;&#x65cf;&#x7fa4;</span><strong class="num-up">{_h(strongest.get('name'))} {_fmt_pct(strongest.get('cum_chg'))}</strong></div><div><span>&#x6700;&#x5f31;&#x65cf;&#x7fa4;</span><strong class="num-down">{_h(weakest.get('name'))} {_fmt_pct(weakest.get('cum_chg'))}</strong></div><div><span>&#x8cc7;&#x91d1;&#x7126;&#x9ede;</span><strong>{_h(money.get('name'))} {_fmt_money(money.get('avg_turnover'))}</strong></div></div></section>
+<section class="sector-panel"><div class="sector-section-head"><span>&#x4e8c;&#x3001;&#x65cf;&#x7fa4;&#x6f32;&#x8dcc;&#x5206;&#x5e03;</span><h2>74 &#x65cf;&#x7fa4;&#x5206;&#x5e03;&#x8207;&#x5f37;&#x5f31;&#x6392;&#x884c;</h2></div><div class="sector-two-col"><div class="sector-dist">{dist_html}</div><div class="sector-rank-chart"><div class="sector-rank-chart__labels"><span>&#x8dcc;&#x5e45;&#x65cf;&#x7fa4;</span><span>&#x6f32;&#x5e45;&#x65cf;&#x7fa4;</span></div>{''.join(diverging_rows)}</div></div></section>
+<section class="sector-panel"><div class="sector-section-head"><span>&#x4e09;&#x3001;&#x50f9;&#x91cf;&#x56db;&#x8c61;&#x9650;</span><h2>&#x50f9;&#x91cf;&#x56db;&#x8c61;&#x9650;&#x5716;</h2></div><div class="sector-scatter" aria-label="&#x50f9;&#x91cf;&#x56db;&#x8c61;&#x9650;&#x5716;"><div class="sector-scatter__axis sector-scatter__axis--x"></div><div class="sector-scatter__axis sector-scatter__axis--y"></div><span class="sector-scatter__q sector-scatter__q1">&#x50f9;&#x91cf;&#x9f4a;&#x63da;<br>&#x4e3b;&#x7dda;&#x5019;&#x9078;</span><span class="sector-scatter__q sector-scatter__q2">&#x91cf;&#x5927;&#x50f9;&#x8dcc;<br>&#x64a4;&#x9000;&#x6216;&#x5206;&#x6b67;</span><span class="sector-scatter__q sector-scatter__q3">&#x6f32;&#x5f37;&#x91cf;&#x5c0f;<br>&#x77ed;&#x7dda;&#x8f2a;&#x52d5;</span><span class="sector-scatter__q sector-scatter__q4">&#x5f31;&#x52e2;&#x51b7;&#x9580;<br>&#x66ab;&#x975e;&#x7126;&#x9ede;</span>{''.join(points)}</div></section>
+<section class="sector-panel"><div class="sector-section-head"><span>&#x56db;&#x3001;&#x8cc7;&#x91d1;&#x71b1;&#x529b;&#x5716;</span><h2>&#x65e5;&#x5747;&#x6210;&#x4ea4;&#x984d; Treemap</h2></div><div class="sector-treemap">{''.join(tiles)}</div></section>
+<section class="sector-panel"><div class="sector-section-head"><span>&#x4e94;&#x3001;&#x5f37;&#x5f31;&#x65cf;&#x7fa4;&#x5361;&#x7247;</span><h2>&#x5f37;&#x5f31;&#x8207;&#x8cc7;&#x91d1;&#x7126;&#x9ede;</h2></div>{cards_html}</section>
+<section class="sector-panel sector-observation"><div class="sector-section-head"><span>&#x516d;&#x3001;&#x7814;&#x7a76;&#x89c0;&#x5bdf;</span><h2>&#x672c;&#x9031;&#x89c0;&#x5bdf;</h2></div><ul><li>&#x672c;&#x9031;&#x4e3b;&#x7dda;&#xff1a;{_h(strongest.get('name'))} &#x662f;&#x6700;&#x5f37;&#x65cf;&#x7fa4;&#xff0c;5 &#x65e5;&#x7d2f;&#x8a08; {_fmt_pct(strongest.get('cum_chg'))}&#x3002;</li><li>&#x8cc7;&#x91d1;&#x64a4;&#x9000;&#x5340;&#xff1a;{_h(weakest.get('name'))} &#x8207;&#x9ad8;&#x6210;&#x4ea4;&#x4e0b;&#x8dcc;&#x65cf;&#x7fa4;&#x9700;&#x512a;&#x5148;&#x89c0;&#x5bdf;&#x662f;&#x5426;&#x6b62;&#x7a69;&#x3002;</li><li>&#x8cc7;&#x91d1;&#x7126;&#x9ede;&#xff1a;{_h(money.get('name'))} &#x65e5;&#x5747;&#x6210;&#x4ea4;&#x984d; {_fmt_money(money.get('avg_turnover'))}&#xff0c;&#x524d; 5 &#x5927;&#x65cf;&#x7fa4;&#x4f54; {concentration:.1f}%&#x3002;</li><li>&#x4e0b;&#x9031;&#x8ffd;&#x8e64;&#xff1a;&#x7559;&#x610f;&#x53f3;&#x4e0a;&#x8c61;&#x9650;&#x662f;&#x5426;&#x64f4;&#x6563;&#xff0c;&#x6216;&#x5de6;&#x4e0a;&#x8c61;&#x9650;&#x7684;&#x5927;&#x578b;&#x96fb;&#x5b50;&#x65cf;&#x7fa4;&#x662f;&#x5426;&#x5ef6;&#x7e8c;&#x4fee;&#x6b63;&#x3002;</li></ul></section></section>
+"""
+    return title + "\n\n" + html_block
+
 
 def process_md(md_path: Path) -> dict | None:
     """Read one md, build HTML, return manifest entry meta."""
@@ -237,6 +450,8 @@ def process_md(md_path: Path) -> dict | None:
     # markdown converter doesn't trip on enclosed alphanumerics like ❶❷.
     tmp_md = TOOLS_DIR / f"_sectors_tmp_{type_id}_{date}.md"
     cleaned = _DECO.sub("", md_path.read_text(encoding="utf-8"))
+    if type_id == "weekly":
+        cleaned = _render_enhanced_weekly_md(cleaned)
     tmp_md.write_text(cleaned, encoding="utf-8")
 
     try:
