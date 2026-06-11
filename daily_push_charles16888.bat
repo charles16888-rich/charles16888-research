@@ -28,6 +28,19 @@ python "E:\stock_chip_crawler\verify_today_data.py" >> "%LOG%" 2>&1
 REM 3) build scripts (write to charles1688-research repo)
 cd /d "%REPO%"
 
+REM 3a) sync remote changes before generating files
+echo [%date% %time%] git sync before build >> "%LOG%"
+git fetch origin main >> "%LOG%" 2>&1
+if errorlevel 1 (
+    echo [%date% %time%] ERROR: git fetch failed before build >> "%LOG%"
+    exit /b 2
+)
+git rebase origin/main >> "%LOG%" 2>&1
+if errorlevel 1 (
+    echo [%date% %time%] ERROR: git rebase failed before build >> "%LOG%"
+    exit /b 2
+)
+
 echo [%date% %time%] [1/7] build_sectors_assets >> "%LOG%"
 python tools\build_sectors_assets.py >> "%LOG%" 2>&1
 
@@ -60,8 +73,22 @@ if errorlevel 1 (
     git commit -m "daily: %TODAY% sectors + taiex + chips" >> "%LOG%" 2>&1
     git push >> "%LOG%" 2>&1
     if errorlevel 1 (
-        echo [%date% %time%] ERROR: git push failed >> "%LOG%"
-        exit /b 3
+        echo [%date% %time%] WARN: git push failed, fetch/rebase/retry once >> "%LOG%"
+        git fetch origin main >> "%LOG%" 2>&1
+        if errorlevel 1 (
+            echo [%date% %time%] ERROR: git fetch failed after push rejection >> "%LOG%"
+            exit /b 3
+        )
+        git rebase origin/main >> "%LOG%" 2>&1
+        if errorlevel 1 (
+            echo [%date% %time%] ERROR: git rebase failed after push rejection >> "%LOG%"
+            exit /b 3
+        )
+        git push >> "%LOG%" 2>&1
+        if errorlevel 1 (
+            echo [%date% %time%] ERROR: git push failed after retry >> "%LOG%"
+            exit /b 3
+        )
     )
     echo [%date% %time%] OK: pushed to GitHub, Cloudflare will deploy >> "%LOG%"
 ) else (
