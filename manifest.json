@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-06-11T19:42:51+08:00",
-  "today": "2026-06-11",
+  "updated_at": "2026-06-12T19:43:18+08:00",
+  "today": "2026-06-12",
   "volume_number": 1,
   "market_summary": {
     "date": "2026-05-22",
@@ -25,11 +25,11 @@
       "id": "chip-concentration",
       "category": "chips",
       "type": "ranking",
-      "date": "2026-06-11",
+      "date": "2026-06-12",
       "time": "21:00",
       "title": "籌碼集中度 · 分點 Top 50 排行",
       "title_em": "集中度",
-      "summary": "5 個時段 · 每邊 Top 50 · 過濾成交量 < 1,000 張。 今日買超集中 #1：2425 承啟 +60.2%。 賣超集中 #1：1218 泰山 -43.2%。",
+      "summary": "5 個時段 · 每邊 Top 50 · 過濾成交量 < 1,000 張。 今日買超集中 #1：3236 千如 +58.8%。 賣超集中 #1：5439 高技 -48.1%。",
       "tags": [
         "籌碼",
         "分點",
@@ -46,12 +46,12 @@
         },
         {
           "label": "Top 買超",
-          "value": "2425 +60%",
+          "value": "3236 +59%",
           "color": "up"
         },
         {
           "label": "Top 賣超",
-          "value": "1218 -43%",
+          "value": "5439 -48%",
           "color": "down"
         }
       ]
@@ -60,11 +60,11 @@
       "id": "options-atm",
       "category": "taiex",
       "type": "pulse",
-      "date": "2026-06-11",
+      "date": "2026-06-12",
       "time": "20:00",
       "title": "選擇權價平和 · 隱含波動代理",
       "title_em": "價平和",
-      "summary": "近 737 個交易日（2023-05-30 → 2026-06-11）TXO ATM Call+Put 加總。最新 (2026-06-11)：近期 871 點（到期 202606F2）、次遠期 1840 點。",
+      "summary": "近 738 個交易日（2023-05-30 → 2026-06-12）TXO ATM Call+Put 加總。最新 (2026-06-12)：近期 1475 點（到期 202606）、次遠期 1995 點。",
       "tags": [
         "選擇權",
         "TXO",
@@ -76,17 +76,17 @@
       "stats": [
         {
           "label": "近期 C+P",
-          "value": "871",
+          "value": "1475",
           "color": "neutral"
         },
         {
           "label": "次遠期 C+P",
-          "value": "1840",
+          "value": "1995",
           "color": "neutral"
         },
         {
           "label": "區間",
-          "value": "737 日",
+          "value": "738 日",
           "color": "neutral"
         }
       ]
@@ -95,11 +95,11 @@
       "id": "market-pulse",
       "category": "taiex",
       "type": "pulse",
-      "date": "2026-06-11",
+      "date": "2026-06-12",
       "time": "20:00",
       "title": "市場脈動 · 漲跌停 × 全族群均幅",
       "title_em": "脈動",
-      "summary": "近 38 個交易日漲跌停家數、總成交額、族群平均漲幅、漲停集中度。最新 (2026-06-11)：漲停 45、跌停 13、全族群均幅 +0.21%。",
+      "summary": "近 39 個交易日漲跌停家數、總成交額、族群平均漲幅、漲停集中度。最新 (2026-06-12)：漲停 72、跌停 6、全族群均幅 +1.63%。",
       "tags": [
         "市場脈動",
         "漲跌停",
@@ -110,17 +110,17 @@
       "stats": [
         {
           "label": "漲停",
-          "value": "45",
+          "value": "72",
           "color": "up"
         },
         {
           "label": "跌停",
-          "value": "13",
+          "value": "6",
           "color": "down"
         },
         {
           "label": "成交額",
-          "value": "14,395 億",
+          "value": "12,915 億",
           "color": "neutral"
         }
       ]
@@ -129,11 +129,11 @@
       "id": "futures-basis",
       "category": "taiex",
       "type": "pulse",
-      "date": "2026-06-11",
+      "date": "2026-06-12",
       "time": "20:00",
       "title": "期貨正逆價差 · 12 年期現對照",
       "title_em": "12 年",
-      "summary": "近 2998 個交易日（2014-02-14 → 2026-06-11）台指期 TXF1 vs 加權指數價差。最新 (2026-06-11)：基差 +91.5 點，加權收 43,149。",
+      "summary": "近 2999 個交易日（2014-02-14 → 2026-06-12）台指期 TXF1 vs 加權指數價差。最新 (2026-06-12)：基差 +19.0 點，加權收 44,169。",
       "tags": [
         "期貨",
         "基差",
@@ -146,17 +146,120 @@
       "stats": [
         {
           "label": "最新基差",
-          "value": "+91.5",
+          "value": "+19.0",
           "color": "up"
         },
         {
           "label": "加權",
-          "value": "43,149",
+          "value": "44,169",
           "color": "neutral"
         },
         {
           "label": "區間",
-          "value": "2998 日",
+          "value": "2999 日",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-06-12-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-06-12",
+      "time": "20:00",
+      "title": "2026-06-12 族群週報",
+      "title_em": "被動元件",
+      "summary": "涵蓋 2026-06-08 ~ 2026-06-12。週領漲 被動元件 +8.79%，週領跌 面板 -12.64%；資金焦點 電子零組件。",
+      "tags": [
+        "被動元件",
+        "面板",
+        "電子零組件",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-06-12/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "被動元件 +8.79%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "面板 -12.64%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "電子零組件",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-06-12-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-06-12",
+      "time": "20:00",
+      "title": "2026-06-12 每日族群輪動雷達",
+      "title_em": "面板",
+      "summary": "今日相對升溫以 面板 最明顯，相對降溫以 鏡頭光學 壓力最大；今日轉強力道大於轉弱力道。",
+      "tags": [
+        "面板",
+        "鏡頭光學",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-06-12/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "面板 +9.82 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "鏡頭光學 -5.49 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-06-12-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-06-12",
+      "time": "20:00",
+      "title": "2026-06-12 族群盤後快報",
+      "title_em": "矽晶圓",
+      "summary": "全 74 族群、成交 12914.9 億；領漲 矽晶圓 +6.57%，領跌 鏡頭光學 -3.98%；漲多族群 66/74，全族群均漲 +1.63%。",
+      "tags": [
+        "矽晶圓",
+        "鏡頭光學",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-06-12/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "矽晶圓 +6.57%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "鏡頭光學 -3.98%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "12.5%",
           "color": "neutral"
         }
       ]
@@ -265,6 +368,20 @@
       ]
     },
     {
+      "id": "tri-source-lamp",
+      "category": "chips",
+      "title": "三源混合燈號",
+      "subtitle": "2026-06-12 · 三同買 10 / 三同賣 4",
+      "date": "2026-06-12",
+      "url": "reports/tri-source-lamp.html",
+      "tags": [
+        "分點",
+        "大股東",
+        "三大法人",
+        "燈號"
+      ]
+    },
+    {
       "id": "2026-06-10-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -365,20 +482,6 @@
           "value": "1.3%",
           "color": "neutral"
         }
-      ]
-    },
-    {
-      "id": "tri-source-lamp",
-      "category": "chips",
-      "title": "三源混合燈號",
-      "subtitle": "2026-06-11 · 三同買 9 / 三同賣 7",
-      "date": "2026-06-11",
-      "url": "reports/tri-source-lamp.html",
-      "tags": [
-        "分點",
-        "大股東",
-        "三大法人",
-        "燈號"
       ]
     },
     {
