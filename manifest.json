@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-06-12T19:43:18+08:00",
+  "updated_at": "2026-06-15T18:55:01+08:00",
   "today": "2026-06-12",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,42 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "three-factor-ranking",
+      "category": "chips",
+      "type": "ranking",
+      "date": "2026-06-12",
+      "time": "21:10",
+      "title": "三因子波段排行榜",
+      "title_em": "外資×營收×強勢",
+      "summary": "外資連買 >= 3 日、最新月營收創高、20/60 日趨勢仍強。 本次三因子同步 20 檔。 榜首：7610 聯友金屬-創，外資連買 15 日，營收 YoY +462.2%，前 20 日 +67.7%。",
+      "tags": [
+        "波段",
+        "外資連買",
+        "營收創高",
+        "強者恆強",
+        "排行榜"
+      ],
+      "source_pipeline": "stock_chip_crawler+mops_index",
+      "url": "reports/three-factor-ranking.html",
+      "stats": [
+        {
+          "label": "三因子同步",
+          "value": "20 檔",
+          "color": "up"
+        },
+        {
+          "label": "營收期別",
+          "value": "2026-05",
+          "color": "neutral"
+        },
+        {
+          "label": "榜首",
+          "value": "7610 95.4",
+          "color": "up"
+        }
+      ]
+    },
     {
       "id": "chip-concentration",
       "category": "chips",
@@ -265,6 +301,20 @@
       ]
     },
     {
+      "id": "tri-source-lamp",
+      "category": "chips",
+      "title": "三源混合燈號",
+      "subtitle": "2026-06-12 · 三同買 10 / 三同賣 4",
+      "date": "2026-06-12",
+      "url": "reports/tri-source-lamp.html",
+      "tags": [
+        "分點",
+        "大股東",
+        "三大法人",
+        "燈號"
+      ]
+    },
+    {
       "id": "2026-06-11-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -365,20 +415,6 @@
           "value": "4.2%",
           "color": "neutral"
         }
-      ]
-    },
-    {
-      "id": "tri-source-lamp",
-      "category": "chips",
-      "title": "三源混合燈號",
-      "subtitle": "2026-06-12 · 三同買 10 / 三同賣 4",
-      "date": "2026-06-12",
-      "url": "reports/tri-source-lamp.html",
-      "tags": [
-        "分點",
-        "大股東",
-        "三大法人",
-        "燈號"
       ]
     },
     {

@@ -119,6 +119,7 @@
           "name_zh": "主力進出",
           "match_id_prefix": [
             "chip-concentration",
+            "three-factor-ranking",
             "tri-source-lamp",
             "shareholder-divergence"
           ]

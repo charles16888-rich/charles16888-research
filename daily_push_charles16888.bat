@@ -41,26 +41,29 @@ if errorlevel 1 (
     exit /b 2
 )
 
-echo [%date% %time%] [1/7] build_sectors_assets >> "%LOG%"
+echo [%date% %time%] [1/8] build_sectors_assets >> "%LOG%"
 python tools\build_sectors_assets.py >> "%LOG%" 2>&1
 
-echo [%date% %time%] [2/7] build_market_chart >> "%LOG%"
+echo [%date% %time%] [2/8] build_market_chart >> "%LOG%"
 python tools\build_market_chart.py >> "%LOG%" 2>&1
 
-echo [%date% %time%] [3/7] build_futures_chart >> "%LOG%"
+echo [%date% %time%] [3/8] build_futures_chart >> "%LOG%"
 python tools\build_futures_chart.py >> "%LOG%" 2>&1
 
-echo [%date% %time%] [4/7] build_options_chart >> "%LOG%"
+echo [%date% %time%] [4/8] build_options_chart >> "%LOG%"
 python tools\build_options_chart.py >> "%LOG%" 2>&1
 
-echo [%date% %time%] [5/7] build_chip_concentration >> "%LOG%"
+echo [%date% %time%] [5/8] build_chip_concentration >> "%LOG%"
 python tools\build_chip_concentration.py >> "%LOG%" 2>&1
 
-echo [%date% %time%] [6/7] build_view2_shareholder_divergence >> "%LOG%"
+echo [%date% %time%] [6/8] build_view2_shareholder_divergence >> "%LOG%"
 python tools\build_view2_shareholder_divergence.py >> "%LOG%" 2>&1
 
-echo [%date% %time%] [7/7] build_view4_tri_source_lamp >> "%LOG%"
+echo [%date% %time%] [7/8] build_view4_tri_source_lamp >> "%LOG%"
 python tools\build_view4_tri_source_lamp.py >> "%LOG%" 2>&1
+
+echo [%date% %time%] [8/8] build_three_factor_ranking >> "%LOG%"
+python tools\build_three_factor_ranking.py >> "%LOG%" 2>&1
 
 REM 4) git commit + push (PAT embedded in remote URL)
 echo [%date% %time%] git push charles16888-research >> "%LOG%"
