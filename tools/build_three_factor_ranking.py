@@ -120,14 +120,21 @@ def load_foreign_factor(conn: sqlite3.Connection, signal_date: str) -> pd.DataFr
     return pd.DataFrame(records)
 
 
-def load_revenue_factor() -> tuple[pd.DataFrame, dict]:
+def load_revenue_factor(as_of_date: str | None = None) -> tuple[pd.DataFrame, dict]:
     with revenue_conn() as conn:
+        where = ""
+        params: tuple[str, ...] = ()
+        if as_of_date:
+            where = "WHERE date(publish_time) <= date(?)"
+            params = (as_of_date,)
         df = pd.read_sql_query(
-            """
+            f"""
             SELECT code, name, roc_year, month, revenue_k, mom, yoy, ytd_yoy, publish_time
             FROM mops_revenue
+            {where}
             """,
             conn,
+            params=params,
         )
     if df.empty:
         return pd.DataFrame(), {}
@@ -150,23 +157,35 @@ def load_revenue_factor() -> tuple[pd.DataFrame, dict]:
         "roc_year": int(global_ym // 100),
         "month": int(global_ym % 100),
         "calendar_period": f"{int(global_ym // 100) + 1911}-{int(global_ym % 100):02d}",
+        "as_of_date": as_of_date,
         "latest_stock_count": int(len(latest)),
         "new_high_count": int(latest["revenue_new_high"].sum()),
     }
     return latest, meta
 
 
-def load_price_momentum(conn: sqlite3.Connection, signal_date: str) -> pd.DataFrame:
+def load_price_momentum(conn: sqlite3.Connection, signal_date: str, codes: list[str] | None = None) -> pd.DataFrame:
+    params: list = [signal_date, signal_date]
+    code_filter = ""
+    if codes is not None:
+        if not codes:
+            return pd.DataFrame()
+        conn.execute("DROP TABLE IF EXISTS _tf_codes")
+        conn.execute("CREATE TEMP TABLE _tf_codes (code TEXT PRIMARY KEY)")
+        conn.executemany("INSERT INTO _tf_codes(code) VALUES (?)", [(str(c),) for c in codes])
+        code_filter = "JOIN _tf_codes c ON dp.code = c.code"
+
     df = pd.read_sql_query(
-        """
-        SELECT date, code, name, close, high, low, volume, amount
-        FROM daily_price
-        WHERE date >= date(?, '-220 days')
-          AND date <= ?
-          AND close IS NOT NULL
+        f"""
+        SELECT dp.date, dp.code, dp.name, dp.close, dp.high, dp.low, dp.volume, dp.amount
+        FROM daily_price dp
+        {code_filter}
+        WHERE dp.date >= date(?, '-220 days')
+          AND dp.date <= ?
+          AND dp.close IS NOT NULL
         """,
         conn,
-        params=(signal_date, signal_date),
+        params=params,
     )
     if df.empty:
         return pd.DataFrame()
@@ -384,21 +403,28 @@ def build(signal_date: str | None = None) -> dict:
         print("[1/3] foreign consecutive buying...")
         foreign = load_foreign_factor(conn, signal_date)
         print(f"    -> {len(foreign)} stocks")
-        print("[2/3] price momentum...")
-        momentum = load_price_momentum(conn, signal_date)
-        print(f"    -> {len(momentum)} stocks")
 
-    print("[3/3] monthly revenue new highs...")
-    revenue, revenue_meta = load_revenue_factor()
-    print(f"    -> {len(revenue)} latest revenue stocks, {revenue_meta.get('new_high_count', 0)} new highs")
+        print("[2/3] monthly revenue new highs...")
+        revenue, revenue_meta = load_revenue_factor(signal_date)
+        print(f"    -> {len(revenue)} latest revenue stocks, {revenue_meta.get('new_high_count', 0)} new highs")
 
-    if foreign.empty or momentum.empty or revenue.empty:
+        if foreign.empty or revenue.empty:
+            raise RuntimeError("missing factor data")
+
+        pre = foreign.merge(revenue, on="code", how="inner")
+        pre = pre[~pre["code"].astype(str).str.startswith("00")].copy()
+        pre["foreign_pass"] = (pre["foreign_streak"] >= MIN_FOREIGN_STREAK) & (pre["foreign_5d_lots"] > 0)
+        pre["revenue_pass"] = pre["revenue_new_high"] == True
+        candidate_codes = pre.loc[pre["foreign_pass"] & pre["revenue_pass"], "code"].astype(str).tolist()
+
+        print("[3/3] price momentum for foreign+revenue candidates...")
+        momentum = load_price_momentum(conn, signal_date, candidate_codes)
+        print(f"    -> {len(momentum)} candidate stocks")
+
+    if momentum.empty:
         raise RuntimeError("missing factor data")
 
-    df = foreign.merge(revenue, on="code", how="inner").merge(momentum, on="code", how="inner")
-    df = df[~df["code"].astype(str).str.startswith("00")].copy()
-    df["foreign_pass"] = (df["foreign_streak"] >= MIN_FOREIGN_STREAK) & (df["foreign_5d_lots"] > 0)
-    df["revenue_pass"] = df["revenue_new_high"] == True
+    df = pre.merge(momentum, on="code", how="inner")
     df["momentum_pass"] = df["momentum_pass"] == True
     df["factor_count"] = df[["foreign_pass", "revenue_pass", "momentum_pass"]].sum(axis=1)
     df = add_scores(df)
@@ -445,6 +471,31 @@ def build(signal_date: str | None = None) -> dict:
         "rankings": serialize_rows(strict),
     }
     return out
+
+
+def get_institutional_dates_between(start_date: str, end_date: str | None = None) -> list[str]:
+    with stock_conn() as conn:
+        if end_date:
+            rows = conn.execute(
+                """
+                SELECT DISTINCT date
+                FROM institutional
+                WHERE date >= ? AND date <= ?
+                ORDER BY date
+                """,
+                (start_date, end_date),
+            ).fetchall()
+        else:
+            rows = conn.execute(
+                """
+                SELECT DISTINCT date
+                FROM institutional
+                WHERE date >= ?
+                ORDER BY date
+                """,
+                (start_date,),
+            ).fetchall()
+    return [r[0] for r in rows]
 
 
 PAGE_TEMPLATE = r"""<!DOCTYPE html>
@@ -522,6 +573,15 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
     .tf-num-pos { color: #e85a5a; font-weight: 700; }
     .tf-num-neg { color: #5fb87a; font-weight: 700; }
     .tf-muted { color: #6e6350; }
+    .tf-date-picker {
+      background: rgba(232,223,211,0.04);
+      border: 1px solid rgba(212,175,55,0.35);
+      color: #e8dfd3;
+      padding: 5px 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+    }
+    .tf-date-picker option { background: #1a1612; color: #e8dfd3; }
     @media (max-width: 760px) {
       .tf-panel__head { align-items: start; flex-direction: column; }
       .tf-table { min-width: 980px; }
@@ -561,6 +621,7 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
       <div class="report-meta-line">
         <span><strong>籌碼</strong> · 三因子波段</span>
         <span>外資連買 · 營收創高 · 強者恆強</span>
+        <span>切換日期：<select id="date-picker" class="tf-date-picker" aria-label="切換歷史日期"></select></span>
       </div>
       <h1 class="report-title">三因子 <em>波段排行榜</em></h1>
       <p class="report-lead">
@@ -590,7 +651,9 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
 
   <script src="../assets/main.js" defer></script>
   <script>
-  const DATA = __DATA_JSON__;
+  let DATA = __DATA_JSON__;
+  const HISTORY_DIR = '../assets/chip_history/three_factor_ranking';
+  const urlDate = new URLSearchParams(window.location.search).get('date');
 
   function cls(v) {
     if (v == null) return '';
@@ -671,8 +734,34 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
         <tbody>${trs}</tbody>
       </table>`;
   }
+  async function loadIndex() {
+    try {
+      const idx = await fetch(`${HISTORY_DIR}/_index.json?t=${Date.now()}`).then(r => r.json());
+      const dates = idx.dates || [];
+      const sel = document.getElementById('date-picker');
+      sel.innerHTML = dates.map(d => `<option value="${d}">${d}</option>`).join('');
+      const wantDate = urlDate && dates.includes(urlDate) ? urlDate : DATA.signal_date;
+      sel.value = wantDate;
+      sel.addEventListener('change', () => loadDate(sel.value));
+      if (wantDate && wantDate !== DATA.signal_date) {
+        await loadDate(wantDate);
+      }
+    } catch (e) {
+      console.warn('[three-factor date-picker]', e);
+    }
+  }
+  async function loadDate(date) {
+    try {
+      DATA = await fetch(`${HISTORY_DIR}/${date}.json?t=${Date.now()}`).then(r => r.json());
+      renderStats();
+      renderTable();
+    } catch (e) {
+      console.warn('[three-factor loadDate]', date, e);
+    }
+  }
   renderStats();
   renderTable();
+  loadIndex();
   </script>
 </body>
 </html>
@@ -748,8 +837,31 @@ def update_manifest(out: dict) -> None:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--signal-date", default=None, help="institutional signal date; default uses latest institutional date")
+    parser.add_argument("--backfill-from", default=None, help="build dated history for institutional dates >= YYYY-MM-DD")
+    parser.add_argument("--backfill-to", default=None, help="build dated history for institutional dates <= YYYY-MM-DD")
     parser.add_argument("--history-only", action="store_true", help="write dated JSON only; skip current JSON/html/manifest")
     args = parser.parse_args()
+
+    if args.backfill_from:
+        dates = get_institutional_dates_between(args.backfill_from, args.backfill_to)
+        if not dates:
+            print(f"[ERR] no institutional dates from {args.backfill_from} to {args.backfill_to or 'latest'}")
+            return 1
+        print(f"[INFO] backfill {len(dates)} signal dates: {dates[0]} -> {dates[-1]}")
+        latest_out = None
+        for i, d in enumerate(dates, start=1):
+            print(f"[BACKFILL {i}/{len(dates)}] {d}")
+            out = build(d)
+            update_history(out)
+            latest_out = out
+            print(f"[OK] assets/chip_history/{HISTORY_DIR_NAME}/{d}.json")
+        if not args.history_only and latest_out:
+            DATA_OUT.parent.mkdir(parents=True, exist_ok=True)
+            DATA_OUT.write_text(json.dumps(latest_out, ensure_ascii=False), encoding="utf-8")
+            render_html(latest_out)
+            update_manifest(latest_out)
+            print("[OK] current JSON/html/manifest refreshed from latest backfill date")
+        return 0
 
     out = build(args.signal_date)
     update_history(out)
