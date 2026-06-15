@@ -510,27 +510,66 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
   <link rel="stylesheet" href="../assets/fonts.css" />
   <link rel="stylesheet" href="../assets/style.css" />
   <style>
+    body.tf-page {
+      background: #f3efe6;
+      color: #201914;
+    }
+    .tf-page .masthead {
+      background: #f3efe6;
+      border-bottom-color: rgba(32,25,20,0.12);
+    }
+    .tf-page .brand,
+    .tf-page .brand__mark {
+      color: #201914;
+    }
+    .tf-page .brand__mark em {
+      color: #8b6718;
+    }
+    .tf-page .brand__plate,
+    .tf-page .nav__link {
+      color: #5f5144;
+    }
+    .tf-page .nav__link:hover,
+    .tf-page .nav__link.is-active {
+      color: #201914;
+    }
+    .tf-page .nav__link--disabled {
+      color: #8f8376;
+    }
+    .tf-page .breadcrumb,
+    .tf-page .breadcrumb a,
+    .tf-page .report-meta-line,
+    .tf-page .report-lead {
+      color: #6a5843;
+    }
+    .tf-page .report-title {
+      color: #201914;
+    }
+    .tf-page .report-title em {
+      color: #8b6718;
+    }
     .tf-meta-row {
       display: flex; flex-wrap: wrap; gap: 20px; margin: 16px 0 24px;
       font-family: 'JetBrains Mono', monospace; font-size: 11px;
-      color: #9a9486; letter-spacing: .08em;
+      color: #6c6257; letter-spacing: .08em;
     }
-    .tf-meta-row strong { color: #e8dfd3; font-weight: 650; }
+    .tf-meta-row strong { color: #201914; font-weight: 750; }
     .tf-panel {
-      border: 1px solid rgba(232,223,211,0.10);
-      background: rgba(232,223,211,0.018);
+      border: 1px solid rgba(139,103,24,0.28);
+      background: #fbf8f1;
       margin-bottom: 28px;
+      box-shadow: 0 10px 24px rgba(32,25,20,0.05);
     }
     .tf-panel__head {
       display: flex; align-items: end; justify-content: space-between; gap: 16px;
-      padding: 16px 18px; border-bottom: 1px solid rgba(212,175,55,0.45);
+      padding: 16px 18px; border-bottom: 1px solid rgba(139,103,24,0.38);
     }
     .tf-panel__title {
-      font-family: 'Noto Serif TC', serif; color: #e8dfd3; font-size: 17px;
+      font-family: 'Noto Serif TC', serif; color: #201914; font-size: 17px;
       margin: 0; font-weight: 700; letter-spacing: .02em;
     }
     .tf-panel__note {
-      margin: 4px 0 0; color: #7e756b; font-size: 11px;
+      margin: 4px 0 0; color: #615448; font-size: 11px;
       font-family: 'JetBrains Mono', monospace; letter-spacing: .06em;
     }
     .tf-table-wrap { overflow-x: auto; }
@@ -540,55 +579,59 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
     }
     .tf-table th {
       position: sticky; top: 0; z-index: 1; background: #1a1612;
-      color: #9a9486; text-align: right; padding: 10px 11px;
+      color: #f4efe6; text-align: right; padding: 10px 11px;
       border-bottom: 1px solid rgba(232,223,211,0.12);
       font-weight: 500; letter-spacing: .08em; white-space: nowrap;
     }
     .tf-table td {
-      color: #c9c0b3; text-align: right; padding: 10px 11px;
-      border-bottom: 1px dashed rgba(232,223,211,0.06); vertical-align: middle;
+      color: #332a23; text-align: right; padding: 10px 11px;
+      border-bottom: 1px dashed rgba(32,25,20,0.12); vertical-align: middle;
       white-space: nowrap;
     }
     .tf-table th:nth-child(2),
     .tf-table td:nth-child(2),
     .tf-table th:nth-child(3),
     .tf-table td:nth-child(3) { text-align: left; }
-    .tf-rank { color: #6e6350; }
-    .tf-code { color: #d4af37; font-weight: 700; }
-    .tf-name { color: #e8dfd3; font-family: 'Noto Serif TC', serif; font-size: 13px; }
+    .tf-rank { color: #776b5e; }
+    .tf-code { color: #8b6718; font-weight: 800; }
+    .tf-name { color: #201914; font-family: 'Noto Serif TC', serif; font-size: 13px; font-weight: 650; }
     .tf-score {
       display: inline-flex; align-items: center; justify-content: center;
-      width: 42px; height: 24px; border: 1px solid rgba(212,175,55,0.35);
-      color: #f1d780; background: rgba(212,175,55,0.08);
+      width: 42px; height: 24px; border: 1px solid rgba(139,103,24,0.45);
+      color: #5f4308; background: rgba(212,175,55,0.18);
+      font-weight: 750;
     }
     .tf-badges { display: inline-flex; gap: 5px; }
     .tf-badge {
       display: inline-flex; align-items: center; justify-content: center;
       height: 20px; min-width: 24px; padding: 0 6px;
-      border: 1px solid rgba(232,223,211,0.12);
-      color: #d7d0c6; background: rgba(232,223,211,0.04);
+      border: 1px solid rgba(32,25,20,0.18);
+      color: #3a3029; background: rgba(32,25,20,0.035);
       font-size: 10px;
     }
-    .tf-badge--up { color: #ff8f8f; border-color: rgba(232,90,90,0.35); background: rgba(232,90,90,0.08); }
-    .tf-num-pos { color: #e85a5a; font-weight: 700; }
-    .tf-num-neg { color: #5fb87a; font-weight: 700; }
-    .tf-muted { color: #6e6350; }
+    .tf-badge--up { color: #9f1f2d; border-color: rgba(159,31,45,0.38); background: rgba(159,31,45,0.08); }
+    .tf-table td.tf-num-pos,
+    .tf-table .tf-num-pos { color: #b3262d; font-weight: 800; }
+    .tf-table td.tf-num-neg,
+    .tf-table .tf-num-neg { color: #16733c; font-weight: 800; }
+    .tf-table .tf-muted,
+    .tf-muted { color: #756a5e; }
     .tf-date-picker {
-      background: rgba(232,223,211,0.04);
-      border: 1px solid rgba(212,175,55,0.35);
-      color: #e8dfd3;
+      background: #fffaf0;
+      border: 1px solid rgba(139,103,24,0.42);
+      color: #201914;
       padding: 5px 8px;
       font-family: 'JetBrains Mono', monospace;
       font-size: 11px;
     }
-    .tf-date-picker option { background: #1a1612; color: #e8dfd3; }
+    .tf-date-picker option { background: #fffaf0; color: #201914; }
     @media (max-width: 760px) {
       .tf-panel__head { align-items: start; flex-direction: column; }
       .tf-table { min-width: 980px; }
     }
   </style>
 </head>
-<body>
+<body class="tf-page">
   <header class="masthead">
     <div class="container">
       <div class="masthead__row">
