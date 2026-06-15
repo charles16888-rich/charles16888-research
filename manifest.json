@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-06-15T19:38:06+08:00",
+  "updated_at": "2026-06-15T19:43:53+08:00",
   "today": "2026-06-15",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,41 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "chip-concentration",
+      "category": "chips",
+      "type": "ranking",
+      "date": "2026-06-15",
+      "time": "21:00",
+      "title": "籌碼集中度 · 分點 Top 50 排行",
+      "title_em": "集中度",
+      "summary": "5 個時段 · 每邊 Top 50 · 過濾成交量 < 1,000 張。 今日買超集中 #1：2464 盟立 +55.2%。 賣超集中 #1：1215 卜蜂 -54.6%。",
+      "tags": [
+        "籌碼",
+        "分點",
+        "集中度",
+        "排行榜"
+      ],
+      "source_pipeline": "stock_chip_crawler",
+      "url": "reports/chip-concentration.html",
+      "stats": [
+        {
+          "label": "時段數",
+          "value": "5",
+          "color": "neutral"
+        },
+        {
+          "label": "Top 買超",
+          "value": "2464 +55%",
+          "color": "up"
+        },
+        {
+          "label": "Top 賣超",
+          "value": "1215 -55%",
+          "color": "down"
+        }
+      ]
+    },
     {
       "id": "options-atm",
       "category": "taiex",
@@ -230,6 +265,20 @@
       ]
     },
     {
+      "id": "tri-source-lamp",
+      "category": "chips",
+      "title": "三源混合燈號",
+      "subtitle": "2026-06-15 · 三同買 7 / 三同賣 5",
+      "date": "2026-06-15",
+      "url": "reports/tri-source-lamp.html",
+      "tags": [
+        "分點",
+        "大股東",
+        "三大法人",
+        "燈號"
+      ]
+    },
+    {
       "id": "three-factor-ranking",
       "category": "chips",
       "type": "ranking",
@@ -262,41 +311,6 @@
           "label": "榜首",
           "value": "7610 90.6",
           "color": "up"
-        }
-      ]
-    },
-    {
-      "id": "chip-concentration",
-      "category": "chips",
-      "type": "ranking",
-      "date": "2026-06-12",
-      "time": "21:00",
-      "title": "籌碼集中度 · 分點 Top 50 排行",
-      "title_em": "集中度",
-      "summary": "5 個時段 · 每邊 Top 50 · 過濾成交量 < 1,000 張。 今日買超集中 #1：3236 千如 +58.8%。 賣超集中 #1：5439 高技 -48.1%。",
-      "tags": [
-        "籌碼",
-        "分點",
-        "集中度",
-        "排行榜"
-      ],
-      "source_pipeline": "stock_chip_crawler",
-      "url": "reports/chip-concentration.html",
-      "stats": [
-        {
-          "label": "時段數",
-          "value": "5",
-          "color": "neutral"
-        },
-        {
-          "label": "Top 買超",
-          "value": "3236 +59%",
-          "color": "up"
-        },
-        {
-          "label": "Top 賣超",
-          "value": "5439 -48%",
-          "color": "down"
         }
       ]
     },
@@ -404,17 +418,16 @@
       ]
     },
     {
-      "id": "tri-source-lamp",
+      "id": "shareholder-divergence",
       "category": "chips",
-      "title": "三源混合燈號",
-      "subtitle": "2026-06-12 · 三同買 10 / 三同賣 4",
+      "title": "大股東 vs 股價背離掃描",
+      "subtitle": "2026-06-05 → 2026-06-12 週對週 · 2011 檔",
       "date": "2026-06-12",
-      "url": "reports/tri-source-lamp.html",
+      "url": "reports/shareholder-divergence.html",
       "tags": [
-        "分點",
         "大股東",
-        "三大法人",
-        "燈號"
+        "TDCC",
+        "背離"
       ]
     },
     {
@@ -930,19 +943,6 @@
           "value": "1.9%",
           "color": "neutral"
         }
-      ]
-    },
-    {
-      "id": "shareholder-divergence",
-      "category": "chips",
-      "title": "大股東 vs 股價背離掃描",
-      "subtitle": "2026-05-29 → 2026-06-05 週對週 · 2030 檔",
-      "date": "2026-06-05",
-      "url": "reports/shareholder-divergence.html",
-      "tags": [
-        "大股東",
-        "TDCC",
-        "背離"
       ]
     },
     {
