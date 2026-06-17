@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-06-16T19:43:05+08:00",
-  "today": "2026-06-16",
+  "updated_at": "2026-06-17T19:46:07+08:00",
+  "today": "2026-06-17",
   "volume_number": 1,
   "market_summary": {
     "date": "2026-05-22",
@@ -22,50 +22,14 @@
   },
   "entries": [
     {
-      "id": "three-factor-ranking",
-      "category": "chips",
-      "type": "ranking",
-      "date": "2026-06-16",
-      "time": "21:10",
-      "title": "三因子波段排行榜",
-      "title_em": "外資×營收×強勢",
-      "summary": "外資連買 >= 3 日、最新月營收創高、20/60 日趨勢仍強。 本次三因子同步 6 檔。 榜首：3147 大綜，外資連買 5 日，營收 YoY +812.4%，前 20 日 +93.4%。",
-      "tags": [
-        "波段",
-        "外資連買",
-        "營收創高",
-        "強者恆強",
-        "排行榜"
-      ],
-      "source_pipeline": "stock_chip_crawler+mops_index",
-      "url": "reports/three-factor-ranking.html",
-      "stats": [
-        {
-          "label": "三因子同步",
-          "value": "6 檔",
-          "color": "up"
-        },
-        {
-          "label": "營收期別",
-          "value": "2026-05",
-          "color": "neutral"
-        },
-        {
-          "label": "榜首",
-          "value": "3147 88.6",
-          "color": "up"
-        }
-      ]
-    },
-    {
       "id": "chip-concentration",
       "category": "chips",
       "type": "ranking",
-      "date": "2026-06-16",
+      "date": "2026-06-17",
       "time": "21:00",
       "title": "籌碼集中度 · 分點 Top 50 排行",
       "title_em": "集中度",
-      "summary": "5 個時段 · 每邊 Top 50 · 過濾成交量 < 1,000 張。 今日買超集中 #1：2464 盟立 +63.5%。 賣超集中 #1：1536 和大 -56.1%。",
+      "summary": "5 個時段 · 每邊 Top 50 · 過濾成交量 < 1,000 張。 今日買超集中 #1：8261 富鼎 +48.0%。 賣超集中 #1：2353 宏碁 -49.8%。",
       "tags": [
         "籌碼",
         "分點",
@@ -82,12 +46,12 @@
         },
         {
           "label": "Top 買超",
-          "value": "2464 +63%",
+          "value": "8261 +48%",
           "color": "up"
         },
         {
           "label": "Top 賣超",
-          "value": "1536 -56%",
+          "value": "2353 -50%",
           "color": "down"
         }
       ]
@@ -96,11 +60,11 @@
       "id": "options-atm",
       "category": "taiex",
       "type": "pulse",
-      "date": "2026-06-16",
+      "date": "2026-06-17",
       "time": "20:00",
       "title": "選擇權價平和 · 隱含波動代理",
       "title_em": "價平和",
-      "summary": "近 740 個交易日（2023-05-30 → 2026-06-16）TXO ATM Call+Put 加總。最新 (2026-06-16)：近期 655 點（到期 202606）、次遠期 1375 點。",
+      "summary": "近 741 個交易日（2023-05-30 → 2026-06-17）TXO ATM Call+Put 加總。最新 (2026-06-17)：近期 1200 點（到期 202606F3）、次遠期 1610 點。",
       "tags": [
         "選擇權",
         "TXO",
@@ -112,17 +76,17 @@
       "stats": [
         {
           "label": "近期 C+P",
-          "value": "655",
+          "value": "1200",
           "color": "neutral"
         },
         {
           "label": "次遠期 C+P",
-          "value": "1375",
+          "value": "1610",
           "color": "neutral"
         },
         {
           "label": "區間",
-          "value": "740 日",
+          "value": "741 日",
           "color": "neutral"
         }
       ]
@@ -131,11 +95,11 @@
       "id": "market-pulse",
       "category": "taiex",
       "type": "pulse",
-      "date": "2026-06-16",
+      "date": "2026-06-17",
       "time": "20:00",
       "title": "市場脈動 · 漲跌停 × 全族群均幅",
       "title_em": "脈動",
-      "summary": "近 41 個交易日漲跌停家數、總成交額、族群平均漲幅、漲停集中度。最新 (2026-06-16)：漲停 52、跌停 10、全族群均幅 -0.26%。",
+      "summary": "近 42 個交易日漲跌停家數、總成交額、族群平均漲幅、漲停集中度。最新 (2026-06-17)：漲停 70、跌停 3、全族群均幅 +0.87%。",
       "tags": [
         "市場脈動",
         "漲跌停",
@@ -146,18 +110,171 @@
       "stats": [
         {
           "label": "漲停",
-          "value": "52",
+          "value": "70",
           "color": "up"
         },
         {
           "label": "跌停",
-          "value": "10",
+          "value": "3",
           "color": "down"
         },
         {
           "label": "成交額",
-          "value": "14,164 億",
+          "value": "13,061 億",
           "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-06-17-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-06-17",
+      "time": "20:00",
+      "title": "2026-06-17 族群週報",
+      "title_em": "面板",
+      "summary": "涵蓋 2026-06-11 ~ 2026-06-17。週領漲 面板 +24.40%，週領跌 貨櫃航運 -4.79%；資金焦點 電子零組件。",
+      "tags": [
+        "面板",
+        "貨櫃航運",
+        "電子零組件",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-06-17/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "面板 +24.40%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "貨櫃航運 -4.79%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "電子零組件",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-06-17-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-06-17",
+      "time": "20:00",
+      "title": "2026-06-17 每日族群輪動雷達",
+      "title_em": "面板",
+      "summary": "今日相對升溫以 面板 最明顯，相對降溫以 貨櫃航運 壓力最大；今日轉強力道大於轉弱力道。",
+      "tags": [
+        "面板",
+        "貨櫃航運",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-06-17/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "面板 +8.83 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "貨櫃航運 -3.70 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-06-17-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-06-17",
+      "time": "20:00",
+      "title": "2026-06-17 族群盤後快報",
+      "title_em": "面板",
+      "summary": "全 74 族群、成交 13060.8 億；領漲 面板 +9.91%，領跌 貨櫃航運 -4.06%；漲多族群 60/74，全族群均漲 +0.87%。",
+      "tags": [
+        "面板",
+        "貨櫃航運",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-06-17/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "面板 +9.91%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "貨櫃航運 -4.06%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "10.9%",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "tri-source-lamp",
+      "category": "chips",
+      "title": "三源混合燈號",
+      "subtitle": "2026-06-17 · 三同買 7 / 三同賣 16",
+      "date": "2026-06-17",
+      "url": "reports/tri-source-lamp.html",
+      "tags": [
+        "分點",
+        "大股東",
+        "三大法人",
+        "燈號"
+      ]
+    },
+    {
+      "id": "three-factor-ranking",
+      "category": "chips",
+      "type": "ranking",
+      "date": "2026-06-16",
+      "time": "21:10",
+      "title": "三因子波段排行榜",
+      "title_em": "外資×營收×強勢",
+      "summary": "外資連買 >= 3 日、最新月營收創高、20/60 日趨勢仍強。 本次三因子同步 20 檔。 榜首：7610 聯友金屬-創，外資連買 17 日，營收 YoY +462.2%，前 20 日 +87.8%。",
+      "tags": [
+        "波段",
+        "外資連買",
+        "營收創高",
+        "強者恆強",
+        "排行榜"
+      ],
+      "source_pipeline": "stock_chip_crawler+mops_index",
+      "url": "reports/three-factor-ranking.html",
+      "stats": [
+        {
+          "label": "三因子同步",
+          "value": "20 檔",
+          "color": "up"
+        },
+        {
+          "label": "營收期別",
+          "value": "2026-05",
+          "color": "neutral"
+        },
+        {
+          "label": "榜首",
+          "value": "7610 93.7",
+          "color": "up"
         }
       ]
     },
@@ -298,20 +415,6 @@
           "value": "5.8%",
           "color": "neutral"
         }
-      ]
-    },
-    {
-      "id": "tri-source-lamp",
-      "category": "chips",
-      "title": "三源混合燈號",
-      "subtitle": "2026-06-16 · 三同買 6 / 三同賣 10",
-      "date": "2026-06-16",
-      "url": "reports/tri-source-lamp.html",
-      "tags": [
-        "分點",
-        "大股東",
-        "三大法人",
-        "燈號"
       ]
     },
     {
