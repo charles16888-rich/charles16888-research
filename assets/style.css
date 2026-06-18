@@ -11,32 +11,36 @@
 
 :root {
   /* — Surfaces (淺色系 · 米白編年紙感) — */
-  --bg:            #f4f0ea;   /* 米白主底 */
-  --bg-elevated:   #ede6da;   /* 卡片底色、略深 */
-  --bg-recess:     #e2dcd0;   /* 凹陷區、最深 */
+  --bg:            #f7f3ea;   /* 米白主底 */
+  --bg-elevated:   #eee5d6;   /* 卡片底色、略深 */
+  --bg-recess:     #e0d4bf;   /* 凹陷區、最深 */
+  --panel:         rgba(255, 255, 255, 0.56);
+  --panel-strong:  rgba(255, 255, 255, 0.76);
+  --panel-solid:   #fbf7ef;
+  --label-bg:      rgba(251, 247, 239, 0.96);
 
   /* — Text (深棕、不純黑、保留復古感) — */
-  --ink:           #2a2620;   /* 主文字、深棕 */
-  --ink-muted:     #6e6555;
-  --ink-dim:       #948870;
-  --ink-faint:     #b5ab97;
+  --ink:           #211d17;   /* 主文字、深棕 */
+  --ink-muted:     #51483a;
+  --ink-dim:       #6d6250;
+  --ink-faint:     #8f826b;
 
   /* — Gold (深底色版 gold、淺底要更深才搶眼) — */
-  --gold:          #8a6f2b;
-  --gold-soft:     #b8985c;
-  --gold-deep:     #5d4a1c;
+  --gold:          #765915;
+  --gold-soft:     #8b6b24;
+  --gold-deep:     #4d390f;
 
   /* — Hairlines (深 ink 低透明度) — */
-  --rule:          rgba(42, 38, 32, 0.12);
-  --rule-strong:   rgba(42, 38, 32, 0.22);
-  --rule-gold:     rgba(138, 111, 43, 0.28);
-  --rule-gold-strong: rgba(138, 111, 43, 0.55);
+  --rule:          rgba(33, 29, 23, 0.18);
+  --rule-strong:   rgba(33, 29, 23, 0.30);
+  --rule-gold:     rgba(118, 89, 21, 0.32);
+  --rule-gold-strong: rgba(118, 89, 21, 0.62);
 
   /* — Semantic (Taiwan convention, red↑ green↓) — */
-  --up:            #c83030;
-  --up-soft:       #b22020;
-  --down:          #1d8c4a;
-  --down-soft:     #167a3e;
+  --up:            #b91f2b;
+  --up-soft:       #9f1b25;
+  --down:          #147a42;
+  --down-soft:     #106837;
   --neutral:       var(--ink-muted);
 
   /* — Type — see fonts.css for family vars — */
@@ -2220,21 +2224,22 @@ h3, .h3 {
 }
 .sub-nav__tab {
   padding: 7px 16px;
-  border: 1px solid rgba(232, 223, 211, 0.16);
-  background: transparent;
-  color: #9a9486;
+  border: 1px solid var(--rule-strong);
+  background: var(--panel);
+  color: var(--ink-muted);
   text-decoration: none;
   transition: all .15s;
   display: inline-flex; align-items: center; gap: 6px;
 }
 .sub-nav__tab:hover {
-  color: #e8e4d8;
-  border-color: #b8985c;
+  color: var(--ink);
+  border-color: var(--rule-gold-strong);
+  background: var(--panel-strong);
 }
 .sub-nav__tab.is-active {
-  background: #d4af37;
-  color: #1a1612;
-  border-color: #d4af37;
+  background: var(--gold);
+  color: var(--bg);
+  border-color: var(--gold);
   font-weight: 600;
 }
 .sub-nav__count {
@@ -2927,6 +2932,119 @@ h3, .h3 {
    End
    ============================================================ */
 
+/* ============================================================
+   High-Contrast Report Overrides
+   ============================================================ */
+
+.chip-window-tab,
+.chip-date-picker,
+.sd-date-picker,
+.tsl-date-picker {
+  border-color: var(--rule-gold-strong) !important;
+  background: var(--panel) !important;
+  color: var(--gold) !important;
+}
+
+.chip-window-tab:hover,
+.chip-date-picker:hover,
+.sd-date-picker:hover,
+.tsl-date-picker:hover {
+  background: var(--panel-strong) !important;
+  color: var(--ink) !important;
+}
+
+.chip-window-tab.is-active {
+  background: var(--gold) !important;
+  border-color: var(--gold) !important;
+  color: var(--bg) !important;
+}
+
+.chip-col,
+.sd-card,
+.tsl-group,
+#scatter-chart {
+  border-color: var(--rule) !important;
+  background: var(--panel) !important;
+}
+
+.chip-col__title,
+.chip-row__title,
+.sd-card__title,
+.sd-row__title,
+.tsl-group__title,
+.tsl-name,
+.chip-window-tab.is-active,
+.sd-stat-row span strong,
+.tsl-stat-row span strong {
+  color: var(--ink) !important;
+}
+
+.chip-col__title em,
+.chip-row__code,
+.sd-row__code,
+.tsl-code {
+  color: var(--gold-soft) !important;
+}
+
+.chip-col__meta,
+.chip-row__rank,
+.chip-row__price,
+.chip-row__future span,
+.sd-card__desc,
+.sd-row__rank,
+.sd-row__future,
+.tsl-group__desc,
+.tsl-stat-row,
+.sd-stat-row {
+  color: var(--ink-dim) !important;
+}
+
+.chip-row__sub,
+.sd-row__sub,
+.tsl-table td {
+  color: var(--ink-muted) !important;
+}
+
+.chip-row,
+.sd-row,
+.tsl-table td {
+  border-bottom-color: var(--rule) !important;
+}
+
+.tsl-table th {
+  border-bottom-color: var(--rule-strong) !important;
+  color: var(--ink-muted) !important;
+}
+
+.chip-row__bar {
+  background: var(--bg-recess) !important;
+}
+
+.chip-row__pct--up,
+.chip-row__price--up,
+.chip-row__future .up,
+.sd-row__price.up,
+.sd-row__future .up,
+.tsl-num-pos {
+  color: var(--up) !important;
+}
+
+.chip-row__pct--down,
+.chip-row__price--down,
+.chip-row__future .dn,
+.sd-row__price.dn,
+.sd-row__future .dn,
+.tsl-num-neg {
+  color: var(--down) !important;
+}
+
+.tsl-lamp--pos { background: var(--up) !important; }
+.tsl-lamp--neg { background: var(--down) !important; }
+.tsl-lamp--0 {
+  background: var(--bg-recess) !important;
+  border-color: var(--rule-strong) !important;
+}
+
 /* Sector weekly research layout */
 .report-body .sector-weekly {
   width: min(1120px, calc(100vw - 64px));
@@ -2969,7 +3087,7 @@ h3, .h3 {
   padding: 12px 14px;
   border: 1px solid var(--rule-gold);
   border-left: 4px solid var(--gold-soft);
-  background: rgba(255,255,255,0.20);
+  background: var(--panel-strong);
   display: grid;
   gap: 5px;
   color: var(--ink-muted);
@@ -2988,7 +3106,7 @@ h3, .h3 {
   margin: var(--sp-7) 0;
   padding: var(--sp-5);
   border: 1px solid var(--rule-gold);
-  background: rgba(255,255,255,0.18);
+  background: var(--panel);
 }
 .sector-takeaway ol {
   margin: 0;
@@ -3002,7 +3120,7 @@ h3, .h3 {
 }
 .sector-takeaway li {
   padding: 12px;
-  background: rgba(244,240,234,0.72);
+  background: var(--panel-solid);
   display: grid;
   align-content: start;
   gap: 6px;
@@ -3057,7 +3175,7 @@ h3, .h3 {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   border: 1px solid var(--rule);
-  background: rgba(255,255,255,0.16);
+  background: var(--panel);
 }
 .sector-thermo__grid > div {
   min-height: 92px;
@@ -3091,7 +3209,7 @@ h3, .h3 {
 .sector-treemap,
 .sector-card {
   border: 1px solid var(--rule);
-  background: rgba(255,255,255,0.14);
+  background: var(--panel);
 }
 .sector-dist {
   padding: var(--sp-4);
@@ -3166,7 +3284,7 @@ h3, .h3 {
 }
 .sector-axis-guide > div {
   padding: 12px;
-  background: rgba(244,240,234,0.74);
+  background: var(--panel-solid);
   display: grid;
   gap: 6px;
 }
@@ -3206,7 +3324,7 @@ h3, .h3 {
   line-height: 1.45;
   z-index: 2;
   padding: 4px 6px;
-  background: rgba(244,240,234,0.58);
+  background: var(--label-bg);
 }
 .sector-scatter__q1 { right: 16px; top: 14px; text-align: right; }
 .sector-scatter__q2 { left: 16px; top: 14px; }
@@ -3216,7 +3334,7 @@ h3, .h3 {
   position: absolute;
   z-index: 3;
   padding: 2px 6px;
-  background: rgba(244,240,234,0.82);
+  background: var(--label-bg);
   color: var(--gold-deep);
   font-family: var(--font-mono);
   font-size: 11px;
@@ -3265,7 +3383,7 @@ h3, .h3 {
 }
 .sector-scatter-focus {
   border: 1px solid var(--rule);
-  background: rgba(255,255,255,0.16);
+  background: var(--panel);
   padding: var(--sp-4);
   overflow: auto;
 }
@@ -3449,7 +3567,7 @@ h3, .h3 {
   padding: 2px 6px;
   font-size: 11px;
   line-height: 1.45;
-  background: rgba(255,255,255,0.18);
+  background: var(--panel);
 }
 .sector-tags span {
   border-color: var(--rule-gold);

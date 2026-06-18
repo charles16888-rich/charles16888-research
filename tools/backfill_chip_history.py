@@ -57,7 +57,7 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
-  <title>__DATE__ 籌碼集中度 — Lynus' Research</title>
+  <title>__DATE__ 籌碼集中度 — charles16888</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="../../assets/fonts.css" />
@@ -132,8 +132,8 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
     <div class="container">
       <div class="masthead__row">
         <a class="brand" href="../../index.html">
-          <span class="brand__mark">Lynus' <em>Research</em></span>
-          <span class="brand__plate">Private Edition · MMXXVI</span>
+          <span class="brand__mark">charles<em>16888</em></span>
+          <span class="brand__plate">Market Edition · MMXXVI</span>
         </a>
         <nav class="nav" aria-label="Primary">
           <a class="nav__link" href="../../category.html?cat=sectors">族群</a>
@@ -150,7 +150,7 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
   <main class="container">
 
     <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="../../index.html">Lynus' Research</a>
+      <a href="../../index.html">charles16888</a>
       <span class="breadcrumb__sep">/</span>
       <a href="../../category.html?cat=chips">籌碼</a>
       <span class="breadcrumb__sep">/</span>
