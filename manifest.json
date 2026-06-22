@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-06-22T21:59:35+08:00",
+  "updated_at": "2026-06-22T22:44:06+08:00",
   "today": "2026-06-22",
   "volume_number": 1,
   "market_summary": {
@@ -86,6 +86,42 @@
         {
           "label": "成交額",
           "value": "16,676 億",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "futures-basis",
+      "category": "taiex",
+      "type": "pulse",
+      "date": "2026-06-22",
+      "time": "20:00",
+      "title": "期貨正逆價差 · 12 年期現對照",
+      "title_em": "12 年",
+      "summary": "近 3003 個交易日（2014-02-14 → 2026-06-22）台指期 TXF1 vs 加權指數價差。最新 (2026-06-22)：基差 +671.5 點，加權收 47,742。",
+      "tags": [
+        "期貨",
+        "基差",
+        "正逆價差",
+        "TX",
+        "12 年"
+      ],
+      "source_pipeline": "yuanta + yfinance",
+      "url": "reports/futures-basis.html",
+      "stats": [
+        {
+          "label": "最新基差",
+          "value": "+671.5",
+          "color": "up"
+        },
+        {
+          "label": "加權",
+          "value": "47,742",
+          "color": "neutral"
+        },
+        {
+          "label": "區間",
+          "value": "3003 日",
           "color": "neutral"
         }
       ]
@@ -194,6 +230,20 @@
       ]
     },
     {
+      "id": "tri-source-lamp",
+      "category": "chips",
+      "title": "三源混合燈號",
+      "subtitle": "2026-06-22 · 三同買 5 / 三同賣 9",
+      "date": "2026-06-22",
+      "url": "reports/tri-source-lamp.html",
+      "tags": [
+        "分點",
+        "大股東",
+        "三大法人",
+        "燈號"
+      ]
+    },
+    {
       "id": "three-factor-ranking",
       "category": "chips",
       "type": "ranking",
@@ -261,42 +311,6 @@
           "label": "Top 賣超",
           "value": "2439 -53%",
           "color": "down"
-        }
-      ]
-    },
-    {
-      "id": "futures-basis",
-      "category": "taiex",
-      "type": "pulse",
-      "date": "2026-06-18",
-      "time": "20:00",
-      "title": "期貨正逆價差 · 12 年期現對照",
-      "title_em": "12 年",
-      "summary": "近 3002 個交易日（2014-02-14 → 2026-06-18）台指期 TXF1 vs 加權指數價差。最新 (2026-06-18)：基差 +303.8 點，加權收 46,465。",
-      "tags": [
-        "期貨",
-        "基差",
-        "正逆價差",
-        "TX",
-        "12 年"
-      ],
-      "source_pipeline": "yuanta + yfinance",
-      "url": "reports/futures-basis.html",
-      "stats": [
-        {
-          "label": "最新基差",
-          "value": "+303.8",
-          "color": "up"
-        },
-        {
-          "label": "加權",
-          "value": "46,465",
-          "color": "neutral"
-        },
-        {
-          "label": "區間",
-          "value": "3002 日",
-          "color": "neutral"
         }
       ]
     },
@@ -401,20 +415,6 @@
           "value": "21.9%",
           "color": "neutral"
         }
-      ]
-    },
-    {
-      "id": "tri-source-lamp",
-      "category": "chips",
-      "title": "三源混合燈號",
-      "subtitle": "2026-06-22 · 三同買 5 / 三同賣 9",
-      "date": "2026-06-22",
-      "url": "reports/tri-source-lamp.html",
-      "tags": [
-        "分點",
-        "大股東",
-        "三大法人",
-        "燈號"
       ]
     },
     {

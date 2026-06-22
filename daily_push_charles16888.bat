@@ -7,6 +7,9 @@ REM cmd parses bat in cp950 before chcp 65001, any non-ASCII before chcp breaks 
 
 setlocal
 
+set "PY=C:\Python\python.exe"
+if not exist "%PY%" set "PY=python"
+
 set "REPO=%~dp0"
 set "LOG=%REPO%push_to_charles16888.log"
 
@@ -16,14 +19,14 @@ echo [%date% %time%] Start daily push to charles16888 >> "%LOG%"
 echo ================================== >> "%LOG%"
 
 REM 1) trading day check
-python "E:\stock_chip_crawler\is_trading_day.py" >> "%LOG%" 2>&1
+"%PY%" "E:\stock_chip_crawler\is_trading_day.py" >> "%LOG%" 2>&1
 if errorlevel 1 (
     echo [%date% %time%] non trading day, skip >> "%LOG%"
     exit /b 0
 )
 
 REM 2) verify data completeness
-python "E:\stock_chip_crawler\verify_today_data.py" >> "%LOG%" 2>&1
+"%PY%" "E:\stock_chip_crawler\verify_today_data.py" >> "%LOG%" 2>&1
 
 REM 3) build scripts (write to charles1688-research repo)
 cd /d "%REPO%"
@@ -42,28 +45,60 @@ if errorlevel 1 (
 )
 
 echo [%date% %time%] [1/8] build_sectors_assets >> "%LOG%"
-python tools\build_sectors_assets.py >> "%LOG%" 2>&1
+"%PY%" tools\build_sectors_assets.py >> "%LOG%" 2>&1
+if errorlevel 1 (
+    echo [%date% %time%] ERROR: build_sectors_assets failed >> "%LOG%"
+    exit /b 4
+)
 
 echo [%date% %time%] [2/8] build_market_chart >> "%LOG%"
-python tools\build_market_chart.py >> "%LOG%" 2>&1
+"%PY%" tools\build_market_chart.py >> "%LOG%" 2>&1
+if errorlevel 1 (
+    echo [%date% %time%] ERROR: build_market_chart failed >> "%LOG%"
+    exit /b 4
+)
 
 echo [%date% %time%] [3/8] build_futures_chart >> "%LOG%"
-python tools\build_futures_chart.py >> "%LOG%" 2>&1
+"%PY%" tools\build_futures_chart.py >> "%LOG%" 2>&1
+if errorlevel 1 (
+    echo [%date% %time%] ERROR: build_futures_chart failed >> "%LOG%"
+    exit /b 4
+)
 
 echo [%date% %time%] [4/8] build_options_chart >> "%LOG%"
-python tools\build_options_chart.py >> "%LOG%" 2>&1
+"%PY%" tools\build_options_chart.py >> "%LOG%" 2>&1
+if errorlevel 1 (
+    echo [%date% %time%] ERROR: build_options_chart failed >> "%LOG%"
+    exit /b 4
+)
 
 echo [%date% %time%] [5/8] build_chip_concentration >> "%LOG%"
-python tools\build_chip_concentration.py >> "%LOG%" 2>&1
+"%PY%" tools\build_chip_concentration.py >> "%LOG%" 2>&1
+if errorlevel 1 (
+    echo [%date% %time%] ERROR: build_chip_concentration failed >> "%LOG%"
+    exit /b 4
+)
 
 echo [%date% %time%] [6/8] build_view2_shareholder_divergence >> "%LOG%"
-python tools\build_view2_shareholder_divergence.py >> "%LOG%" 2>&1
+"%PY%" tools\build_view2_shareholder_divergence.py >> "%LOG%" 2>&1
+if errorlevel 1 (
+    echo [%date% %time%] ERROR: build_view2_shareholder_divergence failed >> "%LOG%"
+    exit /b 4
+)
 
 echo [%date% %time%] [7/8] build_view4_tri_source_lamp >> "%LOG%"
-python tools\build_view4_tri_source_lamp.py >> "%LOG%" 2>&1
+"%PY%" tools\build_view4_tri_source_lamp.py >> "%LOG%" 2>&1
+if errorlevel 1 (
+    echo [%date% %time%] ERROR: build_view4_tri_source_lamp failed >> "%LOG%"
+    exit /b 4
+)
 
 echo [%date% %time%] [8/8] build_three_factor_ranking >> "%LOG%"
-python tools\build_three_factor_ranking.py >> "%LOG%" 2>&1
+"%PY%" tools\build_three_factor_ranking.py >> "%LOG%" 2>&1
+if errorlevel 1 (
+    echo [%date% %time%] ERROR: build_three_factor_ranking failed >> "%LOG%"
+    exit /b 4
+)
 
 REM 4) git commit + push (PAT embedded in remote URL)
 echo [%date% %time%] git push charles16888-research >> "%LOG%"

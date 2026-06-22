@@ -17,6 +17,7 @@ import csv
 import json
 import sqlite3
 import sys
+import tempfile
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -28,6 +29,10 @@ except ImportError:
     sys.exit(2)
 
 LYNUS_ROOT = Path(__file__).resolve().parent.parent
+YF_CACHE_DIR = Path(tempfile.gettempdir()) / "charles1688_yfinance_cache"
+YF_CACHE_DIR.mkdir(parents=True, exist_ok=True)
+yf.set_tz_cache_location(str(YF_CACHE_DIR))
+
 SOURCE_CSV = LYNUS_ROOT / "assets" / "_raw" / "tx_daily_yuanta.csv"
 DATA_OUT = LYNUS_ROOT / "assets" / "futures_basis.json"
 PAGE_OUT = LYNUS_ROOT / "reports" / "futures-basis.html"
