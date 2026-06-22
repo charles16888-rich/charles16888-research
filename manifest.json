@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-06-22T22:44:06+08:00",
+  "updated_at": "2026-06-22T22:48:26+08:00",
   "today": "2026-06-22",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,41 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "chip-concentration",
+      "category": "chips",
+      "type": "ranking",
+      "date": "2026-06-22",
+      "time": "21:00",
+      "title": "籌碼集中度 · 分點 Top 50 排行",
+      "title_em": "集中度",
+      "summary": "5 個時段 · 每邊 Top 50 · 過濾成交量 < 1,000 張。 今日買超集中 #1：3374 精材 +66.2%。 賣超集中 #1：1319 東陽 -55.5%。",
+      "tags": [
+        "籌碼",
+        "分點",
+        "集中度",
+        "排行榜"
+      ],
+      "source_pipeline": "stock_chip_crawler",
+      "url": "reports/chip-concentration.html",
+      "stats": [
+        {
+          "label": "時段數",
+          "value": "5",
+          "color": "neutral"
+        },
+        {
+          "label": "Top 買超",
+          "value": "3374 +66%",
+          "color": "up"
+        },
+        {
+          "label": "Top 賣超",
+          "value": "1319 -55%",
+          "color": "down"
+        }
+      ]
+    },
     {
       "id": "options-atm",
       "category": "taiex",
@@ -276,41 +311,6 @@
           "label": "榜首",
           "value": "3147 89.8",
           "color": "up"
-        }
-      ]
-    },
-    {
-      "id": "chip-concentration",
-      "category": "chips",
-      "type": "ranking",
-      "date": "2026-06-18",
-      "time": "21:00",
-      "title": "籌碼集中度 · 分點 Top 50 排行",
-      "title_em": "集中度",
-      "summary": "5 個時段 · 每邊 Top 50 · 過濾成交量 < 1,000 張。 今日買超集中 #1：5425 台半 +74.7%。 賣超集中 #1：2439 美律 -53.2%。",
-      "tags": [
-        "籌碼",
-        "分點",
-        "集中度",
-        "排行榜"
-      ],
-      "source_pipeline": "stock_chip_crawler",
-      "url": "reports/chip-concentration.html",
-      "stats": [
-        {
-          "label": "時段數",
-          "value": "5",
-          "color": "neutral"
-        },
-        {
-          "label": "Top 買超",
-          "value": "5425 +75%",
-          "color": "up"
-        },
-        {
-          "label": "Top 賣超",
-          "value": "2439 -53%",
-          "color": "down"
         }
       ]
     },
@@ -833,8 +833,8 @@
       "id": "shareholder-divergence",
       "category": "chips",
       "title": "大股東 vs 股價背離掃描",
-      "subtitle": "2026-06-05 → 2026-06-12 週對週 · 2011 檔",
-      "date": "2026-06-12",
+      "subtitle": "2026-06-12 → 2026-06-18 週對週 · 2010 檔",
+      "date": "2026-06-18",
       "url": "reports/shareholder-divergence.html",
       "tags": [
         "大股東",
