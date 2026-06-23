@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-06-23T21:37:44+08:00",
+  "updated_at": "2026-06-23T22:00:11+08:00",
   "today": "2026-06-23",
   "volume_number": 1,
   "market_summary": {
@@ -58,7 +58,7 @@
     },
     {
       "id": "options-atm",
-      "category": "taiex",
+      "category": "txo",
       "type": "pulse",
       "date": "2026-06-23",
       "time": "20:00",
@@ -265,6 +265,77 @@
       ]
     },
     {
+      "id": "options-annual-2026",
+      "category": "txo",
+      "type": "options_annual",
+      "date": "2026-06-23",
+      "time": "15:10",
+      "title": "2026 台股選擇權年度合併報告",
+      "title_em": "年度合併",
+      "summary": "彙整 2026 年 25 份 v2.5 週報，期間 2026-01-01 至 2026-06-23，共 111 個交易日。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "年度合併",
+        "v2.5"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5",
+      "url": "reports/options/annual_reports/2026/台股選擇權年度合併報告_2026_v2.5.html",
+      "stats": [
+        {
+          "label": "週報",
+          "value": "25",
+          "color": "neutral"
+        },
+        {
+          "label": "交易日",
+          "value": "111",
+          "color": "neutral"
+        },
+        {
+          "label": "期間",
+          "value": "2026-01-01 → 2026-06-23",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "options-weekly-20260622-20260626",
+      "category": "txo",
+      "type": "options_weekly",
+      "date": "2026-06-23",
+      "time": "15:00",
+      "title": "台股選擇權籌碼週報 · 20260622-20260626",
+      "title_em": "選擇權",
+      "summary": "v2.5 定價與期現結構版週報，涵蓋 2026-06-22 至 2026-06-23，共 2 個交易日。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "週報",
+        "Max Pain",
+        "P/C Ratio"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5",
+      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260622-20260626_v2.5.html",
+      "stats": [
+        {
+          "label": "週期",
+          "value": "20260622-20260626",
+          "color": "neutral"
+        },
+        {
+          "label": "交易日",
+          "value": "2",
+          "color": "neutral"
+        },
+        {
+          "label": "版本",
+          "value": "v2.5",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "tri-source-lamp",
       "category": "chips",
       "title": "三源混合燈號",
@@ -413,6 +484,42 @@
         {
           "label": "漲停集中",
           "value": "18.9%",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "options-weekly-20260615-20260619",
+      "category": "txo",
+      "type": "options_weekly",
+      "date": "2026-06-19",
+      "time": "15:00",
+      "title": "台股選擇權籌碼週報 · 20260615-20260619",
+      "title_em": "選擇權",
+      "summary": "v2.5 定價與期現結構版週報，涵蓋 2026-06-15 至 2026-06-19，共 4 個交易日。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "週報",
+        "Max Pain",
+        "P/C Ratio"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5",
+      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260615-20260619_v2.5.html",
+      "stats": [
+        {
+          "label": "週期",
+          "value": "20260615-20260619",
+          "color": "neutral"
+        },
+        {
+          "label": "交易日",
+          "value": "4",
+          "color": "neutral"
+        },
+        {
+          "label": "版本",
+          "value": "v2.5",
           "color": "neutral"
         }
       ]
@@ -946,6 +1053,42 @@
       ]
     },
     {
+      "id": "options-weekly-20260608-20260612",
+      "category": "txo",
+      "type": "options_weekly",
+      "date": "2026-06-12",
+      "time": "15:00",
+      "title": "台股選擇權籌碼週報 · 20260608-20260612",
+      "title_em": "選擇權",
+      "summary": "v2.5 定價與期現結構版週報，涵蓋 2026-06-08 至 2026-06-12，共 5 個交易日。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "週報",
+        "Max Pain",
+        "P/C Ratio"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5",
+      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260608-20260612_v2.5.html",
+      "stats": [
+        {
+          "label": "週期",
+          "value": "20260608-20260612",
+          "color": "neutral"
+        },
+        {
+          "label": "交易日",
+          "value": "5",
+          "color": "neutral"
+        },
+        {
+          "label": "版本",
+          "value": "v2.5",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-06-11-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -1456,6 +1599,42 @@
         {
           "label": "漲停集中",
           "value": "1.9%",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "options-weekly-20260601-20260605",
+      "category": "txo",
+      "type": "options_weekly",
+      "date": "2026-06-05",
+      "time": "15:00",
+      "title": "台股選擇權籌碼週報 · 20260601-20260605",
+      "title_em": "選擇權",
+      "summary": "v2.5 定價與期現結構版週報，涵蓋 2026-06-01 至 2026-06-05，共 5 個交易日。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "週報",
+        "Max Pain",
+        "P/C Ratio"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5",
+      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260601-20260605_v2.5.html",
+      "stats": [
+        {
+          "label": "週期",
+          "value": "20260601-20260605",
+          "color": "neutral"
+        },
+        {
+          "label": "交易日",
+          "value": "5",
+          "color": "neutral"
+        },
+        {
+          "label": "版本",
+          "value": "v2.5",
           "color": "neutral"
         }
       ]
@@ -2006,6 +2185,42 @@
         {
           "label": "漲停集中",
           "value": "22.2%",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "options-weekly-20260525-20260529",
+      "category": "txo",
+      "type": "options_weekly",
+      "date": "2026-05-29",
+      "time": "15:00",
+      "title": "台股選擇權籌碼週報 · 20260525-20260529",
+      "title_em": "選擇權",
+      "summary": "v2.5 定價與期現結構版週報，涵蓋 2026-05-25 至 2026-05-29，共 5 個交易日。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "週報",
+        "Max Pain",
+        "P/C Ratio"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5",
+      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260525-20260529_v2.5.html",
+      "stats": [
+        {
+          "label": "週期",
+          "value": "20260525-20260529",
+          "color": "neutral"
+        },
+        {
+          "label": "交易日",
+          "value": "5",
+          "color": "neutral"
+        },
+        {
+          "label": "版本",
+          "value": "v2.5",
           "color": "neutral"
         }
       ]
@@ -2666,6 +2881,42 @@
       ]
     },
     {
+      "id": "options-weekly-20260518-20260522",
+      "category": "txo",
+      "type": "options_weekly",
+      "date": "2026-05-22",
+      "time": "15:00",
+      "title": "台股選擇權籌碼週報 · 20260518-20260522",
+      "title_em": "選擇權",
+      "summary": "v2.5 定價與期現結構版週報，涵蓋 2026-05-18 至 2026-05-22，共 5 個交易日。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "週報",
+        "Max Pain",
+        "P/C Ratio"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5",
+      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260518-20260522_v2.5.html",
+      "stats": [
+        {
+          "label": "週期",
+          "value": "20260518-20260522",
+          "color": "neutral"
+        },
+        {
+          "label": "交易日",
+          "value": "5",
+          "color": "neutral"
+        },
+        {
+          "label": "版本",
+          "value": "v2.5",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-05-21-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -3176,6 +3427,42 @@
         {
           "label": "漲停集中",
           "value": "4.3%",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "options-weekly-20260511-20260515",
+      "category": "txo",
+      "type": "options_weekly",
+      "date": "2026-05-15",
+      "time": "15:00",
+      "title": "台股選擇權籌碼週報 · 20260511-20260515",
+      "title_em": "選擇權",
+      "summary": "v2.5 定價與期現結構版週報，涵蓋 2026-05-11 至 2026-05-15，共 5 個交易日。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "週報",
+        "Max Pain",
+        "P/C Ratio"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5",
+      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260511-20260515_v2.5.html",
+      "stats": [
+        {
+          "label": "週期",
+          "value": "20260511-20260515",
+          "color": "neutral"
+        },
+        {
+          "label": "交易日",
+          "value": "5",
+          "color": "neutral"
+        },
+        {
+          "label": "版本",
+          "value": "v2.5",
           "color": "neutral"
         }
       ]
@@ -3696,6 +3983,42 @@
       ]
     },
     {
+      "id": "options-weekly-20260504-20260508",
+      "category": "txo",
+      "type": "options_weekly",
+      "date": "2026-05-08",
+      "time": "15:00",
+      "title": "台股選擇權籌碼週報 · 20260504-20260508",
+      "title_em": "選擇權",
+      "summary": "v2.5 定價與期現結構版週報，涵蓋 2026-05-04 至 2026-05-08，共 5 個交易日。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "週報",
+        "Max Pain",
+        "P/C Ratio"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5",
+      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260504-20260508_v2.5.html",
+      "stats": [
+        {
+          "label": "週期",
+          "value": "20260504-20260508",
+          "color": "neutral"
+        },
+        {
+          "label": "交易日",
+          "value": "5",
+          "color": "neutral"
+        },
+        {
+          "label": "版本",
+          "value": "v2.5",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-05-07-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -4103,6 +4426,42 @@
         {
           "label": "漲停集中",
           "value": "17.6%",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "options-weekly-20260427-20260501",
+      "category": "txo",
+      "type": "options_weekly",
+      "date": "2026-05-01",
+      "time": "15:00",
+      "title": "台股選擇權籌碼週報 · 20260427-20260501",
+      "title_em": "選擇權",
+      "summary": "v2.5 定價與期現結構版週報，涵蓋 2026-04-27 至 2026-05-01，共 4 個交易日。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "週報",
+        "Max Pain",
+        "P/C Ratio"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5",
+      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260427-20260501_v2.5.html",
+      "stats": [
+        {
+          "label": "週期",
+          "value": "20260427-20260501",
+          "color": "neutral"
+        },
+        {
+          "label": "交易日",
+          "value": "4",
+          "color": "neutral"
+        },
+        {
+          "label": "版本",
+          "value": "v2.5",
           "color": "neutral"
         }
       ]
@@ -4623,6 +4982,42 @@
       ]
     },
     {
+      "id": "options-weekly-20260420-20260424",
+      "category": "txo",
+      "type": "options_weekly",
+      "date": "2026-04-24",
+      "time": "15:00",
+      "title": "台股選擇權籌碼週報 · 20260420-20260424",
+      "title_em": "選擇權",
+      "summary": "v2.5 定價與期現結構版週報，涵蓋 2026-04-20 至 2026-04-24，共 5 個交易日。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "週報",
+        "Max Pain",
+        "P/C Ratio"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5",
+      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260420-20260424_v2.5.html",
+      "stats": [
+        {
+          "label": "週期",
+          "value": "20260420-20260424",
+          "color": "neutral"
+        },
+        {
+          "label": "交易日",
+          "value": "5",
+          "color": "neutral"
+        },
+        {
+          "label": "版本",
+          "value": "v2.5",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-04-23-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -5047,6 +5442,546 @@
         {
           "label": "漲停集中",
           "value": "17.1%",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "options-weekly-20260413-20260417",
+      "category": "txo",
+      "type": "options_weekly",
+      "date": "2026-04-17",
+      "time": "15:00",
+      "title": "台股選擇權籌碼週報 · 20260413-20260417",
+      "title_em": "選擇權",
+      "summary": "v2.5 定價與期現結構版週報，涵蓋 2026-04-13 至 2026-04-17，共 5 個交易日。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "週報",
+        "Max Pain",
+        "P/C Ratio"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5",
+      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260413-20260417_v2.5.html",
+      "stats": [
+        {
+          "label": "週期",
+          "value": "20260413-20260417",
+          "color": "neutral"
+        },
+        {
+          "label": "交易日",
+          "value": "5",
+          "color": "neutral"
+        },
+        {
+          "label": "版本",
+          "value": "v2.5",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "options-weekly-20260406-20260410",
+      "category": "txo",
+      "type": "options_weekly",
+      "date": "2026-04-10",
+      "time": "15:00",
+      "title": "台股選擇權籌碼週報 · 20260406-20260410",
+      "title_em": "選擇權",
+      "summary": "v2.5 定價與期現結構版週報，涵蓋 2026-04-06 至 2026-04-10，共 4 個交易日。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "週報",
+        "Max Pain",
+        "P/C Ratio"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5",
+      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260406-20260410_v2.5.html",
+      "stats": [
+        {
+          "label": "週期",
+          "value": "20260406-20260410",
+          "color": "neutral"
+        },
+        {
+          "label": "交易日",
+          "value": "4",
+          "color": "neutral"
+        },
+        {
+          "label": "版本",
+          "value": "v2.5",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "options-weekly-20260330-20260403",
+      "category": "txo",
+      "type": "options_weekly",
+      "date": "2026-04-03",
+      "time": "15:00",
+      "title": "台股選擇權籌碼週報 · 20260330-20260403",
+      "title_em": "選擇權",
+      "summary": "v2.5 定價與期現結構版週報，涵蓋 2026-03-30 至 2026-04-03，共 4 個交易日。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "週報",
+        "Max Pain",
+        "P/C Ratio"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5",
+      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260330-20260403_v2.5.html",
+      "stats": [
+        {
+          "label": "週期",
+          "value": "20260330-20260403",
+          "color": "neutral"
+        },
+        {
+          "label": "交易日",
+          "value": "4",
+          "color": "neutral"
+        },
+        {
+          "label": "版本",
+          "value": "v2.5",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "options-weekly-20260323-20260327",
+      "category": "txo",
+      "type": "options_weekly",
+      "date": "2026-03-27",
+      "time": "15:00",
+      "title": "台股選擇權籌碼週報 · 20260323-20260327",
+      "title_em": "選擇權",
+      "summary": "v2.5 定價與期現結構版週報，涵蓋 2026-03-23 至 2026-03-27，共 5 個交易日。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "週報",
+        "Max Pain",
+        "P/C Ratio"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5",
+      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260323-20260327_v2.5.html",
+      "stats": [
+        {
+          "label": "週期",
+          "value": "20260323-20260327",
+          "color": "neutral"
+        },
+        {
+          "label": "交易日",
+          "value": "5",
+          "color": "neutral"
+        },
+        {
+          "label": "版本",
+          "value": "v2.5",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "options-weekly-20260316-20260320",
+      "category": "txo",
+      "type": "options_weekly",
+      "date": "2026-03-20",
+      "time": "15:00",
+      "title": "台股選擇權籌碼週報 · 20260316-20260320",
+      "title_em": "選擇權",
+      "summary": "v2.5 定價與期現結構版週報，涵蓋 2026-03-16 至 2026-03-20，共 5 個交易日。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "週報",
+        "Max Pain",
+        "P/C Ratio"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5",
+      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260316-20260320_v2.5.html",
+      "stats": [
+        {
+          "label": "週期",
+          "value": "20260316-20260320",
+          "color": "neutral"
+        },
+        {
+          "label": "交易日",
+          "value": "5",
+          "color": "neutral"
+        },
+        {
+          "label": "版本",
+          "value": "v2.5",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "options-weekly-20260309-20260313",
+      "category": "txo",
+      "type": "options_weekly",
+      "date": "2026-03-13",
+      "time": "15:00",
+      "title": "台股選擇權籌碼週報 · 20260309-20260313",
+      "title_em": "選擇權",
+      "summary": "v2.5 定價與期現結構版週報，涵蓋 2026-03-09 至 2026-03-13，共 5 個交易日。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "週報",
+        "Max Pain",
+        "P/C Ratio"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5",
+      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260309-20260313_v2.5.html",
+      "stats": [
+        {
+          "label": "週期",
+          "value": "20260309-20260313",
+          "color": "neutral"
+        },
+        {
+          "label": "交易日",
+          "value": "5",
+          "color": "neutral"
+        },
+        {
+          "label": "版本",
+          "value": "v2.5",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "options-weekly-20260302-20260306",
+      "category": "txo",
+      "type": "options_weekly",
+      "date": "2026-03-06",
+      "time": "15:00",
+      "title": "台股選擇權籌碼週報 · 20260302-20260306",
+      "title_em": "選擇權",
+      "summary": "v2.5 定價與期現結構版週報，涵蓋 2026-03-02 至 2026-03-06，共 5 個交易日。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "週報",
+        "Max Pain",
+        "P/C Ratio"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5",
+      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260302-20260306_v2.5.html",
+      "stats": [
+        {
+          "label": "週期",
+          "value": "20260302-20260306",
+          "color": "neutral"
+        },
+        {
+          "label": "交易日",
+          "value": "5",
+          "color": "neutral"
+        },
+        {
+          "label": "版本",
+          "value": "v2.5",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "options-weekly-20260223-20260227",
+      "category": "txo",
+      "type": "options_weekly",
+      "date": "2026-02-27",
+      "time": "15:00",
+      "title": "台股選擇權籌碼週報 · 20260223-20260227",
+      "title_em": "選擇權",
+      "summary": "v2.5 定價與期現結構版週報，涵蓋 2026-02-23 至 2026-02-27，共 4 個交易日。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "週報",
+        "Max Pain",
+        "P/C Ratio"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5",
+      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260223-20260227_v2.5.html",
+      "stats": [
+        {
+          "label": "週期",
+          "value": "20260223-20260227",
+          "color": "neutral"
+        },
+        {
+          "label": "交易日",
+          "value": "4",
+          "color": "neutral"
+        },
+        {
+          "label": "版本",
+          "value": "v2.5",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "options-weekly-20260209-20260213",
+      "category": "txo",
+      "type": "options_weekly",
+      "date": "2026-02-13",
+      "time": "15:00",
+      "title": "台股選擇權籌碼週報 · 20260209-20260213",
+      "title_em": "選擇權",
+      "summary": "v2.5 定價與期現結構版週報，涵蓋 2026-02-09 至 2026-02-13，共 3 個交易日。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "週報",
+        "Max Pain",
+        "P/C Ratio"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5",
+      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260209-20260213_v2.5.html",
+      "stats": [
+        {
+          "label": "週期",
+          "value": "20260209-20260213",
+          "color": "neutral"
+        },
+        {
+          "label": "交易日",
+          "value": "3",
+          "color": "neutral"
+        },
+        {
+          "label": "版本",
+          "value": "v2.5",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "options-weekly-20260202-20260206",
+      "category": "txo",
+      "type": "options_weekly",
+      "date": "2026-02-06",
+      "time": "15:00",
+      "title": "台股選擇權籌碼週報 · 20260202-20260206",
+      "title_em": "選擇權",
+      "summary": "v2.5 定價與期現結構版週報，涵蓋 2026-02-02 至 2026-02-06，共 5 個交易日。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "週報",
+        "Max Pain",
+        "P/C Ratio"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5",
+      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260202-20260206_v2.5.html",
+      "stats": [
+        {
+          "label": "週期",
+          "value": "20260202-20260206",
+          "color": "neutral"
+        },
+        {
+          "label": "交易日",
+          "value": "5",
+          "color": "neutral"
+        },
+        {
+          "label": "版本",
+          "value": "v2.5",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "options-weekly-20260126-20260130",
+      "category": "txo",
+      "type": "options_weekly",
+      "date": "2026-01-30",
+      "time": "15:00",
+      "title": "台股選擇權籌碼週報 · 20260126-20260130",
+      "title_em": "選擇權",
+      "summary": "v2.5 定價與期現結構版週報，涵蓋 2026-01-26 至 2026-01-30，共 5 個交易日。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "週報",
+        "Max Pain",
+        "P/C Ratio"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5",
+      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260126-20260130_v2.5.html",
+      "stats": [
+        {
+          "label": "週期",
+          "value": "20260126-20260130",
+          "color": "neutral"
+        },
+        {
+          "label": "交易日",
+          "value": "5",
+          "color": "neutral"
+        },
+        {
+          "label": "版本",
+          "value": "v2.5",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "options-weekly-20260119-20260123",
+      "category": "txo",
+      "type": "options_weekly",
+      "date": "2026-01-23",
+      "time": "15:00",
+      "title": "台股選擇權籌碼週報 · 20260119-20260123",
+      "title_em": "選擇權",
+      "summary": "v2.5 定價與期現結構版週報，涵蓋 2026-01-19 至 2026-01-23，共 5 個交易日。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "週報",
+        "Max Pain",
+        "P/C Ratio"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5",
+      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260119-20260123_v2.5.html",
+      "stats": [
+        {
+          "label": "週期",
+          "value": "20260119-20260123",
+          "color": "neutral"
+        },
+        {
+          "label": "交易日",
+          "value": "5",
+          "color": "neutral"
+        },
+        {
+          "label": "版本",
+          "value": "v2.5",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "options-weekly-20260112-20260116",
+      "category": "txo",
+      "type": "options_weekly",
+      "date": "2026-01-16",
+      "time": "15:00",
+      "title": "台股選擇權籌碼週報 · 20260112-20260116",
+      "title_em": "選擇權",
+      "summary": "v2.5 定價與期現結構版週報，涵蓋 2026-01-12 至 2026-01-16，共 5 個交易日。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "週報",
+        "Max Pain",
+        "P/C Ratio"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5",
+      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260112-20260116_v2.5.html",
+      "stats": [
+        {
+          "label": "週期",
+          "value": "20260112-20260116",
+          "color": "neutral"
+        },
+        {
+          "label": "交易日",
+          "value": "5",
+          "color": "neutral"
+        },
+        {
+          "label": "版本",
+          "value": "v2.5",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "options-weekly-20260105-20260109",
+      "category": "txo",
+      "type": "options_weekly",
+      "date": "2026-01-09",
+      "time": "15:00",
+      "title": "台股選擇權籌碼週報 · 20260105-20260109",
+      "title_em": "選擇權",
+      "summary": "v2.5 定價與期現結構版週報，涵蓋 2026-01-05 至 2026-01-09，共 5 個交易日。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "週報",
+        "Max Pain",
+        "P/C Ratio"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5",
+      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260105-20260109_v2.5.html",
+      "stats": [
+        {
+          "label": "週期",
+          "value": "20260105-20260109",
+          "color": "neutral"
+        },
+        {
+          "label": "交易日",
+          "value": "5",
+          "color": "neutral"
+        },
+        {
+          "label": "版本",
+          "value": "v2.5",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "options-weekly-20260101-20260102",
+      "category": "txo",
+      "type": "options_weekly",
+      "date": "2026-01-02",
+      "time": "15:00",
+      "title": "台股選擇權籌碼週報 · 20260101-20260102",
+      "title_em": "選擇權",
+      "summary": "v2.5 定價與期現結構版週報，涵蓋 2026-01-01 至 2026-01-02，共 1 個交易日。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "週報",
+        "Max Pain",
+        "P/C Ratio"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5",
+      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260101-20260102_v2.5.html",
+      "stats": [
+        {
+          "label": "週期",
+          "value": "20260101-20260102",
+          "color": "neutral"
+        },
+        {
+          "label": "交易日",
+          "value": "1",
+          "color": "neutral"
+        },
+        {
+          "label": "版本",
+          "value": "v2.5",
           "color": "neutral"
         }
       ]

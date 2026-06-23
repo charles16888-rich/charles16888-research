@@ -87,10 +87,9 @@
         },
         {
           "id": "deriv",
-          "name_zh": "期貨選擇權",
+          "name_zh": "期貨",
           "match_id_prefix": [
-            "futures-basis",
-            "options-atm"
+            "futures-basis"
           ]
         }
       ],
@@ -99,6 +98,59 @@
           "id": "pulse",
           "name_zh": "市場脈動",
           "name_en": "Market Pulse"
+        }
+      ]
+    },
+    {
+      "id": "txo",
+      "name_zh": "選擇權",
+      "name_en": "Options",
+      "tagline_zh": "TXO 籌碼 × 壓力支撐",
+      "tagline_en": "Options flow",
+      "description": "台指選擇權週報、年度合併與價平波動代理",
+      "enabled": true,
+      "source_pipelines": [
+        "stock_project options_report_v2.5",
+        "taifex + twse"
+      ],
+      "subcategories": [
+        {
+          "id": "weekly",
+          "name_zh": "週報",
+          "match_id_prefix": [
+            "options-weekly"
+          ]
+        },
+        {
+          "id": "annual",
+          "name_zh": "年度合併",
+          "match_id_prefix": [
+            "options-annual"
+          ]
+        },
+        {
+          "id": "atm",
+          "name_zh": "價平波動",
+          "match_id_prefix": [
+            "options-atm"
+          ]
+        }
+      ],
+      "report_types": [
+        {
+          "id": "options_weekly",
+          "name_zh": "選擇權週報",
+          "name_en": "Weekly"
+        },
+        {
+          "id": "options_annual",
+          "name_zh": "年度合併",
+          "name_en": "Annual"
+        },
+        {
+          "id": "pulse",
+          "name_zh": "價平波動",
+          "name_en": "ATM Proxy"
         }
       ]
     },

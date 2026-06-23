@@ -112,7 +112,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
         <nav class="nav" aria-label="Primary">
           <a class="nav__link" href="../category.html?cat=sectors">族群</a>
           <a class="nav__link is-active" href="../category.html?cat=taiex">大盤</a>
-          <a class="nav__link nav__link--disabled" href="#" aria-disabled="true">選擇權</a>
+          <a class="nav__link" href="../category.html?cat=txo">選擇權</a>
           <a class="nav__link nav__link--disabled" href="#" aria-disabled="true">籌碼</a>
           <a class="nav__link nav__link--disabled" href="#" aria-disabled="true">個股</a>
           <a class="nav__link" href="../category.html?cat=news">新聞</a>

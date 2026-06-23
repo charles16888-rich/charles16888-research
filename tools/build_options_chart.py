@@ -45,15 +45,15 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
       font-size: 11px; letter-spacing: .15em;
     }
     .range-tab {
-      padding: 7px 16px; border: 1px solid rgba(232,223,211,0.18);
-      background: transparent; color: #9a9486;
+      padding: 7px 16px; border: 1px solid var(--rule-strong);
+      background: var(--panel); color: var(--ink-dim);
       cursor: pointer; transition: all .15s; font-family: inherit;
-      font-size: inherit; letter-spacing: inherit;
+      font-size: inherit; letter-spacing: inherit; font-weight: 700;
     }
-    .range-tab:hover { color: #e8e4d8; border-color: #b8985c; }
+    .range-tab:hover { color: var(--ink); border-color: var(--rule-gold-strong); background: var(--panel-strong); }
     .range-tab.is-active {
-      background: #d4af37; color: #1a1612;
-      border-color: #d4af37; font-weight: 600;
+      background: var(--gold); color: var(--bg);
+      border-color: var(--gold); font-weight: 800;
     }
     .market-chart { min-height: 520px; }
     .market-chart-title { margin-top: 28px; }
@@ -70,8 +70,8 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
         </a>
         <nav class="nav" aria-label="Primary">
           <a class="nav__link" href="../category.html?cat=sectors">族群</a>
-          <a class="nav__link is-active" href="../category.html?cat=taiex">大盤</a>
-          <a class="nav__link nav__link--disabled" href="#" aria-disabled="true">選擇權</a>
+          <a class="nav__link" href="../category.html?cat=taiex">大盤</a>
+          <a class="nav__link is-active" href="../category.html?cat=txo">選擇權</a>
           <a class="nav__link nav__link--disabled" href="#" aria-disabled="true">籌碼</a>
           <a class="nav__link" href="../category.html?cat=stocks">個股</a>
           <a class="nav__link" href="../category.html?cat=news">新聞</a>
@@ -85,14 +85,14 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="../index.html">charles16888</a>
       <span class="breadcrumb__sep">/</span>
-      <a href="../category.html?cat=taiex">大盤</a>
+      <a href="../category.html?cat=txo">選擇權</a>
       <span class="breadcrumb__sep">/</span>
       <span>選擇權價平和</span>
     </nav>
 
     <section class="report-cover reveal reveal-d1">
       <div class="report-meta-line">
-        <span><strong>大盤</strong> · 選擇權隱含波動</span>
+        <span><strong>選擇權</strong> · 價平波動代理</span>
         <span>__DATE_RANGE__</span>
         <span>__DAYS__ 個交易日</span>
       </div>
@@ -140,14 +140,30 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
   <script>
   const DATA = __DATA_JSON__;
 
-  const ink     = '#e8dfd3';
-  const inkDim  = '#6e6350';
-  const gold    = '#d4af37';
-  const goldSft = '#b8985c';
-  const up      = '#e85a5a';
-  const rule    = 'rgba(232,223,211,0.10)';
-  const ruleGold= 'rgba(212,175,55,0.45)';
-  const bg      = '#1a1612';
+  const rootStyle = getComputedStyle(document.documentElement);
+  const bodyStyle = getComputedStyle(document.body);
+  const cssColor = (name, fallback) => rootStyle.getPropertyValue(name).trim() || fallback;
+  function luminance(color) {
+    const nums = (color || '').match(/[0-9.]+/g);
+    if (!nums || nums.length < 3) return 1;
+    const [r, g, b] = nums.slice(0, 3).map(Number).map(v => v / 255);
+    const lin = c => c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+    return 0.2126 * lin(r) + 0.7152 * lin(g) + 0.0722 * lin(b);
+  }
+  const pageIsDark = luminance(bodyStyle.backgroundColor) < 0.45;
+  const ink     = cssColor('--ink', pageIsDark ? '#fff6e8' : '#15110d');
+  const inkDim  = cssColor('--ink-dim', pageIsDark ? '#d1bea0' : '#4b4032');
+  const gold    = cssColor('--gold', pageIsDark ? '#ffd15f' : '#735000');
+  const goldSft = cssColor('--gold-soft', pageIsDark ? '#f0c273' : '#865f08');
+  const up      = cssColor('--up', pageIsDark ? '#ff7a80' : '#d03845');
+  const down    = cssColor('--down', pageIsDark ? '#77e39b' : '#0f7a43');
+  const rule    = cssColor('--rule', pageIsDark ? 'rgba(255,246,232,0.28)' : 'rgba(21,17,13,0.28)');
+  const ruleGold= cssColor('--rule-gold-strong', pageIsDark ? 'rgba(240,200,90,0.62)' : 'rgba(115,80,0,0.72)');
+  const bg      = cssColor('--label-bg', pageIsDark ? 'rgba(33,28,23,0.96)' : 'rgba(251,247,239,0.96)');
+  const redAreaTop = pageIsDark ? 'rgba(255,122,128,0.30)' : 'rgba(208,56,69,0.20)';
+  const redAreaBottom = pageIsDark ? 'rgba(255,122,128,0.02)' : 'rgba(208,56,69,0.00)';
+  const zoomFill = pageIsDark ? 'rgba(255,209,95,0.18)' : 'rgba(115,80,0,0.18)';
+  const zoomBg = pageIsDark ? 'rgba(255,209,95,0.10)' : 'rgba(115,80,0,0.10)';
 
   const chart = echarts.init(document.getElementById('chart-opt'), null, { renderer: 'svg' });
   const dates = DATA.map(d => d.date);
@@ -160,8 +176,8 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
       backgroundColor: bg,
       borderColor: ruleGold,
       borderWidth: 1,
-      textStyle: { color: ink, fontFamily: 'Inter' },
-      axisPointer: { type: 'cross', lineStyle: { color: goldSft } },
+      textStyle: { color: ink, fontFamily: 'Inter', fontSize: 13, fontWeight: 600 },
+      axisPointer: { type: 'cross', lineStyle: { color: goldSft, width: 1.4 } },
       formatter: function(params) {
         if (!params || !params.length) return '';
         const d = params[0].axisValue;
@@ -174,15 +190,15 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
           } else if (typeof v === 'number') {
             val = v.toFixed(0) + ' 點';
           }
-          html += '<div style="margin-top:4px;color:' + p.color + '">●</div>'
-               + '<span style="color:' + ink + '">' + p.seriesName + ': <b>' + val + '</b></span>';
+          html += '<div style="margin-top:4px;color:' + ink + '"><span style="color:' + p.color + ';font-weight:900">●</span> '
+               + p.seriesName + ': <b>' + val + '</b></div>';
         }
         return html;
       },
     },
     legend: {
       data: ['近期 C+P', '次遠期 C+P', '加權指數'],
-      textStyle: { color: ink },
+      textStyle: { color: ink, fontSize: 13, fontWeight: 700 },
       top: 8,
       itemGap: 28,
     },
@@ -190,22 +206,22 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
       type: 'category',
       data: dates,
       axisLine: { lineStyle: { color: rule } },
-      axisLabel: { color: inkDim, fontSize: 10, fontFamily: 'JetBrains Mono' },
+      axisLabel: { color: inkDim, fontSize: 11, fontWeight: 700, fontFamily: 'JetBrains Mono' },
       axisTick: { show: false },
     },
     yAxis: [
       {
         type: 'value', name: '價平和 (點)',
-        nameTextStyle: { color: inkDim, fontSize: 10 },
+        nameTextStyle: { color: inkDim, fontSize: 11, fontWeight: 700 },
         axisLine: { lineStyle: { color: rule } },
-        axisLabel: { color: inkDim, fontSize: 10 },
-        splitLine: { lineStyle: { color: rule, type: 'dashed' } },
+        axisLabel: { color: inkDim, fontSize: 11, fontWeight: 700 },
+        splitLine: { lineStyle: { color: rule, type: 'dashed', width: 1.1 } },
       },
       {
         type: 'value', name: '加權',
-        nameTextStyle: { color: inkDim, fontSize: 10 },
+        nameTextStyle: { color: inkDim, fontSize: 11, fontWeight: 700 },
         axisLine: { lineStyle: { color: rule } },
-        axisLabel: { color: inkDim, fontSize: 10, formatter: v => (v/1000).toFixed(0) + 'k' },
+        axisLabel: { color: inkDim, fontSize: 11, fontWeight: 700, formatter: v => (v/1000).toFixed(0) + 'k' },
         splitLine: { show: false },
       },
     ],
@@ -214,12 +230,12 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
       {
         type: 'slider', height: 22, bottom: 12,
         borderColor: 'transparent', backgroundColor: 'transparent',
-        fillerColor: 'rgba(212,175,55,0.12)',
+        fillerColor: zoomFill,
         handleStyle: { color: gold }, moveHandleStyle: { color: gold },
-        textStyle: { color: inkDim, fontFamily: 'JetBrains Mono', fontSize: 9 },
+        textStyle: { color: inkDim, fontFamily: 'JetBrains Mono', fontSize: 10, fontWeight: 700 },
         dataBackground: {
           lineStyle: { color: goldSft },
-          areaStyle: { color: 'rgba(212,175,55,0.08)' },
+          areaStyle: { color: zoomBg },
         },
       },
     ],
@@ -229,13 +245,13 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
         type: 'line',
         showSymbol: false,
         sampling: 'lttb',
-        lineStyle: { width: 1.5, color: up },
+        lineStyle: { width: 2.2, color: up },
         areaStyle: {
           color: {
             type: 'linear', x: 0, y: 0, x2: 0, y2: 1,
             colorStops: [
-              { offset: 0, color: 'rgba(232,90,90,0.22)' },
-              { offset: 1, color: 'rgba(232,90,90,0.00)' },
+              { offset: 0, color: redAreaTop },
+              { offset: 1, color: redAreaBottom },
             ],
           },
         },
@@ -246,7 +262,7 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
         type: 'line',
         showSymbol: false,
         sampling: 'lttb',
-        lineStyle: { width: 1.2, color: goldSft, type: 'dashed' },
+        lineStyle: { width: 2.0, color: goldSft, type: 'dashed' },
         data: DATA.map(d => d.opt_far_cp_sum),
       },
       {
@@ -255,7 +271,7 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
         yAxisIndex: 1,
         showSymbol: false,
         sampling: 'lttb',
-        lineStyle: { color: gold, width: 1.5 },
+        lineStyle: { color: gold, width: 2.1 },
         data: DATA.map(d => d.twse_close),
       },
     ],
@@ -356,7 +372,7 @@ def main() -> int:
     manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
     entry = {
         "id":              "options-atm",
-        "category":        "taiex",
+        "category":        "txo",
         "type":            "pulse",
         "date":            latest["date"],
         "time":            "20:00",
