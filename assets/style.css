@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    Antigravity Private Edition — Archival Editorial Design System
    ============================================================
    Aesthetic direction: private research journal, archival
@@ -11,36 +11,36 @@
 
 :root {
   /* — Surfaces (淺色系 · 米白編年紙感) — */
-  --bg:            #f7f3ea;   /* 米白主底 */
-  --bg-elevated:   #eee5d6;   /* 卡片底色、略深 */
-  --bg-recess:     #e0d4bf;   /* 凹陷區、最深 */
-  --panel:         rgba(255, 255, 255, 0.56);
-  --panel-strong:  rgba(255, 255, 255, 0.76);
-  --panel-solid:   #fbf7ef;
+  --bg:            #fffdf8;   /* high-contrast warm paper */
+  --bg-elevated:   #f2eadb;   /* raised surface */
+  --bg-recess:     #dfd0b8;   /* recessed surface */
+  --panel:         rgba(255, 255, 255, 0.74);
+  --panel-strong:  rgba(255, 255, 255, 0.90);
+  --panel-solid:   #fffaf0;
   --label-bg:      rgba(251, 247, 239, 0.96);
 
   /* — Text (深棕、不純黑、保留復古感) — */
-  --ink:           #211d17;   /* 主文字、深棕 */
-  --ink-muted:     #51483a;
-  --ink-dim:       #6d6250;
-  --ink-faint:     #8f826b;
+  --ink:           #15110d;   /* primary text */
+  --ink-muted:     #342b20;
+  --ink-dim:       #4b4032;
+  --ink-faint:     #665946;
 
   /* — Gold (深底色版 gold、淺底要更深才搶眼) — */
-  --gold:          #765915;
-  --gold-soft:     #8b6b24;
-  --gold-deep:     #4d390f;
+  --gold:          #735000;
+  --gold-soft:     #865f08;
+  --gold-deep:     #3f2b00;
 
   /* — Hairlines (深 ink 低透明度) — */
-  --rule:          rgba(33, 29, 23, 0.18);
-  --rule-strong:   rgba(33, 29, 23, 0.30);
-  --rule-gold:     rgba(118, 89, 21, 0.32);
-  --rule-gold-strong: rgba(118, 89, 21, 0.62);
+  --rule:          rgba(21, 17, 13, 0.28);
+  --rule-strong:   rgba(21, 17, 13, 0.42);
+  --rule-gold:     rgba(115, 80, 0, 0.42);
+  --rule-gold-strong: rgba(115, 80, 0, 0.72);
 
   /* — Semantic (Taiwan convention, red↑ green↓) — */
-  --up:            #b91f2b;
-  --up-soft:       #9f1b25;
-  --down:          #147a42;
-  --down-soft:     #106837;
+  --up:            #d03845;
+  --up-soft:       #b62634;
+  --down:          #0f7a43;
+  --down-soft:     #0a6636;
   --neutral:       var(--ink-muted);
 
   /* — Type — see fonts.css for family vars — */
@@ -3600,4 +3600,5 @@ h3, .h3 {
   .sector-rank-row { grid-template-columns: 1fr; }
   .sector-rank-row__left { direction: ltr; }
 }
+
 

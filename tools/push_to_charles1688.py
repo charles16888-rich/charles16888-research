@@ -1,4 +1,4 @@
-"""
+﻿"""
 push_to_charles1688.py
 =======================
 Mirror Lynus' sectors + taiex content to charles1688.com's 每日推播 board.
@@ -36,15 +36,15 @@ INDUSTRY_REPORTS = Path(r"E:\industry_map\reports")
 
 # ── Color tokens — light editorial (matches plugin v1.2.1 CSS) ──
 PALETTE = {
-    "ink":      "#1a1612",   # 深棕主字
-    "ink_dim":  "#5a4f3e",
-    "gold":     "#a8853a",   # 暗金（淺底友善）
-    "goldSft":  "#c9a86c",
-    "red":      "#c84a4a",
-    "green":    "#3a8b54",
-    "rule":     "rgba(26,22,18,0.12)",
-    "ruleGold": "rgba(168,133,58,0.45)",
-    "bg":       "#ffffff",
+    "ink":      "#15110d",   # high-contrast primary text
+    "ink_dim":  "#3d3326",
+    "gold":     "#8a650b",   # darker gold for light backgrounds
+    "goldSft":  "#a87409",
+    "red":      "#d83b49",
+    "green":    "#147a45",
+    "rule":     "rgba(21,17,13,0.28)",
+    "ruleGold": "rgba(138,101,11,0.58)",
+    "bg":       "#fffdf8",
 }
 
 
@@ -65,36 +65,36 @@ def _base_chart_axes(dates: list[str], y_left_name: str, y_right_name: str = "�
             "textStyle": {"color": PALETTE["ink"]},
             "axisPointer": {"type": "cross", "lineStyle": {"color": PALETTE["goldSft"]}},
         },
-        "legend": {"textStyle": {"color": PALETTE["ink"]}, "top": 2, "itemGap": 24},
+        "legend": {"textStyle": {"color": PALETTE["ink"], "fontSize": 12, "fontWeight": 700}, "top": 2, "itemGap": 24},
         "xAxis": {
             "type": "category",
             "data": dates,
             "axisLine":  {"lineStyle": {"color": PALETTE["rule"]}},
-            "axisLabel": {"color": PALETTE["ink_dim"], "fontSize": 9},
+            "axisLabel": {"color": PALETTE["ink_dim"], "fontSize": 10, "fontWeight": 600},
             "axisTick":  {"show": False},
         },
         "yAxis": [
             {"type": "value", "name": y_left_name,
-             "nameTextStyle": {"color": PALETTE["ink_dim"], "fontSize": 9},
+             "nameTextStyle": {"color": PALETTE["ink_dim"], "fontSize": 10},
              "axisLine":  {"lineStyle": {"color": PALETTE["rule"]}},
-             "axisLabel": {"color": PALETTE["ink_dim"], "fontSize": 9},
+             "axisLabel": {"color": PALETTE["ink_dim"], "fontSize": 10, "fontWeight": 600},
              "splitLine": {"lineStyle": {"color": PALETTE["rule"], "type": "dashed"}}},
             {"type": "value", "name": y_right_name,
-             "nameTextStyle": {"color": PALETTE["ink_dim"], "fontSize": 9},
+             "nameTextStyle": {"color": PALETTE["ink_dim"], "fontSize": 10},
              "axisLine":  {"lineStyle": {"color": PALETTE["rule"]}},
-             "axisLabel": {"color": PALETTE["ink_dim"], "fontSize": 9},
+             "axisLabel": {"color": PALETTE["ink_dim"], "fontSize": 10, "fontWeight": 600},
              "splitLine": {"show": False}},
         ],
         "dataZoom": [
             {"type": "inside", "startValue": 0, "endValue": len(dates) - 1},
             {"type": "slider", "height": 18, "bottom": 8,
              "borderColor": "transparent", "backgroundColor": "transparent",
-             "fillerColor": "rgba(212,175,55,0.12)",
+             "fillerColor": "rgba(138,101,11,0.18)",
              "handleStyle": {"color": PALETTE["gold"]},
-             "textStyle":   {"color": PALETTE["ink_dim"], "fontSize": 9},
+             "textStyle":   {"color": PALETTE["ink_dim"], "fontSize": 10, "fontWeight": 600},
              "dataBackground": {
                  "lineStyle": {"color": PALETTE["goldSft"]},
-                 "areaStyle": {"color": "rgba(212,175,55,0.08)"},
+                 "areaStyle": {"color": "rgba(138,101,11,0.14)"},
              }},
         ],
     }
@@ -336,7 +336,7 @@ def build_chip_html(data: dict, window_key: str = "1d", top_n: int = 10) -> str:
             <div style="font-family:monospace;font-size:11px;color:#5a4f3e;margin-top:2px">主力{('買' if side == 'buy' else '賣')} {main_val:,} 張 · 成交 {r['vol']:,} 張</div>
             {price_html}
             {future_html}
-            <div style="height:3px;background:rgba(26,22,18,0.08);margin-top:4px;border-radius:1px">
+            <div style="height:3px;background:rgba(21,17,13,0.20);margin-top:4px;border-radius:1px">
               <div style="height:100%;width:{bar_width}%;background:{bar_color}"></div>
             </div>
           </td>
@@ -968,3 +968,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+

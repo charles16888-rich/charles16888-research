@@ -1,4 +1,4 @@
-"""
+﻿"""
 build_market_chart.py
 =====================
 Extract daily market pulse from industry_map daily_*.md reports and emit:
@@ -177,23 +177,23 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
   // Inline data so the chart works without an extra fetch.
   const MARKET_DATA = {data_json};
 
-  // Lynus' tokens for the chart palette.
-  const ink     = '#e8dfd3';
-  const inkDim  = '#6e6350';
-  const gold    = '#d4af37';
-  const goldSft = '#b8985c';
-  const up      = '#e85a5a';
-  const down    = '#5fb87a';
-  const rule    = 'rgba(232,223,211,0.10)';
-  const ruleGold= 'rgba(212,175,55,0.45)';
-  const bg      = '#1a1612';
+  // High-contrast tokens for charles16888's light editorial theme.
+  const ink     = '#15110d';
+  const inkDim  = '#3d3326';
+  const gold    = '#8a650b';
+  const goldSft = '#a87409';
+  const up      = '#d83b49';
+  const down    = '#147a45';
+  const rule    = 'rgba(21,17,13,0.28)';
+  const ruleGold= 'rgba(138,101,11,0.58)';
+  const bg      = '#fffdf8';
 
   function commonAxis() {{
     return {{
       type: 'category',
       data: MARKET_DATA.map(d => d.date),
       axisLine: {{ lineStyle: {{ color: rule }} }},
-      axisLabel: {{ color: inkDim, fontSize: 10, fontFamily: 'JetBrains Mono, monospace' }},
+      axisLabel: {{ color: inkDim, fontSize: 11, fontWeight: 600, fontFamily: 'JetBrains Mono, monospace' }},
       axisTick: {{ show: false }},
       splitLine: {{ show: false }},
     }};
@@ -209,12 +209,12 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
       backgroundColor: bg,
       borderColor: ruleGold,
       borderWidth: 1,
-      textStyle: {{ color: ink, fontFamily: 'Inter' }},
+      textStyle: {{ color: ink, fontFamily: 'Inter', fontWeight: 700 }},
       axisPointer: {{ type: 'cross', lineStyle: {{ color: goldSft }} }},
     }},
     legend: {{
       data: ['漲停家數', '跌停家數', '全族群平均漲幅'],
-      textStyle: {{ color: ink, fontFamily: 'Inter' }},
+      textStyle: {{ color: ink, fontFamily: 'Inter', fontWeight: 700 }},
       top: 8,
       itemGap: 28,
     }},
@@ -223,17 +223,17 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
       {{
         type: 'value',
         name: '家數',
-        nameTextStyle: {{ color: inkDim, fontSize: 10, padding: [0, 0, 0, -10] }},
+        nameTextStyle: {{ color: inkDim, fontSize: 11, padding: [0, 0, 0, -10] }},
         axisLine: {{ lineStyle: {{ color: rule }} }},
-        axisLabel: {{ color: inkDim, fontSize: 10 }},
+        axisLabel: {{ color: inkDim, fontSize: 11, fontWeight: 600 }},
         splitLine: {{ lineStyle: {{ color: rule, type: 'dashed' }} }},
       }},
       {{
         type: 'value',
         name: '% 平均',
-        nameTextStyle: {{ color: inkDim, fontSize: 10, padding: [0, -10, 0, 0] }},
+        nameTextStyle: {{ color: inkDim, fontSize: 11, padding: [0, -10, 0, 0] }},
         axisLine: {{ lineStyle: {{ color: rule }} }},
-        axisLabel: {{ color: inkDim, fontSize: 10, formatter: '{{value}}%' }},
+        axisLabel: {{ color: inkDim, fontSize: 11, fontWeight: 600, formatter: '{{value}}%' }},
         splitLine: {{ show: false }},
       }},
     ],
@@ -243,13 +243,13 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
         type: 'slider', height: 24, bottom: 8,
         borderColor: 'transparent',
         backgroundColor: 'transparent',
-        fillerColor: 'rgba(212,175,55,0.12)',
+        fillerColor: 'rgba(138,101,11,0.18)',
         handleStyle: {{ color: gold }},
         moveHandleStyle: {{ color: gold }},
-        textStyle: {{ color: inkDim, fontFamily: 'JetBrains Mono', fontSize: 9 }},
+        textStyle: {{ color: inkDim, fontFamily: 'JetBrains Mono', fontSize: 10, fontWeight: 600 }},
         dataBackground: {{
           lineStyle: {{ color: goldSft }},
-          areaStyle: {{ color: 'rgba(212,175,55,0.08)' }},
+          areaStyle: {{ color: 'rgba(138,101,11,0.14)' }},
         }},
       }},
     ],
@@ -276,15 +276,15 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
         yAxisIndex: 1,
         data: MARKET_DATA.map(d => d.sectors_avg_pct),
         smooth: true,
-        lineStyle: {{ color: gold, width: 2 }},
+        lineStyle: {{ color: gold, width: 2.6 }},
         itemStyle: {{ color: gold }},
         symbolSize: 5,
         areaStyle: {{
           color: {{
             type: 'linear', x: 0, y: 0, x2: 0, y2: 1,
             colorStops: [
-              {{ offset: 0, color: 'rgba(212,175,55,0.18)' }},
-              {{ offset: 1, color: 'rgba(212,175,55,0)' }},
+              {{ offset: 0, color: 'rgba(138,101,11,0.22)' }},
+              {{ offset: 1, color: 'rgba(138,101,11,0)' }},
             ],
           }},
         }},
@@ -302,12 +302,12 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
       backgroundColor: bg,
       borderColor: ruleGold,
       borderWidth: 1,
-      textStyle: {{ color: ink, fontFamily: 'Inter' }},
+      textStyle: {{ color: ink, fontFamily: 'Inter', fontWeight: 700 }},
       axisPointer: {{ type: 'cross', lineStyle: {{ color: goldSft }} }},
     }},
     legend: {{
       data: ['總成交額(億)', '漲停集中度(%)'],
-      textStyle: {{ color: ink }},
+      textStyle: {{ color: ink, fontWeight: 700 }},
       top: 8,
       itemGap: 28,
     }},
@@ -315,16 +315,16 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
     yAxis: [
       {{
         type: 'value', name: '億 NT$',
-        nameTextStyle: {{ color: inkDim, fontSize: 10 }},
+        nameTextStyle: {{ color: inkDim, fontSize: 11 }},
         axisLine: {{ lineStyle: {{ color: rule }} }},
-        axisLabel: {{ color: inkDim, fontSize: 10 }},
+        axisLabel: {{ color: inkDim, fontSize: 11, fontWeight: 600 }},
         splitLine: {{ lineStyle: {{ color: rule, type: 'dashed' }} }},
       }},
       {{
         type: 'value', name: '%',
-        nameTextStyle: {{ color: inkDim, fontSize: 10 }},
+        nameTextStyle: {{ color: inkDim, fontSize: 11 }},
         axisLine: {{ lineStyle: {{ color: rule }} }},
-        axisLabel: {{ color: inkDim, fontSize: 10, formatter: '{{value}}%' }},
+        axisLabel: {{ color: inkDim, fontSize: 11, fontWeight: 600, formatter: '{{value}}%' }},
         splitLine: {{ show: false }},
         max: 50,
       }},
@@ -334,12 +334,12 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
       {{
         type: 'slider', height: 24, bottom: 8,
         borderColor: 'transparent', backgroundColor: 'transparent',
-        fillerColor: 'rgba(212,175,55,0.12)',
+        fillerColor: 'rgba(138,101,11,0.18)',
         handleStyle: {{ color: gold }}, moveHandleStyle: {{ color: gold }},
-        textStyle: {{ color: inkDim, fontFamily: 'JetBrains Mono', fontSize: 9 }},
+        textStyle: {{ color: inkDim, fontFamily: 'JetBrains Mono', fontSize: 10, fontWeight: 600 }},
         dataBackground: {{
           lineStyle: {{ color: goldSft }},
-          areaStyle: {{ color: 'rgba(212,175,55,0.08)' }},
+          areaStyle: {{ color: 'rgba(138,101,11,0.14)' }},
         }},
       }},
     ],
@@ -348,7 +348,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
         name: '總成交額(億)',
         type: 'bar',
         data: MARKET_DATA.map(d => d.turnover_billion),
-        itemStyle: {{ color: 'rgba(184,152,92,0.55)' }},
+        itemStyle: {{ color: 'rgba(168,116,9,0.68)' }},
         barMaxWidth: 12,
       }},
       {{
@@ -357,7 +357,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
         yAxisIndex: 1,
         data: MARKET_DATA.map(d => d.up_concentration_pct),
         smooth: true,
-        lineStyle: {{ color: up, width: 2 }},
+        lineStyle: {{ color: up, width: 2.6 }},
         itemStyle: {{ color: up }},
         symbolSize: 5,
       }},
@@ -474,3 +474,4 @@ def main() -> int:
 if __name__ == "__main__":
     import sys
     sys.exit(main())
+
