@@ -189,6 +189,34 @@
           "name_en": "Concentration Ranking"
         }
       ]
+    },
+    {
+      "id": "research",
+      "name_zh": "研報統計",
+      "name_en": "Research Stats",
+      "tagline_zh": "匿名財測 × OCR 追蹤",
+      "tagline_en": "Anonymized forecast tracker",
+      "description": "研究報告 OCR 文字化後的匿名統計表，只呈現衍生欄位與樣本數，不公開研究機構來源或原文內容",
+      "enabled": true,
+      "source_pipelines": [
+        "research_reports_ocr_anonymous_forecast"
+      ],
+      "subcategories": [
+        {
+          "id": "forecast",
+          "name_zh": "財測追蹤",
+          "match_id_prefix": [
+            "q2-forecast-2026q2"
+          ]
+        }
+      ],
+      "report_types": [
+        {
+          "id": "forecast",
+          "name_zh": "財測追蹤",
+          "name_en": "Forecast Tracker"
+        }
+      ]
     }
   ]
 }
