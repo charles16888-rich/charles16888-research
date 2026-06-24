@@ -1133,7 +1133,7 @@ def update_manifest(out: dict) -> None:
         "summary": summary,
         "tags": ["籌碼", "外資", "賣超", "成交額", "事件追蹤"],
         "source_pipeline": "stock_chip_crawler",
-        "url": f"reports/foreign-sell-records.html?v={out.get('as_of_date', '').replace('-', '')}",
+        "url": f"reports/foreign-sell-records.html?v={out.get('as_of_date', '').replace('-', '')}-official",
         "stats": [
             {
                 "label": "個股最大",

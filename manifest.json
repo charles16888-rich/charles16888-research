@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-06-24T22:40:40+08:00",
+  "updated_at": "2026-06-24T22:48:05+08:00",
   "today": "2026-06-24",
   "volume_number": 1,
   "market_summary": {
@@ -110,7 +110,7 @@
         "事件追蹤"
       ],
       "source_pipeline": "stock_chip_crawler",
-      "url": "reports/foreign-sell-records.html?v=20260624",
+      "url": "reports/foreign-sell-records.html?v=20260624-official",
       "stats": [
         {
           "label": "個股最大",
