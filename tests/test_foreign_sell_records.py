@@ -60,6 +60,24 @@ def _prices():
     return pd.DataFrame(rows)
 
 
+def _market_flow():
+    return pd.DataFrame(
+        [
+            {"trade_date": "2024-01-01", "foreign_buy": 100_000, "foreign_sell": 600_000, "foreign_net_buy_shares": -500_000},
+            {"trade_date": "2024-01-02", "foreign_buy": 200_000, "foreign_sell": 400_000, "foreign_net_buy_shares": -200_000},
+            {"trade_date": "2024-01-03", "foreign_buy": 500_000, "foreign_sell": 300_000, "foreign_net_buy_shares": 200_000},
+        ]
+    )
+
+
+def _index_prices():
+    dates = pd.date_range("2024-01-01", periods=70, freq="B")
+    return pd.DataFrame(
+        {"trade_date": date, "close": 17000.0 + i * 10}
+        for i, date in enumerate(dates)
+    )
+
+
 class ForeignSellRecordTests(unittest.TestCase):
     def test_excludes_etf_and_keeps_30_60_day_returns(self):
         records = foreign_sell_records.build_records_from_frames(
@@ -83,6 +101,18 @@ class ForeignSellRecordTests(unittest.TestCase):
         )
         self.assertEqual(records[0]["code"], "0050")
         self.assertEqual(records[0]["name"], "ETF 50")
+
+    def test_builds_market_records_with_index_returns(self):
+        records = foreign_sell_records.build_market_records_from_frames(
+            _market_flow(),
+            _index_prices(),
+            top_n=2,
+        )
+        self.assertEqual([r["trade_date"] for r in records], ["2024-01-01", "2024-01-02"])
+        self.assertEqual(records[0]["foreign_net_lots"], -500.0)
+        self.assertIn("twse_close", records[0])
+        self.assertIn("ret_60d", records[0])
+        self.assertIsNotNone(records[0]["ret_60d"])
 
 
 if __name__ == "__main__":

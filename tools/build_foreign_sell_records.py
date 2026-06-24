@@ -30,10 +30,11 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from chip_analysis.data_access import CHIP_DB  # noqa: E402
 
 
-LYNUS_ROOT = Path(__file__).resolve().parent.parent
-DATA_OUT = LYNUS_ROOT / "assets" / "foreign_sell_records.json"
-PAGE_OUT = LYNUS_ROOT / "reports" / "foreign-sell-records.html"
-MANIFEST_PATH = LYNUS_ROOT / "manifest.json"
+ROOT = Path(__file__).resolve().parent.parent
+DATA_OUT = ROOT / "assets" / "foreign_sell_records.json"
+PAGE_OUT = ROOT / "reports" / "foreign-sell-records.html"
+MANIFEST_PATH = ROOT / "manifest.json"
+FUTURES_BASIS_PATH = ROOT / "assets" / "futures_basis.json"
 HISTORY_DIR_NAME = "foreign_sell_records"
 TPE = ZoneInfo("Asia/Taipei")
 
@@ -99,6 +100,49 @@ def build_records_from_frames(
     return records
 
 
+def build_market_records_from_frames(
+    market_flow: pd.DataFrame,
+    index_prices: pd.DataFrame,
+    *,
+    top_n: int = DEFAULT_TOP_N,
+    horizons: list[int] | None = None,
+) -> list[dict]:
+    """Return ranked all-market foreign sell records with later TAIEX returns."""
+
+    horizons = horizons or DEFAULT_HORIZONS
+    flow = _normalize_market_flow(market_flow)
+    px = _normalize_index_prices(index_prices)
+
+    flow = flow[flow["foreign_net_buy_shares"] < 0].copy()
+    flow = flow.sort_values(
+        ["foreign_net_buy_shares", "trade_date"],
+        ascending=[True, True],
+    ).head(top_n)
+
+    if flow.empty:
+        return []
+
+    records: list[dict] = []
+    for rank, (_, event) in enumerate(flow.iterrows(), start=1):
+        event_date = pd.Timestamp(event["trade_date"]).normalize()
+        price_row = _event_price_row(px, event_date)
+        close = _to_float(price_row.get("close") if price_row is not None else None)
+
+        row = {
+            "rank": rank,
+            "trade_date": event_date.date().isoformat(),
+            "foreign_net_shares": _to_int(event.get("foreign_net_buy_shares")),
+            "foreign_net_lots": _to_lots(event.get("foreign_net_buy_shares")),
+            "foreign_buy_lots": _to_lots(event.get("foreign_buy")),
+            "foreign_sell_lots": _to_lots(event.get("foreign_sell")),
+            "twse_close": close,
+            "index_date_actual": price_row.get("trade_date").date().isoformat() if price_row is not None else None,
+        }
+        row.update(_future_returns_from_prices(px, event_date, close, horizons))
+        records.append(row)
+    return records
+
+
 def _normalize_institutional(frame: pd.DataFrame) -> pd.DataFrame:
     rename = {
         "date": "trade_date",
@@ -119,6 +163,24 @@ def _normalize_institutional(frame: pd.DataFrame) -> pd.DataFrame:
     return out.dropna(subset=["trade_date", "stock_id", "foreign_net_buy_shares"])
 
 
+def _normalize_market_flow(frame: pd.DataFrame) -> pd.DataFrame:
+    rename = {
+        "date": "trade_date",
+        "foreign_net": "foreign_net_buy_shares",
+    }
+    out = frame.rename(columns={k: v for k, v in rename.items() if k in frame.columns}).copy()
+    required = {"trade_date", "foreign_net_buy_shares"}
+    missing = required.difference(out.columns)
+    if missing:
+        raise ValueError(f"market_flow is missing required columns: {sorted(missing)}")
+    out["trade_date"] = pd.to_datetime(out["trade_date"]).dt.normalize()
+    for col in ("foreign_net_buy_shares", "foreign_buy", "foreign_sell"):
+        if col not in out.columns:
+            out[col] = pd.NA
+        out[col] = pd.to_numeric(out[col], errors="coerce")
+    return out.dropna(subset=["trade_date", "foreign_net_buy_shares"])
+
+
 def _normalize_prices(frame: pd.DataFrame) -> pd.DataFrame:
     rename = {"date": "trade_date", "code": "stock_id"}
     out = frame.rename(columns={k: v for k, v in rename.items() if k in frame.columns}).copy()
@@ -133,6 +195,20 @@ def _normalize_prices(frame: pd.DataFrame) -> pd.DataFrame:
     out["close"] = pd.to_numeric(out["close"], errors="coerce")
     out = out.drop_duplicates(["stock_id", "trade_date"], keep="last")
     return out.sort_values(["stock_id", "trade_date"]).reset_index(drop=True)
+
+
+def _normalize_index_prices(frame: pd.DataFrame) -> pd.DataFrame:
+    rename = {"date": "trade_date", "twse_close": "close"}
+    out = frame.rename(columns={k: v for k, v in rename.items() if k in frame.columns}).copy()
+    required = {"trade_date", "close"}
+    missing = required.difference(out.columns)
+    if missing:
+        raise ValueError(f"index_prices is missing required columns: {sorted(missing)}")
+    out["trade_date"] = pd.to_datetime(out["trade_date"]).dt.normalize()
+    out["close"] = pd.to_numeric(out["close"], errors="coerce")
+    out = out.dropna(subset=["trade_date", "close"])
+    out = out.drop_duplicates(["trade_date"], keep="last")
+    return out.sort_values("trade_date").reset_index(drop=True)
 
 
 def _event_price_row(prices: pd.DataFrame, event_date: pd.Timestamp) -> pd.Series | None:
@@ -280,9 +356,58 @@ def _load_prices_for_events(conn: sqlite3.Connection, events: pd.DataFrame, hori
     )
 
 
+def _load_market_flow_records(
+    conn: sqlite3.Connection,
+    *,
+    top_n: int,
+    start_date: str | None,
+    end_date: str | None,
+) -> pd.DataFrame:
+    where: list[str] = []
+    params: list[object] = []
+    if start_date:
+        where.append("date >= ?")
+        params.append(start_date)
+    if end_date:
+        where.append("date <= ?")
+        params.append(end_date)
+    where_sql = "WHERE " + " AND ".join(where) if where else ""
+    return pd.read_sql_query(
+        f"""
+        SELECT date AS trade_date,
+               SUM(foreign_buy) AS foreign_buy,
+               SUM(foreign_sell) AS foreign_sell,
+               SUM(foreign_net) AS foreign_net_buy_shares
+        FROM institutional
+        {where_sql}
+        GROUP BY date
+        ORDER BY foreign_net_buy_shares ASC
+        LIMIT ?
+        """,
+        conn,
+        params=[*params, top_n],
+        parse_dates=["trade_date"],
+    )
+
+
+def _load_index_prices() -> pd.DataFrame:
+    if not FUTURES_BASIS_PATH.exists():
+        return pd.DataFrame(columns=["trade_date", "close"])
+    rows = json.loads(FUTURES_BASIS_PATH.read_text(encoding="utf-8"))
+    return pd.DataFrame(
+        {
+            "trade_date": row.get("date"),
+            "close": row.get("twse_close"),
+        }
+        for row in rows
+        if row.get("date") and row.get("twse_close") is not None
+    )
+
+
 def build_payload(
     records: list[dict],
     *,
+    market_records: list[dict] | None = None,
     as_of_date: str | None,
     source_start_date: str | None,
     source_end_date: str | None,
@@ -290,6 +415,7 @@ def build_payload(
     horizons: list[int],
     include_etf: bool,
 ) -> dict:
+    market_records = market_records or []
     return {
         "generated_at": datetime.now(TPE).isoformat(),
         "as_of_date": as_of_date,
@@ -298,18 +424,23 @@ def build_payload(
         "top_n": top_n,
         "horizons": horizons,
         "include_etf": include_etf,
-        "source": "stock_chip.db institutional.foreign_net; later returns from daily_price close",
+        "source": "stock_chip.db institutional.foreign_net; stock returns from daily_price close; market returns from futures_basis.twse_close",
         "note": "僅追蹤外資單日賣超事件後走勢，不構成投資建議。",
         "rankings": {
             "top10": records[:10],
             "top20": records[:20],
         },
+        "market_rankings": {
+            "top10": market_records[:10],
+            "top20": market_records[:20],
+        },
         "records": records,
+        "market_records": market_records,
     }
 
 
 def _update_history_index(as_of_date: str) -> None:
-    idx_path = LYNUS_ROOT / "assets" / "chip_history" / HISTORY_DIR_NAME / "_index.json"
+    idx_path = ROOT / "assets" / "chip_history" / HISTORY_DIR_NAME / "_index.json"
     idx_path.parent.mkdir(parents=True, exist_ok=True)
     existing = []
     if idx_path.exists():
@@ -353,6 +484,13 @@ def main() -> int:
             include_etf=args.include_etf,
         )
         prices = _load_prices_for_events(conn, events, horizons)
+        market_flow = _load_market_flow_records(
+            conn,
+            top_n=args.top_n,
+            start_date=args.start_date,
+            end_date=args.end_date,
+        )
+    index_prices = _load_index_prices()
 
     records = build_records_from_frames(
         events,
@@ -361,9 +499,16 @@ def main() -> int:
         horizons=horizons,
         include_etf=args.include_etf,
     )
+    market_records = build_market_records_from_frames(
+        market_flow,
+        index_prices,
+        top_n=args.top_n,
+        horizons=horizons,
+    )
     as_of_date = args.end_date or source_end
     payload = build_payload(
         records,
+        market_records=market_records,
         as_of_date=as_of_date,
         source_start_date=args.start_date or source_start,
         source_end_date=args.end_date or source_end,
@@ -376,19 +521,19 @@ def main() -> int:
         print("[ERR] institutional has no date range")
         return 3
 
-    dated_path = LYNUS_ROOT / "assets" / "chip_history" / HISTORY_DIR_NAME / f"{as_of_date}.json"
+    dated_path = ROOT / "assets" / "chip_history" / HISTORY_DIR_NAME / f"{as_of_date}.json"
     dated_path.parent.mkdir(parents=True, exist_ok=True)
     dated_path.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
-    print(f"[OK] {dated_path.relative_to(LYNUS_ROOT)} (dated)")
+    print(f"[OK] {dated_path.relative_to(ROOT)} (dated)")
     _update_history_index(as_of_date)
 
     is_latest_run = as_of_date == source_end
     if is_latest_run and not args.history_only:
         DATA_OUT.parent.mkdir(parents=True, exist_ok=True)
         DATA_OUT.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
-        print(f"[OK] {DATA_OUT.relative_to(LYNUS_ROOT)}")
+        print(f"[OK] {DATA_OUT.relative_to(ROOT)}")
         render_html(payload)
-        print(f"[OK] {PAGE_OUT.relative_to(LYNUS_ROOT)}")
+        print(f"[OK] {PAGE_OUT.relative_to(ROOT)}")
         update_manifest(payload)
         print("[OK] manifest.json — foreign-sell-records entry refreshed")
     else:
@@ -408,48 +553,91 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
   <link rel="stylesheet" href="../assets/fonts.css" />
   <link rel="stylesheet" href="../assets/style.css" />
   <style>
+    .fsr-page .report-cover { padding-bottom: 42px; }
+    .fsr-page .report-lead {
+      max-width: 760px;
+      color: #2f251a;
+      font-size: 17px;
+      line-height: 1.85;
+    }
     .fsr-tabs {
-      display: flex; gap: 6px; margin: 18px 0 18px; flex-wrap: wrap;
-      font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .15em;
+      display: flex; gap: 8px; margin: 18px 0 18px; flex-wrap: wrap;
+      font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: .08em;
     }
-    .fsr-tab {
-      padding: 8px 18px; border: 1px solid rgba(232,223,211,0.18);
-      background: transparent; color: #9a9486; cursor: pointer; transition: all .15s; font: inherit;
+    .fsr-mode-tabs { margin-top: 0; }
+    .fsr-tab,
+    .fsr-mode-tab {
+      min-height: 38px;
+      padding: 9px 18px;
+      border: 1px solid rgba(115,80,0,0.36);
+      background: #fffaf0;
+      color: #342b20;
+      cursor: pointer;
+      transition: all .15s;
+      font: inherit;
+      font-weight: 700;
     }
-    .fsr-tab:hover { color: #e8e4d8; border-color: #b8985c; }
-    .fsr-tab.is-active { background: #d4af37; color: #1a1612; border-color: #d4af37; font-weight: 600; }
+    .fsr-tab:hover,
+    .fsr-mode-tab:hover { color: #15110d; border-color: #735000; }
+    .fsr-tab.is-active,
+    .fsr-mode-tab.is-active { background: #735000; color: #fffdf8; border-color: #735000; }
     .fsr-table-wrap {
-      overflow-x: auto; border: 1px solid rgba(232,223,211,0.10);
-      background: rgba(232,223,211,0.02); margin: 0 0 28px;
+      overflow-x: auto;
+      border: 1px solid rgba(115,80,0,0.28);
+      background: #fffaf0;
+      margin: 0 0 32px;
+      box-shadow: 0 14px 32px rgba(21,17,13,0.06);
     }
     .fsr-table {
-      width: 100%; min-width: 980px; border-collapse: collapse;
-      font-family: 'JetBrains Mono', monospace; font-size: 11px;
+      width: 100%;
+      min-width: 1080px;
+      border-collapse: collapse;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
     }
     .fsr-table th {
-      text-align: left; padding: 10px 12px; color: #9a9486; font-weight: 500;
-      letter-spacing: .1em; border-bottom: 1px solid rgba(212,175,55,0.30);
+      text-align: left;
+      padding: 12px 14px;
+      color: #fffdf8;
+      background: #2b2118;
+      font-weight: 800;
+      letter-spacing: .06em;
+      border-bottom: 2px solid rgba(115,80,0,0.58);
       white-space: nowrap;
     }
     .fsr-table td {
-      padding: 10px 12px; color: #c9c0b3; border-bottom: 1px dashed rgba(232,223,211,0.08);
+      padding: 12px 14px;
+      color: #22180f;
+      border-bottom: 1px solid rgba(21,17,13,0.10);
       white-space: nowrap;
+      font-weight: 650;
     }
-    .fsr-rank { color: #6e6350; text-align: right; }
-    .fsr-code { color: #b8985c; }
-    .fsr-name { font-family: 'Noto Serif TC', serif; color: #e8dfd3; font-size: 13px; }
+    .fsr-table tbody tr:nth-child(even) td { background: rgba(115,80,0,0.045); }
+    .fsr-table tbody tr:hover td { background: rgba(212,175,55,0.15); }
+    .fsr-rank { color: #5b4b39; text-align: right; }
+    .fsr-code { color: #735000; font-weight: 850; }
+    .fsr-name { font-family: 'Noto Serif TC', serif; color: #15110d; font-size: 14px; font-weight: 800; }
     .fsr-right { text-align: right; }
-    .fsr-neg { color: #5fb87a; font-weight: 700; }
-    .fsr-pos { color: #e85a5a; font-weight: 700; }
-    .fsr-muted { color: #6e6350; }
+    .fsr-neg { color: #0f7a43; font-weight: 900; }
+    .fsr-pos { color: #d03845; font-weight: 900; }
+    .fsr-muted { color: #7a6d5c; font-weight: 650; }
     .fsr-stat-row {
-      display: flex; gap: 24px; flex-wrap: wrap; margin: 14px 0 20px;
-      font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .12em; color: #9a9486;
+      display: flex; gap: 18px; flex-wrap: wrap; margin: 20px 0 0;
+      font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: .06em; color: #4b4032;
     }
-    .fsr-stat-row strong { color: #e8dfd3; font-weight: 600; }
+    .fsr-stat-row span {
+      border: 1px solid rgba(115,80,0,0.22);
+      background: rgba(255,250,240,0.86);
+      padding: 8px 10px;
+    }
+    .fsr-stat-row strong { color: #15110d; font-weight: 900; }
+    @media (max-width: 760px) {
+      .fsr-page .report-lead { font-size: 15px; }
+      .fsr-table { min-width: 980px; font-size: 11px; }
+    }
   </style>
 </head>
-<body data-page="report">
+<body class="fsr-page" data-page="report">
   <header class="masthead">
     <div class="container">
       <div class="masthead__row">
@@ -460,7 +648,7 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
         <nav class="nav" aria-label="Primary">
           <a class="nav__link" href="../category.html?cat=sectors">族群</a>
           <a class="nav__link" href="../category.html?cat=taiex">大盤</a>
-          <a class="nav__link nav__link--disabled" href="#" aria-disabled="true">選擇權</a>
+          <a class="nav__link" href="../category.html?cat=txo">選擇權</a>
           <a class="nav__link is-active" href="../category.html?cat=chips">籌碼</a>
           <a class="nav__link" href="../category.html?cat=research">研報統計</a>
         </nav>
@@ -485,13 +673,18 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
       </div>
       <h1 class="report-title">外資史上<em>賣超</em>紀錄</h1>
       <p class="report-lead">
-        以 institutional.foreign_net 單日淨買賣超排序，記錄史上外資賣超最大的個股事件，
-        並追蹤事件收盤後 1/3/5/10/20/30/60 個交易日漲跌幅。本表只做追蹤與統計，不做投資建議。
+        以 institutional.foreign_net 單日淨買賣超排序，分成「個股」與「大盤」兩組紀錄。
+        個股表追蹤事件股票後續走勢；大盤表彙總全市場外資淨買賣超，追蹤加權指數後續 1/3/5/10/20/30/60 個交易日漲跌幅。
+        本表只做追蹤與統計，不做投資建議。
       </p>
       <div class="fsr-stat-row" id="fsr-stats"></div>
     </section>
 
     <section>
+      <div class="fsr-tabs fsr-mode-tabs" aria-label="切換紀錄類型">
+        <button class="fsr-mode-tab is-active" type="button" data-mode="stock">個股紀錄</button>
+        <button class="fsr-mode-tab" type="button" data-mode="market">大盤紀錄</button>
+      </div>
       <div class="fsr-tabs">
         <button class="fsr-tab is-active" type="button" data-limit="10">TOP 10</button>
         <button class="fsr-tab" type="button" data-limit="20">TOP 20</button>
@@ -510,6 +703,8 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
   <script>
   const DATA = __DATA_JSON__;
   const horizons = DATA.horizons || [1,3,5,10,20,30,60];
+  let currentMode = 'stock';
+  let currentLimit = 10;
 
   function cls(v) {
     if (v == null) return 'fsr-muted';
@@ -524,17 +719,27 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
     if (v == null) return '—';
     return `${Math.round(v).toLocaleString()} 張`;
   }
+  function currentRecords() {
+    return currentMode === 'market' ? (DATA.market_records || []) : (DATA.records || []);
+  }
   function renderStats() {
-    const r = DATA.records || [];
+    const r = currentRecords();
     const top = r[0] || {};
+    if (currentMode === 'market') {
+      document.getElementById('fsr-stats').innerHTML = [
+        `<span>紀錄筆數：<strong>${r.length}</strong></span>`,
+        `<span>最大賣超：<strong>${top.trade_date || '—'} ${top.foreign_net_lots != null ? fmtLots(top.foreign_net_lots) : ''}</strong></span>`,
+        `<span>追蹤標的：<strong>加權指數 1/3/5/10/20/30/60 日</strong></span>`
+      ].join('');
+      return;
+    }
     document.getElementById('fsr-stats').innerHTML = [
       `<span>紀錄筆數：<strong>${r.length}</strong></span>`,
       `<span>最大賣超：<strong>${top.code || '—'} ${top.foreign_net_lots != null ? fmtLots(top.foreign_net_lots) : ''}</strong></span>`,
       `<span>走勢欄位：<strong>${horizons.join('/')} 日</strong></span>`
     ].join('');
   }
-  function render(limit) {
-    const rows = (DATA.records || []).slice(0, limit);
+  function renderStock(rows) {
     const futureHeads = horizons.map(h => `<th class="fsr-right">${h}日後</th>`).join('');
     const body = rows.map(r => {
       const futureCells = horizons.map(h => {
@@ -559,6 +764,44 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
       <tbody>${body}</tbody>
     </table>`;
   }
+  function renderMarket(rows) {
+    const futureHeads = horizons.map(h => `<th class="fsr-right">${h}日後</th>`).join('');
+    const body = rows.map(r => {
+      const futureCells = horizons.map(h => {
+        const v = r[`ret_${h}d`];
+        return `<td class="fsr-right ${cls(v)}">${fmt(v, 1, '%')}</td>`;
+      }).join('');
+      return `<tr>
+        <td class="fsr-rank">${r.rank}</td>
+        <td>${r.trade_date}</td>
+        <td class="fsr-right fsr-neg">${fmtLots(r.foreign_net_lots)}</td>
+        <td class="fsr-right">${r.twse_close != null ? Number(r.twse_close).toLocaleString(undefined, {maximumFractionDigits: 2}) : '—'}</td>
+        ${futureCells}
+      </tr>`;
+    }).join('');
+    document.getElementById('fsr-table').innerHTML = `<table class="fsr-table">
+      <thead><tr>
+        <th class="fsr-right">#</th><th>日期</th>
+        <th class="fsr-right">大盤外資淨賣超</th><th class="fsr-right">加權收盤</th>${futureHeads}
+      </tr></thead>
+      <tbody>${body}</tbody>
+    </table>`;
+  }
+  function render(limit = currentLimit) {
+    currentLimit = limit;
+    const rows = currentRecords().slice(0, currentLimit);
+    renderStats();
+    if (currentMode === 'market') renderMarket(rows);
+    else renderStock(rows);
+  }
+  document.querySelectorAll('.fsr-mode-tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentMode = btn.dataset.mode;
+      document.querySelectorAll('.fsr-mode-tab').forEach(b => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      render(currentLimit);
+    });
+  });
   document.querySelectorAll('.fsr-tab').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.fsr-tab').forEach(b => b.classList.remove('is-active'));
@@ -566,8 +809,7 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
       render(Number(btn.dataset.limit));
     });
   });
-  renderStats();
-  render(10);
+  render(currentLimit);
   </script>
 </body>
 </html>
@@ -591,13 +833,17 @@ def update_manifest(out: dict) -> None:
         return
     manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
     records = out.get("records", [])
+    market_records = out.get("market_records", [])
     top = records[0] if records else None
+    market_top = market_records[0] if market_records else None
     summary = (
-        f"外資單日淨賣超史上 Top {min(20, len(records))}，"
+        f"外資單日淨賣超史上 Top {min(20, len(records))}，並加入大盤外資淨賣超 Top {min(20, len(market_records))}。"
         f"追蹤事件後 {'/'.join(str(x) for x in out.get('horizons', []))} 日走勢。"
     )
     if top:
         summary += f" 最大紀錄：{top['trade_date']} {top['code']} {top['name']} {top['foreign_net_lots']:,.0f} 張。"
+    if market_top:
+        summary += f" 大盤最大紀錄：{market_top['trade_date']} {market_top['foreign_net_lots']:,.0f} 張。"
 
     entry = {
         "id": "foreign-sell-records",
@@ -605,19 +851,23 @@ def update_manifest(out: dict) -> None:
         "type": "ranking",
         "date": out.get("as_of_date"),
         "time": "21:05",
-        "title": "外資史上賣超紀錄 · Top 20",
+        "title": "外資史上賣超紀錄 · 個股 / 大盤 Top 20",
         "title_em": "賣超",
         "summary": summary,
         "tags": ["籌碼", "外資", "賣超", "事件追蹤"],
         "source_pipeline": "stock_chip_crawler",
-        "url": "reports/foreign-sell-records.html",
+        "url": f"reports/foreign-sell-records.html?v={out.get('as_of_date', '').replace('-', '')}",
         "stats": [
             {
-                "label": "最大賣超",
+                "label": "個股最大",
                 "value": f"{top['code']} {top['foreign_net_lots']:,.0f}張" if top else "-",
                 "color": "down",
             },
-            {"label": "紀錄筆數", "value": str(len(records)), "color": "neutral"},
+            {
+                "label": "大盤最大",
+                "value": f"{market_top['foreign_net_lots']:,.0f}張" if market_top else "-",
+                "color": "down",
+            },
             {"label": "走勢", "value": "1-60日", "color": "neutral"},
         ],
     }
