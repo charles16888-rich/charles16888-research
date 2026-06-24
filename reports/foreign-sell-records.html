@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>外資史上賣超紀錄 — Lynus' Research</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="../assets/fonts.css" />
+  <link rel="stylesheet" href="../assets/style.css" />
+  <style>
+    .fsr-tabs {
+      display: flex; gap: 6px; margin: 18px 0 18px; flex-wrap: wrap;
+      font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .15em;
+    }
+    .fsr-tab {
+      padding: 8px 18px; border: 1px solid rgba(232,223,211,0.18);
+      background: transparent; color: #9a9486; cursor: pointer; transition: all .15s; font: inherit;
+    }
+    .fsr-tab:hover { color: #e8e4d8; border-color: #b8985c; }
+    .fsr-tab.is-active { background: #d4af37; color: #1a1612; border-color: #d4af37; font-weight: 600; }
+    .fsr-table-wrap {
+      overflow-x: auto; border: 1px solid rgba(232,223,211,0.10);
+      background: rgba(232,223,211,0.02); margin: 0 0 28px;
+    }
+    .fsr-table {
+      width: 100%; min-width: 980px; border-collapse: collapse;
+      font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    }
+    .fsr-table th {
+      text-align: left; padding: 10px 12px; color: #9a9486; font-weight: 500;
+      letter-spacing: .1em; border-bottom: 1px solid rgba(212,175,55,0.30);
+      white-space: nowrap;
+    }
+    .fsr-table td {
+      padding: 10px 12px; color: #c9c0b3; border-bottom: 1px dashed rgba(232,223,211,0.08);
+      white-space: nowrap;
+    }
+    .fsr-rank { color: #6e6350; text-align: right; }
+    .fsr-code { color: #b8985c; }
+    .fsr-name { font-family: 'Noto Serif TC', serif; color: #e8dfd3; font-size: 13px; }
+    .fsr-right { text-align: right; }
+    .fsr-neg { color: #5fb87a; font-weight: 700; }
+    .fsr-pos { color: #e85a5a; font-weight: 700; }
+    .fsr-muted { color: #6e6350; }
+    .fsr-stat-row {
+      display: flex; gap: 24px; flex-wrap: wrap; margin: 14px 0 20px;
+      font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .12em; color: #9a9486;
+    }
+    .fsr-stat-row strong { color: #e8dfd3; font-weight: 600; }
+  </style>
+</head>
+<body data-page="report">
+  <header class="masthead">
+    <div class="container">
+      <div class="masthead__row">
+        <a class="brand" href="../index.html">
+          <span class="brand__mark">Lynus' <em>Research</em></span>
+          <span class="brand__plate">Private Edition · MMXXVI</span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a class="nav__link" href="../category.html?cat=sectors">族群</a>
+          <a class="nav__link" href="../category.html?cat=taiex">大盤</a>
+          <a class="nav__link nav__link--disabled" href="#" aria-disabled="true">選擇權</a>
+          <a class="nav__link is-active" href="../category.html?cat=chips">籌碼</a>
+          <a class="nav__link" href="../category.html?cat=stocks">個股</a>
+          <a class="nav__link" href="../category.html?cat=news">新聞</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Lynus' Research</a>
+      <span class="breadcrumb__sep">/</span>
+      <a href="../category.html?cat=chips">籌碼</a>
+      <span class="breadcrumb__sep">/</span>
+      <span>外資賣超紀錄</span>
+    </nav>
+
+    <section class="report-cover reveal reveal-d1">
+      <div class="report-meta-line">
+        <span><strong>籌碼</strong> · 外資史上賣超</span>
+        <span>2010-01-01 -> 2026-06-24</span>
+        <span>更新至 2026-06-24</span>
+      </div>
+      <h1 class="report-title">外資史上<em>賣超</em>紀錄</h1>
+      <p class="report-lead">
+        以 institutional.foreign_net 單日淨買賣超排序，記錄史上外資賣超最大的個股事件，
+        並追蹤事件收盤後 1/3/5/10/20/30/60 個交易日漲跌幅。本表只做追蹤與統計，不做投資建議。
+      </p>
+      <div class="fsr-stat-row" id="fsr-stats"></div>
+    </section>
+
+    <section>
+      <div class="fsr-tabs">
+        <button class="fsr-tab is-active" type="button" data-limit="10">TOP 10</button>
+        <button class="fsr-tab" type="button" data-limit="20">TOP 20</button>
+      </div>
+      <div class="fsr-table-wrap" id="fsr-table"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div id="footer-line" class="footer__row"></div>
+    </div>
+  </footer>
+
+  <script src="../assets/main.js" defer></script>
+  <script>
+  const DATA = {"generated_at": "2026-06-24T21:41:53.750812+08:00", "as_of_date": "2026-06-24", "source_start_date": "2010-01-01", "source_end_date": "2026-06-24", "top_n": 20, "horizons": [1, 3, 5, 10, 20, 30, 60], "include_etf": false, "source": "stock_chip.db institutional.foreign_net; later returns from daily_price close", "note": "僅追蹤外資單日賣超事件後走勢，不構成投資建議。", "rankings": {"top10": [{"rank": 1, "trade_date": "2026-05-28", "code": "3481", "name": "群創", "foreign_net_shares": -289338059, "foreign_net_lots": -289338.06, "foreign_buy_lots": 214136.92, "foreign_sell_lots": 503474.98, "close": 46.4, "price_date_actual": "2026-05-28", "ret_1d": 9.91, "ret_3d": 21.12, "ret_5d": 20.26, "ret_10d": 1.19, "ret_20d": null, "ret_30d": null, "ret_60d": null}, {"rank": 2, "trade_date": "2025-07-25", "code": "2887I", "name": "台新新光辛特", "foreign_net_shares": -280893544, "foreign_net_lots": -280893.54, "foreign_buy_lots": 94753.64, "foreign_sell_lots": 375647.18, "close": 8.84, "price_date_actual": "2025-07-25", "ret_1d": 0.68, "ret_3d": 0.34, "ret_5d": 2.04, "ret_10d": 3.39, "ret_20d": 3.17, "ret_30d": 3.39, "ret_60d": 4.64}, {"rank": 3, "trade_date": "2026-03-13", "code": "3481", "name": "群創", "foreign_net_shares": -274616878, "foreign_net_lots": -274616.88, "foreign_buy_lots": 167625.61, "foreign_sell_lots": 442242.49, "close": 29.7, "price_date_actual": "2026-03-13", "ret_1d": -8.08, "ret_3d": -5.89, "ret_5d": -11.62, "ret_10d": -15.66, "ret_20d": -12.79, "ret_30d": -16.5, "ret_60d": 73.06}, {"rank": 4, "trade_date": "2026-03-03", "code": "3481", "name": "群創", "foreign_net_shares": -244915452, "foreign_net_lots": -244915.45, "foreign_buy_lots": 200393.27, "foreign_sell_lots": 445308.72, "close": 25.95, "price_date_actual": "2026-03-03", "ret_1d": -4.62, "ret_3d": 5.97, "ret_5d": 6.17, "ret_10d": 6.74, "ret_20d": -7.32, "ret_30d": 0.19, "ret_60d": 128.9}, {"rank": 5, "trade_date": "2012-10-15", "code": "2888", "name": "新光金", "foreign_net_shares": -233637985, "foreign_net_lots": -233637.98, "foreign_buy_lots": 51760.0, "foreign_sell_lots": 285397.98, "close": 8.05, "price_date_actual": "2012-10-15", "ret_1d": 0.12, "ret_3d": 0.37, "ret_5d": -1.24, "ret_10d": -6.96, "ret_20d": -5.59, "ret_30d": -1.12, "ret_60d": 2.98}, {"rank": 6, "trade_date": "2026-06-02", "code": "3481", "name": "群創", "foreign_net_shares": -208585325, "foreign_net_lots": -208585.33, "foreign_buy_lots": 226855.44, "foreign_sell_lots": 435440.77, "close": 56.2, "price_date_actual": "2026-06-02", "ret_1d": 5.69, "ret_3d": -4.45, "ret_5d": -12.63, "ret_10d": -5.16, "ret_20d": null, "ret_30d": null, "ret_60d": null}, {"rank": 7, "trade_date": "2026-05-14", "code": "3481", "name": "群創", "foreign_net_shares": -205693060, "foreign_net_lots": -205693.06, "foreign_buy_lots": 204840.65, "foreign_sell_lots": 410533.71, "close": 35.4, "price_date_actual": "2026-05-14", "ret_1d": 1.98, "ret_3d": 5.79, "ret_5d": 14.69, "ret_10d": 31.07, "ret_20d": 32.63, "ret_30d": null, "ret_60d": null}, {"rank": 8, "trade_date": "2025-07-24", "code": "2887", "name": "台新新光金", "foreign_net_shares": -203491692, "foreign_net_lots": -203491.69, "foreign_buy_lots": 117573.59, "foreign_sell_lots": 321065.28, "close": 16.3, "price_date_actual": "2025-07-24", "ret_1d": 0.61, "ret_3d": -0.61, "ret_5d": 0.31, "ret_10d": 1.84, "ret_20d": 0.61, "ret_30d": 5.83, "ret_60d": 20.86}, {"rank": 9, "trade_date": "2026-05-26", "code": "3481", "name": "群創", "foreign_net_shares": -202889796, "foreign_net_lots": -202889.8, "foreign_buy_lots": 349104.48, "foreign_sell_lots": 551994.27, "close": 45.7, "price_date_actual": "2026-05-26", "ret_1d": 9.85, "ret_3d": 11.6, "ret_5d": 22.98, "ret_10d": 7.44, "ret_20d": 51.86, "ret_30d": null, "ret_60d": null}, {"rank": 10, "trade_date": "2021-08-05", "code": "3481", "name": "群創", "foreign_net_shares": -199896543, "foreign_net_lots": -199896.54, "foreign_buy_lots": 59672.76, "foreign_sell_lots": 259569.3, "close": 20.6, "price_date_actual": "2021-08-05", "ret_1d": -2.67, "ret_3d": -4.37, "ret_5d": -3.64, "ret_10d": -7.28, "ret_20d": -18.45, "ret_30d": -19.9, "ret_60d": -18.2}], "top20": [{"rank": 1, "trade_date": "2026-05-28", "code": "3481", "name": "群創", "foreign_net_shares": -289338059, "foreign_net_lots": -289338.06, "foreign_buy_lots": 214136.92, "foreign_sell_lots": 503474.98, "close": 46.4, "price_date_actual": "2026-05-28", "ret_1d": 9.91, "ret_3d": 21.12, "ret_5d": 20.26, "ret_10d": 1.19, "ret_20d": null, "ret_30d": null, "ret_60d": null}, {"rank": 2, "trade_date": "2025-07-25", "code": "2887I", "name": "台新新光辛特", "foreign_net_shares": -280893544, "foreign_net_lots": -280893.54, "foreign_buy_lots": 94753.64, "foreign_sell_lots": 375647.18, "close": 8.84, "price_date_actual": "2025-07-25", "ret_1d": 0.68, "ret_3d": 0.34, "ret_5d": 2.04, "ret_10d": 3.39, "ret_20d": 3.17, "ret_30d": 3.39, "ret_60d": 4.64}, {"rank": 3, "trade_date": "2026-03-13", "code": "3481", "name": "群創", "foreign_net_shares": -274616878, "foreign_net_lots": -274616.88, "foreign_buy_lots": 167625.61, "foreign_sell_lots": 442242.49, "close": 29.7, "price_date_actual": "2026-03-13", "ret_1d": -8.08, "ret_3d": -5.89, "ret_5d": -11.62, "ret_10d": -15.66, "ret_20d": -12.79, "ret_30d": -16.5, "ret_60d": 73.06}, {"rank": 4, "trade_date": "2026-03-03", "code": "3481", "name": "群創", "foreign_net_shares": -244915452, "foreign_net_lots": -244915.45, "foreign_buy_lots": 200393.27, "foreign_sell_lots": 445308.72, "close": 25.95, "price_date_actual": "2026-03-03", "ret_1d": -4.62, "ret_3d": 5.97, "ret_5d": 6.17, "ret_10d": 6.74, "ret_20d": -7.32, "ret_30d": 0.19, "ret_60d": 128.9}, {"rank": 5, "trade_date": "2012-10-15", "code": "2888", "name": "新光金", "foreign_net_shares": -233637985, "foreign_net_lots": -233637.98, "foreign_buy_lots": 51760.0, "foreign_sell_lots": 285397.98, "close": 8.05, "price_date_actual": "2012-10-15", "ret_1d": 0.12, "ret_3d": 0.37, "ret_5d": -1.24, "ret_10d": -6.96, "ret_20d": -5.59, "ret_30d": -1.12, "ret_60d": 2.98}, {"rank": 6, "trade_date": "2026-06-02", "code": "3481", "name": "群創", "foreign_net_shares": -208585325, "foreign_net_lots": -208585.33, "foreign_buy_lots": 226855.44, "foreign_sell_lots": 435440.77, "close": 56.2, "price_date_actual": "2026-06-02", "ret_1d": 5.69, "ret_3d": -4.45, "ret_5d": -12.63, "ret_10d": -5.16, "ret_20d": null, "ret_30d": null, "ret_60d": null}, {"rank": 7, "trade_date": "2026-05-14", "code": "3481", "name": "群創", "foreign_net_shares": -205693060, "foreign_net_lots": -205693.06, "foreign_buy_lots": 204840.65, "foreign_sell_lots": 410533.71, "close": 35.4, "price_date_actual": "2026-05-14", "ret_1d": 1.98, "ret_3d": 5.79, "ret_5d": 14.69, "ret_10d": 31.07, "ret_20d": 32.63, "ret_30d": null, "ret_60d": null}, {"rank": 8, "trade_date": "2025-07-24", "code": "2887", "name": "台新新光金", "foreign_net_shares": -203491692, "foreign_net_lots": -203491.69, "foreign_buy_lots": 117573.59, "foreign_sell_lots": 321065.28, "close": 16.3, "price_date_actual": "2025-07-24", "ret_1d": 0.61, "ret_3d": -0.61, "ret_5d": 0.31, "ret_10d": 1.84, "ret_20d": 0.61, "ret_30d": 5.83, "ret_60d": 20.86}, {"rank": 9, "trade_date": "2026-05-26", "code": "3481", "name": "群創", "foreign_net_shares": -202889796, "foreign_net_lots": -202889.8, "foreign_buy_lots": 349104.48, "foreign_sell_lots": 551994.27, "close": 45.7, "price_date_actual": "2026-05-26", "ret_1d": 9.85, "ret_3d": 11.6, "ret_5d": 22.98, "ret_10d": 7.44, "ret_20d": 51.86, "ret_30d": null, "ret_60d": null}, {"rank": 10, "trade_date": "2021-08-05", "code": "3481", "name": "群創", "foreign_net_shares": -199896543, "foreign_net_lots": -199896.54, "foreign_buy_lots": 59672.76, "foreign_sell_lots": 259569.3, "close": 20.6, "price_date_actual": "2021-08-05", "ret_1d": -2.67, "ret_3d": -4.37, "ret_5d": -3.64, "ret_10d": -7.28, "ret_20d": -18.45, "ret_30d": -19.9, "ret_60d": -18.2}, {"rank": 11, "trade_date": "2014-09-24", "code": "2883", "name": "凱基金", "foreign_net_shares": -190581476, "foreign_net_lots": -190581.48, "foreign_buy_lots": 89823.34, "foreign_sell_lots": 280404.82, "close": 9.66, "price_date_actual": "2014-09-24", "ret_1d": -0.72, "ret_3d": -1.86, "ret_5d": -2.59, "ret_10d": -2.28, "ret_20d": -2.8, "ret_30d": 1.76, "ret_60d": 1.55}, {"rank": 12, "trade_date": "2026-05-26", "code": "2409", "name": "友達", "foreign_net_shares": -166129539, "foreign_net_lots": -166129.54, "foreign_buy_lots": 167637.26, "foreign_sell_lots": 333766.8, "close": 22.0, "price_date_actual": "2026-05-26", "ret_1d": -0.91, "ret_3d": 4.55, "ret_5d": 18.86, "ret_10d": 9.09, "ret_20d": 38.64, "ret_30d": null, "ret_60d": null}, {"rank": 13, "trade_date": "2021-04-13", "code": "3481", "name": "群創", "foreign_net_shares": -160029675, "foreign_net_lots": -160029.67, "foreign_buy_lots": 101963.4, "foreign_sell_lots": 261993.08, "close": 24.4, "price_date_actual": "2021-04-13", "ret_1d": -5.12, "ret_3d": -0.2, "ret_5d": 4.51, "ret_10d": 21.93, "ret_20d": -13.32, "ret_30d": -12.09, "ret_60d": -14.55}, {"rank": 14, "trade_date": "2026-06-01", "code": "6770", "name": "力積電", "foreign_net_shares": -158205128, "foreign_net_lots": -158205.13, "foreign_buy_lots": 143505.62, "foreign_sell_lots": 301710.75, "close": 87.0, "price_date_actual": "2026-06-01", "ret_1d": -1.26, "ret_3d": -6.9, "ret_5d": -22.41, "ret_10d": -15.75, "ret_20d": null, "ret_30d": null, "ret_60d": null}, {"rank": 15, "trade_date": "2026-01-30", "code": "3481", "name": "群創", "foreign_net_shares": -156523610, "foreign_net_lots": -156523.61, "foreign_buy_lots": 171055.43, "foreign_sell_lots": 327579.04, "close": 21.8, "price_date_actual": "2026-01-30", "ret_1d": -2.98, "ret_3d": 5.5, "ret_5d": 0.0, "ret_10d": 13.99, "ret_20d": 38.99, "ret_30d": 12.84, "ret_60d": 62.39}, {"rank": 16, "trade_date": "2026-06-04", "code": "2883", "name": "凱基金", "foreign_net_shares": -150842831, "foreign_net_lots": -150842.83, "foreign_buy_lots": 99563.47, "foreign_sell_lots": 250406.3, "close": 27.4, "price_date_actual": "2026-06-04", "ret_1d": 0.73, "ret_3d": 6.02, "ret_5d": 1.28, "ret_10d": 12.23, "ret_20d": null, "ret_30d": null, "ret_60d": null}, {"rank": 17, "trade_date": "2019-03-19", "code": "2889", "name": "國票金", "foreign_net_shares": -145745000, "foreign_net_lots": -145745.0, "foreign_buy_lots": 332.0, "foreign_sell_lots": 146077.0, "close": 10.25, "price_date_actual": "2019-03-19", "ret_1d": 0.98, "ret_3d": 2.44, "ret_5d": 1.46, "ret_10d": 1.46, "ret_20d": 0.98, "ret_30d": 0.49, "ret_60d": 3.9}, {"rank": 18, "trade_date": "2022-04-20", "code": "2888", "name": "新光金", "foreign_net_shares": -144366848, "foreign_net_lots": -144366.85, "foreign_buy_lots": 127614.15, "foreign_sell_lots": 271981.0, "close": 10.15, "price_date_actual": "2022-04-20", "ret_1d": -0.99, "ret_3d": -1.48, "ret_5d": -3.74, "ret_10d": -5.32, "ret_20d": -11.53, "ret_30d": -9.85, "ret_60d": -17.93}, {"rank": 19, "trade_date": "2012-05-02", "code": "2317", "name": "鴻海", "foreign_net_shares": -143049692, "foreign_net_lots": -143049.69, "foreign_buy_lots": 66793.75, "foreign_sell_lots": 209843.44, "close": 89.6, "price_date_actual": "2012-05-02", "ret_1d": 0.45, "ret_3d": -1.23, "ret_5d": -2.57, "ret_10d": -4.35, "ret_20d": -2.34, "ret_30d": -8.37, "ret_60d": -10.16}, {"rank": 20, "trade_date": "2026-05-20", "code": "2892", "name": "第一金", "foreign_net_shares": -136973747, "foreign_net_lots": -136973.75, "foreign_buy_lots": 28391.57, "foreign_sell_lots": 165365.32, "close": 27.75, "price_date_actual": "2026-05-20", "ret_1d": -0.18, "ret_3d": -0.54, "ret_5d": -0.54, "ret_10d": 4.5, "ret_20d": 17.12, "ret_30d": null, "ret_60d": null}]}, "records": [{"rank": 1, "trade_date": "2026-05-28", "code": "3481", "name": "群創", "foreign_net_shares": -289338059, "foreign_net_lots": -289338.06, "foreign_buy_lots": 214136.92, "foreign_sell_lots": 503474.98, "close": 46.4, "price_date_actual": "2026-05-28", "ret_1d": 9.91, "ret_3d": 21.12, "ret_5d": 20.26, "ret_10d": 1.19, "ret_20d": null, "ret_30d": null, "ret_60d": null}, {"rank": 2, "trade_date": "2025-07-25", "code": "2887I", "name": "台新新光辛特", "foreign_net_shares": -280893544, "foreign_net_lots": -280893.54, "foreign_buy_lots": 94753.64, "foreign_sell_lots": 375647.18, "close": 8.84, "price_date_actual": "2025-07-25", "ret_1d": 0.68, "ret_3d": 0.34, "ret_5d": 2.04, "ret_10d": 3.39, "ret_20d": 3.17, "ret_30d": 3.39, "ret_60d": 4.64}, {"rank": 3, "trade_date": "2026-03-13", "code": "3481", "name": "群創", "foreign_net_shares": -274616878, "foreign_net_lots": -274616.88, "foreign_buy_lots": 167625.61, "foreign_sell_lots": 442242.49, "close": 29.7, "price_date_actual": "2026-03-13", "ret_1d": -8.08, "ret_3d": -5.89, "ret_5d": -11.62, "ret_10d": -15.66, "ret_20d": -12.79, "ret_30d": -16.5, "ret_60d": 73.06}, {"rank": 4, "trade_date": "2026-03-03", "code": "3481", "name": "群創", "foreign_net_shares": -244915452, "foreign_net_lots": -244915.45, "foreign_buy_lots": 200393.27, "foreign_sell_lots": 445308.72, "close": 25.95, "price_date_actual": "2026-03-03", "ret_1d": -4.62, "ret_3d": 5.97, "ret_5d": 6.17, "ret_10d": 6.74, "ret_20d": -7.32, "ret_30d": 0.19, "ret_60d": 128.9}, {"rank": 5, "trade_date": "2012-10-15", "code": "2888", "name": "新光金", "foreign_net_shares": -233637985, "foreign_net_lots": -233637.98, "foreign_buy_lots": 51760.0, "foreign_sell_lots": 285397.98, "close": 8.05, "price_date_actual": "2012-10-15", "ret_1d": 0.12, "ret_3d": 0.37, "ret_5d": -1.24, "ret_10d": -6.96, "ret_20d": -5.59, "ret_30d": -1.12, "ret_60d": 2.98}, {"rank": 6, "trade_date": "2026-06-02", "code": "3481", "name": "群創", "foreign_net_shares": -208585325, "foreign_net_lots": -208585.33, "foreign_buy_lots": 226855.44, "foreign_sell_lots": 435440.77, "close": 56.2, "price_date_actual": "2026-06-02", "ret_1d": 5.69, "ret_3d": -4.45, "ret_5d": -12.63, "ret_10d": -5.16, "ret_20d": null, "ret_30d": null, "ret_60d": null}, {"rank": 7, "trade_date": "2026-05-14", "code": "3481", "name": "群創", "foreign_net_shares": -205693060, "foreign_net_lots": -205693.06, "foreign_buy_lots": 204840.65, "foreign_sell_lots": 410533.71, "close": 35.4, "price_date_actual": "2026-05-14", "ret_1d": 1.98, "ret_3d": 5.79, "ret_5d": 14.69, "ret_10d": 31.07, "ret_20d": 32.63, "ret_30d": null, "ret_60d": null}, {"rank": 8, "trade_date": "2025-07-24", "code": "2887", "name": "台新新光金", "foreign_net_shares": -203491692, "foreign_net_lots": -203491.69, "foreign_buy_lots": 117573.59, "foreign_sell_lots": 321065.28, "close": 16.3, "price_date_actual": "2025-07-24", "ret_1d": 0.61, "ret_3d": -0.61, "ret_5d": 0.31, "ret_10d": 1.84, "ret_20d": 0.61, "ret_30d": 5.83, "ret_60d": 20.86}, {"rank": 9, "trade_date": "2026-05-26", "code": "3481", "name": "群創", "foreign_net_shares": -202889796, "foreign_net_lots": -202889.8, "foreign_buy_lots": 349104.48, "foreign_sell_lots": 551994.27, "close": 45.7, "price_date_actual": "2026-05-26", "ret_1d": 9.85, "ret_3d": 11.6, "ret_5d": 22.98, "ret_10d": 7.44, "ret_20d": 51.86, "ret_30d": null, "ret_60d": null}, {"rank": 10, "trade_date": "2021-08-05", "code": "3481", "name": "群創", "foreign_net_shares": -199896543, "foreign_net_lots": -199896.54, "foreign_buy_lots": 59672.76, "foreign_sell_lots": 259569.3, "close": 20.6, "price_date_actual": "2021-08-05", "ret_1d": -2.67, "ret_3d": -4.37, "ret_5d": -3.64, "ret_10d": -7.28, "ret_20d": -18.45, "ret_30d": -19.9, "ret_60d": -18.2}, {"rank": 11, "trade_date": "2014-09-24", "code": "2883", "name": "凱基金", "foreign_net_shares": -190581476, "foreign_net_lots": -190581.48, "foreign_buy_lots": 89823.34, "foreign_sell_lots": 280404.82, "close": 9.66, "price_date_actual": "2014-09-24", "ret_1d": -0.72, "ret_3d": -1.86, "ret_5d": -2.59, "ret_10d": -2.28, "ret_20d": -2.8, "ret_30d": 1.76, "ret_60d": 1.55}, {"rank": 12, "trade_date": "2026-05-26", "code": "2409", "name": "友達", "foreign_net_shares": -166129539, "foreign_net_lots": -166129.54, "foreign_buy_lots": 167637.26, "foreign_sell_lots": 333766.8, "close": 22.0, "price_date_actual": "2026-05-26", "ret_1d": -0.91, "ret_3d": 4.55, "ret_5d": 18.86, "ret_10d": 9.09, "ret_20d": 38.64, "ret_30d": null, "ret_60d": null}, {"rank": 13, "trade_date": "2021-04-13", "code": "3481", "name": "群創", "foreign_net_shares": -160029675, "foreign_net_lots": -160029.67, "foreign_buy_lots": 101963.4, "foreign_sell_lots": 261993.08, "close": 24.4, "price_date_actual": "2021-04-13", "ret_1d": -5.12, "ret_3d": -0.2, "ret_5d": 4.51, "ret_10d": 21.93, "ret_20d": -13.32, "ret_30d": -12.09, "ret_60d": -14.55}, {"rank": 14, "trade_date": "2026-06-01", "code": "6770", "name": "力積電", "foreign_net_shares": -158205128, "foreign_net_lots": -158205.13, "foreign_buy_lots": 143505.62, "foreign_sell_lots": 301710.75, "close": 87.0, "price_date_actual": "2026-06-01", "ret_1d": -1.26, "ret_3d": -6.9, "ret_5d": -22.41, "ret_10d": -15.75, "ret_20d": null, "ret_30d": null, "ret_60d": null}, {"rank": 15, "trade_date": "2026-01-30", "code": "3481", "name": "群創", "foreign_net_shares": -156523610, "foreign_net_lots": -156523.61, "foreign_buy_lots": 171055.43, "foreign_sell_lots": 327579.04, "close": 21.8, "price_date_actual": "2026-01-30", "ret_1d": -2.98, "ret_3d": 5.5, "ret_5d": 0.0, "ret_10d": 13.99, "ret_20d": 38.99, "ret_30d": 12.84, "ret_60d": 62.39}, {"rank": 16, "trade_date": "2026-06-04", "code": "2883", "name": "凱基金", "foreign_net_shares": -150842831, "foreign_net_lots": -150842.83, "foreign_buy_lots": 99563.47, "foreign_sell_lots": 250406.3, "close": 27.4, "price_date_actual": "2026-06-04", "ret_1d": 0.73, "ret_3d": 6.02, "ret_5d": 1.28, "ret_10d": 12.23, "ret_20d": null, "ret_30d": null, "ret_60d": null}, {"rank": 17, "trade_date": "2019-03-19", "code": "2889", "name": "國票金", "foreign_net_shares": -145745000, "foreign_net_lots": -145745.0, "foreign_buy_lots": 332.0, "foreign_sell_lots": 146077.0, "close": 10.25, "price_date_actual": "2019-03-19", "ret_1d": 0.98, "ret_3d": 2.44, "ret_5d": 1.46, "ret_10d": 1.46, "ret_20d": 0.98, "ret_30d": 0.49, "ret_60d": 3.9}, {"rank": 18, "trade_date": "2022-04-20", "code": "2888", "name": "新光金", "foreign_net_shares": -144366848, "foreign_net_lots": -144366.85, "foreign_buy_lots": 127614.15, "foreign_sell_lots": 271981.0, "close": 10.15, "price_date_actual": "2022-04-20", "ret_1d": -0.99, "ret_3d": -1.48, "ret_5d": -3.74, "ret_10d": -5.32, "ret_20d": -11.53, "ret_30d": -9.85, "ret_60d": -17.93}, {"rank": 19, "trade_date": "2012-05-02", "code": "2317", "name": "鴻海", "foreign_net_shares": -143049692, "foreign_net_lots": -143049.69, "foreign_buy_lots": 66793.75, "foreign_sell_lots": 209843.44, "close": 89.6, "price_date_actual": "2012-05-02", "ret_1d": 0.45, "ret_3d": -1.23, "ret_5d": -2.57, "ret_10d": -4.35, "ret_20d": -2.34, "ret_30d": -8.37, "ret_60d": -10.16}, {"rank": 20, "trade_date": "2026-05-20", "code": "2892", "name": "第一金", "foreign_net_shares": -136973747, "foreign_net_lots": -136973.75, "foreign_buy_lots": 28391.57, "foreign_sell_lots": 165365.32, "close": 27.75, "price_date_actual": "2026-05-20", "ret_1d": -0.18, "ret_3d": -0.54, "ret_5d": -0.54, "ret_10d": 4.5, "ret_20d": 17.12, "ret_30d": null, "ret_60d": null}]};
+  const horizons = DATA.horizons || [1,3,5,10,20,30,60];
+
+  function cls(v) {
+    if (v == null) return 'fsr-muted';
+    return v >= 0 ? 'fsr-pos' : 'fsr-neg';
+  }
+  function fmt(v, digits = 1, suffix = '') {
+    if (v == null) return '—';
+    const sign = v >= 0 ? '+' : '';
+    return `${sign}${Number(v).toFixed(digits)}${suffix}`;
+  }
+  function fmtLots(v) {
+    if (v == null) return '—';
+    return `${Math.round(v).toLocaleString()} 張`;
+  }
+  function renderStats() {
+    const r = DATA.records || [];
+    const top = r[0] || {};
+    document.getElementById('fsr-stats').innerHTML = [
+      `<span>紀錄筆數：<strong>${r.length}</strong></span>`,
+      `<span>最大賣超：<strong>${top.code || '—'} ${top.foreign_net_lots != null ? fmtLots(top.foreign_net_lots) : ''}</strong></span>`,
+      `<span>走勢欄位：<strong>${horizons.join('/')} 日</strong></span>`
+    ].join('');
+  }
+  function render(limit) {
+    const rows = (DATA.records || []).slice(0, limit);
+    const futureHeads = horizons.map(h => `<th class="fsr-right">${h}日後</th>`).join('');
+    const body = rows.map(r => {
+      const futureCells = horizons.map(h => {
+        const v = r[`ret_${h}d`];
+        return `<td class="fsr-right ${cls(v)}">${fmt(v, 1, '%')}</td>`;
+      }).join('');
+      return `<tr>
+        <td class="fsr-rank">${r.rank}</td>
+        <td>${r.trade_date}</td>
+        <td><span class="fsr-code">${r.code}</span></td>
+        <td><span class="fsr-name">${r.name}</span></td>
+        <td class="fsr-right fsr-neg">${fmtLots(r.foreign_net_lots)}</td>
+        <td class="fsr-right">${r.close != null ? Number(r.close).toFixed(2) : '—'}</td>
+        ${futureCells}
+      </tr>`;
+    }).join('');
+    document.getElementById('fsr-table').innerHTML = `<table class="fsr-table">
+      <thead><tr>
+        <th class="fsr-right">#</th><th>日期</th><th>代號</th><th>名稱</th>
+        <th class="fsr-right">外資淨賣超</th><th class="fsr-right">事件收盤</th>${futureHeads}
+      </tr></thead>
+      <tbody>${body}</tbody>
+    </table>`;
+  }
+  document.querySelectorAll('.fsr-tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.fsr-tab').forEach(b => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      render(Number(btn.dataset.limit));
+    });
+  });
+  renderStats();
+  render(10);
+  </script>
+</body>
+</html>
