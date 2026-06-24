@@ -348,18 +348,18 @@ h3, .h3 {
 .nav {
   display: flex;
   align-items: center;
-  gap: var(--sp-5);
+  gap: var(--sp-4);
   flex-wrap: wrap;
 }
 
 .nav__link {
   font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.18em;
+  font-size: 13px;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--ink-muted);
   position: relative;
-  padding: 4px 0;
+  padding: 8px 0;
   transition: color var(--dur) var(--ease);
 }
 
@@ -2735,7 +2735,8 @@ h3, .h3 {
   }
 
   .nav__link {
-    font-size: 10.5px;
+    font-size: 12px;
+    letter-spacing: 0.06em;
     padding: 8px 0;
     white-space: nowrap;
     min-height: 44px;
