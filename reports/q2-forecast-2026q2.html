@@ -95,7 +95,7 @@
   <div class="q2-stat"><span>營收</span><strong>466</strong><small>86%</small></div><div class="q2-stat"><span>EPS</span><strong>454</strong><small>84%</small></div><div class="q2-stat"><span>毛利率</span><strong>473</strong><small>88%</small></div><div class="q2-stat"><span>營益率</span><strong>460</strong><small>85%</small></div><div class="q2-stat"><span>淨利率</span><strong>426</strong><small>79%</small></div>
 </div>
 <div class="q2-toolbar">
-  <input class="q2-search" id="q2-search" type="search" placeholder="搜尋代號、公司或信心" />
+  <input class="q2-search" id="q2-search" type="search" placeholder="輸入代號或公司，多筆用空白分隔" />
   <span class="q2-count" id="q2-count">540 COMPANIES · 高 411 / 中 58 / 低 71</span>
 </div>
 <div class="q2-table-wrap">
@@ -659,7 +659,7 @@
     </tbody>
   </table>
 </div>
-<p class="q2-note">產生時間：2026-06-24T14:51:27+08:00。表格金額統一換算為新台幣百萬元；三率優先採報告比率，否則由已抽取金額計算，抓不到或不一致則留白。</p>
+<p class="q2-note">產生時間：2026-06-24T15:57:45+08:00。表格金額統一換算為新台幣百萬元；三率優先採報告比率，否則由已抽取金額計算，抓不到或不一致則留白。</p>
 <script>
   (() => {
     const input = document.getElementById('q2-search');
@@ -667,14 +667,15 @@
     const count = document.getElementById('q2-count');
     const base = count.textContent;
     input.addEventListener('input', () => {
-      const q = input.value.trim().toLowerCase();
+      const raw = input.value.trim().toLowerCase();
+      const tokens = raw.split(/[\s,，、]+/).filter(Boolean);
       let shown = 0;
       for (const row of rows) {
-        const ok = !q || row.dataset.search.includes(q);
+        const ok = tokens.length === 0 || tokens.some(token => row.dataset.search.includes(token));
         row.style.display = ok ? '' : 'none';
         if (ok) shown += 1;
       }
-      count.textContent = q ? `${shown.toLocaleString()} / ${rows.length.toLocaleString()} COMPANIES` : base;
+      count.textContent = tokens.length ? `${shown.toLocaleString()} / ${rows.length.toLocaleString()} COMPANIES` : base;
     });
   })();
 </script>
