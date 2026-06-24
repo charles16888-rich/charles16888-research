@@ -107,15 +107,15 @@ def build_market_records_from_frames(
     top_n: int = DEFAULT_TOP_N,
     horizons: list[int] | None = None,
 ) -> list[dict]:
-    """Return ranked all-market foreign sell records with later TAIEX returns."""
+    """Return ranked all-market foreign sell-amount records with later TAIEX returns."""
 
     horizons = horizons or DEFAULT_HORIZONS
     flow = _normalize_market_flow(market_flow)
     px = _normalize_index_prices(index_prices)
 
-    flow = flow[flow["foreign_net_buy_shares"] < 0].copy()
+    flow = flow[flow["foreign_net_amount"] < 0].copy()
     flow = flow.sort_values(
-        ["foreign_net_buy_shares", "trade_date"],
+        ["foreign_net_amount", "trade_date"],
         ascending=[True, True],
     ).head(top_n)
 
@@ -135,6 +135,12 @@ def build_market_records_from_frames(
             "foreign_net_lots": _to_lots(event.get("foreign_net_buy_shares")),
             "foreign_buy_lots": _to_lots(event.get("foreign_buy")),
             "foreign_sell_lots": _to_lots(event.get("foreign_sell")),
+            "foreign_net_amount": _to_rounded_amount(event.get("foreign_net_amount")),
+            "foreign_net_amount_billion": _to_billion(event.get("foreign_net_amount")),
+            "foreign_buy_amount": _to_rounded_amount(event.get("foreign_buy_amount")),
+            "foreign_sell_amount": _to_rounded_amount(event.get("foreign_sell_amount")),
+            "amount_estimate_source_rows": _to_int(event.get("source_rows")),
+            "amount_estimate_priced_rows": _to_int(event.get("priced_rows")),
             "twse_close": close,
             "index_date_actual": price_row.get("trade_date").date().isoformat() if price_row is not None else None,
         }
@@ -167,9 +173,10 @@ def _normalize_market_flow(frame: pd.DataFrame) -> pd.DataFrame:
     rename = {
         "date": "trade_date",
         "foreign_net": "foreign_net_buy_shares",
+        "foreign_net_value": "foreign_net_amount",
     }
     out = frame.rename(columns={k: v for k, v in rename.items() if k in frame.columns}).copy()
-    required = {"trade_date", "foreign_net_buy_shares"}
+    required = {"trade_date", "foreign_net_amount"}
     missing = required.difference(out.columns)
     if missing:
         raise ValueError(f"market_flow is missing required columns: {sorted(missing)}")
@@ -178,7 +185,15 @@ def _normalize_market_flow(frame: pd.DataFrame) -> pd.DataFrame:
         if col not in out.columns:
             out[col] = pd.NA
         out[col] = pd.to_numeric(out[col], errors="coerce")
-    return out.dropna(subset=["trade_date", "foreign_net_buy_shares"])
+    for col in ("foreign_net_amount", "foreign_buy_amount", "foreign_sell_amount"):
+        if col not in out.columns:
+            out[col] = pd.NA
+        out[col] = pd.to_numeric(out[col], errors="coerce")
+    for col in ("source_rows", "priced_rows"):
+        if col not in out.columns:
+            out[col] = pd.NA
+        out[col] = pd.to_numeric(out[col], errors="coerce")
+    return out.dropna(subset=["trade_date", "foreign_net_amount"])
 
 
 def _normalize_prices(frame: pd.DataFrame) -> pd.DataFrame:
@@ -262,6 +277,27 @@ def _to_int(value: object) -> int | None:
     if number is None:
         return None
     return int(number)
+
+
+def _to_rounded_amount(value: object) -> float | None:
+    number = _to_float(value)
+    if number is None:
+        return None
+    return round(number, 2)
+
+
+def _to_billion(value: object) -> float | None:
+    number = _to_float(value)
+    if number is None:
+        return None
+    return round(number / 100_000_000, 2)
+
+
+def _format_billion(value: object) -> str:
+    number = _to_billion(value)
+    if number is None:
+        return "-"
+    return f"{number:,.1f}億"
 
 
 def _first_text(*values: object) -> str:
@@ -366,22 +402,47 @@ def _load_market_flow_records(
     where: list[str] = []
     params: list[object] = []
     if start_date:
-        where.append("date >= ?")
+        where.append("i.date >= ?")
         params.append(start_date)
     if end_date:
-        where.append("date <= ?")
+        where.append("i.date <= ?")
         params.append(end_date)
     where_sql = "WHERE " + " AND ".join(where) if where else ""
     return pd.read_sql_query(
         f"""
-        SELECT date AS trade_date,
-               SUM(foreign_buy) AS foreign_buy,
-               SUM(foreign_sell) AS foreign_sell,
-               SUM(foreign_net) AS foreign_net_buy_shares
-        FROM institutional
-        {where_sql}
-        GROUP BY date
-        ORDER BY foreign_net_buy_shares ASC
+        WITH priced AS (
+            SELECT i.date AS trade_date,
+                   i.foreign_buy,
+                   i.foreign_sell,
+                   i.foreign_net,
+                   CASE
+                       WHEN dp.volume > 0 AND dp.amount IS NOT NULL THEN dp.amount * 1.0 / dp.volume
+                       WHEN dp.close IS NOT NULL THEN dp.close
+                       ELSE NULL
+                   END AS estimate_price
+            FROM institutional i
+            LEFT JOIN daily_price dp
+                   ON dp.date = i.date
+                  AND dp.code = i.code
+            {where_sql}
+        ),
+        daily AS (
+            SELECT trade_date,
+                   SUM(foreign_buy) AS foreign_buy,
+                   SUM(foreign_sell) AS foreign_sell,
+                   SUM(foreign_net) AS foreign_net_buy_shares,
+                   SUM(foreign_buy * estimate_price) AS foreign_buy_amount,
+                   SUM(foreign_sell * estimate_price) AS foreign_sell_amount,
+                   SUM(foreign_net * estimate_price) AS foreign_net_amount,
+                   COUNT(*) AS source_rows,
+                   SUM(CASE WHEN estimate_price IS NOT NULL THEN 1 ELSE 0 END) AS priced_rows
+            FROM priced
+            GROUP BY trade_date
+        )
+        SELECT *
+        FROM daily
+        WHERE foreign_net_amount < 0
+        ORDER BY foreign_net_amount ASC
         LIMIT ?
         """,
         conn,
@@ -424,7 +485,7 @@ def build_payload(
         "top_n": top_n,
         "horizons": horizons,
         "include_etf": include_etf,
-        "source": "stock_chip.db institutional.foreign_net; stock returns from daily_price close; market returns from futures_basis.twse_close",
+        "source": "stock_chip.db institutional.foreign_net; stock returns from daily_price close; market foreign net amount estimated from daily_price amount/volume VWAP; market returns from futures_basis.twse_close",
         "note": "僅追蹤外資單日賣超事件後走勢，不構成投資建議。",
         "rankings": {
             "top10": records[:10],
@@ -674,7 +735,8 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
       <h1 class="report-title">外資史上<em>賣超</em>紀錄</h1>
       <p class="report-lead">
         以 institutional.foreign_net 單日淨買賣超排序，分成「個股」與「大盤」兩組紀錄。
-        個股表追蹤事件股票後續走勢；大盤表彙總全市場外資淨買賣超，追蹤加權指數後續 1/3/5/10/20/30/60 個交易日漲跌幅。
+        個股表追蹤事件股票後續走勢；大盤表以外資股數乘當日成交均價估算淨賣超金額，
+        追蹤加權指數後續 1/3/5/10/20/30/60 個交易日漲跌幅。
         本表只做追蹤與統計，不做投資建議。
       </p>
       <div class="fsr-stat-row" id="fsr-stats"></div>
@@ -719,6 +781,12 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
     if (v == null) return '—';
     return `${Math.round(v).toLocaleString()} 張`;
   }
+  function fmtBillion(v) {
+    if (v == null) return '—';
+    const n = Number(v) / 100000000;
+    const sign = n >= 0 ? '+' : '';
+    return `${sign}${n.toLocaleString(undefined, {minimumFractionDigits: 1, maximumFractionDigits: 1})} 億`;
+  }
   function currentRecords() {
     return currentMode === 'market' ? (DATA.market_records || []) : (DATA.records || []);
   }
@@ -728,7 +796,8 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
     if (currentMode === 'market') {
       document.getElementById('fsr-stats').innerHTML = [
         `<span>紀錄筆數：<strong>${r.length}</strong></span>`,
-        `<span>最大賣超：<strong>${top.trade_date || '—'} ${top.foreign_net_lots != null ? fmtLots(top.foreign_net_lots) : ''}</strong></span>`,
+        `<span>最大賣超金額：<strong>${top.trade_date || '—'} ${top.foreign_net_amount != null ? fmtBillion(top.foreign_net_amount) : ''}</strong></span>`,
+        `<span>口徑：<strong>估算成交額（VWAP）</strong></span>`,
         `<span>追蹤標的：<strong>加權指數 1/3/5/10/20/30/60 日</strong></span>`
       ].join('');
       return;
@@ -774,7 +843,7 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
       return `<tr>
         <td class="fsr-rank">${r.rank}</td>
         <td>${r.trade_date}</td>
-        <td class="fsr-right fsr-neg">${fmtLots(r.foreign_net_lots)}</td>
+        <td class="fsr-right fsr-neg">${fmtBillion(r.foreign_net_amount)}</td>
         <td class="fsr-right">${r.twse_close != null ? Number(r.twse_close).toLocaleString(undefined, {maximumFractionDigits: 2}) : '—'}</td>
         ${futureCells}
       </tr>`;
@@ -782,7 +851,7 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
     document.getElementById('fsr-table').innerHTML = `<table class="fsr-table">
       <thead><tr>
         <th class="fsr-right">#</th><th>日期</th>
-        <th class="fsr-right">大盤外資淨賣超</th><th class="fsr-right">加權收盤</th>${futureHeads}
+        <th class="fsr-right">大盤外資淨賣超金額</th><th class="fsr-right">加權收盤</th>${futureHeads}
       </tr></thead>
       <tbody>${body}</tbody>
     </table>`;
@@ -837,13 +906,13 @@ def update_manifest(out: dict) -> None:
     top = records[0] if records else None
     market_top = market_records[0] if market_records else None
     summary = (
-        f"外資單日淨賣超史上 Top {min(20, len(records))}，並加入大盤外資淨賣超 Top {min(20, len(market_records))}。"
+        f"外資單日淨賣超史上 Top {min(20, len(records))}，並加入大盤外資淨賣超金額 Top {min(20, len(market_records))}。"
         f"追蹤事件後 {'/'.join(str(x) for x in out.get('horizons', []))} 日走勢。"
     )
     if top:
         summary += f" 最大紀錄：{top['trade_date']} {top['code']} {top['name']} {top['foreign_net_lots']:,.0f} 張。"
     if market_top:
-        summary += f" 大盤最大紀錄：{market_top['trade_date']} {market_top['foreign_net_lots']:,.0f} 張。"
+        summary += f" 大盤最大金額：{market_top['trade_date']} {_format_billion(market_top.get('foreign_net_amount'))}。"
 
     entry = {
         "id": "foreign-sell-records",
@@ -851,10 +920,10 @@ def update_manifest(out: dict) -> None:
         "type": "ranking",
         "date": out.get("as_of_date"),
         "time": "21:05",
-        "title": "外資史上賣超紀錄 · 個股 / 大盤 Top 20",
+        "title": "外資史上賣超紀錄 · 個股 / 大盤金額 Top 20",
         "title_em": "賣超",
         "summary": summary,
-        "tags": ["籌碼", "外資", "賣超", "事件追蹤"],
+        "tags": ["籌碼", "外資", "賣超", "成交額", "事件追蹤"],
         "source_pipeline": "stock_chip_crawler",
         "url": f"reports/foreign-sell-records.html?v={out.get('as_of_date', '').replace('-', '')}",
         "stats": [
@@ -864,8 +933,8 @@ def update_manifest(out: dict) -> None:
                 "color": "down",
             },
             {
-                "label": "大盤最大",
-                "value": f"{market_top['foreign_net_lots']:,.0f}張" if market_top else "-",
+                "label": "大盤金額",
+                "value": _format_billion(market_top.get("foreign_net_amount")) if market_top else "-",
                 "color": "down",
             },
             {"label": "走勢", "value": "1-60日", "color": "neutral"},

@@ -63,9 +63,33 @@ def _prices():
 def _market_flow():
     return pd.DataFrame(
         [
-            {"trade_date": "2024-01-01", "foreign_buy": 100_000, "foreign_sell": 600_000, "foreign_net_buy_shares": -500_000},
-            {"trade_date": "2024-01-02", "foreign_buy": 200_000, "foreign_sell": 400_000, "foreign_net_buy_shares": -200_000},
-            {"trade_date": "2024-01-03", "foreign_buy": 500_000, "foreign_sell": 300_000, "foreign_net_buy_shares": 200_000},
+            {
+                "trade_date": "2024-01-01",
+                "foreign_buy": 100_000,
+                "foreign_sell": 600_000,
+                "foreign_net_buy_shares": -500_000,
+                "foreign_buy_amount": 2_000_000,
+                "foreign_sell_amount": 12_000_000,
+                "foreign_net_amount": -10_000_000,
+            },
+            {
+                "trade_date": "2024-01-02",
+                "foreign_buy": 200_000,
+                "foreign_sell": 400_000,
+                "foreign_net_buy_shares": -200_000,
+                "foreign_buy_amount": 50_000_000,
+                "foreign_sell_amount": 100_000_000,
+                "foreign_net_amount": -50_000_000,
+            },
+            {
+                "trade_date": "2024-01-03",
+                "foreign_buy": 500_000,
+                "foreign_sell": 300_000,
+                "foreign_net_buy_shares": 200_000,
+                "foreign_buy_amount": 150_000_000,
+                "foreign_sell_amount": 90_000_000,
+                "foreign_net_amount": 60_000_000,
+            },
         ]
     )
 
@@ -108,8 +132,9 @@ class ForeignSellRecordTests(unittest.TestCase):
             _index_prices(),
             top_n=2,
         )
-        self.assertEqual([r["trade_date"] for r in records], ["2024-01-01", "2024-01-02"])
-        self.assertEqual(records[0]["foreign_net_lots"], -500.0)
+        self.assertEqual([r["trade_date"] for r in records], ["2024-01-02", "2024-01-01"])
+        self.assertEqual(records[0]["foreign_net_amount"], -50_000_000)
+        self.assertEqual(records[0]["foreign_net_amount_billion"], -0.5)
         self.assertIn("twse_close", records[0])
         self.assertIn("ret_60d", records[0])
         self.assertIsNotNone(records[0]["ret_60d"])
