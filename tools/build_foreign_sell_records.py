@@ -20,6 +20,9 @@ import argparse
 import json
 import sqlite3
 import sys
+import time
+import urllib.error
+import urllib.request
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -35,11 +38,14 @@ DATA_OUT = ROOT / "assets" / "foreign_sell_records.json"
 PAGE_OUT = ROOT / "reports" / "foreign-sell-records.html"
 MANIFEST_PATH = ROOT / "manifest.json"
 FUTURES_BASIS_PATH = ROOT / "assets" / "futures_basis.json"
+OFFICIAL_MARKET_FLOW_PATH = ROOT / "assets" / "official_market_foreign_amounts.json"
 HISTORY_DIR_NAME = "foreign_sell_records"
 TPE = ZoneInfo("Asia/Taipei")
 
 DEFAULT_HORIZONS = [1, 3, 5, 10, 20, 30, 60]
 DEFAULT_TOP_N = 20
+MARKET_CANDIDATE_MULTIPLIER = 10
+MARKET_CANDIDATE_MIN = 200
 SHARES_PER_LOT = 1000
 EXCLUDE_PREFIX = ("00",)
 
@@ -141,6 +147,9 @@ def build_market_records_from_frames(
             "foreign_sell_amount": _to_rounded_amount(event.get("foreign_sell_amount")),
             "amount_estimate_source_rows": _to_int(event.get("source_rows")),
             "amount_estimate_priced_rows": _to_int(event.get("priced_rows")),
+            "amount_source": _first_text(event.get("amount_source"), "estimated_vwap"),
+            "twse_foreign_net_amount": _to_rounded_amount(event.get("twse_foreign_net_amount")),
+            "tpex_foreign_net_amount": _to_rounded_amount(event.get("tpex_foreign_net_amount")),
             "twse_close": close,
             "index_date_actual": price_row.get("trade_date").date().isoformat() if price_row is not None else None,
         }
@@ -189,6 +198,12 @@ def _normalize_market_flow(frame: pd.DataFrame) -> pd.DataFrame:
         if col not in out.columns:
             out[col] = pd.NA
         out[col] = pd.to_numeric(out[col], errors="coerce")
+    for col in ("twse_foreign_net_amount", "tpex_foreign_net_amount"):
+        if col not in out.columns:
+            out[col] = pd.NA
+        out[col] = pd.to_numeric(out[col], errors="coerce")
+    if "amount_source" not in out.columns:
+        out["amount_source"] = "estimated_vwap"
     for col in ("source_rows", "priced_rows"):
         if col not in out.columns:
             out[col] = pd.NA
@@ -395,7 +410,7 @@ def _load_prices_for_events(conn: sqlite3.Connection, events: pd.DataFrame, hori
 def _load_market_flow_records(
     conn: sqlite3.Connection,
     *,
-    top_n: int,
+    limit: int,
     start_date: str | None,
     end_date: str | None,
 ) -> pd.DataFrame:
@@ -446,9 +461,194 @@ def _load_market_flow_records(
         LIMIT ?
         """,
         conn,
-        params=[*params, top_n],
+        params=[*params, limit],
         parse_dates=["trade_date"],
     )
+
+
+def _with_official_market_amounts(market_flow: pd.DataFrame) -> pd.DataFrame:
+    if market_flow.empty:
+        return market_flow
+
+    out = market_flow.copy()
+    dates = [pd.Timestamp(x).date().isoformat() for x in out["trade_date"]]
+    official = _load_official_market_amount_cache()
+    changed = False
+
+    for trade_date in dates:
+        if trade_date not in official:
+            row = _fetch_official_market_amount(trade_date)
+            if row:
+                official[trade_date] = row
+                changed = True
+                # Keep requests gentle; daily runs usually fetch only one new date.
+                time.sleep(0.08)
+
+    if changed:
+        _write_official_market_amount_cache(official)
+
+    for col in (
+        "twse_foreign_buy_amount",
+        "twse_foreign_sell_amount",
+        "twse_foreign_net_amount",
+        "tpex_foreign_buy_amount",
+        "tpex_foreign_sell_amount",
+        "tpex_foreign_net_amount",
+        "official_source_count",
+    ):
+        out[col] = pd.NA
+    out["amount_source"] = "estimated_vwap"
+
+    for idx, row in out.iterrows():
+        trade_date = pd.Timestamp(row["trade_date"]).date().isoformat()
+        official_row = official.get(trade_date)
+        if not official_row:
+            continue
+        net = _to_float(official_row.get("foreign_net_amount"))
+        buy = _to_float(official_row.get("foreign_buy_amount"))
+        sell = _to_float(official_row.get("foreign_sell_amount"))
+        if net is None or buy is None or sell is None:
+            continue
+        out.at[idx, "foreign_buy_amount"] = buy
+        out.at[idx, "foreign_sell_amount"] = sell
+        out.at[idx, "foreign_net_amount"] = net
+        out.at[idx, "amount_source"] = official_row.get("source", "official_twse_tpex")
+        for key in (
+            "twse_foreign_buy_amount",
+            "twse_foreign_sell_amount",
+            "twse_foreign_net_amount",
+            "tpex_foreign_buy_amount",
+            "tpex_foreign_sell_amount",
+            "tpex_foreign_net_amount",
+            "official_source_count",
+        ):
+            out.at[idx, key] = official_row.get(key)
+
+    return out
+
+
+def _load_official_market_amount_cache() -> dict[str, dict]:
+    if not OFFICIAL_MARKET_FLOW_PATH.exists():
+        return {}
+    try:
+        raw = json.loads(OFFICIAL_MARKET_FLOW_PATH.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+    rows = raw.get("dates", raw) if isinstance(raw, dict) else {}
+    return rows if isinstance(rows, dict) else {}
+
+
+def _write_official_market_amount_cache(rows: dict[str, dict]) -> None:
+    OFFICIAL_MARKET_FLOW_PATH.parent.mkdir(parents=True, exist_ok=True)
+    ordered = {key: rows[key] for key in sorted(rows)}
+    payload = {
+        "updated_at": datetime.now(TPE).isoformat(),
+        "source": "TWSE BFI82U + TPEx insti/summary official foreign buy/sell amount",
+        "dates": ordered,
+    }
+    OFFICIAL_MARKET_FLOW_PATH.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
+def _fetch_official_market_amount(trade_date: str) -> dict | None:
+    compact = trade_date.replace("-", "")
+    slash = trade_date.replace("-", "/")
+    twse = _fetch_twse_market_amount(compact)
+    tpex = _fetch_tpex_market_amount(slash)
+    rows = [row for row in (twse, tpex) if row]
+    if not rows:
+        return None
+    buy = sum(_to_float(row.get("foreign_buy_amount")) or 0 for row in rows)
+    sell = sum(_to_float(row.get("foreign_sell_amount")) or 0 for row in rows)
+    net = sum(_to_float(row.get("foreign_net_amount")) or 0 for row in rows)
+    out = {
+        "trade_date": trade_date,
+        "foreign_buy_amount": buy,
+        "foreign_sell_amount": sell,
+        "foreign_net_amount": net,
+        "source": "official_twse_tpex" if twse and tpex else ("official_twse" if twse else "official_tpex"),
+        "official_source_count": len(rows),
+        "fetched_at": datetime.now(TPE).isoformat(),
+    }
+    if twse:
+        out.update(
+            {
+                "twse_foreign_buy_amount": twse.get("foreign_buy_amount"),
+                "twse_foreign_sell_amount": twse.get("foreign_sell_amount"),
+                "twse_foreign_net_amount": twse.get("foreign_net_amount"),
+            }
+        )
+    if tpex:
+        out.update(
+            {
+                "tpex_foreign_buy_amount": tpex.get("foreign_buy_amount"),
+                "tpex_foreign_sell_amount": tpex.get("foreign_sell_amount"),
+                "tpex_foreign_net_amount": tpex.get("foreign_net_amount"),
+            }
+        )
+    return out
+
+
+def _fetch_twse_market_amount(compact_date: str) -> dict | None:
+    url = f"https://www.twse.com.tw/rwd/zh/fund/BFI82U?dayDate={compact_date}&type=day&response=json"
+    data = _fetch_json_url(url)
+    if not data or data.get("stat") != "OK":
+        return None
+    for row in data.get("data", []):
+        label = str(row[0]).strip() if row else ""
+        if label == "外資及陸資(不含外資自營商)":
+            return {
+                "foreign_buy_amount": _parse_int(row[1]),
+                "foreign_sell_amount": _parse_int(row[2]),
+                "foreign_net_amount": _parse_int(row[3]),
+            }
+    return None
+
+
+def _fetch_tpex_market_amount(slash_date: str) -> dict | None:
+    url = f"https://www.tpex.org.tw/www/zh-tw/insti/summary?date={slash_date}&type=Daily&prod=1&response=json"
+    data = _fetch_json_url(url)
+    if not data or str(data.get("stat", "")).lower() != "ok":
+        return None
+    tables = data.get("tables", [])
+    if not tables:
+        return None
+    preferred = None
+    fallback = None
+    for row in tables[0].get("data", []):
+        label = str(row[0]).replace("\u3000", "").strip() if row else ""
+        if label == "外資及陸資合計":
+            preferred = row
+            break
+        if label == "外資及陸資(不含自營商)":
+            fallback = row
+    row = preferred or fallback
+    if not row:
+        return None
+    return {
+        "foreign_buy_amount": _parse_int(row[1]),
+        "foreign_sell_amount": _parse_int(row[2]),
+        "foreign_net_amount": _parse_int(row[3]),
+    }
+
+
+def _fetch_json_url(url: str) -> dict | None:
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            return json.loads(resp.read().decode("utf-8"))
+    except (urllib.error.URLError, TimeoutError, json.JSONDecodeError):
+        return None
+
+
+def _parse_int(value: object) -> int:
+    if value is None:
+        return 0
+    if isinstance(value, (int, float)):
+        return int(value)
+    text = str(value).replace(",", "").replace("+", "").strip()
+    if text in {"", "--", "---"}:
+        return 0
+    return int(text)
 
 
 def _load_index_prices() -> pd.DataFrame:
@@ -485,7 +685,7 @@ def build_payload(
         "top_n": top_n,
         "horizons": horizons,
         "include_etf": include_etf,
-        "source": "stock_chip.db institutional.foreign_net; stock returns from daily_price close; market foreign net amount estimated from daily_price amount/volume VWAP; market returns from futures_basis.twse_close",
+        "source": "stock_chip.db institutional.foreign_net; stock returns from daily_price close; market foreign amount from TWSE BFI82U + TPEx insti/summary official daily amount, with VWAP estimate only if official source is unavailable; market returns from futures_basis.twse_close",
         "note": "僅追蹤外資單日賣超事件後走勢，不構成投資建議。",
         "rankings": {
             "top10": records[:10],
@@ -545,12 +745,14 @@ def main() -> int:
             include_etf=args.include_etf,
         )
         prices = _load_prices_for_events(conn, events, horizons)
+        market_candidate_limit = max(args.top_n * MARKET_CANDIDATE_MULTIPLIER, MARKET_CANDIDATE_MIN)
         market_flow = _load_market_flow_records(
             conn,
-            top_n=args.top_n,
+            limit=market_candidate_limit,
             start_date=args.start_date,
             end_date=args.end_date,
         )
+        market_flow = _with_official_market_amounts(market_flow)
     index_prices = _load_index_prices()
 
     records = build_records_from_frames(
@@ -735,7 +937,7 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
       <h1 class="report-title">外資史上<em>賣超</em>紀錄</h1>
       <p class="report-lead">
         以 institutional.foreign_net 單日淨買賣超排序，分成「個股」與「大盤」兩組紀錄。
-        個股表追蹤事件股票後續走勢；大盤表以外資股數乘當日成交均價估算淨賣超金額，
+        個股表追蹤事件股票後續走勢；大盤表使用 TWSE 與 TPEx 官方三大法人買賣金額彙總表的外資淨買賣金額，
         追蹤加權指數後續 1/3/5/10/20/30/60 個交易日漲跌幅。
         本表只做追蹤與統計，不做投資建議。
       </p>
@@ -787,6 +989,12 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
     const sign = n >= 0 ? '+' : '';
     return `${sign}${n.toLocaleString(undefined, {minimumFractionDigits: 1, maximumFractionDigits: 1})} 億`;
   }
+  function amountSourceLabel(source) {
+    if (source === 'official_twse_tpex') return '官方金額（上市+上櫃）';
+    if (source === 'official_twse') return '官方金額（上市）';
+    if (source === 'official_tpex') return '官方金額（上櫃）';
+    return '估算成交額';
+  }
   function currentRecords() {
     return currentMode === 'market' ? (DATA.market_records || []) : (DATA.records || []);
   }
@@ -797,7 +1005,7 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
       document.getElementById('fsr-stats').innerHTML = [
         `<span>紀錄筆數：<strong>${r.length}</strong></span>`,
         `<span>最大賣超金額：<strong>${top.trade_date || '—'} ${top.foreign_net_amount != null ? fmtBillion(top.foreign_net_amount) : ''}</strong></span>`,
-        `<span>口徑：<strong>估算成交額（VWAP）</strong></span>`,
+        `<span>口徑：<strong>${amountSourceLabel(top.amount_source)}</strong></span>`,
         `<span>追蹤標的：<strong>加權指數 1/3/5/10/20/30/60 日</strong></span>`
       ].join('');
       return;

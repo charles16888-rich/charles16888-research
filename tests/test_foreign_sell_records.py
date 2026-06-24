@@ -80,6 +80,7 @@ def _market_flow():
                 "foreign_buy_amount": 50_000_000,
                 "foreign_sell_amount": 100_000_000,
                 "foreign_net_amount": -50_000_000,
+                "amount_source": "official_twse_tpex",
             },
             {
                 "trade_date": "2024-01-03",
@@ -135,6 +136,7 @@ class ForeignSellRecordTests(unittest.TestCase):
         self.assertEqual([r["trade_date"] for r in records], ["2024-01-02", "2024-01-01"])
         self.assertEqual(records[0]["foreign_net_amount"], -50_000_000)
         self.assertEqual(records[0]["foreign_net_amount_billion"], -0.5)
+        self.assertEqual(records[0]["amount_source"], "official_twse_tpex")
         self.assertIn("twse_close", records[0])
         self.assertIn("ret_60d", records[0])
         self.assertIsNotNone(records[0]["ret_60d"])
