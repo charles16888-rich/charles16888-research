@@ -1,4 +1,5 @@
 import importlib.util
+import sqlite3
 import unittest
 from pathlib import Path
 
@@ -140,6 +141,70 @@ class ForeignSellRecordTests(unittest.TestCase):
         self.assertIn("twse_close", records[0])
         self.assertIn("ret_60d", records[0])
         self.assertIsNotNone(records[0]["ret_60d"])
+
+    def test_loads_market_records_from_official_db_table(self):
+        conn = sqlite3.connect(":memory:")
+        conn.executescript(
+            """
+            CREATE TABLE institutional (
+                date TEXT,
+                code TEXT,
+                name TEXT,
+                foreign_buy INTEGER,
+                foreign_sell INTEGER,
+                foreign_net INTEGER
+            );
+            CREATE TABLE market_institutional_amounts (
+                date TEXT,
+                market TEXT,
+                foreign_buy_amount INTEGER,
+                foreign_sell_amount INTEGER,
+                foreign_net_amount INTEGER,
+                trust_buy_amount INTEGER,
+                trust_sell_amount INTEGER,
+                trust_net_amount INTEGER,
+                dealer_buy_amount INTEGER,
+                dealer_sell_amount INTEGER,
+                dealer_net_amount INTEGER,
+                total_buy_amount INTEGER,
+                total_sell_amount INTEGER,
+                total_net_amount INTEGER,
+                source TEXT,
+                fetched_at TEXT
+            );
+            """
+        )
+        conn.executemany(
+            "INSERT INTO institutional VALUES (?, ?, ?, ?, ?, ?)",
+            [
+                ("2024-01-02", "2330", "TSMC", 1000, 3000, -2000),
+                ("2024-01-02", "2317", "Hon Hai", 2000, 5000, -3000),
+            ],
+        )
+        conn.executemany(
+            "INSERT INTO market_institutional_amounts VALUES (?, ?, ?, ?, ?, 0, 0, 0, 0, 0, 0, 0, 0, 0, ?, 'now')",
+            [
+                ("2024-01-02", "twse", 10, 50, -40, "twse_bfi82u"),
+                ("2024-01-02", "tpex", 3, 8, -5, "tpex_insti_summary_prod1"),
+                ("2024-01-02", "total", 13, 58, -45, "tpex+twse"),
+            ],
+        )
+
+        flow = foreign_sell_records._load_market_flow_records(
+            conn,
+            limit=10,
+            start_date=None,
+            end_date=None,
+        )
+
+        self.assertEqual(len(flow), 1)
+        row = flow.iloc[0]
+        self.assertEqual(row["foreign_net_amount"], -45)
+        self.assertEqual(row["foreign_buy_amount"], 13)
+        self.assertEqual(row["foreign_sell_amount"], 58)
+        self.assertEqual(row["foreign_net_buy_shares"], -5000)
+        self.assertEqual(row["amount_source"], "official_twse_tpex")
+        self.assertEqual(row["official_source_count"], 2)
 
 
 if __name__ == "__main__":

@@ -50,6 +50,13 @@ SHARES_PER_LOT = 1000
 EXCLUDE_PREFIX = ("00",)
 
 
+def _display_path(path: Path) -> str:
+    try:
+        return str(path.resolve().relative_to(ROOT.resolve()))
+    except (OSError, ValueError):
+        return str(path)
+
+
 def build_records_from_frames(
     institutional: pd.DataFrame,
     prices: pd.DataFrame,
@@ -414,50 +421,90 @@ def _load_market_flow_records(
     start_date: str | None,
     end_date: str | None,
 ) -> pd.DataFrame:
-    where: list[str] = []
+    has_official_table = conn.execute(
+        """
+        SELECT 1
+        FROM sqlite_master
+        WHERE type = 'table'
+          AND name = 'market_institutional_amounts'
+        """
+    ).fetchone()
+    columns = [
+        "trade_date",
+        "foreign_buy",
+        "foreign_sell",
+        "foreign_net_buy_shares",
+        "foreign_buy_amount",
+        "foreign_sell_amount",
+        "foreign_net_amount",
+        "source_rows",
+        "priced_rows",
+        "amount_source",
+        "twse_foreign_buy_amount",
+        "twse_foreign_sell_amount",
+        "twse_foreign_net_amount",
+        "tpex_foreign_buy_amount",
+        "tpex_foreign_sell_amount",
+        "tpex_foreign_net_amount",
+        "official_source_count",
+    ]
+    if not has_official_table:
+        return pd.DataFrame(columns=columns)
+
+    where: list[str] = ["m.market = 'total'", "m.foreign_net_amount < 0"]
     params: list[object] = []
     if start_date:
-        where.append("i.date >= ?")
+        where.append("m.date >= ?")
         params.append(start_date)
     if end_date:
-        where.append("i.date <= ?")
+        where.append("m.date <= ?")
         params.append(end_date)
-    where_sql = "WHERE " + " AND ".join(where) if where else ""
+    where_sql = "WHERE " + " AND ".join(where)
     return pd.read_sql_query(
         f"""
-        WITH priced AS (
-            SELECT i.date AS trade_date,
-                   i.foreign_buy,
-                   i.foreign_sell,
-                   i.foreign_net,
-                   CASE
-                       WHEN dp.volume > 0 AND dp.amount IS NOT NULL THEN dp.amount * 1.0 / dp.volume
-                       WHEN dp.close IS NOT NULL THEN dp.close
-                       ELSE NULL
-                   END AS estimate_price
-            FROM institutional i
-            LEFT JOIN daily_price dp
-                   ON dp.date = i.date
-                  AND dp.code = i.code
-            {where_sql}
-        ),
-        daily AS (
-            SELECT trade_date,
+        WITH daily AS (
+            SELECT date AS trade_date,
                    SUM(foreign_buy) AS foreign_buy,
                    SUM(foreign_sell) AS foreign_sell,
                    SUM(foreign_net) AS foreign_net_buy_shares,
-                   SUM(foreign_buy * estimate_price) AS foreign_buy_amount,
-                   SUM(foreign_sell * estimate_price) AS foreign_sell_amount,
-                   SUM(foreign_net * estimate_price) AS foreign_net_amount,
-                   COUNT(*) AS source_rows,
-                   SUM(CASE WHEN estimate_price IS NOT NULL THEN 1 ELSE 0 END) AS priced_rows
-            FROM priced
-            GROUP BY trade_date
-        )
-        SELECT *
-        FROM daily
-        WHERE foreign_net_amount < 0
-        ORDER BY foreign_net_amount ASC
+                   COUNT(*) AS source_rows
+            FROM institutional
+            GROUP BY date
+         )
+        SELECT m.date AS trade_date,
+               d.foreign_buy,
+               d.foreign_sell,
+               d.foreign_net_buy_shares,
+               m.foreign_buy_amount,
+               m.foreign_sell_amount,
+               m.foreign_net_amount,
+               d.source_rows,
+               (
+                 CASE WHEN twse.market IS NOT NULL THEN 1 ELSE 0 END +
+                 CASE WHEN tpex.market IS NOT NULL THEN 1 ELSE 0 END
+               ) AS priced_rows,
+               'official_twse_tpex' AS amount_source,
+               twse.foreign_buy_amount AS twse_foreign_buy_amount,
+               twse.foreign_sell_amount AS twse_foreign_sell_amount,
+               twse.foreign_net_amount AS twse_foreign_net_amount,
+               tpex.foreign_buy_amount AS tpex_foreign_buy_amount,
+               tpex.foreign_sell_amount AS tpex_foreign_sell_amount,
+               tpex.foreign_net_amount AS tpex_foreign_net_amount,
+               (
+                 CASE WHEN twse.market IS NOT NULL THEN 1 ELSE 0 END +
+                 CASE WHEN tpex.market IS NOT NULL THEN 1 ELSE 0 END
+               ) AS official_source_count
+        FROM market_institutional_amounts m
+        LEFT JOIN daily d
+               ON d.trade_date = m.date
+        LEFT JOIN market_institutional_amounts twse
+               ON twse.date = m.date
+              AND twse.market = 'twse'
+        LEFT JOIN market_institutional_amounts tpex
+               ON tpex.date = m.date
+              AND tpex.market = 'tpex'
+        {where_sql}
+        ORDER BY m.foreign_net_amount ASC
         LIMIT ?
         """,
         conn,
@@ -685,7 +732,7 @@ def build_payload(
         "top_n": top_n,
         "horizons": horizons,
         "include_etf": include_etf,
-        "source": "stock_chip.db institutional.foreign_net; stock returns from daily_price close; market foreign amount from TWSE BFI82U + TPEx insti/summary official daily amount, with VWAP estimate only if official source is unavailable; market returns from futures_basis.twse_close",
+        "source": "stock_chip.db institutional.foreign_net; stock returns from daily_price close; market foreign amount from stock_chip.db market_institutional_amounts official TWSE BFI82U + TPEx insti/summary daily amount; market returns from futures_basis.twse_close",
         "note": "僅追蹤外資單日賣超事件後走勢，不構成投資建議。",
         "rankings": {
             "top10": records[:10],
@@ -752,7 +799,6 @@ def main() -> int:
             start_date=args.start_date,
             end_date=args.end_date,
         )
-        market_flow = _with_official_market_amounts(market_flow)
     index_prices = _load_index_prices()
 
     records = build_records_from_frames(
@@ -787,16 +833,16 @@ def main() -> int:
     dated_path = ROOT / "assets" / "chip_history" / HISTORY_DIR_NAME / f"{as_of_date}.json"
     dated_path.parent.mkdir(parents=True, exist_ok=True)
     dated_path.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
-    print(f"[OK] {dated_path.relative_to(ROOT)} (dated)")
+    print(f"[OK] {_display_path(dated_path)} (dated)")
     _update_history_index(as_of_date)
 
     is_latest_run = as_of_date == source_end
     if is_latest_run and not args.history_only:
         DATA_OUT.parent.mkdir(parents=True, exist_ok=True)
         DATA_OUT.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
-        print(f"[OK] {DATA_OUT.relative_to(ROOT)}")
+        print(f"[OK] {_display_path(DATA_OUT)}")
         render_html(payload)
-        print(f"[OK] {PAGE_OUT.relative_to(ROOT)}")
+        print(f"[OK] {_display_path(PAGE_OUT)}")
         update_manifest(payload)
         print("[OK] manifest.json — foreign-sell-records entry refreshed")
     else:
