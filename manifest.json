@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-06-25T15:03:13+08:00",
-  "today": "2026-06-24",
+  "updated_at": "2026-06-25T19:59:37+08:00",
+  "today": "2026-06-25",
   "volume_number": 1,
   "market_summary": {
     "date": "2026-05-22",
@@ -21,6 +21,321 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "three-factor-ranking",
+      "category": "chips",
+      "type": "ranking",
+      "date": "2026-06-25",
+      "time": "21:10",
+      "title": "三因子波段排行榜",
+      "title_em": "外資×營收×強勢",
+      "summary": "外資連買 >= 3 日、最新月營收創高、20/60 日趨勢仍強。 本次三因子同步 16 檔。 榜首：7610 聯友金屬-創，外資連買 3 日，營收 YoY +462.2%，前 20 日 +82.9%。",
+      "tags": [
+        "波段",
+        "外資連買",
+        "營收創高",
+        "強者恆強",
+        "排行榜"
+      ],
+      "source_pipeline": "stock_chip_crawler+mops_index",
+      "url": "reports/three-factor-ranking.html",
+      "stats": [
+        {
+          "label": "三因子同步",
+          "value": "16 檔",
+          "color": "up"
+        },
+        {
+          "label": "營收期別",
+          "value": "2026-05",
+          "color": "neutral"
+        },
+        {
+          "label": "榜首",
+          "value": "7610 80.2",
+          "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "foreign-sell-records",
+      "category": "chips",
+      "type": "ranking",
+      "date": "2026-06-25",
+      "time": "21:05",
+      "title": "外資史上賣超紀錄 · 個股 / 大盤金額 Top 20",
+      "title_em": "賣超",
+      "summary": "外資單日淨賣超史上 Top 20，並加入大盤外資淨賣超金額 Top 20。追蹤事件後 1/3/5/10/20/30/60 日走勢。 最大紀錄：2026-05-28 3481 群創 -289,338 張。 大盤最大金額：2026-06-24 -1,955.5億。",
+      "tags": [
+        "籌碼",
+        "外資",
+        "賣超",
+        "成交額",
+        "事件追蹤"
+      ],
+      "source_pipeline": "stock_chip_crawler",
+      "url": "reports/foreign-sell-records.html?v=20260625-official",
+      "stats": [
+        {
+          "label": "個股最大",
+          "value": "3481 -289,338張",
+          "color": "down"
+        },
+        {
+          "label": "大盤金額",
+          "value": "-1,955.5億",
+          "color": "down"
+        },
+        {
+          "label": "走勢",
+          "value": "1-60日",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "chip-concentration",
+      "category": "chips",
+      "type": "ranking",
+      "date": "2026-06-25",
+      "time": "21:00",
+      "title": "籌碼集中度 · 分點 Top 50 排行",
+      "title_em": "集中度",
+      "summary": "5 個時段 · 每邊 Top 50 · 過濾成交量 < 1,000 張。 今日買超集中 #1：5880 合庫金 +60.0%。 賣超集中 #1：1795 美時 -60.9%。",
+      "tags": [
+        "籌碼",
+        "分點",
+        "集中度",
+        "排行榜"
+      ],
+      "source_pipeline": "stock_chip_crawler",
+      "url": "reports/chip-concentration.html",
+      "stats": [
+        {
+          "label": "時段數",
+          "value": "5",
+          "color": "neutral"
+        },
+        {
+          "label": "Top 買超",
+          "value": "5880 +60%",
+          "color": "up"
+        },
+        {
+          "label": "Top 賣超",
+          "value": "1795 -61%",
+          "color": "down"
+        }
+      ]
+    },
+    {
+      "id": "options-atm",
+      "category": "txo",
+      "type": "pulse",
+      "date": "2026-06-25",
+      "time": "20:00",
+      "title": "選擇權價平和 · 隱含波動代理",
+      "title_em": "價平和",
+      "summary": "近 746 個交易日（2023-05-30 → 2026-06-25）TXO ATM Call+Put 加總。最新 (2026-06-25)：近期 838 點（到期 202606F4）、次遠期 1645 點。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "價平和",
+        "隱波"
+      ],
+      "source_pipeline": "taifex + twse",
+      "url": "reports/options-atm.html",
+      "stats": [
+        {
+          "label": "近期 C+P",
+          "value": "838",
+          "color": "neutral"
+        },
+        {
+          "label": "次遠期 C+P",
+          "value": "1645",
+          "color": "neutral"
+        },
+        {
+          "label": "區間",
+          "value": "746 日",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "market-pulse",
+      "category": "taiex",
+      "type": "pulse",
+      "date": "2026-06-25",
+      "time": "20:00",
+      "title": "市場脈動 · 漲跌停 × 全族群均幅",
+      "title_em": "脈動",
+      "summary": "近 47 個交易日漲跌停家數、總成交額、族群平均漲幅、漲停集中度。最新 (2026-06-25)：漲停 41、跌停 5、全族群均幅 +0.01%。",
+      "tags": [
+        "市場脈動",
+        "漲跌停",
+        "成交額"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/market-pulse.html",
+      "stats": [
+        {
+          "label": "漲停",
+          "value": "41",
+          "color": "up"
+        },
+        {
+          "label": "跌停",
+          "value": "5",
+          "color": "down"
+        },
+        {
+          "label": "成交額",
+          "value": "14,972 億",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "futures-basis",
+      "category": "taiex",
+      "type": "pulse",
+      "date": "2026-06-25",
+      "time": "20:00",
+      "title": "期貨正逆價差 · 12 年期現對照",
+      "title_em": "12 年",
+      "summary": "近 3006 個交易日（2014-02-14 → 2026-06-25）台指期 TXF1 vs 加權指數價差。最新 (2026-06-25)：基差 +288.7 點，加權收 46,255。",
+      "tags": [
+        "期貨",
+        "基差",
+        "正逆價差",
+        "TX",
+        "12 年"
+      ],
+      "source_pipeline": "yuanta + yfinance",
+      "url": "reports/futures-basis.html",
+      "stats": [
+        {
+          "label": "最新基差",
+          "value": "+288.7",
+          "color": "up"
+        },
+        {
+          "label": "加權",
+          "value": "46,255",
+          "color": "neutral"
+        },
+        {
+          "label": "區間",
+          "value": "3006 日",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-06-25-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-06-25",
+      "time": "20:00",
+      "title": "2026-06-25 族群週報",
+      "title_em": "晶圓代工",
+      "summary": "涵蓋 2026-06-18 ~ 2026-06-25。週領漲 晶圓代工 +19.34%，週領跌 化合物半導體 -9.06%；資金焦點 晶圓代工。",
+      "tags": [
+        "晶圓代工",
+        "化合物半導體",
+        "晶圓代工",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-06-25/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "晶圓代工 +19.34%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "化合物半導體 -9.06%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "晶圓代工",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-06-25-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-06-25",
+      "time": "20:00",
+      "title": "2026-06-25 每日族群輪動雷達",
+      "title_em": "ABF載板",
+      "summary": "今日相對升溫以 ABF載板 最明顯，相對降溫以 面板級封裝FOPLP 壓力最大；今日轉強力道大於轉弱力道。",
+      "tags": [
+        "ABF載板",
+        "面板級封裝FOPLP",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-06-25/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "ABF載板 +8.52 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "面板級封裝FOPLP -4.16 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-06-25-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-06-25",
+      "time": "20:00",
+      "title": "2026-06-25 族群盤後快報",
+      "title_em": "ABF載板",
+      "summary": "全 74 族群、成交 14971.6 億；領漲 ABF載板 +9.62%，領跌 LED -3.03%；漲多族群 33/74，全族群均漲 +0.01%。",
+      "tags": [
+        "ABF載板",
+        "LED",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-06-25/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "ABF載板 +9.62%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "LED -3.03%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "8.7%",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "options-annual-2026",
       "category": "txo",
@@ -93,6 +408,20 @@
       ]
     },
     {
+      "id": "tri-source-lamp",
+      "category": "chips",
+      "title": "三源混合燈號",
+      "subtitle": "2026-06-25 · 三同買 8 / 三同賣 14",
+      "date": "2026-06-25",
+      "url": "reports/tri-source-lamp.html",
+      "tags": [
+        "分點",
+        "大股東",
+        "三大法人",
+        "燈號"
+      ]
+    },
+    {
       "id": "q2-forecast-2026q2",
       "category": "research",
       "type": "forecast",
@@ -125,218 +454,6 @@
           "label": "三率完整",
           "value": "410",
           "color": "up"
-        }
-      ]
-    },
-    {
-      "id": "three-factor-ranking",
-      "category": "chips",
-      "type": "ranking",
-      "date": "2026-06-24",
-      "time": "21:10",
-      "title": "三因子波段排行榜",
-      "title_em": "外資×營收×強勢",
-      "summary": "外資連買 >= 3 日、最新月營收創高、20/60 日趨勢仍強。 本次三因子同步 12 檔。 榜首：1714 和桐，外資連買 3 日，營收 YoY +84.8%，前 20 日 +100.3%。",
-      "tags": [
-        "波段",
-        "外資連買",
-        "營收創高",
-        "強者恆強",
-        "排行榜"
-      ],
-      "source_pipeline": "stock_chip_crawler+mops_index",
-      "url": "reports/three-factor-ranking.html",
-      "stats": [
-        {
-          "label": "三因子同步",
-          "value": "12 檔",
-          "color": "up"
-        },
-        {
-          "label": "營收期別",
-          "value": "2026-05",
-          "color": "neutral"
-        },
-        {
-          "label": "榜首",
-          "value": "1714 72.9",
-          "color": "up"
-        }
-      ]
-    },
-    {
-      "id": "foreign-sell-records",
-      "category": "chips",
-      "type": "ranking",
-      "date": "2026-06-24",
-      "time": "21:05",
-      "title": "外資史上賣超紀錄 · 個股 / 大盤金額 Top 20",
-      "title_em": "賣超",
-      "summary": "外資單日淨賣超史上 Top 20，並加入大盤外資淨賣超金額 Top 20。追蹤事件後 1/3/5/10/20/30/60 日走勢。 最大紀錄：2026-05-28 3481 群創 -289,338 張。 大盤最大金額：2026-06-24 -1,955.5億。",
-      "tags": [
-        "籌碼",
-        "外資",
-        "賣超",
-        "成交額",
-        "事件追蹤"
-      ],
-      "source_pipeline": "stock_chip_crawler",
-      "url": "reports/foreign-sell-records.html?v=20260624-official",
-      "stats": [
-        {
-          "label": "個股最大",
-          "value": "3481 -289,338張",
-          "color": "down"
-        },
-        {
-          "label": "大盤金額",
-          "value": "-1,955.5億",
-          "color": "down"
-        },
-        {
-          "label": "走勢",
-          "value": "1-60日",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "chip-concentration",
-      "category": "chips",
-      "type": "ranking",
-      "date": "2026-06-24",
-      "time": "21:00",
-      "title": "籌碼集中度 · 分點 Top 50 排行",
-      "title_em": "集中度",
-      "summary": "5 個時段 · 每邊 Top 50 · 過濾成交量 < 1,000 張。 今日買超集中 #1：6226 光鼎 +58.6%。 賣超集中 #1：0050 元大台灣50 -54.2%。",
-      "tags": [
-        "籌碼",
-        "分點",
-        "集中度",
-        "排行榜"
-      ],
-      "source_pipeline": "stock_chip_crawler",
-      "url": "reports/chip-concentration.html",
-      "stats": [
-        {
-          "label": "時段數",
-          "value": "5",
-          "color": "neutral"
-        },
-        {
-          "label": "Top 買超",
-          "value": "6226 +59%",
-          "color": "up"
-        },
-        {
-          "label": "Top 賣超",
-          "value": "0050 -54%",
-          "color": "down"
-        }
-      ]
-    },
-    {
-      "id": "options-atm",
-      "category": "txo",
-      "type": "pulse",
-      "date": "2026-06-24",
-      "time": "20:00",
-      "title": "選擇權價平和 · 隱含波動代理",
-      "title_em": "價平和",
-      "summary": "近 745 個交易日（2023-05-30 → 2026-06-24）TXO ATM Call+Put 加總。最新 (2026-06-24)：近期 1225 點（到期 202606F4）、次遠期 1875 點。",
-      "tags": [
-        "選擇權",
-        "TXO",
-        "價平和",
-        "隱波"
-      ],
-      "source_pipeline": "taifex + twse",
-      "url": "reports/options-atm.html",
-      "stats": [
-        {
-          "label": "近期 C+P",
-          "value": "1225",
-          "color": "neutral"
-        },
-        {
-          "label": "次遠期 C+P",
-          "value": "1875",
-          "color": "neutral"
-        },
-        {
-          "label": "區間",
-          "value": "745 日",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "market-pulse",
-      "category": "taiex",
-      "type": "pulse",
-      "date": "2026-06-24",
-      "time": "20:00",
-      "title": "市場脈動 · 漲跌停 × 全族群均幅",
-      "title_em": "脈動",
-      "summary": "近 46 個交易日漲跌停家數、總成交額、族群平均漲幅、漲停集中度。最新 (2026-06-24)：漲停 53、跌停 7、全族群均幅 +0.09%。",
-      "tags": [
-        "市場脈動",
-        "漲跌停",
-        "成交額"
-      ],
-      "source_pipeline": "industry_map",
-      "url": "reports/market-pulse.html",
-      "stats": [
-        {
-          "label": "漲停",
-          "value": "53",
-          "color": "up"
-        },
-        {
-          "label": "跌停",
-          "value": "7",
-          "color": "down"
-        },
-        {
-          "label": "成交額",
-          "value": "16,230 億",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "futures-basis",
-      "category": "taiex",
-      "type": "pulse",
-      "date": "2026-06-24",
-      "time": "20:00",
-      "title": "期貨正逆價差 · 12 年期現對照",
-      "title_em": "12 年",
-      "summary": "近 3005 個交易日（2014-02-14 → 2026-06-24）台指期 TXF1 vs 加權指數價差。最新 (2026-06-24)：基差 +343.4 點，加權收 46,044。",
-      "tags": [
-        "期貨",
-        "基差",
-        "正逆價差",
-        "TX",
-        "12 年"
-      ],
-      "source_pipeline": "yuanta + yfinance",
-      "url": "reports/futures-basis.html",
-      "stats": [
-        {
-          "label": "最新基差",
-          "value": "+343.4",
-          "color": "up"
-        },
-        {
-          "label": "加權",
-          "value": "46,044",
-          "color": "neutral"
-        },
-        {
-          "label": "區間",
-          "value": "3005 日",
-          "color": "neutral"
         }
       ]
     },
@@ -441,20 +558,6 @@
           "value": "3.1%",
           "color": "neutral"
         }
-      ]
-    },
-    {
-      "id": "tri-source-lamp",
-      "category": "chips",
-      "title": "三源混合燈號",
-      "subtitle": "2026-06-24 · 三同買 8 / 三同賣 10",
-      "date": "2026-06-24",
-      "url": "reports/tri-source-lamp.html",
-      "tags": [
-        "分點",
-        "大股東",
-        "三大法人",
-        "燈號"
       ]
     },
     {
