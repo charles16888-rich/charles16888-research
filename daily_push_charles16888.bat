@@ -44,63 +44,70 @@ if errorlevel 1 (
     exit /b 2
 )
 
-echo [%date% %time%] [1/9] build_sectors_assets >> "%LOG%"
+echo [%date% %time%] [1/10] build_sectors_assets >> "%LOG%"
 "%PY%" tools\build_sectors_assets.py >> "%LOG%" 2>&1
 if errorlevel 1 (
     echo [%date% %time%] ERROR: build_sectors_assets failed >> "%LOG%"
     exit /b 4
 )
 
-echo [%date% %time%] [2/9] build_market_chart >> "%LOG%"
+echo [%date% %time%] [2/10] build_market_chart >> "%LOG%"
 "%PY%" tools\build_market_chart.py >> "%LOG%" 2>&1
 if errorlevel 1 (
     echo [%date% %time%] ERROR: build_market_chart failed >> "%LOG%"
     exit /b 4
 )
 
-echo [%date% %time%] [3/9] build_futures_chart >> "%LOG%"
+echo [%date% %time%] [3/10] build_futures_chart >> "%LOG%"
 "%PY%" tools\build_futures_chart.py >> "%LOG%" 2>&1
 if errorlevel 1 (
     echo [%date% %time%] ERROR: build_futures_chart failed >> "%LOG%"
     exit /b 4
 )
 
-echo [%date% %time%] [4/9] build_options_chart >> "%LOG%"
+echo [%date% %time%] [4/10] build_options_chart >> "%LOG%"
 "%PY%" tools\build_options_chart.py >> "%LOG%" 2>&1
 if errorlevel 1 (
     echo [%date% %time%] ERROR: build_options_chart failed >> "%LOG%"
     exit /b 4
 )
 
-echo [%date% %time%] [5/9] build_chip_concentration >> "%LOG%"
+echo [%date% %time%] [5/10] build_chip_concentration >> "%LOG%"
 "%PY%" tools\build_chip_concentration.py >> "%LOG%" 2>&1
 if errorlevel 1 (
     echo [%date% %time%] ERROR: build_chip_concentration failed >> "%LOG%"
     exit /b 4
 )
 
-echo [%date% %time%] [6/9] build_view2_shareholder_divergence >> "%LOG%"
+echo [%date% %time%] [6/10] build_view2_shareholder_divergence >> "%LOG%"
 "%PY%" tools\build_view2_shareholder_divergence.py >> "%LOG%" 2>&1
 if errorlevel 1 (
     echo [%date% %time%] ERROR: build_view2_shareholder_divergence failed >> "%LOG%"
     exit /b 4
 )
 
-echo [%date% %time%] [7/9] build_view4_tri_source_lamp >> "%LOG%"
+echo [%date% %time%] [7/10] build_view4_tri_source_lamp >> "%LOG%"
 "%PY%" tools\build_view4_tri_source_lamp.py >> "%LOG%" 2>&1
 if errorlevel 1 (
     echo [%date% %time%] ERROR: build_view4_tri_source_lamp failed >> "%LOG%"
     exit /b 4
 )
 
-echo [%date% %time%] [8/9] build_three_factor_ranking >> "%LOG%"
+echo [%date% %time%] [8/10] build_three_factor_ranking >> "%LOG%"
 "%PY%" tools\build_three_factor_ranking.py >> "%LOG%" 2>&1
 if errorlevel 1 (
     echo [%date% %time%] ERROR: build_three_factor_ranking failed >> "%LOG%"
     exit /b 4
 )
 
-echo [%date% %time%] [9/9] build_foreign_sell_records >> "%LOG%"
+echo [%date% %time%] [9/10] build_q2_forecast_revenue_compare >> "%LOG%"
+"%PY%" tools\build_q2_forecast_revenue_compare.py >> "%LOG%" 2>&1
+if errorlevel 1 (
+    echo [%date% %time%] ERROR: build_q2_forecast_revenue_compare failed >> "%LOG%"
+    exit /b 4
+)
+
+echo [%date% %time%] [10/10] build_foreign_sell_records >> "%LOG%"
 "%PY%" tools\build_foreign_sell_records.py >> "%LOG%" 2>&1
 if errorlevel 1 (
     echo [%date% %time%] ERROR: build_foreign_sell_records failed >> "%LOG%"
