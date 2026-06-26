@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-06-25T19:59:37+08:00",
+  "updated_at": "2026-06-26T15:03:47+08:00",
   "today": "2026-06-25",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,77 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "options-annual-2026",
+      "category": "txo",
+      "type": "options_annual",
+      "date": "2026-06-26",
+      "time": "15:10",
+      "title": "2026 台股選擇權年度合併報告",
+      "title_em": "年度合併",
+      "summary": "彙整 2026 年 25 份 v2.5 週報，期間 2026-01-01 至 2026-06-26，共 114 個交易日。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "年度合併",
+        "v2.5"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5",
+      "url": "reports/options/annual_reports/2026/台股選擇權年度合併報告_2026_v2.5.html",
+      "stats": [
+        {
+          "label": "週報",
+          "value": "25",
+          "color": "neutral"
+        },
+        {
+          "label": "交易日",
+          "value": "114",
+          "color": "neutral"
+        },
+        {
+          "label": "期間",
+          "value": "2026-01-01 → 2026-06-26",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "options-weekly-20260622-20260626",
+      "category": "txo",
+      "type": "options_weekly",
+      "date": "2026-06-26",
+      "time": "15:00",
+      "title": "台股選擇權籌碼週報 · 20260622-20260626",
+      "title_em": "選擇權",
+      "summary": "v2.5 定價與期現結構版週報，涵蓋 2026-06-22 至 2026-06-26，共 5 個交易日。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "週報",
+        "Max Pain",
+        "P/C Ratio"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5",
+      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260622-20260626_v2.5.html",
+      "stats": [
+        {
+          "label": "週期",
+          "value": "20260622-20260626",
+          "color": "neutral"
+        },
+        {
+          "label": "交易日",
+          "value": "5",
+          "color": "neutral"
+        },
+        {
+          "label": "版本",
+          "value": "v2.5",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "three-factor-ranking",
       "category": "chips",
@@ -332,77 +403,6 @@
         {
           "label": "漲停集中",
           "value": "8.7%",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "options-annual-2026",
-      "category": "txo",
-      "type": "options_annual",
-      "date": "2026-06-25",
-      "time": "15:10",
-      "title": "2026 台股選擇權年度合併報告",
-      "title_em": "年度合併",
-      "summary": "彙整 2026 年 25 份 v2.5 週報，期間 2026-01-01 至 2026-06-25，共 113 個交易日。",
-      "tags": [
-        "選擇權",
-        "TXO",
-        "年度合併",
-        "v2.5"
-      ],
-      "source_pipeline": "stock_project options_report_v2.5",
-      "url": "reports/options/annual_reports/2026/台股選擇權年度合併報告_2026_v2.5.html",
-      "stats": [
-        {
-          "label": "週報",
-          "value": "25",
-          "color": "neutral"
-        },
-        {
-          "label": "交易日",
-          "value": "113",
-          "color": "neutral"
-        },
-        {
-          "label": "期間",
-          "value": "2026-01-01 → 2026-06-25",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "options-weekly-20260622-20260626",
-      "category": "txo",
-      "type": "options_weekly",
-      "date": "2026-06-25",
-      "time": "15:00",
-      "title": "台股選擇權籌碼週報 · 20260622-20260626",
-      "title_em": "選擇權",
-      "summary": "v2.5 定價與期現結構版週報，涵蓋 2026-06-22 至 2026-06-25，共 4 個交易日。",
-      "tags": [
-        "選擇權",
-        "TXO",
-        "週報",
-        "Max Pain",
-        "P/C Ratio"
-      ],
-      "source_pipeline": "stock_project options_report_v2.5",
-      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260622-20260626_v2.5.html",
-      "stats": [
-        {
-          "label": "週期",
-          "value": "20260622-20260626",
-          "color": "neutral"
-        },
-        {
-          "label": "交易日",
-          "value": "4",
-          "color": "neutral"
-        },
-        {
-          "label": "版本",
-          "value": "v2.5",
           "color": "neutral"
         }
       ]
