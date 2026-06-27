@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-06-27T15:00:30+08:00",
+  "updated_at": "2026-06-27T22:44:50+08:00",
   "today": "2026-06-26",
   "volume_number": 1,
   "market_summary": {
@@ -336,6 +336,23 @@
       ]
     },
     {
+      "id": "tri-source-lamp",
+      "category": "chips",
+      "title": "三源混合燈號",
+      "subtitle": "2026-06-25 · 三同買 8 / 三同賣 14",
+      "date": "2026-06-25",
+      "url": "reports/tri-source-lamp.html",
+      "tags": [
+        "分點",
+        "大股東",
+        "三大法人",
+        "燈號"
+      ],
+      "type": "ranking",
+      "time": "21:20",
+      "summary": "三線同買 8 檔、三線同賣 14 檔；分點至 2026-06-25，集保至 2026-06-18。"
+    },
+    {
       "id": "three-factor-ranking",
       "category": "chips",
       "type": "ranking",
@@ -508,20 +525,6 @@
           "value": "8.7%",
           "color": "neutral"
         }
-      ]
-    },
-    {
-      "id": "tri-source-lamp",
-      "category": "chips",
-      "title": "三源混合燈號",
-      "subtitle": "2026-06-25 · 三同買 8 / 三同賣 14",
-      "date": "2026-06-25",
-      "url": "reports/tri-source-lamp.html",
-      "tags": [
-        "分點",
-        "大股東",
-        "三大法人",
-        "燈號"
       ]
     },
     {
@@ -906,6 +909,22 @@
       ]
     },
     {
+      "id": "shareholder-divergence",
+      "category": "chips",
+      "title": "大股東 vs 股價背離掃描",
+      "subtitle": "2026-06-12 → 2026-06-18 週對週 · 2010 檔",
+      "date": "2026-06-18",
+      "url": "reports/shareholder-divergence.html",
+      "tags": [
+        "大股東",
+        "TDCC",
+        "背離"
+      ],
+      "type": "ranking",
+      "time": "21:00",
+      "summary": "掃描大股東持股變化與股價走勢背離，追蹤可能的籌碼分歧。"
+    },
+    {
       "id": "2026-06-18-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -1006,19 +1025,6 @@
           "value": "21.9%",
           "color": "neutral"
         }
-      ]
-    },
-    {
-      "id": "shareholder-divergence",
-      "category": "chips",
-      "title": "大股東 vs 股價背離掃描",
-      "subtitle": "2026-06-12 → 2026-06-18 週對週 · 2010 檔",
-      "date": "2026-06-18",
-      "url": "reports/shareholder-divergence.html",
-      "tags": [
-        "大股東",
-        "TDCC",
-        "背離"
       ]
     },
     {

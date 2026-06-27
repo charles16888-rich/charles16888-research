@@ -29,6 +29,10 @@
     deep_card_full: '深度卡 · 完整版',
     deep_card_lite: '深度卡 · 簡版',
     ranking: '排行榜',
+    forecast: '財測彙總',
+    event: '事件雷達',
+    mops_daily: '重大訊息',
+    news_digest: '新聞匯整',
   };
 
   // ---------- Utilities ----------
@@ -130,6 +134,7 @@
 
     renderCover();
     renderCoverStats();
+    renderDashboard();
     renderTodayReports();
     renderCategoryIndex();
     renderFooter();
@@ -182,6 +187,90 @@
         <div class="stat__sub">${escapeHTML(s.sub || '')}</div>
       </div>
     `).join('');
+  }
+
+  function renderDashboard() {
+    const cover = $('.cover');
+    if (!cover) return;
+
+    let section = $('#dashboard-section');
+    if (!section) {
+      section = el('section', {
+        id: 'dashboard-section',
+        class: 'section section--dashboard scroll-fade',
+        'aria-labelledby': 'dashboard-title'
+      }, [
+        el('div', { class: 'section__head' }, [
+          el('div', { class: 'section__label' }, [
+            el('span', { class: 'section__marker', 'aria-hidden': 'true' }),
+            el('h2', { id: 'dashboard-title', class: 'section__title', html: '市場<em>儀表板</em>' })
+          ]),
+          el('span', { id: 'dashboard-meta', class: 'section__meta' })
+        ]),
+        el('div', { id: 'dashboard-grid', class: 'dashboard-grid' })
+      ]);
+      cover.insertAdjacentElement('afterend', section);
+    }
+
+    const categories = STATE.categories.categories.filter(c => c.enabled !== false);
+    const preferred = ['taiex', 'sectors', 'chips', 'txo', 'mops', 'news', 'stocks', 'research'];
+    const ordered = [
+      ...preferred.map(id => categories.find(c => c.id === id)).filter(Boolean),
+      ...categories.filter(c => !preferred.includes(c.id))
+    ];
+
+    const cards = ordered
+      .map(c => {
+        const entries = entriesByCategory(c.id);
+        return { category: c, entry: entries[0], count: entries.length };
+      })
+      .filter(x => x.entry)
+      .slice(0, 7);
+
+    const meta = $('#dashboard-meta');
+    if (meta) meta.textContent = `${STATE.manifest.today} · ${cards.length} SIGNALS`;
+
+    const host = $('#dashboard-grid');
+    if (!host) return;
+    host.innerHTML = cards.map(renderDashboardCard).join('');
+  }
+
+  function renderDashboardCard(item) {
+    const { category, entry, count } = item;
+    const typeLabel = TYPE_LABELS[entry.type] || entry.type || '更新';
+    const dateText = [entry.date, entry.time].filter(Boolean).join(' ');
+    const summary = entry.summary || dashboardFallbackSummary(entry);
+    const tags = (entry.tags || []).slice(0, 4);
+
+    return `
+      <a class="dashboard-card dashboard-card--${escapeHTML(category.id)}" href="${escapeHTML(entry.url)}">
+        <div class="dashboard-card__kicker">
+          <span>${escapeHTML(category.name_zh)}</span>
+          <span>${escapeHTML(typeLabel)}</span>
+        </div>
+        <h3 class="dashboard-card__title">${emphasizeTitle(entry.title, entry.title_em)}</h3>
+        <p class="dashboard-card__summary">${escapeHTML(summary)}</p>
+        <div class="dashboard-card__foot">
+          <span>${escapeHTML(dateText || entry.date || '')}</span>
+          <span>${count} entries</span>
+        </div>
+        ${tags.length ? `<div class="dashboard-card__tags">${tags.map(t => `<span>${escapeHTML(t)}</span>`).join('')}</div>` : ''}
+      </a>
+    `;
+  }
+
+  function dashboardFallbackSummary(entry) {
+    const tags = (entry.tags || []).slice(0, 3).join(' / ');
+    if (entry.category === 'chips' && entry.id === 'tri-source-lamp') {
+      return '分點主力、大股東與三大法人三線同向訊號，適合先看共識再看個股。';
+    }
+    if (entry.category === 'stocks') {
+      return '個股深度卡彙整基本資料、題材事件與追蹤欄位，作為研究入口。';
+    }
+    if (entry.category === 'mops') {
+      return '重大訊息依事件類型、重大性與例行/非例行狀態整理，先看高影響事件。';
+    }
+    return tags ? `最新標籤：${tags}` : '最新資料已歸檔，點入查看完整表格與圖表。';
   }
 
   function renderTodayReports() {

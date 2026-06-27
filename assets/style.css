@@ -3602,4 +3602,103 @@ h3, .h3 {
   .sector-rank-row__left { direction: ltr; }
 }
 
+/* ============================================================
+   Dashboard Cards (homepage signal layer)
+   ============================================================ */
+
+.section--dashboard {
+  padding-top: var(--sp-7);
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--sp-4);
+}
+
+.dashboard-card {
+  min-height: 220px;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto auto;
+  gap: var(--sp-3);
+  padding: var(--sp-5);
+  border-top: 2px solid var(--rule-gold-strong);
+  border-bottom: var(--hairline) solid var(--rule);
+  color: inherit;
+  background: var(--panel);
+  text-decoration: none;
+  transition: border-color var(--dur) var(--ease), background var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+
+.dashboard-card:hover {
+  border-top-color: var(--gold);
+  background: var(--panel-strong);
+  transform: translateY(-2px);
+}
+
+.dashboard-card__kicker,
+.dashboard-card__foot,
+.dashboard-card__tags {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
+.dashboard-card__kicker,
+.dashboard-card__foot {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--sp-3);
+}
+
+.dashboard-card__kicker span:first-child {
+  color: var(--gold-soft);
+}
+
+.dashboard-card__title {
+  font-family: var(--font-serif-tc);
+  font-size: 20px;
+  line-height: 1.35;
+  color: var(--ink);
+}
+
+.dashboard-card__title em {
+  color: var(--gold);
+  font-style: italic;
+}
+
+.dashboard-card__summary {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--ink-muted);
+}
+
+.dashboard-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+.dashboard-card__tags span {
+  padding-top: var(--sp-2);
+  border-top: var(--hairline) solid var(--rule);
+}
+
+@media (max-width: 1080px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-card {
+    min-height: 0;
+  }
+}
 
