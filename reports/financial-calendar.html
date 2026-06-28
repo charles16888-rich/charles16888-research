@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
-  <title>財經行事曆 — Charles</title>
+  <title>市場行事曆｜Charles</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="../assets/fonts.css" />
@@ -19,13 +19,12 @@
           <span class="brand__plate">Market Edition · MMXXVI</span>
         </a>
         <nav class="nav" aria-label="Primary">
-
           <a class="nav__link" href="../category.html?cat=sectors">族群</a>
           <a class="nav__link" href="../category.html?cat=taiex">大盤</a>
           <a class="nav__link is-active" href="../category.html?cat=calendar">行事曆</a>
           <a class="nav__link" href="../category.html?cat=txo">選擇權</a>
           <a class="nav__link" href="../category.html?cat=chips">籌碼</a>
-          <a class="nav__link" href="../category.html?cat=research">研報統計</a>
+          <a class="nav__link" href="../category.html?cat=research">研究</a>
         </nav>
       </div>
     </div>
@@ -37,20 +36,20 @@
       <span class="breadcrumb__sep">/</span>
       <a href="../category.html?cat=calendar">行事曆</a>
       <span class="breadcrumb__sep">/</span>
-      <span>財經行事曆</span>
+      <span>市場行事曆</span>
     </nav>
 
     <section class="calendar-hero">
-      <div class="calendar-hero__spec">Financial Calendar Service · Charles Tenant</div>
-      <h1>財經<em>行事曆</em></h1>
-      <p>美股總經、FOMC、休市與公司事件共用索引。資料由 calendar-service 正規化後輸出；台股除權息與台灣政府總經行事曆不在此系統範圍。</p>
+      <div class="calendar-hero__spec">Market Event Radar · Asia/Taipei</div>
+      <h1>市場<em>行事曆</em></h1>
+      <p>依交易者閱讀習慣整理：時間、地區、重要度、事件、前值、預期、公布值與觀察重點同列呈現。台股保留公司公告與營收追蹤，不放除權息與台灣總經雜訊。</p>
     </section>
 
     <section class="calendar-summary-strip" aria-label="Calendar summary">
-      <div><span>Events</span><strong id="calendar-stat-events">—</strong></div>
-      <div><span>High Importance</span><strong id="calendar-stat-high">—</strong></div>
-      <div><span>Sources</span><strong id="calendar-stat-sources">—</strong></div>
-      <div><span>Tenant</span><strong id="calendar-stat-tenant">Charles</strong></div>
+      <div><span>Filtered</span><strong id="calendar-stat-filtered">--</strong></div>
+      <div><span>This Week</span><strong id="calendar-stat-week">--</strong></div>
+      <div><span>High Impact</span><strong id="calendar-stat-high">--</strong></div>
+      <div><span>Taiwan</span><strong id="calendar-stat-tw">--</strong></div>
     </section>
 
     <section class="section" aria-labelledby="calendar-filter-title">
@@ -59,17 +58,17 @@
           <span class="section__marker" aria-hidden="true"></span>
           <h2 id="calendar-filter-title" class="section__title">事件<em>篩選</em></h2>
         </div>
-        <a id="calendar-export" class="calendar-export" href="#" download="financial-calendar.ics">ICS Export</a>
+        <a id="calendar-export" class="calendar-export" href="#" download="market-calendar.ics">ICS Export</a>
       </div>
 
       <div class="calendar-tabs" role="tablist" aria-label="Calendar tabs">
         <button class="calendar-tab is-active" type="button" data-tab="all">全部</button>
-        <button class="calendar-tab" type="button" data-tab="US">美股</button>
+        <button class="calendar-tab" type="button" data-tab="high">高重要</button>
         <button class="calendar-tab" type="button" data-tab="TW">台股</button>
-        <button class="calendar-tab" type="button" data-tab="GLOBAL">全球</button>
-        <button class="calendar-tab" type="button" data-tab="macro">總經</button>
+        <button class="calendar-tab" type="button" data-tab="US">美國</button>
+        <button class="calendar-tab" type="button" data-tab="macro">數據</button>
         <button class="calendar-tab" type="button" data-tab="central_bank">央行</button>
-        <button class="calendar-tab" type="button" data-tab="company">公司事件</button>
+        <button class="calendar-tab" type="button" data-tab="company">公司</button>
         <button class="calendar-tab" type="button" data-tab="market_status">休市</button>
       </div>
 
@@ -77,31 +76,26 @@
         <input id="calendar-from" type="date" value="2026-06-28" />
         <input id="calendar-to" type="date" value="2026-12-31" />
         <select id="calendar-market">
-          <option value="">全部市場</option>
-          <option value="US">美股</option>
+          <option value="">全部地區</option>
           <option value="TW">台股</option>
+          <option value="US">美國</option>
           <option value="GLOBAL">全球</option>
         </select>
         <select id="calendar-type">
           <option value="">全部類型</option>
-          <option value="macro">總經</option>
-          <option value="earnings">財報</option>
-          <option value="dividend">股利</option>
-          <option value="stock_split">股票分割</option>
-          <option value="ipo">IPO</option>
-          <option value="investor_conference">法說會</option>
-          <option value="material_news">重大訊息</option>
-          <option value="shareholder_meeting">股東會</option>
-          <option value="market_holiday">市場休市</option>
-          <option value="half_trading_day">半日交易</option>
+          <option value="macro">總經數據</option>
           <option value="central_bank">央行</option>
+          <option value="company_announcement">公司公告</option>
+          <option value="material_news">重大訊息</option>
+          <option value="market_holiday">休市</option>
+          <option value="half_trading_day">提前收盤</option>
         </select>
         <select id="calendar-importance">
-          <option value="1">低以上</option>
-          <option value="2">中以上</option>
-          <option value="3">只看高</option>
+          <option value="1">一星以上</option>
+          <option value="2">二星以上</option>
+          <option value="3">只看三星</option>
         </select>
-        <input id="calendar-symbol" type="search" placeholder="股票代號" />
+        <input id="calendar-symbol" type="search" placeholder="代號 / 關鍵字" />
       </div>
     </section>
 
@@ -111,7 +105,7 @@
           <span class="section__marker" aria-hidden="true"></span>
           <h2 id="calendar-list-title" class="section__title">事件<em>列表</em></h2>
         </div>
-        <span id="calendar-list-meta" class="section__meta">— EVENTS</span>
+        <span id="calendar-list-meta" class="section__meta">-- EVENTS</span>
       </div>
       <div id="calendar-list" class="calendar-list"></div>
     </section>
@@ -119,7 +113,7 @@
 
   <footer class="footer">
     <div class="container">
-      <div class="footer__row">financial-calendar-service · source attribution preserved · no Taiwan macro / no TW ex-dividend</div>
+      <div class="footer__row">資料僅供事件追蹤與統計，不構成投資建議。</div>
     </div>
   </footer>
 
@@ -127,25 +121,19 @@
   (function () {
     const state = { payload: null, tab: 'all' };
     const labels = {
-      macro: '總經',
+      macro: '總經數據',
       earnings: '財報',
-      earnings_call: '財報電話會議',
-      dividend: '股利',
-      ex_dividend: '除息',
-      payment_date: '發放日',
-      stock_split: '股票分割',
-      ipo: 'IPO',
-      shareholder_meeting: '股東會',
-      investor_conference: '法說會',
+      earnings_call: '法說',
       material_news: '重大訊息',
       company_announcement: '公司公告',
-      market_holiday: '市場休市',
-      half_trading_day: '半日交易',
+      market_holiday: '休市',
+      half_trading_day: '提前收盤',
       central_bank: '央行',
-      fed_speech: 'Fed Speech',
+      fed_speech: 'Fed 談話',
       other: '其他'
     };
-    const marketLabels = { US: '美股', TW: '台股', GLOBAL: '全球' };
+    const marketLabels = { US: '美國', TW: '台股', GLOBAL: '全球' };
+    const companyTypes = ['earnings','earnings_call','ipo','shareholder_meeting','investor_conference','material_news','company_announcement'];
     const $ = sel => document.querySelector(sel);
     const $$ = sel => Array.from(document.querySelectorAll(sel));
     const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
@@ -158,7 +146,7 @@
         render();
       })
       .catch(() => {
-        $('#calendar-list').innerHTML = '<div class="calendar-empty">Calendar data unavailable</div>';
+        $('#calendar-list').innerHTML = '<div class="calendar-empty">行事曆資料暫時無法讀取。</div>';
       });
 
     $$('.calendar-tab').forEach(btn => btn.addEventListener('click', () => {
@@ -178,16 +166,18 @@
       const market = $('#calendar-market').value;
       const type = $('#calendar-type').value;
       const minImportance = Number($('#calendar-importance').value || 1);
-      const symbol = $('#calendar-symbol').value.trim().toUpperCase();
+      const keyword = $('#calendar-symbol').value.trim().toUpperCase();
       return payload.events.filter(e => {
+        const haystack = [e.symbol, e.symbol_name, e.title, e.description, e.period].join(' ').toUpperCase();
         if (e.event_date_local < from || e.event_date_local > to) return false;
         if (market && e.market !== market) return false;
         if (type && e.event_type !== type) return false;
         if (Number(e.importance || 1) < minImportance) return false;
-        if (symbol && (e.symbol || '').toUpperCase() !== symbol) return false;
+        if (keyword && !haystack.includes(keyword)) return false;
         if (state.tab === 'all') return true;
+        if (state.tab === 'high') return Number(e.importance || 1) >= 3;
         if (['US', 'TW', 'GLOBAL'].includes(state.tab)) return e.market === state.tab;
-        if (state.tab === 'company') return ['earnings','earnings_call','dividend','ex_dividend','payment_date','stock_split','ipo','shareholder_meeting','investor_conference','material_news','company_announcement'].includes(e.event_type);
+        if (state.tab === 'company') return companyTypes.includes(e.event_type);
         if (state.tab === 'market_status') return ['market_holiday','half_trading_day'].includes(e.event_type);
         return e.event_type === state.tab || e.category === state.tab;
       }).sort((a, b) => (a.event_date_local || '').localeCompare(b.event_date_local || '') || (a.event_time_local || '').localeCompare(b.event_time_local || ''));
@@ -197,41 +187,76 @@
       const payload = state.payload;
       if (!payload) return;
       const events = filteredEvents();
-      $('#calendar-stat-events').textContent = payload.events.length;
-      $('#calendar-stat-high').textContent = payload.events.filter(e => Number(e.importance) === 3).length;
-      $('#calendar-stat-sources').textContent = new Set(payload.events.map(e => e.source_id)).size;
+      const week = events.filter(isWithinSevenDays).length;
+      $('#calendar-stat-filtered').textContent = events.length;
+      $('#calendar-stat-week').textContent = week;
+      $('#calendar-stat-high').textContent = events.filter(e => Number(e.importance) >= 3).length;
+      $('#calendar-stat-tw').textContent = events.filter(e => e.market === 'TW').length;
       $('#calendar-list-meta').textContent = events.length + ' EVENTS';
-      $('#calendar-list').innerHTML = events.length ? events.map(eventCard).join('') : '<div class="calendar-empty">No events for this filter set.</div>';
+      $('#calendar-list').innerHTML = events.length ? renderGroupedEvents(events) : '<div class="calendar-empty">這組條件沒有事件。</div>';
       updateIcs(events);
     }
 
-    function eventCard(e) {
-      const source = e.source_url ? `<a href="${esc(e.source_url)}" target="_blank" rel="noopener">${esc(e.attribution_text || e.source_name)}</a>` : esc(e.attribution_text || e.source_name || '');
-      const status = e.status === 'tentative' ? '<span class="event-pill">Tentative</span>' : '';
+    function renderGroupedEvents(events) {
+      const groups = new Map();
+      events.forEach(e => {
+        if (!groups.has(e.event_date_local)) groups.set(e.event_date_local, []);
+        groups.get(e.event_date_local).push(e);
+      });
+      return Array.from(groups, ([date, rows]) => renderDayGroup(date, rows)).join('');
+    }
+
+    function renderDayGroup(date, rows) {
       return `
-        <article id="${esc(e.id)}" class="calendar-event-card">
-          <div class="calendar-event-card__date">
-            <strong>${esc((e.taipei_display_time || e.event_date_local).replace(/^\d{4}-/, ''))}</strong>
-            <div>${esc(e.market_display_time || '')}</div>
+        <section class="calendar-day-group">
+          <div class="calendar-day-head">
+            <strong>${esc(formatDate(date))}</strong>
+            <span>${rows.length} events</span>
           </div>
-          <div>
-            <div class="calendar-event-card__tags">
-              <span class="event-pill event-pill--${esc(e.market)}">${esc(marketLabels[e.market] || e.market)}</span>
-              <span class="event-pill event-pill--importance-${esc(e.importance)}">${esc(importanceLabel(e.importance))}</span>
-              <span class="event-pill">${esc(labels[e.event_type] || e.event_type)}</span>
-              ${status}
+          <div class="calendar-table">
+            <div class="calendar-table__head" aria-hidden="true">
+              <span>台北時間</span><span>地區</span><span>重要性</span><span>事件</span><span>前值</span><span>預期</span><span>公布</span><span>狀態</span>
             </div>
-            <h2>${esc(e.title)}</h2>
-            <p>${esc(e.description || '')}</p>
-            ${renderEventInsight(e)}
+            ${rows.map(renderEventRow).join('')}
           </div>
-          <div class="calendar-event-card__meta">
-            <span>Timezone: ${esc(e.timezone)}</span>
-            <span>Period: ${esc(e.period || '—')}</span>
-            <span>Source: ${source}</span>
-            <span>Last seen: ${esc(e.last_seen_at || '')}</span>
+        </section>`;
+    }
+
+    function renderEventRow(e) {
+      const typeLabel = labels[e.event_type] || e.event_type;
+      const status = statusLabel(e);
+      return `
+        <article id="${esc(e.id)}" class="calendar-event-row">
+          <div class="calendar-time">${esc(formatTime(e))}</div>
+          <div><span class="calendar-market-pill calendar-market-pill--${esc(e.market)}">${esc(marketLabels[e.market] || e.market)}</span></div>
+          <div class="calendar-stars" aria-label="${esc(importanceLabel(e.importance))}">${renderStars(e.importance)}</div>
+          <div class="calendar-event-main">
+            <div class="calendar-event-title">${esc(e.title)}</div>
+            <div class="calendar-event-desc">${esc(e.description || '')}</div>
+            <div class="calendar-event-tags">
+              <span class="calendar-mini-tag">${esc(typeLabel)}</span>
+              ${e.period ? `<span class="calendar-mini-tag">${esc(e.period)}</span>` : ''}
+              ${e.metadata && e.metadata.watch ? `<span class="calendar-mini-tag">${esc(e.metadata.watch)}</span>` : ''}
+            </div>
           </div>
+          ${renderMetric('前值', e.previous)}
+          ${renderMetric('預期', e.forecast)}
+          ${renderMetric('公布', e.actual || (e.status === 'tentative' ? '待確認' : '待公布'), true)}
+          <div class="calendar-status-cell"><span class="calendar-status-pill">${esc(status)}</span></div>
+          ${renderDetails(e)}
         </article>`;
+    }
+
+    function renderDetails(e) {
+      const insight = renderEventInsight(e);
+      return `
+        <details class="calendar-row__details">
+          <summary>觀察重點</summary>
+          <div class="calendar-insight">
+            ${insight}
+            <div class="calendar-source-line"><strong>台北時間</strong>${esc(e.taipei_display_time || e.event_date_local)}</div>
+          </div>
+        </details>`;
     }
 
     function renderEventInsight(e) {
@@ -239,37 +264,80 @@
       const groups = Array.isArray(meta.focusGroups) ? meta.focusGroups.filter(g => Array.isArray(g.items) && g.items.length) : [];
       const checkpoints = Array.isArray(meta.checkpoints) ? meta.checkpoints : [];
       const basis = meta.basis || '';
-      if (!groups.length && !checkpoints.length && !basis) return '';
+      if (!groups.length && !checkpoints.length && !basis) {
+        return '<div class="calendar-source-line"><strong>Focus</strong>等待資料更新後補上公布值與追蹤註記。</div>';
+      }
       return `
-        <div class="calendar-event-card__focus">
+        <div class="calendar-insight-grid">
           ${groups.map(group => `
             <div class="calendar-focus-group">
               <strong>${esc(group.label || 'Focus')}</strong>
-              <ul>${group.items.slice(0, 8).map(item => `<li>${esc(item)}</li>`).join('')}</ul>
+              <ul>${group.items.slice(0, 6).map(item => `<li>${esc(item)}</li>`).join('')}</ul>
             </div>
           `).join('')}
           ${checkpoints.length ? `
             <div class="calendar-checkpoints">
               <strong>Checkpoints</strong>
-              <ul>${checkpoints.map(item => `<li>${esc(item)}</li>`).join('')}</ul>
+              <ul>${checkpoints.slice(0, 5).map(item => `<li>${esc(item)}</li>`).join('')}</ul>
             </div>
           ` : ''}
-          ${basis ? `<div class="calendar-focus-basis">${esc(basis)}</div>` : ''}
-        </div>`;
+        </div>
+        ${basis ? `<div class="calendar-source-line"><strong>Basis</strong>${esc(basis)}</div>` : ''}`;
+    }
+
+    function renderMetric(label, value, isActual) {
+      const text = value == null || value === '' ? '--' : String(value);
+      const pending = /待|陸續|更新|確認/.test(text);
+      const empty = text === '--';
+      const cls = ['calendar-metric'];
+      if (pending || isActual) cls.push('calendar-metric--pending');
+      if (empty) cls.push('calendar-metric--empty');
+      return `<div class="${cls.join(' ')}" data-label="${esc(label)}">${esc(text)}</div>`;
+    }
+
+    function renderStars(n) {
+      n = Math.max(1, Math.min(3, Number(n || 1)));
+      return '★'.repeat(n) + `<span class="calendar-stars__empty">${'★'.repeat(3 - n)}</span>`;
     }
 
     function importanceLabel(n) {
       n = Number(n || 1);
-      return n >= 3 ? '高' : n === 2 ? '中' : '低';
+      return n >= 3 ? '高重要' : n === 2 ? '中重要' : '低重要';
+    }
+
+    function statusLabel(e) {
+      if (e.status === 'tentative') return '待確認';
+      if (e.status === 'released') return '已公布';
+      if (e.status === 'cancelled') return '取消';
+      if (['market_holiday','half_trading_day'].includes(e.event_type)) return e.actual || '市場狀態';
+      return '未公布';
+    }
+
+    function formatTime(e) {
+      if (e.is_all_day || !e.taipei_display_time) return '全天';
+      return e.taipei_display_time.slice(11, 16);
+    }
+
+    function formatDate(date) {
+      const d = new Date(date + 'T00:00:00+08:00');
+      return new Intl.DateTimeFormat('zh-TW', { month: '2-digit', day: '2-digit', weekday: 'short' }).format(d);
+    }
+
+    function isWithinSevenDays(e) {
+      const now = new Date();
+      const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+      const d = new Date(e.event_date_local + 'T00:00:00');
+      const diff = (d - today) / 86400000;
+      return diff >= 0 && diff <= 7;
     }
 
     function updateIcs(events) {
-      const body = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Financial Calendar Service//ZH-TW'];
+      const body = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Market Event Radar//ZH-TW'];
       events.forEach(e => {
         body.push('BEGIN:VEVENT');
-        body.push('UID:' + e.event_key + '@financial-calendar');
+        body.push('UID:' + e.event_key + '@market-calendar');
         body.push('SUMMARY:' + icsText(e.title));
-        body.push('DESCRIPTION:' + icsText((e.description || '') + ' Source: ' + (e.attribution_text || e.source_name || '')));
+        body.push('DESCRIPTION:' + icsText(e.description || ''));
         if (e.is_all_day) {
           body.push('DTSTART;VALUE=DATE:' + e.event_date_local.replace(/-/g, ''));
         } else if (e.event_time_utc) {
@@ -279,8 +347,7 @@
       });
       body.push('END:VCALENDAR');
       const blob = new Blob([body.join('\r\n')], { type: 'text/calendar;charset=utf-8' });
-      const url = URL.createObjectURL(blob);
-      $('#calendar-export').href = url;
+      $('#calendar-export').href = URL.createObjectURL(blob);
     }
 
     function icsText(s) {

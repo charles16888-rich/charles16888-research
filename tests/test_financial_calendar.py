@@ -16,6 +16,10 @@ EXCLUDED_TYPES = {
     "taiwan_gdp",
     "taiwan_central_bank_rate_decision",
 }
+NOISY_EVENT_IDS = {
+    "tw-trading-week-2026-06-29",
+    "tw-mops-material-news-window-2026-06-29",
+}
 
 
 class FinancialCalendarAssetsTest(unittest.TestCase):
@@ -26,16 +30,21 @@ class FinancialCalendarAssetsTest(unittest.TestCase):
         entry = next(e for e in manifest["entries"] if e["id"] == "financial-calendar")
         self.assertEqual("calendar", entry["category"])
         self.assertEqual("reports/financial-calendar.html", entry["url"])
+        self.assertIn("市場行事曆", entry["title"])
 
     def test_calendar_events_are_normalized_and_exclusions_hold(self) -> None:
         payload = json.loads((ROOT / "assets" / "calendar_events.json").read_text(encoding="utf-8"))
+        payload_text = json.dumps(payload, ensure_ascii=False)
         keys = [e["event_key"] for e in payload["events"]]
+        ids = {e["id"] for e in payload["events"]}
         self.assertEqual(len(keys), len(set(keys)))
         self.assertTrue(payload["events"])
+        self.assertNotIn("2025-05", payload_text)
         self.assertTrue(EXCLUDED_TYPES.issubset(set(payload["excluded_types"])))
         self.assertFalse(set(e["event_type"] for e in payload["events"]) & EXCLUDED_TYPES)
+        self.assertFalse(ids & NOISY_EVENT_IDS)
         tw_events = [e for e in payload["events"] if e["market"] == "TW"]
-        self.assertGreaterEqual(len(tw_events), 4)
+        self.assertGreaterEqual(len(tw_events), 3)
         self.assertTrue(any(e.get("metadata", {}).get("focusGroups") for e in tw_events))
         for event in payload["events"]:
             self.assertIn(event["market"], {"US", "TW", "GLOBAL"})
@@ -45,6 +54,9 @@ class FinancialCalendarAssetsTest(unittest.TestCase):
             self.assertTrue(event["last_seen_at"])
             self.assertTrue(event["raw_hash"])
             self.assertTrue(event["event_date_local"])
+            self.assertIn("actual", event)
+            self.assertIn("forecast", event)
+            self.assertIn("previous", event)
             if event["market"] == "US":
                 self.assertEqual("America/New_York", event["timezone"])
             if event["event_time_local"]:
@@ -57,7 +69,16 @@ class FinancialCalendarAssetsTest(unittest.TestCase):
         main_js = (ROOT / "assets" / "main.js").read_text(encoding="utf-8")
         self.assertIn('id="calendar-widget-section"', index)
         self.assertIn('id="calendar-list"', page)
-        self.assertIn("renderEventInsight", page)
+        self.assertIn("calendar-table__head", page)
+        self.assertIn("renderEventRow", page)
+        self.assertIn("台北時間", page)
+        self.assertIn("前值", page)
+        self.assertIn("公布", page)
+        self.assertNotIn("Timezone:", page)
+        self.assertNotIn("Last seen:", page)
+        self.assertNotIn("2025-05", page)
+        self.assertNotIn("來源：", page)
+        self.assertNotIn("<strong>Source</strong>", page)
         self.assertIn("renderMarketEventsWidget", main_js)
 
 

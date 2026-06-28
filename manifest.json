@@ -27,32 +27,32 @@
       "type": "calendar",
       "date": "2026-06-28",
       "time": "08:30",
-      "title": "財經行事曆",
-      "title_em": "行事曆",
-      "summary": "共用 Financial Calendar Service 輸出的美股總經、FOMC、休市與未來公司事件入口；台股除權息與台灣總經明確排除。",
+      "title": "市場行事曆",
+      "title_em": "事件雷達",
+      "summary": "仿金十式高密度市場行事曆：時間、地區、重要度、事件、前值、預期、公布值與追蹤重點集中呈現。",
       "tags": [
-        "美股",
-        "總經",
+        "行事曆",
+        "台股",
+        "美國總經",
         "FOMC",
-        "休市",
-        "台股公司事件"
+        "營收"
       ],
       "source_pipeline": "financial_calendar_service",
       "url": "reports/financial-calendar.html",
       "stats": [
         {
-          "label": "事件數",
-          "value": "20",
+          "label": "事件",
+          "value": "18",
           "color": "neutral"
         },
         {
-          "label": "高重要性",
+          "label": "高重要",
           "value": "13",
           "color": "up"
         },
         {
-          "label": "來源",
-          "value": "8",
+          "label": "台股",
+          "value": "3",
           "color": "neutral"
         }
       ]

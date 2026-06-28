@@ -105,9 +105,9 @@
       "id": "calendar",
       "name_zh": "行事曆",
       "name_en": "Calendar",
-      "tagline_zh": "美股 × 台股公司事件 × 全球總經",
-      "tagline_en": "Financial calendar",
-      "description": "共用 Financial Calendar Service 輸出的市場事件、總經發布、休市與公司事件索引；不包含台股除權息與台灣總經行事曆",
+      "tagline_zh": "台股事件 × 美國總經 × 央行決議",
+      "tagline_en": "Market event calendar",
+      "description": "高密度市場事件行事曆，保留台股公司公告、美國總經、央行與市場狀態；不含台股除權息與台灣總經資料。",
       "enabled": true,
       "source_pipelines": [
         "financial_calendar_service"
@@ -115,7 +115,7 @@
       "subcategories": [
         {
           "id": "macro",
-          "name_zh": "總經",
+          "name_zh": "總經數據",
           "match_id_prefix": [
             "financial-calendar"
           ]
@@ -129,7 +129,7 @@
         },
         {
           "id": "market-status",
-          "name_zh": "休市",
+          "name_zh": "市場狀態",
           "match_id_prefix": [
             "financial-calendar"
           ]
@@ -138,8 +138,8 @@
       "report_types": [
         {
           "id": "calendar",
-          "name_zh": "財經行事曆",
-          "name_en": "Financial Calendar"
+          "name_zh": "市場行事曆",
+          "name_en": "Market Calendar"
         }
       ]
     },
