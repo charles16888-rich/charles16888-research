@@ -42,7 +42,7 @@
       "stats": [
         {
           "label": "事件數",
-          "value": "15",
+          "value": "19",
           "color": "neutral"
         },
         {
@@ -52,7 +52,7 @@
         },
         {
           "label": "來源",
-          "value": "5",
+          "value": "8",
           "color": "neutral"
         }
       ]

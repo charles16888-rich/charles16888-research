@@ -127,7 +127,23 @@
       "crawl_schedule": "*/10 8-23 * * 1-5",
       "importance_default": 2,
       "priority": 95,
-      "enabled": false
+      "enabled": true
+    },
+    {
+      "id": "tw_monthly_revenue",
+      "name": "Taiwan monthly revenue announcement window",
+      "source_type": "exchange_official",
+      "market": "TW",
+      "country": "TW",
+      "adapter": "tw_company_announcement",
+      "timezone": "Asia/Taipei",
+      "base_url": "https://mops.twse.com.tw",
+      "license_note": "Company monthly revenue announcement window only. Taiwan macro calendars remain excluded.",
+      "attribution_text": "MOPS",
+      "crawl_schedule": "0 8 1-10 * *",
+      "importance_default": 2,
+      "priority": 95,
+      "enabled": true
     },
     {
       "id": "tw_market_holidays",
@@ -143,7 +159,7 @@
       "crawl_schedule": "0 5 * * *",
       "importance_default": 3,
       "priority": 95,
-      "enabled": false
+      "enabled": true
     }
   ],
   "do_not_create": [

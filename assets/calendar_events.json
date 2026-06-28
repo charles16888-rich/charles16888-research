@@ -181,7 +181,23 @@
       "crawl_schedule": "*/10 8-23 * * 1-5",
       "importance_default": 2,
       "priority": 95,
-      "enabled": false
+      "enabled": true
+    },
+    {
+      "id": "tw_monthly_revenue",
+      "name": "Taiwan monthly revenue announcement window",
+      "source_type": "exchange_official",
+      "market": "TW",
+      "country": "TW",
+      "adapter": "tw_company_announcement",
+      "timezone": "Asia/Taipei",
+      "base_url": "https://mops.twse.com.tw",
+      "license_note": "Company monthly revenue announcement window only. Taiwan macro calendars remain excluded.",
+      "attribution_text": "MOPS",
+      "crawl_schedule": "0 8 1-10 * *",
+      "importance_default": 2,
+      "priority": 95,
+      "enabled": true
     },
     {
       "id": "tw_market_holidays",
@@ -197,7 +213,7 @@
       "crawl_schedule": "0 5 * * *",
       "importance_default": 3,
       "priority": 95,
-      "enabled": false
+      "enabled": true
     }
   ],
   "excluded_types": [
@@ -211,6 +227,109 @@
     "taiwan_central_bank_rate_decision"
   ],
   "events": [
+    {
+      "id": "tw-mops-material-news-window-2026-06-29",
+      "source_id": "tw_material_news",
+      "market": "TW",
+      "country": "TW",
+      "event_type": "material_news",
+      "category": "company_news",
+      "title": "台股重大訊息監控週",
+      "description": "MOPS 重大訊息與公司公告於 2026-06-29 至 2026-07-03 每個台股交易日持續監控；實際公司事件發布後才會形成個別事件。",
+      "event_date_local": "2026-06-29",
+      "event_time_local": "08:00:00",
+      "timezone": "Asia/Taipei",
+      "period": "2026-W27",
+      "importance": 2,
+      "status": "scheduled",
+      "metadata": {
+        "weekStart": "2026-06-29",
+        "weekEnd": "2026-07-03",
+        "monitoringWindow": "08:00-23:00 Asia/Taipei"
+      },
+      "source_name": "Taiwan material news",
+      "source_url": "https://mops.twse.com.tw",
+      "attribution_text": "MOPS",
+      "license_note": "Use server-side crawler. Does not include ex-rights or ex-dividend data.",
+      "event_key": "exchange_official:material_news:TW:TW:2026-W27:2026-06-29:台股重大訊息監控週",
+      "last_seen_at": "2026-06-28T02:30:00Z",
+      "raw_hash": "9853757e8ae09ccd247216e324e4ec14f0ca6383234aa423507908df5b3e5350",
+      "is_all_day": false,
+      "is_time_confirmed": true,
+      "event_time_utc": "2026-06-29T00:00:00Z",
+      "taipei_display_time": "2026-06-29 08:00",
+      "market_display_time": "2026-06-29 08:00 Asia/Taipei"
+    },
+    {
+      "id": "tw-trading-week-2026-06-29",
+      "source_id": "tw_market_holidays",
+      "market": "TW",
+      "country": "TW",
+      "exchange": "TWSE/TPEX",
+      "event_type": "other",
+      "category": "market_status",
+      "title": "台股交易週：5 個交易日",
+      "description": "TWSE/TPEX 休市表顯示 2026-06-29 至 2026-07-03 無台股休市日；重大訊息與公司公告照常監控。",
+      "event_date_local": "2026-06-29",
+      "event_time_local": "09:00:00",
+      "timezone": "Asia/Taipei",
+      "period": "2026-W27",
+      "importance": 2,
+      "status": "scheduled",
+      "metadata": {
+        "weekStart": "2026-06-29",
+        "weekEnd": "2026-07-03",
+        "tradingDays": 5,
+        "displayHint": "正常交易週"
+      },
+      "source_name": "Taiwan market holidays",
+      "source_url": "https://www.twse.com.tw",
+      "attribution_text": "TWSE/TPEX",
+      "license_note": "TWSE/TPEX market status only. Taiwan macro calendars are excluded.",
+      "event_key": "exchange_official:other:TW:TW:2026-W27:2026-06-29:台股交易週5-個交易日",
+      "last_seen_at": "2026-06-28T02:30:00Z",
+      "raw_hash": "0aa61ec75ef29f4680cc5b99dd2549a45dfad9c12dce65eae0415ac8119b7784",
+      "is_all_day": false,
+      "is_time_confirmed": true,
+      "event_time_utc": "2026-06-29T01:00:00Z",
+      "taipei_display_time": "2026-06-29 09:00",
+      "market_display_time": "2026-06-29 09:00 Asia/Taipei"
+    },
+    {
+      "id": "tw-monthly-revenue-window-2026-07",
+      "source_id": "tw_monthly_revenue",
+      "market": "TW",
+      "country": "TW",
+      "event_type": "company_announcement",
+      "category": "company_news",
+      "title": "台股 6 月營收公告窗開啟",
+      "description": "上市櫃公司 2026 年 6 月營收公告窗進入 1-10 日區間；屬公司公告追蹤，不屬台灣總經行事曆。",
+      "event_date_local": "2026-07-01",
+      "event_time_local": "08:00:00",
+      "timezone": "Asia/Taipei",
+      "period": "2026-06",
+      "importance": 2,
+      "status": "scheduled",
+      "metadata": {
+        "announcementWindow": "2026-07-01/2026-07-10",
+        "excluded": [
+          "taiwan_macro",
+          "tw_ex_dividend"
+        ]
+      },
+      "source_name": "Taiwan monthly revenue announcement window",
+      "source_url": "https://mops.twse.com.tw",
+      "attribution_text": "MOPS",
+      "license_note": "Company monthly revenue announcement window only. Taiwan macro calendars remain excluded.",
+      "event_key": "exchange_official:company_announcement:TW:TW:2026-06:2026-07-01:台股-6-月營收公告窗開啟",
+      "last_seen_at": "2026-06-28T02:30:00Z",
+      "raw_hash": "18f6c8b818af8e6eefeb95025dbf1fcf2748a264f99a412d1c4bada00e4a4c39",
+      "is_all_day": false,
+      "is_time_confirmed": true,
+      "event_time_utc": "2026-07-01T00:00:00Z",
+      "taipei_display_time": "2026-07-01 08:00",
+      "market_display_time": "2026-07-01 08:00 Asia/Taipei"
+    },
     {
       "id": "us-employment-situation-2026-07-02",
       "source_id": "us_bls_employment_calendar",
@@ -307,6 +426,38 @@
       "event_time_utc": "2026-07-08T18:00:00Z",
       "taipei_display_time": "2026-07-09 02:00",
       "market_display_time": "2026-07-08 14:00 ET"
+    },
+    {
+      "id": "tw-monthly-revenue-deadline-2026-07-10",
+      "source_id": "tw_monthly_revenue",
+      "market": "TW",
+      "country": "TW",
+      "event_type": "company_announcement",
+      "category": "company_news",
+      "title": "台股 6 月營收公告截止日",
+      "description": "上市櫃公司 2026 年 6 月營收公告窗截止追蹤日；僅作公司公告提醒，不納入台灣總經。",
+      "event_date_local": "2026-07-10",
+      "event_time_local": "23:59:00",
+      "timezone": "Asia/Taipei",
+      "period": "2026-06",
+      "importance": 2,
+      "status": "scheduled",
+      "metadata": {
+        "announcementWindow": "2026-07-01/2026-07-10",
+        "displayHint": "公告窗截止"
+      },
+      "source_name": "Taiwan monthly revenue announcement window",
+      "source_url": "https://mops.twse.com.tw",
+      "attribution_text": "MOPS",
+      "license_note": "Company monthly revenue announcement window only. Taiwan macro calendars remain excluded.",
+      "event_key": "exchange_official:company_announcement:TW:TW:2026-06:2026-07-10:台股-6-月營收公告截止日",
+      "last_seen_at": "2026-06-28T02:30:00Z",
+      "raw_hash": "48defa07f29d910179bbce8a3b8ad4e1c6bc17ba07df994d2fdeb4ec4f1111bc",
+      "is_all_day": false,
+      "is_time_confirmed": true,
+      "event_time_utc": "2026-07-10T15:59:00Z",
+      "taipei_display_time": "2026-07-10 23:59",
+      "market_display_time": "2026-07-10 23:59 Asia/Taipei"
     },
     {
       "id": "us-cpi-2026-07-14",

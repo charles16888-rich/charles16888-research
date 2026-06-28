@@ -42,3 +42,13 @@ export class TwMaterialNewsAdapter extends BaseCalendarAdapter {
   async fetchRaw(): Promise<RawCalendarRecord[]> { return []; }
   async normalize(_raw: RawCalendarRecord): Promise<NormalizedCalendarEvent[]> { return []; }
 }
+
+export class TwCompanyAnnouncementAdapter extends BaseCalendarAdapter {
+  async fetchRaw(): Promise<RawCalendarRecord[]> { return []; }
+  async normalize(_raw: RawCalendarRecord): Promise<NormalizedCalendarEvent[]> { return []; }
+}
+
+export class TwMarketHolidaysAdapter extends BaseCalendarAdapter {
+  async fetchRaw(): Promise<RawCalendarRecord[]> { return []; }
+  async normalize(_raw: RawCalendarRecord): Promise<NormalizedCalendarEvent[]> { return []; }
+}
