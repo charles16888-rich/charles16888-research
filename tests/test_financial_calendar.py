@@ -31,6 +31,7 @@ class FinancialCalendarAssetsTest(unittest.TestCase):
         self.assertEqual("calendar", entry["category"])
         self.assertEqual("reports/financial-calendar.html", entry["url"])
         self.assertIn("市場行事曆", entry["title"])
+        self.assertNotIn("金十", json.dumps(entry, ensure_ascii=False))
 
     def test_calendar_events_are_normalized_and_exclusions_hold(self) -> None:
         payload = json.loads((ROOT / "assets" / "calendar_events.json").read_text(encoding="utf-8"))
@@ -39,7 +40,9 @@ class FinancialCalendarAssetsTest(unittest.TestCase):
         ids = {e["id"] for e in payload["events"]}
         self.assertEqual(len(keys), len(set(keys)))
         self.assertTrue(payload["events"])
+        self.assertGreaterEqual(len(payload["events"]), 45)
         self.assertNotIn("2025-05", payload_text)
+        self.assertNotIn("金十", payload_text)
         self.assertTrue(EXCLUDED_TYPES.issubset(set(payload["excluded_types"])))
         self.assertFalse(set(e["event_type"] for e in payload["events"]) & EXCLUDED_TYPES)
         self.assertFalse(ids & NOISY_EVENT_IDS)

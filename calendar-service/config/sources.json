@@ -34,6 +34,38 @@
       "enabled": true
     },
     {
+      "id": "us_bls_ppi_calendar",
+      "name": "BLS Producer Price Index release schedule",
+      "source_type": "official_agency",
+      "market": "US",
+      "country": "US",
+      "adapter": "bls_calendar",
+      "timezone": "America/New_York",
+      "base_url": "https://www.bls.gov/schedule/news_release/ppi.htm",
+      "license_note": "Official U.S. government release schedule; attribution required.",
+      "attribution_text": "U.S. Bureau of Labor Statistics",
+      "crawl_schedule": "14 6 * * *",
+      "importance_default": 2,
+      "priority": 96,
+      "enabled": true
+    },
+    {
+      "id": "us_bls_jolts_calendar",
+      "name": "BLS Job Openings and Labor Turnover release schedule",
+      "source_type": "official_agency",
+      "market": "US",
+      "country": "US",
+      "adapter": "bls_calendar",
+      "timezone": "America/New_York",
+      "base_url": "https://www.bls.gov/schedule/news_release/jolts.htm",
+      "license_note": "Official U.S. government release schedule; attribution required.",
+      "attribution_text": "U.S. Bureau of Labor Statistics",
+      "crawl_schedule": "16 6 * * *",
+      "importance_default": 2,
+      "priority": 94,
+      "enabled": true
+    },
+    {
       "id": "us_bea_calendar",
       "name": "BEA release schedule",
       "source_type": "official_agency",
