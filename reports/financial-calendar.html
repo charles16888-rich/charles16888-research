@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>財經行事曆 — Charles</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="../assets/fonts.css" />
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body data-page="calendar" data-tenant="charles">
+  <header class="masthead">
+    <div class="container">
+      <div class="masthead__row">
+        <a class="brand" href="../index.html">
+          <span class="brand__mark">charles<em>16888</em></span>
+          <span class="brand__plate">Market Edition · MMXXVI</span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+
+          <a class="nav__link" href="../category.html?cat=sectors">族群</a>
+          <a class="nav__link" href="../category.html?cat=taiex">大盤</a>
+          <a class="nav__link is-active" href="../category.html?cat=calendar">行事曆</a>
+          <a class="nav__link" href="../category.html?cat=txo">選擇權</a>
+          <a class="nav__link" href="../category.html?cat=chips">籌碼</a>
+          <a class="nav__link" href="../category.html?cat=research">研報統計</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="container calendar-page">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Charles</a>
+      <span class="breadcrumb__sep">/</span>
+      <a href="../category.html?cat=calendar">行事曆</a>
+      <span class="breadcrumb__sep">/</span>
+      <span>財經行事曆</span>
+    </nav>
+
+    <section class="calendar-hero">
+      <div class="calendar-hero__spec">Financial Calendar Service · Charles Tenant</div>
+      <h1>財經<em>行事曆</em></h1>
+      <p>美股總經、FOMC、休市與公司事件共用索引。資料由 calendar-service 正規化後輸出；台股除權息與台灣政府總經行事曆不在此系統範圍。</p>
+    </section>
+
+    <section class="calendar-summary-strip" aria-label="Calendar summary">
+      <div><span>Events</span><strong id="calendar-stat-events">—</strong></div>
+      <div><span>High Importance</span><strong id="calendar-stat-high">—</strong></div>
+      <div><span>Sources</span><strong id="calendar-stat-sources">—</strong></div>
+      <div><span>Tenant</span><strong id="calendar-stat-tenant">Charles</strong></div>
+    </section>
+
+    <section class="section" aria-labelledby="calendar-filter-title">
+      <div class="section__head">
+        <div class="section__label">
+          <span class="section__marker" aria-hidden="true"></span>
+          <h2 id="calendar-filter-title" class="section__title">事件<em>篩選</em></h2>
+        </div>
+        <a id="calendar-export" class="calendar-export" href="#" download="financial-calendar.ics">ICS Export</a>
+      </div>
+
+      <div class="calendar-tabs" role="tablist" aria-label="Calendar tabs">
+        <button class="calendar-tab is-active" type="button" data-tab="all">全部</button>
+        <button class="calendar-tab" type="button" data-tab="US">美股</button>
+        <button class="calendar-tab" type="button" data-tab="TW">台股</button>
+        <button class="calendar-tab" type="button" data-tab="GLOBAL">全球</button>
+        <button class="calendar-tab" type="button" data-tab="macro">總經</button>
+        <button class="calendar-tab" type="button" data-tab="central_bank">央行</button>
+        <button class="calendar-tab" type="button" data-tab="company">公司事件</button>
+        <button class="calendar-tab" type="button" data-tab="market_status">休市</button>
+      </div>
+
+      <div class="calendar-controls" aria-label="Calendar filters">
+        <input id="calendar-from" type="date" value="2026-06-28" />
+        <input id="calendar-to" type="date" value="2026-12-31" />
+        <select id="calendar-market">
+          <option value="">全部市場</option>
+          <option value="US">美股</option>
+          <option value="TW">台股</option>
+          <option value="GLOBAL">全球</option>
+        </select>
+        <select id="calendar-type">
+          <option value="">全部類型</option>
+          <option value="macro">總經</option>
+          <option value="earnings">財報</option>
+          <option value="dividend">股利</option>
+          <option value="stock_split">股票分割</option>
+          <option value="ipo">IPO</option>
+          <option value="investor_conference">法說會</option>
+          <option value="material_news">重大訊息</option>
+          <option value="shareholder_meeting">股東會</option>
+          <option value="market_holiday">市場休市</option>
+          <option value="half_trading_day">半日交易</option>
+          <option value="central_bank">央行</option>
+        </select>
+        <select id="calendar-importance">
+          <option value="1">低以上</option>
+          <option value="2">中以上</option>
+          <option value="3">只看高</option>
+        </select>
+        <input id="calendar-symbol" type="search" placeholder="股票代號" />
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="calendar-list-title">
+      <div class="section__head">
+        <div class="section__label">
+          <span class="section__marker" aria-hidden="true"></span>
+          <h2 id="calendar-list-title" class="section__title">事件<em>列表</em></h2>
+        </div>
+        <span id="calendar-list-meta" class="section__meta">— EVENTS</span>
+      </div>
+      <div id="calendar-list" class="calendar-list"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__row">financial-calendar-service · source attribution preserved · no Taiwan macro / no TW ex-dividend</div>
+    </div>
+  </footer>
+
+  <script>
+  (function () {
+    const state = { payload: null, tab: 'all' };
+    const labels = {
+      macro: '總經',
+      earnings: '財報',
+      earnings_call: '財報電話會議',
+      dividend: '股利',
+      ex_dividend: '除息',
+      payment_date: '發放日',
+      stock_split: '股票分割',
+      ipo: 'IPO',
+      shareholder_meeting: '股東會',
+      investor_conference: '法說會',
+      material_news: '重大訊息',
+      company_announcement: '公司公告',
+      market_holiday: '市場休市',
+      half_trading_day: '半日交易',
+      central_bank: '央行',
+      fed_speech: 'Fed Speech',
+      other: '其他'
+    };
+    const marketLabels = { US: '美股', TW: '台股', GLOBAL: '全球' };
+    const $ = sel => document.querySelector(sel);
+    const $$ = sel => Array.from(document.querySelectorAll(sel));
+    const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+
+    fetch('../assets/calendar_events.json?t=' + Date.now())
+      .then(r => r.json())
+      .then(payload => {
+        state.payload = payload;
+        $('#calendar-importance').value = String(payload.tenant.min_importance || 1);
+        render();
+      })
+      .catch(() => {
+        $('#calendar-list').innerHTML = '<div class="calendar-empty">Calendar data unavailable</div>';
+      });
+
+    $$('.calendar-tab').forEach(btn => btn.addEventListener('click', () => {
+      $$('.calendar-tab').forEach(x => x.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      state.tab = btn.dataset.tab;
+      render();
+    }));
+    ['#calendar-from', '#calendar-to', '#calendar-market', '#calendar-type', '#calendar-importance', '#calendar-symbol']
+      .forEach(sel => $(sel).addEventListener('input', render));
+
+    function filteredEvents() {
+      const payload = state.payload;
+      if (!payload) return [];
+      const from = $('#calendar-from').value || '0000-00-00';
+      const to = $('#calendar-to').value || '9999-99-99';
+      const market = $('#calendar-market').value;
+      const type = $('#calendar-type').value;
+      const minImportance = Number($('#calendar-importance').value || 1);
+      const symbol = $('#calendar-symbol').value.trim().toUpperCase();
+      return payload.events.filter(e => {
+        if (e.event_date_local < from || e.event_date_local > to) return false;
+        if (market && e.market !== market) return false;
+        if (type && e.event_type !== type) return false;
+        if (Number(e.importance || 1) < minImportance) return false;
+        if (symbol && (e.symbol || '').toUpperCase() !== symbol) return false;
+        if (state.tab === 'all') return true;
+        if (['US', 'TW', 'GLOBAL'].includes(state.tab)) return e.market === state.tab;
+        if (state.tab === 'company') return ['earnings','earnings_call','dividend','ex_dividend','payment_date','stock_split','ipo','shareholder_meeting','investor_conference','material_news','company_announcement'].includes(e.event_type);
+        if (state.tab === 'market_status') return ['market_holiday','half_trading_day'].includes(e.event_type);
+        return e.event_type === state.tab || e.category === state.tab;
+      }).sort((a, b) => (a.event_date_local || '').localeCompare(b.event_date_local || '') || (a.event_time_local || '').localeCompare(b.event_time_local || ''));
+    }
+
+    function render() {
+      const payload = state.payload;
+      if (!payload) return;
+      const events = filteredEvents();
+      $('#calendar-stat-events').textContent = payload.events.length;
+      $('#calendar-stat-high').textContent = payload.events.filter(e => Number(e.importance) === 3).length;
+      $('#calendar-stat-sources').textContent = new Set(payload.events.map(e => e.source_id)).size;
+      $('#calendar-list-meta').textContent = events.length + ' EVENTS';
+      $('#calendar-list').innerHTML = events.length ? events.map(eventCard).join('') : '<div class="calendar-empty">No events for this filter set.</div>';
+      updateIcs(events);
+    }
+
+    function eventCard(e) {
+      const source = e.source_url ? `<a href="${esc(e.source_url)}" target="_blank" rel="noopener">${esc(e.attribution_text || e.source_name)}</a>` : esc(e.attribution_text || e.source_name || '');
+      const status = e.status === 'tentative' ? '<span class="event-pill">Tentative</span>' : '';
+      return `
+        <article id="${esc(e.id)}" class="calendar-event-card">
+          <div class="calendar-event-card__date">
+            <strong>${esc((e.taipei_display_time || e.event_date_local).replace(/^\d{4}-/, ''))}</strong>
+            <div>${esc(e.market_display_time || '')}</div>
+          </div>
+          <div>
+            <div class="calendar-event-card__tags">
+              <span class="event-pill event-pill--${esc(e.market)}">${esc(marketLabels[e.market] || e.market)}</span>
+              <span class="event-pill event-pill--importance-${esc(e.importance)}">${esc(importanceLabel(e.importance))}</span>
+              <span class="event-pill">${esc(labels[e.event_type] || e.event_type)}</span>
+              ${status}
+            </div>
+            <h2>${esc(e.title)}</h2>
+            <p>${esc(e.description || '')}</p>
+          </div>
+          <div class="calendar-event-card__meta">
+            <span>Timezone: ${esc(e.timezone)}</span>
+            <span>Period: ${esc(e.period || '—')}</span>
+            <span>Source: ${source}</span>
+            <span>Last seen: ${esc(e.last_seen_at || '')}</span>
+          </div>
+        </article>`;
+    }
+
+    function importanceLabel(n) {
+      n = Number(n || 1);
+      return n >= 3 ? '高' : n === 2 ? '中' : '低';
+    }
+
+    function updateIcs(events) {
+      const body = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Financial Calendar Service//ZH-TW'];
+      events.forEach(e => {
+        body.push('BEGIN:VEVENT');
+        body.push('UID:' + e.event_key + '@financial-calendar');
+        body.push('SUMMARY:' + icsText(e.title));
+        body.push('DESCRIPTION:' + icsText((e.description || '') + ' Source: ' + (e.attribution_text || e.source_name || '')));
+        if (e.is_all_day) {
+          body.push('DTSTART;VALUE=DATE:' + e.event_date_local.replace(/-/g, ''));
+        } else if (e.event_time_utc) {
+          body.push('DTSTART:' + e.event_time_utc.replace(/[-:]/g, '').replace('.000', ''));
+        }
+        body.push('END:VEVENT');
+      });
+      body.push('END:VCALENDAR');
+      const blob = new Blob([body.join('\r\n')], { type: 'text/calendar;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      $('#calendar-export').href = url;
+    }
+
+    function icsText(s) {
+      return String(s || '').replace(/([,;])/g, '\\$1').replace(/\n/g, '\\n');
+    }
+  })();
+  </script>
+</body>
+</html>

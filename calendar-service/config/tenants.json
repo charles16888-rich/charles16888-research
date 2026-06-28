@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "tenants": {
+    "lynus": {
+      "display_name": "Lynus",
+      "locale": "zh-TW",
+      "timezone": "Asia/Taipei",
+      "default_markets": [
+        "US",
+        "TW",
+        "GLOBAL"
+      ],
+      "default_types": [
+        "macro",
+        "earnings",
+        "earnings_call",
+        "dividend",
+        "stock_split",
+        "ipo",
+        "material_news",
+        "shareholder_meeting",
+        "investor_conference",
+        "market_holiday",
+        "central_bank",
+        "fed_speech"
+      ],
+      "excluded_types": [
+        "tw_ex_rights",
+        "tw_ex_dividend",
+        "tw_dividend",
+        "taiwan_macro",
+        "taiwan_import_export",
+        "taiwan_cpi",
+        "taiwan_gdp",
+        "taiwan_central_bank_rate_decision"
+      ],
+      "min_importance": 2,
+      "show_watchlist_filter": true,
+      "show_source_attribution": true,
+      "homepage_widget": {
+        "title": "本週市場大事",
+        "days_ahead": 7,
+        "max_items": 8
+      }
+    },
+    "charles": {
+      "display_name": "Charles",
+      "locale": "zh-TW",
+      "timezone": "Asia/Taipei",
+      "default_markets": [
+        "US",
+        "TW",
+        "GLOBAL"
+      ],
+      "default_types": [
+        "macro",
+        "earnings",
+        "earnings_call",
+        "dividend",
+        "ex_dividend",
+        "payment_date",
+        "stock_split",
+        "ipo",
+        "material_news",
+        "shareholder_meeting",
+        "investor_conference",
+        "market_holiday",
+        "half_trading_day",
+        "central_bank",
+        "fed_speech"
+      ],
+      "excluded_types": [
+        "tw_ex_rights",
+        "tw_ex_dividend",
+        "tw_dividend",
+        "taiwan_macro",
+        "taiwan_import_export",
+        "taiwan_cpi",
+        "taiwan_gdp",
+        "taiwan_central_bank_rate_decision"
+      ],
+      "min_importance": 1,
+      "show_watchlist_filter": true,
+      "show_source_attribution": true,
+      "homepage_widget": {
+        "title": "Upcoming Market Events",
+        "days_ahead": 14,
+        "max_items": 12
+      }
+    }
+  }
+}

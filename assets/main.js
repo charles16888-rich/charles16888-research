@@ -14,6 +14,7 @@
   const STATE = {
     manifest: null,
     categories: null,
+    calendar: null,
     page: document.body.dataset.page || 'index',
   };
 
@@ -33,6 +34,7 @@
     event: '事件雷達',
     mops_daily: '重大訊息',
     news_digest: '新聞匯整',
+    calendar: '行事曆',
   };
 
   // ---------- Utilities ----------
@@ -96,12 +98,14 @@
     // resolve the same JSON file as the index. Works on python -m http.server and
     // on Cloudflare Pages root deployment.
     const bust = '?t=' + Date.now();
-    const [m, c] = await Promise.all([
+    const [m, c, cal] = await Promise.all([
       fetch('/manifest.json' + bust).then(r => r.ok ? r.json() : null).catch(() => null),
       fetch('/categories.json' + bust).then(r => r.ok ? r.json() : null).catch(() => null),
+      fetch('/assets/calendar_events.json' + bust).then(r => r.ok ? r.json() : null).catch(() => null),
     ]);
     STATE.manifest = m;
     STATE.categories = c;
+    STATE.calendar = cal;
   }
 
   function entriesByCategory(catId) {
@@ -135,6 +139,7 @@
     renderCover();
     renderCoverStats();
     renderDashboard();
+    renderMarketEventsWidget();
     renderTodayReports();
     renderCategoryIndex();
     renderFooter();
@@ -213,7 +218,7 @@
     }
 
     const categories = STATE.categories.categories.filter(c => c.enabled !== false);
-    const preferred = ['taiex', 'sectors', 'chips', 'txo', 'mops', 'news', 'stocks', 'research'];
+    const preferred = ['taiex', 'calendar', 'sectors', 'chips', 'txo', 'mops', 'news', 'stocks', 'research'];
     const ordered = [
       ...preferred.map(id => categories.find(c => c.id === id)).filter(Boolean),
       ...categories.filter(c => !preferred.includes(c.id))
@@ -225,7 +230,7 @@
         return { category: c, entry: entries[0], count: entries.length };
       })
       .filter(x => x.entry)
-      .slice(0, 7);
+      .slice(0, 8);
 
     const meta = $('#dashboard-meta');
     if (meta) meta.textContent = `${STATE.manifest.today} · ${cards.length} SIGNALS`;
@@ -270,7 +275,105 @@
     if (entry.category === 'mops') {
       return '重大訊息依事件類型、重大性與例行/非例行狀態整理，先看高影響事件。';
     }
+    if (entry.category === 'calendar') {
+      return '美股總經、FOMC、休市與台股公司事件的共用行事曆入口。';
+    }
     return tags ? `最新標籤：${tags}` : '最新資料已歸檔，點入查看完整表格與圖表。';
+  }
+
+  function renderMarketEventsWidget() {
+    const host = $('#market-events-widget');
+    if (!host) return;
+
+    const payload = STATE.calendar;
+    const allEvents = payload && Array.isArray(payload.events) ? payload.events : [];
+    const tenant = payload && payload.tenant ? payload.tenant : {};
+    const widget = tenant.homepage_widget || {};
+    const minImportance = Number(tenant.min_importance || 1);
+    const today = new Date().toISOString().slice(0, 10);
+    const maxItems = Number(widget.max_items || 8);
+
+    const events = allEvents
+      .filter(e => e.status !== 'cancelled')
+      .filter(e => (e.event_date_local || '') >= today)
+      .filter(e => Number(e.importance || 1) >= minImportance)
+      .sort((a, b) =>
+        (a.event_date_local || '').localeCompare(b.event_date_local || '') ||
+        (a.event_time_local || '').localeCompare(b.event_time_local || '')
+      )
+      .slice(0, maxItems);
+
+    const meta = $('#market-events-meta');
+    if (meta && payload) {
+      meta.textContent = `${payload.generated_at.slice(0, 10)} · ${events.length} EVENTS`;
+    }
+
+    if (!events.length) {
+      host.innerHTML = `<div class="placeholder">Calendar events pending</div>`;
+      return;
+    }
+
+    host.innerHTML = `
+      <div class="market-events-list">
+        ${events.map(renderMarketEventRow).join('')}
+      </div>
+      <a class="market-events-cta" href="reports/financial-calendar.html">開啟完整行事曆</a>
+    `;
+  }
+
+  function renderMarketEventRow(event) {
+    const importance = importanceLabel(event.importance);
+    const dateText = (event.taipei_display_time || event.event_date_local || '').replace(/^\d{4}-/, '');
+    const marketTime = event.market_display_time && event.market_display_time !== event.taipei_display_time
+      ? `<span>${escapeHTML(event.market_display_time)}</span>`
+      : '';
+    return `
+      <a class="market-event-row" href="reports/financial-calendar.html#${escapeHTML(event.id)}">
+        <div class="market-event-row__date">${escapeHTML(dateText)}</div>
+        <div class="market-event-row__body">
+          <div class="market-event-row__tags">
+            <span class="event-pill event-pill--${escapeHTML(event.market || 'global')}">${escapeHTML(marketLabel(event.market))}</span>
+            <span class="event-pill event-pill--importance-${escapeHTML(String(event.importance || 1))}">${escapeHTML(importance)}</span>
+            <span class="event-pill">${escapeHTML(calendarEventTypeLabel(event.event_type))}</span>
+          </div>
+          <strong>${escapeHTML(event.title || '')}</strong>
+          <small>${escapeHTML(event.taipei_display_time || '')}${marketTime}</small>
+        </div>
+      </a>
+    `;
+  }
+
+  function calendarEventTypeLabel(type) {
+    const labels = {
+      macro: '總經',
+      earnings: '財報',
+      earnings_call: '法說會',
+      dividend: '股利',
+      ex_dividend: '除息',
+      payment_date: '發放日',
+      stock_split: '分割',
+      ipo: 'IPO',
+      shareholder_meeting: '股東會',
+      investor_conference: '法說會',
+      material_news: '重大訊息',
+      company_announcement: '公司公告',
+      market_holiday: '休市',
+      half_trading_day: '半日',
+      central_bank: '央行',
+      fed_speech: 'Fed',
+      other: '其他'
+    };
+    return labels[type] || type || '事件';
+  }
+
+  function importanceLabel(n) {
+    if (Number(n) >= 3) return '高';
+    if (Number(n) === 2) return '中';
+    return '低';
+  }
+
+  function marketLabel(market) {
+    return ({ US: '美股', TW: '台股', GLOBAL: '全球' })[market] || market || '市場';
   }
 
   function renderTodayReports() {

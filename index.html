@@ -23,6 +23,7 @@
         <nav class="nav" aria-label="Primary">
           <a class="nav__link is-active" href="category.html?cat=sectors">族群</a>
           <a class="nav__link" href="category.html?cat=taiex">大盤</a>
+          <a class="nav__link" href="category.html?cat=calendar">行事曆</a>
           <a class="nav__link" href="category.html?cat=txo">選擇權</a>
           <a class="nav__link" href="category.html?cat=chips">籌碼</a>
           <a class="nav__link" href="category.html?cat=research">研報統計</a>
@@ -47,6 +48,18 @@
       <p id="cover-dek" class="cover__dek reveal reveal-d4"></p>
 
       <div id="cover-stats" class="stat-row reveal reveal-d5" aria-label="Market snapshot"></div>
+    </section>
+
+
+    <section id="calendar-widget-section" class="section section--calendar-widget scroll-fade" aria-labelledby="calendar-widget-title">
+      <div class="section__head">
+        <div class="section__label">
+          <span class="section__marker" aria-hidden="true"></span>
+          <h2 id="calendar-widget-title" class="section__title">本週市場<em>大事</em></h2>
+        </div>
+        <span id="market-events-meta" class="section__meta">Financial Calendar</span>
+      </div>
+      <div id="market-events-widget" class="market-events-widget" aria-live="polite"></div>
     </section>
 
     <section class="section scroll-fade" aria-labelledby="today-title">
