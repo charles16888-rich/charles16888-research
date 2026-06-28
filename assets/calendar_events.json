@@ -315,6 +315,40 @@
         "excluded": [
           "taiwan_macro",
           "tw_ex_dividend"
+        ],
+        "basis": "derived from local MOPS monthly revenue history, latest available period 2025-05; this is a tracking baseline, not a forecast",
+        "focusGroups": [
+          {
+            "label": "大型營收權重",
+            "items": [
+              "2317 鴻海｜2025-05 營收 6157億、YoY +11.9%、MoM -4.0%",
+              "2330 台積電｜2025-05 營收 3205億、YoY +39.6%、MoM -8.3%",
+              "3231 緯創｜2025-05 營收 2084億、YoY +162.1%、MoM +55.9%",
+              "2382 廣達｜2025-05 營收 1602億、YoY +58.2%、MoM +4.0%",
+              "4938 和碩｜2025-05 營收 857億、YoY -8.0%、MoM -16.7%",
+              "3036 文曄｜2025-05 營收 783億、YoY -2.3%、MoM -33.7%",
+              "3702 大聯大｜2025-05 營收 755億、YoY +12.1%、MoM -17.8%",
+              "6669 緯穎｜2025-05 營收 711億、YoY +187.3%、MoM +11.5%"
+            ]
+          },
+          {
+            "label": "AI / 半導體鏈",
+            "items": [
+              "2317 鴻海 · AI伺服器代工｜2025-05 營收 6157億、YoY +11.9%、MoM -4.0%",
+              "3231 緯創 · AI伺服器代工｜2025-05 營收 2084億、YoY +162.1%、MoM +55.9%",
+              "2382 廣達 · AI伺服器代工｜2025-05 營收 1602億、YoY +58.2%、MoM +4.0%",
+              "6669 緯穎 · AI伺服器代工｜2025-05 營收 711億、YoY +187.3%、MoM +11.5%",
+              "2357 華碩 · AI伺服器代工｜2025-05 營收 632億、YoY +41.0%、MoM +12.4%",
+              "2356 英業達 · AI伺服器代工｜2025-05 營收 612億、YoY +17.3%、MoM -1.4%",
+              "2324 仁寶 · AI伺服器代工｜2025-05 營收 576億、YoY -25.4%、MoM -7.5%",
+              "2376 技嘉 · AI伺服器代工｜2025-05 營收 467億、YoY +107.9%、MoM +55.2%"
+            ]
+          }
+        ],
+        "checkpoints": [
+          "公告窗 1-3 日：先看早公告公司與大型權值股是否提前揭露。",
+          "公告後只追蹤 YoY / MoM / 累計 YoY 的變化，不在行事曆內做買賣判斷。",
+          "若 MOPS 實際公告進來，後續會替換成個別公司事件。"
         ]
       },
       "source_name": "Taiwan monthly revenue announcement window",
@@ -323,7 +357,7 @@
       "license_note": "Company monthly revenue announcement window only. Taiwan macro calendars remain excluded.",
       "event_key": "exchange_official:company_announcement:TW:TW:2026-06:2026-07-01:台股-6-月營收公告窗開啟",
       "last_seen_at": "2026-06-28T02:30:00Z",
-      "raw_hash": "18f6c8b818af8e6eefeb95025dbf1fcf2748a264f99a412d1c4bada00e4a4c39",
+      "raw_hash": "15bfd2e1ef4418975145d09b3705fc7fa5b1a39604eae0f4c1cf838b73413e21",
       "is_all_day": false,
       "is_time_confirmed": true,
       "event_time_utc": "2026-07-01T00:00:00Z",
@@ -396,6 +430,67 @@
       "market_display_time": "2026-07-03 全天"
     },
     {
+      "id": "tw-revenue-anomaly-watch-2026-07-07",
+      "source_id": "tw_monthly_revenue",
+      "market": "TW",
+      "country": "TW",
+      "event_type": "company_announcement",
+      "category": "company_news",
+      "title": "台股月營收異動觀察名單",
+      "description": "用最近可用 MOPS 月營收歷史資料建立 YoY 高變動追蹤池；公告後用實際 6 月營收替換，不以推估值判斷方向。",
+      "event_date_local": "2026-07-07",
+      "event_time_local": "18:00:00",
+      "timezone": "Asia/Taipei",
+      "period": "2026-06",
+      "importance": 2,
+      "status": "tentative",
+      "metadata": {
+        "basis": "derived from local MOPS monthly revenue history, latest available period 2025-05; this is a tracking baseline, not a forecast",
+        "focusGroups": [
+          {
+            "label": "YoY 高變動追蹤池",
+            "items": [
+              "6637 醫影｜2025-05 營收 5億、YoY +955.9%、MoM +783.3%",
+              "2534 宏盛｜2025-05 營收 8億、YoY +660.2%、MoM -26.1%",
+              "2208 台船｜2025-05 營收 78億、YoY +525.9%、MoM +834.4%",
+              "2427 三商電｜2025-05 營收 11億、YoY +385.9%、MoM +222.0%",
+              "7711 永擎｜2025-05 營收 22億、YoY +281.4%、MoM -23.5%",
+              "2354 鴻準｜2025-05 營收 148億、YoY +249.7%、MoM +14.5%",
+              "6186 新潤｜2025-05 營收 9億、YoY +217.4%、MoM -55.1%",
+              "6869 雲豹能源｜2025-05 營收 8億、YoY +193.0%、MoM -46.0%"
+            ]
+          },
+          {
+            "label": "大型營收權重",
+            "items": [
+              "2317 鴻海｜2025-05 營收 6157億、YoY +11.9%、MoM -4.0%",
+              "2330 台積電｜2025-05 營收 3205億、YoY +39.6%、MoM -8.3%",
+              "3231 緯創｜2025-05 營收 2084億、YoY +162.1%、MoM +55.9%",
+              "2382 廣達｜2025-05 營收 1602億、YoY +58.2%、MoM +4.0%",
+              "4938 和碩｜2025-05 營收 857億、YoY -8.0%、MoM -16.7%"
+            ]
+          }
+        ],
+        "checkpoints": [
+          "基期低公司會自然出現極端 YoY，需與營收金額一起看。",
+          "公告前只列為追蹤池；公告後才更新 actual / previous / metadata。",
+          "若資料源未更新，保留舊事件並標記 last_seen_at。"
+        ]
+      },
+      "source_name": "Taiwan monthly revenue announcement window",
+      "source_url": "https://mops.twse.com.tw",
+      "attribution_text": "MOPS",
+      "license_note": "Company monthly revenue announcement window only. Taiwan macro calendars remain excluded.",
+      "event_key": "exchange_official:company_announcement:TW:TW:2026-06:2026-07-07:台股月營收異動觀察名單",
+      "last_seen_at": "2026-06-28T02:30:00Z",
+      "raw_hash": "b5fd9e570e31950741f990d89a2a0ae58e55bde7a05b5efc738c74fed18a8559",
+      "is_all_day": false,
+      "is_time_confirmed": false,
+      "event_time_utc": "2026-07-07T10:00:00Z",
+      "taipei_display_time": "2026-07-07 18:00",
+      "market_display_time": "2026-07-07 18:00 Asia/Taipei"
+    },
+    {
       "id": "fomc-minutes-2026-07-08",
       "source_id": "us_fomc_calendar",
       "market": "US",
@@ -444,7 +539,27 @@
       "status": "scheduled",
       "metadata": {
         "announcementWindow": "2026-07-01/2026-07-10",
-        "displayHint": "公告窗截止"
+        "displayHint": "公告窗截止",
+        "basis": "derived from local MOPS monthly revenue history, latest available period 2025-05; this is a tracking baseline, not a forecast",
+        "focusGroups": [
+          {
+            "label": "截止日前大型營收權重",
+            "items": [
+              "2317 鴻海｜2025-05 營收 6157億、YoY +11.9%、MoM -4.0%",
+              "2330 台積電｜2025-05 營收 3205億、YoY +39.6%、MoM -8.3%",
+              "3231 緯創｜2025-05 營收 2084億、YoY +162.1%、MoM +55.9%",
+              "2382 廣達｜2025-05 營收 1602億、YoY +58.2%、MoM +4.0%",
+              "4938 和碩｜2025-05 營收 857億、YoY -8.0%、MoM -16.7%",
+              "3036 文曄｜2025-05 營收 783億、YoY -2.3%、MoM -33.7%",
+              "3702 大聯大｜2025-05 營收 755億、YoY +12.1%、MoM -17.8%",
+              "6669 緯穎｜2025-05 營收 711億、YoY +187.3%、MoM +11.5%"
+            ]
+          }
+        ],
+        "checkpoints": [
+          "截止日前檢查尚未被個別事件取代的公司。",
+          "若 6 月營收已公告，後續應以實際公告事件為準。"
+        ]
       },
       "source_name": "Taiwan monthly revenue announcement window",
       "source_url": "https://mops.twse.com.tw",
@@ -452,7 +567,7 @@
       "license_note": "Company monthly revenue announcement window only. Taiwan macro calendars remain excluded.",
       "event_key": "exchange_official:company_announcement:TW:TW:2026-06:2026-07-10:台股-6-月營收公告截止日",
       "last_seen_at": "2026-06-28T02:30:00Z",
-      "raw_hash": "48defa07f29d910179bbce8a3b8ad4e1c6bc17ba07df994d2fdeb4ec4f1111bc",
+      "raw_hash": "a1a18f12918ad2b43f82826eb35ff30f9b1815bdf80312ea81ffd9de9a76b46b",
       "is_all_day": false,
       "is_time_confirmed": true,
       "event_time_utc": "2026-07-10T15:59:00Z",

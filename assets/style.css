@@ -3984,3 +3984,47 @@ h3, .h3 {
   }
 }
 
+/* Financial Calendar Insights */
+
+.calendar-event-card__focus {
+  display: grid;
+  gap: var(--sp-3);
+  margin-top: var(--sp-4);
+}
+
+.calendar-focus-group,
+.calendar-checkpoints {
+  border-top: var(--hairline) solid var(--rule);
+  padding-top: var(--sp-3);
+}
+
+.calendar-focus-group strong,
+.calendar-checkpoints strong {
+  display: block;
+  margin-bottom: var(--sp-2);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--gold-soft);
+  text-transform: uppercase;
+}
+
+.calendar-focus-group ul,
+.calendar-checkpoints ul {
+  display: grid;
+  gap: var(--sp-2);
+  margin: 0;
+  padding-left: var(--sp-4);
+  color: var(--ink-muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.calendar-focus-basis {
+  color: var(--ink-dim);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  line-height: 1.55;
+}
+

@@ -223,6 +223,7 @@
             </div>
             <h2>${esc(e.title)}</h2>
             <p>${esc(e.description || '')}</p>
+            ${renderEventInsight(e)}
           </div>
           <div class="calendar-event-card__meta">
             <span>Timezone: ${esc(e.timezone)}</span>
@@ -231,6 +232,30 @@
             <span>Last seen: ${esc(e.last_seen_at || '')}</span>
           </div>
         </article>`;
+    }
+
+    function renderEventInsight(e) {
+      const meta = e.metadata || {};
+      const groups = Array.isArray(meta.focusGroups) ? meta.focusGroups.filter(g => Array.isArray(g.items) && g.items.length) : [];
+      const checkpoints = Array.isArray(meta.checkpoints) ? meta.checkpoints : [];
+      const basis = meta.basis || '';
+      if (!groups.length && !checkpoints.length && !basis) return '';
+      return `
+        <div class="calendar-event-card__focus">
+          ${groups.map(group => `
+            <div class="calendar-focus-group">
+              <strong>${esc(group.label || 'Focus')}</strong>
+              <ul>${group.items.slice(0, 8).map(item => `<li>${esc(item)}</li>`).join('')}</ul>
+            </div>
+          `).join('')}
+          ${checkpoints.length ? `
+            <div class="calendar-checkpoints">
+              <strong>Checkpoints</strong>
+              <ul>${checkpoints.map(item => `<li>${esc(item)}</li>`).join('')}</ul>
+            </div>
+          ` : ''}
+          ${basis ? `<div class="calendar-focus-basis">${esc(basis)}</div>` : ''}
+        </div>`;
     }
 
     function importanceLabel(n) {

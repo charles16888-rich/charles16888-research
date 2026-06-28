@@ -34,6 +34,9 @@ class FinancialCalendarAssetsTest(unittest.TestCase):
         self.assertTrue(payload["events"])
         self.assertTrue(EXCLUDED_TYPES.issubset(set(payload["excluded_types"])))
         self.assertFalse(set(e["event_type"] for e in payload["events"]) & EXCLUDED_TYPES)
+        tw_events = [e for e in payload["events"] if e["market"] == "TW"]
+        self.assertGreaterEqual(len(tw_events), 4)
+        self.assertTrue(any(e.get("metadata", {}).get("focusGroups") for e in tw_events))
         for event in payload["events"]:
             self.assertIn(event["market"], {"US", "TW", "GLOBAL"})
             self.assertIn(event["importance"], {1, 2, 3})
@@ -54,6 +57,7 @@ class FinancialCalendarAssetsTest(unittest.TestCase):
         main_js = (ROOT / "assets" / "main.js").read_text(encoding="utf-8")
         self.assertIn('id="calendar-widget-section"', index)
         self.assertIn('id="calendar-list"', page)
+        self.assertIn("renderEventInsight", page)
         self.assertIn("renderMarketEventsWidget", main_js)
 
 
