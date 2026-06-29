@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-06-29T19:09:34+08:00",
-  "today": "2026-06-28",
+  "updated_at": "2026-06-29T23:22:34+08:00",
+  "today": "2026-06-29",
   "volume_number": 1,
   "market_summary": {
     "date": "2026-05-22",
@@ -21,6 +21,41 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "high-price-watch",
+      "category": "stocks",
+      "type": "high_price_watch",
+      "date": "2026-06-29",
+      "time": "21:40",
+      "title": "高價股觀測 · 排名熱圖",
+      "title_em": "排名熱圖",
+      "summary": "高價股追蹤 40 檔，新進 9 檔、淡出 9 檔；榜首 2308 台達電 收盤 1,810。",
+      "tags": [
+        "個股",
+        "高價股",
+        "排名熱圖",
+        "Telegram第四頁"
+      ],
+      "source_pipeline": "lynus_chip_history_high_price_watch",
+      "url": "reports/high-price-watch.html",
+      "stats": [
+        {
+          "label": "最新樣本",
+          "value": "40 檔",
+          "color": "neutral"
+        },
+        {
+          "label": "新進",
+          "value": "9 檔",
+          "color": "up"
+        },
+        {
+          "label": "最高收盤",
+          "value": "1,810",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "options-annual-2026",
       "category": "txo",
