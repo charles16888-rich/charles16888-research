@@ -44,6 +44,9 @@ def to_float(value) -> float | None:
         return None
 
 
+RET_KEYS = ("ret_1d", "ret_3d", "ret_5d", "ret_10d", "ret_20d", "ret_30d", "ret_60d")
+
+
 def is_stock_code(code: str) -> bool:
     code = str(code or "").strip()
     if not code.isdigit() or len(code) != 4:
@@ -67,6 +70,11 @@ def add_observation(observations: dict, date: str, row: dict, source: str) -> No
         chg_pct = to_float(row.get("close_chg_pct"))
     if chg_pct is None:
         chg_pct = to_float(row.get("ret_1d"))
+    future_returns = {
+        key.replace("ret_", "").replace("d", ""): to_float(row.get(key))
+        for key in RET_KEYS
+        if row.get(key) is not None
+    }
 
     by_code = observations.setdefault(date, {})
     current = by_code.get(code)
@@ -76,6 +84,7 @@ def add_observation(observations: dict, date: str, row: dict, source: str) -> No
             "name": str(row.get("name") or "").strip(),
             "close": close,
             "chg_pct": chg_pct,
+            "future_returns": future_returns,
             "sources": {source},
             "source_dates": {source: date},
         }
@@ -85,12 +94,15 @@ def add_observation(observations: dict, date: str, row: dict, source: str) -> No
     # but preserve every source for traceability.
     current["sources"].add(source)
     current.setdefault("source_dates", {})[source] = date
+    current.setdefault("future_returns", {}).update(future_returns)
     if close >= current["close"]:
         current["close"] = close
         if row.get("name"):
             current["name"] = str(row["name"]).strip()
         if chg_pct is not None:
             current["chg_pct"] = chg_pct
+        if future_returns:
+            current["future_returns"] = future_returns
 
 
 def collect_observations() -> dict:
@@ -162,6 +174,7 @@ def merge_latest_source_snapshots(observations: dict) -> None:
                     "name": item.get("name") or "",
                     "close": item.get("close"),
                     "chg_pct": item.get("chg_pct"),
+                    "future_returns": dict(item.get("future_returns", {})),
                     "sources": {source},
                     "source_dates": {source: source_date},
                 }
@@ -171,6 +184,7 @@ def merge_latest_source_snapshots(observations: dict) -> None:
             if source_date == latest_date:
                 current["close"] = item.get("close")
                 current["chg_pct"] = item.get("chg_pct")
+                current["future_returns"] = dict(item.get("future_returns", {}))
                 if item.get("name"):
                     current["name"] = item["name"]
 
@@ -213,6 +227,7 @@ def build_daily_rankings(
                 "rank_change": (old_rank - idx) if old_rank else None,
                 "is_new": old_rank is None,
                 "streak": streak,
+                "future_returns": item.get("future_returns", {}),
                 "sources": sorted(item.get("sources", [])),
                 "source_dates": {
                     source: item.get("source_dates", {}).get(source, date)
@@ -270,6 +285,129 @@ def build_matrix(daily: list[dict]) -> list[dict]:
     return matrix
 
 
+def build_daily_change(latest: dict, previous: dict) -> dict:
+    previous_by_code = {row["code"]: row for row in previous.get("rows", [])}
+    latest_by_code = {row["code"]: row for row in latest.get("rows", [])}
+    new_rows = [row for row in latest.get("rows", []) if row["code"] not in previous_by_code]
+    exit_rows = [row for row in previous.get("rows", []) if row["code"] not in latest_by_code]
+    stayed_rows = [row for row in latest.get("rows", []) if row["code"] in previous_by_code]
+    rank_up = [row for row in stayed_rows if (row.get("rank_change") or 0) > 0]
+    rank_down = [row for row in stayed_rows if (row.get("rank_change") or 0) < 0]
+    stayed_rows.sort(key=lambda row: (-row.get("streak", 0), row["rank"]))
+    rank_up.sort(key=lambda row: (-(row.get("rank_change") or 0), row["rank"]))
+    rank_down.sort(key=lambda row: ((row.get("rank_change") or 0), row["rank"]))
+    return {
+        "new": new_rows,
+        "exit": exit_rows,
+        "stayed": stayed_rows,
+        "rank_up": rank_up,
+        "rank_down": rank_down,
+        "summary": {
+            "new_count": len(new_rows),
+            "exit_count": len(exit_rows),
+            "stayed_count": len(stayed_rows),
+            "rank_up_count": len(rank_up),
+            "rank_down_count": len(rank_down),
+        },
+    }
+
+
+def build_weekly_summary(daily: list[dict]) -> dict:
+    week = daily[-5:]
+    prev_week = daily[-10:-5]
+    week_codes = {
+        row["code"]
+        for item in week
+        for row in item.get("rows", [])
+    }
+    prev_week_codes = {
+        row["code"]
+        for item in prev_week
+        for row in item.get("rows", [])
+    }
+    appearances: dict[str, dict] = {}
+    for item in week:
+        for row in item.get("rows", []):
+            bucket = appearances.setdefault(row["code"], {
+                "code": row["code"],
+                "name": row.get("name") or "",
+                "count": 0,
+                "best_rank": row["rank"],
+                "latest_rank": row["rank"],
+                "latest_close": row.get("close"),
+                "streak": row.get("streak", 0),
+            })
+            bucket["count"] += 1
+            bucket["best_rank"] = min(bucket["best_rank"], row["rank"])
+            bucket["latest_rank"] = row["rank"]
+            bucket["latest_close"] = row.get("close")
+            bucket["streak"] = row.get("streak", 0)
+    top_appearances = sorted(
+        appearances.values(),
+        key=lambda row: (-row["count"], row["best_rank"], row["code"]),
+    )[:20]
+    weekly_new = [
+        appearances[code] for code in sorted(week_codes - prev_week_codes)
+        if code in appearances
+    ]
+    weekly_exit = []
+    for code in sorted(prev_week_codes - week_codes):
+        last_row = next(
+            (row for item in reversed(prev_week) for row in item.get("rows", []) if row["code"] == code),
+            None,
+        )
+        if last_row:
+            weekly_exit.append(last_row)
+    champions = [row for row in top_appearances if row["count"] == len(week)]
+    return {
+        "start": week[0]["date"] if week else None,
+        "end": week[-1]["date"] if week else None,
+        "days": len(week),
+        "top_appearances": top_appearances,
+        "new": weekly_new[:12],
+        "exit": weekly_exit[:12],
+        "champions": champions[:12],
+    }
+
+
+def build_tracks(daily: list[dict]) -> list[dict]:
+    latest_rows = daily[-1].get("rows", []) if daily else []
+    targets = [row["code"] for row in latest_rows[:12]]
+    by_code: dict[str, list[dict]] = {code: [] for code in targets}
+    for item in daily:
+        for row in item.get("rows", []):
+            if row["code"] in by_code:
+                by_code[row["code"]].append({
+                    "date": item["date"],
+                    "rank": row["rank"],
+                    "close": row.get("close"),
+                    "chg_pct": row.get("chg_pct"),
+                    "future_returns": row.get("future_returns", {}),
+                })
+    tracks = []
+    latest_by_code = {row["code"]: row for row in latest_rows}
+    for code in targets:
+        history = by_code.get(code, [])
+        if not history:
+            continue
+        latest = latest_by_code[code]
+        tracks.append({
+            "code": code,
+            "name": latest.get("name") or "",
+            "latest_rank": latest["rank"],
+            "latest_close": latest.get("close"),
+            "latest_chg_pct": latest.get("chg_pct"),
+            "streak": latest.get("streak", 0),
+            "appearances": len(history),
+            "first_date": history[0]["date"],
+            "last_date": history[-1]["date"],
+            "best_rank": min(row["rank"] for row in history),
+            "history": history[-12:],
+            "future_returns": latest.get("future_returns", {}),
+        })
+    return tracks
+
+
 def build_payload() -> dict:
     observations = collect_observations()
     merge_latest_source_snapshots(observations)
@@ -283,6 +421,7 @@ def build_payload() -> dict:
     previous_codes = {r["code"] for r in previous["rows"]}
     new_rows = [r for r in latest["rows"] if r["code"] not in previous_codes]
     exit_rows = [r for r in previous["rows"] if r["code"] not in latest_codes]
+    daily_change = build_daily_change(latest, previous)
     top = latest["rows"][0] if latest["rows"] else None
 
     source_counts = defaultdict(int)
@@ -325,6 +464,9 @@ def build_payload() -> dict:
         "source_counts": dict(sorted(source_counts.items())),
         "latest": latest,
         "previous": previous,
+        "daily_change": daily_change,
+        "weekly_summary": build_weekly_summary(daily),
+        "tracks": build_tracks(daily),
         "new_rows": new_rows[:12],
         "exit_rows": exit_rows[:12],
         "matrix_dates": [d["date"] for d in daily[-MATRIX_DAYS:]],
@@ -408,6 +550,125 @@ def render_chip_list(rows: list[dict], empty_text: str) -> str:
     )
 
 
+def pct_class(value) -> str:
+    if value is None:
+        return "num-neutral"
+    return "num-up" if float(value) > 0 else "num-down" if float(value) < 0 else "num-neutral"
+
+
+def render_change_list(rows: list[dict], empty_text: str, mode: str = "rank") -> str:
+    if not rows:
+        return f'<div class="hpw-empty">{escape(empty_text)}</div>'
+    items = []
+    for row in rows[:10]:
+        if mode == "exit":
+            meta = f'前次 #{row.get("rank")} / {fmt_price(row.get("close"))}'
+        elif row.get("rank_change") is None:
+            meta = f'NEW / #{row.get("rank")} / {fmt_price(row.get("close"))}'
+        else:
+            meta = f'{rank_change_text(row.get("rank_change"))} / #{row.get("rank")} / {fmt_price(row.get("close"))}'
+        items.append(
+            f'<li><strong>{escape(row["code"])}</strong><span>{escape(row.get("name") or "")}</span><em>{escape(meta)}</em></li>'
+        )
+    return f'<ul class="hpw-change-list">{"".join(items)}</ul>'
+
+
+def render_daily_change(payload: dict) -> str:
+    change = payload["daily_change"]
+    s = change["summary"]
+    return f"""
+      <section class="hpw-panel hpw-panel--summary">
+        <h2>今天 vs 前一交易日<em>每日變動</em></h2>
+        <div class="hpw-kpi-grid">
+          <div><strong>{s["new_count"]}</strong><span>新進榜</span></div>
+          <div><strong>{s["exit_count"]}</strong><span>掉出榜</span></div>
+          <div><strong>{s["stayed_count"]}</strong><span>連續留榜</span></div>
+          <div><strong>{s["rank_up_count"]}/{s["rank_down_count"]}</strong><span>排名升 / 降</span></div>
+        </div>
+        <div class="hpw-change-grid">
+          <div><h3>新進榜</h3>{render_change_list(change["new"], "沒有新進", "new")}</div>
+          <div><h3>掉出榜</h3>{render_change_list(change["exit"], "沒有掉出", "exit")}</div>
+          <div><h3>排名上升</h3>{render_change_list(change["rank_up"], "沒有明顯上升")}</div>
+          <div><h3>連續留榜</h3>{render_change_list(change["stayed"], "沒有連續留榜")}</div>
+        </div>
+      </section>
+    """
+
+
+def render_track_cards(payload: dict) -> str:
+    cards = []
+    for track in payload.get("tracks", [])[:8]:
+        history = track.get("history", [])
+        bars = []
+        for point in history:
+            height = max(18, 78 - min(point["rank"], DAILY_TOP_N) * 1.3)
+            bars.append(
+                f'<span style="height:{height:.0f}%" title="{escape(point["date"])} #{point["rank"]} {fmt_price(point.get("close"))}"></span>'
+            )
+        returns = []
+        for key in ("1", "3", "5", "10"):
+            value = track.get("future_returns", {}).get(key)
+            returns.append(f'<span class="{pct_class(value)}">{key}d {fmt_pct(value)}</span>')
+        cards.append(f"""
+          <article class="hpw-track-card">
+            <div class="hpw-track-head">
+              <strong>{escape(track["code"])}</strong>
+              <span>{escape(track.get("name") or "")}</span>
+              <em>#{track["latest_rank"]}</em>
+            </div>
+            <div class="hpw-track-meta">
+              <span>收盤 {fmt_price(track.get("latest_close"))}</span>
+              <span class="{pct_class(track.get("latest_chg_pct"))}">{fmt_pct(track.get("latest_chg_pct"))}</span>
+              <span>連續 {track.get("streak", 0)}d</span>
+              <span>出現 {track.get("appearances", 0)} 次</span>
+            </div>
+            <div class="hpw-bars">{"".join(bars)}</div>
+            <div class="hpw-return-row">{"".join(returns)}</div>
+          </article>
+        """)
+    return f"""
+      <section class="hpw-panel">
+        <h2>個股<em>軌跡卡</em></h2>
+        <p class="hpw-note">先列最新高價股前 8 檔；柱狀高度代表排名強弱，越高表示排名越前。後續表現若來源尚未回填會顯示空值。</p>
+        <div class="hpw-track-grid">{"".join(cards)}</div>
+      </section>
+    """
+
+
+def render_weekly_summary(payload: dict) -> str:
+    weekly = payload.get("weekly_summary", {})
+    top = weekly.get("top_appearances", [])[:20]
+    rows = "".join(
+        f'<tr><td class="num">{idx}</td><td><strong>{escape(row["code"])}</strong> {escape(row.get("name") or "")}</td>'
+        f'<td class="num">{row["count"]}/{weekly.get("days", 0)}</td><td class="num">#{row["best_rank"]}</td>'
+        f'<td class="num">{fmt_price(row.get("latest_close"))}</td></tr>'
+        for idx, row in enumerate(top, start=1)
+    )
+    return f"""
+      <section class="hpw-panel">
+        <h2>近 5 筆<em>每週總結</em></h2>
+        <p class="hpw-note">區間 {escape(str(weekly.get("start") or ""))} -> {escape(str(weekly.get("end") or ""))}，用來看本週最常出現、新進、掉出的高價股。</p>
+        <div class="hpw-week-grid">
+          <div>
+            <h3>本週最常出現 Top 20</h3>
+            <div class="hpw-scroll"><table class="hpw-table hpw-table--compact">
+              <thead><tr><th class="num">#</th><th>股票</th><th class="num">出現</th><th class="num">最佳</th><th class="num">最新收盤</th></tr></thead>
+              <tbody>{rows}</tbody>
+            </table></div>
+          </div>
+          <div>
+            <h3>新進高價股</h3>
+            <div class="hpw-chip-row">{render_chip_list(weekly.get("new", []), "本週無新進")}</div>
+            <h3>連續霸榜股</h3>
+            <div class="hpw-chip-row">{render_chip_list(weekly.get("champions", []), "本週無 5/5 連續出現")}</div>
+            <h3>掉出高價股</h3>
+            <div class="hpw-chip-row">{render_chip_list(weekly.get("exit", []), "本週無掉出")}</div>
+          </div>
+        </div>
+      </section>
+    """
+
+
 def render_heatmap(payload: dict) -> str:
     dates = payload["matrix_dates"]
     cols = len(dates)
@@ -432,7 +693,7 @@ def render_heatmap(payload: dict) -> str:
             )
             body.append(
                 f'<div class="hpw-cell {tier} {direction}" title="{escape(title)}">'
-                f'{"#" + str(rank) if rank else ""}<span>{fmt_price(cell.get("close")) if rank else ""}</span></div>'
+                f'{"#" + str(rank) if rank else ""}</div>'
             )
     return (
         f'<div class="hpw-heatmap" style="--hpw-cols:{cols}">'
@@ -484,10 +745,67 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
     .hpw-chip strong { color: var(--gold); font-family: var(--font-mono); }
     .hpw-chip em { color: var(--muted); font-style: normal; font-family: var(--font-mono); margin-left: 5px; }
     .hpw-chip--quiet { color: var(--muted); border-color: rgba(255,246,232,.14); }
+    .hpw-panel {
+      background: #fff8ea;
+      border: 1px solid #d8bd7a;
+      color: #1c1711;
+      padding: 26px;
+      margin-top: 28px;
+    }
+    .hpw-panel h2 { color: #1c1711; font-size: clamp(24px, 3.4vw, 42px); }
+    .hpw-panel h2 em { color: #9a6b00; }
+    .hpw-panel h3 { color: #362615; margin: 0 0 10px; font-size: 15px; }
+    .hpw-note { color: #5b4a35; font-size: 15px; line-height: 1.75; }
+    .hpw-kpi-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 18px 0 22px; }
+    .hpw-kpi-grid div { border: 1px solid #d8bd7a; background: #fffdf7; padding: 14px; }
+    .hpw-kpi-grid strong { display: block; color: #8d1f2d; font-family: var(--font-mono); font-size: 30px; line-height: 1; }
+    .hpw-kpi-grid span { display: block; margin-top: 6px; color: #5b4a35; font-size: 13px; }
+    .hpw-change-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+    .hpw-change-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+    .hpw-change-list li { display: grid; grid-template-columns: 52px 1fr; gap: 4px 8px; align-items: baseline; border-bottom: 1px solid #eadbb8; padding: 7px 0; }
+    .hpw-change-list strong { color: #9a6b00; font-family: var(--font-mono); font-size: 15px; }
+    .hpw-change-list span { color: #1c1711; font-weight: 700; }
+    .hpw-change-list em { grid-column: 2; color: #6d5a40; font-family: var(--font-mono); font-size: 12px; font-style: normal; }
+    .hpw-empty { color: #7e705d; font-style: italic; }
+    .hpw-heatmap { grid-template-columns: minmax(190px, 240px) repeat(var(--hpw-cols), 56px); gap: 6px; min-width: calc(220px + var(--hpw-cols) * 62px); }
+    .hpw-sticky { background: #fff8ea; }
+    .hpw-grid-head, .hpw-grid-date { color: #6d5a40; border-bottom-color: #d8bd7a; font-size: 12px; }
+    .hpw-stock { min-height: 48px; border-color: #d8bd7a; background: #fffdf7; }
+    .hpw-stock strong { color: #9a6b00; font-size: 15px; }
+    .hpw-stock span { color: #1c1711; font-weight: 700; }
+    .hpw-stock em { color: #6d5a40; font-size: 12px; }
+    .hpw-cell { min-height: 48px; border-color: rgba(40, 30, 18, .18); color: #1c1711; font-size: 13px; font-weight: 800; }
+    .hpw-cell.is-empty { background: #f1eadc; color: transparent; }
+    .hpw-cell.tier-1 { background: #9f2f3f; border-color: #7f2030; color: #fff8ea; }
+    .hpw-cell.tier-2 { background: #d66a4a; border-color: #b24f35; color: #fff8ea; }
+    .hpw-cell.tier-3 { background: #e9bd55; border-color: #c99c2f; color: #1c1711; }
+    .hpw-cell.tier-4 { background: #f6e1a9; border-color: #d8bd7a; color: #1c1711; }
+    .hpw-cell.is-up { box-shadow: inset 0 4px 0 #b81f35; }
+    .hpw-cell.is-down { box-shadow: inset 0 -4px 0 #16814f; }
+    .hpw-table { font-size: 15px; background: #fffdf7; }
+    .hpw-table th { color: #6d5a40; border-bottom-color: #d8bd7a; font-size: 12px; }
+    .hpw-table td { color: #1c1711; border-bottom-color: #eadbb8; }
+    .hpw-table--compact { font-size: 13px; }
+    .hpw-chip { border-color: #d8bd7a; color: #1c1711; background: #fffdf7; font-size: 14px; }
+    .hpw-chip strong { color: #9a6b00; }
+    .hpw-chip em { color: #6d5a40; }
+    .hpw-track-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+    .hpw-track-card { border: 1px solid #d8bd7a; background: #fffdf7; padding: 14px; }
+    .hpw-track-head { display: grid; grid-template-columns: auto 1fr auto; gap: 8px; align-items: baseline; }
+    .hpw-track-head strong { color: #9a6b00; font-family: var(--font-mono); font-size: 16px; }
+    .hpw-track-head span { color: #1c1711; font-weight: 800; }
+    .hpw-track-head em { color: #8d1f2d; font-family: var(--font-mono); font-style: normal; }
+    .hpw-track-meta, .hpw-return-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; font-family: var(--font-mono); font-size: 12px; color: #5b4a35; }
+    .hpw-bars { height: 74px; display: flex; align-items: flex-end; gap: 4px; margin-top: 14px; padding: 8px 0 0; border-top: 1px dashed #d8bd7a; }
+    .hpw-bars span { flex: 1; min-width: 6px; background: #9f2f3f; opacity: .9; }
+    .hpw-return-row span { border: 1px solid #eadbb8; padding: 3px 5px; background: #fff8ea; }
+    .hpw-week-grid { display: grid; grid-template-columns: 1.35fr .85fr; gap: 20px; align-items: start; }
     @media (max-width: 720px) {
-      .hpw-table { font-size: 12px; }
+      .hpw-panel { padding: 18px; }
+      .hpw-kpi-grid, .hpw-change-grid, .hpw-track-grid, .hpw-week-grid { grid-template-columns: 1fr; }
+      .hpw-table { font-size: 13px; }
       .hpw-table th:nth-child(7), .hpw-table td:nth-child(7) { display: none; }
-      .hpw-heatmap { grid-template-columns: minmax(140px, 180px) repeat(var(--hpw-cols), 42px); min-width: calc(150px + var(--hpw-cols) * 47px); }
+      .hpw-heatmap { grid-template-columns: minmax(150px, 190px) repeat(var(--hpw-cols), 46px); min-width: calc(160px + var(--hpw-cols) * 52px); }
     }
   </style>
 </head>
@@ -547,11 +865,15 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
     </section>
 
     <div class="hpw-wrap">
+      __DAILY_CHANGE__
+
       <section class="hpw-panel">
         <h2>近 30 筆<em>排名熱圖</em></h2>
         <p class="hpw-note">顏色越亮代表排名越前；上緣紅線代表該筆漲幅為正，下緣綠線代表該筆跌幅為負。左側分數為近 30 筆出現次數。</p>
         <div class="hpw-scroll">__HEATMAP__</div>
       </section>
+
+      __TRACK_CARDS__
 
       <section class="hpw-panel">
         <h2>最新<em>高價股清單</em></h2>
@@ -582,6 +904,8 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
         <div class="hpw-chip-row">__EXIT_ROWS__</div>
       </section>
 
+      __WEEKLY_SUMMARY__
+
       <section class="hpw-panel">
         <h2>資料<em>說明</em></h2>
         <p class="hpw-note">__SOURCE_NOTE__</p>
@@ -610,11 +934,15 @@ def render_html(payload: dict) -> None:
     html = html.replace("__LATEST_COUNT__", str(stats["latest_count"]))
     html = html.replace("__MAX_CLOSE__", fmt_price(stats["max_close"]))
     html = html.replace("__NEW_COUNT__", str(stats["new_count"]))
+    html = html.replace("__DAILY_CHANGE__", render_daily_change(payload))
     html = html.replace("__HEATMAP__", render_heatmap(payload))
+    html = html.replace("__TRACK_CARDS__", render_track_cards(payload))
     html = html.replace("__LATEST_ROWS__", latest_rows)
     html = html.replace("__NEW_ROWS__", render_chip_list(payload["new_rows"], "沒有新進名單"))
     html = html.replace("__EXIT_ROWS__", render_chip_list(payload["exit_rows"], "沒有淡出名單"))
+    html = html.replace("__WEEKLY_SUMMARY__", render_weekly_summary(payload))
     html = html.replace("__SOURCE_NOTE__", escape(payload["source_note"]))
+    html = "\n".join(line.rstrip() for line in html.splitlines()) + "\n"
     REPORT_OUT.write_text(html, encoding="utf-8")
 
 
@@ -659,19 +987,7 @@ def update_categories() -> None:
     categories = read_json(CATEGORIES_PATH)
     stocks = next((c for c in categories.get("categories", []) if c.get("id") == "stocks"), None)
     if not stocks:
-        stocks = {
-            "id": "stocks",
-            "name_zh": "個股",
-            "name_en": "Stocks",
-            "tagline_zh": "高價股 × 個股追蹤",
-            "tagline_en": "Single-name watch",
-            "description": "個股觀測、高價股排名與事件追蹤",
-            "enabled": True,
-            "source_pipelines": [],
-            "subcategories": [],
-            "report_types": [],
-        }
-        categories.setdefault("categories", []).append(stocks)
+        raise RuntimeError("stocks category not found")
 
     pipelines = stocks.setdefault("source_pipelines", [])
     if "high_price_watch" not in pipelines:
