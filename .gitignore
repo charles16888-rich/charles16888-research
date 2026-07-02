@@ -29,3 +29,7 @@ tools/_vectorize_upload.ndjson
 
 # stock_chip.db snapshot (16.7 GB) — NEVER commit. Recreated via sqlite3.backup() when crawler holds write lock.
 _cache/
+
+.dev.vars*
+!.dev.vars.example
+!.env.example
