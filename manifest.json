@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-02T17:10:48+08:00",
+  "updated_at": "2026-07-02T20:59:20+08:00",
   "today": "2026-07-02",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,109 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-07-02-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-07-02",
+      "time": "20:00",
+      "title": "2026-07-02 族群週報",
+      "title_em": "矽晶圓",
+      "summary": "涵蓋 2026-06-26 ~ 2026-07-02。週領漲 矽晶圓 +10.95%，週領跌 鏡頭光學 -15.98%；資金焦點 晶圓代工。",
+      "tags": [
+        "矽晶圓",
+        "鏡頭光學",
+        "晶圓代工",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-07-02/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "矽晶圓 +10.95%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "鏡頭光學 -15.98%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "晶圓代工",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-02-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-07-02",
+      "time": "20:00",
+      "title": "2026-07-02 每日族群輪動雷達",
+      "title_em": "AI_ASIC設計",
+      "summary": "今日相對升溫以 AI_ASIC設計 最明顯，相對降溫以 ABF載板 壓力最大；今日轉強力道大於轉弱力道。",
+      "tags": [
+        "AI_ASIC設計",
+        "ABF載板",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-07-02/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "AI_ASIC設計 +5.84 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "ABF載板 -8.54 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-02-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-07-02",
+      "time": "20:00",
+      "title": "2026-07-02 族群盤後快報",
+      "title_em": "塑化",
+      "summary": "全 74 族群、成交 12077.2 億；領漲 塑化 +5.67%，領跌 ABF載板 -4.98%；漲多族群 52/74，全族群均漲 +0.68%。",
+      "tags": [
+        "塑化",
+        "ABF載板",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-07-02/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "塑化 +5.67%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "ABF載板 -4.98%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "9.1%",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "options-annual-2026",
       "category": "txo",
@@ -335,41 +438,6 @@
       ]
     },
     {
-      "id": "high-price-watch",
-      "category": "stocks",
-      "type": "high_price_watch",
-      "date": "2026-06-29",
-      "time": "21:40",
-      "title": "高價股觀測 · 排名熱圖",
-      "title_em": "排名熱圖",
-      "summary": "高價股追蹤 40 檔，新進 9 檔、淡出 9 檔；榜首 2308 台達電 收盤 1,810。",
-      "tags": [
-        "個股",
-        "高價股",
-        "排名熱圖",
-        "Telegram第四頁"
-      ],
-      "source_pipeline": "lynus_chip_history_high_price_watch",
-      "url": "reports/high-price-watch.html",
-      "stats": [
-        {
-          "label": "最新樣本",
-          "value": "40 檔",
-          "color": "neutral"
-        },
-        {
-          "label": "新進",
-          "value": "9 檔",
-          "color": "up"
-        },
-        {
-          "label": "最高收盤",
-          "value": "1,810",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
       "id": "2026-06-29-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -504,6 +572,41 @@
         {
           "label": "台股",
           "value": "3",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "high-price-watch",
+      "category": "stocks",
+      "type": "high_price_watch",
+      "date": "2026-06-26",
+      "time": "21:40",
+      "title": "高價股觀測 · 排名熱圖",
+      "title_em": "排名熱圖",
+      "summary": "高價股追蹤 40 檔，新進 11 檔、淡出 11 檔；榜首 7610 聯友金屬-創 收盤 2,250。",
+      "tags": [
+        "個股",
+        "高價股",
+        "排名熱圖",
+        "Telegram第四頁"
+      ],
+      "source_pipeline": "lynus_chip_history_high_price_watch",
+      "url": "reports/high-price-watch.html",
+      "stats": [
+        {
+          "label": "最新樣本",
+          "value": "40 檔",
+          "color": "neutral"
+        },
+        {
+          "label": "新進",
+          "value": "11 檔",
+          "color": "up"
+        },
+        {
+          "label": "最高收盤",
+          "value": "2,250",
           "color": "neutral"
         }
       ]
