@@ -111,6 +111,10 @@
   .q2-status--below { background: rgba(164,60,43,.12); color: #a43c2b; }
   .q2-status--inline { background: rgba(138,101,11,.14); color: #8a650b; }
   .q2-status--incomplete, .q2-status--no_forecast { background: rgba(61,51,38,.10); color: #5b5144; }
+  .q2-status--watch, .q2-status--partial, .q2-status--needs_review { background: rgba(138,101,11,.14); color: #8a650b; }
+  .q2-status--announced_no_forecast, .q2-status--not_in_forecast { background: rgba(61,51,38,.10); color: #5b5144; }
+  .q2-event .q2-mops-table td.summary { min-width: 260px; white-space: normal; line-height: 1.55; }
+  .q2-event .q2-mops-table td.time { min-width: 112px; }
   .num-pos { color: #147a45; font-weight: 800; }
   .num-neg { color: #a43c2b; font-weight: 800; }
   @media (max-width: 720px) { .q2-coverage, .q2-mops-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } .q2-table th, .q2-table td, .q2-mops-table th, .q2-mops-table td { padding: 8px 6px; } .q2-mops h2 { font-size: 24px; } }
@@ -157,6 +161,36 @@
       </thead>
       <tbody id="q2-mops-body">
         <tr><td colspan="13" class="muted">讀取中...</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section class="q2-mops q2-event" aria-label="MOPS 今日營收公告追蹤">
+  <div class="q2-mops-head">
+    <div>
+      <h2>今日 MOPS 營收公告</h2>
+      <p id="q2-event-note">讀取公開 MOPS 營收公告...</p>
+    </div>
+    <a class="q2-mops-link" href="https://mops.twse.com.tw/mops/web/t05st01" target="_blank" rel="noopener">MOPS 重大訊息</a>
+  </div>
+  <div class="q2-mops-grid" id="q2-event-stats"></div>
+  <div class="q2-mops-table-wrap">
+    <table class="q2-mops-table">
+      <thead>
+        <tr>
+          <th>時間</th>
+          <th>代號</th>
+          <th>公司</th>
+          <th>對照</th>
+          <th class="num">6月公告<br><small>億元</small></th>
+          <th class="num">Q2財測<br><small>億元</small></th>
+          <th class="num">Q2追蹤<br><small>億元</small></th>
+          <th class="num">樣本</th>
+          <th>公告摘要</th>
+        </tr>
+      </thead>
+      <tbody id="q2-event-body">
+        <tr><td colspan="9" class="muted">讀取中...</td></tr>
       </tbody>
     </table>
   </div>
@@ -874,6 +908,83 @@
         note.textContent = `MOPS 比對資料讀取失敗：${error.message}`;
         stats.innerHTML = '';
         body.innerHTML = '<tr><td colspan="13" class="muted">請先確認 assets/q2_forecast_revenue_compare.json 是否已產生。</td></tr>';
+      });
+  })();
+</script>
+<script>
+  (() => {
+    const DATA_URL = '../assets/mops_revenue_forecast_watch.json';
+    const note = document.getElementById('q2-event-note');
+    const stats = document.getElementById('q2-event-stats');
+    const body = document.getElementById('q2-event-body');
+    if (!note || !stats || !body) return;
+
+    const numberFmt = new Intl.NumberFormat('zh-TW', { maximumFractionDigits: 1 });
+    const intFmt = new Intl.NumberFormat('zh-TW', { maximumFractionDigits: 0 });
+    const dash = '<span class="muted">缺</span>';
+    const escapeHtml = (value) => String(value ?? '').replace(/[&<>"']/g, (ch) => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
+    }[ch]));
+    const isNumber = (value) => value !== null && value !== undefined && value !== '' && Number.isFinite(Number(value));
+    const fmtYi = (value) => isNumber(value) ? numberFmt.format(Number(value) / 100) : dash;
+    const fmtInt = (value) => isNumber(value) ? intFmt.format(Number(value)) : dash;
+    const fmtTime = (value) => String(value || '').replace('2026-', '').replace(' ', '<br>');
+
+    function renderStats(payload) {
+      const s = payload.stats || {};
+      const cards = [
+        ['今日公告', s.event_count, payload.event_date || ''],
+        ['財測名單內', s.matched_forecast_count, '與匿名 OCR 財測清單交集'],
+        ['明確6月營收', s.explicit_june_revenue_count, '可先行追蹤'],
+        ['可完整比對', s.comparable_count, '需4-6月皆齊'],
+      ];
+      stats.innerHTML = cards.map(([label, value, sub]) => `
+        <div class="q2-mops-card">
+          <span>${escapeHtml(label)}</span>
+          <strong>${escapeHtml(value ?? 0)}</strong>
+          <small>${escapeHtml(sub || '')}</small>
+        </div>
+      `).join('');
+    }
+
+    function renderRows(payload) {
+      const rows = payload.rows || [];
+      if (!rows.length) {
+        body.innerHTML = '<tr><td colspan="9" class="muted">今日尚未抓到營收相關重大訊息。</td></tr>';
+        return;
+      }
+      body.innerHTML = rows.map((row) => `
+        <tr>
+          <td class="time mono">${fmtTime(row.publish_time)}</td>
+          <td class="mono">${escapeHtml(row.code)}</td>
+          <td>${escapeHtml(row.name || row.forecast_name || '')}</td>
+          <td><span class="q2-status q2-status--${escapeHtml(row.status)}">${escapeHtml(row.status_label || row.status)}</span></td>
+          <td class="num">${fmtYi(row.june_revenue_m)}</td>
+          <td class="num">${fmtYi(row.forecast_revenue_m)}</td>
+          <td class="num">${fmtYi(row.partial_q2_revenue_m)}</td>
+          <td class="num">${fmtInt(row.sample_count)}</td>
+          <td class="summary">${escapeHtml(row.summary || '')}</td>
+        </tr>
+      `).join('');
+    }
+
+    function render(payload) {
+      const s = payload.stats || {};
+      note.textContent = `${payload.event_date || ''} 公開 MOPS 營收相關重大訊息 ${s.event_count || 0} 筆，${s.matched_forecast_count || 0} 筆出現在匿名財測名單；僅追蹤統計，不構成投資建議。`;
+      renderStats(payload);
+      renderRows(payload);
+    }
+
+    fetch(`${DATA_URL}?v=${Date.now()}`, { cache: 'no-store' })
+      .then((response) => {
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return response.json();
+      })
+      .then(render)
+      .catch((error) => {
+        note.textContent = `今日營收公告資料讀取失敗：${error.message}`;
+        stats.innerHTML = '';
+        body.innerHTML = '<tr><td colspan="9" class="muted">請確認 assets/mops_revenue_forecast_watch.json 是否已產生。</td></tr>';
       });
   })();
 </script>
