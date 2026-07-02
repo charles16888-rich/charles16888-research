@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>高價股觀測 | charles16888</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="../assets/fonts.css" />
+  <link rel="stylesheet" href="../assets/style.css" />
+  <style>
+    .hpw-wrap { margin: 44px 0 90px; }
+    .hpw-panel { border-top: 1px solid rgba(255, 209, 95, .42); padding-top: 26px; margin-top: 34px; }
+    .hpw-panel h2 { margin: 0 0 18px; font-family: var(--font-serif); font-size: clamp(26px, 4vw, 48px); font-weight: 500; color: var(--ink); }
+    .hpw-panel h2 em { color: var(--gold-soft); font-style: italic; }
+    .hpw-note { color: var(--muted); line-height: 1.8; max-width: 980px; }
+    .hpw-scroll { overflow-x: auto; padding-bottom: 8px; }
+    .hpw-heatmap { display: grid; grid-template-columns: minmax(160px, 220px) repeat(var(--hpw-cols), 48px); gap: 5px; min-width: calc(180px + var(--hpw-cols) * 53px); align-items: stretch; }
+    .hpw-sticky { position: sticky; left: 0; z-index: 2; background: var(--bg); }
+    .hpw-grid-head, .hpw-grid-date { font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; color: var(--muted); text-transform: uppercase; padding: 7px 4px; border-bottom: 1px solid rgba(255, 246, 232, .14); }
+    .hpw-grid-date { text-align: center; }
+    .hpw-stock { min-height: 42px; border: 1px solid rgba(255, 246, 232, .14); padding: 8px 10px; display: grid; grid-template-columns: auto 1fr auto; gap: 7px; align-items: center; }
+    .hpw-stock strong { color: var(--gold); font-family: var(--font-mono); }
+    .hpw-stock span { color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .hpw-stock em { color: var(--muted); font-style: normal; font-family: var(--font-mono); font-size: 11px; }
+    .hpw-cell { min-height: 42px; border: 1px solid rgba(255, 246, 232, .12); display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 11px; color: rgba(255, 246, 232, .86); }
+    .hpw-cell span { font-size: 10px; color: rgba(255, 246, 232, .68); margin-top: 2px; }
+    .hpw-cell.is-empty { background: rgba(255, 246, 232, .03); color: transparent; }
+    .hpw-cell.tier-1 { background: rgba(255, 209, 95, .42); border-color: rgba(255, 209, 95, .72); color: #fff7df; }
+    .hpw-cell.tier-2 { background: rgba(232, 90, 90, .34); border-color: rgba(232, 90, 90, .58); }
+    .hpw-cell.tier-3 { background: rgba(90, 154, 232, .26); border-color: rgba(90, 154, 232, .44); }
+    .hpw-cell.tier-4 { background: rgba(255, 246, 232, .11); }
+    .hpw-cell.is-down { box-shadow: inset 0 -3px 0 rgba(113, 225, 151, .65); }
+    .hpw-cell.is-up { box-shadow: inset 0 3px 0 rgba(255, 119, 126, .65); }
+    .hpw-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .hpw-table th { text-align: left; color: var(--muted); font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; border-bottom: 1px solid rgba(255,246,232,.2); padding: 10px 8px; }
+    .hpw-table td { border-bottom: 1px solid rgba(255,246,232,.09); padding: 12px 8px; color: var(--ink); }
+    .hpw-table .num { text-align: right; font-family: var(--font-mono); white-space: nowrap; }
+    .hpw-chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
+    .hpw-chip { border: 1px solid rgba(255,209,95,.28); color: var(--ink); padding: 8px 10px; font-size: 13px; background: rgba(255,246,232,.04); }
+    .hpw-chip strong { color: var(--gold); font-family: var(--font-mono); }
+    .hpw-chip em { color: var(--muted); font-style: normal; font-family: var(--font-mono); margin-left: 5px; }
+    .hpw-chip--quiet { color: var(--muted); border-color: rgba(255,246,232,.14); }
+    .hpw-panel {
+      background: #fff8ea;
+      border: 1px solid #d8bd7a;
+      color: #1c1711;
+      padding: 26px;
+      margin-top: 28px;
+    }
+    .hpw-panel h2 { color: #1c1711; font-size: clamp(24px, 3.4vw, 42px); }
+    .hpw-panel h2 em { color: #9a6b00; }
+    .hpw-panel h3 { color: #362615; margin: 0 0 10px; font-size: 15px; }
+    .hpw-note { color: #5b4a35; font-size: 15px; line-height: 1.75; }
+    .hpw-kpi-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 18px 0 22px; }
+    .hpw-kpi-grid div { border: 1px solid #d8bd7a; background: #fffdf7; padding: 14px; }
+    .hpw-kpi-grid strong { display: block; color: #8d1f2d; font-family: var(--font-mono); font-size: 30px; line-height: 1; }
+    .hpw-kpi-grid span { display: block; margin-top: 6px; color: #5b4a35; font-size: 13px; }
+    .hpw-change-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+    .hpw-change-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+    .hpw-change-list li { display: grid; grid-template-columns: 52px 1fr; gap: 4px 8px; align-items: baseline; border-bottom: 1px solid #eadbb8; padding: 7px 0; }
+    .hpw-change-list strong { color: #9a6b00; font-family: var(--font-mono); font-size: 15px; }
+    .hpw-change-list span { color: #1c1711; font-weight: 700; }
+    .hpw-change-list em { grid-column: 2; color: #6d5a40; font-family: var(--font-mono); font-size: 12px; font-style: normal; }
+    .hpw-empty { color: #7e705d; font-style: italic; }
+    .hpw-heatmap { grid-template-columns: minmax(190px, 240px) repeat(var(--hpw-cols), 56px); gap: 6px; min-width: calc(220px + var(--hpw-cols) * 62px); }
+    .hpw-sticky { background: #fff8ea; }
+    .hpw-grid-head, .hpw-grid-date { color: #6d5a40; border-bottom-color: #d8bd7a; font-size: 12px; }
+    .hpw-stock { min-height: 48px; border-color: #d8bd7a; background: #fffdf7; }
+    .hpw-stock strong { color: #9a6b00; font-size: 15px; }
+    .hpw-stock span { color: #1c1711; font-weight: 700; }
+    .hpw-stock em { color: #6d5a40; font-size: 12px; }
+    .hpw-cell { min-height: 48px; border-color: rgba(40, 30, 18, .18); color: #1c1711; font-size: 13px; font-weight: 800; }
+    .hpw-cell.is-empty { background: #f1eadc; color: transparent; }
+    .hpw-cell.tier-1 { background: #9f2f3f; border-color: #7f2030; color: #fff8ea; }
+    .hpw-cell.tier-2 { background: #d66a4a; border-color: #b24f35; color: #fff8ea; }
+    .hpw-cell.tier-3 { background: #e9bd55; border-color: #c99c2f; color: #1c1711; }
+    .hpw-cell.tier-4 { background: #f6e1a9; border-color: #d8bd7a; color: #1c1711; }
+    .hpw-cell.is-up { box-shadow: inset 0 4px 0 #b81f35; }
+    .hpw-cell.is-down { box-shadow: inset 0 -4px 0 #16814f; }
+    .hpw-table { font-size: 15px; background: #fffdf7; }
+    .hpw-table th { color: #6d5a40; border-bottom-color: #d8bd7a; font-size: 12px; }
+    .hpw-table td { color: #1c1711; border-bottom-color: #eadbb8; }
+    .hpw-table--compact { font-size: 13px; }
+    .hpw-chip { border-color: #d8bd7a; color: #1c1711; background: #fffdf7; font-size: 14px; }
+    .hpw-chip strong { color: #9a6b00; }
+    .hpw-chip em { color: #6d5a40; }
+    .hpw-track-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+    .hpw-track-card { border: 1px solid #d8bd7a; background: #fffdf7; padding: 14px; }
+    .hpw-track-head { display: grid; grid-template-columns: auto 1fr auto; gap: 8px; align-items: baseline; }
+    .hpw-track-head strong { color: #9a6b00; font-family: var(--font-mono); font-size: 16px; }
+    .hpw-track-head span { color: #1c1711; font-weight: 800; }
+    .hpw-track-head em { color: #8d1f2d; font-family: var(--font-mono); font-style: normal; }
+    .hpw-track-meta, .hpw-return-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; font-family: var(--font-mono); font-size: 12px; color: #5b4a35; }
+    .hpw-bars { height: 74px; display: flex; align-items: flex-end; gap: 4px; margin-top: 14px; padding: 8px 0 0; border-top: 1px dashed #d8bd7a; }
+    .hpw-bars span { flex: 1; min-width: 6px; background: #9f2f3f; opacity: .9; }
+    .hpw-return-row span { border: 1px solid #eadbb8; padding: 3px 5px; background: #fff8ea; }
+    .hpw-week-grid { display: grid; grid-template-columns: 1.35fr .85fr; gap: 20px; align-items: start; }
+    @media (max-width: 720px) {
+      .hpw-panel { padding: 18px; }
+      .hpw-kpi-grid, .hpw-change-grid, .hpw-track-grid, .hpw-week-grid { grid-template-columns: 1fr; }
+      .hpw-table { font-size: 13px; }
+      .hpw-table th:nth-child(7), .hpw-table td:nth-child(7) { display: none; }
+      .hpw-heatmap { grid-template-columns: minmax(150px, 190px) repeat(var(--hpw-cols), 46px); min-width: calc(160px + var(--hpw-cols) * 52px); }
+    }
+  </style>
+</head>
+<body data-page="report">
+  <header class="masthead">
+    <div class="container">
+      <div class="masthead__row">
+        <a class="brand" href="../index.html">
+          <span class="brand__mark">charles<em>16888</em></span>
+          <span class="brand__plate">Market Edition · MMXXVI</span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a class="nav__link" href="../category.html?cat=sectors">族群</a>
+          <a class="nav__link" href="../category.html?cat=taiex">大盤</a>
+          <a class="nav__link" href="financial-calendar.html">行事曆</a>
+          <a class="nav__link" href="../category.html?cat=txo">選擇權</a>
+          <a class="nav__link" href="../category.html?cat=chips">籌碼</a>
+          <a class="nav__link is-active" href="../category.html?cat=stocks">個股</a>
+          <a class="nav__link" href="../category.html?cat=news">新聞</a>
+          <a class="nav__link" href="../category.html?cat=research">研報統計</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">charles16888</a>
+      <span class="breadcrumb__sep">/</span>
+      <a href="../category.html?cat=stocks">個股</a>
+      <span class="breadcrumb__sep">/</span>
+      <span>高價股觀測</span>
+    </nav>
+
+    <section class="report-cover reveal reveal-d1">
+      <div class="report-meta-line">
+        <span><strong>個股</strong> · 高價股觀測</span>
+        <span>2026-03-20 -> 2026-06-29</span>
+        <span>2026-06-30 11:47</span>
+      </div>
+      <h1 class="report-title">高價股觀測 · <em>排名熱圖</em></h1>
+      <p class="report-lead">把既有籌碼與股價追蹤檔整理成高價股清單、排名變化與近 30 筆出現熱度，先補上 Telegram 第四頁那塊的網站版本。</p>
+      <div class="stat-row stat-row--3">
+        <div class="stat">
+          <div class="stat__label">最新樣本</div>
+          <div class="stat__value stat__value--sm num-neutral">40 檔</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">最高收盤</div>
+          <div class="stat__value stat__value--sm num-neutral">1,810</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">新進名單</div>
+          <div class="stat__value stat__value--sm num-neutral">9 檔</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="hpw-wrap">
+
+      <section class="hpw-panel hpw-panel--summary">
+        <h2>今天 vs 前一交易日<em>每日變動</em></h2>
+        <div class="hpw-kpi-grid">
+          <div><strong>9</strong><span>新進榜</span></div>
+          <div><strong>9</strong><span>掉出榜</span></div>
+          <div><strong>31</strong><span>連續留榜</span></div>
+          <div><strong>4/14</strong><span>排名升 / 降</span></div>
+        </div>
+        <div class="hpw-change-grid">
+          <div><h3>新進榜</h3><ul class="hpw-change-list"><li><strong>3491</strong><span>昇達科</span><em>NEW / #2 / 1,560</em></li><li><strong>6187</strong><span>萬潤</span><em>NEW / #4 / 1,235</em></li><li><strong>6531</strong><span>愛普*</span><em>NEW / #8 / 1,025</em></li><li><strong>6415</strong><span>矽力*-KY</span><em>NEW / #18 / 629</em></li><li><strong>2472</strong><span>立隆電</span><em>NEW / #22 / 412.5</em></li><li><strong>3357</strong><span>臺慶科</span><em>NEW / #24 / 348</em></li><li><strong>3147</strong><span>大綜</span><em>NEW / #27 / 327</em></li><li><strong>6870</strong><span>騰雲</span><em>NEW / #32 / 285.5</em></li><li><strong>2344</strong><span>華邦電</span><em>NEW / #40 / 218.5</em></li></ul></div>
+          <div><h3>掉出榜</h3><ul class="hpw-change-list"><li><strong>2059</strong><span>川湖</span><em>前次 #1 / 6,990</em></li><li><strong>7610</strong><span>聯友金屬-創</span><em>前次 #2 / 2,025</em></li><li><strong>6446</strong><span>藥華藥</span><em>前次 #6 / 1,155</em></li><li><strong>3711</strong><span>日月光投控</span><em>前次 #18 / 632</em></li><li><strong>2478</strong><span>大毅</span><em>前次 #36 / 218</em></li><li><strong>3227</strong><span>原相</span><em>前次 #37 / 212.5</em></li><li><strong>8027</strong><span>鈦昇</span><em>前次 #38 / 210</em></li><li><strong>2301</strong><span>光寶科</span><em>前次 #39 / 201.5</em></li><li><strong>2474</strong><span>可成</span><em>前次 #40 / 200</em></li></ul></div>
+          <div><h3>排名上升</h3><ul class="hpw-change-list"><li><strong>2308</strong><span>台達電</span><em>+2 / #1 / 1,810</em></li><li><strong>2404</strong><span>漢唐</span><em>+1 / #3 / 1,340</em></li><li><strong>8046</strong><span>南電</span><em>+1 / #6 / 1,125</em></li><li><strong>6781</strong><span>AES-KY</span><em>+1 / #7 / 1,105</em></li></ul></div>
+          <div><h3>連續留榜</h3><ul class="hpw-change-list"><li><strong>6290</strong><span>良維</span><em>-3 / #29 / 300.5</em></li><li><strong>6139</strong><span>亞翔</span><em>0 / #11 / 878</em></li><li><strong>4749</strong><span>新應材</span><em>0 / #12 / 877</em></li><li><strong>8021</strong><span>尖點</span><em>0 / #19 / 522</em></li><li><strong>6213</strong><span>聯茂</span><em>-2 / #25 / 344</em></li><li><strong>8210</strong><span>勤誠</span><em>0 / #5 / 1,230</em></li><li><strong>2455</strong><span>全新</span><em>-1 / #23 / 348</em></li><li><strong>3374</strong><span>精材</span><em>-5 / #34 / 279.5</em></li><li><strong>2317</strong><span>鴻海</span><em>-4 / #37 / 248.5</em></li><li><strong>4551</strong><span>智伸科</span><em>-4 / #39 / 225</em></li></ul></div>
+        </div>
+      </section>
+
+
+      <section class="hpw-panel">
+        <h2>近 30 筆<em>排名熱圖</em></h2>
+        <p class="hpw-note">顏色越亮代表排名越前；上緣紅線代表該筆漲幅為正，下緣綠線代表該筆跌幅為負。左側分數為近 30 筆出現次數。</p>
+        <div class="hpw-scroll"><div class="hpw-heatmap" style="--hpw-cols:30"><div class="hpw-sticky hpw-grid-head">股票</div><div class="hpw-grid-date">05/18</div><div class="hpw-grid-date">05/19</div><div class="hpw-grid-date">05/20</div><div class="hpw-grid-date">05/21</div><div class="hpw-grid-date">05/22</div><div class="hpw-grid-date">05/25</div><div class="hpw-grid-date">05/26</div><div class="hpw-grid-date">05/27</div><div class="hpw-grid-date">05/28</div><div class="hpw-grid-date">05/29</div><div class="hpw-grid-date">06/01</div><div class="hpw-grid-date">06/02</div><div class="hpw-grid-date">06/03</div><div class="hpw-grid-date">06/04</div><div class="hpw-grid-date">06/05</div><div class="hpw-grid-date">06/08</div><div class="hpw-grid-date">06/09</div><div class="hpw-grid-date">06/10</div><div class="hpw-grid-date">06/11</div><div class="hpw-grid-date">06/12</div><div class="hpw-grid-date">06/15</div><div class="hpw-grid-date">06/16</div><div class="hpw-grid-date">06/17</div><div class="hpw-grid-date">06/18</div><div class="hpw-grid-date">06/22</div><div class="hpw-grid-date">06/23</div><div class="hpw-grid-date">06/24</div><div class="hpw-grid-date">06/25</div><div class="hpw-grid-date">06/26</div><div class="hpw-grid-date">06/29</div><div class="hpw-sticky hpw-stock"><strong>2308</strong><span>台達電</span><em>10/30</em></div><div class="hpw-cell is-empty is-flat" title="2308 台達電 | 2026-05-18 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2308 台達電 | 2026-05-19 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2308 台達電 | 2026-05-20 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2308 台達電 | 2026-05-21 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2308 台達電 | 2026-05-22 | rank - | close — | —"></div><div class="hpw-cell tier-1 is-up" title="2308 台達電 | 2026-05-25 | rank 3 | close 2,290 | +9.31%">#3</div><div class="hpw-cell tier-1 is-up" title="2308 台達電 | 2026-05-26 | rank 5 | close 2,350 | +2.62%">#5</div><div class="hpw-cell tier-1 is-up" title="2308 台達電 | 2026-05-27 | rank 5 | close 2,520 | +7.23%">#5</div><div class="hpw-cell tier-1 is-down" title="2308 台達電 | 2026-05-28 | rank 3 | close 2,390 | -5.16%">#3</div><div class="hpw-cell tier-1 is-up" title="2308 台達電 | 2026-05-29 | rank 3 | close 2,445 | +2.30%">#3</div><div class="hpw-cell is-empty is-flat" title="2308 台達電 | 2026-06-01 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2308 台達電 | 2026-06-02 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2308 台達電 | 2026-06-03 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2308 台達電 | 2026-06-04 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2308 台達電 | 2026-06-05 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2308 台達電 | 2026-06-08 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2308 台達電 | 2026-06-09 | rank - | close — | —"></div><div class="hpw-cell tier-1 is-down" title="2308 台達電 | 2026-06-10 | rank 3 | close 2,200 | -8.90%">#3</div><div class="hpw-cell is-empty is-flat" title="2308 台達電 | 2026-06-11 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2308 台達電 | 2026-06-12 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2308 台達電 | 2026-06-15 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2308 台達電 | 2026-06-16 | rank - | close — | —"></div><div class="hpw-cell tier-2 is-down" title="2308 台達電 | 2026-06-17 | rank 6 | close 2,155 | -3.36%">#6</div><div class="hpw-cell is-empty is-flat" title="2308 台達電 | 2026-06-18 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2308 台達電 | 2026-06-22 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2308 台達電 | 2026-06-23 | rank - | close — | —"></div><div class="hpw-cell tier-1 is-down" title="2308 台達電 | 2026-06-24 | rank 2 | close 2,000 | -3.85%">#2</div><div class="hpw-cell is-empty is-flat" title="2308 台達電 | 2026-06-25 | rank - | close — | —"></div><div class="hpw-cell tier-1 is-down" title="2308 台達電 | 2026-06-26 | rank 3 | close 1,810 | -8.59%">#3</div><div class="hpw-cell tier-1 is-down" title="2308 台達電 | 2026-06-29 | rank 1 | close 1,810 | -8.59%">#1</div><div class="hpw-sticky hpw-stock"><strong>3491</strong><span>昇達科</span><em>14/30</em></div><div class="hpw-cell tier-1 is-up" title="3491 昇達科 | 2026-05-18 | rank 2 | close 1,855 | +9.76%">#2</div><div class="hpw-cell is-empty is-flat" title="3491 昇達科 | 2026-05-19 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3491 昇達科 | 2026-05-20 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3491 昇達科 | 2026-05-21 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3491 昇達科 | 2026-05-22 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3491 昇達科 | 2026-05-25 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3491 昇達科 | 2026-05-26 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3491 昇達科 | 2026-05-27 | rank - | close — | —"></div><div class="hpw-cell tier-1 is-down" title="3491 昇達科 | 2026-05-28 | rank 4 | close 2,000 | -3.85%">#4</div><div class="hpw-cell tier-1 is-up" title="3491 昇達科 | 2026-05-29 | rank 4 | close 2,200 | +10.00%">#4</div><div class="hpw-cell tier-1 is-down" title="3491 昇達科 | 2026-06-01 | rank 3 | close 2,165 | -1.59%">#3</div><div class="hpw-cell is-empty is-flat" title="3491 昇達科 | 2026-06-02 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3491 昇達科 | 2026-06-03 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3491 昇達科 | 2026-06-04 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3491 昇達科 | 2026-06-05 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3491 昇達科 | 2026-06-08 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3491 昇達科 | 2026-06-09 | rank - | close — | —"></div><div class="hpw-cell tier-2 is-down" title="3491 昇達科 | 2026-06-10 | rank 6 | close 1,635 | -9.67%">#6</div><div class="hpw-cell tier-1 is-up" title="3491 昇達科 | 2026-06-11 | rank 4 | close 1,680 | +2.75%">#4</div><div class="hpw-cell tier-1 is-up" title="3491 昇達科 | 2026-06-12 | rank 2 | close 1,690 | +0.60%">#2</div><div class="hpw-cell tier-2 is-down" title="3491 昇達科 | 2026-06-15 | rank 8 | close 1,555 | -7.99%">#8</div><div class="hpw-cell tier-2 is-up" title="3491 昇達科 | 2026-06-16 | rank 7 | close 1,570 | +0.96%">#7</div><div class="hpw-cell tier-2 is-down" title="3491 昇達科 | 2026-06-17 | rank 9 | close 1,550 | -1.27%">#9</div><div class="hpw-cell tier-2 is-down" title="3491 昇達科 | 2026-06-18 | rank 7 | close 1,560 | -7.69%">#7</div><div class="hpw-cell tier-2 is-down" title="3491 昇達科 | 2026-06-22 | rank 7 | close 1,470 | -5.77%">#7</div><div class="hpw-cell is-empty is-flat" title="3491 昇達科 | 2026-06-23 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3491 昇達科 | 2026-06-24 | rank - | close — | —"></div><div class="hpw-cell tier-1 is-down" title="3491 昇達科 | 2026-06-25 | rank 5 | close 1,340 | -6.29%">#5</div><div class="hpw-cell is-empty is-flat" title="3491 昇達科 | 2026-06-26 | rank - | close — | —"></div><div class="hpw-cell tier-1 is-down" title="3491 昇達科 | 2026-06-29 | rank 2 | close 1,560 | -7.69%">#2</div><div class="hpw-sticky hpw-stock"><strong>2404</strong><span>漢唐</span><em>21/30</em></div><div class="hpw-cell is-empty is-flat" title="2404 漢唐 | 2026-05-18 | rank - | close — | —"></div><div class="hpw-cell tier-1 is-up" title="2404 漢唐 | 2026-05-19 | rank 3 | close 1,030 | +2.49%">#3</div><div class="hpw-cell tier-1 is-down" title="2404 漢唐 | 2026-05-20 | rank 3 | close 1,025 | -0.49%">#3</div><div class="hpw-cell tier-2 is-up" title="2404 漢唐 | 2026-05-21 | rank 7 | close 1,100 | +7.32%">#7</div><div class="hpw-cell tier-2 is-up" title="2404 漢唐 | 2026-05-22 | rank 8 | close 1,155 | +5.00%">#8</div><div class="hpw-cell tier-2 is-up" title="2404 漢唐 | 2026-05-25 | rank 6 | close 1,245 | +7.79%">#6</div><div class="hpw-cell tier-2 is-up" title="2404 漢唐 | 2026-05-26 | rank 6 | close 1,265 | +1.61%">#6</div><div class="hpw-cell tier-2 is-down" title="2404 漢唐 | 2026-05-27 | rank 6 | close 1,235 | -2.37%">#6</div><div class="hpw-cell tier-2 is-down" title="2404 漢唐 | 2026-05-28 | rank 8 | close 1,160 | -6.07%">#8</div><div class="hpw-cell tier-2 is-down" title="2404 漢唐 | 2026-05-29 | rank 8 | close 1,155 | -0.43%">#8</div><div class="hpw-cell is-empty is-flat" title="2404 漢唐 | 2026-06-01 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2404 漢唐 | 2026-06-02 | rank - | close — | —"></div><div class="hpw-cell tier-1 is-up" title="2404 漢唐 | 2026-06-03 | rank 5 | close 1,155 | +0.43%">#5</div><div class="hpw-cell is-empty is-flat" title="2404 漢唐 | 2026-06-04 | rank - | close — | —"></div><div class="hpw-cell tier-2 is-down" title="2404 漢唐 | 2026-06-05 | rank 8 | close 1,205 | -7.88%">#8</div><div class="hpw-cell tier-1 is-down" title="2404 漢唐 | 2026-06-08 | rank 3 | close 1,110 | -7.88%">#3</div><div class="hpw-cell tier-2 is-down" title="2404 漢唐 | 2026-06-09 | rank 6 | close 1,190 | -3.36%">#6</div><div class="hpw-cell is-empty is-flat" title="2404 漢唐 | 2026-06-10 | rank - | close — | —"></div><div class="hpw-cell tier-2 is-up" title="2404 漢唐 | 2026-06-11 | rank 6 | close 1,195 | +9.62%">#6</div><div class="hpw-cell tier-2 is-up" title="2404 漢唐 | 2026-06-12 | rank 7 | close 1,310 | +8.71%">#7</div><div class="hpw-cell tier-2 is-up" title="2404 漢唐 | 2026-06-15 | rank 9 | close 1,380 | +5.34%">#9</div><div class="hpw-cell tier-2 is-down" title="2404 漢唐 | 2026-06-16 | rank 9 | close 1,245 | -9.78%">#9</div><div class="hpw-cell is-empty is-flat" title="2404 漢唐 | 2026-06-17 | rank - | close — | —"></div><div class="hpw-cell tier-2 is-down" title="2404 漢唐 | 2026-06-18 | rank 8 | close 1,265 | -3.44%">#8</div><div class="hpw-cell is-empty is-flat" title="2404 漢唐 | 2026-06-22 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2404 漢唐 | 2026-06-23 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2404 漢唐 | 2026-06-24 | rank - | close — | —"></div><div class="hpw-cell tier-1 is-up" title="2404 漢唐 | 2026-06-25 | rank 4 | close 1,365 | +8.76%">#4</div><div class="hpw-cell tier-1 is-down" title="2404 漢唐 | 2026-06-26 | rank 4 | close 1,340 | -1.83%">#4</div><div class="hpw-cell tier-1 is-down" title="2404 漢唐 | 2026-06-29 | rank 3 | close 1,340 | -1.83%">#3</div><div class="hpw-sticky hpw-stock"><strong>6187</strong><span>萬潤</span><em>8/30</em></div><div class="hpw-cell is-empty is-flat" title="6187 萬潤 | 2026-05-18 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6187 萬潤 | 2026-05-19 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6187 萬潤 | 2026-05-20 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6187 萬潤 | 2026-05-21 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6187 萬潤 | 2026-05-22 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6187 萬潤 | 2026-05-25 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6187 萬潤 | 2026-05-26 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6187 萬潤 | 2026-05-27 | rank - | close — | —"></div><div class="hpw-cell tier-2 is-up" title="6187 萬潤 | 2026-05-28 | rank 7 | close 1,240 | +9.73%">#7</div><div class="hpw-cell tier-2 is-down" title="6187 萬潤 | 2026-05-29 | rank 9 | close 1,120 | -9.68%">#9</div><div class="hpw-cell tier-2 is-down" title="6187 萬潤 | 2026-06-01 | rank 7 | close 1,070 | -4.46%">#7</div><div class="hpw-cell is-empty is-flat" title="6187 萬潤 | 2026-06-02 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6187 萬潤 | 2026-06-03 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6187 萬潤 | 2026-06-04 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6187 萬潤 | 2026-06-05 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6187 萬潤 | 2026-06-08 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6187 萬潤 | 2026-06-09 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6187 萬潤 | 2026-06-10 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6187 萬潤 | 2026-06-11 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6187 萬潤 | 2026-06-12 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6187 萬潤 | 2026-06-15 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6187 萬潤 | 2026-06-16 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6187 萬潤 | 2026-06-17 | rank - | close — | —"></div><div class="hpw-cell tier-2 is-up" title="6187 萬潤 | 2026-06-18 | rank 9 | close 1,235 | +13.82%">#9</div><div class="hpw-cell tier-2 is-up" title="6187 萬潤 | 2026-06-22 | rank 9 | close 1,260 | +2.02%">#9</div><div class="hpw-cell is-empty is-flat" title="6187 萬潤 | 2026-06-23 | rank - | close — | —"></div><div class="hpw-cell tier-2 is-down" title="6187 萬潤 | 2026-06-24 | rank 6 | close 1,060 | -9.40%">#6</div><div class="hpw-cell tier-2 is-up" title="6187 萬潤 | 2026-06-25 | rank 7 | close 1,105 | +4.25%">#7</div><div class="hpw-cell is-empty is-flat" title="6187 萬潤 | 2026-06-26 | rank - | close — | —"></div><div class="hpw-cell tier-1 is-up" title="6187 萬潤 | 2026-06-29 | rank 4 | close 1,235 | +13.82%">#4</div><div class="hpw-sticky hpw-stock"><strong>8210</strong><span>勤誠</span><em>8/30</em></div><div class="hpw-cell is-empty is-flat" title="8210 勤誠 | 2026-05-18 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="8210 勤誠 | 2026-05-19 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="8210 勤誠 | 2026-05-20 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="8210 勤誠 | 2026-05-21 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="8210 勤誠 | 2026-05-22 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="8210 勤誠 | 2026-05-25 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="8210 勤誠 | 2026-05-26 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="8210 勤誠 | 2026-05-27 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="8210 勤誠 | 2026-05-28 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="8210 勤誠 | 2026-05-29 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="8210 勤誠 | 2026-06-01 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="8210 勤誠 | 2026-06-02 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="8210 勤誠 | 2026-06-03 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="8210 勤誠 | 2026-06-04 | rank - | close — | —"></div><div class="hpw-cell tier-2 is-down" title="8210 勤誠 | 2026-06-05 | rank 7 | close 1,370 | -3.52%">#7</div><div class="hpw-cell is-empty is-flat" title="8210 勤誠 | 2026-06-08 | rank - | close — | —"></div><div class="hpw-cell tier-1 is-up" title="8210 勤誠 | 2026-06-09 | rank 5 | close 1,510 | +9.82%">#5</div><div class="hpw-cell is-empty is-flat" title="8210 勤誠 | 2026-06-10 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="8210 勤誠 | 2026-06-11 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="8210 勤誠 | 2026-06-12 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="8210 勤誠 | 2026-06-15 | rank - | close — | —"></div><div class="hpw-cell tier-2 is-down" title="8210 勤誠 | 2026-06-16 | rank 8 | close 1,350 | -5.59%">#8</div><div class="hpw-cell is-empty is-flat" title="8210 勤誠 | 2026-06-17 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="8210 勤誠 | 2026-06-18 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="8210 勤誠 | 2026-06-22 | rank - | close — | —"></div><div class="hpw-cell tier-1 is-down" title="8210 勤誠 | 2026-06-23 | rank 5 | close 1,310 | -4.38%">#5</div><div class="hpw-cell tier-1 is-up" title="8210 勤誠 | 2026-06-24 | rank 4 | close 1,325 | +1.15%">#4</div><div class="hpw-cell tier-2 is-down" title="8210 勤誠 | 2026-06-25 | rank 6 | close 1,285 | -3.02%">#6</div><div class="hpw-cell tier-1 is-down" title="8210 勤誠 | 2026-06-26 | rank 5 | close 1,230 | -4.28%">#5</div><div class="hpw-cell tier-1 is-down" title="8210 勤誠 | 2026-06-29 | rank 5 | close 1,230 | -4.28%">#5</div><div class="hpw-sticky hpw-stock"><strong>8046</strong><span>南電</span><em>6/30</em></div><div class="hpw-cell is-empty is-flat" title="8046 南電 | 2026-05-18 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="8046 南電 | 2026-05-19 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="8046 南電 | 2026-05-20 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="8046 南電 | 2026-05-21 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="8046 南電 | 2026-05-22 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="8046 南電 | 2026-05-25 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="8046 南電 | 2026-05-26 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="8046 南電 | 2026-05-27 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="8046 南電 | 2026-05-28 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="8046 南電 | 2026-05-29 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="8046 南電 | 2026-06-01 | rank - | close — | —"></div><div class="hpw-cell tier-2 is-down" title="8046 南電 | 2026-06-02 | rank 10 | close 862 | -4.75%">#10</div><div class="hpw-cell is-empty is-flat" title="8046 南電 | 2026-06-03 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="8046 南電 | 2026-06-04 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="8046 南電 | 2026-06-05 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="8046 南電 | 2026-06-08 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="8046 南電 | 2026-06-09 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="8046 南電 | 2026-06-10 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="8046 南電 | 2026-06-11 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="8046 南電 | 2026-06-12 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="8046 南電 | 2026-06-15 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="8046 南電 | 2026-06-16 | rank - | close — | —"></div><div class="hpw-cell tier-3 is-down" title="8046 南電 | 2026-06-17 | rank 12 | close 885 | -1.88%">#12</div><div class="hpw-cell is-empty is-flat" title="8046 南電 | 2026-06-18 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="8046 南電 | 2026-06-22 | rank - | close — | —"></div><div class="hpw-cell tier-2 is-up" title="8046 南電 | 2026-06-23 | rank 8 | close 909 | +5.21%">#8</div><div class="hpw-cell is-empty is-flat" title="8046 南電 | 2026-06-24 | rank - | close — | —"></div><div class="hpw-cell tier-2 is-up" title="8046 南電 | 2026-06-25 | rank 8 | close 1,045 | +9.42%">#8</div><div class="hpw-cell tier-2 is-up" title="8046 南電 | 2026-06-26 | rank 7 | close 1,125 | +7.66%">#7</div><div class="hpw-cell tier-2 is-up" title="8046 南電 | 2026-06-29 | rank 6 | close 1,125 | +7.66%">#6</div><div class="hpw-sticky hpw-stock"><strong>6781</strong><span>AES-KY</span><em>3/30</em></div><div class="hpw-cell is-empty is-flat" title="6781 AES-KY | 2026-05-18 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6781 AES-KY | 2026-05-19 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6781 AES-KY | 2026-05-20 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6781 AES-KY | 2026-05-21 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6781 AES-KY | 2026-05-22 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6781 AES-KY | 2026-05-25 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6781 AES-KY | 2026-05-26 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6781 AES-KY | 2026-05-27 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6781 AES-KY | 2026-05-28 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6781 AES-KY | 2026-05-29 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6781 AES-KY | 2026-06-01 | rank - | close — | —"></div><div class="hpw-cell tier-2 is-down" title="6781 AES-KY | 2026-06-02 | rank 6 | close 1,130 | -5.83%">#6</div><div class="hpw-cell is-empty is-flat" title="6781 AES-KY | 2026-06-03 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6781 AES-KY | 2026-06-04 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6781 AES-KY | 2026-06-05 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6781 AES-KY | 2026-06-08 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6781 AES-KY | 2026-06-09 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6781 AES-KY | 2026-06-10 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6781 AES-KY | 2026-06-11 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6781 AES-KY | 2026-06-12 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6781 AES-KY | 2026-06-15 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6781 AES-KY | 2026-06-16 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6781 AES-KY | 2026-06-17 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6781 AES-KY | 2026-06-18 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6781 AES-KY | 2026-06-22 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6781 AES-KY | 2026-06-23 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6781 AES-KY | 2026-06-24 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6781 AES-KY | 2026-06-25 | rank - | close — | —"></div><div class="hpw-cell tier-2 is-down" title="6781 AES-KY | 2026-06-26 | rank 8 | close 1,105 | -7.14%">#8</div><div class="hpw-cell tier-2 is-down" title="6781 AES-KY | 2026-06-29 | rank 7 | close 1,105 | -7.14%">#7</div><div class="hpw-sticky hpw-stock"><strong>6531</strong><span>愛普*</span><em>4/30</em></div><div class="hpw-cell is-empty is-flat" title="6531 愛普* | 2026-05-18 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6531 愛普* | 2026-05-19 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6531 愛普* | 2026-05-20 | rank - | close — | —"></div><div class="hpw-cell tier-3 is-down" title="6531 愛普* | 2026-05-21 | rank 11 | close 876 | -9.97%">#11</div><div class="hpw-cell tier-2 is-down" title="6531 愛普* | 2026-05-22 | rank 10 | close 963 | -10.83%">#10</div><div class="hpw-cell is-empty is-flat" title="6531 愛普* | 2026-05-25 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6531 愛普* | 2026-05-26 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6531 愛普* | 2026-05-27 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6531 愛普* | 2026-05-28 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6531 愛普* | 2026-05-29 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6531 愛普* | 2026-06-01 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6531 愛普* | 2026-06-02 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6531 愛普* | 2026-06-03 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6531 愛普* | 2026-06-04 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6531 愛普* | 2026-06-05 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6531 愛普* | 2026-06-08 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6531 愛普* | 2026-06-09 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6531 愛普* | 2026-06-10 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6531 愛普* | 2026-06-11 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6531 愛普* | 2026-06-12 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6531 愛普* | 2026-06-15 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6531 愛普* | 2026-06-16 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6531 愛普* | 2026-06-17 | rank - | close — | —"></div><div class="hpw-cell tier-3 is-up" title="6531 愛普* | 2026-06-18 | rank 11 | close 1,025 | +9.98%">#11</div><div class="hpw-cell is-empty is-flat" title="6531 愛普* | 2026-06-22 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6531 愛普* | 2026-06-23 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6531 愛普* | 2026-06-24 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6531 愛普* | 2026-06-25 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6531 愛普* | 2026-06-26 | rank - | close — | —"></div><div class="hpw-cell tier-2 is-up" title="6531 愛普* | 2026-06-29 | rank 8 | close 1,025 | +9.98%">#8</div><div class="hpw-sticky hpw-stock"><strong>6409</strong><span>旭隼</span><em>11/30</em></div><div class="hpw-cell tier-2 is-down" title="6409 旭隼 | 2026-05-18 | rank 6 | close 708 | -1.12%">#6</div><div class="hpw-cell is-empty is-flat" title="6409 旭隼 | 2026-05-19 | rank - | close — | —"></div><div class="hpw-cell tier-2 is-down" title="6409 旭隼 | 2026-05-20 | rank 7 | close 668 | -3.75%">#7</div><div class="hpw-cell tier-3 is-down" title="6409 旭隼 | 2026-05-21 | rank 17 | close 663 | -0.75%">#17</div><div class="hpw-cell tier-3 is-down" title="6409 旭隼 | 2026-05-22 | rank 18 | close 677 | -5.45%">#18</div><div class="hpw-cell is-empty is-flat" title="6409 旭隼 | 2026-05-25 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6409 旭隼 | 2026-05-26 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6409 旭隼 | 2026-05-27 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6409 旭隼 | 2026-05-28 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6409 旭隼 | 2026-05-29 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6409 旭隼 | 2026-06-01 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6409 旭隼 | 2026-06-02 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6409 旭隼 | 2026-06-03 | rank - | close — | —"></div><div class="hpw-cell tier-2 is-up" title="6409 旭隼 | 2026-06-04 | rank 10 | close 844 | +9.90%">#10</div><div class="hpw-cell tier-3 is-up" title="6409 旭隼 | 2026-06-05 | rank 13 | close 928 | +9.95%">#13</div><div class="hpw-cell tier-1 is-down" title="6409 旭隼 | 2026-06-08 | rank 5 | close 900 | -3.02%">#5</div><div class="hpw-cell tier-2 is-up" title="6409 旭隼 | 2026-06-09 | rank 7 | close 915 | +1.67%">#7</div><div class="hpw-cell is-empty is-flat" title="6409 旭隼 | 2026-06-10 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6409 旭隼 | 2026-06-11 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6409 旭隼 | 2026-06-12 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6409 旭隼 | 2026-06-15 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6409 旭隼 | 2026-06-16 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6409 旭隼 | 2026-06-17 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6409 旭隼 | 2026-06-18 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6409 旭隼 | 2026-06-22 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6409 旭隼 | 2026-06-23 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6409 旭隼 | 2026-06-24 | rank - | close — | —"></div><div class="hpw-cell tier-3 is-up" title="6409 旭隼 | 2026-06-25 | rank 11 | close 1,000 | +9.53%">#11</div><div class="hpw-cell tier-2 is-down" title="6409 旭隼 | 2026-06-26 | rank 9 | close 977 | -2.30%">#9</div><div class="hpw-cell tier-2 is-down" title="6409 旭隼 | 2026-06-29 | rank 9 | close 977 | -2.30%">#9</div><div class="hpw-sticky hpw-stock"><strong>6488</strong><span>環球晶</span><em>7/30</em></div><div class="hpw-cell tier-2 is-down" title="6488 環球晶 | 2026-05-18 | rank 8 | close 698 | -1.69%">#8</div><div class="hpw-cell is-empty is-flat" title="6488 環球晶 | 2026-05-19 | rank - | close — | —"></div><div class="hpw-cell tier-2 is-down" title="6488 環球晶 | 2026-05-20 | rank 8 | close 638 | -4.06%">#8</div><div class="hpw-cell is-empty is-flat" title="6488 環球晶 | 2026-05-21 | rank - | close — | —"></div><div class="hpw-cell tier-3 is-up" title="6488 環球晶 | 2026-05-22 | rank 15 | close 717 | +2.28%">#15</div><div class="hpw-cell is-empty is-flat" title="6488 環球晶 | 2026-05-25 | rank - | close — | —"></div><div class="hpw-cell tier-3 is-up" title="6488 環球晶 | 2026-05-26 | rank 12 | close 866 | +9.90%">#12</div><div class="hpw-cell is-empty is-flat" title="6488 環球晶 | 2026-05-27 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6488 環球晶 | 2026-05-28 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6488 環球晶 | 2026-05-29 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6488 環球晶 | 2026-06-01 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6488 環球晶 | 2026-06-02 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6488 環球晶 | 2026-06-03 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6488 環球晶 | 2026-06-04 | rank - | close — | —"></div><div class="hpw-cell tier-3 is-down" title="6488 環球晶 | 2026-06-05 | rank 15 | close 811 | -20.10%">#15</div><div class="hpw-cell is-empty is-flat" title="6488 環球晶 | 2026-06-08 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6488 環球晶 | 2026-06-09 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6488 環球晶 | 2026-06-10 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6488 環球晶 | 2026-06-11 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6488 環球晶 | 2026-06-12 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6488 環球晶 | 2026-06-15 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6488 環球晶 | 2026-06-16 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6488 環球晶 | 2026-06-17 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6488 環球晶 | 2026-06-18 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6488 環球晶 | 2026-06-22 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6488 環球晶 | 2026-06-23 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6488 環球晶 | 2026-06-24 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6488 環球晶 | 2026-06-25 | rank - | close — | —"></div><div class="hpw-cell tier-2 is-down" title="6488 環球晶 | 2026-06-26 | rank 10 | close 936 | -10.00%">#10</div><div class="hpw-cell tier-2 is-down" title="6488 環球晶 | 2026-06-29 | rank 10 | close 936 | -10.00%">#10</div><div class="hpw-sticky hpw-stock"><strong>6139</strong><span>亞翔</span><em>16/30</em></div><div class="hpw-cell is-empty is-flat" title="6139 亞翔 | 2026-05-18 | rank - | close — | —"></div><div class="hpw-cell tier-2 is-up" title="6139 亞翔 | 2026-05-19 | rank 6 | close 738 | +2.36%">#6</div><div class="hpw-cell is-empty is-flat" title="6139 亞翔 | 2026-05-20 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6139 亞翔 | 2026-05-21 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6139 亞翔 | 2026-05-22 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6139 亞翔 | 2026-05-25 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6139 亞翔 | 2026-05-26 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6139 亞翔 | 2026-05-27 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6139 亞翔 | 2026-05-28 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6139 亞翔 | 2026-05-29 | rank - | close — | —"></div><div class="hpw-cell tier-2 is-down" title="6139 亞翔 | 2026-06-01 | rank 10 | close 777 | -0.89%">#10</div><div class="hpw-cell tier-3 is-down" title="6139 亞翔 | 2026-06-02 | rank 12 | close 762 | -1.93%">#12</div><div class="hpw-cell tier-2 is-up" title="6139 亞翔 | 2026-06-03 | rank 10 | close 784 | +2.89%">#10</div><div class="hpw-cell is-empty is-flat" title="6139 亞翔 | 2026-06-04 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6139 亞翔 | 2026-06-05 | rank - | close — | —"></div><div class="hpw-cell tier-2 is-down" title="6139 亞翔 | 2026-06-08 | rank 7 | close 728 | -9.90%">#7</div><div class="hpw-cell tier-2 is-up" title="6139 亞翔 | 2026-06-09 | rank 8 | close 749 | +2.88%">#8</div><div class="hpw-cell is-empty is-flat" title="6139 亞翔 | 2026-06-10 | rank - | close — | —"></div><div class="hpw-cell tier-3 is-down" title="6139 亞翔 | 2026-06-11 | rank 11 | close 732 | -0.68%">#11</div><div class="hpw-cell tier-3 is-up" title="6139 亞翔 | 2026-06-12 | rank 11 | close 805 | +9.97%">#11</div><div class="hpw-cell tier-3 is-up" title="6139 亞翔 | 2026-06-15 | rank 13 | close 885 | +9.94%">#13</div><div class="hpw-cell is-empty is-flat" title="6139 亞翔 | 2026-06-16 | rank - | close — | —"></div><div class="hpw-cell tier-3 is-down" title="6139 亞翔 | 2026-06-17 | rank 13 | close 806 | -0.74%">#13</div><div class="hpw-cell is-empty is-flat" title="6139 亞翔 | 2026-06-18 | rank - | close — | —"></div><div class="hpw-cell tier-3 is-down" title="6139 亞翔 | 2026-06-22 | rank 14 | close 810 | -1.58%">#14</div><div class="hpw-cell tier-2 is-down" title="6139 亞翔 | 2026-06-23 | rank 10 | close 791 | -2.35%">#10</div><div class="hpw-cell tier-2 is-up" title="6139 亞翔 | 2026-06-24 | rank 8 | close 818 | +3.41%">#8</div><div class="hpw-cell tier-3 is-up" title="6139 亞翔 | 2026-06-25 | rank 13 | close 875 | +6.97%">#13</div><div class="hpw-cell tier-3 is-up" title="6139 亞翔 | 2026-06-26 | rank 11 | close 878 | +0.34%">#11</div><div class="hpw-cell tier-3 is-up" title="6139 亞翔 | 2026-06-29 | rank 11 | close 878 | +0.34%">#11</div><div class="hpw-sticky hpw-stock"><strong>4749</strong><span>新應材</span><em>11/30</em></div><div class="hpw-cell is-empty is-flat" title="4749 新應材 | 2026-05-18 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="4749 新應材 | 2026-05-19 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="4749 新應材 | 2026-05-20 | rank - | close — | —"></div><div class="hpw-cell tier-2 is-up" title="4749 新應材 | 2026-05-21 | rank 8 | close 1,090 | +9.66%">#8</div><div class="hpw-cell is-empty is-flat" title="4749 新應材 | 2026-05-22 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="4749 新應材 | 2026-05-25 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="4749 新應材 | 2026-05-26 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="4749 新應材 | 2026-05-27 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="4749 新應材 | 2026-05-28 | rank - | close — | —"></div><div class="hpw-cell tier-2 is-down" title="4749 新應材 | 2026-05-29 | rank 10 | close 1,070 | -8.55%">#10</div><div class="hpw-cell is-empty is-flat" title="4749 新應材 | 2026-06-01 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="4749 新應材 | 2026-06-02 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="4749 新應材 | 2026-06-03 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="4749 新應材 | 2026-06-04 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="4749 新應材 | 2026-06-05 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="4749 新應材 | 2026-06-08 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="4749 新應材 | 2026-06-09 | rank - | close — | —"></div><div class="hpw-cell tier-2 is-down" title="4749 新應材 | 2026-06-10 | rank 9 | close 925 | -6.66%">#9</div><div class="hpw-cell tier-2 is-down" title="4749 新應材 | 2026-06-11 | rank 8 | close 908 | -1.84%">#8</div><div class="hpw-cell tier-2 is-up" title="4749 新應材 | 2026-06-12 | rank 8 | close 921 | +1.43%">#8</div><div class="hpw-cell is-empty is-flat" title="4749 新應材 | 2026-06-15 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="4749 新應材 | 2026-06-16 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="4749 新應材 | 2026-06-17 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="4749 新應材 | 2026-06-18 | rank - | close — | —"></div><div class="hpw-cell tier-3 is-down" title="4749 新應材 | 2026-06-22 | rank 12 | close 966 | -2.52%">#12</div><div class="hpw-cell tier-2 is-down" title="4749 新應材 | 2026-06-23 | rank 7 | close 917 | -5.07%">#7</div><div class="hpw-cell tier-2 is-up" title="4749 新應材 | 2026-06-24 | rank 7 | close 934 | +1.85%">#7</div><div class="hpw-cell tier-3 is-down" title="4749 新應材 | 2026-06-25 | rank 12 | close 927 | -0.75%">#12</div><div class="hpw-cell tier-3 is-down" title="4749 新應材 | 2026-06-26 | rank 12 | close 877 | -5.39%">#12</div><div class="hpw-cell tier-3 is-down" title="4749 新應材 | 2026-06-29 | rank 12 | close 877 | -5.39%">#12</div><div class="hpw-sticky hpw-stock"><strong>3189</strong><span>景碩</span><em>10/30</em></div><div class="hpw-cell is-empty is-flat" title="3189 景碩 | 2026-05-18 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3189 景碩 | 2026-05-19 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3189 景碩 | 2026-05-20 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3189 景碩 | 2026-05-21 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3189 景碩 | 2026-05-22 | rank - | close — | —"></div><div class="hpw-cell tier-3 is-up" title="3189 景碩 | 2026-05-25 | rank 12 | close 669 | +9.85%">#12</div><div class="hpw-cell is-empty is-flat" title="3189 景碩 | 2026-05-26 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3189 景碩 | 2026-05-27 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3189 景碩 | 2026-05-28 | rank - | close — | —"></div><div class="hpw-cell tier-3 is-up" title="3189 景碩 | 2026-05-29 | rank 17 | close 729 | +7.05%">#17</div><div class="hpw-cell tier-3 is-up" title="3189 景碩 | 2026-06-01 | rank 11 | close 774 | +6.17%">#11</div><div class="hpw-cell tier-3 is-down" title="3189 景碩 | 2026-06-02 | rank 13 | close 743 | -0.54%">#13</div><div class="hpw-cell is-empty is-flat" title="3189 景碩 | 2026-06-03 | rank - | close — | —"></div><div class="hpw-cell tier-3 is-down" title="3189 景碩 | 2026-06-04 | rank 14 | close 692 | -6.36%">#14</div><div class="hpw-cell is-empty is-flat" title="3189 景碩 | 2026-06-05 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3189 景碩 | 2026-06-08 | rank - | close — | —"></div><div class="hpw-cell tier-2 is-up" title="3189 景碩 | 2026-06-09 | rank 9 | close 714 | +2.29%">#9</div><div class="hpw-cell tier-3 is-down" title="3189 景碩 | 2026-06-10 | rank 13 | close 660 | -6.21%">#13</div><div class="hpw-cell is-empty is-flat" title="3189 景碩 | 2026-06-11 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3189 景碩 | 2026-06-12 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3189 景碩 | 2026-06-15 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3189 景碩 | 2026-06-16 | rank - | close — | —"></div><div class="hpw-cell tier-3 is-up" title="3189 景碩 | 2026-06-17 | rank 16 | close 706 | +9.97%">#16</div><div class="hpw-cell is-empty is-flat" title="3189 景碩 | 2026-06-18 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3189 景碩 | 2026-06-22 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3189 景碩 | 2026-06-23 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3189 景碩 | 2026-06-24 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3189 景碩 | 2026-06-25 | rank - | close — | —"></div><div class="hpw-cell tier-3 is-down" title="3189 景碩 | 2026-06-26 | rank 13 | close 797 | -1.85%">#13</div><div class="hpw-cell tier-3 is-down" title="3189 景碩 | 2026-06-29 | rank 13 | close 797 | -1.85%">#13</div><div class="hpw-sticky hpw-stock"><strong>6691</strong><span>洋基工程</span><em>6/30</em></div><div class="hpw-cell is-empty is-flat" title="6691 洋基工程 | 2026-05-18 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6691 洋基工程 | 2026-05-19 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6691 洋基工程 | 2026-05-20 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6691 洋基工程 | 2026-05-21 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6691 洋基工程 | 2026-05-22 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6691 洋基工程 | 2026-05-25 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6691 洋基工程 | 2026-05-26 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6691 洋基工程 | 2026-05-27 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6691 洋基工程 | 2026-05-28 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6691 洋基工程 | 2026-05-29 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6691 洋基工程 | 2026-06-01 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6691 洋基工程 | 2026-06-02 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6691 洋基工程 | 2026-06-03 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6691 洋基工程 | 2026-06-04 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6691 洋基工程 | 2026-06-05 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6691 洋基工程 | 2026-06-08 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6691 洋基工程 | 2026-06-09 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6691 洋基工程 | 2026-06-10 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6691 洋基工程 | 2026-06-11 | rank - | close — | —"></div><div class="hpw-cell tier-3 is-up" title="6691 洋基工程 | 2026-06-12 | rank 15 | close 689 | +9.87%">#15</div><div class="hpw-cell tier-3 is-up" title="6691 洋基工程 | 2026-06-15 | rank 16 | close 757 | +9.87%">#16</div><div class="hpw-cell is-empty is-flat" title="6691 洋基工程 | 2026-06-16 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6691 洋基工程 | 2026-06-17 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6691 洋基工程 | 2026-06-18 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6691 洋基工程 | 2026-06-22 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6691 洋基工程 | 2026-06-23 | rank - | close — | —"></div><div class="hpw-cell tier-2 is-up" title="6691 洋基工程 | 2026-06-24 | rank 9 | close 758 | +6.46%">#9</div><div class="hpw-cell tier-3 is-down" title="6691 洋基工程 | 2026-06-25 | rank 15 | close 797 | -0.50%">#15</div><div class="hpw-cell tier-3 is-down" title="6691 洋基工程 | 2026-06-26 | rank 14 | close 793 | -0.50%">#14</div><div class="hpw-cell tier-3 is-down" title="6691 洋基工程 | 2026-06-29 | rank 14 | close 793 | -0.50%">#14</div><div class="hpw-sticky hpw-stock"><strong>1519</strong><span>華城</span><em>14/30</em></div><div class="hpw-cell tier-1 is-down" title="1519 華城 | 2026-05-18 | rank 5 | close 804 | -2.31%">#5</div><div class="hpw-cell tier-1 is-down" title="1519 華城 | 2026-05-19 | rank 5 | close 783 | -2.61%">#5</div><div class="hpw-cell tier-1 is-down" title="1519 華城 | 2026-05-20 | rank 5 | close 770 | -1.66%">#5</div><div class="hpw-cell tier-3 is-up" title="1519 華城 | 2026-05-21 | rank 12 | close 800 | +3.90%">#12</div><div class="hpw-cell is-empty is-flat" title="1519 華城 | 2026-05-22 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="1519 華城 | 2026-05-25 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="1519 華城 | 2026-05-26 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="1519 華城 | 2026-05-27 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="1519 華城 | 2026-05-28 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="1519 華城 | 2026-05-29 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="1519 華城 | 2026-06-01 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="1519 華城 | 2026-06-02 | rank - | close — | —"></div><div class="hpw-cell tier-2 is-up" title="1519 華城 | 2026-06-03 | rank 7 | close 935 | +10.00%">#7</div><div class="hpw-cell is-empty is-flat" title="1519 華城 | 2026-06-04 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="1519 華城 | 2026-06-05 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="1519 華城 | 2026-06-08 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="1519 華城 | 2026-06-09 | rank - | close — | —"></div><div class="hpw-cell tier-3 is-down" title="1519 華城 | 2026-06-10 | rank 11 | close 791 | -6.17%">#11</div><div class="hpw-cell tier-2 is-down" title="1519 華城 | 2026-06-11 | rank 9 | close 773 | -2.28%">#9</div><div class="hpw-cell is-empty is-flat" title="1519 華城 | 2026-06-12 | rank - | close — | —"></div><div class="hpw-cell tier-3 is-down" title="1519 華城 | 2026-06-15 | rank 15 | close 789 | -0.25%">#15</div><div class="hpw-cell tier-3 is-down" title="1519 華城 | 2026-06-16 | rank 13 | close 781 | -1.01%">#13</div><div class="hpw-cell tier-3 is-up" title="1519 華城 | 2026-06-17 | rank 14 | close 803 | +2.82%">#14</div><div class="hpw-cell tier-3 is-up" title="1519 華城 | 2026-06-18 | rank 14 | close 833 | +3.74%">#14</div><div class="hpw-cell is-empty is-flat" title="1519 華城 | 2026-06-22 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="1519 華城 | 2026-06-23 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="1519 華城 | 2026-06-24 | rank - | close — | —"></div><div class="hpw-cell tier-3 is-down" title="1519 華城 | 2026-06-25 | rank 14 | close 808 | -1.34%">#14</div><div class="hpw-cell tier-3 is-down" title="1519 華城 | 2026-06-26 | rank 15 | close 780 | -3.47%">#15</div><div class="hpw-cell tier-3 is-down" title="1519 華城 | 2026-06-29 | rank 15 | close 780 | -3.47%">#15</div><div class="hpw-sticky hpw-stock"><strong>6291</strong><span>沛亨</span><em>6/30</em></div><div class="hpw-cell is-empty is-flat" title="6291 沛亨 | 2026-05-18 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6291 沛亨 | 2026-05-19 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6291 沛亨 | 2026-05-20 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6291 沛亨 | 2026-05-21 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6291 沛亨 | 2026-05-22 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6291 沛亨 | 2026-05-25 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6291 沛亨 | 2026-05-26 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6291 沛亨 | 2026-05-27 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6291 沛亨 | 2026-05-28 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6291 沛亨 | 2026-05-29 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6291 沛亨 | 2026-06-01 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6291 沛亨 | 2026-06-02 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6291 沛亨 | 2026-06-03 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6291 沛亨 | 2026-06-04 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6291 沛亨 | 2026-06-05 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6291 沛亨 | 2026-06-08 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6291 沛亨 | 2026-06-09 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6291 沛亨 | 2026-06-10 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6291 沛亨 | 2026-06-11 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6291 沛亨 | 2026-06-12 | rank - | close — | —"></div><div class="hpw-cell tier-3 is-up" title="6291 沛亨 | 2026-06-15 | rank 19 | close 556 | +3.73%">#19</div><div class="hpw-cell tier-3 is-down" title="6291 沛亨 | 2026-06-16 | rank 20 | close 544 | -2.16%">#20</div><div class="hpw-cell tier-4 is-down" title="6291 沛亨 | 2026-06-17 | rank 25 | close 515 | -5.33%">#25</div><div class="hpw-cell tier-3 is-up" title="6291 沛亨 | 2026-06-18 | rank 20 | close 548 | +6.41%">#20</div><div class="hpw-cell is-empty is-flat" title="6291 沛亨 | 2026-06-22 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6291 沛亨 | 2026-06-23 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6291 沛亨 | 2026-06-24 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6291 沛亨 | 2026-06-25 | rank - | close — | —"></div><div class="hpw-cell tier-3 is-up" title="6291 沛亨 | 2026-06-26 | rank 16 | close 653 | +9.93%">#16</div><div class="hpw-cell tier-3 is-up" title="6291 沛亨 | 2026-06-29 | rank 16 | close 653 | +9.93%">#16</div><div class="hpw-sticky hpw-stock"><strong>5904</strong><span>寶雅</span><em>11/30</em></div><div class="hpw-cell is-empty is-flat" title="5904 寶雅 | 2026-05-18 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="5904 寶雅 | 2026-05-19 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="5904 寶雅 | 2026-05-20 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="5904 寶雅 | 2026-05-21 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="5904 寶雅 | 2026-05-22 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="5904 寶雅 | 2026-05-25 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="5904 寶雅 | 2026-05-26 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="5904 寶雅 | 2026-05-27 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="5904 寶雅 | 2026-05-28 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="5904 寶雅 | 2026-05-29 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="5904 寶雅 | 2026-06-01 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="5904 寶雅 | 2026-06-02 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="5904 寶雅 | 2026-06-03 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="5904 寶雅 | 2026-06-04 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="5904 寶雅 | 2026-06-05 | rank - | close — | —"></div><div class="hpw-cell tier-2 is-up" title="5904 寶雅 | 2026-06-08 | rank 8 | close 582 | +6.87%">#8</div><div class="hpw-cell tier-2 is-down" title="5904 寶雅 | 2026-06-09 | rank 10 | close 622 | -3.22%">#10</div><div class="hpw-cell tier-3 is-down" title="5904 寶雅 | 2026-06-10 | rank 15 | close 602 | -3.22%">#15</div><div class="hpw-cell tier-3 is-up" title="5904 寶雅 | 2026-06-11 | rank 13 | close 625 | +3.82%">#13</div><div class="hpw-cell tier-3 is-down" title="5904 寶雅 | 2026-06-12 | rank 16 | close 647 | -1.85%">#16</div><div class="hpw-cell tier-3 is-down" title="5904 寶雅 | 2026-06-15 | rank 17 | close 635 | -1.57%">#17</div><div class="hpw-cell tier-3 is-down" title="5904 寶雅 | 2026-06-16 | rank 17 | close 625 | -1.12%">#17</div><div class="hpw-cell tier-3 is-up" title="5904 寶雅 | 2026-06-17 | rank 18 | close 618 | +1.13%">#18</div><div class="hpw-cell is-empty is-flat" title="5904 寶雅 | 2026-06-18 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="5904 寶雅 | 2026-06-22 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="5904 寶雅 | 2026-06-23 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="5904 寶雅 | 2026-06-24 | rank - | close — | —"></div><div class="hpw-cell tier-3 is-down" title="5904 寶雅 | 2026-06-25 | rank 17 | close 660 | -3.64%">#17</div><div class="hpw-cell tier-3 is-flat" title="5904 寶雅 | 2026-06-26 | rank 17 | close 636 | —">#17</div><div class="hpw-cell tier-3 is-flat" title="5904 寶雅 | 2026-06-29 | rank 17 | close 638 | —">#17</div><div class="hpw-sticky hpw-stock"><strong>6415</strong><span>矽力*-KY</span><em>3/30</em></div><div class="hpw-cell tier-3 is-up" title="6415 矽力*-KY | 2026-05-18 | rank 11 | close 514 | +9.83%">#11</div><div class="hpw-cell is-empty is-flat" title="6415 矽力*-KY | 2026-05-19 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6415 矽力*-KY | 2026-05-20 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6415 矽力*-KY | 2026-05-21 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6415 矽力*-KY | 2026-05-22 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6415 矽力*-KY | 2026-05-25 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6415 矽力*-KY | 2026-05-26 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6415 矽力*-KY | 2026-05-27 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6415 矽力*-KY | 2026-05-28 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6415 矽力*-KY | 2026-05-29 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6415 矽力*-KY | 2026-06-01 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6415 矽力*-KY | 2026-06-02 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6415 矽力*-KY | 2026-06-03 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6415 矽力*-KY | 2026-06-04 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6415 矽力*-KY | 2026-06-05 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6415 矽力*-KY | 2026-06-08 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6415 矽力*-KY | 2026-06-09 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6415 矽力*-KY | 2026-06-10 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6415 矽力*-KY | 2026-06-11 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6415 矽力*-KY | 2026-06-12 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6415 矽力*-KY | 2026-06-15 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6415 矽力*-KY | 2026-06-16 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6415 矽力*-KY | 2026-06-17 | rank - | close — | —"></div><div class="hpw-cell tier-3 is-up" title="6415 矽力*-KY | 2026-06-18 | rank 18 | close 629 | +29.16%">#18</div><div class="hpw-cell is-empty is-flat" title="6415 矽力*-KY | 2026-06-22 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6415 矽力*-KY | 2026-06-23 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6415 矽力*-KY | 2026-06-24 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6415 矽力*-KY | 2026-06-25 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6415 矽力*-KY | 2026-06-26 | rank - | close — | —"></div><div class="hpw-cell tier-3 is-up" title="6415 矽力*-KY | 2026-06-29 | rank 18 | close 629 | +29.16%">#18</div><div class="hpw-sticky hpw-stock"><strong>8021</strong><span>尖點</span><em>20/30</em></div><div class="hpw-cell is-empty is-flat" title="8021 尖點 | 2026-05-18 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="8021 尖點 | 2026-05-19 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="8021 尖點 | 2026-05-20 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="8021 尖點 | 2026-05-21 | rank - | close — | —"></div><div class="hpw-cell tier-4 is-down" title="8021 尖點 | 2026-05-22 | rank 31 | close 422 | -4.42%">#31</div><div class="hpw-cell is-empty is-flat" title="8021 尖點 | 2026-05-25 | rank - | close — | —"></div><div class="hpw-cell tier-3 is-down" title="8021 尖點 | 2026-05-26 | rank 20 | close 464.5 | -6.14%">#20</div><div class="hpw-cell is-empty is-flat" title="8021 尖點 | 2026-05-27 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="8021 尖點 | 2026-05-28 | rank - | close — | —"></div><div class="hpw-cell tier-4 is-up" title="8021 尖點 | 2026-05-29 | rank 22 | close 450 | +7.66%">#22</div><div class="hpw-cell tier-3 is-up" title="8021 尖點 | 2026-06-01 | rank 18 | close 464 | +3.11%">#18</div><div class="hpw-cell tier-4 is-down" title="8021 尖點 | 2026-06-02 | rank 24 | close 445 | -4.09%">#24</div><div class="hpw-cell tier-3 is-up" title="8021 尖點 | 2026-06-03 | rank 15 | close 470 | +5.62%">#15</div><div class="hpw-cell tier-3 is-down" title="8021 尖點 | 2026-06-04 | rank 19 | close 441 | -6.17%">#19</div><div class="hpw-cell tier-4 is-up" title="8021 尖點 | 2026-06-05 | rank 24 | close 458 | +3.85%">#24</div><div class="hpw-cell tier-3 is-up" title="8021 尖點 | 2026-06-08 | rank 12 | close 460 | +0.44%">#12</div><div class="hpw-cell tier-3 is-up" title="8021 尖點 | 2026-06-09 | rank 13 | close 506 | +10.00%">#13</div><div class="hpw-cell is-empty is-flat" title="8021 尖點 | 2026-06-10 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="8021 尖點 | 2026-06-11 | rank - | close — | —"></div><div class="hpw-cell tier-3 is-up" title="8021 尖點 | 2026-06-12 | rank 19 | close 522 | +13.97%">#19</div><div class="hpw-cell tier-4 is-down" title="8021 尖點 | 2026-06-15 | rank 22 | close 506 | -3.07%">#22</div><div class="hpw-cell tier-4 is-up" title="8021 尖點 | 2026-06-16 | rank 21 | close 518 | +2.37%">#21</div><div class="hpw-cell tier-4 is-up" title="8021 尖點 | 2026-06-17 | rank 22 | close 542 | +4.63%">#22</div><div class="hpw-cell is-empty is-flat" title="8021 尖點 | 2026-06-18 | rank - | close — | —"></div><div class="hpw-cell tier-3 is-up" title="8021 尖點 | 2026-06-22 | rank 20 | close 581 | +7.00%">#20</div><div class="hpw-cell tier-3 is-up" title="8021 尖點 | 2026-06-23 | rank 15 | close 567 | +0.53%">#15</div><div class="hpw-cell tier-3 is-flat" title="8021 尖點 | 2026-06-24 | rank 14 | close 570 | —">#14</div><div class="hpw-cell tier-3 is-down" title="8021 尖點 | 2026-06-25 | rank 18 | close 557 | -3.95%">#18</div><div class="hpw-cell tier-3 is-flat" title="8021 尖點 | 2026-06-26 | rank 19 | close 535 | —">#19</div><div class="hpw-cell tier-3 is-flat" title="8021 尖點 | 2026-06-29 | rank 19 | close 522 | —">#19</div><div class="hpw-sticky hpw-stock"><strong>3693</strong><span>營邦</span><em>3/30</em></div><div class="hpw-cell is-empty is-flat" title="3693 營邦 | 2026-05-18 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3693 營邦 | 2026-05-19 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3693 營邦 | 2026-05-20 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3693 營邦 | 2026-05-21 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3693 營邦 | 2026-05-22 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3693 營邦 | 2026-05-25 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3693 營邦 | 2026-05-26 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3693 營邦 | 2026-05-27 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3693 營邦 | 2026-05-28 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3693 營邦 | 2026-05-29 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3693 營邦 | 2026-06-01 | rank - | close — | —"></div><div class="hpw-cell tier-3 is-down" title="3693 營邦 | 2026-06-02 | rank 17 | close 598 | -5.38%">#17</div><div class="hpw-cell is-empty is-flat" title="3693 營邦 | 2026-06-03 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3693 營邦 | 2026-06-04 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3693 營邦 | 2026-06-05 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3693 營邦 | 2026-06-08 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3693 營邦 | 2026-06-09 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3693 營邦 | 2026-06-10 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3693 營邦 | 2026-06-11 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3693 營邦 | 2026-06-12 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3693 營邦 | 2026-06-15 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3693 營邦 | 2026-06-16 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3693 營邦 | 2026-06-17 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3693 營邦 | 2026-06-18 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3693 營邦 | 2026-06-22 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3693 營邦 | 2026-06-23 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3693 營邦 | 2026-06-24 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3693 營邦 | 2026-06-25 | rank - | close — | —"></div><div class="hpw-cell tier-3 is-down" title="3693 營邦 | 2026-06-26 | rank 20 | close 482.5 | -4.27%">#20</div><div class="hpw-cell tier-3 is-down" title="3693 營邦 | 2026-06-29 | rank 20 | close 482.5 | -4.27%">#20</div><div class="hpw-sticky hpw-stock"><strong>2408</strong><span>南亞科</span><em>8/30</em></div><div class="hpw-cell is-empty is-flat" title="2408 南亞科 | 2026-05-18 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2408 南亞科 | 2026-05-19 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2408 南亞科 | 2026-05-20 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2408 南亞科 | 2026-05-21 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2408 南亞科 | 2026-05-22 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2408 南亞科 | 2026-05-25 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2408 南亞科 | 2026-05-26 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2408 南亞科 | 2026-05-27 | rank - | close — | —"></div><div class="hpw-cell tier-4 is-up" title="2408 南亞科 | 2026-05-28 | rank 30 | close 324 | +7.10%">#30</div><div class="hpw-cell tier-4 is-up" title="2408 南亞科 | 2026-05-29 | rank 31 | close 347 | +9.94%">#31</div><div class="hpw-cell tier-4 is-up" title="2408 南亞科 | 2026-06-01 | rank 22 | close 381.5 | +9.96%">#22</div><div class="hpw-cell tier-4 is-down" title="2408 南亞科 | 2026-06-02 | rank 25 | close 419.5 | -4.29%">#25</div><div class="hpw-cell is-empty is-flat" title="2408 南亞科 | 2026-06-03 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2408 南亞科 | 2026-06-04 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2408 南亞科 | 2026-06-05 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2408 南亞科 | 2026-06-08 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2408 南亞科 | 2026-06-09 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2408 南亞科 | 2026-06-10 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2408 南亞科 | 2026-06-11 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2408 南亞科 | 2026-06-12 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2408 南亞科 | 2026-06-15 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2408 南亞科 | 2026-06-16 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2408 南亞科 | 2026-06-17 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2408 南亞科 | 2026-06-18 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2408 南亞科 | 2026-06-22 | rank - | close — | —"></div><div class="hpw-cell tier-3 is-down" title="2408 南亞科 | 2026-06-23 | rank 17 | close 454.5 | -10.00%">#17</div><div class="hpw-cell tier-3 is-down" title="2408 南亞科 | 2026-06-24 | rank 18 | close 443.5 | -2.42%">#18</div><div class="hpw-cell is-empty is-flat" title="2408 南亞科 | 2026-06-25 | rank - | close — | —"></div><div class="hpw-cell tier-4 is-down" title="2408 南亞科 | 2026-06-26 | rank 21 | close 449 | -5.87%">#21</div><div class="hpw-cell tier-4 is-down" title="2408 南亞科 | 2026-06-29 | rank 21 | close 449 | -5.87%">#21</div><div class="hpw-sticky hpw-stock"><strong>2472</strong><span>立隆電</span><em>8/30</em></div><div class="hpw-cell is-empty is-flat" title="2472 立隆電 | 2026-05-18 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2472 立隆電 | 2026-05-19 | rank - | close — | —"></div><div class="hpw-cell tier-4 is-up" title="2472 立隆電 | 2026-05-20 | rank 22 | close 255 | +9.91%">#22</div><div class="hpw-cell is-empty is-flat" title="2472 立隆電 | 2026-05-21 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2472 立隆電 | 2026-05-22 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2472 立隆電 | 2026-05-25 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2472 立隆電 | 2026-05-26 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2472 立隆電 | 2026-05-27 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2472 立隆電 | 2026-05-28 | rank - | close — | —"></div><div class="hpw-cell tier-4 is-up" title="2472 立隆電 | 2026-05-29 | rank 28 | close 371 | +42.69%">#28</div><div class="hpw-cell is-empty is-flat" title="2472 立隆電 | 2026-06-01 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2472 立隆電 | 2026-06-02 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2472 立隆電 | 2026-06-03 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2472 立隆電 | 2026-06-04 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2472 立隆電 | 2026-06-05 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2472 立隆電 | 2026-06-08 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2472 立隆電 | 2026-06-09 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2472 立隆電 | 2026-06-10 | rank - | close — | —"></div><div class="hpw-cell tier-4 is-up" title="2472 立隆電 | 2026-06-11 | rank 22 | close 350 | +6.14%">#22</div><div class="hpw-cell tier-4 is-up" title="2472 立隆電 | 2026-06-12 | rank 24 | close 371.5 | +3.90%">#24</div><div class="hpw-cell is-empty is-flat" title="2472 立隆電 | 2026-06-15 | rank - | close — | —"></div><div class="hpw-cell tier-4 is-down" title="2472 立隆電 | 2026-06-16 | rank 28 | close 347.5 | -9.97%">#28</div><div class="hpw-cell is-empty is-flat" title="2472 立隆電 | 2026-06-17 | rank - | close — | —"></div><div class="hpw-cell tier-4 is-up" title="2472 立隆電 | 2026-06-18 | rank 23 | close 402 | +8.21%">#23</div><div class="hpw-cell is-empty is-flat" title="2472 立隆電 | 2026-06-22 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2472 立隆電 | 2026-06-23 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2472 立隆電 | 2026-06-24 | rank - | close — | —"></div><div class="hpw-cell tier-3 is-up" title="2472 立隆電 | 2026-06-25 | rank 19 | close 397 | +9.97%">#19</div><div class="hpw-cell is-empty is-flat" title="2472 立隆電 | 2026-06-26 | rank - | close — | —"></div><div class="hpw-cell tier-4 is-flat" title="2472 立隆電 | 2026-06-29 | rank 22 | close 412.5 | —">#22</div><div class="hpw-sticky hpw-stock"><strong>2455</strong><span>全新</span><em>16/30</em></div><div class="hpw-cell tier-3 is-up" title="2455 全新 | 2026-05-18 | rank 18 | close 387 | +7.95%">#18</div><div class="hpw-cell tier-3 is-down" title="2455 全新 | 2026-05-19 | rank 13 | close 383 | -1.03%">#13</div><div class="hpw-cell is-empty is-flat" title="2455 全新 | 2026-05-20 | rank - | close — | —"></div><div class="hpw-cell tier-4 is-down" title="2455 全新 | 2026-05-21 | rank 25 | close 386.5 | -3.50%">#25</div><div class="hpw-cell tier-4 is-up" title="2455 全新 | 2026-05-22 | rank 30 | close 425 | +18.55%">#30</div><div class="hpw-cell is-empty is-flat" title="2455 全新 | 2026-05-25 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2455 全新 | 2026-05-26 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2455 全新 | 2026-05-27 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2455 全新 | 2026-05-28 | rank - | close — | —"></div><div class="hpw-cell tier-4 is-up" title="2455 全新 | 2026-05-29 | rank 24 | close 422 | +7.79%">#24</div><div class="hpw-cell tier-3 is-down" title="2455 全新 | 2026-06-01 | rank 20 | close 415.5 | -1.54%">#20</div><div class="hpw-cell tier-4 is-down" title="2455 全新 | 2026-06-02 | rank 26 | close 399 | -3.97%">#26</div><div class="hpw-cell tier-3 is-up" title="2455 全新 | 2026-06-03 | rank 17 | close 414 | +3.76%">#17</div><div class="hpw-cell tier-3 is-down" title="2455 全新 | 2026-06-04 | rank 20 | close 402 | -2.90%">#20</div><div class="hpw-cell is-empty is-flat" title="2455 全新 | 2026-06-05 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2455 全新 | 2026-06-08 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2455 全新 | 2026-06-09 | rank - | close — | —"></div><div class="hpw-cell tier-4 is-down" title="2455 全新 | 2026-06-10 | rank 24 | close 355.5 | -10.00%">#24</div><div class="hpw-cell is-empty is-flat" title="2455 全新 | 2026-06-11 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2455 全新 | 2026-06-12 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2455 全新 | 2026-06-15 | rank - | close — | —"></div><div class="hpw-cell tier-4 is-up" title="2455 全新 | 2026-06-16 | rank 24 | close 405.5 | +9.89%">#24</div><div class="hpw-cell is-empty is-flat" title="2455 全新 | 2026-06-17 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2455 全新 | 2026-06-18 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="2455 全新 | 2026-06-22 | rank - | close — | —"></div><div class="hpw-cell tier-3 is-down" title="2455 全新 | 2026-06-23 | rank 20 | close 398 | -2.81%">#20</div><div class="hpw-cell tier-3 is-down" title="2455 全新 | 2026-06-24 | rank 19 | close 397 | -0.25%">#19</div><div class="hpw-cell tier-3 is-down" title="2455 全新 | 2026-06-25 | rank 20 | close 388.5 | -2.14%">#20</div><div class="hpw-cell tier-4 is-down" title="2455 全新 | 2026-06-26 | rank 22 | close 348 | -10.42%">#22</div><div class="hpw-cell tier-4 is-down" title="2455 全新 | 2026-06-29 | rank 23 | close 348 | -10.42%">#23</div><div class="hpw-sticky hpw-stock"><strong>3357</strong><span>臺慶科</span><em>3/30</em></div><div class="hpw-cell is-empty is-flat" title="3357 臺慶科 | 2026-05-18 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3357 臺慶科 | 2026-05-19 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3357 臺慶科 | 2026-05-20 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3357 臺慶科 | 2026-05-21 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3357 臺慶科 | 2026-05-22 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3357 臺慶科 | 2026-05-25 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3357 臺慶科 | 2026-05-26 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3357 臺慶科 | 2026-05-27 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3357 臺慶科 | 2026-05-28 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3357 臺慶科 | 2026-05-29 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3357 臺慶科 | 2026-06-01 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3357 臺慶科 | 2026-06-02 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3357 臺慶科 | 2026-06-03 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3357 臺慶科 | 2026-06-04 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3357 臺慶科 | 2026-06-05 | rank - | close — | —"></div><div class="hpw-cell tier-4 is-up" title="3357 臺慶科 | 2026-06-08 | rank 22 | close 283 | +5.30%">#22</div><div class="hpw-cell is-empty is-flat" title="3357 臺慶科 | 2026-06-09 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3357 臺慶科 | 2026-06-10 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3357 臺慶科 | 2026-06-11 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3357 臺慶科 | 2026-06-12 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3357 臺慶科 | 2026-06-15 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3357 臺慶科 | 2026-06-16 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3357 臺慶科 | 2026-06-17 | rank - | close — | —"></div><div class="hpw-cell tier-4 is-up" title="3357 臺慶科 | 2026-06-18 | rank 27 | close 348 | +18.77%">#27</div><div class="hpw-cell is-empty is-flat" title="3357 臺慶科 | 2026-06-22 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3357 臺慶科 | 2026-06-23 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3357 臺慶科 | 2026-06-24 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3357 臺慶科 | 2026-06-25 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3357 臺慶科 | 2026-06-26 | rank - | close — | —"></div><div class="hpw-cell tier-4 is-up" title="3357 臺慶科 | 2026-06-29 | rank 24 | close 348 | +18.77%">#24</div><div class="hpw-sticky hpw-stock"><strong>6213</strong><span>聯茂</span><em>9/30</em></div><div class="hpw-cell is-empty is-flat" title="6213 聯茂 | 2026-05-18 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6213 聯茂 | 2026-05-19 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6213 聯茂 | 2026-05-20 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6213 聯茂 | 2026-05-21 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6213 聯茂 | 2026-05-22 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6213 聯茂 | 2026-05-25 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6213 聯茂 | 2026-05-26 | rank - | close — | —"></div><div class="hpw-cell tier-4 is-up" title="6213 聯茂 | 2026-05-27 | rank 28 | close 276.5 | +0.73%">#28</div><div class="hpw-cell is-empty is-flat" title="6213 聯茂 | 2026-05-28 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6213 聯茂 | 2026-05-29 | rank - | close — | —"></div><div class="hpw-cell tier-4 is-up" title="6213 聯茂 | 2026-06-01 | rank 28 | close 295 | +9.87%">#28</div><div class="hpw-cell tier-4 is-down" title="6213 聯茂 | 2026-06-02 | rank 39 | close 273 | -7.46%">#39</div><div class="hpw-cell is-empty is-flat" title="6213 聯茂 | 2026-06-03 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6213 聯茂 | 2026-06-04 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6213 聯茂 | 2026-06-05 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6213 聯茂 | 2026-06-08 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6213 聯茂 | 2026-06-09 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6213 聯茂 | 2026-06-10 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6213 聯茂 | 2026-06-11 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6213 聯茂 | 2026-06-12 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6213 聯茂 | 2026-06-15 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6213 聯茂 | 2026-06-16 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6213 聯茂 | 2026-06-17 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6213 聯茂 | 2026-06-18 | rank - | close — | —"></div><div class="hpw-cell tier-4 is-up" title="6213 聯茂 | 2026-06-22 | rank 37 | close 308 | +10.00%">#37</div><div class="hpw-cell tier-4 is-down" title="6213 聯茂 | 2026-06-23 | rank 33 | close 281 | -8.77%">#33</div><div class="hpw-cell tier-4 is-up" title="6213 聯茂 | 2026-06-24 | rank 23 | close 309 | +9.96%">#23</div><div class="hpw-cell tier-4 is-up" title="6213 聯茂 | 2026-06-25 | rank 21 | close 339.5 | +9.87%">#21</div><div class="hpw-cell tier-4 is-up" title="6213 聯茂 | 2026-06-26 | rank 23 | close 346.5 | +2.06%">#23</div><div class="hpw-cell tier-4 is-flat" title="6213 聯茂 | 2026-06-29 | rank 25 | close 344 | —">#25</div><div class="hpw-sticky hpw-stock"><strong>6449</strong><span>鈺邦</span><em>7/30</em></div><div class="hpw-cell tier-4 is-down" title="6449 鈺邦 | 2026-05-18 | rank 26 | close 271 | -9.78%">#26</div><div class="hpw-cell tier-4 is-up" title="6449 鈺邦 | 2026-05-19 | rank 29 | close 244.5 | +9.82%">#29</div><div class="hpw-cell is-empty is-flat" title="6449 鈺邦 | 2026-05-20 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6449 鈺邦 | 2026-05-21 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6449 鈺邦 | 2026-05-22 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6449 鈺邦 | 2026-05-25 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6449 鈺邦 | 2026-05-26 | rank - | close — | —"></div><div class="hpw-cell tier-4 is-up" title="6449 鈺邦 | 2026-05-27 | rank 21 | close 370 | +5.11%">#21</div><div class="hpw-cell tier-4 is-up" title="6449 鈺邦 | 2026-05-28 | rank 25 | close 375 | +1.35%">#25</div><div class="hpw-cell is-empty is-flat" title="6449 鈺邦 | 2026-05-29 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6449 鈺邦 | 2026-06-01 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6449 鈺邦 | 2026-06-02 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6449 鈺邦 | 2026-06-03 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6449 鈺邦 | 2026-06-04 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6449 鈺邦 | 2026-06-05 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6449 鈺邦 | 2026-06-08 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6449 鈺邦 | 2026-06-09 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6449 鈺邦 | 2026-06-10 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6449 鈺邦 | 2026-06-11 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6449 鈺邦 | 2026-06-12 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6449 鈺邦 | 2026-06-15 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6449 鈺邦 | 2026-06-16 | rank - | close — | —"></div><div class="hpw-cell tier-4 is-up" title="6449 鈺邦 | 2026-06-17 | rank 26 | close 445 | +6.33%">#26</div><div class="hpw-cell is-empty is-flat" title="6449 鈺邦 | 2026-06-18 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6449 鈺邦 | 2026-06-22 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6449 鈺邦 | 2026-06-23 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6449 鈺邦 | 2026-06-24 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6449 鈺邦 | 2026-06-25 | rank - | close — | —"></div><div class="hpw-cell tier-4 is-down" title="6449 鈺邦 | 2026-06-26 | rank 24 | close 340 | -8.36%">#24</div><div class="hpw-cell tier-4 is-down" title="6449 鈺邦 | 2026-06-29 | rank 26 | close 340 | -8.36%">#26</div><div class="hpw-sticky hpw-stock"><strong>3147</strong><span>大綜</span><em>14/30</em></div><div class="hpw-cell is-empty is-flat" title="3147 大綜 | 2026-05-18 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3147 大綜 | 2026-05-19 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3147 大綜 | 2026-05-20 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3147 大綜 | 2026-05-21 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3147 大綜 | 2026-05-22 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3147 大綜 | 2026-05-25 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3147 大綜 | 2026-05-26 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3147 大綜 | 2026-05-27 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3147 大綜 | 2026-05-28 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3147 大綜 | 2026-05-29 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3147 大綜 | 2026-06-01 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3147 大綜 | 2026-06-02 | rank - | close — | —"></div><div class="hpw-cell tier-4 is-up" title="3147 大綜 | 2026-06-03 | rank 28 | close 242.5 | +9.90%">#28</div><div class="hpw-cell tier-4 is-up" title="3147 大綜 | 2026-06-04 | rank 34 | close 266.5 | +6.75%">#34</div><div class="hpw-cell tier-4 is-up" title="3147 大綜 | 2026-06-05 | rank 36 | close 284.5 | +55.89%">#36</div><div class="hpw-cell tier-3 is-up" title="3147 大綜 | 2026-06-08 | rank 20 | close 284.5 | +9.84%">#20</div><div class="hpw-cell is-empty is-flat" title="3147 大綜 | 2026-06-09 | rank - | close — | —"></div><div class="hpw-cell tier-4 is-up" title="3147 大綜 | 2026-06-10 | rank 27 | close 320 | +2.40%">#27</div><div class="hpw-cell tier-4 is-down" title="3147 大綜 | 2026-06-11 | rank 26 | close 318 | -0.62%">#26</div><div class="hpw-cell tier-4 is-up" title="3147 大綜 | 2026-06-12 | rank 26 | close 338 | +18.80%">#26</div><div class="hpw-cell tier-4 is-up" title="3147 大綜 | 2026-06-15 | rank 26 | close 331 | +5.74%">#26</div><div class="hpw-cell tier-4 is-down" title="3147 大綜 | 2026-06-16 | rank 27 | close 350 | -5.71%">#27</div><div class="hpw-cell tier-4 is-down" title="3147 大綜 | 2026-06-17 | rank 30 | close 330 | -0.91%">#30</div><div class="hpw-cell tier-4 is-down" title="3147 大綜 | 2026-06-18 | rank 30 | close 327 | -3.25%">#30</div><div class="hpw-cell tier-4 is-up" title="3147 大綜 | 2026-06-22 | rank 33 | close 320 | +1.88%">#33</div><div class="hpw-cell tier-4 is-up" title="3147 大綜 | 2026-06-23 | rank 23 | close 326 | +4.29%">#23</div><div class="hpw-cell is-empty is-flat" title="3147 大綜 | 2026-06-24 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3147 大綜 | 2026-06-25 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3147 大綜 | 2026-06-26 | rank - | close — | —"></div><div class="hpw-cell tier-4 is-down" title="3147 大綜 | 2026-06-29 | rank 27 | close 327 | -3.25%">#27</div><div class="hpw-sticky hpw-stock"><strong>3090</strong><span>日電貿</span><em>7/30</em></div><div class="hpw-cell is-empty is-flat" title="3090 日電貿 | 2026-05-18 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3090 日電貿 | 2026-05-19 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3090 日電貿 | 2026-05-20 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3090 日電貿 | 2026-05-21 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3090 日電貿 | 2026-05-22 | rank - | close — | —"></div><div class="hpw-cell tier-4 is-down" title="3090 日電貿 | 2026-05-25 | rank 33 | close 236.5 | -1.90%">#33</div><div class="hpw-cell tier-4 is-down" title="3090 日電貿 | 2026-05-26 | rank 38 | close 232 | -0.43%">#38</div><div class="hpw-cell tier-4 is-down" title="3090 日電貿 | 2026-05-27 | rank 33 | close 231 | -0.43%">#33</div><div class="hpw-cell is-empty is-flat" title="3090 日電貿 | 2026-05-28 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3090 日電貿 | 2026-05-29 | rank - | close — | —"></div><div class="hpw-cell tier-4 is-up" title="3090 日電貿 | 2026-06-01 | rank 32 | close 233.5 | +1.97%">#32</div><div class="hpw-cell is-empty is-flat" title="3090 日電貿 | 2026-06-02 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3090 日電貿 | 2026-06-03 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3090 日電貿 | 2026-06-04 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3090 日電貿 | 2026-06-05 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3090 日電貿 | 2026-06-08 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3090 日電貿 | 2026-06-09 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3090 日電貿 | 2026-06-10 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3090 日電貿 | 2026-06-11 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3090 日電貿 | 2026-06-12 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3090 日電貿 | 2026-06-15 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3090 日電貿 | 2026-06-16 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3090 日電貿 | 2026-06-17 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3090 日電貿 | 2026-06-18 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3090 日電貿 | 2026-06-22 | rank - | close — | —"></div><div class="hpw-cell tier-4 is-down" title="3090 日電貿 | 2026-06-23 | rank 31 | close 302.5 | -9.84%">#31</div><div class="hpw-cell is-empty is-flat" title="3090 日電貿 | 2026-06-24 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="3090 日電貿 | 2026-06-25 | rank - | close — | —"></div><div class="hpw-cell tier-4 is-down" title="3090 日電貿 | 2026-06-26 | rank 25 | close 310 | -3.43%">#25</div><div class="hpw-cell tier-4 is-down" title="3090 日電貿 | 2026-06-29 | rank 28 | close 310 | -3.43%">#28</div><div class="hpw-sticky hpw-stock"><strong>6290</strong><span>良維</span><em>20/30</em></div><div class="hpw-cell tier-4 is-down" title="6290 良維 | 2026-05-18 | rank 28 | close 265.5 | -2.03%">#28</div><div class="hpw-cell tier-4 is-up" title="6290 良維 | 2026-05-19 | rank 25 | close 269.5 | +1.51%">#25</div><div class="hpw-cell tier-3 is-down" title="6290 良維 | 2026-05-20 | rank 20 | close 262 | -2.78%">#20</div><div class="hpw-cell tier-4 is-up" title="6290 良維 | 2026-05-21 | rank 34 | close 272.5 | +4.01%">#34</div><div class="hpw-cell is-empty is-flat" title="6290 良維 | 2026-05-22 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6290 良維 | 2026-05-25 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6290 良維 | 2026-05-26 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6290 良維 | 2026-05-27 | rank - | close — | —"></div><div class="hpw-cell tier-4 is-up" title="6290 良維 | 2026-05-28 | rank 29 | close 336 | +2.28%">#29</div><div class="hpw-cell is-empty is-flat" title="6290 良維 | 2026-05-29 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6290 良維 | 2026-06-01 | rank - | close — | —"></div><div class="hpw-cell tier-4 is-down" title="6290 良維 | 2026-06-02 | rank 30 | close 362.5 | -1.23%">#30</div><div class="hpw-cell is-empty is-flat" title="6290 良維 | 2026-06-03 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6290 良維 | 2026-06-04 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6290 良維 | 2026-06-05 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6290 良維 | 2026-06-08 | rank - | close — | —"></div><div class="hpw-cell tier-3 is-up" title="6290 良維 | 2026-06-09 | rank 18 | close 317.5 | +0.63%">#18</div><div class="hpw-cell tier-4 is-down" title="6290 良維 | 2026-06-10 | rank 28 | close 293 | -7.72%">#28</div><div class="hpw-cell tier-4 is-up" title="6290 良維 | 2026-06-11 | rank 27 | close 296.5 | +1.19%">#27</div><div class="hpw-cell tier-4 is-up" title="6290 良維 | 2026-06-12 | rank 29 | close 301.5 | +1.69%">#29</div><div class="hpw-cell tier-4 is-up" title="6290 良維 | 2026-06-15 | rank 32 | close 303 | +0.50%">#32</div><div class="hpw-cell tier-4 is-down" title="6290 良維 | 2026-06-16 | rank 31 | close 296.5 | -2.15%">#31</div><div class="hpw-cell tier-4 is-up" title="6290 良維 | 2026-06-17 | rank 34 | close 304 | +2.53%">#34</div><div class="hpw-cell tier-4 is-up" title="6290 良維 | 2026-06-18 | rank 32 | close 319.5 | +5.10%">#32</div><div class="hpw-cell tier-4 is-down" title="6290 良維 | 2026-06-22 | rank 34 | close 318 | -0.47%">#34</div><div class="hpw-cell tier-4 is-down" title="6290 良維 | 2026-06-23 | rank 29 | close 306 | -3.77%">#29</div><div class="hpw-cell tier-4 is-flat" title="6290 良維 | 2026-06-24 | rank 24 | close 306 | +0.00%">#24</div><div class="hpw-cell tier-4 is-up" title="6290 良維 | 2026-06-25 | rank 25 | close 311.5 | +1.80%">#25</div><div class="hpw-cell tier-4 is-down" title="6290 良維 | 2026-06-26 | rank 26 | close 300.5 | -3.53%">#26</div><div class="hpw-cell tier-4 is-down" title="6290 良維 | 2026-06-29 | rank 29 | close 300.5 | -3.53%">#29</div><div class="hpw-sticky hpw-stock"><strong>6672</strong><span>騰輝電子-KY</span><em>6/30</em></div><div class="hpw-cell is-empty is-flat" title="6672 騰輝電子-KY | 2026-05-18 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6672 騰輝電子-KY | 2026-05-19 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6672 騰輝電子-KY | 2026-05-20 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6672 騰輝電子-KY | 2026-05-21 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6672 騰輝電子-KY | 2026-05-22 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6672 騰輝電子-KY | 2026-05-25 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6672 騰輝電子-KY | 2026-05-26 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6672 騰輝電子-KY | 2026-05-27 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6672 騰輝電子-KY | 2026-05-28 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6672 騰輝電子-KY | 2026-05-29 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6672 騰輝電子-KY | 2026-06-01 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6672 騰輝電子-KY | 2026-06-02 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6672 騰輝電子-KY | 2026-06-03 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6672 騰輝電子-KY | 2026-06-04 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6672 騰輝電子-KY | 2026-06-05 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6672 騰輝電子-KY | 2026-06-08 | rank - | close — | —"></div><div class="hpw-cell tier-4 is-up" title="6672 騰輝電子-KY | 2026-06-09 | rank 26 | close 230 | +5.99%">#26</div><div class="hpw-cell is-empty is-flat" title="6672 騰輝電子-KY | 2026-06-10 | rank - | close — | —"></div><div class="hpw-cell tier-4 is-down" title="6672 騰輝電子-KY | 2026-06-11 | rank 37 | close 213.5 | -2.29%">#37</div><div class="hpw-cell is-empty is-flat" title="6672 騰輝電子-KY | 2026-06-12 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6672 騰輝電子-KY | 2026-06-15 | rank - | close — | —"></div><div class="hpw-cell tier-4 is-down" title="6672 騰輝電子-KY | 2026-06-16 | rank 35 | close 222 | -5.73%">#35</div><div class="hpw-cell is-empty is-flat" title="6672 騰輝電子-KY | 2026-06-17 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6672 騰輝電子-KY | 2026-06-18 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6672 騰輝電子-KY | 2026-06-22 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6672 騰輝電子-KY | 2026-06-23 | rank - | close — | —"></div><div class="hpw-cell is-empty is-flat" title="6672 騰輝電子-KY | 2026-06-24 | rank - | close — | —"></div><div class="hpw-cell tier-4 is-up" title="6672 騰輝電子-KY | 2026-06-25 | rank 28 | close 289.5 | +9.87%">#28</div><div class="hpw-cell tier-4 is-up" title="6672 騰輝電子-KY | 2026-06-26 | rank 27 | close 292 | +0.86%">#27</div><div class="hpw-cell tier-4 is-up" title="6672 騰輝電子-KY | 2026-06-29 | rank 30 | close 292 | +0.86%">#30</div></div></div>
+      </section>
+
+
+      <section class="hpw-panel">
+        <h2>個股<em>軌跡卡</em></h2>
+        <p class="hpw-note">先列最新高價股前 8 檔；柱狀高度代表排名強弱，越高表示排名越前。後續表現若來源尚未回填會顯示空值。</p>
+        <div class="hpw-track-grid">
+          <article class="hpw-track-card">
+            <div class="hpw-track-head">
+              <strong>2308</strong>
+              <span>台達電</span>
+              <em>#1</em>
+            </div>
+            <div class="hpw-track-meta">
+              <span>收盤 1,810</span>
+              <span class="num-down">-8.59%</span>
+              <span>連續 2d</span>
+              <span>出現 15 次</span>
+            </div>
+            <div class="hpw-bars"><span style="height:70%" title="2026-05-05 #6 2,165"></span><span style="height:69%" title="2026-05-08 #7 2,200"></span><span style="height:74%" title="2026-05-25 #3 2,290"></span><span style="height:72%" title="2026-05-26 #5 2,350"></span><span style="height:72%" title="2026-05-27 #5 2,520"></span><span style="height:74%" title="2026-05-28 #3 2,390"></span><span style="height:74%" title="2026-05-29 #3 2,445"></span><span style="height:74%" title="2026-06-10 #3 2,200"></span><span style="height:70%" title="2026-06-17 #6 2,155"></span><span style="height:75%" title="2026-06-24 #2 2,000"></span><span style="height:74%" title="2026-06-26 #3 1,810"></span><span style="height:77%" title="2026-06-29 #1 1,810"></span></div>
+            <div class="hpw-return-row"><span class="num-neutral">1d —</span><span class="num-neutral">3d —</span><span class="num-neutral">5d —</span><span class="num-neutral">10d —</span></div>
+          </article>
+
+          <article class="hpw-track-card">
+            <div class="hpw-track-head">
+              <strong>3491</strong>
+              <span>昇達科</span>
+              <em>#2</em>
+            </div>
+            <div class="hpw-track-meta">
+              <span>收盤 1,560</span>
+              <span class="num-down">-7.69%</span>
+              <span>連續 1d</span>
+              <span>出現 22 次</span>
+            </div>
+            <div class="hpw-bars"><span style="height:73%" title="2026-05-29 #4 2,200"></span><span style="height:74%" title="2026-06-01 #3 2,165"></span><span style="height:70%" title="2026-06-10 #6 1,635"></span><span style="height:73%" title="2026-06-11 #4 1,680"></span><span style="height:75%" title="2026-06-12 #2 1,690"></span><span style="height:68%" title="2026-06-15 #8 1,555"></span><span style="height:69%" title="2026-06-16 #7 1,570"></span><span style="height:66%" title="2026-06-17 #9 1,550"></span><span style="height:69%" title="2026-06-18 #7 1,560"></span><span style="height:69%" title="2026-06-22 #7 1,470"></span><span style="height:72%" title="2026-06-25 #5 1,340"></span><span style="height:75%" title="2026-06-29 #2 1,560"></span></div>
+            <div class="hpw-return-row"><span class="num-down">1d -5.77%</span><span class="num-down">3d -8.33%</span><span class="num-down">5d -21.15%</span><span class="num-neutral">10d —</span></div>
+          </article>
+
+          <article class="hpw-track-card">
+            <div class="hpw-track-head">
+              <strong>2404</strong>
+              <span>漢唐</span>
+              <em>#3</em>
+            </div>
+            <div class="hpw-track-meta">
+              <span>收盤 1,340</span>
+              <span class="num-down">-1.83%</span>
+              <span>連續 3d</span>
+              <span>出現 28 次</span>
+            </div>
+            <div class="hpw-bars"><span style="height:72%" title="2026-06-03 #5 1,155"></span><span style="height:68%" title="2026-06-05 #8 1,205"></span><span style="height:74%" title="2026-06-08 #3 1,110"></span><span style="height:70%" title="2026-06-09 #6 1,190"></span><span style="height:70%" title="2026-06-11 #6 1,195"></span><span style="height:69%" title="2026-06-12 #7 1,310"></span><span style="height:66%" title="2026-06-15 #9 1,380"></span><span style="height:66%" title="2026-06-16 #9 1,245"></span><span style="height:68%" title="2026-06-18 #8 1,265"></span><span style="height:73%" title="2026-06-25 #4 1,365"></span><span style="height:73%" title="2026-06-26 #4 1,340"></span><span style="height:74%" title="2026-06-29 #3 1,340"></span></div>
+            <div class="hpw-return-row"><span class="num-neutral">1d —</span><span class="num-neutral">3d —</span><span class="num-neutral">5d —</span><span class="num-neutral">10d —</span></div>
+          </article>
+
+          <article class="hpw-track-card">
+            <div class="hpw-track-head">
+              <strong>6187</strong>
+              <span>萬潤</span>
+              <em>#4</em>
+            </div>
+            <div class="hpw-track-meta">
+              <span>收盤 1,235</span>
+              <span class="num-up">+13.82%</span>
+              <span>連續 1d</span>
+              <span>出現 14 次</span>
+            </div>
+            <div class="hpw-bars"><span style="height:65%" title="2026-05-06 #10 1,215"></span><span style="height:61%" title="2026-05-08 #13 1,070"></span><span style="height:69%" title="2026-05-12 #7 1,220"></span><span style="height:72%" title="2026-05-13 #5 1,225"></span><span style="height:69%" title="2026-05-28 #7 1,240"></span><span style="height:66%" title="2026-05-29 #9 1,120"></span><span style="height:69%" title="2026-06-01 #7 1,070"></span><span style="height:66%" title="2026-06-18 #9 1,235"></span><span style="height:66%" title="2026-06-22 #9 1,260"></span><span style="height:70%" title="2026-06-24 #6 1,060"></span><span style="height:69%" title="2026-06-25 #7 1,105"></span><span style="height:73%" title="2026-06-29 #4 1,235"></span></div>
+            <div class="hpw-return-row"><span class="num-up">1d +2.02%</span><span class="num-down">3d -14.17%</span><span class="num-down">5d -12.96%</span><span class="num-neutral">10d —</span></div>
+          </article>
+
+          <article class="hpw-track-card">
+            <div class="hpw-track-head">
+              <strong>8210</strong>
+              <span>勤誠</span>
+              <em>#5</em>
+            </div>
+            <div class="hpw-track-meta">
+              <span>收盤 1,230</span>
+              <span class="num-down">-4.28%</span>
+              <span>連續 5d</span>
+              <span>出現 16 次</span>
+            </div>
+            <div class="hpw-bars"><span style="height:65%" title="2026-04-27 #10 1,165"></span><span style="height:66%" title="2026-05-05 #9 1,265"></span><span style="height:65%" title="2026-05-08 #10 1,415"></span><span style="height:70%" title="2026-05-12 #6 1,550"></span><span style="height:69%" title="2026-06-05 #7 1,370"></span><span style="height:72%" title="2026-06-09 #5 1,510"></span><span style="height:68%" title="2026-06-16 #8 1,350"></span><span style="height:72%" title="2026-06-23 #5 1,310"></span><span style="height:73%" title="2026-06-24 #4 1,325"></span><span style="height:70%" title="2026-06-25 #6 1,285"></span><span style="height:72%" title="2026-06-26 #5 1,230"></span><span style="height:72%" title="2026-06-29 #5 1,230"></span></div>
+            <div class="hpw-return-row"><span class="num-neutral">1d —</span><span class="num-neutral">3d —</span><span class="num-neutral">5d —</span><span class="num-neutral">10d —</span></div>
+          </article>
+
+          <article class="hpw-track-card">
+            <div class="hpw-track-head">
+              <strong>8046</strong>
+              <span>南電</span>
+              <em>#6</em>
+            </div>
+            <div class="hpw-track-meta">
+              <span>收盤 1,125</span>
+              <span class="num-up">+7.66%</span>
+              <span>連續 3d</span>
+              <span>出現 10 次</span>
+            </div>
+            <div class="hpw-bars"><span style="height:74%" title="2026-04-07 #3 624"></span><span style="height:74%" title="2026-04-09 #3 669"></span><span style="height:62%" title="2026-04-24 #12 874"></span><span style="height:70%" title="2026-05-07 #6 947"></span><span style="height:65%" title="2026-06-02 #10 862"></span><span style="height:62%" title="2026-06-17 #12 885"></span><span style="height:68%" title="2026-06-23 #8 909"></span><span style="height:68%" title="2026-06-25 #8 1,045"></span><span style="height:69%" title="2026-06-26 #7 1,125"></span><span style="height:70%" title="2026-06-29 #6 1,125"></span></div>
+            <div class="hpw-return-row"><span class="num-neutral">1d —</span><span class="num-neutral">3d —</span><span class="num-neutral">5d —</span><span class="num-neutral">10d —</span></div>
+          </article>
+
+          <article class="hpw-track-card">
+            <div class="hpw-track-head">
+              <strong>6781</strong>
+              <span>AES-KY</span>
+              <em>#7</em>
+            </div>
+            <div class="hpw-track-meta">
+              <span>收盤 1,105</span>
+              <span class="num-down">-7.14%</span>
+              <span>連續 2d</span>
+              <span>出現 5 次</span>
+            </div>
+            <div class="hpw-bars"><span style="height:68%" title="2026-04-29 #8 1,130"></span><span style="height:64%" title="2026-05-08 #11 1,230"></span><span style="height:70%" title="2026-06-02 #6 1,130"></span><span style="height:68%" title="2026-06-26 #8 1,105"></span><span style="height:69%" title="2026-06-29 #7 1,105"></span></div>
+            <div class="hpw-return-row"><span class="num-neutral">1d —</span><span class="num-neutral">3d —</span><span class="num-neutral">5d —</span><span class="num-neutral">10d —</span></div>
+          </article>
+
+          <article class="hpw-track-card">
+            <div class="hpw-track-head">
+              <strong>6531</strong>
+              <span>愛普*</span>
+              <em>#8</em>
+            </div>
+            <div class="hpw-track-meta">
+              <span>收盤 1,025</span>
+              <span class="num-up">+9.98%</span>
+              <span>連續 1d</span>
+              <span>出現 10 次</span>
+            </div>
+            <div class="hpw-bars"><span style="height:62%" title="2026-04-10 #12 516"></span><span style="height:55%" title="2026-04-17 #18 644"></span><span style="height:68%" title="2026-04-22 #8 792"></span><span style="height:60%" title="2026-04-30 #14 840"></span><span style="height:72%" title="2026-05-04 #5 924"></span><span style="height:65%" title="2026-05-15 #10 1,080"></span><span style="height:64%" title="2026-05-21 #11 876"></span><span style="height:65%" title="2026-05-22 #10 963"></span><span style="height:64%" title="2026-06-18 #11 1,025"></span><span style="height:68%" title="2026-06-29 #8 1,025"></span></div>
+            <div class="hpw-return-row"><span class="num-up">1d +8.78%</span><span class="num-up">3d +4.39%</span><span class="num-down">5d -3.41%</span><span class="num-neutral">10d —</span></div>
+          </article>
+        </div>
+      </section>
+
+
+      <section class="hpw-panel">
+        <h2>最新<em>高價股清單</em></h2>
+        <div class="hpw-scroll">
+          <table class="hpw-table">
+            <thead>
+              <tr>
+                <th class="num">Rank</th>
+                <th>股票</th>
+                <th class="num">收盤</th>
+                <th class="num">漲跌幅</th>
+                <th class="num">排名變化</th>
+                <th class="num">連續</th>
+                <th>來源</th>
+              </tr>
+            </thead>
+            <tbody>
+        <tr>
+          <td class="num">#1</td>
+          <td><strong>2308</strong> 台達電</td>
+          <td class="num">1,810</td>
+          <td class="num num-down">-8.59%</td>
+          <td class="num">+2</td>
+          <td class="num">2d</td>
+          <td>三源燈號(06-26)</td>
+        </tr>
+
+
+        <tr>
+          <td class="num">#2</td>
+          <td><strong>3491</strong> 昇達科</td>
+          <td class="num">1,560</td>
+          <td class="num num-down">-7.69%</td>
+          <td class="num">NEW</td>
+          <td class="num">1d</td>
+          <td>大股東背離(06-18)</td>
+        </tr>
+
+
+        <tr>
+          <td class="num">#3</td>
+          <td><strong>2404</strong> 漢唐</td>
+          <td class="num">1,340</td>
+          <td class="num num-down">-1.83%</td>
+          <td class="num">+1</td>
+          <td class="num">3d</td>
+          <td>大股東背離(06-18) / 三源燈號(06-26)</td>
+        </tr>
+
+
+        <tr>
+          <td class="num">#4</td>
+          <td><strong>6187</strong> 萬潤</td>
+          <td class="num">1,235</td>
+          <td class="num num-up">+13.82%</td>
+          <td class="num">NEW</td>
+          <td class="num">1d</td>
+          <td>大股東背離(06-18)</td>
+        </tr>
+
+
+        <tr>
+          <td class="num">#5</td>
+          <td><strong>8210</strong> 勤誠</td>
+          <td class="num">1,230</td>
+          <td class="num num-down">-4.28%</td>
+          <td class="num">0</td>
+          <td class="num">5d</td>
+          <td>三源燈號(06-26)</td>
+        </tr>
+
+
+        <tr>
+          <td class="num">#6</td>
+          <td><strong>8046</strong> 南電</td>
+          <td class="num">1,125</td>
+          <td class="num num-up">+7.66%</td>
+          <td class="num">+1</td>
+          <td class="num">3d</td>
+          <td>分點集中度(06-26)</td>
+        </tr>
+
+
+        <tr>
+          <td class="num">#7</td>
+          <td><strong>6781</strong> AES-KY</td>
+          <td class="num">1,105</td>
+          <td class="num num-down">-7.14%</td>
+          <td class="num">+1</td>
+          <td class="num">2d</td>
+          <td>分點集中度(06-26)</td>
+        </tr>
+
+
+        <tr>
+          <td class="num">#8</td>
+          <td><strong>6531</strong> 愛普*</td>
+          <td class="num">1,025</td>
+          <td class="num num-up">+9.98%</td>
+          <td class="num">NEW</td>
+          <td class="num">1d</td>
+          <td>大股東背離(06-18)</td>
+        </tr>
+
+
+        <tr>
+          <td class="num">#9</td>
+          <td><strong>6409</strong> 旭隼</td>
+          <td class="num">977</td>
+          <td class="num num-down">-2.30%</td>
+          <td class="num">0</td>
+          <td class="num">3d</td>
+          <td>三源燈號(06-26)</td>
+        </tr>
+
+
+        <tr>
+          <td class="num">#10</td>
+          <td><strong>6488</strong> 環球晶</td>
+          <td class="num">936</td>
+          <td class="num num-down">-10.00%</td>
+          <td class="num">0</td>
+          <td class="num">2d</td>
+          <td>分點集中度(06-26)</td>
+        </tr>
+
+
+        <tr>
+          <td class="num">#11</td>
+          <td><strong>6139</strong> 亞翔</td>
+          <td class="num">878</td>
+          <td class="num num-up">+0.34%</td>
+          <td class="num">0</td>
+          <td class="num">6d</td>
+          <td>分點集中度(06-26) / 三源燈號(06-26)</td>
+        </tr>
+
+
+        <tr>
+          <td class="num">#12</td>
+          <td><strong>4749</strong> 新應材</td>
+          <td class="num">877</td>
+          <td class="num num-down">-5.39%</td>
+          <td class="num">0</td>
+          <td class="num">6d</td>
+          <td>分點集中度(06-26) / 三源燈號(06-26)</td>
+        </tr>
+
+
+        <tr>
+          <td class="num">#13</td>
+          <td><strong>3189</strong> 景碩</td>
+          <td class="num">797</td>
+          <td class="num num-down">-1.85%</td>
+          <td class="num">0</td>
+          <td class="num">2d</td>
+          <td>三源燈號(06-26)</td>
+        </tr>
+
+
+        <tr>
+          <td class="num">#14</td>
+          <td><strong>6691</strong> 洋基工程</td>
+          <td class="num">793</td>
+          <td class="num num-down">-0.50%</td>
+          <td class="num">0</td>
+          <td class="num">4d</td>
+          <td>分點集中度(06-26) / 三源燈號(06-26)</td>
+        </tr>
+
+
+        <tr>
+          <td class="num">#15</td>
+          <td><strong>1519</strong> 華城</td>
+          <td class="num">780</td>
+          <td class="num num-down">-3.47%</td>
+          <td class="num">0</td>
+          <td class="num">3d</td>
+          <td>三源燈號(06-26)</td>
+        </tr>
+
+
+        <tr>
+          <td class="num">#16</td>
+          <td><strong>6291</strong> 沛亨</td>
+          <td class="num">653</td>
+          <td class="num num-up">+9.93%</td>
+          <td class="num">0</td>
+          <td class="num">2d</td>
+          <td>分點集中度(06-26)</td>
+        </tr>
+
+
+        <tr>
+          <td class="num">#17</td>
+          <td><strong>5904</strong> 寶雅</td>
+          <td class="num">638</td>
+          <td class="num num-neutral">—</td>
+          <td class="num">0</td>
+          <td class="num">3d</td>
+          <td>三因子排行(06-29)</td>
+        </tr>
+
+
+        <tr>
+          <td class="num">#18</td>
+          <td><strong>6415</strong> 矽力*-KY</td>
+          <td class="num">629</td>
+          <td class="num num-up">+29.16%</td>
+          <td class="num">NEW</td>
+          <td class="num">1d</td>
+          <td>大股東背離(06-18)</td>
+        </tr>
+
+
+        <tr>
+          <td class="num">#19</td>
+          <td><strong>8021</strong> 尖點</td>
+          <td class="num">522</td>
+          <td class="num num-neutral">—</td>
+          <td class="num">0</td>
+          <td class="num">6d</td>
+          <td>三因子排行(06-29)</td>
+        </tr>
+
+
+        <tr>
+          <td class="num">#20</td>
+          <td><strong>3693</strong> 營邦</td>
+          <td class="num">482.5</td>
+          <td class="num num-down">-4.27%</td>
+          <td class="num">0</td>
+          <td class="num">2d</td>
+          <td>三源燈號(06-26)</td>
+        </tr>
+
+
+        <tr>
+          <td class="num">#21</td>
+          <td><strong>2408</strong> 南亞科</td>
+          <td class="num">449</td>
+          <td class="num num-down">-5.87%</td>
+          <td class="num">0</td>
+          <td class="num">2d</td>
+          <td>三源燈號(06-26)</td>
+        </tr>
+
+
+        <tr>
+          <td class="num">#22</td>
+          <td><strong>2472</strong> 立隆電</td>
+          <td class="num">412.5</td>
+          <td class="num num-neutral">—</td>
+          <td class="num">NEW</td>
+          <td class="num">1d</td>
+          <td>大股東背離(06-18) / 三因子排行(06-29)</td>
+        </tr>
+
+
+        <tr>
+          <td class="num">#23</td>
+          <td><strong>2455</strong> 全新</td>
+          <td class="num">348</td>
+          <td class="num num-down">-10.42%</td>
+          <td class="num">-1</td>
+          <td class="num">5d</td>
+          <td>三源燈號(06-26)</td>
+        </tr>
+
+
+        <tr>
+          <td class="num">#24</td>
+          <td><strong>3357</strong> 臺慶科</td>
+          <td class="num">348</td>
+          <td class="num num-up">+18.77%</td>
+          <td class="num">NEW</td>
+          <td class="num">1d</td>
+          <td>大股東背離(06-18)</td>
+        </tr>
+
+
+        <tr>
+          <td class="num">#25</td>
+          <td><strong>6213</strong> 聯茂</td>
+          <td class="num">344</td>
+          <td class="num num-neutral">—</td>
+          <td class="num">-2</td>
+          <td class="num">6d</td>
+          <td>三因子排行(06-29) / 三源燈號(06-26)</td>
+        </tr>
+
+
+        <tr>
+          <td class="num">#26</td>
+          <td><strong>6449</strong> 鈺邦</td>
+          <td class="num">340</td>
+          <td class="num num-down">-8.36%</td>
+          <td class="num">-2</td>
+          <td class="num">2d</td>
+          <td>分點集中度(06-26)</td>
+        </tr>
+
+
+        <tr>
+          <td class="num">#27</td>
+          <td><strong>3147</strong> 大綜</td>
+          <td class="num">327</td>
+          <td class="num num-down">-3.25%</td>
+          <td class="num">NEW</td>
+          <td class="num">1d</td>
+          <td>大股東背離(06-18)</td>
+        </tr>
+
+
+        <tr>
+          <td class="num">#28</td>
+          <td><strong>3090</strong> 日電貿</td>
+          <td class="num">310</td>
+          <td class="num num-down">-3.43%</td>
+          <td class="num">-3</td>
+          <td class="num">2d</td>
+          <td>分點集中度(06-26)</td>
+        </tr>
+
+
+        <tr>
+          <td class="num">#29</td>
+          <td><strong>6290</strong> 良維</td>
+          <td class="num">300.5</td>
+          <td class="num num-down">-3.53%</td>
+          <td class="num">-3</td>
+          <td class="num">14d</td>
+          <td>三源燈號(06-26)</td>
+        </tr>
+
+
+        <tr>
+          <td class="num">#30</td>
+          <td><strong>6672</strong> 騰輝電子-KY</td>
+          <td class="num">292</td>
+          <td class="num num-up">+0.86%</td>
+          <td class="num">-3</td>
+          <td class="num">3d</td>
+          <td>三源燈號(06-26)</td>
+        </tr>
+
+
+        <tr>
+          <td class="num">#31</td>
+          <td><strong>4722</strong> 國精化</td>
+          <td class="num">289.5</td>
+          <td class="num num-up">+1.22%</td>
+          <td class="num">-3</td>
+          <td class="num">4d</td>
+          <td>分點集中度(06-26) / 三源燈號(06-26)</td>
+        </tr>
+
+
+        <tr>
+          <td class="num">#32</td>
+          <td><strong>6870</strong> 騰雲</td>
+          <td class="num">285.5</td>
+          <td class="num num-down">-5.15%</td>
+          <td class="num">NEW</td>
+          <td class="num">1d</td>
+          <td>大股東背離(06-18)</td>
+        </tr>
+
+
+        <tr>
+          <td class="num">#33</td>
+          <td><strong>6173</strong> 信昌電</td>
+          <td class="num">282.5</td>
+          <td class="num num-neutral">—</td>
+          <td class="num">-3</td>
+          <td class="num">4d</td>
+          <td>三因子排行(06-29)</td>
+        </tr>
+
+
+        <tr>
+          <td class="num">#34</td>
+          <td><strong>3374</strong> 精材</td>
+          <td class="num">279.5</td>
+          <td class="num num-down">-7.30%</td>
+          <td class="num">-5</td>
+          <td class="num">5d</td>
+          <td>三源燈號(06-26)</td>
+        </tr>
+
+
+        <tr>
+          <td class="num">#35</td>
+          <td><strong>2493</strong> 揚博</td>
+          <td class="num">273.5</td>
+          <td class="num num-up">+32.13%</td>
+          <td class="num">-4</td>
+          <td class="num">3d</td>
+          <td>大股東背離(06-18)</td>
+        </tr>
+
+
+        <tr>
+          <td class="num">#36</td>
+          <td><strong>6937</strong> 天虹</td>
+          <td class="num">250</td>
+          <td class="num num-down">-7.58%</td>
+          <td class="num">-4</td>
+          <td class="num">2d</td>
+          <td>三源燈號(06-26)</td>
+        </tr>
+
+
+        <tr>
+          <td class="num">#37</td>
+          <td><strong>2317</strong> 鴻海</td>
+          <td class="num">248.5</td>
+          <td class="num num-down">-3.50%</td>
+          <td class="num">-4</td>
+          <td class="num">5d</td>
+          <td>分點集中度(06-26) / 三源燈號(06-26)</td>
+        </tr>
+
+
+        <tr>
+          <td class="num">#38</td>
+          <td><strong>5475</strong> 德宏</td>
+          <td class="num">242.5</td>
+          <td class="num num-down">-9.85%</td>
+          <td class="num">-4</td>
+          <td class="num">2d</td>
+          <td>分點集中度(06-26)</td>
+        </tr>
+
+
+        <tr>
+          <td class="num">#39</td>
+          <td><strong>4551</strong> 智伸科</td>
+          <td class="num">225</td>
+          <td class="num num-down">-9.82%</td>
+          <td class="num">-4</td>
+          <td class="num">5d</td>
+          <td>大股東背離(06-18) / 三源燈號(06-26)</td>
+        </tr>
+
+
+        <tr>
+          <td class="num">#40</td>
+          <td><strong>2344</strong> 華邦電</td>
+          <td class="num">218.5</td>
+          <td class="num num-up">+27.03%</td>
+          <td class="num">NEW</td>
+          <td class="num">1d</td>
+          <td>大股東背離(06-18)</td>
+        </tr>
+        </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="hpw-panel">
+        <h2>新進與<em>淡出</em></h2>
+        <p class="hpw-note">與前一筆高價股名單比較，只呈現追蹤名單的進出，不代表買賣訊號。</p>
+        <h3 class="section__meta" style="display:block;margin:16px 0 10px">NEW IN</h3>
+        <div class="hpw-chip-row"><span class="hpw-chip"><strong>3491</strong> 昇達科 <em>1,560</em></span>
+<span class="hpw-chip"><strong>6187</strong> 萬潤 <em>1,235</em></span>
+<span class="hpw-chip"><strong>6531</strong> 愛普* <em>1,025</em></span>
+<span class="hpw-chip"><strong>6415</strong> 矽力*-KY <em>629</em></span>
+<span class="hpw-chip"><strong>2472</strong> 立隆電 <em>412.5</em></span>
+<span class="hpw-chip"><strong>3357</strong> 臺慶科 <em>348</em></span>
+<span class="hpw-chip"><strong>3147</strong> 大綜 <em>327</em></span>
+<span class="hpw-chip"><strong>6870</strong> 騰雲 <em>285.5</em></span>
+<span class="hpw-chip"><strong>2344</strong> 華邦電 <em>218.5</em></span></div>
+        <h3 class="section__meta" style="display:block;margin:22px 0 10px">EXITED</h3>
+        <div class="hpw-chip-row"><span class="hpw-chip"><strong>2059</strong> 川湖 <em>6,990</em></span>
+<span class="hpw-chip"><strong>7610</strong> 聯友金屬-創 <em>2,025</em></span>
+<span class="hpw-chip"><strong>6446</strong> 藥華藥 <em>1,155</em></span>
+<span class="hpw-chip"><strong>3711</strong> 日月光投控 <em>632</em></span>
+<span class="hpw-chip"><strong>2478</strong> 大毅 <em>218</em></span>
+<span class="hpw-chip"><strong>3227</strong> 原相 <em>212.5</em></span>
+<span class="hpw-chip"><strong>8027</strong> 鈦昇 <em>210</em></span>
+<span class="hpw-chip"><strong>2301</strong> 光寶科 <em>201.5</em></span>
+<span class="hpw-chip"><strong>2474</strong> 可成 <em>200</em></span></div>
+      </section>
+
+
+      <section class="hpw-panel">
+        <h2>近 5 筆<em>每週總結</em></h2>
+        <p class="hpw-note">區間 2026-06-23 -> 2026-06-29，用來看本週最常出現、新進、掉出的高價股。</p>
+        <div class="hpw-week-grid">
+          <div>
+            <h3>本週最常出現 Top 20</h3>
+            <div class="hpw-scroll"><table class="hpw-table hpw-table--compact">
+              <thead><tr><th class="num">#</th><th>股票</th><th class="num">出現</th><th class="num">最佳</th><th class="num">最新收盤</th></tr></thead>
+              <tbody><tr><td class="num">1</td><td><strong>8210</strong> 勤誠</td><td class="num">5/5</td><td class="num">#4</td><td class="num">1,230</td></tr><tr><td class="num">2</td><td><strong>4749</strong> 新應材</td><td class="num">5/5</td><td class="num">#7</td><td class="num">877</td></tr><tr><td class="num">3</td><td><strong>6139</strong> 亞翔</td><td class="num">5/5</td><td class="num">#8</td><td class="num">878</td></tr><tr><td class="num">4</td><td><strong>8021</strong> 尖點</td><td class="num">5/5</td><td class="num">#14</td><td class="num">522</td></tr><tr><td class="num">5</td><td><strong>2455</strong> 全新</td><td class="num">5/5</td><td class="num">#19</td><td class="num">348</td></tr><tr><td class="num">6</td><td><strong>6213</strong> 聯茂</td><td class="num">5/5</td><td class="num">#21</td><td class="num">344</td></tr><tr><td class="num">7</td><td><strong>3374</strong> 精材</td><td class="num">5/5</td><td class="num">#22</td><td class="num">279.5</td></tr><tr><td class="num">8</td><td><strong>6290</strong> 良維</td><td class="num">5/5</td><td class="num">#24</td><td class="num">300.5</td></tr><tr><td class="num">9</td><td><strong>2317</strong> 鴻海</td><td class="num">5/5</td><td class="num">#28</td><td class="num">248.5</td></tr><tr><td class="num">10</td><td><strong>4551</strong> 智伸科</td><td class="num">5/5</td><td class="num">#31</td><td class="num">225</td></tr><tr><td class="num">11</td><td><strong>8046</strong> 南電</td><td class="num">4/5</td><td class="num">#6</td><td class="num">1,125</td></tr><tr><td class="num">12</td><td><strong>6691</strong> 洋基工程</td><td class="num">4/5</td><td class="num">#9</td><td class="num">793</td></tr><tr><td class="num">13</td><td><strong>2408</strong> 南亞科</td><td class="num">4/5</td><td class="num">#17</td><td class="num">449</td></tr><tr><td class="num">14</td><td><strong>6173</strong> 信昌電</td><td class="num">4/5</td><td class="num">#25</td><td class="num">282.5</td></tr><tr><td class="num">15</td><td><strong>4722</strong> 國精化</td><td class="num">4/5</td><td class="num">#26</td><td class="num">289.5</td></tr><tr><td class="num">16</td><td><strong>2308</strong> 台達電</td><td class="num">3/5</td><td class="num">#1</td><td class="num">1,810</td></tr><tr><td class="num">17</td><td><strong>2404</strong> 漢唐</td><td class="num">3/5</td><td class="num">#3</td><td class="num">1,340</td></tr><tr><td class="num">18</td><td><strong>6187</strong> 萬潤</td><td class="num">3/5</td><td class="num">#4</td><td class="num">1,235</td></tr><tr><td class="num">19</td><td><strong>6409</strong> 旭隼</td><td class="num">3/5</td><td class="num">#9</td><td class="num">977</td></tr><tr><td class="num">20</td><td><strong>3711</strong> 日月光投控</td><td class="num">3/5</td><td class="num">#12</td><td class="num">632</td></tr></tbody>
+            </table></div>
+          </div>
+          <div>
+            <h3>新進高價股</h3>
+            <div class="hpw-chip-row"><span class="hpw-chip"><strong>2233</strong> 宇隆 <em>—</em></span>
+<span class="hpw-chip"><strong>2316</strong> 楠梓電 <em>—</em></span>
+<span class="hpw-chip"><strong>2344</strong> 華邦電 <em>—</em></span>
+<span class="hpw-chip"><strong>2351</strong> 順德 <em>—</em></span>
+<span class="hpw-chip"><strong>2368</strong> 金像電 <em>—</em></span>
+<span class="hpw-chip"><strong>2408</strong> 南亞科 <em>—</em></span>
+<span class="hpw-chip"><strong>3035</strong> 智原 <em>—</em></span>
+<span class="hpw-chip"><strong>3090</strong> 日電貿 <em>—</em></span>
+<span class="hpw-chip"><strong>3227</strong> 原相 <em>—</em></span>
+<span class="hpw-chip"><strong>3324</strong> 雙鴻 <em>—</em></span>
+<span class="hpw-chip"><strong>3374</strong> 精材 <em>—</em></span>
+<span class="hpw-chip"><strong>3376</strong> 新日興 <em>—</em></span></div>
+            <h3>連續霸榜股</h3>
+            <div class="hpw-chip-row"><span class="hpw-chip"><strong>8210</strong> 勤誠 <em>—</em></span>
+<span class="hpw-chip"><strong>4749</strong> 新應材 <em>—</em></span>
+<span class="hpw-chip"><strong>6139</strong> 亞翔 <em>—</em></span>
+<span class="hpw-chip"><strong>8021</strong> 尖點 <em>—</em></span>
+<span class="hpw-chip"><strong>2455</strong> 全新 <em>—</em></span>
+<span class="hpw-chip"><strong>6213</strong> 聯茂 <em>—</em></span>
+<span class="hpw-chip"><strong>3374</strong> 精材 <em>—</em></span>
+<span class="hpw-chip"><strong>6290</strong> 良維 <em>—</em></span>
+<span class="hpw-chip"><strong>2317</strong> 鴻海 <em>—</em></span>
+<span class="hpw-chip"><strong>4551</strong> 智伸科 <em>—</em></span></div>
+            <h3>掉出高價股</h3>
+            <div class="hpw-chip-row"><span class="hpw-chip"><strong>1477</strong> 聚陽 <em>218</em></span>
+<span class="hpw-chip"><strong>2327</strong> 國巨* <em>940</em></span>
+<span class="hpw-chip"><strong>2345</strong> 智邦 <em>2,495</em></span>
+<span class="hpw-chip"><strong>2357</strong> 華碩 <em>788</em></span>
+<span class="hpw-chip"><strong>2379</strong> 瑞昱 <em>745</em></span>
+<span class="hpw-chip"><strong>2428</strong> 興勤 <em>310</em></span>
+<span class="hpw-chip"><strong>2454</strong> 聯發科 <em>4,460</em></span>
+<span class="hpw-chip"><strong>3008</strong> 大立光 <em>4,860</em></span>
+<span class="hpw-chip"><strong>3023</strong> 信邦 <em>333</em></span>
+<span class="hpw-chip"><strong>3036</strong> 文曄 <em>219</em></span>
+<span class="hpw-chip"><strong>3163</strong> 波若威 <em>870</em></span>
+<span class="hpw-chip"><strong>3443</strong> 創意 <em>4,815</em></span></div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="hpw-panel">
+        <h2>資料<em>說明</em></h2>
+        <p class="hpw-note">由 Lynus 既有籌碼歷史檔彙整，包含分點集中度、三因子排行、三源燈號、大股東背離；最新清單採各來源最近可用日期合併，來源欄保留日期。此頁只做追蹤與統計，不做投資建議判斷。</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div id="footer-line" class="footer__row"></div>
+    </div>
+  </footer>
+  <script src="../assets/main.js" defer></script>
+</body>
+</html>

@@ -260,6 +260,35 @@
           "name_en": "Forecast Tracker"
         }
       ]
+    },
+    {
+      "id": "stocks",
+      "name_zh": "個股",
+      "name_en": "Stocks",
+      "tagline_zh": "高價股 × 個股追蹤",
+      "tagline_en": "Single-name watch",
+      "description": "個股觀測、高價股排名與事件追蹤",
+      "enabled": true,
+      "source_pipelines": [
+        "high_price_watch"
+      ],
+      "subcategories": [
+        {
+          "id": "high-price",
+          "name_zh": "高價股",
+          "name_en": "High Price",
+          "match_id_prefix": [
+            "high-price-watch"
+          ]
+        }
+      ],
+      "report_types": [
+        {
+          "id": "high_price_watch",
+          "name_zh": "高價股觀測",
+          "name_en": "High Price Watch"
+        }
+      ]
     }
   ]
 }

@@ -35,6 +35,7 @@
     mops_daily: '重大訊息',
     news_digest: '新聞匯整',
     calendar: '行事曆',
+    high_price_watch: '高價股觀測',
   };
 
   // ---------- Utilities ----------
