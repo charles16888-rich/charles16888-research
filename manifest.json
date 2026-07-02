@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-02T16:40:46+08:00",
-  "today": "2026-07-01",
+  "updated_at": "2026-07-02T17:10:48+08:00",
+  "today": "2026-07-02",
   "volume_number": 1,
   "market_summary": {
     "date": "2026-05-22",
@@ -21,6 +21,180 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "options-annual-2026",
+      "category": "txo",
+      "type": "options_annual",
+      "date": "2026-07-02",
+      "time": "15:10",
+      "title": "2026 台股選擇權年度合併報告",
+      "title_em": "年度合併",
+      "summary": "彙整 2026 年 26 份 v2.5 週報，期間 2026-01-01 至 2026-07-02，共 118 個交易日。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "年度合併",
+        "v2.5"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5",
+      "url": "reports/options/annual_reports/2026/台股選擇權年度合併報告_2026_v2.5.html",
+      "stats": [
+        {
+          "label": "週報",
+          "value": "26",
+          "color": "neutral"
+        },
+        {
+          "label": "交易日",
+          "value": "118",
+          "color": "neutral"
+        },
+        {
+          "label": "期間",
+          "value": "2026-01-01 → 2026-07-02",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "options-weekly-20260629-20260703",
+      "category": "txo",
+      "type": "options_weekly",
+      "date": "2026-07-02",
+      "time": "15:00",
+      "title": "台股選擇權籌碼週報 · 20260629-20260703",
+      "title_em": "選擇權",
+      "summary": "v2.5 定價與期現結構版週報，涵蓋 2026-06-29 至 2026-07-02，共 4 個交易日。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "週報",
+        "Max Pain",
+        "P/C Ratio"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5",
+      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260629-20260703_v2.5.html",
+      "stats": [
+        {
+          "label": "週期",
+          "value": "20260629-20260703",
+          "color": "neutral"
+        },
+        {
+          "label": "交易日",
+          "value": "4",
+          "color": "neutral"
+        },
+        {
+          "label": "版本",
+          "value": "v2.5",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-01-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-07-01",
+      "time": "20:00",
+      "title": "2026-07-01 族群週報",
+      "title_em": "ABF載板",
+      "summary": "涵蓋 2026-06-25 ~ 2026-07-01。週領漲 ABF載板 +18.40%，週領跌 鏡頭光學 -12.07%；資金焦點 晶圓代工。",
+      "tags": [
+        "ABF載板",
+        "鏡頭光學",
+        "晶圓代工",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-07-01/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "ABF載板 +18.40%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "鏡頭光學 -12.07%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "晶圓代工",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-01-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-07-01",
+      "time": "20:00",
+      "title": "2026-07-01 每日族群輪動雷達",
+      "title_em": "矽晶圓",
+      "summary": "今日相對升溫以 矽晶圓 最明顯，相對降溫以 面板 壓力最大；今日轉弱力道大於轉強力道。",
+      "tags": [
+        "矽晶圓",
+        "面板",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-07-01/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "矽晶圓 +5.33 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "面板 -6.25 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-01-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-07-01",
+      "time": "20:00",
+      "title": "2026-07-01 族群盤後快報",
+      "title_em": "矽晶圓",
+      "summary": "全 74 族群、成交 14973.1 億；領漲 矽晶圓 +5.83%，領跌 記憶體 -5.96%；漲多族群 26/74，全族群均漲 -0.35%。",
+      "tags": [
+        "矽晶圓",
+        "記憶體",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-07-01/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "矽晶圓 +5.83%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "記憶體 -5.96%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "5.7%",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "mops-revenue-forecast-watch-20260701",
       "category": "research",
@@ -54,6 +228,109 @@
           "label": "6月營收",
           "value": "1",
           "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "2026-06-30-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-06-30",
+      "time": "20:00",
+      "title": "2026-06-30 族群週報",
+      "title_em": "ABF載板",
+      "summary": "涵蓋 2026-06-24 ~ 2026-06-30。週領漲 ABF載板 +20.91%，週領跌 鏡頭光學 -12.63%；資金焦點 晶圓代工。",
+      "tags": [
+        "ABF載板",
+        "鏡頭光學",
+        "晶圓代工",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-06-30/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "ABF載板 +20.91%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "鏡頭光學 -12.63%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "晶圓代工",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-06-30-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-06-30",
+      "time": "20:00",
+      "title": "2026-06-30 每日族群輪動雷達",
+      "title_em": "矽晶圓",
+      "summary": "今日相對升溫以 矽晶圓 最明顯，相對降溫以 整車車廠 壓力最大；今日轉強力道大於轉弱力道。",
+      "tags": [
+        "矽晶圓",
+        "整車車廠",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-06-30/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "矽晶圓 +10.43 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "整車車廠 -1.71 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-06-30-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-06-30",
+      "time": "20:00",
+      "title": "2026-06-30 族群盤後快報",
+      "title_em": "ABF載板",
+      "summary": "全 74 族群、成交 13314.5 億；領漲 ABF載板 +9.78%，領跌 整車車廠 -1.63%；漲多族群 63/74，全族群均漲 +1.83%。",
+      "tags": [
+        "ABF載板",
+        "整車車廠",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-06-30/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "ABF載板 +9.78%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "整車車廠 -1.63%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "21.8%",
+          "color": "neutral"
         }
       ]
     },
@@ -93,72 +370,104 @@
       ]
     },
     {
-      "id": "options-annual-2026",
-      "category": "txo",
-      "type": "options_annual",
+      "id": "2026-06-29-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
       "date": "2026-06-29",
-      "time": "15:10",
-      "title": "2026 台股選擇權年度合併報告",
-      "title_em": "年度合併",
-      "summary": "彙整 2026 年 26 份 v2.5 週報，期間 2026-01-01 至 2026-06-29，共 115 個交易日。",
+      "time": "20:00",
+      "title": "2026-06-29 族群週報",
+      "title_em": "ABF載板",
+      "summary": "涵蓋 2026-06-23 ~ 2026-06-29。週領漲 ABF載板 +7.73%，週領跌 化合物半導體 -19.12%；資金焦點 晶圓代工。",
       "tags": [
-        "選擇權",
-        "TXO",
-        "年度合併",
-        "v2.5"
+        "ABF載板",
+        "化合物半導體",
+        "晶圓代工",
+        "週報"
       ],
-      "source_pipeline": "stock_project options_report_v2.5",
-      "url": "reports/options/annual_reports/2026/台股選擇權年度合併報告_2026_v2.5.html",
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-06-29/sectors-weekly.html",
       "stats": [
         {
-          "label": "週報",
-          "value": "26",
-          "color": "neutral"
+          "label": "週領漲",
+          "value": "ABF載板 +7.73%",
+          "color": "up"
         },
         {
-          "label": "交易日",
-          "value": "115",
-          "color": "neutral"
+          "label": "週領跌",
+          "value": "化合物半導體 -19.12%",
+          "color": "down"
         },
         {
-          "label": "期間",
-          "value": "2026-01-01 → 2026-06-29",
+          "label": "資金焦點",
+          "value": "晶圓代工",
           "color": "neutral"
         }
       ]
     },
     {
-      "id": "options-weekly-20260629-20260703",
-      "category": "txo",
-      "type": "options_weekly",
+      "id": "2026-06-29-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
       "date": "2026-06-29",
-      "time": "15:00",
-      "title": "台股選擇權籌碼週報 · 20260629-20260703",
-      "title_em": "選擇權",
-      "summary": "v2.5 定價與期現結構版週報，涵蓋 2026-06-29 至 2026-06-29，共 1 個交易日。",
+      "time": "20:00",
+      "title": "2026-06-29 每日族群輪動雷達",
+      "title_em": "電源供應",
+      "summary": "今日相對升溫以 電源供應 最明顯，相對降溫以 鏡頭光學 壓力最大；今日轉強力道大於轉弱力道。",
       "tags": [
-        "選擇權",
-        "TXO",
-        "週報",
-        "Max Pain",
-        "P/C Ratio"
+        "電源供應",
+        "鏡頭光學",
+        "輪動雷達"
       ],
-      "source_pipeline": "stock_project options_report_v2.5",
-      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260629-20260703_v2.5.html",
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-06-29/sectors-rotation.html",
       "stats": [
         {
-          "label": "週期",
-          "value": "20260629-20260703",
-          "color": "neutral"
+          "label": "最大升溫",
+          "value": "電源供應 +8.59 pct",
+          "color": "up"
         },
         {
-          "label": "交易日",
-          "value": "1",
-          "color": "neutral"
+          "label": "最大降溫",
+          "value": "鏡頭光學 -5.10 pct",
+          "color": "down"
         },
         {
-          "label": "版本",
-          "value": "v2.5",
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-06-29-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-06-29",
+      "time": "20:00",
+      "title": "2026-06-29 族群盤後快報",
+      "title_em": "面板",
+      "summary": "全 74 族群、成交 11193.1 億；領漲 面板 +6.01%，領跌 鏡頭光學 -6.67%；漲多族群 51/74，全族群均漲 +0.57%。",
+      "tags": [
+        "面板",
+        "鏡頭光學",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-06-29/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "面板 +6.01%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "鏡頭光學 -6.67%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "2.3%",
           "color": "neutral"
         }
       ]
