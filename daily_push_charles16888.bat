@@ -33,6 +33,28 @@ cd /d "%REPO%"
 
 REM 3a) sync remote changes before generating files
 echo [%date% %time%] git sync before build >> "%LOG%"
+
+set "STATUS_TMP=%TEMP%\charles16888_git_status_%RANDOM%%RANDOM%.txt"
+set "STATUS_SIZE=0"
+git status --porcelain > "%STATUS_TMP%" 2>> "%LOG%"
+if errorlevel 1 (
+    echo [%date% %time%] ERROR: git status failed before build >> "%LOG%"
+    if exist "%STATUS_TMP%" del "%STATUS_TMP%"
+    exit /b 2
+)
+for %%A in ("%STATUS_TMP%") do set "STATUS_SIZE=%%~zA"
+if not "%STATUS_SIZE%"=="0" (
+    echo [%date% %time%] WARN: dirty worktree before sync; stashing local generated changes >> "%LOG%"
+    type "%STATUS_TMP%" >> "%LOG%"
+    git stash push -u -m "charles16888 daily pre-sync %date% %time%" >> "%LOG%" 2>&1
+    if errorlevel 1 (
+        echo [%date% %time%] ERROR: git stash failed before build >> "%LOG%"
+        if exist "%STATUS_TMP%" del "%STATUS_TMP%"
+        exit /b 2
+    )
+)
+if exist "%STATUS_TMP%" del "%STATUS_TMP%"
+
 git fetch origin main >> "%LOG%" 2>&1
 if errorlevel 1 (
     echo [%date% %time%] ERROR: git fetch failed before build >> "%LOG%"
