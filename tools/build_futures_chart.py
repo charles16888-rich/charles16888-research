@@ -78,8 +78,6 @@ def read_market_pulse_db(after_date: str) -> list[dict]:
             SELECT date, twse_close, fut_close, basis
             FROM market_pulse_daily
             WHERE date > ?
-              AND basis IS NOT NULL
-              AND twse_close IS NOT NULL
               AND fut_close IS NOT NULL
             ORDER BY date ASC
             """,
@@ -89,13 +87,29 @@ def read_market_pulse_db(after_date: str) -> list[dict]:
     except sqlite3.Error as e:
         print(f"[WARN] market_pulse_daily query failed: {e}")
         return []
+
+    twii_fallback: dict[str, float] = {}
+    missing_cash_dates = [r[0] for r in rows if r[1] is None and r[2] is not None]
+    if missing_cash_dates:
+        from datetime import timedelta
+        start = min(missing_cash_dates)
+        end_dt = datetime.strptime(max(missing_cash_dates), "%Y-%m-%d") + timedelta(days=1)
+        twii_fallback = fetch_twii(start, end_dt.strftime("%Y-%m-%d"))
+        print(f"[INFO] ^TWII fallback for DB increment: {len(twii_fallback)} rows")
+
     out = []
     for r in rows:
+        twse_close = r[1] if r[1] is not None else twii_fallback.get(r[0])
+        if twse_close is None:
+            print(f"[WARN] skip {r[0]}: missing TWSE close for basis")
+            continue
+        fut_close = float(r[2])
+        basis = float(r[3]) if r[3] is not None else fut_close - float(twse_close)
         out.append({
             "date":        r[0],
-            "twse_close":  round(float(r[1]), 2),
-            "fut_close":   round(float(r[2]), 2),
-            "basis":       round(float(r[3]), 2),
+            "twse_close":  round(float(twse_close), 2),
+            "fut_close":   round(fut_close, 2),
+            "basis":       round(basis, 2),
         })
     return out
 
