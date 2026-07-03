@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-03T17:52:59+08:00",
+  "generated_at": "2026-07-03T21:50:38+08:00",
   "source_id": "tw_moneylink_investor_conference",
   "source_url": "https://www.money-link.com.tw/stxba/imwcontent0.asp?page=INVC1&ID=INVC1",
   "events": [
@@ -32,6 +32,12 @@
       "event_date": "2026-07-07",
       "code": "2889",
       "name": "國票金",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-07-07",
+      "code": "8027",
+      "name": "鈦昇",
       "event_time": "14:00"
     },
     {
@@ -68,6 +74,12 @@
       "event_date": "2026-07-16",
       "code": "2330",
       "name": "台積電",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-07-24",
+      "code": "3105",
+      "name": "穩懋",
       "event_time": "14:00"
     },
     {
