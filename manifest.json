@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-02T23:24:53+08:00",
+  "updated_at": "2026-07-03T11:09:45+08:00",
   "today": "2026-07-02",
   "volume_number": 1,
   "market_summary": {
@@ -21,41 +21,6 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
-    {
-      "id": "options-atm",
-      "category": "txo",
-      "type": "pulse",
-      "date": "2026-07-02",
-      "time": "20:00",
-      "title": "選擇權價平和 · 隱含波動代理",
-      "title_em": "價平和",
-      "summary": "近 751 個交易日（2023-05-30 → 2026-07-02）TXO ATM Call+Put 加總。最新 (2026-07-02)：近期 742 點（到期 202607F1）、次遠期 1470 點。",
-      "tags": [
-        "選擇權",
-        "TXO",
-        "價平和",
-        "隱波"
-      ],
-      "source_pipeline": "taifex + twse",
-      "url": "reports/options-atm.html",
-      "stats": [
-        {
-          "label": "近期 C+P",
-          "value": "742",
-          "color": "neutral"
-        },
-        {
-          "label": "次遠期 C+P",
-          "value": "1470",
-          "color": "neutral"
-        },
-        {
-          "label": "區間",
-          "value": "751 日",
-          "color": "neutral"
-        }
-      ]
-    },
     {
       "id": "market-pulse",
       "category": "taiex",
@@ -189,41 +154,6 @@
         {
           "label": "漲停集中",
           "value": "9.1%",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "options-annual-2026",
-      "category": "txo",
-      "type": "options_annual",
-      "date": "2026-07-02",
-      "time": "15:10",
-      "title": "2026 台股選擇權年度合併報告",
-      "title_em": "年度合併",
-      "summary": "彙整 2026 年 26 份 v2.5 週報，期間 2026-01-01 至 2026-07-02，共 118 個交易日。",
-      "tags": [
-        "選擇權",
-        "TXO",
-        "年度合併",
-        "v2.5"
-      ],
-      "source_pipeline": "stock_project options_report_v2.5",
-      "url": "reports/options/annual_reports/2026/台股選擇權年度合併報告_2026_v2.5.html",
-      "stats": [
-        {
-          "label": "週報",
-          "value": "26",
-          "color": "neutral"
-        },
-        {
-          "label": "交易日",
-          "value": "118",
-          "color": "neutral"
-        },
-        {
-          "label": "期間",
-          "value": "2026-01-01 → 2026-07-02",
           "color": "neutral"
         }
       ]
@@ -752,6 +682,41 @@
       ]
     },
     {
+      "id": "options-atm",
+      "category": "txo",
+      "type": "pulse",
+      "date": "2026-06-26",
+      "time": "20:00",
+      "title": "選擇權價平和 · 隱含波動代理",
+      "title_em": "價平和",
+      "summary": "近 747 個交易日（2023-05-30 → 2026-06-26）TXO ATM Call+Put 加總。最新 (2026-06-26)：近期 1700 點（到期 202607W1）、次遠期 2045 點。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "價平和",
+        "隱波"
+      ],
+      "source_pipeline": "taifex + twse",
+      "url": "reports/options-atm.html",
+      "stats": [
+        {
+          "label": "近期 C+P",
+          "value": "1700",
+          "color": "neutral"
+        },
+        {
+          "label": "次遠期 C+P",
+          "value": "2045",
+          "color": "neutral"
+        },
+        {
+          "label": "區間",
+          "value": "747 日",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-06-26-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -850,6 +815,41 @@
         {
           "label": "漲停集中",
           "value": "0.8%",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "options-annual-2026",
+      "category": "txo",
+      "type": "options_annual",
+      "date": "2026-06-26",
+      "time": "15:10",
+      "title": "2026 台股選擇權年度合併報告",
+      "title_em": "年度合併",
+      "summary": "彙整 2026 年 25 份 v2.5 週報，期間 2026-01-01 至 2026-06-26，共 114 個交易日。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "年度合併",
+        "v2.5"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5",
+      "url": "reports/options/annual_reports/2026/台股選擇權年度合併報告_2026_v2.5.html",
+      "stats": [
+        {
+          "label": "週報",
+          "value": "25",
+          "color": "neutral"
+        },
+        {
+          "label": "交易日",
+          "value": "114",
+          "color": "neutral"
+        },
+        {
+          "label": "期間",
+          "value": "2026-01-01 → 2026-06-26",
           "color": "neutral"
         }
       ]
