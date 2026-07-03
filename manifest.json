@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-03T16:02:00+08:00",
+  "updated_at": "2026-07-03T16:14:46+08:00",
   "today": "2026-07-03",
   "volume_number": 1,
   "market_summary": {
@@ -125,6 +125,41 @@
         {
           "label": "版本",
           "value": "v2.5",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "financial-calendar",
+      "category": "calendar",
+      "type": "calendar",
+      "date": "2026-07-03",
+      "time": "08:30",
+      "title": "市場行事曆",
+      "title_em": "法說會",
+      "summary": "台股區塊每日更新 Money-Link 未來一個月法說會公司，僅列日期、股號、股名與時間；其他市場事件保留原行事曆資料。",
+      "tags": [
+        "行事曆",
+        "台股",
+        "法說會",
+        "Money-Link"
+      ],
+      "source_pipeline": "financial_calendar_service moneylink_investor_conference",
+      "url": "reports/financial-calendar.html",
+      "stats": [
+        {
+          "label": "事件",
+          "value": "67",
+          "color": "neutral"
+        },
+        {
+          "label": "高重要",
+          "value": "35",
+          "color": "up"
+        },
+        {
+          "label": "台股法說",
+          "value": "12",
           "color": "neutral"
         }
       ]
@@ -799,42 +834,6 @@
         {
           "label": "漲停集中",
           "value": "2.3%",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "financial-calendar",
-      "category": "calendar",
-      "type": "calendar",
-      "date": "2026-06-28",
-      "time": "08:30",
-      "title": "市場行事曆",
-      "title_em": "事件雷達",
-      "summary": "高密度市場行事曆：台北時間、地區、重要度、事件、前值、預期、公布值與追蹤重點集中呈現。",
-      "tags": [
-        "行事曆",
-        "台股",
-        "美國總經",
-        "FOMC",
-        "營收"
-      ],
-      "source_pipeline": "financial_calendar_service",
-      "url": "reports/financial-calendar.html",
-      "stats": [
-        {
-          "label": "事件",
-          "value": "58",
-          "color": "neutral"
-        },
-        {
-          "label": "高重要",
-          "value": "35",
-          "color": "up"
-        },
-        {
-          "label": "台股",
-          "value": "3",
           "color": "neutral"
         }
       ]

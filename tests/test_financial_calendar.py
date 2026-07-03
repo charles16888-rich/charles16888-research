@@ -48,7 +48,12 @@ class FinancialCalendarAssetsTest(unittest.TestCase):
         self.assertFalse(ids & NOISY_EVENT_IDS)
         tw_events = [e for e in payload["events"] if e["market"] == "TW"]
         self.assertGreaterEqual(len(tw_events), 3)
-        self.assertTrue(any(e.get("metadata", {}).get("focusGroups") for e in tw_events))
+        self.assertTrue(all(e["source_id"] == "tw_moneylink_investor_conference" for e in tw_events))
+        self.assertTrue(all(e["event_type"] == "investor_conference" for e in tw_events))
+        for event in tw_events:
+            self.assertRegex(event["symbol"], r"^\d{4}$")
+            self.assertTrue(event["symbol_name"])
+            self.assertEqual(["date", "code", "name", "time"], event["metadata"]["display_fields"])
         for event in payload["events"]:
             self.assertIn(event["market"], {"US", "TW", "GLOBAL"})
             self.assertIn(event["importance"], {1, 2, 3})
@@ -74,6 +79,10 @@ class FinancialCalendarAssetsTest(unittest.TestCase):
         self.assertIn('id="calendar-list"', page)
         self.assertIn("calendar-table__head", page)
         self.assertIn("renderEventRow", page)
+        self.assertIn("renderTwInvestorConferenceTable", page)
+        self.assertIn("calendar-ir-row", page)
+        self.assertIn("股號", page)
+        self.assertIn("股名", page)
         self.assertIn("台北時間", page)
         self.assertIn("前值", page)
         self.assertIn("公布", page)

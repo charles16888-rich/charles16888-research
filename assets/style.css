@@ -4228,6 +4228,53 @@ h3, .h3 {
   background: rgba(255, 255, 255, 0.96);
 }
 
+.calendar-table--ir {
+  overflow: hidden;
+}
+
+.calendar-ir-head,
+.calendar-ir-row {
+  display: grid;
+  grid-template-columns: 140px 120px minmax(160px, 1fr) 120px;
+  align-items: center;
+}
+
+.calendar-ir-head {
+  min-height: 34px;
+  background: #1a1713;
+  color: #fffaf0;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+}
+
+.calendar-ir-head span,
+.calendar-ir-row > * {
+  min-width: 0;
+  padding: var(--sp-3);
+  border-right: var(--hairline) solid var(--rule);
+}
+
+.calendar-ir-head span:last-child,
+.calendar-ir-row > *:last-child {
+  border-right: 0;
+}
+
+.calendar-ir-row {
+  border-top: var(--hairline) solid var(--rule);
+  color: var(--ink);
+}
+
+.calendar-ir-row:nth-child(odd) {
+  background: rgba(250, 247, 239, 0.78);
+}
+
+.calendar-ir-row > :nth-child(2),
+.calendar-ir-row > :nth-child(4) {
+  font-family: var(--font-mono);
+  color: var(--gold-deep);
+}
+
 .calendar-time {
   font-family: var(--font-mono);
   font-size: 13px;
@@ -4397,6 +4444,11 @@ h3, .h3 {
     display: none;
   }
 
+  .calendar-ir-head,
+  .calendar-ir-row {
+    grid-template-columns: 118px 82px 1fr 78px;
+  }
+
   .calendar-event-row {
     grid-template-columns: 72px 62px 82px 1fr;
   }
@@ -4450,9 +4502,35 @@ h3, .h3 {
     grid-template-columns: 1fr 1fr;
   }
 
+  .calendar-ir-head {
+    display: none;
+  }
+
+  .calendar-ir-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .calendar-ir-row > * {
+    border-right: 0;
+    border-bottom: var(--hairline) solid var(--rule);
+  }
+
+  .calendar-ir-row > :nth-child(1)::before { content: '日期'; }
+  .calendar-ir-row > :nth-child(2)::before { content: '股號'; }
+  .calendar-ir-row > :nth-child(3)::before { content: '股名'; }
+  .calendar-ir-row > :nth-child(4)::before { content: '時間'; }
+
+  .calendar-ir-row > *::before {
+    display: block;
+    margin-bottom: 2px;
+    color: var(--ink-dim);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+  }
+
   .calendar-event-main,
   .calendar-row__details {
     grid-column: 1 / -1;
   }
 }
-

@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-03T16:14:46+08:00",
+  "source_id": "tw_moneylink_investor_conference",
+  "source_url": "https://www.money-link.com.tw/stxba/imwcontent0.asp?page=INVC1&ID=INVC1",
+  "events": [
+    {
+      "event_date": "2026-07-03",
+      "code": "3663",
+      "name": "鑫科",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-07-03",
+      "code": "4907",
+      "name": "富宇",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-07-03",
+      "code": "8463",
+      "name": "潤泰材",
+      "event_time": "16:00"
+    },
+    {
+      "event_date": "2026-07-06",
+      "code": "4529",
+      "name": "淳紳",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-07-07",
+      "code": "2889",
+      "name": "國票金",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-07-07",
+      "code": "7689",
+      "name": "大鵬科CLMX",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-07-08",
+      "code": "3518",
+      "name": "柏騰",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-07-09",
+      "code": "3008",
+      "name": "大立光",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-07-09",
+      "code": "5236",
+      "name": "凌陽創新",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-07-10",
+      "code": "2408",
+      "name": "南亞科",
+      "event_time": "15:00"
+    },
+    {
+      "event_date": "2026-07-16",
+      "code": "2330",
+      "name": "台積電",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-07-30",
+      "code": "2409",
+      "name": "友達",
+      "event_time": "14:00"
+    }
+  ]
+}
