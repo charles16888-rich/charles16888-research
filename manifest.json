@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-03T11:09:45+08:00",
-  "today": "2026-07-02",
+  "updated_at": "2026-07-03T14:59:43+08:00",
+  "today": "2026-07-03",
   "volume_number": 1,
   "market_summary": {
     "date": "2026-05-22",
@@ -21,6 +21,43 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "shortage-weekly-2026-07-03",
+      "category": "shortage",
+      "type": "weekly",
+      "date": "2026-07-03",
+      "time": "20:30",
+      "title": "2026-07-03 缺貨偵探近四週週報",
+      "title_em": "ABF／高階載板",
+      "summary": "最新一週較明確的新事件集中在 ABF／高階載板、MLCC／被動元件、石英元件；其餘週別保留供需訊號供回溯。",
+      "tags": [
+        "ABF／高階載板",
+        "MLCC／被動元件",
+        "液冷板／CDU",
+        "石英元件",
+        "缺貨偵探",
+        "週報"
+      ],
+      "source_pipeline": "shortage_detective",
+      "url": "reports/shortage/2026-07-03/weekly.html",
+      "stats": [
+        {
+          "label": "最新週卡片",
+          "value": "4",
+          "color": "neutral"
+        },
+        {
+          "label": "來源數",
+          "value": "42",
+          "color": "neutral"
+        },
+        {
+          "label": "主題",
+          "value": "ABF／高階載板",
+          "color": "up"
+        }
+      ]
+    },
     {
       "id": "market-pulse",
       "category": "taiex",
