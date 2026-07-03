@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-02T20:59:20+08:00",
+  "updated_at": "2026-07-02T23:24:53+08:00",
   "today": "2026-07-02",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,75 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "options-atm",
+      "category": "txo",
+      "type": "pulse",
+      "date": "2026-07-02",
+      "time": "20:00",
+      "title": "選擇權價平和 · 隱含波動代理",
+      "title_em": "價平和",
+      "summary": "近 751 個交易日（2023-05-30 → 2026-07-02）TXO ATM Call+Put 加總。最新 (2026-07-02)：近期 742 點（到期 202607F1）、次遠期 1470 點。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "價平和",
+        "隱波"
+      ],
+      "source_pipeline": "taifex + twse",
+      "url": "reports/options-atm.html",
+      "stats": [
+        {
+          "label": "近期 C+P",
+          "value": "742",
+          "color": "neutral"
+        },
+        {
+          "label": "次遠期 C+P",
+          "value": "1470",
+          "color": "neutral"
+        },
+        {
+          "label": "區間",
+          "value": "751 日",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "market-pulse",
+      "category": "taiex",
+      "type": "pulse",
+      "date": "2026-07-02",
+      "time": "20:00",
+      "title": "市場脈動 · 漲跌停 × 全族群均幅",
+      "title_em": "脈動",
+      "summary": "近 52 個交易日漲跌停家數、總成交額、族群平均漲幅、漲停集中度。最新 (2026-07-02)：漲停 85、跌停 5、全族群均幅 +0.68%。",
+      "tags": [
+        "市場脈動",
+        "漲跌停",
+        "成交額"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/market-pulse.html",
+      "stats": [
+        {
+          "label": "漲停",
+          "value": "85",
+          "color": "up"
+        },
+        {
+          "label": "跌停",
+          "value": "5",
+          "color": "down"
+        },
+        {
+          "label": "成交額",
+          "value": "12,077 億",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "2026-07-02-sectors-weekly",
       "category": "sectors",
@@ -335,6 +404,42 @@
       ]
     },
     {
+      "id": "futures-basis",
+      "category": "taiex",
+      "type": "pulse",
+      "date": "2026-06-30",
+      "time": "20:00",
+      "title": "期貨正逆價差 · 12 年期現對照",
+      "title_em": "12 年",
+      "summary": "近 3009 個交易日（2014-02-14 → 2026-06-30）台指期 TXF1 vs 加權指數價差。最新 (2026-06-30)：基差 +604.1 點，加權收 46,126。",
+      "tags": [
+        "期貨",
+        "基差",
+        "正逆價差",
+        "TX",
+        "12 年"
+      ],
+      "source_pipeline": "yuanta + yfinance",
+      "url": "reports/futures-basis.html",
+      "stats": [
+        {
+          "label": "最新基差",
+          "value": "+604.1",
+          "color": "up"
+        },
+        {
+          "label": "加權",
+          "value": "46,126",
+          "color": "neutral"
+        },
+        {
+          "label": "區間",
+          "value": "3009 日",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-06-30-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -643,111 +748,6 @@
           "label": "Top 賣超",
           "value": "9904 -61%",
           "color": "down"
-        }
-      ]
-    },
-    {
-      "id": "options-atm",
-      "category": "txo",
-      "type": "pulse",
-      "date": "2026-06-26",
-      "time": "20:00",
-      "title": "選擇權價平和 · 隱含波動代理",
-      "title_em": "價平和",
-      "summary": "近 747 個交易日（2023-05-30 → 2026-06-26）TXO ATM Call+Put 加總。最新 (2026-06-26)：近期 1700 點（到期 202607W1）、次遠期 2045 點。",
-      "tags": [
-        "選擇權",
-        "TXO",
-        "價平和",
-        "隱波"
-      ],
-      "source_pipeline": "taifex + twse",
-      "url": "reports/options-atm.html",
-      "stats": [
-        {
-          "label": "近期 C+P",
-          "value": "1700",
-          "color": "neutral"
-        },
-        {
-          "label": "次遠期 C+P",
-          "value": "2045",
-          "color": "neutral"
-        },
-        {
-          "label": "區間",
-          "value": "747 日",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "market-pulse",
-      "category": "taiex",
-      "type": "pulse",
-      "date": "2026-06-26",
-      "time": "20:00",
-      "title": "市場脈動 · 漲跌停 × 全族群均幅",
-      "title_em": "脈動",
-      "summary": "近 48 個交易日漲跌停家數、總成交額、族群平均漲幅、漲停集中度。最新 (2026-06-26)：漲停 18、跌停 60、全族群均幅 -3.07%。",
-      "tags": [
-        "市場脈動",
-        "漲跌停",
-        "成交額"
-      ],
-      "source_pipeline": "industry_map",
-      "url": "reports/market-pulse.html",
-      "stats": [
-        {
-          "label": "漲停",
-          "value": "18",
-          "color": "up"
-        },
-        {
-          "label": "跌停",
-          "value": "60",
-          "color": "down"
-        },
-        {
-          "label": "成交額",
-          "value": "17,212 億",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "futures-basis",
-      "category": "taiex",
-      "type": "pulse",
-      "date": "2026-06-26",
-      "time": "20:00",
-      "title": "期貨正逆價差 · 12 年期現對照",
-      "title_em": "12 年",
-      "summary": "近 3007 個交易日（2014-02-14 → 2026-06-26）台指期 TXF1 vs 加權指數價差。最新 (2026-06-26)：基差 -198.8 點，加權收 44,572。",
-      "tags": [
-        "期貨",
-        "基差",
-        "正逆價差",
-        "TX",
-        "12 年"
-      ],
-      "source_pipeline": "yuanta + yfinance",
-      "url": "reports/futures-basis.html",
-      "stats": [
-        {
-          "label": "最新基差",
-          "value": "-198.8",
-          "color": "down"
-        },
-        {
-          "label": "加權",
-          "value": "44,572",
-          "color": "neutral"
-        },
-        {
-          "label": "區間",
-          "value": "3007 日",
-          "color": "neutral"
         }
       ]
     },
