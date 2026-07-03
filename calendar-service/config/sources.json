@@ -192,6 +192,22 @@
       "importance_default": 3,
       "priority": 95,
       "enabled": true
+    },
+    {
+      "id": "tw_moneylink_investor_conference",
+      "name": "Money-Link domestic investor conference calendar",
+      "source_type": "web_calendar",
+      "market": "TW",
+      "country": "TW",
+      "adapter": "moneylink_investor_conference",
+      "timezone": "Asia/Taipei",
+      "base_url": "https://www.money-link.com.tw/stxba/imwcontent0.asp?page=INVC1&ID=INVC1",
+      "license_note": "Money-Link public page; keep attribution in source metadata.",
+      "attribution_text": "Money-Link",
+      "crawl_schedule": "20 8 * * *",
+      "importance_default": 2,
+      "priority": 96,
+      "enabled": true
     }
   ],
   "do_not_create": [

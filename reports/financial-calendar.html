@@ -197,13 +197,47 @@
       updateIcs(events);
     }
 
+    function isTwInvestorConference(e) {
+      return e && e.market === 'TW' && e.event_type === 'investor_conference';
+    }
+
     function renderGroupedEvents(events) {
+      if (events.length && events.every(isTwInvestorConference)) {
+        return renderTwInvestorConferenceTable(events);
+      }
       const groups = new Map();
       events.forEach(e => {
         if (!groups.has(e.event_date_local)) groups.set(e.event_date_local, []);
         groups.get(e.event_date_local).push(e);
       });
       return Array.from(groups, ([date, rows]) => renderDayGroup(date, rows)).join('');
+    }
+
+    function renderTwInvestorConferenceTable(events) {
+      const rows = events
+        .slice()
+        .sort((a, b) =>
+          (a.event_date_local || '').localeCompare(b.event_date_local || '') ||
+          (a.event_time_local || '').localeCompare(b.event_time_local || '') ||
+          (a.symbol || '').localeCompare(b.symbol || '')
+        )
+        .map(e => `
+          <article id="${esc(e.id)}" class="calendar-ir-row">
+            <div>${esc(e.event_date_local || '')}</div>
+            <div>${esc(e.symbol || '')}</div>
+            <div>${esc(e.symbol_name || '')}</div>
+            <div>${esc(formatTime(e))}</div>
+          </article>`)
+        .join('');
+      return `
+        <section class="calendar-day-group calendar-day-group--ir">
+          <div class="calendar-table calendar-table--ir">
+            <div class="calendar-ir-head" aria-hidden="true">
+              <span>日期</span><span>股號</span><span>股名</span><span>時間</span>
+            </div>
+            ${rows}
+          </div>
+        </section>`;
     }
 
     function renderDayGroup(date, rows) {
