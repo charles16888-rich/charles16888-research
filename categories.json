@@ -267,10 +267,11 @@
       "name_en": "Stocks",
       "tagline_zh": "高價股 × 個股追蹤",
       "tagline_en": "Single-name watch",
-      "description": "個股觀測、高價股排名與事件追蹤",
+      "description": "個股觀測、高價股排名、缺貨供應鏈與事件追蹤",
       "enabled": true,
       "source_pipelines": [
-        "high_price_watch"
+        "high_price_watch",
+        "shortage_detective"
       ],
       "subcategories": [
         {
@@ -280,31 +281,11 @@
           "match_id_prefix": [
             "high-price-watch"
           ]
-        }
-      ],
-      "report_types": [
+        },
         {
-          "id": "high_price_watch",
-          "name_zh": "高價股觀測",
-          "name_en": "High Price Watch"
-        }
-      ]
-    },
-    {
-      "id": "shortage",
-      "name_zh": "缺貨",
-      "name_en": "Shortage",
-      "tagline_zh": "供需落差 × 報價交期",
-      "tagline_en": "Supply-demand pressure",
-      "description": "彙整新聞、法人報告與 PDF 中的缺貨、漲價、交期與規格變動訊號",
-      "enabled": true,
-      "source_pipelines": [
-        "shortage_detective"
-      ],
-      "subcategories": [
-        {
-          "id": "weekly",
-          "name_zh": "每週週報",
+          "id": "shortage",
+          "name_zh": "缺貨",
+          "name_en": "Shortage",
           "match_id_prefix": [
             "shortage-weekly"
           ]
@@ -312,9 +293,14 @@
       ],
       "report_types": [
         {
-          "id": "weekly",
-          "name_zh": "週報",
-          "name_en": "Weekly"
+          "id": "high_price_watch",
+          "name_zh": "高價股觀測",
+          "name_en": "High Price Watch"
+        },
+        {
+          "id": "shortage_weekly",
+          "name_zh": "缺貨週報",
+          "name_en": "Shortage Weekly"
         }
       ]
     }

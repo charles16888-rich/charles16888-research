@@ -219,7 +219,7 @@
     }
 
     const categories = STATE.categories.categories.filter(c => c.enabled !== false);
-    const preferred = ['taiex', 'calendar', 'sectors', 'chips', 'txo', 'shortage', 'mops', 'news', 'stocks', 'research'];
+    const preferred = ['taiex', 'calendar', 'sectors', 'chips', 'txo', 'mops', 'news', 'stocks', 'research'];
     const ordered = [
       ...preferred.map(id => categories.find(c => c.id === id)).filter(Boolean),
       ...categories.filter(c => !preferred.includes(c.id))
