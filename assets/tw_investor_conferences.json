@@ -1,27 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-03T21:50:38+08:00",
+  "generated_at": "2026-07-04T10:34:06+08:00",
   "source_id": "tw_moneylink_investor_conference",
   "source_url": "https://www.money-link.com.tw/stxba/imwcontent0.asp?page=INVC1&ID=INVC1",
   "events": [
-    {
-      "event_date": "2026-07-03",
-      "code": "3663",
-      "name": "鑫科",
-      "event_time": "14:00"
-    },
-    {
-      "event_date": "2026-07-03",
-      "code": "4907",
-      "name": "富宇",
-      "event_time": "14:00"
-    },
-    {
-      "event_date": "2026-07-03",
-      "code": "8463",
-      "name": "潤泰材",
-      "event_time": "16:00"
-    },
     {
       "event_date": "2026-07-06",
       "code": "4529",
