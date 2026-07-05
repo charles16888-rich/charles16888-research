@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-07-05T11:39:16.199532+08:00",
+  "generated_at": "2026-07-05T16:29:22.420120+08:00",
   "event_date": "2026-07-05",
   "quarter": "2026Q2",
-  "forecast_generated_at": "2026-07-03T23:08:28.373746+08:00",
+  "forecast_generated_at": "2026-07-05T16:29:19.462072+08:00",
   "forecast_latest_mops_period": "2026-06",
   "source": {
     "events": "E:\\stock_data\\mops_index.db mops_events",
