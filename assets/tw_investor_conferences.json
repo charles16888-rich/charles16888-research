@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-04T21:50:28+08:00",
+  "generated_at": "2026-07-05T11:22:26+08:00",
   "source_id": "tw_moneylink_investor_conference",
   "source_url": "https://www.money-link.com.tw/stxba/imwcontent0.asp?page=INVC1&ID=INVC1",
   "events": [
@@ -69,6 +69,12 @@
       "code": "2409",
       "name": "友達",
       "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-08-05",
+      "code": "2412",
+      "name": "中華電",
+      "event_time": "16:00"
     }
   ]
 }
