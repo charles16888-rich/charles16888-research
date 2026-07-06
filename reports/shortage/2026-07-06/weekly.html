@@ -1,443 +1,214 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="noindex, nofollow" />
-  <title>2026-07-06 缺貨偵探近四週週報 · charles16888</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../../../assets/fonts.css" />
-  <link rel="stylesheet" href="../../../assets/style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>缺貨偵探 · 近 4 週週報 - 2026-07-06</title>
   <style>
-.sd-weekly-shell {
-  color-scheme: light;
-  --sd-bg: #f7f8fb;
-  --sd-paper: #ffffff;
-  --sd-ink: #17202a;
-  --sd-muted: #64748b;
-  --sd-line: #d9e2ec;
-  --sd-red: #d61f3c;
-  --sd-orange: #c45510;
-  --sd-blue: #2563eb;
-  --sd-green: #047857;
-  background: var(--sd-bg);
-  color: var(--sd-ink);
-  font-family: "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif;
-  line-height: 1.65;
-  margin: var(--sp-5) 0 var(--sp-8);
-  padding: 28px 30px 44px;
-  border: 1px solid var(--sd-line);
-}
-.sd-weekly-shell * { box-sizing: border-box; }
-.sd-head { padding-bottom: 20px; border-bottom: 1px solid var(--sd-line); }
-.sd-kicker { color: var(--sd-muted); font-size: 13px; font-weight: 700; letter-spacing: .08em; }
-.sd-head h1 { margin: 6px 0; font-size: 32px; line-height: 1.2; letter-spacing: 0; }
-.sd-meta { color: var(--sd-muted); font-size: 15px; }
-.sd-summary {
-  margin: 18px 0 22px;
-  padding: 16px 18px;
-  border-left: 4px solid var(--sd-blue);
-  background: var(--sd-paper);
-  border-radius: 8px;
-}
-.sd-tabs {
-  display: grid;
-  grid-template-columns: 210px minmax(0, 1fr);
-  gap: 18px;
-  align-items: start;
-  margin-top: 24px;
-}
-.sd-tab-input {
-  position: absolute;
-  inline-size: 1px;
-  block-size: 1px;
-  opacity: 0;
-  pointer-events: none;
-}
-.sd-tab-nav {
-  display: grid;
-  gap: 10px;
-  position: sticky;
-  top: 84px;
-}
-.sd-tab-label {
-  display: grid;
-  gap: 4px;
-  background: var(--sd-paper);
-  border: 1px solid var(--sd-line);
-  border-left: 4px solid transparent;
-  border-radius: 8px;
-  padding: 13px 14px;
-  cursor: pointer;
-  transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease;
-}
-.sd-tab-label:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 8px 20px rgba(15, 23, 42, .08);
-}
-.sd-tab-label strong {
-  color: var(--sd-ink);
-  font-size: 15px;
-}
-.sd-tab-label span {
-  color: var(--sd-muted);
-  font-size: 13px;
-}
-#sd-tab-research:checked ~ .sd-tab-nav .sd-tab-label--research,
-#sd-tab-news:checked ~ .sd-tab-nav .sd-tab-label--news {
-  border-left-color: var(--sd-blue);
-  box-shadow: 0 10px 24px rgba(37, 99, 235, .12);
-}
-#sd-tab-news:checked ~ .sd-tab-nav .sd-tab-label--news {
-  border-left-color: var(--sd-orange);
-  box-shadow: 0 10px 24px rgba(196, 85, 16, .12);
-}
-.sd-tab-panels { min-width: 0; }
-.sd-panel { display: none; }
-#sd-tab-research:checked ~ .sd-tab-panels .sd-panel--research,
-#sd-tab-news:checked ~ .sd-tab-panels .sd-panel--news {
-  display: block;
-}
-.sd-block { margin-top: 24px; }
-.sd-block__label {
-  color: var(--sd-muted);
-  font-size: 13px;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  margin-bottom: 12px;
-}
-.sd-week { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--sd-line); }
-.sd-week-head { display: flex; align-items: end; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
-.sd-week-head h2 { margin: 0; font-size: 22px; letter-spacing: 0; }
-.sd-stats { display: flex; gap: 8px; flex-wrap: wrap; color: var(--sd-muted); font-size: 13px; }
-.sd-stats span { border: 1px solid var(--sd-line); background: var(--sd-paper); border-radius: 999px; padding: 3px 10px; }
-.sd-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-.sd-card { background: var(--sd-paper); border: 1px solid var(--sd-line); border-radius: 8px; padding: 16px; min-height: 330px; }
-.sd-card-title { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin-bottom: 10px; }
-.sd-card h3 { display: flex; align-items: center; gap: 8px; margin: 0; font-size: 17px; letter-spacing: 0; color: var(--sd-ink); }
-.sd-dot { width: 16px; height: 16px; border-radius: 50%; display: inline-block; border: 1px solid #111827; flex: 0 0 auto; }
-.sd-dot--critical { background: var(--sd-red); }
-.sd-dot--watch { background: #f97316; }
-.sd-dot--info { background: var(--sd-blue); }
-.sd-badge { font-weight: 800; white-space: nowrap; }
-.sd-badge--critical { color: var(--sd-red); }
-.sd-badge--watch { color: var(--sd-orange); }
-.sd-badge--info { color: var(--sd-blue); }
-.sd-line { margin: 9px 0; color: var(--sd-ink); font-size: 15px; }
-.sd-line strong { color: var(--sd-green); }
-.sd-stocks { margin-top: 12px; font-weight: 700; }
-.sd-verify { color: var(--sd-muted); font-size: 13px; margin-top: 4px; }
-.sd-week-note { color: var(--sd-muted); margin-top: 14px; }
-.sd-empty { background: var(--sd-paper); border: 1px solid var(--sd-line); border-radius: 8px; padding: 16px; color: var(--sd-muted); }
-.sd-news-note { color: var(--sd-muted); margin: 0 0 12px; }
-.sd-news-list {
-  margin: 0;
-  display: grid;
-  gap: 12px;
-}
-.sd-news-item {
-  background: var(--sd-paper);
-  border: 1px solid var(--sd-line);
-  border-radius: 8px;
-  padding: 15px 16px;
-}
-.sd-news-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  color: var(--sd-muted);
-  font-size: 12px;
-  letter-spacing: .08em;
-  margin-bottom: 6px;
-  text-transform: uppercase;
-}
-.sd-news-item h3 {
-  color: var(--sd-ink);
-  font-size: 18px;
-  letter-spacing: 0;
-  margin: 0 0 6px;
-}
-.sd-news-item p {
-  color: var(--sd-muted);
-  font-size: 15px;
-  margin: 0;
-}
-@media (max-width: 780px) {
-  .sd-weekly-shell { padding: 22px 16px 34px; }
-  .sd-tabs { grid-template-columns: 1fr; }
-  .sd-tab-nav { position: static; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .sd-grid { grid-template-columns: 1fr; }
-  .sd-week-head { display: block; }
-  .sd-head h1 { font-size: 27px; }
-}
-</style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f8fb;
+      --paper: #ffffff;
+      --ink: #17202a;
+      --muted: #64748b;
+      --line: #d9e2ec;
+      --red: #c2410c;
+      --orange: #b45309;
+      --blue: #2563eb;
+      --green: #047857;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif; line-height: 1.65; }
+    .shell { width: min(1120px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0 44px; }
+    header { padding: 4px 0 20px; border-bottom: 1px solid var(--line); }
+    h1 { margin: 4px 0 8px; font-size: 32px; line-height: 1.2; letter-spacing: 0; }
+    h2 { margin: 0; font-size: 22px; letter-spacing: 0; }
+    h3 { margin: 0 0 8px; font-size: 17px; letter-spacing: 0; }
+    .meta, .muted { color: var(--muted); }
+    .summary { margin: 18px 0 20px; padding: 16px 18px; border-left: 4px solid var(--blue); background: var(--paper); border-radius: 8px; }
+    .week { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line); }
+    .week-head { display: flex; align-items: end; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+    .stats { display: flex; gap: 8px; flex-wrap: wrap; color: var(--muted); font-size: 13px; }
+    .stat { border: 1px solid var(--line); background: var(--paper); border-radius: 999px; padding: 3px 10px; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .card { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 16px; }
+    .card-title { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin-bottom: 10px; }
+    .badge { font-weight: 800; }
+    .critical { color: var(--red); }
+    .watch { color: var(--orange); }
+    .info { color: var(--blue); }
+    .section { margin-top: 10px; }
+    .section strong { color: var(--green); }
+    .stocks { margin-top: 12px; font-weight: 700; }
+    .verify { color: var(--muted); font-size: 13px; }
+    .empty { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 16px; color: var(--muted); }
+    footer { margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+    @media (max-width: 780px) {
+      .grid { grid-template-columns: 1fr; }
+      .week-head { display: block; }
+      h1 { font-size: 27px; }
+    }
+  </style>
 </head>
-<body data-page="report">
-  <header class="masthead">
-    <div class="container">
-      <div class="masthead__row">
-        <a class="brand" href="../../../index.html">
-          <span class="brand__mark">charles<em>16888</em></span>
-          <span class="brand__plate">Market Edition · MMXXVI</span>
-        </a>
-        <nav class="nav" aria-label="Primary"><a class="nav__link" href="../../../category.html?cat=sectors">族群</a>
-<a class="nav__link" href="../../../category.html?cat=taiex">大盤</a>
-<a class="nav__link" href="../../../category.html?cat=calendar">行事曆</a>
-<a class="nav__link" href="../../../category.html?cat=txo">選擇權</a>
-<a class="nav__link" href="../../../category.html?cat=chips">籌碼</a>
-<a class="nav__link is-active" href="../../../category.html?cat=stocks">個股</a>
-<a class="nav__link" href="../../../category.html?cat=research">研報統計</a></nav>
-      </div>
-    </div>
-  </header>
+<body>
+  <main class="shell">
+    <header>
+      <div class="muted">SHORTAGE DETECTIVE · WEEKLY</div>
+      <h1>缺貨偵探 · 近 4 週週報</h1>
+      <div class="meta">視窗 2026-06-09 ~ 2026-07-06 · 產出 2026-07-06T23:34:38+08:00</div>
+    </header>
+    <section class="summary">最新一週較明確的新事件集中在 ABF／高階載板、MLCC／被動元件、液冷板／CDU；其餘週別保留供需訊號供回溯。</section>
 
-  <main class="container">
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="../../../index.html">charles16888</a>
-      <span class="breadcrumb__sep">/</span>
-      <a href="../../../category.html?cat=stocks">個股</a>
-      <span class="breadcrumb__sep">/</span>
-      <span>缺貨偵探</span>
-    </nav>
-
-    <article class="sd-weekly-shell">
-      <header class="sd-head">
-        <div class="sd-kicker">SHORTAGE DETECTIVE · WEEKLY</div>
-        <h1>缺貨偵探 · 近 4 週週報</h1>
-        <div class="sd-meta">視窗 2026-06-09 ~ 2026-07-06 · 產出 2026-07-06T15:24:46+08:00</div>
-      </header>
-      <section class="sd-summary">最新一週較明確的研究報告訊號集中在 ABF／高階載板、MLCC／被動元件、液冷板／CDU、石英元件；新聞端只作為邊際補充，觀察同類料號是否繼續升溫。</section>
-
-      <section class="sd-tabs" aria-label="缺貨偵探分頁">
-        <input class="sd-tab-input" type="radio" name="shortage-tab" id="sd-tab-research" checked />
-        <input class="sd-tab-input" type="radio" name="shortage-tab" id="sd-tab-news" />
-        <div class="sd-tab-nav" role="tablist" aria-label="缺貨偵探內容">
-          <label class="sd-tab-label sd-tab-label--research" for="sd-tab-research" role="tab">
-            <strong>研究報告</strong>
-            <span>週報卡片</span>
-          </label>
-          <label class="sd-tab-label sd-tab-label--news" for="sd-tab-news" role="tab">
-            <strong>新聞列表</strong>
-            <span>改寫訊號</span>
-          </label>
-        </div>
-        <div class="sd-tab-panels">
-          <section class="sd-panel sd-panel--research" aria-label="研究報告整理">
-            <div class="sd-block__label">研究報告整理</div>
-            
-<section class="sd-week">
-  <div class="sd-week-head">
+<section class="week">
+  <div class="week-head">
     <div>
       <h2>6/30-7/6</h2>
-      <div class="sd-meta">2026-06-30 ~ 2026-07-06</div>
+      <div class="meta">2026-06-30 ~ 2026-07-06</div>
     </div>
-    <div class="sd-stats">
-      <span>Cards 4</span>
-      <span>Clusters 7</span>
-      <span>Signals 77</span>
+    <div class="stats">
+      <span class="stat">Cards 4</span>
+      <span class="stat">Clusters 7</span>
+      <span class="stat">Signals 77</span>
     </div>
   </div>
-  <div class="sd-grid">
-<article class="sd-card">
-  <div class="sd-card-title">
-    <h3><span class="sd-dot sd-dot--critical"></span>ABF／高階載板</h3>
-    <span class="sd-badge sd-badge--critical">供給↓ + 需求↑↑</span>
+  <div class="grid">
+<article class="card">
+  <div class="card-title">
+    <h3>🔴 ABF／高階載板</h3>
+    <span class="badge critical">供給↓ + 需求↑↑</span>
   </div>
-  <p class="sd-line"><strong>供給：</strong>報價調漲 3%，ABF／高階載板供給偏緊已反映在報價。</p>
-  <p class="sd-line"><strong>需求：</strong>需求成長 146%，AI 與雲端資本支出支撐 ABF／高階載板需求高檔。</p>
-  <p class="sd-line"><strong>落差：</strong>報價調漲 3%，且需求成長 146%，ABF／高階載板落差從訂單熱度外溢到價格。</p>
-  <p class="sd-line"><strong>時間：</strong>7/3 發生報價調漲，今天仍需追蹤後續報價或交期更新。</p>
-  <div class="sd-stocks">相關台股：欣興(3037)、景碩(3189)、南電(8046)</div>
-  <div class="sd-verify">驗證：7/3 ABF／高階載板報價調漲 3%</div>
+  <div class="section"><strong>供給：</strong>報價調漲 3%，ABF／高階載板供給偏緊已反映在報價。</div>
+  <div class="section"><strong>需求：</strong>需求成長 146%，AI 與雲端資本支出支撐 ABF／高階載板需求高檔。</div>
+  <div class="section"><strong>落差：</strong>報價調漲 3%，且需求成長 146%，ABF／高階載板落差從訂單熱度外溢到價格。</div>
+  <div class="section"><strong>時間：</strong>7/3 發生報價調漲，今天仍需追蹤後續報價或交期更新。</div>
+  <div class="stocks">相關台股：欣興(3037)、景碩(3189)、南電(8046)</div>
+  <div class="verify">驗證：7/3 ABF／高階載板報價調漲 3%</div>
 </article>
 
 
-<article class="sd-card">
-  <div class="sd-card-title">
-    <h3><span class="sd-dot sd-dot--critical"></span>MLCC／被動元件</h3>
-    <span class="sd-badge sd-badge--critical">供給↓ + 需求↑↑</span>
+<article class="card">
+  <div class="card-title">
+    <h3>🔴 MLCC／被動元件</h3>
+    <span class="badge critical">供給↓ + 需求↑↑</span>
   </div>
-  <p class="sd-line"><strong>供給：</strong>MLCC／被動元件出現報價調漲，MLCC／被動元件供給偏緊已反映在報價。</p>
-  <p class="sd-line"><strong>需求：</strong>單機用量 20 倍，AI 與雲端資本支出支撐 MLCC／被動元件需求高檔。</p>
-  <p class="sd-line"><strong>落差：</strong>MLCC／被動元件出現報價調漲，MLCC／被動元件落差仍需看後續交期與報價是否同步。</p>
-  <p class="sd-line"><strong>時間：</strong>7/3 發生報價調漲，今天仍需追蹤後續報價或交期更新。</p>
-  <div class="sd-stocks">相關台股：國巨(2327)、華新科(2492)、禾伸堂(3026)</div>
-  <div class="sd-verify">驗證：7/3 MLCC／被動元件出現報價調漲</div>
+  <div class="section"><strong>供給：</strong>MLCC／被動元件出現報價調漲，MLCC／被動元件供給偏緊已反映在報價。</div>
+  <div class="section"><strong>需求：</strong>單機用量 20 倍，AI 與雲端資本支出支撐 MLCC／被動元件需求高檔。</div>
+  <div class="section"><strong>落差：</strong>MLCC／被動元件出現報價調漲，MLCC／被動元件落差仍需看後續交期與報價是否同步。</div>
+  <div class="section"><strong>時間：</strong>7/3 發生報價調漲，今天仍需追蹤後續報價或交期更新。</div>
+  <div class="stocks">相關台股：國巨(2327)、華新科(2492)、禾伸堂(3026)</div>
+  <div class="verify">驗證：7/3 MLCC／被動元件出現報價調漲</div>
 </article>
 
 
-<article class="sd-card">
-  <div class="sd-card-title">
-    <h3><span class="sd-dot sd-dot--critical"></span>液冷板／CDU</h3>
-    <span class="sd-badge sd-badge--critical">供給↓ + 需求↑↑</span>
+<article class="card">
+  <div class="card-title">
+    <h3>🔴 液冷板／CDU</h3>
+    <span class="badge critical">供給↓ + 需求↑↑</span>
   </div>
-  <p class="sd-line"><strong>供給：</strong>報價調漲 +50%，液冷板／CDU供給偏緊已反映在報價。</p>
-  <p class="sd-line"><strong>需求：</strong>需求成長 60%，AI 與雲端資本支出支撐 液冷板／CDU需求高檔。</p>
-  <p class="sd-line"><strong>落差：</strong>報價調漲 +50%，且需求成長 60%，液冷板／CDU落差從訂單熱度外溢到價格。</p>
-  <p class="sd-line"><strong>時間：</strong>7/1 發生報價調漲，今天仍需追蹤後續報價或交期更新。</p>
-  <div class="sd-stocks">相關台股：奇鋐(3017)、雙鴻(3324)、高力(8996)</div>
-  <div class="sd-verify">驗證：7/1 液冷板／CDU報價調漲 +50%</div>
+  <div class="section"><strong>供給：</strong>報價調漲 +50%，液冷板／CDU供給偏緊已反映在報價。</div>
+  <div class="section"><strong>需求：</strong>需求成長 60%，AI 與雲端資本支出支撐 液冷板／CDU需求高檔。</div>
+  <div class="section"><strong>落差：</strong>報價調漲 +50%，且需求成長 60%，液冷板／CDU落差從訂單熱度外溢到價格。</div>
+  <div class="section"><strong>時間：</strong>7/1 發生報價調漲，今天仍需追蹤後續報價或交期更新。</div>
+  <div class="stocks">相關台股：奇鋐(3017)、雙鴻(3324)、高力(8996)</div>
+  <div class="verify">驗證：7/1 液冷板／CDU報價調漲 +50%</div>
 </article>
 
 
-<article class="sd-card">
-  <div class="sd-card-title">
-    <h3><span class="sd-dot sd-dot--watch"></span>石英元件</h3>
-    <span class="sd-badge sd-badge--watch">供給↓ + 需求↑↑</span>
+<article class="card">
+  <div class="card-title">
+    <h3>🟠 石英元件</h3>
+    <span class="badge watch">供給↓ + 需求↑↑</span>
   </div>
-  <p class="sd-line"><strong>供給：</strong>報價調漲 10-30%，石英元件供給偏緊已反映在報價。</p>
-  <p class="sd-line"><strong>需求：</strong>需求成長 10%，AI 與雲端資本支出支撐 石英元件需求高檔。</p>
-  <p class="sd-line"><strong>落差：</strong>報價調漲 10-30%，且需求成長 10%，石英元件落差從訂單熱度外溢到價格。</p>
-  <p class="sd-line"><strong>時間：</strong>7/2 發生報價調漲，今天仍需追蹤後續報價或交期更新。</p>
-  <div class="sd-stocks">相關台股：希華(2484)、晶技(3042)、台嘉碩(3221)</div>
-  <div class="sd-verify">驗證：7/2 石英元件報價調漲 10-30%</div>
+  <div class="section"><strong>供給：</strong>報價調漲 10-30%，石英元件供給偏緊已反映在報價。</div>
+  <div class="section"><strong>需求：</strong>需求成長 10%，AI 與雲端資本支出支撐 石英元件需求高檔。</div>
+  <div class="section"><strong>落差：</strong>報價調漲 10-30%，且需求成長 10%，石英元件落差從訂單熱度外溢到價格。</div>
+  <div class="section"><strong>時間：</strong>7/2 發生報價調漲，今天仍需追蹤後續報價或交期更新。</div>
+  <div class="stocks">相關台股：希華(2484)、晶技(3042)、台嘉碩(3221)</div>
+  <div class="verify">驗證：7/2 石英元件報價調漲 10-30%</div>
 </article>
 </div>
-  <p class="sd-week-note">本週重點落在 ABF／高階載板、MLCC／被動元件、液冷板／CDU；後續追蹤第二輪報價、交期或規格更新。</p>
+  <p class="muted">本週重點落在 ABF／高階載板、MLCC／被動元件、液冷板／CDU；後續追蹤第二輪報價、交期或規格更新。</p>
 </section>
 
 
-<section class="sd-week">
-  <div class="sd-week-head">
+<section class="week">
+  <div class="week-head">
     <div>
       <h2>6/23-6/29</h2>
-      <div class="sd-meta">2026-06-23 ~ 2026-06-29</div>
+      <div class="meta">2026-06-23 ~ 2026-06-29</div>
     </div>
-    <div class="sd-stats">
-      <span>Cards 2</span>
-      <span>Clusters 4</span>
-      <span>Signals 4</span>
+    <div class="stats">
+      <span class="stat">Cards 2</span>
+      <span class="stat">Clusters 4</span>
+      <span class="stat">Signals 4</span>
     </div>
   </div>
-  <div class="sd-grid">
-<article class="sd-card">
-  <div class="sd-card-title">
-    <h3><span class="sd-dot sd-dot--info"></span>MLCC／被動元件</h3>
-    <span class="sd-badge sd-badge--info">供給↓ + 需求↑↑</span>
+  <div class="grid">
+<article class="card">
+  <div class="card-title">
+    <h3>🟡 MLCC／被動元件</h3>
+    <span class="badge info">供給↓ + 需求↑↑</span>
   </div>
-  <p class="sd-line"><strong>供給：</strong>MLCC／被動元件出現交期拉長，代表MLCC／被動元件供給端可調度空間收窄。</p>
-  <p class="sd-line"><strong>需求：</strong>MLCC／被動元件出現交期拉長，需求端尚未出現明顯降溫訊號。</p>
-  <p class="sd-line"><strong>落差：</strong>MLCC／被動元件出現交期拉長，MLCC／被動元件落差仍需看後續交期與報價是否同步。</p>
-  <p class="sd-line"><strong>時間：</strong>6/24 發生交期拉長，今天仍需追蹤後續報價或交期更新。</p>
-  <div class="sd-stocks">相關台股：國巨(2327)、華新科(2492)、禾伸堂(3026)</div>
-  <div class="sd-verify">驗證：6/24 MLCC／被動元件出現交期拉長</div>
+  <div class="section"><strong>供給：</strong>MLCC／被動元件出現交期拉長，代表MLCC／被動元件供給端可調度空間收窄。</div>
+  <div class="section"><strong>需求：</strong>MLCC／被動元件出現交期拉長，需求端尚未出現明顯降溫訊號。</div>
+  <div class="section"><strong>落差：</strong>MLCC／被動元件出現交期拉長，MLCC／被動元件落差仍需看後續交期與報價是否同步。</div>
+  <div class="section"><strong>時間：</strong>6/24 發生交期拉長，今天仍需追蹤後續報價或交期更新。</div>
+  <div class="stocks">相關台股：國巨(2327)、華新科(2492)、禾伸堂(3026)</div>
+  <div class="verify">驗證：6/24 MLCC／被動元件出現交期拉長</div>
 </article>
 
 
-<article class="sd-card">
-  <div class="sd-card-title">
-    <h3><span class="sd-dot sd-dot--info"></span>ABF／高階載板</h3>
-    <span class="sd-badge sd-badge--info">供給↓ + 需求不變</span>
+<article class="card">
+  <div class="card-title">
+    <h3>🟡 ABF／高階載板</h3>
+    <span class="badge info">供給↓ + 需求不變</span>
   </div>
-  <p class="sd-line"><strong>供給：</strong>ABF／高階載板出現產能滿載，代表ABF／高階載板供給端可調度空間收窄。</p>
-  <p class="sd-line"><strong>需求：</strong>ABF／高階載板出現產能滿載，需求端尚未出現明顯降溫訊號。</p>
-  <p class="sd-line"><strong>落差：</strong>ABF／高階載板出現產能滿載，ABF／高階載板落差仍需看後續交期與報價是否同步。</p>
-  <p class="sd-line"><strong>時間：</strong>6/24 發生產能滿載，今天仍需追蹤後續報價或交期更新。</p>
-  <div class="sd-stocks">相關台股：欣興(3037)、景碩(3189)、南電(8046)</div>
-  <div class="sd-verify">驗證：6/24 ABF／高階載板出現產能滿載</div>
+  <div class="section"><strong>供給：</strong>ABF／高階載板出現產能滿載，代表ABF／高階載板供給端可調度空間收窄。</div>
+  <div class="section"><strong>需求：</strong>ABF／高階載板出現產能滿載，需求端尚未出現明顯降溫訊號。</div>
+  <div class="section"><strong>落差：</strong>ABF／高階載板出現產能滿載，ABF／高階載板落差仍需看後續交期與報價是否同步。</div>
+  <div class="section"><strong>時間：</strong>6/24 發生產能滿載，今天仍需追蹤後續報價或交期更新。</div>
+  <div class="stocks">相關台股：欣興(3037)、景碩(3189)、南電(8046)</div>
+  <div class="verify">驗證：6/24 ABF／高階載板出現產能滿載</div>
 </article>
 </div>
-  <p class="sd-week-note">本週重點落在 MLCC／被動元件、ABF／高階載板；後續追蹤第二輪報價、交期或規格更新。</p>
+  <p class="muted">本週重點落在 MLCC／被動元件、ABF／高階載板；後續追蹤第二輪報價、交期或規格更新。</p>
 </section>
 
 
-<section class="sd-week">
-  <div class="sd-week-head">
+<section class="week">
+  <div class="week-head">
     <div>
       <h2>6/16-6/22</h2>
-      <div class="sd-meta">2026-06-16 ~ 2026-06-22</div>
+      <div class="meta">2026-06-16 ~ 2026-06-22</div>
     </div>
-    <div class="sd-stats">
-      <span>Cards 0</span>
-      <span>Clusters 0</span>
-      <span>Signals 0</span>
+    <div class="stats">
+      <span class="stat">Cards 0</span>
+      <span class="stat">Clusters 0</span>
+      <span class="stat">Signals 0</span>
     </div>
   </div>
-  <div class="sd-grid"><div class="sd-empty">本週研究報告暫無可放大的缺貨訊號。</div></div>
-  <p class="sd-week-note">本週沒有足夠新事件進入 Weekly Brief。</p>
+  <div class="grid"><div class="empty">本週沒有通過新事件門檻的缺貨主題。</div></div>
+  <p class="muted">本週沒有足夠新事件進入 Weekly Brief。</p>
 </section>
 
 
-<section class="sd-week">
-  <div class="sd-week-head">
+<section class="week">
+  <div class="week-head">
     <div>
       <h2>6/9-6/15</h2>
-      <div class="sd-meta">2026-06-09 ~ 2026-06-15</div>
+      <div class="meta">2026-06-09 ~ 2026-06-15</div>
     </div>
-    <div class="sd-stats">
-      <span>Cards 0</span>
-      <span>Clusters 0</span>
-      <span>Signals 0</span>
+    <div class="stats">
+      <span class="stat">Cards 0</span>
+      <span class="stat">Clusters 0</span>
+      <span class="stat">Signals 0</span>
     </div>
   </div>
-  <div class="sd-grid"><div class="sd-empty">本週研究報告暫無可放大的缺貨訊號。</div></div>
-  <p class="sd-week-note">本週沒有足夠新事件進入 Weekly Brief。</p>
+  <div class="grid"><div class="empty">本週沒有通過新事件門檻的缺貨主題。</div></div>
+  <p class="muted">本週沒有足夠新事件進入 Weekly Brief。</p>
 </section>
 
-          </section>
-          <section class="sd-panel sd-panel--news" aria-label="新聞列表">
-            <div class="sd-block__label">新聞列表</div>
-            
-<p class="sd-news-note">新聞端只保留可與缺貨連動的邊際訊號，文字以缺貨偵探語氣重寫成短句。</p>
-<div class="sd-news-list">
-  
-  <article class="sd-news-item" data-public-copy="rewritten">
-    <div class="sd-news-meta">
-      <span>2026-07-06</span>
-      <span>改寫訊號</span>
-    </div>
-    <h3>高壓電源料號提前卡位</h3>
-    <p>AI 專案把高壓電源相關零件需求往前拉，通路端提早議價與拉貨已變常態。這類料號短線重點在於高階應用排擠既有產能。</p>
-  </article>
-
-
-  <article class="sd-news-item" data-public-copy="rewritten">
-    <div class="sd-news-meta">
-      <span>2026-07-06</span>
-      <span>改寫訊號</span>
-    </div>
-    <h3>低功耗記憶體供給偏緊</h3>
-    <p>AI 伺服器與手機共用的低功耗記憶體被高階運算需求排擠，供給壓力正在升高。短線重點會落在手機 BOM 成本與交期彈性變差。</p>
-  </article>
-
-
-  <article class="sd-news-item" data-public-copy="rewritten">
-    <div class="sd-news-meta">
-      <span>2026-07-06</span>
-      <span>改寫訊號</span>
-    </div>
-    <h3>終端調價壓力外溢</h3>
-    <p>品牌產品漲價後，需求開始轉往二手與整新市場，顯示硬體成本壓力已被終端消費者感受到。這可作為上游漲價往下游傳導的外圍驗證。</p>
-  </article>
-
-
-  <article class="sd-news-item" data-public-copy="rewritten">
-    <div class="sd-news-meta">
-      <span>2026-07-06</span>
-      <span>改寫訊號</span>
-    </div>
-    <h3>物流艙位增加交期壓力</h3>
-    <p>高科技產品提前出貨先占用海空運艙位，下半年旺季的不確定性升高。若客戶持續提前拉貨，缺料之外還會多一層物流瓶頸。</p>
-  </article>
-
-
-  <article class="sd-news-item" data-public-copy="rewritten">
-    <div class="sd-news-meta">
-      <span>2026-07-06</span>
-      <span>改寫訊號</span>
-    </div>
-    <h3>DRAM 現貨買盤轉強</h3>
-    <p>DRAM 現貨重新轉強，通路心態從觀望轉向提前卡位。若大型終端客戶改變採購來源，既有記憶體分配節奏可能再被打亂。</p>
-  </article>
-
-</div>
-
-          </section>
-        </div>
-      </section>
-    </article>
+    <footer>本內容用於供應鏈事件追蹤與研究資料整理，不構成投資建議。</footer>
   </main>
-  <script src="../../../assets/main.js" defer></script>
 </body>
 </html>

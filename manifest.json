@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-06T23:28:40+08:00",
+  "updated_at": "2026-07-06T23:34:38+08:00",
   "today": "2026-07-06",
   "volume_number": 1,
   "market_summary": {
@@ -22,6 +22,148 @@
   },
   "entries": [
     {
+      "id": "high-price-watch",
+      "category": "stocks",
+      "type": "high_price_watch",
+      "date": "2026-07-06",
+      "time": "21:40",
+      "title": "高價股觀測 · 排名熱圖",
+      "title_em": "排名熱圖",
+      "summary": "高價股追蹤 40 檔，新進 32 檔、淡出 32 檔；榜首 2383 台光電 收盤 5,475。",
+      "tags": [
+        "個股",
+        "高價股",
+        "排名熱圖",
+        "Telegram第四頁"
+      ],
+      "source_pipeline": "lynus_chip_history_high_price_watch",
+      "url": "reports/high-price-watch.html",
+      "stats": [
+        {
+          "label": "最新樣本",
+          "value": "40 檔",
+          "color": "neutral"
+        },
+        {
+          "label": "新進",
+          "value": "32 檔",
+          "color": "up"
+        },
+        {
+          "label": "最高收盤",
+          "value": "5,475",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "three-factor-ranking",
+      "category": "chips",
+      "type": "ranking",
+      "date": "2026-07-06",
+      "time": "21:10",
+      "title": "三因子波段排行榜",
+      "title_em": "外資×營收×強勢",
+      "summary": "外資連買 >= 3 日、最新月營收創高、20/60 日趨勢仍強。 本次三因子同步 4 檔。 榜首：3004 豐達科，外資連買 8 日，營收 YoY +46.5%，前 20 日 +22.7%。",
+      "tags": [
+        "波段",
+        "外資連買",
+        "營收創高",
+        "強者恆強",
+        "排行榜"
+      ],
+      "source_pipeline": "stock_chip_crawler+mops_index",
+      "url": "reports/three-factor-ranking.html",
+      "stats": [
+        {
+          "label": "三因子同步",
+          "value": "4 檔",
+          "color": "up"
+        },
+        {
+          "label": "營收期別",
+          "value": "2026-06",
+          "color": "neutral"
+        },
+        {
+          "label": "榜首",
+          "value": "3004 78.9",
+          "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "foreign-sell-records",
+      "category": "chips",
+      "type": "ranking",
+      "date": "2026-07-06",
+      "time": "21:05",
+      "title": "外資史上賣超紀錄 · 個股 / 大盤金額 Top 20",
+      "title_em": "賣超",
+      "summary": "外資單日淨賣超史上 Top 20，並加入大盤外資淨賣超金額 Top 20。追蹤事件後 1/3/5/10/20/30/60 日走勢。 最大紀錄：2026-05-28 3481 群創 -289,338 張。 大盤最大金額：2026-06-24 -1,955.5億。",
+      "tags": [
+        "籌碼",
+        "外資",
+        "賣超",
+        "成交額",
+        "事件追蹤"
+      ],
+      "source_pipeline": "stock_chip_crawler",
+      "url": "reports/foreign-sell-records.html?v=20260706-official",
+      "stats": [
+        {
+          "label": "個股最大",
+          "value": "3481 -289,338張",
+          "color": "down"
+        },
+        {
+          "label": "大盤金額",
+          "value": "-1,955.5億",
+          "color": "down"
+        },
+        {
+          "label": "走勢",
+          "value": "1-60日",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "chip-concentration",
+      "category": "chips",
+      "type": "ranking",
+      "date": "2026-07-06",
+      "time": "21:00",
+      "title": "籌碼集中度 · 分點 Top 50 排行",
+      "title_em": "集中度",
+      "summary": "5 個時段 · 每邊 Top 50 · 過濾成交量 < 1,000 張。 今日買超集中 #1：8261 富鼎 +74.4%。 賣超集中 #1：3715 定穎投控 -52.9%。",
+      "tags": [
+        "籌碼",
+        "分點",
+        "集中度",
+        "排行榜"
+      ],
+      "source_pipeline": "stock_chip_crawler",
+      "url": "reports/chip-concentration.html",
+      "stats": [
+        {
+          "label": "時段數",
+          "value": "5",
+          "color": "neutral"
+        },
+        {
+          "label": "Top 買超",
+          "value": "8261 +74%",
+          "color": "up"
+        },
+        {
+          "label": "Top 賣超",
+          "value": "3715 -53%",
+          "color": "down"
+        }
+      ]
+    },
+    {
       "id": "shortage-weekly-2026-07-06",
       "category": "stocks",
       "type": "weekly",
@@ -29,7 +171,7 @@
       "time": "20:30",
       "title": "2026-07-06 缺貨偵探近四週週報",
       "title_em": "ABF／高階載板",
-      "summary": "最新一週較明確的研究報告訊號集中在 ABF／高階載板、MLCC／被動元件、液冷板／CDU、石英元件；新聞端只作為邊際補充，觀察同類料號是否繼續升溫。",
+      "summary": "最新一週較明確的新事件集中在 ABF／高階載板、MLCC／被動元件、液冷板／CDU；其餘週別保留供需訊號供回溯。",
       "tags": [
         "ABF／高階載板",
         "MLCC／被動元件",
@@ -267,6 +409,42 @@
       ]
     },
     {
+      "id": "mops-revenue-forecast-watch-20260706",
+      "category": "research",
+      "type": "mops_watch",
+      "date": "2026-07-06",
+      "time": "19:30",
+      "title": "2026-07-06 MOPS 營收公告追蹤",
+      "title_em": "MOPS 追蹤",
+      "summary": "公開 MOPS 營收相關重大訊息 20 筆；其中 6 筆出現在匿名財測名單，7 筆明確揭露 6 月營收。僅做追蹤與統計，不構成投資建議。",
+      "tags": [
+        "MOPS",
+        "重大訊息",
+        "營收公告",
+        "財測追蹤",
+        "2026Q2"
+      ],
+      "source_pipeline": "mops_revenue_forecast_watch",
+      "url": "reports/q2-forecast-2026q2.html#q2-mops-events",
+      "stats": [
+        {
+          "label": "公告",
+          "value": "20",
+          "color": "neutral"
+        },
+        {
+          "label": "財測名單",
+          "value": "6",
+          "color": "gold"
+        },
+        {
+          "label": "6月營收",
+          "value": "7",
+          "color": "up"
+        }
+      ]
+    },
+    {
       "id": "options-weekly-20260706-20260710",
       "category": "txo",
       "type": "options_weekly",
@@ -388,42 +566,6 @@
       ]
     },
     {
-      "id": "mops-revenue-forecast-watch-20260705",
-      "category": "research",
-      "type": "mops_watch",
-      "date": "2026-07-05",
-      "time": "19:30",
-      "title": "2026-07-05 MOPS 營收公告追蹤",
-      "title_em": "MOPS 追蹤",
-      "summary": "公開 MOPS 營收相關重大訊息 0 筆；其中 0 筆出現在匿名財測名單，0 筆明確揭露 6 月營收。僅做追蹤與統計，不構成投資建議。",
-      "tags": [
-        "MOPS",
-        "重大訊息",
-        "營收公告",
-        "財測追蹤",
-        "2026Q2"
-      ],
-      "source_pipeline": "mops_revenue_forecast_watch",
-      "url": "reports/q2-forecast-2026q2.html#q2-mops-events",
-      "stats": [
-        {
-          "label": "公告",
-          "value": "0",
-          "color": "neutral"
-        },
-        {
-          "label": "財測名單",
-          "value": "0",
-          "color": "gold"
-        },
-        {
-          "label": "6月營收",
-          "value": "0",
-          "color": "up"
-        }
-      ]
-    },
-    {
       "id": "shortage-weekly-2026-07-04",
       "category": "stocks",
       "type": "weekly",
@@ -457,148 +599,6 @@
           "label": "主題",
           "value": "ABF／高階載板",
           "color": "up"
-        }
-      ]
-    },
-    {
-      "id": "high-price-watch",
-      "category": "stocks",
-      "type": "high_price_watch",
-      "date": "2026-07-03",
-      "time": "21:40",
-      "title": "高價股觀測 · 排名熱圖",
-      "title_em": "排名熱圖",
-      "summary": "高價股追蹤 40 檔，新進 21 檔、淡出 21 檔；榜首 3443 創意 收盤 5,040。",
-      "tags": [
-        "個股",
-        "高價股",
-        "排名熱圖",
-        "Telegram第四頁"
-      ],
-      "source_pipeline": "lynus_chip_history_high_price_watch",
-      "url": "reports/high-price-watch.html",
-      "stats": [
-        {
-          "label": "最新樣本",
-          "value": "40 檔",
-          "color": "neutral"
-        },
-        {
-          "label": "新進",
-          "value": "21 檔",
-          "color": "up"
-        },
-        {
-          "label": "最高收盤",
-          "value": "5,040",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "three-factor-ranking",
-      "category": "chips",
-      "type": "ranking",
-      "date": "2026-07-03",
-      "time": "21:10",
-      "title": "三因子波段排行榜",
-      "title_em": "外資×營收×強勢",
-      "summary": "外資連買 >= 3 日、最新月營收創高、20/60 日趨勢仍強。 本次三因子同步 1 檔。 榜首：8109 博大，外資連買 6 日，營收 YoY +36.2%，前 20 日 +17.6%。",
-      "tags": [
-        "波段",
-        "外資連買",
-        "營收創高",
-        "強者恆強",
-        "排行榜"
-      ],
-      "source_pipeline": "stock_chip_crawler+mops_index",
-      "url": "reports/three-factor-ranking.html",
-      "stats": [
-        {
-          "label": "三因子同步",
-          "value": "1 檔",
-          "color": "up"
-        },
-        {
-          "label": "營收期別",
-          "value": "2026-06",
-          "color": "neutral"
-        },
-        {
-          "label": "榜首",
-          "value": "8109 74.8",
-          "color": "up"
-        }
-      ]
-    },
-    {
-      "id": "foreign-sell-records",
-      "category": "chips",
-      "type": "ranking",
-      "date": "2026-07-03",
-      "time": "21:05",
-      "title": "外資史上賣超紀錄 · 個股 / 大盤金額 Top 20",
-      "title_em": "賣超",
-      "summary": "外資單日淨賣超史上 Top 20，並加入大盤外資淨賣超金額 Top 20。追蹤事件後 1/3/5/10/20/30/60 日走勢。 最大紀錄：2026-05-28 3481 群創 -289,338 張。 大盤最大金額：2026-06-24 -1,955.5億。",
-      "tags": [
-        "籌碼",
-        "外資",
-        "賣超",
-        "成交額",
-        "事件追蹤"
-      ],
-      "source_pipeline": "stock_chip_crawler",
-      "url": "reports/foreign-sell-records.html?v=20260703-official",
-      "stats": [
-        {
-          "label": "個股最大",
-          "value": "3481 -289,338張",
-          "color": "down"
-        },
-        {
-          "label": "大盤金額",
-          "value": "-1,955.5億",
-          "color": "down"
-        },
-        {
-          "label": "走勢",
-          "value": "1-60日",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "chip-concentration",
-      "category": "chips",
-      "type": "ranking",
-      "date": "2026-07-03",
-      "time": "21:00",
-      "title": "籌碼集中度 · 分點 Top 50 排行",
-      "title_em": "集中度",
-      "summary": "5 個時段 · 每邊 Top 50 · 過濾成交量 < 1,000 張。 今日買超集中 #1：6753 龍德造船 +54.8%。 賣超集中 #1：3583 辛耘 -46.2%。",
-      "tags": [
-        "籌碼",
-        "分點",
-        "集中度",
-        "排行榜"
-      ],
-      "source_pipeline": "stock_chip_crawler",
-      "url": "reports/chip-concentration.html",
-      "stats": [
-        {
-          "label": "時段數",
-          "value": "5",
-          "color": "neutral"
-        },
-        {
-          "label": "Top 買超",
-          "value": "6753 +55%",
-          "color": "up"
-        },
-        {
-          "label": "Top 賣超",
-          "value": "3583 -46%",
-          "color": "down"
         }
       ]
     },
