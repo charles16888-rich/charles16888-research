@@ -664,10 +664,11 @@ PAGE_TEMPLATE = r"""<!DOCTYPE html>
         <nav class="nav" aria-label="Primary">
           <a class="nav__link" href="../category.html?cat=sectors">族群</a>
           <a class="nav__link" href="../category.html?cat=taiex">大盤</a>
+          <a class="nav__link" href="../category.html?cat=calendar">行事曆</a>
           <a class="nav__link" href="../category.html?cat=txo">選擇權</a>
           <a class="nav__link is-active" href="../category.html?cat=chips">籌碼</a>
           <a class="nav__link" href="../category.html?cat=stocks">個股</a>
-          <a class="nav__link" href="../category.html?cat=news">新聞</a>
+          <a class="nav__link" href="../category.html?cat=research">研報統計</a>
         </nav>
       </div>
     </div>
