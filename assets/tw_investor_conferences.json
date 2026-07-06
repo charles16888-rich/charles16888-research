@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-05T21:50:36+08:00",
+  "generated_at": "2026-07-06T22:43:11+08:00",
   "source_id": "tw_moneylink_investor_conference",
   "source_url": "https://www.money-link.com.tw/stxba/imwcontent0.asp?page=INVC1&ID=INVC1",
   "events": [
@@ -9,6 +9,18 @@
       "code": "4529",
       "name": "淳紳",
       "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-07-06",
+      "code": "7878",
+      "name": "藥祇",
+      "event_time": "15:30"
+    },
+    {
+      "event_date": "2026-07-07",
+      "code": "2317",
+      "name": "鴻海",
+      "event_time": "09:00"
     },
     {
       "event_date": "2026-07-07",
@@ -24,9 +36,33 @@
     },
     {
       "event_date": "2026-07-07",
+      "code": "7669",
+      "name": "碩正科技",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-07-07",
       "code": "7689",
       "name": "大鵬科CLMX",
       "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-07-08",
+      "code": "2317",
+      "name": "鴻海",
+      "event_time": "09:00"
+    },
+    {
+      "event_date": "2026-07-08",
+      "code": "7823",
+      "name": "奧義賽博-KY創",
+      "event_time": "10:10"
+    },
+    {
+      "event_date": "2026-07-08",
+      "code": "8016",
+      "name": "矽創",
+      "event_time": "14:00"
     },
     {
       "event_date": "2026-07-08",
@@ -53,10 +89,28 @@
       "event_time": "15:00"
     },
     {
+      "event_date": "2026-07-14",
+      "code": "2328",
+      "name": "廣宇",
+      "event_time": "10:50"
+    },
+    {
+      "event_date": "2026-07-14",
+      "code": "6414",
+      "name": "樺漢",
+      "event_time": "14:20"
+    },
+    {
       "event_date": "2026-07-16",
       "code": "2330",
       "name": "台積電",
       "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-07-23",
+      "code": "6461",
+      "name": "益得",
+      "event_time": "14:30"
     },
     {
       "event_date": "2026-07-24",
