@@ -824,7 +824,6 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
           <a class="nav__link" href="../category.html?cat=txo">選擇權</a>
           <a class="nav__link" href="../category.html?cat=chips">籌碼</a>
           <a class="nav__link is-active" href="../category.html?cat=stocks">個股</a>
-          <a class="nav__link" href="../category.html?cat=news">新聞</a>
           <a class="nav__link" href="../category.html?cat=research">研報統計</a>
         </nav>
       </div>
