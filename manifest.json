@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-06T22:43:11+08:00",
+  "updated_at": "2026-07-06T23:13:29+08:00",
   "today": "2026-07-06",
   "volume_number": 1,
   "market_summary": {
@@ -267,6 +267,42 @@
       ]
     },
     {
+      "id": "options-weekly-20260706-20260710",
+      "category": "txo",
+      "type": "options_weekly",
+      "date": "2026-07-06",
+      "time": "15:00",
+      "title": "????????? ? 20260706-20260710",
+      "title_em": "???",
+      "summary": "v2.5 ????????????? 2026-07-06 ? 2026-07-10???? 1 ?????",
+      "tags": [
+        "???",
+        "TXO",
+        "??",
+        "Max Pain",
+        "P/C Ratio"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5",
+      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260706-20260710_v2.5.html",
+      "stats": [
+        {
+          "label": "??",
+          "value": "20260706-20260710",
+          "color": "neutral"
+        },
+        {
+          "label": "???",
+          "value": "1",
+          "color": "neutral"
+        },
+        {
+          "label": "??",
+          "value": "v2.5",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "financial-calendar",
       "category": "calendar",
       "type": "calendar",
@@ -298,6 +334,20 @@
           "value": "21",
           "color": "neutral"
         }
+      ]
+    },
+    {
+      "id": "tri-source-lamp",
+      "category": "chips",
+      "title": "三源混合燈號",
+      "subtitle": "2026-07-06 · 三同買 5 / 三同賣 16",
+      "date": "2026-07-06",
+      "url": "reports/tri-source-lamp.html",
+      "tags": [
+        "分點",
+        "大股東",
+        "三大法人",
+        "燈號"
       ]
     },
     {
@@ -761,20 +811,6 @@
           "value": "v2.5",
           "color": "neutral"
         }
-      ]
-    },
-    {
-      "id": "tri-source-lamp",
-      "category": "chips",
-      "title": "三源混合燈號",
-      "subtitle": "2026-07-03 · 三同買 4 / 三同賣 10",
-      "date": "2026-07-03",
-      "url": "reports/tri-source-lamp.html",
-      "tags": [
-        "分點",
-        "大股東",
-        "三大法人",
-        "燈號"
       ]
     },
     {
