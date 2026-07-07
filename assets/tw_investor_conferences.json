@@ -1,21 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-06T23:36:57+08:00",
+  "generated_at": "2026-07-07T10:21:03+08:00",
   "source_id": "tw_moneylink_investor_conference",
   "source_url": "https://www.money-link.com.tw/stxba/imwcontent0.asp?page=INVC1&ID=INVC1",
   "events": [
-    {
-      "event_date": "2026-07-06",
-      "code": "4529",
-      "name": "淳紳",
-      "event_time": "14:30"
-    },
-    {
-      "event_date": "2026-07-06",
-      "code": "7878",
-      "name": "藥祇",
-      "event_time": "15:30"
-    },
     {
       "event_date": "2026-07-07",
       "code": "2317",
