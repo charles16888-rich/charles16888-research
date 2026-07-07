@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-07T15:20:37+08:00",
+  "updated_at": "2026-07-07T17:36:55+08:00",
   "today": "2026-07-07",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,113 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "high-price-watch",
+      "category": "stocks",
+      "type": "high_price_watch",
+      "date": "2026-07-07",
+      "time": "21:40",
+      "title": "高價股觀測 · 排名熱圖",
+      "title_em": "排名熱圖",
+      "summary": "高價股追蹤 40 檔，新進 11 檔、淡出 11 檔；榜首 2383 台光電 收盤 5,475。",
+      "tags": [
+        "個股",
+        "高價股",
+        "排名熱圖",
+        "Telegram第四頁"
+      ],
+      "source_pipeline": "lynus_chip_history_high_price_watch",
+      "url": "reports/high-price-watch.html",
+      "stats": [
+        {
+          "label": "最新樣本",
+          "value": "40 檔",
+          "color": "neutral"
+        },
+        {
+          "label": "新進",
+          "value": "11 檔",
+          "color": "up"
+        },
+        {
+          "label": "最高收盤",
+          "value": "5,475",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "three-factor-ranking",
+      "category": "chips",
+      "type": "ranking",
+      "date": "2026-07-07",
+      "time": "21:10",
+      "title": "三因子波段排行榜",
+      "title_em": "外資×營收×強勢",
+      "summary": "外資連買 >= 3 日、最新月營收創高、20/60 日趨勢仍強。 本次三因子同步 2 檔。 榜首：6907 雅特力-KY，外資連買 4 日，營收 YoY +113.6%，前 20 日 +12.8%。",
+      "tags": [
+        "波段",
+        "外資連買",
+        "營收創高",
+        "強者恆強",
+        "排行榜"
+      ],
+      "source_pipeline": "stock_chip_crawler+mops_index",
+      "url": "reports/three-factor-ranking.html",
+      "stats": [
+        {
+          "label": "三因子同步",
+          "value": "2 檔",
+          "color": "up"
+        },
+        {
+          "label": "營收期別",
+          "value": "2026-06",
+          "color": "neutral"
+        },
+        {
+          "label": "榜首",
+          "value": "6907 73.1",
+          "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "foreign-sell-records",
+      "category": "chips",
+      "type": "ranking",
+      "date": "2026-07-07",
+      "time": "21:05",
+      "title": "外資史上賣超紀錄 · 個股 / 大盤金額 Top 20",
+      "title_em": "賣超",
+      "summary": "外資單日淨賣超史上 Top 20，並加入大盤外資淨賣超金額 Top 20。追蹤事件後 1/3/5/10/20/30/60 日走勢。 最大紀錄：2026-05-28 3481 群創 -289,338 張。 大盤最大金額：2026-06-24 -1,955.5億。",
+      "tags": [
+        "籌碼",
+        "外資",
+        "賣超",
+        "成交額",
+        "事件追蹤"
+      ],
+      "source_pipeline": "stock_chip_crawler",
+      "url": "reports/foreign-sell-records.html?v=20260707-official",
+      "stats": [
+        {
+          "label": "個股最大",
+          "value": "3481 -289,338張",
+          "color": "down"
+        },
+        {
+          "label": "大盤金額",
+          "value": "-1,955.5億",
+          "color": "down"
+        },
+        {
+          "label": "走勢",
+          "value": "1-60日",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "shortage-weekly-2026-07-07",
       "category": "stocks",
@@ -66,7 +173,7 @@
       "time": "19:30",
       "title": "2026-07-07 MOPS 營收公告追蹤",
       "title_em": "MOPS 追蹤",
-      "summary": "公開 MOPS 營收相關重大訊息 0 筆；其中 0 筆出現在匿名財測名單，0 筆明確揭露 6 月營收。僅做追蹤與統計，不構成投資建議。",
+      "summary": "公開 MOPS 營收相關重大訊息 17 筆；其中 3 筆出現在匿名財測名單，8 筆明確揭露 6 月營收。僅做追蹤與統計，不構成投資建議。",
       "tags": [
         "MOPS",
         "重大訊息",
@@ -79,17 +186,17 @@
       "stats": [
         {
           "label": "公告",
-          "value": "0",
+          "value": "17",
           "color": "neutral"
         },
         {
           "label": "財測名單",
-          "value": "0",
+          "value": "3",
           "color": "gold"
         },
         {
           "label": "6月營收",
-          "value": "0",
+          "value": "8",
           "color": "up"
         }
       ]
@@ -195,113 +302,6 @@
         {
           "label": "台股法說",
           "value": "19",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "high-price-watch",
-      "category": "stocks",
-      "type": "high_price_watch",
-      "date": "2026-07-06",
-      "time": "21:40",
-      "title": "高價股觀測 · 排名熱圖",
-      "title_em": "排名熱圖",
-      "summary": "高價股追蹤 40 檔，新進 31 檔、淡出 31 檔；榜首 2383 台光電 收盤 5,475。",
-      "tags": [
-        "個股",
-        "高價股",
-        "排名熱圖",
-        "Telegram第四頁"
-      ],
-      "source_pipeline": "lynus_chip_history_high_price_watch",
-      "url": "reports/high-price-watch.html",
-      "stats": [
-        {
-          "label": "最新樣本",
-          "value": "40 檔",
-          "color": "neutral"
-        },
-        {
-          "label": "新進",
-          "value": "31 檔",
-          "color": "up"
-        },
-        {
-          "label": "最高收盤",
-          "value": "5,475",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "three-factor-ranking",
-      "category": "chips",
-      "type": "ranking",
-      "date": "2026-07-06",
-      "time": "21:10",
-      "title": "三因子波段排行榜",
-      "title_em": "外資×營收×強勢",
-      "summary": "外資連買 >= 3 日、最新月營收創高、20/60 日趨勢仍強。 本次三因子同步 6 檔。 榜首：5508 永信建，外資連買 8 日，營收 YoY +329.3%，前 20 日 +4.5%。",
-      "tags": [
-        "波段",
-        "外資連買",
-        "營收創高",
-        "強者恆強",
-        "排行榜"
-      ],
-      "source_pipeline": "stock_chip_crawler+mops_index",
-      "url": "reports/three-factor-ranking.html",
-      "stats": [
-        {
-          "label": "三因子同步",
-          "value": "6 檔",
-          "color": "up"
-        },
-        {
-          "label": "營收期別",
-          "value": "2026-06",
-          "color": "neutral"
-        },
-        {
-          "label": "榜首",
-          "value": "5508 80.1",
-          "color": "up"
-        }
-      ]
-    },
-    {
-      "id": "foreign-sell-records",
-      "category": "chips",
-      "type": "ranking",
-      "date": "2026-07-06",
-      "time": "21:05",
-      "title": "外資史上賣超紀錄 · 個股 / 大盤金額 Top 20",
-      "title_em": "賣超",
-      "summary": "外資單日淨賣超史上 Top 20，並加入大盤外資淨賣超金額 Top 20。追蹤事件後 1/3/5/10/20/30/60 日走勢。 最大紀錄：2026-05-28 3481 群創 -289,338 張。 大盤最大金額：2026-06-24 -1,955.5億。",
-      "tags": [
-        "籌碼",
-        "外資",
-        "賣超",
-        "成交額",
-        "事件追蹤"
-      ],
-      "source_pipeline": "stock_chip_crawler",
-      "url": "reports/foreign-sell-records.html?v=20260706-official",
-      "stats": [
-        {
-          "label": "個股最大",
-          "value": "3481 -289,338張",
-          "color": "down"
-        },
-        {
-          "label": "大盤金額",
-          "value": "-1,955.5億",
-          "color": "down"
-        },
-        {
-          "label": "走勢",
-          "value": "1-60日",
           "color": "neutral"
         }
       ]
