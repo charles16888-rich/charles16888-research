@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-08T19:52:20+08:00",
+  "updated_at": "2026-07-08T20:27:33+08:00",
   "today": "2026-07-08",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,78 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "high-price-watch",
+      "category": "stocks",
+      "type": "high_price_watch",
+      "date": "2026-07-08",
+      "time": "21:40",
+      "title": "高價股觀測 · 排名熱圖",
+      "title_em": "排名熱圖",
+      "summary": "高價股追蹤 40 檔，新進 37 檔、淡出 7 檔；榜首 2383 台光電 收盤 5,475。",
+      "tags": [
+        "個股",
+        "高價股",
+        "排名熱圖",
+        "Telegram第四頁"
+      ],
+      "source_pipeline": "lynus_chip_history_high_price_watch",
+      "url": "reports/high-price-watch.html",
+      "stats": [
+        {
+          "label": "最新樣本",
+          "value": "40 檔",
+          "color": "neutral"
+        },
+        {
+          "label": "新進",
+          "value": "37 檔",
+          "color": "up"
+        },
+        {
+          "label": "最高收盤",
+          "value": "5,475",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "shortage-weekly-2026-07-08",
+      "category": "stocks",
+      "type": "weekly",
+      "date": "2026-07-08",
+      "time": "20:30",
+      "title": "2026-07-08 缺貨偵探近四週週報",
+      "title_em": "ABF／高階載板",
+      "summary": "最新一週較明確的新事件集中在 LPDDR／SOCAMM、ABF／高階載板、石英元件；其餘週別保留供需訊號供回溯。",
+      "tags": [
+        "ABF／高階載板",
+        "MLCC／被動元件",
+        "LPDDR／SOCAMM",
+        "液冷板／CDU",
+        "缺貨偵探",
+        "週報"
+      ],
+      "source_pipeline": "shortage_detective",
+      "url": "reports/shortage/2026-07-08/weekly.html",
+      "stats": [
+        {
+          "label": "事件數",
+          "value": "3",
+          "color": "neutral"
+        },
+        {
+          "label": "訊號數",
+          "value": "59",
+          "color": "neutral"
+        },
+        {
+          "label": "主題",
+          "value": "ABF／高階載板",
+          "color": "up"
+        }
+      ]
+    },
     {
       "id": "options-atm",
       "category": "txo",
@@ -230,6 +302,42 @@
       ]
     },
     {
+      "id": "mops-revenue-forecast-watch-20260708",
+      "category": "research",
+      "type": "mops_watch",
+      "date": "2026-07-08",
+      "time": "19:30",
+      "title": "2026-07-08 MOPS 營收公告追蹤",
+      "title_em": "MOPS 追蹤",
+      "summary": "公開 MOPS 營收相關重大訊息 17 筆；其中 11 筆出現在匿名財測名單，8 筆明確揭露 6 月營收。僅做追蹤與統計，不構成投資建議。",
+      "tags": [
+        "MOPS",
+        "重大訊息",
+        "營收公告",
+        "財測追蹤",
+        "2026Q2"
+      ],
+      "source_pipeline": "mops_revenue_forecast_watch",
+      "url": "reports/q2-forecast-2026q2.html#q2-mops-events",
+      "stats": [
+        {
+          "label": "公告",
+          "value": "17",
+          "color": "neutral"
+        },
+        {
+          "label": "財測名單",
+          "value": "11",
+          "color": "gold"
+        },
+        {
+          "label": "6月營收",
+          "value": "8",
+          "color": "up"
+        }
+      ]
+    },
+    {
       "id": "options-annual-2026",
       "category": "txo",
       "type": "options_annual",
@@ -335,38 +443,17 @@
       ]
     },
     {
-      "id": "high-price-watch",
-      "category": "stocks",
-      "type": "high_price_watch",
-      "date": "2026-07-07",
-      "time": "21:40",
-      "title": "高價股觀測 · 排名熱圖",
-      "title_em": "排名熱圖",
-      "summary": "高價股追蹤 40 檔，新進 11 檔、淡出 11 檔；榜首 2383 台光電 收盤 5,475。",
+      "id": "tri-source-lamp",
+      "category": "chips",
+      "title": "三源混合燈號",
+      "subtitle": "2026-07-08 · 三同買 4 / 三同賣 7",
+      "date": "2026-07-08",
+      "url": "reports/tri-source-lamp.html",
       "tags": [
-        "個股",
-        "高價股",
-        "排名熱圖",
-        "Telegram第四頁"
-      ],
-      "source_pipeline": "lynus_chip_history_high_price_watch",
-      "url": "reports/high-price-watch.html",
-      "stats": [
-        {
-          "label": "最新樣本",
-          "value": "40 檔",
-          "color": "neutral"
-        },
-        {
-          "label": "新進",
-          "value": "11 檔",
-          "color": "up"
-        },
-        {
-          "label": "最高收盤",
-          "value": "5,475",
-          "color": "neutral"
-        }
+        "分點",
+        "大股東",
+        "三大法人",
+        "燈號"
       ]
     },
     {
@@ -377,7 +464,7 @@
       "time": "21:10",
       "title": "三因子波段排行榜",
       "title_em": "外資×營收×強勢",
-      "summary": "外資連買 >= 3 日、最新月營收創高、20/60 日趨勢仍強。 本次三因子同步 2 檔。 榜首：6907 雅特力-KY，外資連買 4 日，營收 YoY +113.6%，前 20 日 +12.8%。",
+      "summary": "外資連買 >= 3 日、最新月營收創高、20/60 日趨勢仍強。 本次三因子同步 14 檔。 榜首：7610 聯友金屬-創，外資連買 10 日，營收 YoY +555.4%，前 20 日 +34.8%。",
       "tags": [
         "波段",
         "外資連買",
@@ -390,7 +477,7 @@
       "stats": [
         {
           "label": "三因子同步",
-          "value": "2 檔",
+          "value": "14 檔",
           "color": "up"
         },
         {
@@ -400,7 +487,7 @@
         },
         {
           "label": "榜首",
-          "value": "6907 73.1",
+          "value": "7610 92.0",
           "color": "up"
         }
       ]
@@ -582,42 +669,6 @@
       ]
     },
     {
-      "id": "mops-revenue-forecast-watch-20260707",
-      "category": "research",
-      "type": "mops_watch",
-      "date": "2026-07-07",
-      "time": "19:30",
-      "title": "2026-07-07 MOPS 營收公告追蹤",
-      "title_em": "MOPS 追蹤",
-      "summary": "公開 MOPS 營收相關重大訊息 17 筆；其中 3 筆出現在匿名財測名單，8 筆明確揭露 6 月營收。僅做追蹤與統計，不構成投資建議。",
-      "tags": [
-        "MOPS",
-        "重大訊息",
-        "營收公告",
-        "財測追蹤",
-        "2026Q2"
-      ],
-      "source_pipeline": "mops_revenue_forecast_watch",
-      "url": "reports/q2-forecast-2026q2.html#q2-mops-events",
-      "stats": [
-        {
-          "label": "公告",
-          "value": "17",
-          "color": "neutral"
-        },
-        {
-          "label": "財測名單",
-          "value": "3",
-          "color": "gold"
-        },
-        {
-          "label": "6月營收",
-          "value": "8",
-          "color": "up"
-        }
-      ]
-    },
-    {
       "id": "chip-concentration",
       "category": "chips",
       "type": "ranking",
@@ -790,20 +841,6 @@
           "value": "3.9%",
           "color": "neutral"
         }
-      ]
-    },
-    {
-      "id": "tri-source-lamp",
-      "category": "chips",
-      "title": "三源混合燈號",
-      "subtitle": "2026-07-06 · 三同買 5 / 三同賣 16",
-      "date": "2026-07-06",
-      "url": "reports/tri-source-lamp.html",
-      "tags": [
-        "分點",
-        "大股東",
-        "三大法人",
-        "燈號"
       ]
     },
     {
