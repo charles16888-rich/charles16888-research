@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-08T23:03:36+08:00",
-  "today": "2026-07-08",
+  "updated_at": "2026-07-09T12:36:10+08:00",
+  "today": "2026-07-09",
   "volume_number": 1,
   "market_summary": {
     "date": "2026-05-22",
@@ -21,6 +21,42 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "q2-forecast-2026q2",
+      "category": "research",
+      "type": "forecast",
+      "date": "2026-07-09",
+      "time": "21:30",
+      "title": "2026 Q2 財測匿名彙總",
+      "title_em": "財測匿名",
+      "summary": "2026-03-24 至 2026-07-09 台股研究報告匿名財測彙總，共 564 檔公司；高/中信心 495 檔。公開版不含研究機構、檔名、原文或報告引用。",
+      "tags": [
+        "研報統計",
+        "財測",
+        "OCR",
+        "匿名彙總",
+        "2026Q2"
+      ],
+      "source_pipeline": "research_reports_ocr_anonymous_forecast",
+      "url": "reports/q2-forecast-2026q2.html",
+      "stats": [
+        {
+          "label": "公司數",
+          "value": "564",
+          "color": "neutral"
+        },
+        {
+          "label": "營收覆蓋",
+          "value": "490",
+          "color": "up"
+        },
+        {
+          "label": "三率完整",
+          "value": "436",
+          "color": "up"
+        }
+      ]
+    },
     {
       "id": "high-price-watch",
       "category": "stocks",
@@ -1744,42 +1780,6 @@
           "label": "漲停集中",
           "value": "8.7%",
           "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "q2-forecast-2026q2",
-      "category": "research",
-      "type": "forecast",
-      "date": "2026-06-24",
-      "time": "21:30",
-      "title": "2026 Q2 財測匿名彙總",
-      "title_em": "財測匿名",
-      "summary": "2026-03-24 至 2026-06-24 台股研究報告匿名財測彙總，共 540 檔公司；高/中信心 469 檔。公開版不含研究機構、檔名、原文或報告引用。",
-      "tags": [
-        "研報統計",
-        "財測",
-        "OCR",
-        "匿名彙總",
-        "2026Q2"
-      ],
-      "source_pipeline": "research_reports_ocr_anonymous_forecast",
-      "url": "reports/q2-forecast-2026q2.html",
-      "stats": [
-        {
-          "label": "公司數",
-          "value": "540",
-          "color": "neutral"
-        },
-        {
-          "label": "營收覆蓋",
-          "value": "466",
-          "color": "up"
-        },
-        {
-          "label": "三率完整",
-          "value": "410",
-          "color": "up"
         }
       ]
     },
