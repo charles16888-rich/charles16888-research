@@ -1,63 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-08T21:50:34+08:00",
+  "generated_at": "2026-07-09T16:51:24+08:00",
   "source_id": "tw_moneylink_investor_conference",
   "source_url": "https://www.money-link.com.tw/stxba/imwcontent0.asp?page=INVC1&ID=INVC1",
   "events": [
-    {
-      "event_date": "2026-07-08",
-      "code": "2317",
-      "name": "鴻海",
-      "event_time": "09:00"
-    },
-    {
-      "event_date": "2026-07-08",
-      "code": "7730",
-      "name": "暉盛-創",
-      "event_time": "09:10"
-    },
-    {
-      "event_date": "2026-07-08",
-      "code": "4590",
-      "name": "富田-創",
-      "event_time": "09:40"
-    },
-    {
-      "event_date": "2026-07-08",
-      "code": "7823",
-      "name": "奧義賽博-KY創",
-      "event_time": "10:10"
-    },
-    {
-      "event_date": "2026-07-08",
-      "code": "6645",
-      "name": "金萬林-創",
-      "event_time": "10:40"
-    },
-    {
-      "event_date": "2026-07-08",
-      "code": "6534",
-      "name": "正瀚-創",
-      "event_time": "11:10"
-    },
-    {
-      "event_date": "2026-07-08",
-      "code": "6281",
-      "name": "全國電",
-      "event_time": "14:00"
-    },
-    {
-      "event_date": "2026-07-08",
-      "code": "8016",
-      "name": "矽創",
-      "event_time": "14:00"
-    },
-    {
-      "event_date": "2026-07-08",
-      "code": "3518",
-      "name": "柏騰",
-      "event_time": "14:30"
-    },
     {
       "event_date": "2026-07-09",
       "code": "3008",
