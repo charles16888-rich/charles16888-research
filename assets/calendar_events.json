@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "service": "financial-calendar-service",
-  "generated_at": "2026-07-09T21:50:31+08:00",
+  "generated_at": "2026-07-12T22:52:14+08:00",
   "tenant_id": "charles",
   "tenant": {
     "display_name": "Charles",
@@ -2424,7 +2424,7 @@
       "market_display_time": "2026-11-03 10:00 ET"
     },
     {
-      "id": "us-pce-2026-11-04",
+      "id": "us-pce-2026-10-29",
       "source_id": "us_bea_calendar",
       "market": "US",
       "country": "US",
@@ -2432,7 +2432,7 @@
       "category": "macro",
       "title": "美國 9 月 PCE / 個人所得支出",
       "description": "BEA 公布 PCE 與個人所得支出，核心 PCE 是 Fed 觀察通膨的重要指標。",
-      "event_date_local": "2026-11-04",
+      "event_date_local": "2026-10-29",
       "event_time_local": "08:30:00",
       "timezone": "America/New_York",
       "period": "2026-09",
@@ -2450,14 +2450,14 @@
       "source_url": "https://www.bea.gov/news/schedule",
       "attribution_text": "U.S. Bureau of Economic Analysis",
       "license_note": "Official U.S. government release schedule; attribution required.",
-      "event_key": "official_agency:macro:US:US:2026-09:2026-11-04:美國-9-月-pce-/-個人所得支出",
-      "last_seen_at": "2026-07-05T12:30:00Z",
-      "raw_hash": "57a5145622dc22f657d27c6922eac7528cb0ec1fd0bf00eca0d6776c3408fbd6",
+      "event_key": "official_agency:macro:US:US:2026-09:2026-10-29:美國-9-月-pce-/-個人所得支出",
+      "last_seen_at": "2026-07-12T14:52:14Z",
+      "raw_hash": "b33dc429e4c91fb38de0b5d35eabacbb77235a32c0060cc99bfc722c2037e582",
       "is_all_day": false,
       "is_time_confirmed": true,
-      "event_time_utc": "2026-11-04T13:30:00Z",
-      "taipei_display_time": "2026-11-04 21:30",
-      "market_display_time": "2026-11-04 08:30 ET"
+      "event_time_utc": "2026-10-29T12:30:00Z",
+      "taipei_display_time": "2026-10-29 20:30",
+      "market_display_time": "2026-10-29 08:30 ET"
     },
     {
       "id": "us-employment-situation-2026-11-06",
@@ -2600,7 +2600,7 @@
       "market_display_time": "2026-11-18 14:00 ET"
     },
     {
-      "id": "us-trade-balance-2026-11-20",
+      "id": "us-trade-balance-2026-11-04",
       "source_id": "us_bea_calendar",
       "market": "US",
       "country": "US",
@@ -2608,7 +2608,7 @@
       "category": "macro",
       "title": "美國 9 月貿易收支",
       "description": "BEA / Census 公布國際貿易數據，觀察出口、進口與美元需求。",
-      "event_date_local": "2026-11-20",
+      "event_date_local": "2026-11-04",
       "event_time_local": "08:30:00",
       "timezone": "America/New_York",
       "period": "2026-09",
@@ -2626,14 +2626,14 @@
       "source_url": "https://www.bea.gov/news/schedule",
       "attribution_text": "U.S. Bureau of Economic Analysis",
       "license_note": "Official U.S. government release schedule; attribution required.",
-      "event_key": "official_agency:macro:US:US:2026-09:2026-11-20:美國-9-月貿易收支",
-      "last_seen_at": "2026-07-05T12:30:00Z",
-      "raw_hash": "f8a5328712f5615f648195a0b844704797283bf5357595b37e3c7a47e845e9a7",
+      "event_key": "official_agency:macro:US:US:2026-09:2026-11-04:美國-9-月貿易收支",
+      "last_seen_at": "2026-07-12T14:52:14Z",
+      "raw_hash": "30acd02f093521db15855d0ecff307a6be32ea36c7d7f8f091fa2aa504cbc2e6",
       "is_all_day": false,
       "is_time_confirmed": true,
-      "event_time_utc": "2026-11-20T13:30:00Z",
-      "taipei_display_time": "2026-11-20 21:30",
-      "market_display_time": "2026-11-20 08:30 ET"
+      "event_time_utc": "2026-11-04T13:30:00Z",
+      "taipei_display_time": "2026-11-04 21:30",
+      "market_display_time": "2026-11-04 08:30 ET"
     },
     {
       "id": "us-gdp-second-2026-q3",
@@ -2744,7 +2744,7 @@
       "market_display_time": "2026-12-01 10:00 ET"
     },
     {
-      "id": "us-pce-2026-12-02",
+      "id": "us-pce-2026-11-25",
       "source_id": "us_bea_calendar",
       "market": "US",
       "country": "US",
@@ -2752,7 +2752,7 @@
       "category": "macro",
       "title": "美國 10 月 PCE / 個人所得支出",
       "description": "BEA 公布 PCE 與個人所得支出，核心 PCE 是 Fed 觀察通膨的重要指標。",
-      "event_date_local": "2026-12-02",
+      "event_date_local": "2026-11-25",
       "event_time_local": "08:30:00",
       "timezone": "America/New_York",
       "period": "2026-10",
@@ -2770,14 +2770,14 @@
       "source_url": "https://www.bea.gov/news/schedule",
       "attribution_text": "U.S. Bureau of Economic Analysis",
       "license_note": "Official U.S. government release schedule; attribution required.",
-      "event_key": "official_agency:macro:US:US:2026-10:2026-12-02:美國-10-月-pce-/-個人所得支出",
-      "last_seen_at": "2026-07-05T12:30:00Z",
-      "raw_hash": "4f48e3850bfcf3713ea360d6111f14bd8310edfff225f114f3edc914b8c2d017",
+      "event_key": "official_agency:macro:US:US:2026-10:2026-11-25:美國-10-月-pce-/-個人所得支出",
+      "last_seen_at": "2026-07-12T14:52:14Z",
+      "raw_hash": "1894c810c54b8875e7b7c11a39ff3d00819598652b074b5a6812634eef812a26",
       "is_all_day": false,
       "is_time_confirmed": true,
-      "event_time_utc": "2026-12-02T13:30:00Z",
-      "taipei_display_time": "2026-12-02 21:30",
-      "market_display_time": "2026-12-02 08:30 ET"
+      "event_time_utc": "2026-11-25T13:30:00Z",
+      "taipei_display_time": "2026-11-25 21:30",
+      "market_display_time": "2026-11-25 08:30 ET"
     },
     {
       "id": "us-employment-situation-2026-12-04",
@@ -2889,7 +2889,7 @@
       "market_display_time": "2026-12-10 08:30 ET"
     },
     {
-      "id": "us-trade-balance-2026-12-10",
+      "id": "us-trade-balance-2026-12-08",
       "source_id": "us_bea_calendar",
       "market": "US",
       "country": "US",
@@ -2897,7 +2897,7 @@
       "category": "macro",
       "title": "美國 10 月貿易收支",
       "description": "BEA / Census 公布國際貿易數據，觀察出口、進口與美元需求。",
-      "event_date_local": "2026-12-10",
+      "event_date_local": "2026-12-08",
       "event_time_local": "08:30:00",
       "timezone": "America/New_York",
       "period": "2026-10",
@@ -2915,14 +2915,14 @@
       "source_url": "https://www.bea.gov/news/schedule",
       "attribution_text": "U.S. Bureau of Economic Analysis",
       "license_note": "Official U.S. government release schedule; attribution required.",
-      "event_key": "official_agency:macro:US:US:2026-10:2026-12-10:美國-10-月貿易收支",
-      "last_seen_at": "2026-07-05T12:30:00Z",
-      "raw_hash": "beb10445ec45d6dc83b2b54add52a6af55b5021595ba15b8df0fb5d2fb17704a",
+      "event_key": "official_agency:macro:US:US:2026-10:2026-12-08:美國-10-月貿易收支",
+      "last_seen_at": "2026-07-12T14:52:14Z",
+      "raw_hash": "338a343a947c8a9b4d44ba107f5f89278d52baa8bdc71105ee7517df274a4bb4",
       "is_all_day": false,
       "is_time_confirmed": true,
-      "event_time_utc": "2026-12-10T13:30:00Z",
-      "taipei_display_time": "2026-12-10 21:30",
-      "market_display_time": "2026-12-10 08:30 ET"
+      "event_time_utc": "2026-12-08T13:30:00Z",
+      "taipei_display_time": "2026-12-08 21:30",
+      "market_display_time": "2026-12-08 08:30 ET"
     },
     {
       "id": "us-ppi-2026-12-15",
@@ -2958,6 +2958,42 @@
       "event_time_utc": "2026-12-15T13:30:00Z",
       "taipei_display_time": "2026-12-15 21:30",
       "market_display_time": "2026-12-15 08:30 ET"
+    },
+    {
+      "id": "us-pce-2026-12-23",
+      "source_id": "us_bea_calendar",
+      "market": "US",
+      "country": "US",
+      "event_type": "macro",
+      "category": "macro",
+      "title": "美國 11 月 PCE / 個人所得支出",
+      "description": "BEA 公布 PCE 與個人所得支出，核心 PCE 是 Fed 觀察通膨的重要指標。",
+      "event_date_local": "2026-12-23",
+      "event_time_local": "08:30:00",
+      "timezone": "America/New_York",
+      "period": "2026-11",
+      "importance": 3,
+      "status": "scheduled",
+      "previous": "--",
+      "forecast": "--",
+      "actual": "待公布",
+      "unit": "%",
+      "metadata": {
+        "watch": "核心 PCE、個人所得、消費支出",
+        "source_release": "Personal Income and Outlays, November 2026"
+      },
+      "source_name": "BEA release schedule",
+      "source_url": "https://www.bea.gov/news/schedule",
+      "attribution_text": "U.S. Bureau of Economic Analysis",
+      "license_note": "Official U.S. government release schedule; attribution required.",
+      "event_key": "official_agency:macro:US:US:2026-11:2026-12-23:美國-11-月-pce-/-個人所得支出",
+      "last_seen_at": "2026-07-12T14:52:14Z",
+      "raw_hash": "07dbff612504005020bdbdf68073c6d354c7da7ebfd85d3528b283690ea760dd",
+      "is_all_day": false,
+      "is_time_confirmed": true,
+      "event_time_utc": "2026-12-23T13:30:00Z",
+      "taipei_display_time": "2026-12-23 21:30",
+      "market_display_time": "2026-12-23 08:30 ET"
     },
     {
       "id": "us-gdp-third-2026-q3",
