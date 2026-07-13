@@ -1,9 +1,15 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-13T18:30:18+08:00",
+  "generated_at": "2026-07-13T21:18:13+08:00",
   "source_id": "tw_moneylink_investor_conference",
   "source_url": "https://www.money-link.com.tw/stxba/imwcontent0.asp?page=INVC1&ID=INVC1",
   "events": [
+    {
+      "event_date": "2026-07-14",
+      "code": "2317",
+      "name": "鴻海",
+      "event_time": "10:00"
+    },
     {
       "event_date": "2026-07-14",
       "code": "2328",
@@ -29,6 +35,36 @@
       "event_time": "14:30"
     },
     {
+      "event_date": "2026-07-14",
+      "code": "1709",
+      "name": "和益",
+      "event_time": "15:00"
+    },
+    {
+      "event_date": "2026-07-14",
+      "code": "6770",
+      "name": "力積電",
+      "event_time": "15:00"
+    },
+    {
+      "event_date": "2026-07-15",
+      "code": "5243",
+      "name": "乙盛-KY",
+      "event_time": "10:00"
+    },
+    {
+      "event_date": "2026-07-15",
+      "code": "3413",
+      "name": "京鼎",
+      "event_time": "11:40"
+    },
+    {
+      "event_date": "2026-07-15",
+      "code": "4754",
+      "name": "國碳科",
+      "event_time": "14:00"
+    },
+    {
       "event_date": "2026-07-16",
       "code": "4147",
       "name": "中裕",
@@ -39,6 +75,12 @@
       "code": "6945",
       "name": "圓祥生技",
       "event_time": "13:30"
+    },
+    {
+      "event_date": "2026-07-16",
+      "code": "1539",
+      "name": "巨庭",
+      "event_time": "14:00"
     },
     {
       "event_date": "2026-07-16",
@@ -53,10 +95,22 @@
       "event_time": "14:30"
     },
     {
+      "event_date": "2026-07-16",
+      "code": "9938",
+      "name": "百和",
+      "event_time": "14:30"
+    },
+    {
       "event_date": "2026-07-23",
       "code": "6461",
       "name": "益得",
       "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-07-24",
+      "code": "2317",
+      "name": "鴻海",
+      "event_time": "10:00"
     },
     {
       "event_date": "2026-07-24",
@@ -68,6 +122,12 @@
       "event_date": "2026-07-28",
       "code": "3035",
       "name": "智原",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-07-28",
+      "code": "5203",
+      "name": "訊連",
       "event_time": "14:30"
     },
     {
@@ -111,6 +171,12 @@
       "code": "4904",
       "name": "遠傳",
       "event_time": "16:00"
+    },
+    {
+      "event_date": "2026-08-07",
+      "code": "6719",
+      "name": "力智",
+      "event_time": "14:30"
     }
   ]
 }
