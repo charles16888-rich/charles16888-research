@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-13T18:48:34+08:00",
+  "updated_at": "2026-07-13T21:18:13+08:00",
   "today": "2026-07-13",
   "volume_number": 1,
   "market_summary": {
@@ -165,6 +165,214 @@
       ]
     },
     {
+      "id": "options-atm",
+      "category": "txo",
+      "type": "pulse",
+      "date": "2026-07-13",
+      "time": "20:00",
+      "title": "選擇權價平和 · 隱含波動代理",
+      "title_em": "價平和",
+      "summary": "近 757 個交易日（2023-05-30 → 2026-07-13）TXO ATM Call+Put 加總。最新 (2026-07-13)：近期 1028 點（到期 202607）、次遠期 1540 點。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "價平和",
+        "隱波"
+      ],
+      "source_pipeline": "taifex + twse",
+      "url": "reports/options-atm.html",
+      "stats": [
+        {
+          "label": "近期 C+P",
+          "value": "1028",
+          "color": "neutral"
+        },
+        {
+          "label": "次遠期 C+P",
+          "value": "1540",
+          "color": "neutral"
+        },
+        {
+          "label": "區間",
+          "value": "757 日",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "market-pulse",
+      "category": "taiex",
+      "type": "pulse",
+      "date": "2026-07-13",
+      "time": "20:00",
+      "title": "市場脈動 · 漲跌停 × 全族群均幅",
+      "title_em": "脈動",
+      "summary": "近 57 個交易日漲跌停家數、總成交額、族群平均漲幅、漲停集中度。最新 (2026-07-13)：漲停 46、跌停 42、全族群均幅 -0.74%。",
+      "tags": [
+        "市場脈動",
+        "漲跌停",
+        "成交額"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/market-pulse.html",
+      "stats": [
+        {
+          "label": "漲停",
+          "value": "46",
+          "color": "up"
+        },
+        {
+          "label": "跌停",
+          "value": "42",
+          "color": "down"
+        },
+        {
+          "label": "成交額",
+          "value": "11,984 億",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "futures-basis",
+      "category": "taiex",
+      "type": "pulse",
+      "date": "2026-07-13",
+      "time": "20:00",
+      "title": "期貨正逆價差 · 12 年期現對照",
+      "title_em": "12 年",
+      "summary": "近 3017 個交易日（2014-02-14 → 2026-07-13）台指期 TXF1 vs 加權指數價差。最新 (2026-07-13)：基差 +236.5 點，加權收 45,381。",
+      "tags": [
+        "期貨",
+        "基差",
+        "正逆價差",
+        "TX",
+        "12 年"
+      ],
+      "source_pipeline": "yuanta + yfinance",
+      "url": "reports/futures-basis.html",
+      "stats": [
+        {
+          "label": "最新基差",
+          "value": "+236.5",
+          "color": "up"
+        },
+        {
+          "label": "加權",
+          "value": "45,381",
+          "color": "neutral"
+        },
+        {
+          "label": "區間",
+          "value": "3017 日",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-13-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-07-13",
+      "time": "20:00",
+      "title": "2026-07-13 族群週報",
+      "title_em": "矽晶圓",
+      "summary": "涵蓋 2026-07-06 ~ 2026-07-13。週領漲 矽晶圓 +20.87%，週領跌 被動元件 -15.59%；資金焦點 電子零組件。",
+      "tags": [
+        "矽晶圓",
+        "被動元件",
+        "電子零組件",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-07-13/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "矽晶圓 +20.87%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "被動元件 -15.59%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "電子零組件",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-13-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-07-13",
+      "time": "20:00",
+      "title": "2026-07-13 每日族群輪動雷達",
+      "title_em": "自行車",
+      "summary": "今日相對升溫以 自行車 最明顯，相對降溫以 被動元件 壓力最大；今日轉強力道大於轉弱力道。",
+      "tags": [
+        "自行車",
+        "被動元件",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-07-13/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "自行車 +7.37 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "被動元件 -6.05 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-13-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-07-13",
+      "time": "20:00",
+      "title": "2026-07-13 族群盤後快報",
+      "title_em": "矽晶圓",
+      "summary": "全 74 族群、成交 11983.7 億；領漲 矽晶圓 +7.25%，領跌 被動元件 -7.44%；漲多族群 19/74，全族群均漲 -0.74%。",
+      "tags": [
+        "矽晶圓",
+        "被動元件",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-07-13/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "矽晶圓 +7.25%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "被動元件 -7.44%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "9.2%",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "mops-revenue-forecast-watch-20260713",
       "category": "research",
       "type": "mops_watch",
@@ -290,7 +498,7 @@
       "stats": [
         {
           "label": "事件",
-          "value": "73",
+          "value": "84",
           "color": "neutral"
         },
         {
@@ -300,7 +508,7 @@
         },
         {
           "label": "台股法說",
-          "value": "18",
+          "value": "29",
           "color": "neutral"
         }
       ]
@@ -461,111 +669,6 @@
           "label": "主題",
           "value": "ABF／高階載板",
           "color": "up"
-        }
-      ]
-    },
-    {
-      "id": "options-atm",
-      "category": "txo",
-      "type": "pulse",
-      "date": "2026-07-09",
-      "time": "20:00",
-      "title": "選擇權價平和 · 隱含波動代理",
-      "title_em": "價平和",
-      "summary": "近 756 個交易日（2023-05-30 → 2026-07-09）TXO ATM Call+Put 加總。最新 (2026-07-09)：近期 827 點（到期 202607F2）、次遠期 1610 點。",
-      "tags": [
-        "選擇權",
-        "TXO",
-        "價平和",
-        "隱波"
-      ],
-      "source_pipeline": "taifex + twse",
-      "url": "reports/options-atm.html",
-      "stats": [
-        {
-          "label": "近期 C+P",
-          "value": "827",
-          "color": "neutral"
-        },
-        {
-          "label": "次遠期 C+P",
-          "value": "1610",
-          "color": "neutral"
-        },
-        {
-          "label": "區間",
-          "value": "756 日",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "market-pulse",
-      "category": "taiex",
-      "type": "pulse",
-      "date": "2026-07-09",
-      "time": "20:00",
-      "title": "市場脈動 · 漲跌停 × 全族群均幅",
-      "title_em": "脈動",
-      "summary": "近 56 個交易日漲跌停家數、總成交額、族群平均漲幅、漲停集中度。最新 (2026-07-09)：漲停 41、跌停 14、全族群均幅 -0.14%。",
-      "tags": [
-        "市場脈動",
-        "漲跌停",
-        "成交額"
-      ],
-      "source_pipeline": "industry_map",
-      "url": "reports/market-pulse.html",
-      "stats": [
-        {
-          "label": "漲停",
-          "value": "41",
-          "color": "up"
-        },
-        {
-          "label": "跌停",
-          "value": "14",
-          "color": "down"
-        },
-        {
-          "label": "成交額",
-          "value": "11,419 億",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "futures-basis",
-      "category": "taiex",
-      "type": "pulse",
-      "date": "2026-07-09",
-      "time": "20:00",
-      "title": "期貨正逆價差 · 12 年期現對照",
-      "title_em": "12 年",
-      "summary": "近 3016 個交易日（2014-02-14 → 2026-07-09）台指期 TXF1 vs 加權指數價差。最新 (2026-07-09)：基差 +323.4 點，加權收 45,355。",
-      "tags": [
-        "期貨",
-        "基差",
-        "正逆價差",
-        "TX",
-        "12 年"
-      ],
-      "source_pipeline": "yuanta + yfinance",
-      "url": "reports/futures-basis.html",
-      "stats": [
-        {
-          "label": "最新基差",
-          "value": "+323.4",
-          "color": "up"
-        },
-        {
-          "label": "加權",
-          "value": "45,355",
-          "color": "neutral"
-        },
-        {
-          "label": "區間",
-          "value": "3016 日",
-          "color": "neutral"
         }
       ]
     },
