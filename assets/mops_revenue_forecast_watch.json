@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-07-13T21:58:34.890873+08:00",
+  "generated_at": "2026-07-13T22:30:46.989469+08:00",
   "event_date": "2026-07-13",
   "quarter": "2026Q2",
-  "forecast_generated_at": "2026-07-13T18:48:29.570178+08:00",
+  "forecast_generated_at": "2026-07-13T22:30:43.231940+08:00",
   "forecast_latest_mops_period": "2026-06",
   "source": {
     "events": "E:\\stock_data\\mops_index.db mops_events",
@@ -11,12 +11,12 @@
   },
   "note": "僅追蹤公開 MOPS 營收公告與匿名財測名單是否交集，不公開研究機構來源，不構成投資建議。",
   "stats": {
-    "event_count": 12,
-    "matched_forecast_count": 4,
-    "explicit_june_revenue_count": 5,
+    "event_count": 16,
+    "matched_forecast_count": 5,
+    "explicit_june_revenue_count": 9,
     "comparable_count": 1,
     "watch_count": 1,
-    "no_forecast_count": 0
+    "no_forecast_count": 1
   },
   "rows": [
     {
@@ -40,6 +40,28 @@
       "surprise_pct": -1.169,
       "status": "inline",
       "status_label": "接近財測"
+    },
+    {
+      "event_id": "mops_3045_1150713_1615_1",
+      "code": "3045",
+      "name": "台灣大",
+      "publish_time": "2026-07-13 16:15:00",
+      "category": "營收公告",
+      "summary": "公告本公司115年6月份營運成績",
+      "explicit_june_revenue": true,
+      "june_revenue_m": 17320.0,
+      "matched_forecast_list": true,
+      "forecast_name": "台灣大",
+      "sample_count": 1,
+      "confidence": "低",
+      "forecast_revenue_m": null,
+      "prior_q2_revenue_m": 32109.987,
+      "partial_q2_revenue_m": 49429.987,
+      "prior_missing_months": [],
+      "surprise_m": null,
+      "surprise_pct": null,
+      "status": "announced_no_forecast",
+      "status_label": "有6月公告 / 無營收財測"
     },
     {
       "event_id": "mops_5530_1150713_1139_1",
@@ -291,6 +313,81 @@
       "summary": "中華電信公佈115年6月營運績效",
       "explicit_june_revenue": true,
       "june_revenue_m": 21340.0,
+      "matched_forecast_list": false,
+      "forecast_name": null,
+      "sample_count": null,
+      "confidence": null,
+      "forecast_revenue_m": null,
+      "prior_q2_revenue_m": null,
+      "partial_q2_revenue_m": null,
+      "prior_missing_months": [
+        "2026-04",
+        "2026-05"
+      ],
+      "surprise_m": null,
+      "surprise_pct": null,
+      "status": "not_in_forecast",
+      "status_label": "未在財測名單"
+    },
+    {
+      "event_id": "mops_3710_1150713_1551_2",
+      "code": "3710",
+      "name": "連展投控",
+      "publish_time": "2026-07-13 15:51:00",
+      "category": "營收公告",
+      "summary": "公告115年6月合併營收更正",
+      "explicit_june_revenue": true,
+      "june_revenue_m": null,
+      "matched_forecast_list": false,
+      "forecast_name": null,
+      "sample_count": null,
+      "confidence": null,
+      "forecast_revenue_m": null,
+      "prior_q2_revenue_m": null,
+      "partial_q2_revenue_m": null,
+      "prior_missing_months": [
+        "2026-04",
+        "2026-05"
+      ],
+      "surprise_m": null,
+      "surprise_pct": null,
+      "status": "not_in_forecast",
+      "status_label": "未在財測名單"
+    },
+    {
+      "event_id": "mops_1903_1150713_1617_1",
+      "code": "1903",
+      "name": "士紙",
+      "publish_time": "2026-07-13 16:17:00",
+      "category": "營收公告",
+      "summary": "更正本公司115年6月採用IFRSs後之合併月營業收入",
+      "explicit_june_revenue": true,
+      "june_revenue_m": null,
+      "matched_forecast_list": false,
+      "forecast_name": null,
+      "sample_count": null,
+      "confidence": null,
+      "forecast_revenue_m": null,
+      "prior_q2_revenue_m": null,
+      "partial_q2_revenue_m": null,
+      "prior_missing_months": [
+        "2026-04",
+        "2026-05"
+      ],
+      "surprise_m": null,
+      "surprise_pct": null,
+      "status": "not_in_forecast",
+      "status_label": "未在財測名單"
+    },
+    {
+      "event_id": "mops_4559_1150713_1633_1",
+      "code": "4559",
+      "name": "久裕興",
+      "publish_time": "2026-07-13 16:33:00",
+      "category": "營收公告",
+      "summary": "更正本公司115年6月營收及累計營收",
+      "explicit_june_revenue": true,
+      "june_revenue_m": null,
       "matched_forecast_list": false,
       "forecast_name": null,
       "sample_count": null,

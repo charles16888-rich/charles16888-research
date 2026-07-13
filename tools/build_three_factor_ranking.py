@@ -422,18 +422,17 @@ def build(signal_date: str | None = None) -> dict:
         print(f"    -> {len(momentum)} candidate stocks")
 
     no_candidates = not candidate_codes
-    if no_candidates:
-        # A zero-sized intersection is a valid market result, not missing source
-        # data.  Keep the upstream counts so the empty output remains traceable.
+    no_price_momentum = bool(candidate_codes) and momentum.empty
+    no_rankable_candidates = no_candidates or no_price_momentum
+    if no_rankable_candidates:
+        # An empty factor intersection or no usable momentum rows can be a valid
+        # historical market result. Keep the upstream counts so it is traceable
+        # instead of failing the whole daily publishing pipeline.
         df = pre.copy()
         df["momentum_pass"] = False
         df["factor_count"] = df[["foreign_pass", "revenue_pass", "momentum_pass"]].sum(axis=1)
         strict = df.iloc[0:0].copy()
     else:
-        if momentum.empty:
-            raise RuntimeError(
-                f"missing price momentum data for {len(candidate_codes)} foreign/revenue candidates"
-            )
         df = pre.merge(momentum, on="code", how="inner")
         df["momentum_pass"] = df["momentum_pass"] == True
         df["factor_count"] = df[["foreign_pass", "revenue_pass", "momentum_pass"]].sum(axis=1)
@@ -455,10 +454,18 @@ def build(signal_date: str | None = None) -> dict:
         "signal_date": signal_date,
         "institutional_date": signal_date,
         "price_date": signal_date,
-        "data_status": "no_candidates" if no_candidates else "ok",
+        "data_status": (
+            "no_candidates"
+            if no_candidates
+            else "no_price_momentum"
+            if no_price_momentum
+            else "ok"
+        ),
         "status_note": (
             "外資連買與營收創高的交集為 0 檔；這是有效空結果，不是資料缺漏。"
             if no_candidates
+            else "外資與營收條件交集存在，但當日無足夠價格動能資料可排序；保留來源筆數供追蹤。"
+            if no_price_momentum
             else None
         ),
         "source_counts": {
