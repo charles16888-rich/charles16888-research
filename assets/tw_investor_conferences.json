@@ -1,45 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-09T21:50:31+08:00",
+  "generated_at": "2026-07-13T18:27:33+08:00",
   "source_id": "tw_moneylink_investor_conference",
   "source_url": "https://www.money-link.com.tw/stxba/imwcontent0.asp?page=INVC1&ID=INVC1",
   "events": [
-    {
-      "event_date": "2026-07-09",
-      "code": "3008",
-      "name": "大立光",
-      "event_time": "14:30"
-    },
-    {
-      "event_date": "2026-07-09",
-      "code": "4109",
-      "name": "加捷生醫",
-      "event_time": "14:30"
-    },
-    {
-      "event_date": "2026-07-09",
-      "code": "4441",
-      "name": "振大環球",
-      "event_time": "14:30"
-    },
-    {
-      "event_date": "2026-07-09",
-      "code": "5236",
-      "name": "凌陽創新",
-      "event_time": "14:30"
-    },
-    {
-      "event_date": "2026-07-10",
-      "code": "2237",
-      "name": "華德動能",
-      "event_time": "14:30"
-    },
-    {
-      "event_date": "2026-07-10",
-      "code": "2408",
-      "name": "南亞科",
-      "event_time": "15:00"
-    },
     {
       "event_date": "2026-07-14",
       "code": "2328",
@@ -51,6 +15,12 @@
       "code": "6414",
       "name": "樺漢",
       "event_time": "14:20"
+    },
+    {
+      "event_date": "2026-07-14",
+      "code": "2237",
+      "name": "華德動能",
+      "event_time": "14:30"
     },
     {
       "event_date": "2026-07-14",
@@ -119,6 +89,12 @@
       "event_time": "15:00"
     },
     {
+      "event_date": "2026-08-04",
+      "code": "6526",
+      "name": "達發",
+      "event_time": "15:00"
+    },
+    {
       "event_date": "2026-08-05",
       "code": "2395",
       "name": "研華",
@@ -128,6 +104,12 @@
       "event_date": "2026-08-05",
       "code": "2412",
       "name": "中華電",
+      "event_time": "16:00"
+    },
+    {
+      "event_date": "2026-08-06",
+      "code": "4904",
+      "name": "遠傳",
       "event_time": "16:00"
     }
   ]
