@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-13T21:50:24+08:00",
+  "updated_at": "2026-07-13T21:58:35+08:00",
   "today": "2026-07-13",
   "volume_number": 1,
   "market_summary": {
@@ -29,7 +29,7 @@
       "time": "21:40",
       "title": "高價股觀測 · 排名熱圖",
       "title_em": "排名熱圖",
-      "summary": "高價股追蹤 40 檔，新進 30 檔、淡出 30 檔；榜首 7610 聯友金屬-創 收盤 2,650。",
+      "summary": "高價股追蹤 40 檔，新進 33 檔、淡出 33 檔；榜首 3491 昇達科 收盤 1,560。",
       "tags": [
         "個股",
         "高價股",
@@ -46,12 +46,12 @@
         },
         {
           "label": "新進",
-          "value": "30 檔",
+          "value": "33 檔",
           "color": "up"
         },
         {
           "label": "最高收盤",
-          "value": "2,650",
+          "value": "1,560",
           "color": "neutral"
         }
       ]
@@ -589,7 +589,7 @@
       "id": "tri-source-lamp",
       "category": "chips",
       "title": "三源混合燈號",
-      "subtitle": "2026-07-13 · 三同買 4 / 三同賣 5",
+      "subtitle": "2026-07-13 · 三同買 5 / 三同賣 10",
       "date": "2026-07-13",
       "url": "reports/tri-source-lamp.html",
       "tags": [
