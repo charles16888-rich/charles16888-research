@@ -421,19 +421,29 @@ def build(signal_date: str | None = None) -> dict:
         momentum = load_price_momentum(conn, signal_date, candidate_codes)
         print(f"    -> {len(momentum)} candidate stocks")
 
-    if momentum.empty:
-        raise RuntimeError("missing factor data")
+    no_candidates = not candidate_codes
+    if no_candidates:
+        # A zero-sized intersection is a valid market result, not missing source
+        # data.  Keep the upstream counts so the empty output remains traceable.
+        df = pre.copy()
+        df["momentum_pass"] = False
+        df["factor_count"] = df[["foreign_pass", "revenue_pass", "momentum_pass"]].sum(axis=1)
+        strict = df.iloc[0:0].copy()
+    else:
+        if momentum.empty:
+            raise RuntimeError(
+                f"missing price momentum data for {len(candidate_codes)} foreign/revenue candidates"
+            )
+        df = pre.merge(momentum, on="code", how="inner")
+        df["momentum_pass"] = df["momentum_pass"] == True
+        df["factor_count"] = df[["foreign_pass", "revenue_pass", "momentum_pass"]].sum(axis=1)
+        df = add_scores(df)
 
-    df = pre.merge(momentum, on="code", how="inner")
-    df["momentum_pass"] = df["momentum_pass"] == True
-    df["factor_count"] = df[["foreign_pass", "revenue_pass", "momentum_pass"]].sum(axis=1)
-    df = add_scores(df)
-
-    strict = df[df["factor_count"] == 3].copy()
-    strict = strict.sort_values(
-        ["score", "foreign_streak", "ret_20d_prev", "yoy"],
-        ascending=[False, False, False, False],
-    ).head(TOP_N)
+        strict = df[df["factor_count"] == 3].copy()
+        strict = strict.sort_values(
+            ["score", "foreign_streak", "ret_20d_prev", "yoy"],
+            ascending=[False, False, False, False],
+        ).head(TOP_N)
 
     forward_map = get_forward_returns(strict["code"].astype(str).tolist(), signal_date)
     for col in ["ret_1d", "ret_3d", "ret_5d", "ret_10d", "ret_20d"]:
@@ -445,6 +455,18 @@ def build(signal_date: str | None = None) -> dict:
         "signal_date": signal_date,
         "institutional_date": signal_date,
         "price_date": signal_date,
+        "data_status": "no_candidates" if no_candidates else "ok",
+        "status_note": (
+            "外資連買與營收創高的交集為 0 檔；這是有效空結果，不是資料缺漏。"
+            if no_candidates
+            else None
+        ),
+        "source_counts": {
+            "foreign_rows": int(len(foreign)),
+            "revenue_rows": int(len(revenue)),
+            "foreign_revenue_candidates": int(len(candidate_codes)),
+            "momentum_rows": int(len(momentum)),
+        },
         "revenue_period": revenue_meta,
         "thresholds": {
             "foreign_streak_days": MIN_FOREIGN_STREAK,
