@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-14T15:21:30+08:00",
+  "generated_at": "2026-07-14T21:50:36+08:00",
   "source_id": "tw_moneylink_investor_conference",
   "source_url": "https://www.money-link.com.tw/stxba/imwcontent0.asp?page=INVC1&ID=INVC1",
   "events": [
@@ -26,6 +26,12 @@
       "event_date": "2026-07-14",
       "code": "2237",
       "name": "華德動能",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-07-14",
+      "code": "4927",
+      "name": "泰鼎-KY",
       "event_time": "14:30"
     },
     {
@@ -65,6 +71,18 @@
       "event_time": "14:00"
     },
     {
+      "event_date": "2026-07-15",
+      "code": "2472",
+      "name": "立隆電",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-07-16",
+      "code": "4160",
+      "name": "訊聯基因",
+      "event_time": "09:10"
+    },
+    {
       "event_date": "2026-07-16",
       "code": "4147",
       "name": "中裕",
@@ -101,6 +119,12 @@
       "event_time": "14:30"
     },
     {
+      "event_date": "2026-07-17",
+      "code": "2597",
+      "name": "潤弘",
+      "event_time": "14:30"
+    },
+    {
       "event_date": "2026-07-23",
       "code": "6461",
       "name": "益得",
@@ -120,6 +144,12 @@
     },
     {
       "event_date": "2026-07-28",
+      "code": "2441",
+      "name": "超豐",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-07-28",
       "code": "3035",
       "name": "智原",
       "event_time": "14:30"
@@ -132,9 +162,33 @@
     },
     {
       "event_date": "2026-07-28",
+      "code": "5371",
+      "name": "中光電",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-07-28",
+      "code": "6239",
+      "name": "力成",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-07-28",
+      "code": "1590",
+      "name": "亞德客-KY",
+      "event_time": "16:00"
+    },
+    {
+      "event_date": "2026-07-28",
       "code": "2337",
       "name": "旺宏",
       "event_time": "16:00"
+    },
+    {
+      "event_date": "2026-07-29",
+      "code": "2303",
+      "name": "聯電",
+      "event_time": "17:00"
     },
     {
       "event_date": "2026-07-30",
@@ -162,6 +216,12 @@
     },
     {
       "event_date": "2026-08-05",
+      "code": "4966",
+      "name": "譜瑞-KY",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-08-05",
       "code": "2412",
       "name": "中華電",
       "event_time": "16:00"
@@ -177,6 +237,12 @@
       "code": "6719",
       "name": "力智",
       "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-08-12",
+      "code": "6643",
+      "name": "M31",
+      "event_time": "14:00"
     },
     {
       "event_date": "2026-08-14",
