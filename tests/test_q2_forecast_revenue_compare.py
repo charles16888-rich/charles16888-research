@@ -92,6 +92,33 @@ class Q2ForecastRevenueCompareTests(unittest.TestCase):
         self.assertEqual(payload["stats"]["below_count"], 1)
         self.assertEqual(payload["stats"]["inline_count"], 1)
 
+    def test_keeps_announced_q2_actual_without_a_revenue_forecast(self):
+        forecast = pd.DataFrame(
+            [{
+                "code": "4444",
+                "name": "實際已公告公司",
+                "sample_count": 1,
+                "forecast_revenue_m": None,
+                "confidence": "低",
+            }]
+        )
+        revenue = pd.DataFrame(
+            [
+                {"code": "4444", "roc_year": 115, "month": 4, "period": "2026-04", "revenue_m": 100.0},
+                {"code": "4444", "roc_year": 115, "month": 5, "period": "2026-05", "revenue_m": 110.0},
+                {"code": "4444", "roc_year": 115, "month": 6, "period": "2026-06", "revenue_m": 120.0},
+            ]
+        )
+
+        payload = q2_compare.build_comparison(forecast, revenue, latest_mops_period="2026-06")
+        row = payload["rows"][0]
+
+        self.assertEqual(row["status"], "no_forecast")
+        self.assertEqual(row["actual_revenue_m"], 330.0)
+        self.assertIsNone(row["surprise_m"])
+        self.assertEqual(row["status_label"], "無研報營收預估（實際已公告）")
+        self.assertEqual(payload["stats"]["no_forecast_announced_count"], 1)
+
 
 if __name__ == "__main__":
     unittest.main()
