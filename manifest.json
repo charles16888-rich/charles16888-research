@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-14T22:11:19+08:00",
+  "updated_at": "2026-07-14T23:32:19+08:00",
   "today": "2026-07-14",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,42 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-07-14-ai-research-daily-market",
+      "category": "ai-research",
+      "type": "daily-market",
+      "date": "2026-07-14",
+      "time": "23:30",
+      "title": "現貨先轉弱，期貨反彈未獲確認",
+      "title_em": "現貨先轉弱",
+      "summary": "早盤期貨一度上探，但加權與櫃買在 09:10 先轉弱，台指期於 09:15 放量跌破區間；09:26–09:29 的分鐘回升未獲五分鐘 K、現貨與廣度確認。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤後分析"
+      ],
+      "source_pipeline": "market_structure_analysis",
+      "url": "reports/2026-07-14/ai-research-daily-market.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "-1.416%",
+          "color": "down"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "-2.974%",
+          "color": "down"
+        },
+        {
+          "label": "TXF 首次確認",
+          "value": "09:15",
+          "color": "down"
+        }
+      ]
+    },
     {
       "id": "high-price-watch",
       "category": "stocks",

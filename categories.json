@@ -303,6 +303,35 @@
           "name_en": "Shortage Weekly"
         }
       ]
+    },
+    {
+      "id": "ai-research",
+      "name_zh": "AI 研究報告",
+      "name_en": "AI Research",
+      "tagline_zh": "市場結構 × 當日走勢",
+      "tagline_en": "Daily market structure",
+      "description": "以可追溯的市場資料整理當日走勢、期現互動與市場廣度。",
+      "enabled": true,
+      "source_pipelines": [
+        "market_structure_analysis"
+      ],
+      "subcategories": [
+        {
+          "id": "daily-market-analysis",
+          "name_zh": "當日走勢研析",
+          "name_en": "Daily Market Analysis",
+          "match_id_prefix": [
+            "ai-research-daily-market"
+          ]
+        }
+      ],
+      "report_types": [
+        {
+          "id": "daily-market",
+          "name_zh": "當日走勢研析",
+          "name_en": "Daily Market Analysis"
+        }
+      ]
     }
   ]
 }
