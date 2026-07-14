@@ -153,6 +153,28 @@ def _status_for(
     return "inline", diff_m, surprise_pct
 
 
+def _status_label(
+    status: str,
+    *,
+    forecast_revenue_m: float | None,
+    missing_periods: list[str],
+    actual_revenue_m: float | None,
+) -> str:
+    labels = {
+        "above": "高於預期",
+        "below": "低於預期",
+        "inline": "符合預期",
+        "incomplete": "尚未完整",
+    }
+    if status != "no_forecast":
+        return labels[status]
+    if actual_revenue_m is not None:
+        return "無研報營收預估（實際已公告）"
+    if missing_periods:
+        return "無研報營收預估（部分月營收）"
+    return "無研報營收預估（無 MOPS 月營收）"
+
+
 def build_comparison(
     forecast: pd.DataFrame,
     revenue: pd.DataFrame,
@@ -168,13 +190,6 @@ def build_comparison(
         for code, rows in revenue.groupby("code")
     } if not revenue.empty else {}
 
-    status_label = {
-        "above": "高於預期",
-        "below": "低於預期",
-        "inline": "符合預期",
-        "incomplete": "尚未完整",
-        "no_forecast": "無營收財測",
-    }
     rows_out: list[dict] = []
     for _, f in forecast.iterrows():
         code = str(f["code"])
@@ -201,7 +216,15 @@ def build_comparison(
         available_periods = set(months)
         missing_periods = [p for p in expected_periods if p not in available_periods]
         forecast_revenue_m = _to_float(f.get("forecast_revenue_m"))
-        actual_revenue_m = available_sum if not missing_periods and forecast_revenue_m is not None else None
+        # MOPS actuals are factual data, independent of whether an anonymized
+        # research report supplied a revenue forecast.  Previously this was
+        # gated on forecast_revenue_m, which made fully announced companies
+        # look blank in the "Q2 actual" column.
+        complete_actual = (
+            not missing_periods
+            and all(months.get(period, {}).get("revenue_m") is not None for period in expected_periods)
+        )
+        actual_revenue_m = available_sum if complete_actual else None
         status, diff_m, surprise_pct = _status_for(
             forecast_revenue_m,
             available_periods,
@@ -220,7 +243,12 @@ def build_comparison(
                 "surprise_m": diff_m,
                 "surprise_pct": surprise_pct,
                 "status": status,
-                "status_label": status_label[status],
+                "status_label": _status_label(
+                    status,
+                    forecast_revenue_m=forecast_revenue_m,
+                    missing_periods=missing_periods,
+                    actual_revenue_m=actual_revenue_m,
+                ),
                 "months": months,
                 "missing_months": missing_periods,
                 "latest_publish_time": max(publish_times) if publish_times else None,
@@ -246,6 +274,11 @@ def build_comparison(
         "inline_count": sum(1 for r in rows_out if r["status"] == "inline"),
         "incomplete_count": sum(1 for r in rows_out if r["status"] == "incomplete"),
         "no_forecast_count": sum(1 for r in rows_out if r["status"] == "no_forecast"),
+        "mops_complete_count": sum(1 for r in rows_out if r["actual_revenue_m"] is not None),
+        "no_forecast_announced_count": sum(
+            1 for r in rows_out
+            if r["status"] == "no_forecast" and r["actual_revenue_m"] is not None
+        ),
     }
     return {
         "generated_at": datetime.now(TPE).isoformat(),
