@@ -119,6 +119,25 @@ class Q2ForecastRevenueCompareTests(unittest.TestCase):
         self.assertEqual(row["status_label"], "無研報營收預估（實際已公告）")
         self.assertEqual(payload["stats"]["no_forecast_announced_count"], 1)
 
+    def test_marks_missing_mops_monthly_revenue_without_inventing_data(self):
+        forecast = pd.DataFrame(
+            [{
+                "code": "5555",
+                "name": "無月營收來源公司",
+                "sample_count": 1,
+                "forecast_revenue_m": None,
+                "confidence": "低",
+            }]
+        )
+        revenue = pd.DataFrame(columns=["code", "roc_year", "month", "period", "revenue_m"])
+
+        payload = q2_compare.build_comparison(forecast, revenue, latest_mops_period="2026-06")
+        row = payload["rows"][0]
+
+        self.assertEqual(row["status"], "no_forecast")
+        self.assertIsNone(row["actual_revenue_m"])
+        self.assertEqual(row["status_label"], "無研報營收預估（MOPS 無月營收）")
+
 
 if __name__ == "__main__":
     unittest.main()

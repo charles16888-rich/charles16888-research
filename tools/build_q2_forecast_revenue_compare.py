@@ -157,6 +157,7 @@ def _status_label(
     status: str,
     *,
     forecast_revenue_m: float | None,
+    available_periods: set[str],
     missing_periods: list[str],
     actual_revenue_m: float | None,
 ) -> str:
@@ -170,9 +171,11 @@ def _status_label(
         return labels[status]
     if actual_revenue_m is not None:
         return "無研報營收預估（實際已公告）"
+    if not available_periods:
+        return "無研報營收預估（MOPS 無月營收）"
     if missing_periods:
         return "無研報營收預估（部分月營收）"
-    return "無研報營收預估（無 MOPS 月營收）"
+    return "無研報營收預估"
 
 
 def build_comparison(
@@ -246,6 +249,7 @@ def build_comparison(
                 "status_label": _status_label(
                     status,
                     forecast_revenue_m=forecast_revenue_m,
+                    available_periods=available_periods,
                     missing_periods=missing_periods,
                     actual_revenue_m=actual_revenue_m,
                 ),
