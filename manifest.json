@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-15T10:22:30+08:00",
+  "updated_at": "2026-07-15T11:09:30+08:00",
   "today": "2026-07-15",
   "volume_number": 1,
   "market_summary": {
@@ -65,12 +65,12 @@
       "time": "20:30",
       "title": "2026-07-15 缺貨偵探近四週週報",
       "title_em": "ABF／高階載板",
-      "summary": "最新一週較明確的新事件集中在 ABF／高階載板、MLCC／被動元件；其餘週別保留供需訊號供回溯。",
+      "summary": "最新一週較明確的新事件集中在 ABF／高階載板、HBM／先進記憶體、MLCC／被動元件；其餘週別保留供需訊號供回溯。",
       "tags": [
         "ABF／高階載板",
+        "HBM／先進記憶體",
+        "MCU",
         "MLCC／被動元件",
-        "LPDDR／SOCAMM",
-        "液冷板／CDU",
         "缺貨偵探",
         "週報"
       ],
@@ -79,12 +79,12 @@
       "stats": [
         {
           "label": "事件數",
-          "value": "2",
+          "value": "4",
           "color": "neutral"
         },
         {
           "label": "訊號數",
-          "value": "2",
+          "value": "65",
           "color": "neutral"
         },
         {
@@ -339,43 +339,6 @@
           "label": "Top 賣超",
           "value": "0056 -61%",
           "color": "down"
-        }
-      ]
-    },
-    {
-      "id": "shortage-weekly-2026-07-14",
-      "category": "stocks",
-      "type": "weekly",
-      "date": "2026-07-14",
-      "time": "20:30",
-      "title": "2026-07-14 缺貨偵探近四週週報",
-      "title_em": "MLCC／被動元件",
-      "summary": "最新一週較明確的新事件集中在 MLCC／被動元件；其餘週別保留供需訊號供回溯。",
-      "tags": [
-        "MLCC／被動元件",
-        "ABF／高階載板",
-        "LPDDR／SOCAMM",
-        "液冷板／CDU",
-        "缺貨偵探",
-        "週報"
-      ],
-      "source_pipeline": "shortage_detective",
-      "url": "reports/shortage/2026-07-14/weekly.html",
-      "stats": [
-        {
-          "label": "事件數",
-          "value": "1",
-          "color": "neutral"
-        },
-        {
-          "label": "訊號數",
-          "value": "1",
-          "color": "neutral"
-        },
-        {
-          "label": "主題",
-          "value": "MLCC／被動元件",
-          "color": "up"
         }
       ]
     },
@@ -673,43 +636,6 @@
       ]
     },
     {
-      "id": "shortage-weekly-2026-07-13",
-      "category": "stocks",
-      "type": "weekly",
-      "date": "2026-07-13",
-      "time": "20:30",
-      "title": "2026-07-13 缺貨偵探近四週週報",
-      "title_em": "MLCC／被動元件",
-      "summary": "最新一週較明確的新事件集中在 MLCC／被動元件；其餘週別保留供需訊號供回溯。",
-      "tags": [
-        "MLCC／被動元件",
-        "ABF／高階載板",
-        "LPDDR／SOCAMM",
-        "液冷板／CDU",
-        "缺貨偵探",
-        "週報"
-      ],
-      "source_pipeline": "shortage_detective",
-      "url": "reports/shortage/2026-07-13/weekly.html",
-      "stats": [
-        {
-          "label": "事件數",
-          "value": "1",
-          "color": "neutral"
-        },
-        {
-          "label": "訊號數",
-          "value": "1",
-          "color": "neutral"
-        },
-        {
-          "label": "主題",
-          "value": "MLCC／被動元件",
-          "color": "up"
-        }
-      ]
-    },
-    {
       "id": "2026-07-13-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -989,43 +915,6 @@
       ]
     },
     {
-      "id": "shortage-weekly-2026-07-08",
-      "category": "stocks",
-      "type": "weekly",
-      "date": "2026-07-08",
-      "time": "20:30",
-      "title": "2026-07-08 缺貨偵探近四週週報",
-      "title_em": "ABF／高階載板",
-      "summary": "最新一週較明確的新事件集中在 LPDDR／SOCAMM、ABF／高階載板、石英元件；其餘週別保留供需訊號供回溯。",
-      "tags": [
-        "ABF／高階載板",
-        "MLCC／被動元件",
-        "LPDDR／SOCAMM",
-        "液冷板／CDU",
-        "缺貨偵探",
-        "週報"
-      ],
-      "source_pipeline": "shortage_detective",
-      "url": "reports/shortage/2026-07-08/weekly.html",
-      "stats": [
-        {
-          "label": "事件數",
-          "value": "3",
-          "color": "neutral"
-        },
-        {
-          "label": "訊號數",
-          "value": "59",
-          "color": "neutral"
-        },
-        {
-          "label": "主題",
-          "value": "ABF／高階載板",
-          "color": "up"
-        }
-      ]
-    },
-    {
       "id": "2026-07-08-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -1129,43 +1018,6 @@
       ]
     },
     {
-      "id": "shortage-weekly-2026-07-07",
-      "category": "stocks",
-      "type": "weekly",
-      "date": "2026-07-07",
-      "time": "20:30",
-      "title": "2026-07-07 缺貨偵探近四週週報",
-      "title_em": "ABF／高階載板",
-      "summary": "最新一週較明確的新事件集中在 LPDDR／SOCAMM、ABF／高階載板、MLCC／被動元件；其餘週別保留供需訊號供回溯。",
-      "tags": [
-        "ABF／高階載板",
-        "MLCC／被動元件",
-        "LPDDR／SOCAMM",
-        "液冷板／CDU",
-        "缺貨偵探",
-        "週報"
-      ],
-      "source_pipeline": "shortage_detective",
-      "url": "reports/shortage/2026-07-07/weekly.html",
-      "stats": [
-        {
-          "label": "事件數",
-          "value": "4",
-          "color": "neutral"
-        },
-        {
-          "label": "訊號數",
-          "value": "77",
-          "color": "neutral"
-        },
-        {
-          "label": "主題",
-          "value": "ABF／高階載板",
-          "color": "up"
-        }
-      ]
-    },
-    {
       "id": "2026-07-07-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -1265,43 +1117,6 @@
           "label": "漲停集中",
           "value": "0.4%",
           "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "shortage-weekly-2026-07-06",
-      "category": "stocks",
-      "type": "weekly",
-      "date": "2026-07-06",
-      "time": "20:30",
-      "title": "2026-07-06 缺貨偵探近四週週報",
-      "title_em": "ABF／高階載板",
-      "summary": "最新一週較明確的新事件集中在 ABF／高階載板、MLCC／被動元件、液冷板／CDU；其餘週別保留供需訊號供回溯。",
-      "tags": [
-        "ABF／高階載板",
-        "MLCC／被動元件",
-        "液冷板／CDU",
-        "石英元件",
-        "缺貨偵探",
-        "週報"
-      ],
-      "source_pipeline": "shortage_detective",
-      "url": "reports/shortage/2026-07-06/weekly.html",
-      "stats": [
-        {
-          "label": "事件數",
-          "value": "4",
-          "color": "neutral"
-        },
-        {
-          "label": "訊號數",
-          "value": "77",
-          "color": "neutral"
-        },
-        {
-          "label": "主題",
-          "value": "ABF／高階載板",
-          "color": "up"
         }
       ]
     },
@@ -1427,80 +1242,6 @@
       ],
       "source_pipeline": "shortage_detective",
       "url": "reports/shortage/2026-07-05/weekly.html",
-      "stats": [
-        {
-          "label": "最新週卡片",
-          "value": "4",
-          "color": "neutral"
-        },
-        {
-          "label": "來源數",
-          "value": "43",
-          "color": "neutral"
-        },
-        {
-          "label": "主題",
-          "value": "ABF／高階載板",
-          "color": "up"
-        }
-      ]
-    },
-    {
-      "id": "shortage-weekly-2026-07-04",
-      "category": "stocks",
-      "type": "weekly",
-      "date": "2026-07-04",
-      "time": "20:30",
-      "title": "2026-07-04 缺貨偵探近四週週報",
-      "title_em": "ABF／高階載板",
-      "summary": "最新一週較明確的新事件集中在 ABF／高階載板、MLCC／被動元件、石英元件；其餘週別保留供需訊號供回溯。",
-      "tags": [
-        "ABF／高階載板",
-        "MLCC／被動元件",
-        "液冷板／CDU",
-        "石英元件",
-        "缺貨偵探",
-        "週報"
-      ],
-      "source_pipeline": "shortage_detective",
-      "url": "reports/shortage/2026-07-04/weekly.html",
-      "stats": [
-        {
-          "label": "最新週卡片",
-          "value": "4",
-          "color": "neutral"
-        },
-        {
-          "label": "來源數",
-          "value": "43",
-          "color": "neutral"
-        },
-        {
-          "label": "主題",
-          "value": "ABF／高階載板",
-          "color": "up"
-        }
-      ]
-    },
-    {
-      "id": "shortage-weekly-2026-07-03",
-      "category": "stocks",
-      "type": "weekly",
-      "date": "2026-07-03",
-      "time": "20:30",
-      "title": "2026-07-03 缺貨偵探近四週週報",
-      "title_em": "ABF／高階載板",
-      "summary": "最新一週較明確的新事件集中在 ABF／高階載板、MLCC／被動元件、石英元件；其餘週別保留供需訊號供回溯。",
-      "tags": [
-        "ABF／高階載板",
-        "MLCC／被動元件",
-        "液冷板／CDU",
-        "石英元件",
-        "缺貨偵探",
-        "週報"
-      ],
-      "source_pipeline": "shortage_detective",
-      "url": "reports/shortage/2026-07-03/weekly.html",
       "stats": [
         {
           "label": "最新週卡片",
