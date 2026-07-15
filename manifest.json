@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-15T11:09:30+08:00",
+  "updated_at": "2026-07-15T15:20:39+08:00",
   "today": "2026-07-15",
   "volume_number": 1,
   "market_summary": {
@@ -127,6 +127,77 @@
           "label": "6月營收",
           "value": "0",
           "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "options-annual-2026",
+      "category": "txo",
+      "type": "options_annual",
+      "date": "2026-07-15",
+      "time": "15:10",
+      "title": "2026 台股選擇權年度合併報告",
+      "title_em": "年度合併",
+      "summary": "彙整 2026 年 28 份 v2.5 週報，期間 2026-01-01 至 2026-07-15，共 12 個交易日。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "年度合併",
+        "v2.5"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5",
+      "url": "reports/options/annual_reports/2026/台股選擇權年度合併報告_2026_v2.5.html",
+      "stats": [
+        {
+          "label": "週報",
+          "value": "28",
+          "color": "neutral"
+        },
+        {
+          "label": "交易日",
+          "value": "12",
+          "color": "neutral"
+        },
+        {
+          "label": "期間",
+          "value": "2026-01-01 → 2026-07-15",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "options-weekly-20260713-20260717",
+      "category": "txo",
+      "type": "options_weekly",
+      "date": "2026-07-15",
+      "time": "15:00",
+      "title": "台股選擇權籌碼週報 · 20260713-20260717",
+      "title_em": "選擇權",
+      "summary": "v2.5 定價與期現結構版週報，涵蓋 2026-07-13 至 2026-07-15，共 3 個交易日。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "週報",
+        "Max Pain",
+        "P/C Ratio"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5",
+      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260713-20260717_v2.5.html",
+      "stats": [
+        {
+          "label": "週期",
+          "value": "20260713-20260717",
+          "color": "neutral"
+        },
+        {
+          "label": "交易日",
+          "value": "3",
+          "color": "neutral"
+        },
+        {
+          "label": "版本",
+          "value": "v2.5",
+          "color": "neutral"
         }
       ]
     },
@@ -546,77 +617,6 @@
         {
           "label": "漲停集中",
           "value": "2.1%",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "options-annual-2026",
-      "category": "txo",
-      "type": "options_annual",
-      "date": "2026-07-14",
-      "time": "15:10",
-      "title": "2026 台股選擇權年度合併報告",
-      "title_em": "年度合併",
-      "summary": "彙整 2026 年 28 份 v2.5 週報，期間 2026-01-01 至 2026-07-14，共 11 個交易日。",
-      "tags": [
-        "選擇權",
-        "TXO",
-        "年度合併",
-        "v2.5"
-      ],
-      "source_pipeline": "stock_project options_report_v2.5",
-      "url": "reports/options/annual_reports/2026/台股選擇權年度合併報告_2026_v2.5.html",
-      "stats": [
-        {
-          "label": "週報",
-          "value": "28",
-          "color": "neutral"
-        },
-        {
-          "label": "交易日",
-          "value": "11",
-          "color": "neutral"
-        },
-        {
-          "label": "期間",
-          "value": "2026-01-01 → 2026-07-14",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "options-weekly-20260713-20260717",
-      "category": "txo",
-      "type": "options_weekly",
-      "date": "2026-07-14",
-      "time": "15:00",
-      "title": "台股選擇權籌碼週報 · 20260713-20260717",
-      "title_em": "選擇權",
-      "summary": "v2.5 定價與期現結構版週報，涵蓋 2026-07-13 至 2026-07-14，共 2 個交易日。",
-      "tags": [
-        "選擇權",
-        "TXO",
-        "週報",
-        "Max Pain",
-        "P/C Ratio"
-      ],
-      "source_pipeline": "stock_project options_report_v2.5",
-      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260713-20260717_v2.5.html",
-      "stats": [
-        {
-          "label": "週期",
-          "value": "20260713-20260717",
-          "color": "neutral"
-        },
-        {
-          "label": "交易日",
-          "value": "2",
-          "color": "neutral"
-        },
-        {
-          "label": "版本",
-          "value": "v2.5",
           "color": "neutral"
         }
       ]
