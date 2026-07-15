@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-15T10:22:30+08:00",
+  "updated_at": "2026-07-15T15:20:39+08:00",
   "today": "2026-07-15",
   "volume_number": 1,
   "market_summary": {
@@ -65,12 +65,12 @@
       "time": "20:30",
       "title": "2026-07-15 缺貨偵探近四週週報",
       "title_em": "ABF／高階載板",
-      "summary": "最新一週較明確的新事件集中在 ABF／高階載板、MLCC／被動元件；其餘週別保留供需訊號供回溯。",
+      "summary": "最新一週較明確的新事件集中在 ABF／高階載板、HBM／先進記憶體、MLCC／被動元件；其餘週別保留供需訊號供回溯。",
       "tags": [
         "ABF／高階載板",
+        "HBM／先進記憶體",
+        "MCU",
         "MLCC／被動元件",
-        "LPDDR／SOCAMM",
-        "液冷板／CDU",
         "缺貨偵探",
         "週報"
       ],
@@ -79,12 +79,12 @@
       "stats": [
         {
           "label": "事件數",
-          "value": "2",
+          "value": "4",
           "color": "neutral"
         },
         {
           "label": "訊號數",
-          "value": "2",
+          "value": "65",
           "color": "neutral"
         },
         {
@@ -127,6 +127,77 @@
           "label": "6月營收",
           "value": "0",
           "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "options-annual-2026",
+      "category": "txo",
+      "type": "options_annual",
+      "date": "2026-07-15",
+      "time": "15:10",
+      "title": "2026 台股選擇權年度合併報告",
+      "title_em": "年度合併",
+      "summary": "彙整 2026 年 28 份 v2.5 週報，期間 2026-01-01 至 2026-07-15，共 12 個交易日。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "年度合併",
+        "v2.5"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5",
+      "url": "reports/options/annual_reports/2026/台股選擇權年度合併報告_2026_v2.5.html",
+      "stats": [
+        {
+          "label": "週報",
+          "value": "28",
+          "color": "neutral"
+        },
+        {
+          "label": "交易日",
+          "value": "12",
+          "color": "neutral"
+        },
+        {
+          "label": "期間",
+          "value": "2026-01-01 → 2026-07-15",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "options-weekly-20260713-20260717",
+      "category": "txo",
+      "type": "options_weekly",
+      "date": "2026-07-15",
+      "time": "15:00",
+      "title": "台股選擇權籌碼週報 · 20260713-20260717",
+      "title_em": "選擇權",
+      "summary": "v2.5 定價與期現結構版週報，涵蓋 2026-07-13 至 2026-07-15，共 3 個交易日。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "週報",
+        "Max Pain",
+        "P/C Ratio"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5",
+      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260713-20260717_v2.5.html",
+      "stats": [
+        {
+          "label": "週期",
+          "value": "20260713-20260717",
+          "color": "neutral"
+        },
+        {
+          "label": "交易日",
+          "value": "3",
+          "color": "neutral"
+        },
+        {
+          "label": "版本",
+          "value": "v2.5",
+          "color": "neutral"
         }
       ]
     },
@@ -343,43 +414,6 @@
       ]
     },
     {
-      "id": "shortage-weekly-2026-07-14",
-      "category": "stocks",
-      "type": "weekly",
-      "date": "2026-07-14",
-      "time": "20:30",
-      "title": "2026-07-14 缺貨偵探近四週週報",
-      "title_em": "MLCC／被動元件",
-      "summary": "最新一週較明確的新事件集中在 MLCC／被動元件；其餘週別保留供需訊號供回溯。",
-      "tags": [
-        "MLCC／被動元件",
-        "ABF／高階載板",
-        "LPDDR／SOCAMM",
-        "液冷板／CDU",
-        "缺貨偵探",
-        "週報"
-      ],
-      "source_pipeline": "shortage_detective",
-      "url": "reports/shortage/2026-07-14/weekly.html",
-      "stats": [
-        {
-          "label": "事件數",
-          "value": "1",
-          "color": "neutral"
-        },
-        {
-          "label": "訊號數",
-          "value": "1",
-          "color": "neutral"
-        },
-        {
-          "label": "主題",
-          "value": "MLCC／被動元件",
-          "color": "up"
-        }
-      ]
-    },
-    {
       "id": "options-atm",
       "category": "txo",
       "type": "pulse",
@@ -588,77 +622,6 @@
       ]
     },
     {
-      "id": "options-annual-2026",
-      "category": "txo",
-      "type": "options_annual",
-      "date": "2026-07-14",
-      "time": "15:10",
-      "title": "2026 台股選擇權年度合併報告",
-      "title_em": "年度合併",
-      "summary": "彙整 2026 年 28 份 v2.5 週報，期間 2026-01-01 至 2026-07-14，共 11 個交易日。",
-      "tags": [
-        "選擇權",
-        "TXO",
-        "年度合併",
-        "v2.5"
-      ],
-      "source_pipeline": "stock_project options_report_v2.5",
-      "url": "reports/options/annual_reports/2026/台股選擇權年度合併報告_2026_v2.5.html",
-      "stats": [
-        {
-          "label": "週報",
-          "value": "28",
-          "color": "neutral"
-        },
-        {
-          "label": "交易日",
-          "value": "11",
-          "color": "neutral"
-        },
-        {
-          "label": "期間",
-          "value": "2026-01-01 → 2026-07-14",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "options-weekly-20260713-20260717",
-      "category": "txo",
-      "type": "options_weekly",
-      "date": "2026-07-14",
-      "time": "15:00",
-      "title": "台股選擇權籌碼週報 · 20260713-20260717",
-      "title_em": "選擇權",
-      "summary": "v2.5 定價與期現結構版週報，涵蓋 2026-07-13 至 2026-07-14，共 2 個交易日。",
-      "tags": [
-        "選擇權",
-        "TXO",
-        "週報",
-        "Max Pain",
-        "P/C Ratio"
-      ],
-      "source_pipeline": "stock_project options_report_v2.5",
-      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260713-20260717_v2.5.html",
-      "stats": [
-        {
-          "label": "週期",
-          "value": "20260713-20260717",
-          "color": "neutral"
-        },
-        {
-          "label": "交易日",
-          "value": "2",
-          "color": "neutral"
-        },
-        {
-          "label": "版本",
-          "value": "v2.5",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
       "id": "tri-source-lamp",
       "category": "chips",
       "title": "三源混合燈號",
@@ -670,43 +633,6 @@
         "大股東",
         "三大法人",
         "燈號"
-      ]
-    },
-    {
-      "id": "shortage-weekly-2026-07-13",
-      "category": "stocks",
-      "type": "weekly",
-      "date": "2026-07-13",
-      "time": "20:30",
-      "title": "2026-07-13 缺貨偵探近四週週報",
-      "title_em": "MLCC／被動元件",
-      "summary": "最新一週較明確的新事件集中在 MLCC／被動元件；其餘週別保留供需訊號供回溯。",
-      "tags": [
-        "MLCC／被動元件",
-        "ABF／高階載板",
-        "LPDDR／SOCAMM",
-        "液冷板／CDU",
-        "缺貨偵探",
-        "週報"
-      ],
-      "source_pipeline": "shortage_detective",
-      "url": "reports/shortage/2026-07-13/weekly.html",
-      "stats": [
-        {
-          "label": "事件數",
-          "value": "1",
-          "color": "neutral"
-        },
-        {
-          "label": "訊號數",
-          "value": "1",
-          "color": "neutral"
-        },
-        {
-          "label": "主題",
-          "value": "MLCC／被動元件",
-          "color": "up"
-        }
       ]
     },
     {
@@ -989,43 +915,6 @@
       ]
     },
     {
-      "id": "shortage-weekly-2026-07-08",
-      "category": "stocks",
-      "type": "weekly",
-      "date": "2026-07-08",
-      "time": "20:30",
-      "title": "2026-07-08 缺貨偵探近四週週報",
-      "title_em": "ABF／高階載板",
-      "summary": "最新一週較明確的新事件集中在 LPDDR／SOCAMM、ABF／高階載板、石英元件；其餘週別保留供需訊號供回溯。",
-      "tags": [
-        "ABF／高階載板",
-        "MLCC／被動元件",
-        "LPDDR／SOCAMM",
-        "液冷板／CDU",
-        "缺貨偵探",
-        "週報"
-      ],
-      "source_pipeline": "shortage_detective",
-      "url": "reports/shortage/2026-07-08/weekly.html",
-      "stats": [
-        {
-          "label": "事件數",
-          "value": "3",
-          "color": "neutral"
-        },
-        {
-          "label": "訊號數",
-          "value": "59",
-          "color": "neutral"
-        },
-        {
-          "label": "主題",
-          "value": "ABF／高階載板",
-          "color": "up"
-        }
-      ]
-    },
-    {
       "id": "2026-07-08-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -1129,43 +1018,6 @@
       ]
     },
     {
-      "id": "shortage-weekly-2026-07-07",
-      "category": "stocks",
-      "type": "weekly",
-      "date": "2026-07-07",
-      "time": "20:30",
-      "title": "2026-07-07 缺貨偵探近四週週報",
-      "title_em": "ABF／高階載板",
-      "summary": "最新一週較明確的新事件集中在 LPDDR／SOCAMM、ABF／高階載板、MLCC／被動元件；其餘週別保留供需訊號供回溯。",
-      "tags": [
-        "ABF／高階載板",
-        "MLCC／被動元件",
-        "LPDDR／SOCAMM",
-        "液冷板／CDU",
-        "缺貨偵探",
-        "週報"
-      ],
-      "source_pipeline": "shortage_detective",
-      "url": "reports/shortage/2026-07-07/weekly.html",
-      "stats": [
-        {
-          "label": "事件數",
-          "value": "4",
-          "color": "neutral"
-        },
-        {
-          "label": "訊號數",
-          "value": "77",
-          "color": "neutral"
-        },
-        {
-          "label": "主題",
-          "value": "ABF／高階載板",
-          "color": "up"
-        }
-      ]
-    },
-    {
       "id": "2026-07-07-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -1265,43 +1117,6 @@
           "label": "漲停集中",
           "value": "0.4%",
           "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "shortage-weekly-2026-07-06",
-      "category": "stocks",
-      "type": "weekly",
-      "date": "2026-07-06",
-      "time": "20:30",
-      "title": "2026-07-06 缺貨偵探近四週週報",
-      "title_em": "ABF／高階載板",
-      "summary": "最新一週較明確的新事件集中在 ABF／高階載板、MLCC／被動元件、液冷板／CDU；其餘週別保留供需訊號供回溯。",
-      "tags": [
-        "ABF／高階載板",
-        "MLCC／被動元件",
-        "液冷板／CDU",
-        "石英元件",
-        "缺貨偵探",
-        "週報"
-      ],
-      "source_pipeline": "shortage_detective",
-      "url": "reports/shortage/2026-07-06/weekly.html",
-      "stats": [
-        {
-          "label": "事件數",
-          "value": "4",
-          "color": "neutral"
-        },
-        {
-          "label": "訊號數",
-          "value": "77",
-          "color": "neutral"
-        },
-        {
-          "label": "主題",
-          "value": "ABF／高階載板",
-          "color": "up"
         }
       ]
     },
@@ -1427,80 +1242,6 @@
       ],
       "source_pipeline": "shortage_detective",
       "url": "reports/shortage/2026-07-05/weekly.html",
-      "stats": [
-        {
-          "label": "最新週卡片",
-          "value": "4",
-          "color": "neutral"
-        },
-        {
-          "label": "來源數",
-          "value": "43",
-          "color": "neutral"
-        },
-        {
-          "label": "主題",
-          "value": "ABF／高階載板",
-          "color": "up"
-        }
-      ]
-    },
-    {
-      "id": "shortage-weekly-2026-07-04",
-      "category": "stocks",
-      "type": "weekly",
-      "date": "2026-07-04",
-      "time": "20:30",
-      "title": "2026-07-04 缺貨偵探近四週週報",
-      "title_em": "ABF／高階載板",
-      "summary": "最新一週較明確的新事件集中在 ABF／高階載板、MLCC／被動元件、石英元件；其餘週別保留供需訊號供回溯。",
-      "tags": [
-        "ABF／高階載板",
-        "MLCC／被動元件",
-        "液冷板／CDU",
-        "石英元件",
-        "缺貨偵探",
-        "週報"
-      ],
-      "source_pipeline": "shortage_detective",
-      "url": "reports/shortage/2026-07-04/weekly.html",
-      "stats": [
-        {
-          "label": "最新週卡片",
-          "value": "4",
-          "color": "neutral"
-        },
-        {
-          "label": "來源數",
-          "value": "43",
-          "color": "neutral"
-        },
-        {
-          "label": "主題",
-          "value": "ABF／高階載板",
-          "color": "up"
-        }
-      ]
-    },
-    {
-      "id": "shortage-weekly-2026-07-03",
-      "category": "stocks",
-      "type": "weekly",
-      "date": "2026-07-03",
-      "time": "20:30",
-      "title": "2026-07-03 缺貨偵探近四週週報",
-      "title_em": "ABF／高階載板",
-      "summary": "最新一週較明確的新事件集中在 ABF／高階載板、MLCC／被動元件、石英元件；其餘週別保留供需訊號供回溯。",
-      "tags": [
-        "ABF／高階載板",
-        "MLCC／被動元件",
-        "液冷板／CDU",
-        "石英元件",
-        "缺貨偵探",
-        "週報"
-      ],
-      "source_pipeline": "shortage_detective",
-      "url": "reports/shortage/2026-07-03/weekly.html",
       "stats": [
         {
           "label": "最新週卡片",
