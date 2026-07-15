@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-15T21:55:12+08:00",
+  "updated_at": "2026-07-16T01:40:08+08:00",
   "today": "2026-07-15",
   "volume_number": 1,
   "market_summary": {
@@ -94,6 +94,113 @@
       ]
     },
     {
+      "id": "three-factor-ranking",
+      "category": "chips",
+      "type": "ranking",
+      "date": "2026-07-15",
+      "time": "21:10",
+      "title": "三因子波段排行榜",
+      "title_em": "外資×營收×強勢",
+      "summary": "外資連買 >= 3 日、最新月營收創高、20/60 日趨勢仍強。 本次三因子同步 13 檔。 榜首：6505 台塑化，外資連買 9 日，營收 YoY +18.5%，前 20 日 +36.6%。",
+      "tags": [
+        "波段",
+        "外資連買",
+        "營收創高",
+        "強者恆強",
+        "排行榜"
+      ],
+      "source_pipeline": "stock_chip_crawler+mops_index",
+      "url": "reports/three-factor-ranking.html",
+      "stats": [
+        {
+          "label": "三因子同步",
+          "value": "13 檔",
+          "color": "up"
+        },
+        {
+          "label": "營收期別",
+          "value": "2026-06",
+          "color": "neutral"
+        },
+        {
+          "label": "榜首",
+          "value": "6505 82.4",
+          "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "foreign-sell-records",
+      "category": "chips",
+      "type": "ranking",
+      "date": "2026-07-15",
+      "time": "21:05",
+      "title": "外資史上賣超紀錄 · 個股 / 大盤金額 Top 20",
+      "title_em": "賣超",
+      "summary": "外資單日淨賣超史上 Top 20，並加入大盤外資淨賣超金額 Top 20。追蹤事件後 1/3/5/10/20/30/60 日走勢。 最大紀錄：2026-05-28 3481 群創 -289,338 張。 大盤最大金額：2026-06-24 -1,955.5億。",
+      "tags": [
+        "籌碼",
+        "外資",
+        "賣超",
+        "成交額",
+        "事件追蹤"
+      ],
+      "source_pipeline": "stock_chip_crawler",
+      "url": "reports/foreign-sell-records.html?v=20260715-official",
+      "stats": [
+        {
+          "label": "個股最大",
+          "value": "3481 -289,338張",
+          "color": "down"
+        },
+        {
+          "label": "大盤金額",
+          "value": "-1,955.5億",
+          "color": "down"
+        },
+        {
+          "label": "走勢",
+          "value": "1-60日",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "chip-concentration",
+      "category": "chips",
+      "type": "ranking",
+      "date": "2026-07-15",
+      "time": "21:00",
+      "title": "籌碼集中度 · 分點 Top 50 排行",
+      "title_em": "集中度",
+      "summary": "5 個時段 · 每邊 Top 50 · 過濾成交量 < 1,000 張。 今日買超集中 #1：4939 亞電 +52.6%。 賣超集中 #1：4566 時碩工業 -50.2%。",
+      "tags": [
+        "籌碼",
+        "分點",
+        "集中度",
+        "排行榜"
+      ],
+      "source_pipeline": "stock_chip_crawler",
+      "url": "reports/chip-concentration.html",
+      "stats": [
+        {
+          "label": "時段數",
+          "value": "5",
+          "color": "neutral"
+        },
+        {
+          "label": "Top 買超",
+          "value": "4939 +53%",
+          "color": "up"
+        },
+        {
+          "label": "Top 賣超",
+          "value": "4566 -50%",
+          "color": "down"
+        }
+      ]
+    },
+    {
       "id": "shortage-weekly-2026-07-15",
       "category": "stocks",
       "type": "weekly",
@@ -127,6 +234,143 @@
           "label": "主題",
           "value": "ABF／高階載板",
           "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "market-pulse",
+      "category": "taiex",
+      "type": "pulse",
+      "date": "2026-07-15",
+      "time": "20:00",
+      "title": "市場脈動 · 漲跌停 × 全族群均幅",
+      "title_em": "脈動",
+      "summary": "近 59 個交易日漲跌停家數、總成交額、族群平均漲幅、漲停集中度。最新 (2026-07-15)：漲停 55、跌停 0、全族群均幅 +1.80%。",
+      "tags": [
+        "市場脈動",
+        "漲跌停",
+        "成交額"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/market-pulse.html",
+      "stats": [
+        {
+          "label": "漲停",
+          "value": "55",
+          "color": "up"
+        },
+        {
+          "label": "跌停",
+          "value": "0",
+          "color": "down"
+        },
+        {
+          "label": "成交額",
+          "value": "11,364 億",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-15-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-07-15",
+      "time": "20:00",
+      "title": "2026-07-15 族群週報",
+      "title_em": "ABF載板",
+      "summary": "涵蓋 2026-07-08 ~ 2026-07-15。週領漲 ABF載板 +23.65%，週領跌 電池模組 -11.43%；資金焦點 晶圓代工。",
+      "tags": [
+        "ABF載板",
+        "電池模組",
+        "晶圓代工",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-07-15/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "ABF載板 +23.65%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "電池模組 -11.43%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "晶圓代工",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-15-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-07-15",
+      "time": "20:00",
+      "title": "2026-07-15 每日族群輪動雷達",
+      "title_em": "面板級封裝FOPLP",
+      "summary": "今日相對升溫以 面板級封裝FOPLP 最明顯，相對降溫以 鏡頭光學 壓力最大；今日轉強力道大於轉弱力道。",
+      "tags": [
+        "面板級封裝FOPLP",
+        "鏡頭光學",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-07-15/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "面板級封裝FOPLP +8.52 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "鏡頭光學 -4.79 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-15-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-07-15",
+      "time": "20:00",
+      "title": "2026-07-15 族群盤後快報",
+      "title_em": "ABF載板",
+      "summary": "全 74 族群、成交 11363.8 億；領漲 ABF載板 +7.25%，領跌 鏡頭光學 -5.45%；漲多族群 70/74，全族群均漲 +1.80%。",
+      "tags": [
+        "ABF載板",
+        "鏡頭光學",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-07-15/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "ABF載板 +7.25%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "鏡頭光學 -5.45%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "14.3%",
+          "color": "neutral"
         }
       ]
     },
@@ -272,6 +516,20 @@
       ]
     },
     {
+      "id": "tri-source-lamp",
+      "category": "chips",
+      "title": "三源混合燈號",
+      "subtitle": "2026-07-15 · 三同買 3 / 三同賣 6",
+      "date": "2026-07-15",
+      "url": "reports/tri-source-lamp.html",
+      "tags": [
+        "分點",
+        "大股東",
+        "三大法人",
+        "燈號"
+      ]
+    },
+    {
       "id": "2026-07-14-ai-research-daily-market",
       "category": "ai-research",
       "type": "daily-market",
@@ -343,113 +601,6 @@
       ]
     },
     {
-      "id": "three-factor-ranking",
-      "category": "chips",
-      "type": "ranking",
-      "date": "2026-07-14",
-      "time": "21:10",
-      "title": "三因子波段排行榜",
-      "title_em": "外資×營收×強勢",
-      "summary": "外資連買 >= 3 日、最新月營收創高、20/60 日趨勢仍強。 本次三因子同步 9 檔。 榜首：2434 統懋，外資連買 5 日，營收 YoY +117.4%，前 20 日 +131.1%。",
-      "tags": [
-        "波段",
-        "外資連買",
-        "營收創高",
-        "強者恆強",
-        "排行榜"
-      ],
-      "source_pipeline": "stock_chip_crawler+mops_index",
-      "url": "reports/three-factor-ranking.html",
-      "stats": [
-        {
-          "label": "三因子同步",
-          "value": "9 檔",
-          "color": "up"
-        },
-        {
-          "label": "營收期別",
-          "value": "2026-06",
-          "color": "neutral"
-        },
-        {
-          "label": "榜首",
-          "value": "2434 80.6",
-          "color": "up"
-        }
-      ]
-    },
-    {
-      "id": "foreign-sell-records",
-      "category": "chips",
-      "type": "ranking",
-      "date": "2026-07-14",
-      "time": "21:05",
-      "title": "外資史上賣超紀錄 · 個股 / 大盤金額 Top 20",
-      "title_em": "賣超",
-      "summary": "外資單日淨賣超史上 Top 20，並加入大盤外資淨賣超金額 Top 20。追蹤事件後 1/3/5/10/20/30/60 日走勢。 最大紀錄：2026-05-28 3481 群創 -289,338 張。 大盤最大金額：2026-06-24 -1,955.5億。",
-      "tags": [
-        "籌碼",
-        "外資",
-        "賣超",
-        "成交額",
-        "事件追蹤"
-      ],
-      "source_pipeline": "stock_chip_crawler",
-      "url": "reports/foreign-sell-records.html?v=20260714-official",
-      "stats": [
-        {
-          "label": "個股最大",
-          "value": "3481 -289,338張",
-          "color": "down"
-        },
-        {
-          "label": "大盤金額",
-          "value": "-1,955.5億",
-          "color": "down"
-        },
-        {
-          "label": "走勢",
-          "value": "1-60日",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "chip-concentration",
-      "category": "chips",
-      "type": "ranking",
-      "date": "2026-07-14",
-      "time": "21:00",
-      "title": "籌碼集中度 · 分點 Top 50 排行",
-      "title_em": "集中度",
-      "summary": "5 個時段 · 每邊 Top 50 · 過濾成交量 < 1,000 張。 今日買超集中 #1：1907 永豐餘 +38.5%。 賣超集中 #1：0056 元大高股息 -61.5%。",
-      "tags": [
-        "籌碼",
-        "分點",
-        "集中度",
-        "排行榜"
-      ],
-      "source_pipeline": "stock_chip_crawler",
-      "url": "reports/chip-concentration.html",
-      "stats": [
-        {
-          "label": "時段數",
-          "value": "5",
-          "color": "neutral"
-        },
-        {
-          "label": "Top 買超",
-          "value": "1907 +38%",
-          "color": "up"
-        },
-        {
-          "label": "Top 賣超",
-          "value": "0056 -61%",
-          "color": "down"
-        }
-      ]
-    },
-    {
       "id": "options-atm",
       "category": "txo",
       "type": "pulse",
@@ -480,40 +631,6 @@
         {
           "label": "區間",
           "value": "758 日",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "market-pulse",
-      "category": "taiex",
-      "type": "pulse",
-      "date": "2026-07-14",
-      "time": "20:00",
-      "title": "市場脈動 · 漲跌停 × 全族群均幅",
-      "title_em": "脈動",
-      "summary": "近 58 個交易日漲跌停家數、總成交額、族群平均漲幅、漲停集中度。最新 (2026-07-14)：漲停 22、跌停 14、全族群均幅 -1.66%。",
-      "tags": [
-        "市場脈動",
-        "漲跌停",
-        "成交額"
-      ],
-      "source_pipeline": "industry_map",
-      "url": "reports/market-pulse.html",
-      "stats": [
-        {
-          "label": "漲停",
-          "value": "22",
-          "color": "up"
-        },
-        {
-          "label": "跌停",
-          "value": "14",
-          "color": "down"
-        },
-        {
-          "label": "成交額",
-          "value": "13,638 億",
           "color": "neutral"
         }
       ]
@@ -655,20 +772,6 @@
           "value": "2.1%",
           "color": "neutral"
         }
-      ]
-    },
-    {
-      "id": "tri-source-lamp",
-      "category": "chips",
-      "title": "三源混合燈號",
-      "subtitle": "2026-07-14 · 三同買 3 / 三同賣 6",
-      "date": "2026-07-14",
-      "url": "reports/tri-source-lamp.html",
-      "tags": [
-        "分點",
-        "大股東",
-        "三大法人",
-        "燈號"
       ]
     },
     {

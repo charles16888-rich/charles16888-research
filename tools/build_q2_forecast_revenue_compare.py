@@ -18,6 +18,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 import pandas as pd
+from bs4 import BeautifulSoup
 
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -64,8 +65,37 @@ def _code(value) -> str:
     return text
 
 
+def _read_html_tables(path: Path) -> list[pd.DataFrame]:
+    try:
+        return pd.read_html(path)
+    except ImportError:
+        pass
+
+    soup = BeautifulSoup(path.read_text(encoding="utf-8"), "html.parser")
+    tables: list[pd.DataFrame] = []
+    for table in soup.find_all("table"):
+        rows: list[list[str]] = []
+        for tr in table.find_all("tr"):
+            cells = [cell.get_text(" ", strip=True) for cell in tr.find_all(["th", "td"])]
+            if cells:
+                rows.append(cells)
+        if not rows:
+            continue
+        header = rows[0]
+        body = rows[1:]
+        normalized_rows: list[list[str]] = []
+        for row in body:
+            if len(row) < len(header):
+                row = row + [""] * (len(header) - len(row))
+            elif len(row) > len(header):
+                row = row[: len(header)]
+            normalized_rows.append(row)
+        tables.append(pd.DataFrame(normalized_rows, columns=header))
+    return tables
+
+
 def load_forecast_table(path: Path = FORECAST_REPORT) -> pd.DataFrame:
-    tables = pd.read_html(path)
+    tables = _read_html_tables(path)
     if not tables:
         raise RuntimeError(f"no tables found in {path}")
     required = {"代號", "公司", "樣本", "營收 NT$百萬", "信心"}
