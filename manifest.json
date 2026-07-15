@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-15T16:16:42+08:00",
+  "updated_at": "2026-07-15T21:55:12+08:00",
   "today": "2026-07-15",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,42 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-07-15-ai-research-daily-market",
+      "category": "ai-research",
+      "type": "daily-market",
+      "date": "2026-07-15",
+      "time": "21:40",
+      "title": "早盤期貨先回測，10:00 後期現與櫃買同步走高",
+      "title_em": "10:00 後同步走高",
+      "summary": "期貨首五分鐘先回落，現貨首根仍收高；09:27 期貨與加權率先突破，至 10:00 櫃買跟上，收盤廣度顯示多數股票參與。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤後分析"
+      ],
+      "source_pipeline": "market_structure_analysis",
+      "url": "reports/2026-07-15/ai-research-daily-market.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "+2.000%",
+          "color": "up"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "+2.209%",
+          "color": "up"
+        },
+        {
+          "label": "跨市場價格同步",
+          "value": "10:00",
+          "color": "up"
+        }
+      ]
+    },
     {
       "id": "q2-forecast-2026q2",
       "category": "research",
