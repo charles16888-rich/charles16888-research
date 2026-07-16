@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-16T01:40:08+08:00",
+  "updated_at": "2026-07-16T12:02:32+08:00",
   "today": "2026-07-15",
   "volume_number": 1,
   "market_summary": {
@@ -238,6 +238,41 @@
       ]
     },
     {
+      "id": "options-atm",
+      "category": "txo",
+      "type": "pulse",
+      "date": "2026-07-15",
+      "time": "20:00",
+      "title": "選擇權價平和 · 隱含波動代理",
+      "title_em": "價平和",
+      "summary": "近 759 個交易日（2023-05-30 → 2026-07-15）TXO ATM Call+Put 加總。最新 (2026-07-15)：近期 1105 點（到期 202607F3）、次遠期 1695 點。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "價平和",
+        "隱波"
+      ],
+      "source_pipeline": "taifex + twse",
+      "url": "reports/options-atm.html",
+      "stats": [
+        {
+          "label": "近期 C+P",
+          "value": "1105",
+          "color": "neutral"
+        },
+        {
+          "label": "次遠期 C+P",
+          "value": "1695",
+          "color": "neutral"
+        },
+        {
+          "label": "區間",
+          "value": "759 日",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "market-pulse",
       "category": "taiex",
       "type": "pulse",
@@ -267,6 +302,42 @@
         {
           "label": "成交額",
           "value": "11,364 億",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "futures-basis",
+      "category": "taiex",
+      "type": "pulse",
+      "date": "2026-07-15",
+      "time": "20:00",
+      "title": "期貨正逆價差 · 12 年期現對照",
+      "title_em": "12 年",
+      "summary": "近 3019 個交易日（2014-02-14 → 2026-07-15）台指期 TXF1 vs 加權指數價差。最新 (2026-07-15)：基差 +198.4 點，加權收 45,632。",
+      "tags": [
+        "期貨",
+        "基差",
+        "正逆價差",
+        "TX",
+        "12 年"
+      ],
+      "source_pipeline": "yuanta + yfinance",
+      "url": "reports/futures-basis.html",
+      "stats": [
+        {
+          "label": "最新基差",
+          "value": "+198.4",
+          "color": "up"
+        },
+        {
+          "label": "加權",
+          "value": "45,632",
+          "color": "neutral"
+        },
+        {
+          "label": "區間",
+          "value": "3019 日",
           "color": "neutral"
         }
       ]
@@ -596,77 +667,6 @@
         {
           "label": "最高收盤",
           "value": "3,725",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "options-atm",
-      "category": "txo",
-      "type": "pulse",
-      "date": "2026-07-14",
-      "time": "20:00",
-      "title": "選擇權價平和 · 隱含波動代理",
-      "title_em": "價平和",
-      "summary": "近 758 個交易日（2023-05-30 → 2026-07-14）TXO ATM Call+Put 加總。最新 (2026-07-14)：近期 706 點（到期 202607）、次遠期 1365 點。",
-      "tags": [
-        "選擇權",
-        "TXO",
-        "價平和",
-        "隱波"
-      ],
-      "source_pipeline": "taifex + twse",
-      "url": "reports/options-atm.html",
-      "stats": [
-        {
-          "label": "近期 C+P",
-          "value": "706",
-          "color": "neutral"
-        },
-        {
-          "label": "次遠期 C+P",
-          "value": "1365",
-          "color": "neutral"
-        },
-        {
-          "label": "區間",
-          "value": "758 日",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "futures-basis",
-      "category": "taiex",
-      "type": "pulse",
-      "date": "2026-07-14",
-      "time": "20:00",
-      "title": "期貨正逆價差 · 12 年期現對照",
-      "title_em": "12 年",
-      "summary": "近 3018 個交易日（2014-02-14 → 2026-07-14）台指期 TXF1 vs 加權指數價差。最新 (2026-07-14)：基差 +77.0 點，加權收 44,738。",
-      "tags": [
-        "期貨",
-        "基差",
-        "正逆價差",
-        "TX",
-        "12 年"
-      ],
-      "source_pipeline": "yuanta + yfinance",
-      "url": "reports/futures-basis.html",
-      "stats": [
-        {
-          "label": "最新基差",
-          "value": "+77.0",
-          "color": "up"
-        },
-        {
-          "label": "加權",
-          "value": "44,738",
-          "color": "neutral"
-        },
-        {
-          "label": "區間",
-          "value": "3018 日",
           "color": "neutral"
         }
       ]
