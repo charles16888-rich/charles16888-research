@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-16T23:15:08+08:00",
-  "today": "2026-07-16",
+  "updated_at": "2026-07-17T12:38:15+08:00",
+  "today": "2026-07-17",
   "volume_number": 1,
   "market_summary": {
     "date": "2026-05-22",
@@ -21,6 +21,150 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "q2-forecast-2026q2",
+      "category": "research",
+      "type": "forecast",
+      "date": "2026-07-17",
+      "time": "21:30",
+      "title": "2026 Q2 財測匿名彙總",
+      "title_em": "財測匿名",
+      "summary": "2026-03-24 至 2026-07-17 台股研究報告匿名財測彙總，共 564 檔公司；高/中信心 495 檔。公開版不含研究機構、檔名、原文或報告引用。",
+      "tags": [
+        "研報統計",
+        "財測",
+        "OCR",
+        "匿名彙總",
+        "2026Q2"
+      ],
+      "source_pipeline": "research_reports_ocr_anonymous_forecast",
+      "url": "reports/q2-forecast-2026q2.html",
+      "stats": [
+        {
+          "label": "公司數",
+          "value": "564",
+          "color": "neutral"
+        },
+        {
+          "label": "營收覆蓋",
+          "value": "490",
+          "color": "up"
+        },
+        {
+          "label": "三率完整",
+          "value": "436",
+          "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "shortage-weekly-2026-07-17",
+      "category": "stocks",
+      "type": "weekly",
+      "date": "2026-07-17",
+      "time": "20:30",
+      "title": "2026-07-17 缺貨偵探近四週週報",
+      "title_em": "ABF／高階載板",
+      "summary": "最新一週較明確的新事件集中在 ABF／高階載板；其餘週別保留供需訊號供回溯。",
+      "tags": [
+        "ABF／高階載板",
+        "LPDDR／SOCAMM",
+        "MCU",
+        "MLCC／被動元件",
+        "缺貨偵探",
+        "週報"
+      ],
+      "source_pipeline": "shortage_detective",
+      "url": "reports/shortage/2026-07-17/weekly.html",
+      "stats": [
+        {
+          "label": "事件數",
+          "value": "1",
+          "color": "neutral"
+        },
+        {
+          "label": "訊號數",
+          "value": "47",
+          "color": "neutral"
+        },
+        {
+          "label": "主題",
+          "value": "ABF／高階載板",
+          "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "mops-revenue-forecast-watch-20260717",
+      "category": "research",
+      "type": "mops_watch",
+      "date": "2026-07-17",
+      "time": "19:30",
+      "title": "2026-07-17 MOPS 營收公告追蹤",
+      "title_em": "MOPS 追蹤",
+      "summary": "公開 MOPS 營收相關重大訊息 0 筆；其中 0 筆出現在匿名財測名單，0 筆明確揭露 6 月營收。僅做追蹤與統計，不構成投資建議。",
+      "tags": [
+        "MOPS",
+        "重大訊息",
+        "營收公告",
+        "財測追蹤",
+        "2026Q2"
+      ],
+      "source_pipeline": "mops_revenue_forecast_watch",
+      "url": "reports/q2-forecast-2026q2.html#q2-mops-events",
+      "stats": [
+        {
+          "label": "公告",
+          "value": "0",
+          "color": "neutral"
+        },
+        {
+          "label": "財測名單",
+          "value": "0",
+          "color": "gold"
+        },
+        {
+          "label": "6月營收",
+          "value": "0",
+          "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "high-price-watch",
+      "category": "stocks",
+      "type": "high_price_watch",
+      "date": "2026-07-16",
+      "time": "21:40",
+      "title": "高價股觀測 · 排名熱圖",
+      "title_em": "排名熱圖",
+      "summary": "高價股追蹤 40 檔，新進 23 檔、淡出 23 檔；榜首 7610 聯友金屬-創 收盤 2,600。",
+      "tags": [
+        "個股",
+        "高價股",
+        "排名熱圖",
+        "Telegram第四頁"
+      ],
+      "source_pipeline": "lynus_chip_history_high_price_watch",
+      "url": "reports/high-price-watch.html",
+      "stats": [
+        {
+          "label": "最新樣本",
+          "value": "40 檔",
+          "color": "neutral"
+        },
+        {
+          "label": "新進",
+          "value": "23 檔",
+          "color": "up"
+        },
+        {
+          "label": "最高收盤",
+          "value": "2,600",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "three-factor-ranking",
       "category": "chips",
@@ -234,6 +378,20 @@
       ]
     },
     {
+      "id": "tri-source-lamp",
+      "category": "chips",
+      "title": "三源混合燈號",
+      "subtitle": "2026-07-16 · 三同買 3 / 三同賣 10",
+      "date": "2026-07-16",
+      "url": "reports/tri-source-lamp.html",
+      "tags": [
+        "分點",
+        "大股東",
+        "三大法人",
+        "燈號"
+      ]
+    },
+    {
       "id": "2026-07-15-ai-research-daily-market",
       "category": "ai-research",
       "type": "daily-market",
@@ -266,79 +424,6 @@
         {
           "label": "跨市場價格同步",
           "value": "10:00",
-          "color": "up"
-        }
-      ]
-    },
-    {
-      "id": "q2-forecast-2026q2",
-      "category": "research",
-      "type": "forecast",
-      "date": "2026-07-15",
-      "time": "21:30",
-      "title": "2026 Q2 財測匿名彙總",
-      "title_em": "財測匿名",
-      "summary": "2026-03-24 至 2026-07-15 台股研究報告匿名財測彙總，共 564 檔公司；高/中信心 495 檔。公開版不含研究機構、檔名、原文或報告引用。",
-      "tags": [
-        "研報統計",
-        "財測",
-        "OCR",
-        "匿名彙總",
-        "2026Q2"
-      ],
-      "source_pipeline": "research_reports_ocr_anonymous_forecast",
-      "url": "reports/q2-forecast-2026q2.html",
-      "stats": [
-        {
-          "label": "公司數",
-          "value": "564",
-          "color": "neutral"
-        },
-        {
-          "label": "營收覆蓋",
-          "value": "490",
-          "color": "up"
-        },
-        {
-          "label": "三率完整",
-          "value": "436",
-          "color": "up"
-        }
-      ]
-    },
-    {
-      "id": "shortage-weekly-2026-07-15",
-      "category": "stocks",
-      "type": "weekly",
-      "date": "2026-07-15",
-      "time": "20:30",
-      "title": "2026-07-15 缺貨偵探近四週週報",
-      "title_em": "ABF／高階載板",
-      "summary": "最新一週較明確的新事件集中在 ABF／高階載板、HBM／先進記憶體、MLCC／被動元件；其餘週別保留供需訊號供回溯。",
-      "tags": [
-        "ABF／高階載板",
-        "HBM／先進記憶體",
-        "MCU",
-        "MLCC／被動元件",
-        "缺貨偵探",
-        "週報"
-      ],
-      "source_pipeline": "shortage_detective",
-      "url": "reports/shortage/2026-07-15/weekly.html",
-      "stats": [
-        {
-          "label": "事件數",
-          "value": "4",
-          "color": "neutral"
-        },
-        {
-          "label": "訊號數",
-          "value": "65",
-          "color": "neutral"
-        },
-        {
-          "label": "主題",
-          "value": "ABF／高階載板",
           "color": "up"
         }
       ]
@@ -443,42 +528,6 @@
           "label": "漲停集中",
           "value": "14.3%",
           "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "mops-revenue-forecast-watch-20260715",
-      "category": "research",
-      "type": "mops_watch",
-      "date": "2026-07-15",
-      "time": "19:30",
-      "title": "2026-07-15 MOPS 營收公告追蹤",
-      "title_em": "MOPS 追蹤",
-      "summary": "公開 MOPS 營收相關重大訊息 4 筆；其中 2 筆出現在匿名財測名單，1 筆明確揭露 6 月營收。僅做追蹤與統計，不構成投資建議。",
-      "tags": [
-        "MOPS",
-        "重大訊息",
-        "營收公告",
-        "財測追蹤",
-        "2026Q2"
-      ],
-      "source_pipeline": "mops_revenue_forecast_watch",
-      "url": "reports/q2-forecast-2026q2.html#q2-mops-events",
-      "stats": [
-        {
-          "label": "公告",
-          "value": "4",
-          "color": "neutral"
-        },
-        {
-          "label": "財測名單",
-          "value": "2",
-          "color": "gold"
-        },
-        {
-          "label": "6月營收",
-          "value": "1",
-          "color": "up"
         }
       ]
     },
@@ -588,20 +637,6 @@
       ]
     },
     {
-      "id": "tri-source-lamp",
-      "category": "chips",
-      "title": "三源混合燈號",
-      "subtitle": "2026-07-15 · 三同買 3 / 三同賣 6",
-      "date": "2026-07-15",
-      "url": "reports/tri-source-lamp.html",
-      "tags": [
-        "分點",
-        "大股東",
-        "三大法人",
-        "燈號"
-      ]
-    },
-    {
       "id": "2026-07-14-ai-research-daily-market",
       "category": "ai-research",
       "type": "daily-market",
@@ -634,41 +669,6 @@
           "label": "TXF 首次確認",
           "value": "09:15",
           "color": "down"
-        }
-      ]
-    },
-    {
-      "id": "high-price-watch",
-      "category": "stocks",
-      "type": "high_price_watch",
-      "date": "2026-07-14",
-      "time": "21:40",
-      "title": "高價股觀測 · 排名熱圖",
-      "title_em": "排名熱圖",
-      "summary": "高價股追蹤 40 檔，新進 32 檔、淡出 32 檔；榜首 3661 世芯-KY 收盤 3,725。",
-      "tags": [
-        "個股",
-        "高價股",
-        "排名熱圖",
-        "Telegram第四頁"
-      ],
-      "source_pipeline": "lynus_chip_history_high_price_watch",
-      "url": "reports/high-price-watch.html",
-      "stats": [
-        {
-          "label": "最新樣本",
-          "value": "40 檔",
-          "color": "neutral"
-        },
-        {
-          "label": "新進",
-          "value": "32 檔",
-          "color": "up"
-        },
-        {
-          "label": "最高收盤",
-          "value": "3,725",
-          "color": "neutral"
         }
       ]
     },
