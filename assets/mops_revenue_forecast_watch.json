@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-17T15:52:23.693188+08:00",
-  "event_date": "2026-07-17",
+  "generated_at": "2026-07-18T00:16:52.127076+08:00",
+  "event_date": "2026-07-18",
   "quarter": "2026Q2",
   "forecast_generated_at": "2026-07-16T01:44:34.439934+08:00",
   "forecast_latest_mops_period": "2026-06",
@@ -11,38 +11,12 @@
   },
   "note": "僅追蹤公開 MOPS 營收公告與匿名財測名單是否交集，不公開研究機構來源，不構成投資建議。",
   "stats": {
-    "event_count": 1,
+    "event_count": 0,
     "matched_forecast_count": 0,
     "explicit_june_revenue_count": 0,
     "comparable_count": 0,
     "watch_count": 0,
     "no_forecast_count": 0
   },
-  "rows": [
-    {
-      "event_id": "mops_8039_1150717_1538_1",
-      "code": "8039",
-      "name": "台虹",
-      "publish_time": "2026-07-17 15:38:00",
-      "category": "營收公告",
-      "summary": "係因本公司有價證券於集中交易市場達公布注意交易資訊 標準，故公布相關財務業務等重大訊息，以利投資人區別瞭解。",
-      "explicit_june_revenue": false,
-      "june_revenue_m": null,
-      "matched_forecast_list": false,
-      "forecast_name": null,
-      "sample_count": null,
-      "confidence": null,
-      "forecast_revenue_m": null,
-      "prior_q2_revenue_m": null,
-      "partial_q2_revenue_m": null,
-      "prior_missing_months": [
-        "2026-04",
-        "2026-05"
-      ],
-      "surprise_m": null,
-      "surprise_pct": null,
-      "status": "not_in_forecast",
-      "status_label": "未在財測名單"
-    }
-  ]
+  "rows": []
 }
