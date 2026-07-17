@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-16T12:02:32+08:00",
-  "today": "2026-07-15",
+  "updated_at": "2026-07-17T12:38:15+08:00",
+  "today": "2026-07-17",
   "volume_number": 1,
   "market_summary": {
     "date": "2026-05-22",
@@ -22,50 +22,14 @@
   },
   "entries": [
     {
-      "id": "2026-07-15-ai-research-daily-market",
-      "category": "ai-research",
-      "type": "daily-market",
-      "date": "2026-07-15",
-      "time": "21:40",
-      "title": "早盤期貨先回測，10:00 後期現與櫃買同步走高",
-      "title_em": "10:00 後同步走高",
-      "summary": "期貨首五分鐘先回落，現貨首根仍收高；09:27 期貨與加權率先突破，至 10:00 櫃買跟上，收盤廣度顯示多數股票參與。",
-      "tags": [
-        "台股",
-        "台指期",
-        "加權指數",
-        "櫃買指數",
-        "盤後分析"
-      ],
-      "source_pipeline": "market_structure_analysis",
-      "url": "reports/2026-07-15/ai-research-daily-market.html",
-      "stats": [
-        {
-          "label": "加權指數",
-          "value": "+2.000%",
-          "color": "up"
-        },
-        {
-          "label": "櫃買指數",
-          "value": "+2.209%",
-          "color": "up"
-        },
-        {
-          "label": "跨市場價格同步",
-          "value": "10:00",
-          "color": "up"
-        }
-      ]
-    },
-    {
       "id": "q2-forecast-2026q2",
       "category": "research",
       "type": "forecast",
-      "date": "2026-07-15",
+      "date": "2026-07-17",
       "time": "21:30",
       "title": "2026 Q2 財測匿名彙總",
       "title_em": "財測匿名",
-      "summary": "2026-03-24 至 2026-07-15 台股研究報告匿名財測彙總，共 564 檔公司；高/中信心 495 檔。公開版不含研究機構、檔名、原文或報告引用。",
+      "summary": "2026-03-24 至 2026-07-17 台股研究報告匿名財測彙總，共 564 檔公司；高/中信心 495 檔。公開版不含研究機構、檔名、原文或報告引用。",
       "tags": [
         "研報統計",
         "財測",
@@ -94,14 +58,122 @@
       ]
     },
     {
+      "id": "shortage-weekly-2026-07-17",
+      "category": "stocks",
+      "type": "weekly",
+      "date": "2026-07-17",
+      "time": "20:30",
+      "title": "2026-07-17 缺貨偵探近四週週報",
+      "title_em": "ABF／高階載板",
+      "summary": "最新一週較明確的新事件集中在 ABF／高階載板；其餘週別保留供需訊號供回溯。",
+      "tags": [
+        "ABF／高階載板",
+        "LPDDR／SOCAMM",
+        "MCU",
+        "MLCC／被動元件",
+        "缺貨偵探",
+        "週報"
+      ],
+      "source_pipeline": "shortage_detective",
+      "url": "reports/shortage/2026-07-17/weekly.html",
+      "stats": [
+        {
+          "label": "事件數",
+          "value": "1",
+          "color": "neutral"
+        },
+        {
+          "label": "訊號數",
+          "value": "47",
+          "color": "neutral"
+        },
+        {
+          "label": "主題",
+          "value": "ABF／高階載板",
+          "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "mops-revenue-forecast-watch-20260717",
+      "category": "research",
+      "type": "mops_watch",
+      "date": "2026-07-17",
+      "time": "19:30",
+      "title": "2026-07-17 MOPS 營收公告追蹤",
+      "title_em": "MOPS 追蹤",
+      "summary": "公開 MOPS 營收相關重大訊息 0 筆；其中 0 筆出現在匿名財測名單，0 筆明確揭露 6 月營收。僅做追蹤與統計，不構成投資建議。",
+      "tags": [
+        "MOPS",
+        "重大訊息",
+        "營收公告",
+        "財測追蹤",
+        "2026Q2"
+      ],
+      "source_pipeline": "mops_revenue_forecast_watch",
+      "url": "reports/q2-forecast-2026q2.html#q2-mops-events",
+      "stats": [
+        {
+          "label": "公告",
+          "value": "0",
+          "color": "neutral"
+        },
+        {
+          "label": "財測名單",
+          "value": "0",
+          "color": "gold"
+        },
+        {
+          "label": "6月營收",
+          "value": "0",
+          "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "high-price-watch",
+      "category": "stocks",
+      "type": "high_price_watch",
+      "date": "2026-07-16",
+      "time": "21:40",
+      "title": "高價股觀測 · 排名熱圖",
+      "title_em": "排名熱圖",
+      "summary": "高價股追蹤 40 檔，新進 23 檔、淡出 23 檔；榜首 7610 聯友金屬-創 收盤 2,600。",
+      "tags": [
+        "個股",
+        "高價股",
+        "排名熱圖",
+        "Telegram第四頁"
+      ],
+      "source_pipeline": "lynus_chip_history_high_price_watch",
+      "url": "reports/high-price-watch.html",
+      "stats": [
+        {
+          "label": "最新樣本",
+          "value": "40 檔",
+          "color": "neutral"
+        },
+        {
+          "label": "新進",
+          "value": "23 檔",
+          "color": "up"
+        },
+        {
+          "label": "最高收盤",
+          "value": "2,600",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "three-factor-ranking",
       "category": "chips",
       "type": "ranking",
-      "date": "2026-07-15",
+      "date": "2026-07-16",
       "time": "21:10",
       "title": "三因子波段排行榜",
       "title_em": "外資×營收×強勢",
-      "summary": "外資連買 >= 3 日、最新月營收創高、20/60 日趨勢仍強。 本次三因子同步 13 檔。 榜首：6505 台塑化，外資連買 9 日，營收 YoY +18.5%，前 20 日 +36.6%。",
+      "summary": "外資連買 >= 3 日、最新月營收創高、20/60 日趨勢仍強。 本次三因子同步 15 檔。 榜首：6505 台塑化，外資連買 10 日，營收 YoY +18.5%，前 20 日 +51.8%。",
       "tags": [
         "波段",
         "外資連買",
@@ -114,7 +186,7 @@
       "stats": [
         {
           "label": "三因子同步",
-          "value": "13 檔",
+          "value": "15 檔",
           "color": "up"
         },
         {
@@ -124,7 +196,7 @@
         },
         {
           "label": "榜首",
-          "value": "6505 82.4",
+          "value": "6505 86.1",
           "color": "up"
         }
       ]
@@ -133,7 +205,7 @@
       "id": "foreign-sell-records",
       "category": "chips",
       "type": "ranking",
-      "date": "2026-07-15",
+      "date": "2026-07-16",
       "time": "21:05",
       "title": "外資史上賣超紀錄 · 個股 / 大盤金額 Top 20",
       "title_em": "賣超",
@@ -146,7 +218,7 @@
         "事件追蹤"
       ],
       "source_pipeline": "stock_chip_crawler",
-      "url": "reports/foreign-sell-records.html?v=20260715-official",
+      "url": "reports/foreign-sell-records.html?v=20260716-official",
       "stats": [
         {
           "label": "個股最大",
@@ -169,11 +241,11 @@
       "id": "chip-concentration",
       "category": "chips",
       "type": "ranking",
-      "date": "2026-07-15",
+      "date": "2026-07-16",
       "time": "21:00",
       "title": "籌碼集中度 · 分點 Top 50 排行",
       "title_em": "集中度",
-      "summary": "5 個時段 · 每邊 Top 50 · 過濾成交量 < 1,000 張。 今日買超集中 #1：4939 亞電 +52.6%。 賣超集中 #1：4566 時碩工業 -50.2%。",
+      "summary": "5 個時段 · 每邊 Top 50 · 過濾成交量 < 1,000 張。 今日買超集中 #1：2014 中鴻 +54.2%。 賣超集中 #1：5469 瀚宇博 -50.7%。",
       "tags": [
         "籌碼",
         "分點",
@@ -190,50 +262,13 @@
         },
         {
           "label": "Top 買超",
-          "value": "4939 +53%",
+          "value": "2014 +54%",
           "color": "up"
         },
         {
           "label": "Top 賣超",
-          "value": "4566 -50%",
+          "value": "5469 -51%",
           "color": "down"
-        }
-      ]
-    },
-    {
-      "id": "shortage-weekly-2026-07-15",
-      "category": "stocks",
-      "type": "weekly",
-      "date": "2026-07-15",
-      "time": "20:30",
-      "title": "2026-07-15 缺貨偵探近四週週報",
-      "title_em": "ABF／高階載板",
-      "summary": "最新一週較明確的新事件集中在 ABF／高階載板、HBM／先進記憶體、MLCC／被動元件；其餘週別保留供需訊號供回溯。",
-      "tags": [
-        "ABF／高階載板",
-        "HBM／先進記憶體",
-        "MCU",
-        "MLCC／被動元件",
-        "缺貨偵探",
-        "週報"
-      ],
-      "source_pipeline": "shortage_detective",
-      "url": "reports/shortage/2026-07-15/weekly.html",
-      "stats": [
-        {
-          "label": "事件數",
-          "value": "4",
-          "color": "neutral"
-        },
-        {
-          "label": "訊號數",
-          "value": "65",
-          "color": "neutral"
-        },
-        {
-          "label": "主題",
-          "value": "ABF／高階載板",
-          "color": "up"
         }
       ]
     },
@@ -241,11 +276,11 @@
       "id": "options-atm",
       "category": "txo",
       "type": "pulse",
-      "date": "2026-07-15",
+      "date": "2026-07-16",
       "time": "20:00",
       "title": "選擇權價平和 · 隱含波動代理",
       "title_em": "價平和",
-      "summary": "近 759 個交易日（2023-05-30 → 2026-07-15）TXO ATM Call+Put 加總。最新 (2026-07-15)：近期 1105 點（到期 202607F3）、次遠期 1695 點。",
+      "summary": "近 760 個交易日（2023-05-30 → 2026-07-16）TXO ATM Call+Put 加總。最新 (2026-07-16)：近期 915 點（到期 202607F3）、次遠期 1535 點。",
       "tags": [
         "選擇權",
         "TXO",
@@ -257,17 +292,17 @@
       "stats": [
         {
           "label": "近期 C+P",
-          "value": "1105",
+          "value": "915",
           "color": "neutral"
         },
         {
           "label": "次遠期 C+P",
-          "value": "1695",
+          "value": "1535",
           "color": "neutral"
         },
         {
           "label": "區間",
-          "value": "759 日",
+          "value": "760 日",
           "color": "neutral"
         }
       ]
@@ -276,11 +311,11 @@
       "id": "market-pulse",
       "category": "taiex",
       "type": "pulse",
-      "date": "2026-07-15",
+      "date": "2026-07-16",
       "time": "20:00",
       "title": "市場脈動 · 漲跌停 × 全族群均幅",
       "title_em": "脈動",
-      "summary": "近 59 個交易日漲跌停家數、總成交額、族群平均漲幅、漲停集中度。最新 (2026-07-15)：漲停 55、跌停 0、全族群均幅 +1.80%。",
+      "summary": "近 60 個交易日漲跌停家數、總成交額、族群平均漲幅、漲停集中度。最新 (2026-07-16)：漲停 29、跌停 12、全族群均幅 -0.66%。",
       "tags": [
         "市場脈動",
         "漲跌停",
@@ -291,17 +326,17 @@
       "stats": [
         {
           "label": "漲停",
-          "value": "55",
+          "value": "29",
           "color": "up"
         },
         {
           "label": "跌停",
-          "value": "0",
+          "value": "12",
           "color": "down"
         },
         {
           "label": "成交額",
-          "value": "11,364 億",
+          "value": "10,585 億",
           "color": "neutral"
         }
       ]
@@ -310,11 +345,11 @@
       "id": "futures-basis",
       "category": "taiex",
       "type": "pulse",
-      "date": "2026-07-15",
+      "date": "2026-07-16",
       "time": "20:00",
       "title": "期貨正逆價差 · 12 年期現對照",
       "title_em": "12 年",
-      "summary": "近 3019 個交易日（2014-02-14 → 2026-07-15）台指期 TXF1 vs 加權指數價差。最新 (2026-07-15)：基差 +198.4 點，加權收 45,632。",
+      "summary": "近 3020 個交易日（2014-02-14 → 2026-07-16）台指期 TXF1 vs 加權指數價差。最新 (2026-07-16)：基差 +75.0 點，加權收 45,625。",
       "tags": [
         "期貨",
         "基差",
@@ -327,18 +362,69 @@
       "stats": [
         {
           "label": "最新基差",
-          "value": "+198.4",
+          "value": "+75.0",
           "color": "up"
         },
         {
           "label": "加權",
-          "value": "45,632",
+          "value": "45,625",
           "color": "neutral"
         },
         {
           "label": "區間",
-          "value": "3019 日",
+          "value": "3020 日",
           "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "tri-source-lamp",
+      "category": "chips",
+      "title": "三源混合燈號",
+      "subtitle": "2026-07-16 · 三同買 3 / 三同賣 10",
+      "date": "2026-07-16",
+      "url": "reports/tri-source-lamp.html",
+      "tags": [
+        "分點",
+        "大股東",
+        "三大法人",
+        "燈號"
+      ]
+    },
+    {
+      "id": "2026-07-15-ai-research-daily-market",
+      "category": "ai-research",
+      "type": "daily-market",
+      "date": "2026-07-15",
+      "time": "22:53",
+      "title": "大小台帶量突破後反覆測試，10:00 才完成期現同步",
+      "title_em": "10:00 才完成期現同步",
+      "summary": "大小台 09:27 以約三倍短期均量突破，09:33 跌回首 K 但未失 VWAP；經反覆成本線測試後，10:00 才由期現與櫃買完成價格同步。",
+      "tags": [
+        "台股",
+        "台指期",
+        "小台",
+        "VWAP",
+        "期現同步",
+        "盤後分析"
+      ],
+      "source_pipeline": "market_structure_analysis",
+      "url": "reports/2026-07-15/ai-research-daily-market.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "+2.000%",
+          "color": "up"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "+2.209%",
+          "color": "up"
+        },
+        {
+          "label": "跨市場價格同步",
+          "value": "10:00",
+          "color": "up"
         }
       ]
     },
@@ -442,42 +528,6 @@
           "label": "漲停集中",
           "value": "14.3%",
           "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "mops-revenue-forecast-watch-20260715",
-      "category": "research",
-      "type": "mops_watch",
-      "date": "2026-07-15",
-      "time": "19:30",
-      "title": "2026-07-15 MOPS 營收公告追蹤",
-      "title_em": "MOPS 追蹤",
-      "summary": "公開 MOPS 營收相關重大訊息 4 筆；其中 2 筆出現在匿名財測名單，1 筆明確揭露 6 月營收。僅做追蹤與統計，不構成投資建議。",
-      "tags": [
-        "MOPS",
-        "重大訊息",
-        "營收公告",
-        "財測追蹤",
-        "2026Q2"
-      ],
-      "source_pipeline": "mops_revenue_forecast_watch",
-      "url": "reports/q2-forecast-2026q2.html#q2-mops-events",
-      "stats": [
-        {
-          "label": "公告",
-          "value": "4",
-          "color": "neutral"
-        },
-        {
-          "label": "財測名單",
-          "value": "2",
-          "color": "gold"
-        },
-        {
-          "label": "6月營收",
-          "value": "1",
-          "color": "up"
         }
       ]
     },
@@ -587,20 +637,6 @@
       ]
     },
     {
-      "id": "tri-source-lamp",
-      "category": "chips",
-      "title": "三源混合燈號",
-      "subtitle": "2026-07-15 · 三同買 3 / 三同賣 6",
-      "date": "2026-07-15",
-      "url": "reports/tri-source-lamp.html",
-      "tags": [
-        "分點",
-        "大股東",
-        "三大法人",
-        "燈號"
-      ]
-    },
-    {
       "id": "2026-07-14-ai-research-daily-market",
       "category": "ai-research",
       "type": "daily-market",
@@ -633,41 +669,6 @@
           "label": "TXF 首次確認",
           "value": "09:15",
           "color": "down"
-        }
-      ]
-    },
-    {
-      "id": "high-price-watch",
-      "category": "stocks",
-      "type": "high_price_watch",
-      "date": "2026-07-14",
-      "time": "21:40",
-      "title": "高價股觀測 · 排名熱圖",
-      "title_em": "排名熱圖",
-      "summary": "高價股追蹤 40 檔，新進 32 檔、淡出 32 檔；榜首 3661 世芯-KY 收盤 3,725。",
-      "tags": [
-        "個股",
-        "高價股",
-        "排名熱圖",
-        "Telegram第四頁"
-      ],
-      "source_pipeline": "lynus_chip_history_high_price_watch",
-      "url": "reports/high-price-watch.html",
-      "stats": [
-        {
-          "label": "最新樣本",
-          "value": "40 檔",
-          "color": "neutral"
-        },
-        {
-          "label": "新進",
-          "value": "32 檔",
-          "color": "up"
-        },
-        {
-          "label": "最高收盤",
-          "value": "3,725",
-          "color": "neutral"
         }
       ]
     },
