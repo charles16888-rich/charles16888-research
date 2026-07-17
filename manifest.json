@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-17T15:52:29+08:00",
+  "updated_at": "2026-07-17T21:50:24+08:00",
   "today": "2026-07-17",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,42 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-07-17-ai-research-daily-market",
+      "category": "ai-research",
+      "type": "daily-market",
+      "date": "2026-07-17",
+      "time": "21:40",
+      "title": "現貨 09:06 先破首根低點，台指期 09:34 補跌，三市收盤皆近低",
+      "title_em": "三市收盤皆近低",
+      "summary": "加權與櫃買 09:10 先以五分鐘收盤確認破低，台指期慢 25 分鐘才跟上；11:30 仍未收回首根收盤，收盤廣度與法人都偏弱。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤中結構"
+      ],
+      "source_pipeline": "market_structure_analysis",
+      "url": "reports/2026-07-17/ai-research-daily-market.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "-6.474%",
+          "color": "down"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "-7.019%",
+          "color": "down"
+        },
+        {
+          "label": "現貨領先破低",
+          "value": "25 分鐘",
+          "color": "down"
+        }
+      ]
+    },
     {
       "id": "q2-forecast-2026q2",
       "category": "research",
