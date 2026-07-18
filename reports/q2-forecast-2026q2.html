@@ -789,7 +789,157 @@
     </tbody>
   </table>
 </div>
-<p class="q2-note">產生時間：2026-07-18T00:16:45+08:00。表格金額統一換算為新台幣百萬元；三率優先採報告比率，否則由已抽取金額計算，抓不到或不一致則留白。</p>
+<p class="q2-note">產生時間：2026-07-18T13:16:17+08:00。表格金額統一換算為新台幣百萬元；三率優先採報告比率，否則由已抽取金額計算，抓不到或不一致則留白。</p>
+<script>
+  (() => {
+    const DATA_URL = '../assets/q2_forecast_revenue_compare.json';
+    const state = { payload: null, status: 'all' };
+    const note = document.getElementById('q2-mops-note');
+    const stats = document.getElementById('q2-mops-stats');
+    const body = document.getElementById('q2-mops-body');
+    const tabs = document.getElementById('q2-mops-tabs');
+    const source = document.getElementById('q2-mops-source');
+    if (!note || !stats || !body || !tabs) return;
+
+    const statusLabels = {
+      all: '全部',
+      above: '高於預期',
+      below: '低於預期',
+      inline: '符合預期',
+      incomplete: '尚未完整',
+      no_forecast: '無營收財測',
+    };
+    const numberFmt = new Intl.NumberFormat('zh-TW', { maximumFractionDigits: 1 });
+    const intFmt = new Intl.NumberFormat('zh-TW', { maximumFractionDigits: 0 });
+    const dash = '<span class="muted">—</span>';
+    const escapeHtml = (value) => String(value ?? '').replace(/[&<>"']/g, (ch) => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
+    }[ch]));
+    const isNumber = (value) => value !== null && value !== undefined && value !== '' && Number.isFinite(Number(value));
+    const toneClass = (value) => {
+      if (!isNumber(value) || Number(value) === 0) return '';
+      return Number(value) > 0 ? 'num-pos' : 'num-neg';
+    };
+    const fmtYi = (value) => isNumber(value) ? numberFmt.format(Number(value) / 100) : dash;
+    const fmtSignedYi = (value) => {
+      if (!isNumber(value)) return dash;
+      const n = Number(value) / 100;
+      const prefix = n > 0 ? '+' : '';
+      return `<span class="${toneClass(value)}">${prefix}${numberFmt.format(n)}</span>`;
+    };
+    const fmtPct = (value) => {
+      if (!isNumber(value)) return dash;
+      const n = Number(value);
+      const prefix = n > 0 ? '+' : '';
+      return `<span class="${toneClass(value)}">${prefix}${numberFmt.format(n)}%</span>`;
+    };
+    const fmtInt = (value) => isNumber(value) ? intFmt.format(Number(value)) : dash;
+    const monthCell = (row, period) => {
+      const item = row.months && row.months[period];
+      if (!item || !isNumber(item.revenue_m)) return '<span class="muted">缺</span>';
+      return fmtYi(item.revenue_m);
+    };
+
+    function renderStats(payload) {
+      const s = payload.stats || {};
+      const cards = [
+        ['低於預期', s.below_count, 'Q2完整後自動歸類'],
+        ['高於預期', s.above_count, 'Q2完整後自動歸類'],
+        ['符合預期', s.inline_count, `門檻 ±${payload.surprise_threshold_pct ?? 3}%`],
+        ['尚未完整', s.incomplete_count, '缺任一月份先不判斷'],
+        ['營收財測', s.revenue_forecast_count, `${s.total_companies ?? 0} 檔總樣本`],
+        ['MOPS最新', payload.latest_mops_period || '—', (payload.quarter_months || []).join(' / ')],
+      ];
+      stats.innerHTML = cards.map(([label, value, sub]) => `
+        <div class="q2-mops-card">
+          <span>${escapeHtml(label)}</span>
+          <strong>${escapeHtml(value ?? 0)}</strong>
+          <small>${escapeHtml(sub || '')}</small>
+        </div>
+      `).join('');
+    }
+
+    function updateTabs(payload) {
+      const rows = payload.rows || [];
+      const counts = {
+        all: rows.length,
+        above: rows.filter((r) => r.status === 'above').length,
+        below: rows.filter((r) => r.status === 'below').length,
+        inline: rows.filter((r) => r.status === 'inline').length,
+        incomplete: rows.filter((r) => r.status === 'incomplete').length,
+        no_forecast: rows.filter((r) => r.status === 'no_forecast').length,
+      };
+      for (const btn of tabs.querySelectorAll('[data-status]')) {
+        const status = btn.dataset.status;
+        btn.textContent = `${statusLabels[status] || status} ${counts[status] ?? 0}`;
+        btn.setAttribute('aria-pressed', status === state.status ? 'true' : 'false');
+      }
+    }
+
+    function renderRows() {
+      const payload = state.payload;
+      if (!payload) return;
+      const periods = payload.quarter_months || [];
+      const rows = payload.rows || [];
+      const filtered = state.status === 'all' ? rows : rows.filter((r) => r.status === state.status);
+      updateTabs(payload);
+      if (!filtered.length) {
+        body.innerHTML = '<tr><td colspan="13" class="muted">目前沒有符合這個篩選的公司。</td></tr>';
+        return;
+      }
+      body.innerHTML = filtered.map((row) => `
+        <tr>
+          <td><span class="q2-status q2-status--${escapeHtml(row.status)}">${escapeHtml(row.status_label || statusLabels[row.status] || row.status)}</span></td>
+          <td class="mono">${escapeHtml(row.code)}</td>
+          <td>${escapeHtml(row.name)}</td>
+          <td class="num">${fmtYi(row.forecast_revenue_m)}</td>
+          <td class="num">${fmtYi(row.announced_revenue_m)}</td>
+          <td class="num">${fmtYi(row.actual_revenue_m)}</td>
+          <td class="num">${fmtSignedYi(row.surprise_m)}</td>
+          <td class="num">${fmtPct(row.surprise_pct)}</td>
+          <td class="num">${monthCell(row, periods[0])}</td>
+          <td class="num">${monthCell(row, periods[1])}</td>
+          <td class="num">${monthCell(row, periods[2])}</td>
+          <td class="num">${fmtInt(row.sample_count)}</td>
+          <td>${escapeHtml(row.confidence || '—')}</td>
+        </tr>
+      `).join('');
+    }
+
+    function render(payload) {
+      state.payload = payload;
+      if (source && payload.source && payload.source.mops_url) source.href = payload.source.mops_url;
+      const s = payload.stats || {};
+      const latest = payload.latest_mops_period || '—';
+      const periods = payload.quarter_months || [];
+      const tail = s.complete_count
+        ? `已完成 ${intFmt.format(s.complete_count)} 檔比對`
+        : `目前尚缺 ${escapeHtml(periods[periods.length - 1] || 'Q2最後一個月')} 月營收`;
+      note.textContent = `${payload.quarter || '2026Q2'} · 比對期別 ${periods.join(' / ')} · MOPS 最新 ${latest} · 門檻 ±${payload.surprise_threshold_pct ?? 3}% · ${tail}。僅做追蹤/統計，不做投資建議。`;
+      renderStats(payload);
+      renderRows();
+    }
+
+    tabs.addEventListener('click', (event) => {
+      const btn = event.target.closest('[data-status]');
+      if (!btn) return;
+      state.status = btn.dataset.status || 'all';
+      renderRows();
+    });
+
+    fetch(`${DATA_URL}?v=${Date.now()}`, { cache: 'no-store' })
+      .then((response) => {
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return response.json();
+      })
+      .then(render)
+      .catch((error) => {
+        note.textContent = `MOPS 比對資料讀取失敗：${error.message}`;
+        stats.innerHTML = '';
+        body.innerHTML = '<tr><td colspan="13" class="muted">請先確認 assets/q2_forecast_revenue_compare.json 是否已產生。</td></tr>';
+      });
+  })();
+</script>
 <script>
   (() => {
     const DATA_URL = '../assets/q2_forecast_revenue_compare.json';
