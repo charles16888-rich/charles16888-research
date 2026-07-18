@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-18T00:19:54+08:00",
+  "updated_at": "2026-07-18T12:56:54+08:00",
   "today": "2026-07-18",
   "volume_number": 1,
   "market_summary": {
@@ -127,6 +127,40 @@
           "label": "6月營收",
           "value": "0",
           "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "financial-calendar",
+      "category": "calendar",
+      "type": "calendar",
+      "date": "2026-07-18",
+      "time": "08:30",
+      "title": "市場行事曆",
+      "title_em": "法說會",
+      "summary": "台股區塊每日更新未來一個月法說會公司，僅列日期、股號、股名與時間；其他市場事件保留原行事曆資料。",
+      "tags": [
+        "行事曆",
+        "台股",
+        "法說會"
+      ],
+      "source_pipeline": "financial_calendar_service investor_conference_calendar",
+      "url": "reports/financial-calendar.html",
+      "stats": [
+        {
+          "label": "事件",
+          "value": "97",
+          "color": "neutral"
+        },
+        {
+          "label": "高重要",
+          "value": "35",
+          "color": "up"
+        },
+        {
+          "label": "台股法說",
+          "value": "42",
+          "color": "neutral"
         }
       ]
     },
@@ -588,40 +622,6 @@
       ]
     },
     {
-      "id": "financial-calendar",
-      "category": "calendar",
-      "type": "calendar",
-      "date": "2026-07-17",
-      "time": "08:30",
-      "title": "市場行事曆",
-      "title_em": "法說會",
-      "summary": "台股區塊每日更新未來一個月法說會公司，僅列日期、股號、股名與時間；其他市場事件保留原行事曆資料。",
-      "tags": [
-        "行事曆",
-        "台股",
-        "法說會"
-      ],
-      "source_pipeline": "financial_calendar_service investor_conference_calendar",
-      "url": "reports/financial-calendar.html",
-      "stats": [
-        {
-          "label": "事件",
-          "value": "99",
-          "color": "neutral"
-        },
-        {
-          "label": "高重要",
-          "value": "35",
-          "color": "up"
-        },
-        {
-          "label": "台股法說",
-          "value": "44",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
       "id": "tri-source-lamp",
       "category": "chips",
       "title": "三源混合燈號",
@@ -633,6 +633,109 @@
         "大股東",
         "三大法人",
         "燈號"
+      ]
+    },
+    {
+      "id": "2026-07-16-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-07-16",
+      "time": "20:00",
+      "title": "2026-07-16 族群週報",
+      "title_em": "自行車",
+      "summary": "涵蓋 2026-07-09 ~ 2026-07-16。週領漲 自行車 +16.15%，週領跌 被動元件 -13.87%；資金焦點 晶圓代工。",
+      "tags": [
+        "自行車",
+        "被動元件",
+        "晶圓代工",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-07-16/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "自行車 +16.15%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "被動元件 -13.87%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "晶圓代工",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-16-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-07-16",
+      "time": "20:00",
+      "title": "2026-07-16 每日族群輪動雷達",
+      "title_em": "自行車",
+      "summary": "今日相對升溫以 自行車 最明顯，相對降溫以 ABF載板 壓力最大；今日轉弱力道大於轉強力道。",
+      "tags": [
+        "自行車",
+        "ABF載板",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-07-16/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "自行車 +9.14 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "ABF載板 -12.56 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-16-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-07-16",
+      "time": "20:00",
+      "title": "2026-07-16 族群盤後快報",
+      "title_em": "自行車",
+      "summary": "全 74 族群、成交 10585.2 億；領漲 自行車 +9.96%，領跌 ABF載板 -8.18%；漲多族群 21/74，全族群均漲 -0.66%。",
+      "tags": [
+        "自行車",
+        "ABF載板",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-07-16/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "自行車 +9.96%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "ABF載板 -8.18%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "2.8%",
+          "color": "neutral"
+        }
       ]
     },
     {
