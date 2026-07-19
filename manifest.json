@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-19T15:23:38+08:00",
+  "updated_at": "2026-07-19T16:28:08+08:00",
   "today": "2026-07-19",
   "volume_number": 1,
   "market_summary": {
@@ -633,6 +633,42 @@
         "大股東",
         "三大法人",
         "燈號"
+      ]
+    },
+    {
+      "id": "2026-07-16-ai-research-daily-market",
+      "category": "ai-research",
+      "type": "daily-market",
+      "date": "2026-07-16",
+      "time": "21:40",
+      "title": "三市場同步破低後反彈，櫃買全日未回到開盤高點",
+      "title_em": "櫃買未回開盤高點",
+      "summary": "09:13 期現與櫃買同步跌破首根低點；10:31 三者收回首根收盤，但櫃買直到收盤都未越過 414.88，收盤廣度也未確認反彈。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤後分析"
+      ],
+      "source_pipeline": "market_structure_analysis",
+      "url": "reports/2026-07-16/ai-research-daily-market.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "-0.014%",
+          "color": "down"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "-2.257%",
+          "color": "down"
+        },
+        {
+          "label": "三市同步破低",
+          "value": "09:13",
+          "color": "down"
+        }
       ]
     },
     {
