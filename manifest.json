@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-19T13:00:50+08:00",
+  "updated_at": "2026-07-19T13:23:35+08:00",
   "today": "2026-07-19",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,115 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "q2-forecast-2026q2",
+      "category": "research",
+      "type": "forecast",
+      "date": "2026-07-19",
+      "time": "21:30",
+      "title": "2026 Q2 財測匿名彙總",
+      "title_em": "財測匿名",
+      "summary": "2026-03-24 至 2026-07-19 台股研究報告匿名財測彙總，共 564 檔公司；高/中信心 495 檔。公開版不含研究機構、檔名、原文或報告引用。",
+      "tags": [
+        "研報統計",
+        "財測",
+        "OCR",
+        "匿名彙總",
+        "2026Q2"
+      ],
+      "source_pipeline": "research_reports_ocr_anonymous_forecast",
+      "url": "reports/q2-forecast-2026q2.html",
+      "stats": [
+        {
+          "label": "公司數",
+          "value": "564",
+          "color": "neutral"
+        },
+        {
+          "label": "營收覆蓋",
+          "value": "490",
+          "color": "up"
+        },
+        {
+          "label": "三率完整",
+          "value": "436",
+          "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "shortage-weekly-2026-07-19",
+      "category": "stocks",
+      "type": "weekly",
+      "date": "2026-07-19",
+      "time": "20:30",
+      "title": "2026-07-19 缺貨偵探近四週週報",
+      "title_em": "ABF／高階載板",
+      "summary": "最新一週較明確的新事件集中在 液冷板／CDU、ABF／高階載板；其餘週別保留供需訊號供回溯。",
+      "tags": [
+        "ABF／高階載板",
+        "LPDDR／SOCAMM",
+        "MCU",
+        "MLCC／被動元件",
+        "缺貨偵探",
+        "週報"
+      ],
+      "source_pipeline": "shortage_detective",
+      "url": "reports/shortage/2026-07-19/weekly.html",
+      "stats": [
+        {
+          "label": "事件數",
+          "value": "2",
+          "color": "neutral"
+        },
+        {
+          "label": "訊號數",
+          "value": "49",
+          "color": "neutral"
+        },
+        {
+          "label": "主題",
+          "value": "ABF／高階載板",
+          "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "mops-revenue-forecast-watch-20260719",
+      "category": "research",
+      "type": "mops_watch",
+      "date": "2026-07-19",
+      "time": "19:30",
+      "title": "2026-07-19 MOPS 營收公告追蹤",
+      "title_em": "MOPS 追蹤",
+      "summary": "公開 MOPS 營收相關重大訊息 0 筆；其中 0 筆出現在匿名財測名單，0 筆明確揭露 6 月營收。僅做追蹤與統計，不構成投資建議。",
+      "tags": [
+        "MOPS",
+        "重大訊息",
+        "營收公告",
+        "財測追蹤",
+        "2026Q2"
+      ],
+      "source_pipeline": "mops_revenue_forecast_watch",
+      "url": "reports/q2-forecast-2026q2.html#q2-mops-events",
+      "stats": [
+        {
+          "label": "公告",
+          "value": "0",
+          "color": "neutral"
+        },
+        {
+          "label": "財測名單",
+          "value": "0",
+          "color": "gold"
+        },
+        {
+          "label": "6月營收",
+          "value": "0",
+          "color": "up"
+        }
+      ]
+    },
     {
       "id": "financial-calendar",
       "category": "calendar",
@@ -52,115 +161,6 @@
           "label": "台股法說",
           "value": "42",
           "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "q2-forecast-2026q2",
-      "category": "research",
-      "type": "forecast",
-      "date": "2026-07-18",
-      "time": "21:30",
-      "title": "2026 Q2 財測匿名彙總",
-      "title_em": "財測匿名",
-      "summary": "2026-03-24 至 2026-07-18 台股研究報告匿名財測彙總，共 564 檔公司；高/中信心 495 檔。公開版不含研究機構、檔名、原文或報告引用。",
-      "tags": [
-        "研報統計",
-        "財測",
-        "OCR",
-        "匿名彙總",
-        "2026Q2"
-      ],
-      "source_pipeline": "research_reports_ocr_anonymous_forecast",
-      "url": "reports/q2-forecast-2026q2.html",
-      "stats": [
-        {
-          "label": "公司數",
-          "value": "564",
-          "color": "neutral"
-        },
-        {
-          "label": "營收覆蓋",
-          "value": "490",
-          "color": "up"
-        },
-        {
-          "label": "三率完整",
-          "value": "436",
-          "color": "up"
-        }
-      ]
-    },
-    {
-      "id": "shortage-weekly-2026-07-18",
-      "category": "stocks",
-      "type": "weekly",
-      "date": "2026-07-18",
-      "time": "20:30",
-      "title": "2026-07-18 缺貨偵探近四週週報",
-      "title_em": "ABF／高階載板",
-      "summary": "最新一週較明確的新事件集中在 液冷板／CDU、ABF／高階載板；其餘週別保留供需訊號供回溯。",
-      "tags": [
-        "ABF／高階載板",
-        "LPDDR／SOCAMM",
-        "MCU",
-        "MLCC／被動元件",
-        "缺貨偵探",
-        "週報"
-      ],
-      "source_pipeline": "shortage_detective",
-      "url": "reports/shortage/2026-07-18/weekly.html",
-      "stats": [
-        {
-          "label": "事件數",
-          "value": "2",
-          "color": "neutral"
-        },
-        {
-          "label": "訊號數",
-          "value": "49",
-          "color": "neutral"
-        },
-        {
-          "label": "主題",
-          "value": "ABF／高階載板",
-          "color": "up"
-        }
-      ]
-    },
-    {
-      "id": "mops-revenue-forecast-watch-20260718",
-      "category": "research",
-      "type": "mops_watch",
-      "date": "2026-07-18",
-      "time": "19:30",
-      "title": "2026-07-18 MOPS 營收公告追蹤",
-      "title_em": "MOPS 追蹤",
-      "summary": "公開 MOPS 營收相關重大訊息 0 筆；其中 0 筆出現在匿名財測名單，0 筆明確揭露 6 月營收。僅做追蹤與統計，不構成投資建議。",
-      "tags": [
-        "MOPS",
-        "重大訊息",
-        "營收公告",
-        "財測追蹤",
-        "2026Q2"
-      ],
-      "source_pipeline": "mops_revenue_forecast_watch",
-      "url": "reports/q2-forecast-2026q2.html#q2-mops-events",
-      "stats": [
-        {
-          "label": "公告",
-          "value": "0",
-          "color": "neutral"
-        },
-        {
-          "label": "財測名單",
-          "value": "0",
-          "color": "gold"
-        },
-        {
-          "label": "6月營收",
-          "value": "0",
-          "color": "up"
         }
       ]
     },
