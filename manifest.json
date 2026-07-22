@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-21T21:22:09+08:00",
-  "today": "2026-07-21",
+  "updated_at": "2026-07-22T21:10:20+08:00",
+  "today": "2026-07-22",
   "volume_number": 1,
   "market_summary": {
     "date": "2026-05-22",
@@ -21,6 +21,321 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "options-atm",
+      "category": "txo",
+      "type": "pulse",
+      "date": "2026-07-22",
+      "time": "20:00",
+      "title": "選擇權價平和 · 隱含波動代理",
+      "title_em": "價平和",
+      "summary": "近 763 個交易日（2023-05-30 → 2026-07-22）TXO ATM Call+Put 加總。最新 (2026-07-22)：近期 1053 點（到期 202607F4）、次遠期 1565 點。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "價平和",
+        "隱波"
+      ],
+      "source_pipeline": "taifex + twse",
+      "url": "reports/options-atm.html",
+      "stats": [
+        {
+          "label": "近期 C+P",
+          "value": "1053",
+          "color": "neutral"
+        },
+        {
+          "label": "次遠期 C+P",
+          "value": "1565",
+          "color": "neutral"
+        },
+        {
+          "label": "區間",
+          "value": "763 日",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "market-pulse",
+      "category": "taiex",
+      "type": "pulse",
+      "date": "2026-07-22",
+      "time": "20:00",
+      "title": "市場脈動 · 漲跌停 × 全族群均幅",
+      "title_em": "脈動",
+      "summary": "近 63 個交易日漲跌停家數、總成交額、族群平均漲幅、漲停集中度。最新 (2026-07-22)：漲停 55、跌停 5、全族群均幅 +1.08%。",
+      "tags": [
+        "市場脈動",
+        "漲跌停",
+        "成交額"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/market-pulse.html",
+      "stats": [
+        {
+          "label": "漲停",
+          "value": "55",
+          "color": "up"
+        },
+        {
+          "label": "跌停",
+          "value": "5",
+          "color": "down"
+        },
+        {
+          "label": "成交額",
+          "value": "11,185 億",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "futures-basis",
+      "category": "taiex",
+      "type": "pulse",
+      "date": "2026-07-22",
+      "time": "20:00",
+      "title": "期貨正逆價差 · 12 年期現對照",
+      "title_em": "12 年",
+      "summary": "近 3023 個交易日（2014-02-14 → 2026-07-22）台指期 TXF1 vs 加權指數價差。最新 (2026-07-22)：基差 -194.8 點，加權收 44,826。",
+      "tags": [
+        "期貨",
+        "基差",
+        "正逆價差",
+        "TX",
+        "12 年"
+      ],
+      "source_pipeline": "yuanta + yfinance",
+      "url": "reports/futures-basis.html",
+      "stats": [
+        {
+          "label": "最新基差",
+          "value": "-194.8",
+          "color": "down"
+        },
+        {
+          "label": "加權",
+          "value": "44,826",
+          "color": "neutral"
+        },
+        {
+          "label": "區間",
+          "value": "3023 日",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-22-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-07-22",
+      "time": "20:00",
+      "title": "2026-07-22 族群週報",
+      "title_em": "電信服務",
+      "summary": "涵蓋 2026-07-15 ~ 2026-07-22。週領漲 電信服務 +6.06%，週領跌 被動元件 -14.20%；資金焦點 晶圓代工。",
+      "tags": [
+        "電信服務",
+        "被動元件",
+        "晶圓代工",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-07-22/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "電信服務 +6.06%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "被動元件 -14.20%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "晶圓代工",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-22-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-07-22",
+      "time": "20:00",
+      "title": "2026-07-22 每日族群輪動雷達",
+      "title_em": "ABF載板",
+      "summary": "今日相對升溫以 ABF載板 最明顯，相對降溫以 整車車廠 壓力最大；今日轉強力道大於轉弱力道。",
+      "tags": [
+        "ABF載板",
+        "整車車廠",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-07-22/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "ABF載板 +11.93 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "整車車廠 -2.79 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-22-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-07-22",
+      "time": "20:00",
+      "title": "2026-07-22 族群盤後快報",
+      "title_em": "ABF載板",
+      "summary": "全 74 族群、成交 11185.0 億；領漲 ABF載板 +8.77%，領跌 整車車廠 -2.44%；漲多族群 45/74，全族群均漲 +1.08%。",
+      "tags": [
+        "ABF載板",
+        "整車車廠",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-07-22/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "ABF載板 +8.77%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "整車車廠 -2.44%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "19.7%",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-22-ai-research-daily-market",
+      "category": "ai-research",
+      "type": "daily-market",
+      "date": "2026-07-22",
+      "time": "15:30",
+      "title": "09:06 現貨越過首根高點，尾盤回落後櫃買相對強",
+      "title_em": "櫃買收盤相對強",
+      "summary": "夜盤與亞洲早盤偏正，現貨 09:06 越過首根高點後轉為分化；加權收漲 1.340%、櫃買漲 3.461%，台指期日盤收近低。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤中結構"
+      ],
+      "source_pipeline": "market_structure_analysis",
+      "url": "reports/2026-07-22/ai-research-daily-market.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "+1.340%",
+          "color": "up"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "+3.461%",
+          "color": "up"
+        },
+        {
+          "label": "台指期日盤",
+          "value": "-0.820%",
+          "color": "down"
+        }
+      ]
+    },
+    {
+      "id": "options-annual-2026",
+      "category": "txo",
+      "type": "options_annual",
+      "date": "2026-07-22",
+      "time": "15:10",
+      "title": "2026 台股選擇權年度合併報告",
+      "title_em": "年度合併",
+      "summary": "彙整 2026 年 29 份 v2.5 週報，期間 2026-01-01 至 2026-07-22，共 17 個交易日。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "年度合併",
+        "v2.5"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5",
+      "url": "reports/options/annual_reports/2026/台股選擇權年度合併報告_2026_v2.5.html",
+      "stats": [
+        {
+          "label": "週報",
+          "value": "29",
+          "color": "neutral"
+        },
+        {
+          "label": "交易日",
+          "value": "17",
+          "color": "neutral"
+        },
+        {
+          "label": "期間",
+          "value": "2026-01-01 → 2026-07-22",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "options-weekly-20260720-20260724",
+      "category": "txo",
+      "type": "options_weekly",
+      "date": "2026-07-22",
+      "time": "15:00",
+      "title": "台股選擇權籌碼週報 · 20260720-20260724",
+      "title_em": "選擇權",
+      "summary": "v2.5 定價與期現結構版週報，涵蓋 2026-07-20 至 2026-07-22，共 3 個交易日。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "週報",
+        "Max Pain",
+        "P/C Ratio"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5",
+      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260720-20260724_v2.5.html",
+      "stats": [
+        {
+          "label": "週期",
+          "value": "20260720-20260724",
+          "color": "neutral"
+        },
+        {
+          "label": "交易日",
+          "value": "3",
+          "color": "neutral"
+        },
+        {
+          "label": "版本",
+          "value": "v2.5",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "high-price-watch",
       "category": "stocks",
@@ -272,77 +587,6 @@
       ]
     },
     {
-      "id": "options-annual-2026",
-      "category": "txo",
-      "type": "options_annual",
-      "date": "2026-07-21",
-      "time": "15:10",
-      "title": "2026 台股選擇權年度合併報告",
-      "title_em": "年度合併",
-      "summary": "彙整 2026 年 29 份 v2.5 週報，期間 2026-01-01 至 2026-07-21，共 16 個交易日。",
-      "tags": [
-        "選擇權",
-        "TXO",
-        "年度合併",
-        "v2.5"
-      ],
-      "source_pipeline": "stock_project options_report_v2.5",
-      "url": "reports/options/annual_reports/2026/台股選擇權年度合併報告_2026_v2.5.html",
-      "stats": [
-        {
-          "label": "週報",
-          "value": "29",
-          "color": "neutral"
-        },
-        {
-          "label": "交易日",
-          "value": "16",
-          "color": "neutral"
-        },
-        {
-          "label": "期間",
-          "value": "2026-01-01 → 2026-07-21",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "options-weekly-20260720-20260724",
-      "category": "txo",
-      "type": "options_weekly",
-      "date": "2026-07-21",
-      "time": "15:00",
-      "title": "台股選擇權籌碼週報 · 20260720-20260724",
-      "title_em": "選擇權",
-      "summary": "v2.5 定價與期現結構版週報，涵蓋 2026-07-20 至 2026-07-21，共 2 個交易日。",
-      "tags": [
-        "選擇權",
-        "TXO",
-        "週報",
-        "Max Pain",
-        "P/C Ratio"
-      ],
-      "source_pipeline": "stock_project options_report_v2.5",
-      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260720-20260724_v2.5.html",
-      "stats": [
-        {
-          "label": "週期",
-          "value": "20260720-20260724",
-          "color": "neutral"
-        },
-        {
-          "label": "交易日",
-          "value": "2",
-          "color": "neutral"
-        },
-        {
-          "label": "版本",
-          "value": "v2.5",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
       "id": "tri-source-lamp",
       "category": "chips",
       "title": "三源混合燈號",
@@ -389,111 +633,6 @@
           "label": "台指期領先破低",
           "value": "20 分鐘",
           "color": "down"
-        }
-      ]
-    },
-    {
-      "id": "options-atm",
-      "category": "txo",
-      "type": "pulse",
-      "date": "2026-07-20",
-      "time": "20:00",
-      "title": "選擇權價平和 · 隱含波動代理",
-      "title_em": "價平和",
-      "summary": "近 762 個交易日（2023-05-30 → 2026-07-20）TXO ATM Call+Put 加總。最新 (2026-07-20)：近期 1145 點（到期 202607W4）、次遠期 1620 點。",
-      "tags": [
-        "選擇權",
-        "TXO",
-        "價平和",
-        "隱波"
-      ],
-      "source_pipeline": "taifex + twse",
-      "url": "reports/options-atm.html",
-      "stats": [
-        {
-          "label": "近期 C+P",
-          "value": "1145",
-          "color": "neutral"
-        },
-        {
-          "label": "次遠期 C+P",
-          "value": "1620",
-          "color": "neutral"
-        },
-        {
-          "label": "區間",
-          "value": "762 日",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "market-pulse",
-      "category": "taiex",
-      "type": "pulse",
-      "date": "2026-07-20",
-      "time": "20:00",
-      "title": "市場脈動 · 漲跌停 × 全族群均幅",
-      "title_em": "脈動",
-      "summary": "近 62 個交易日漲跌停家數、總成交額、族群平均漲幅、漲停集中度。最新 (2026-07-20)：漲停 19、跌停 41、全族群均幅 -1.30%。",
-      "tags": [
-        "市場脈動",
-        "漲跌停",
-        "成交額"
-      ],
-      "source_pipeline": "industry_map",
-      "url": "reports/market-pulse.html",
-      "stats": [
-        {
-          "label": "漲停",
-          "value": "19",
-          "color": "up"
-        },
-        {
-          "label": "跌停",
-          "value": "41",
-          "color": "down"
-        },
-        {
-          "label": "成交額",
-          "value": "10,595 億",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "futures-basis",
-      "category": "taiex",
-      "type": "pulse",
-      "date": "2026-07-20",
-      "time": "20:00",
-      "title": "期貨正逆價差 · 12 年期現對照",
-      "title_em": "12 年",
-      "summary": "近 3022 個交易日（2014-02-14 → 2026-07-20）台指期 TXF1 vs 加權指數價差。最新 (2026-07-20)：基差 +191.3 點，加權收 42,450。",
-      "tags": [
-        "期貨",
-        "基差",
-        "正逆價差",
-        "TX",
-        "12 年"
-      ],
-      "source_pipeline": "yuanta + yfinance",
-      "url": "reports/futures-basis.html",
-      "stats": [
-        {
-          "label": "最新基差",
-          "value": "+191.3",
-          "color": "up"
-        },
-        {
-          "label": "加權",
-          "value": "42,450",
-          "color": "neutral"
-        },
-        {
-          "label": "區間",
-          "value": "3022 日",
-          "color": "neutral"
         }
       ]
     },
