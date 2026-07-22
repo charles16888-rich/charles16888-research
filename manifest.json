@@ -165,41 +165,6 @@
       ]
     },
     {
-      "id": "chip-concentration",
-      "category": "chips",
-      "type": "ranking",
-      "date": "2026-07-22",
-      "time": "21:00",
-      "title": "籌碼集中度 · 分點 Top 50 排行",
-      "title_em": "集中度",
-      "summary": "5 個時段 · 每邊 Top 50 · 過濾成交量 < 1,000 張。 今日買超集中 #1：2406 國碩 +54.6%。 賣超集中 #1：4743 合一 -55.9%。",
-      "tags": [
-        "籌碼",
-        "分點",
-        "集中度",
-        "排行榜"
-      ],
-      "source_pipeline": "stock_chip_crawler",
-      "url": "reports/chip-concentration.html",
-      "stats": [
-        {
-          "label": "時段數",
-          "value": "5",
-          "color": "neutral"
-        },
-        {
-          "label": "Top 買超",
-          "value": "2406 +55%",
-          "color": "up"
-        },
-        {
-          "label": "Top 賣超",
-          "value": "4743 -56%",
-          "color": "down"
-        }
-      ]
-    },
-    {
       "id": "options-atm",
       "category": "txo",
       "type": "pulse",
@@ -548,20 +513,6 @@
           "value": "v2.5",
           "color": "neutral"
         }
-      ]
-    },
-    {
-      "id": "tri-source-lamp",
-      "category": "chips",
-      "title": "三源混合燈號",
-      "subtitle": "2026-07-22 · 三同買 2 / 三同賣 4",
-      "date": "2026-07-22",
-      "url": "reports/tri-source-lamp.html",
-      "tags": [
-        "分點",
-        "大股東",
-        "三大法人",
-        "燈號"
       ]
     },
     {
@@ -4697,41 +4648,6 @@
       ]
     },
     {
-      "id": "2026-05-29-chip-concentration",
-      "category": "chips",
-      "type": "ranking",
-      "date": "2026-05-29",
-      "time": "21:00",
-      "title": "2026-05-29 籌碼集中度 · 分點 Top 50 排行",
-      "title_em": "集中度",
-      "summary": "當日 Top 50 買超 / Top 50 賣超分點集中度。買超 #1 6806 森崴能源 +69.0%。賣超 #1 6143 振曜 -49.5%。",
-      "tags": [
-        "籌碼",
-        "分點",
-        "集中度",
-        "2026-05"
-      ],
-      "source_pipeline": "stock_chip_crawler",
-      "url": "reports/chip-concentration.html?date=2026-05-29",
-      "stats": [
-        {
-          "label": "Top 買",
-          "value": "6806 +69%",
-          "color": "up"
-        },
-        {
-          "label": "Top 賣",
-          "value": "6143 -49%",
-          "color": "down"
-        },
-        {
-          "label": "排行檔數",
-          "value": "100",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
       "id": "2026-05-29-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -4871,41 +4787,6 @@
       ]
     },
     {
-      "id": "2026-05-28-chip-concentration",
-      "category": "chips",
-      "type": "ranking",
-      "date": "2026-05-28",
-      "time": "21:00",
-      "title": "2026-05-28 籌碼集中度 · 分點 Top 50 排行",
-      "title_em": "集中度",
-      "summary": "當日 Top 50 買超 / Top 50 賣超分點集中度。買超 #1 6284 佳邦 +53.8%。賣超 #1 6588 東典光電 -46.8%。",
-      "tags": [
-        "籌碼",
-        "分點",
-        "集中度",
-        "2026-05"
-      ],
-      "source_pipeline": "stock_chip_crawler",
-      "url": "reports/chip-concentration.html?date=2026-05-28",
-      "stats": [
-        {
-          "label": "Top 買",
-          "value": "6284 +54%",
-          "color": "up"
-        },
-        {
-          "label": "Top 賣",
-          "value": "6588 -47%",
-          "color": "down"
-        },
-        {
-          "label": "排行檔數",
-          "value": "100",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
       "id": "2026-05-28-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -5004,41 +4885,6 @@
         {
           "label": "漲停集中",
           "value": "2.9%",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "2026-05-27-chip-concentration",
-      "category": "chips",
-      "type": "ranking",
-      "date": "2026-05-27",
-      "time": "21:00",
-      "title": "2026-05-27 籌碼集中度 · 分點 Top 50 排行",
-      "title_em": "集中度",
-      "summary": "當日 Top 50 買超 / Top 50 賣超分點集中度。買超 #1 1563 巧新 +52.6%。賣超 #1 5457 宣德 -51.0%。",
-      "tags": [
-        "籌碼",
-        "分點",
-        "集中度",
-        "2026-05"
-      ],
-      "source_pipeline": "stock_chip_crawler",
-      "url": "reports/chip-concentration.html?date=2026-05-27",
-      "stats": [
-        {
-          "label": "Top 買",
-          "value": "1563 +53%",
-          "color": "up"
-        },
-        {
-          "label": "Top 賣",
-          "value": "5457 -51%",
-          "color": "down"
-        },
-        {
-          "label": "排行檔數",
-          "value": "100",
           "color": "neutral"
         }
       ]
@@ -5147,41 +4993,6 @@
       ]
     },
     {
-      "id": "2026-05-26-chip-concentration",
-      "category": "chips",
-      "type": "ranking",
-      "date": "2026-05-26",
-      "time": "21:00",
-      "title": "2026-05-26 籌碼集中度 · 分點 Top 50 排行",
-      "title_em": "集中度",
-      "summary": "當日 Top 50 買超 / Top 50 賣超分點集中度。買超 #1 9105 泰金寶-DR +75.0%。賣超 #1 1708 東鹼 -65.3%。",
-      "tags": [
-        "籌碼",
-        "分點",
-        "集中度",
-        "2026-05"
-      ],
-      "source_pipeline": "stock_chip_crawler",
-      "url": "reports/chip-concentration.html?date=2026-05-26",
-      "stats": [
-        {
-          "label": "Top 買",
-          "value": "9105 +75%",
-          "color": "up"
-        },
-        {
-          "label": "Top 賣",
-          "value": "1708 -65%",
-          "color": "down"
-        },
-        {
-          "label": "排行檔數",
-          "value": "100",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
       "id": "2026-05-26-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -5280,41 +5091,6 @@
         {
           "label": "漲停集中",
           "value": "12.9%",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "2026-05-25-chip-concentration",
-      "category": "chips",
-      "type": "ranking",
-      "date": "2026-05-25",
-      "time": "21:00",
-      "title": "2026-05-25 籌碼集中度 · 分點 Top 50 排行",
-      "title_em": "集中度",
-      "summary": "當日 Top 50 買超 / Top 50 賣超分點集中度。買超 #1 2489 瑞軒 +65.7%。賣超 #1 1477 聚陽 -53.5%。",
-      "tags": [
-        "籌碼",
-        "分點",
-        "集中度",
-        "2026-05"
-      ],
-      "source_pipeline": "stock_chip_crawler",
-      "url": "reports/chip-concentration.html?date=2026-05-25",
-      "stats": [
-        {
-          "label": "Top 買",
-          "value": "2489 +66%",
-          "color": "up"
-        },
-        {
-          "label": "Top 賣",
-          "value": "1477 -54%",
-          "color": "down"
-        },
-        {
-          "label": "排行檔數",
-          "value": "100",
           "color": "neutral"
         }
       ]
