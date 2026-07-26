@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-26T21:24:22+08:00",
+  "updated_at": "2026-07-26T21:38:22+08:00",
   "today": "2026-07-24",
   "volume_number": 1,
   "market_summary": {
@@ -401,6 +401,45 @@
           "label": "漲停集中",
           "value": "2.6%",
           "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-23-ai-research-daily-market",
+      "category": "ai-research",
+      "type": "daily-market",
+      "date": "2026-07-23",
+      "time": "15:30",
+      "title": "指數小紅收第三連紅，櫃買與族群結構卻偏弱",
+      "title_em": "結構分化日",
+      "summary": "加權僅 +0.06% 連三日收紅，但上市／上櫃跌多家數占優；光通訊與液冷偏強，矽晶圓與 ABF 明顯拉回。近月台指期約 +79 正價差，近月 ATM C+P 約 666。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "光通訊",
+        "液冷散熱",
+        "矽晶圓",
+        "盤中結構"
+      ],
+      "source_pipeline": "grok-4.5-market-structure-synthesis",
+      "url": "reports/2026-07-23/ai-research-daily-market.html",
+      "stats": [
+        {
+          "color": "up",
+          "label": "加權指數",
+          "value": "+0.06%"
+        },
+        {
+          "color": "down",
+          "label": "族群平均",
+          "value": "-0.51%"
+        },
+        {
+          "color": "neutral",
+          "label": "期現價差",
+          "value": "+79"
         }
       ]
     },
