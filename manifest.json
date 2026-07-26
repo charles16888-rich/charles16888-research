@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-22T21:31:39+08:00",
-  "today": "2026-07-22",
+  "updated_at": "2026-07-26T21:18:55+08:00",
+  "today": "2026-07-24",
   "volume_number": 1,
   "market_summary": {
     "date": "2026-05-22",
@@ -21,6 +21,353 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "options-atm",
+      "category": "txo",
+      "type": "pulse",
+      "date": "2026-07-24",
+      "time": "20:00",
+      "title": "選擇權價平和 · 隱含波動代理",
+      "title_em": "價平和",
+      "summary": "近 765 個交易日（2023-05-30 → 2026-07-24）TXO ATM Call+Put 加總。最新 (2026-07-24)：近期 1355 點（到期 202607W5）、次遠期 1670 點。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "價平和",
+        "隱波"
+      ],
+      "source_pipeline": "taifex + twse",
+      "url": "reports/options-atm.html",
+      "stats": [
+        {
+          "label": "近期 C+P",
+          "value": "1355",
+          "color": "neutral"
+        },
+        {
+          "label": "次遠期 C+P",
+          "value": "1670",
+          "color": "neutral"
+        },
+        {
+          "label": "區間",
+          "value": "765 日",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "market-pulse",
+      "category": "taiex",
+      "type": "pulse",
+      "date": "2026-07-24",
+      "time": "20:00",
+      "title": "市場脈動 · 漲跌停 × 全族群均幅",
+      "title_em": "脈動",
+      "summary": "近 66 個交易日漲跌停家數、總成交額、族群平均漲幅、漲停集中度。最新 (2026-07-24)：漲停 15、跌停 23、全族群均幅 -1.38%。",
+      "tags": [
+        "市場脈動",
+        "漲跌停",
+        "成交額"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/market-pulse.html",
+      "stats": [
+        {
+          "label": "漲停",
+          "value": "15",
+          "color": "up"
+        },
+        {
+          "label": "跌停",
+          "value": "23",
+          "color": "down"
+        },
+        {
+          "label": "成交額",
+          "value": "9,366 億",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "futures-basis",
+      "category": "taiex",
+      "type": "pulse",
+      "date": "2026-07-24",
+      "time": "20:00",
+      "title": "期貨正逆價差 · 12 年期現對照",
+      "title_em": "12 年",
+      "summary": "近 3025 個交易日（2014-02-14 → 2026-07-24）台指期 TXF1 vs 加權指數價差。最新 (2026-07-24)：基差 +250.2 點，加權收 43,655。",
+      "tags": [
+        "期貨",
+        "基差",
+        "正逆價差",
+        "TX",
+        "12 年"
+      ],
+      "source_pipeline": "yuanta + yfinance",
+      "url": "reports/futures-basis.html",
+      "stats": [
+        {
+          "label": "最新基差",
+          "value": "+250.2",
+          "color": "up"
+        },
+        {
+          "label": "加權",
+          "value": "43,655",
+          "color": "neutral"
+        },
+        {
+          "label": "區間",
+          "value": "3025 日",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-24-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-07-24",
+      "time": "20:00",
+      "title": "2026-07-24 族群週報",
+      "title_em": "農業科技",
+      "summary": "涵蓋 2026-07-17 ~ 2026-07-24。週領漲 農業科技 +5.64%，週領跌 矽晶圓 -18.20%；資金焦點 晶圓代工。",
+      "tags": [
+        "農業科技",
+        "矽晶圓",
+        "晶圓代工",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-07-24/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "農業科技 +5.64%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "矽晶圓 -18.20%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "晶圓代工",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-24-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-07-24",
+      "time": "20:00",
+      "title": "2026-07-24 每日族群輪動雷達",
+      "title_em": "貨櫃航運",
+      "summary": "今日相對升溫以 貨櫃航運 最明顯，相對降溫以 ABF載板 壓力最大；今日轉弱力道大於轉強力道。",
+      "tags": [
+        "貨櫃航運",
+        "ABF載板",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-07-24/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "貨櫃航運 +2.52 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "ABF載板 -5.33 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-24-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-07-24",
+      "time": "20:00",
+      "title": "2026-07-24 族群盤後快報",
+      "title_em": "自行車",
+      "summary": "全 74 族群、成交 9366.2 億；領漲 自行車 +2.38%，領跌 ABF載板 -8.51%；漲多族群 17/74，全族群均漲 -1.38%。",
+      "tags": [
+        "自行車",
+        "ABF載板",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-07-24/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "自行車 +2.38%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "ABF載板 -8.51%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "0.1%",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-24-ai-research-daily-market",
+      "category": "ai-research",
+      "type": "daily-market",
+      "date": "2026-07-24",
+      "time": "15:30",
+      "title": "夜盤與亞洲早盤偏弱，開盤劇烈震盪後現貨收近低檔",
+      "title_em": "現貨收近低檔",
+      "summary": "夜盤與亞洲兩個現貨參考市場走弱；台股早盤反彈未延續，加權與櫃買終場分別下跌 2.667% 與 3.693%。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤中結構"
+      ],
+      "source_pipeline": "market_structure_analysis",
+      "url": "reports/2026-07-24/ai-research-daily-market.html",
+      "stats": [
+        {
+          "color": "down",
+          "label": "加權指數",
+          "value": "-2.667%"
+        },
+        {
+          "color": "down",
+          "label": "櫃買指數",
+          "value": "-3.693%"
+        },
+        {
+          "color": "down",
+          "label": "台指期日盤",
+          "value": "-0.591%"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-23-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-07-23",
+      "time": "20:00",
+      "title": "2026-07-23 族群週報",
+      "title_em": "電信服務",
+      "summary": "涵蓋 2026-07-16 ~ 2026-07-23。週領漲 電信服務 +5.17%，週領跌 矽晶圓 -19.35%；資金焦點 晶圓代工。",
+      "tags": [
+        "電信服務",
+        "矽晶圓",
+        "晶圓代工",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-07-23/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "電信服務 +5.17%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "矽晶圓 -19.35%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "晶圓代工",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-23-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-07-23",
+      "time": "20:00",
+      "title": "2026-07-23 每日族群輪動雷達",
+      "title_em": "光通訊",
+      "summary": "今日相對升溫以 光通訊 最明顯，相對降溫以 矽晶圓 壓力最大；今日轉強力道大於轉弱力道。",
+      "tags": [
+        "光通訊",
+        "矽晶圓",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-07-23/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "光通訊 +4.92 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "矽晶圓 -5.52 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-23-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-07-23",
+      "time": "20:00",
+      "title": "2026-07-23 族群盤後快報",
+      "title_em": "光通訊",
+      "summary": "全 74 族群、成交 10511.3 億；領漲 光通訊 +3.13%，領跌 矽晶圓 -7.60%；漲多族群 20/74，全族群均漲 -0.51%。",
+      "tags": [
+        "光通訊",
+        "矽晶圓",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-07-23/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "光通訊 +3.13%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "矽晶圓 -7.60%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "2.6%",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "high-price-watch",
       "category": "stocks",
@@ -196,111 +543,6 @@
           "label": "Top 賣超",
           "value": "4743 -56%",
           "color": "down"
-        }
-      ]
-    },
-    {
-      "id": "options-atm",
-      "category": "txo",
-      "type": "pulse",
-      "date": "2026-07-22",
-      "time": "20:00",
-      "title": "選擇權價平和 · 隱含波動代理",
-      "title_em": "價平和",
-      "summary": "近 763 個交易日（2023-05-30 → 2026-07-22）TXO ATM Call+Put 加總。最新 (2026-07-22)：近期 1053 點（到期 202607F4）、次遠期 1565 點。",
-      "tags": [
-        "選擇權",
-        "TXO",
-        "價平和",
-        "隱波"
-      ],
-      "source_pipeline": "taifex + twse",
-      "url": "reports/options-atm.html",
-      "stats": [
-        {
-          "label": "近期 C+P",
-          "value": "1053",
-          "color": "neutral"
-        },
-        {
-          "label": "次遠期 C+P",
-          "value": "1565",
-          "color": "neutral"
-        },
-        {
-          "label": "區間",
-          "value": "763 日",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "market-pulse",
-      "category": "taiex",
-      "type": "pulse",
-      "date": "2026-07-22",
-      "time": "20:00",
-      "title": "市場脈動 · 漲跌停 × 全族群均幅",
-      "title_em": "脈動",
-      "summary": "近 63 個交易日漲跌停家數、總成交額、族群平均漲幅、漲停集中度。最新 (2026-07-22)：漲停 55、跌停 5、全族群均幅 +1.08%。",
-      "tags": [
-        "市場脈動",
-        "漲跌停",
-        "成交額"
-      ],
-      "source_pipeline": "industry_map",
-      "url": "reports/market-pulse.html",
-      "stats": [
-        {
-          "label": "漲停",
-          "value": "55",
-          "color": "up"
-        },
-        {
-          "label": "跌停",
-          "value": "5",
-          "color": "down"
-        },
-        {
-          "label": "成交額",
-          "value": "11,185 億",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "futures-basis",
-      "category": "taiex",
-      "type": "pulse",
-      "date": "2026-07-22",
-      "time": "20:00",
-      "title": "期貨正逆價差 · 12 年期現對照",
-      "title_em": "12 年",
-      "summary": "近 3023 個交易日（2014-02-14 → 2026-07-22）台指期 TXF1 vs 加權指數價差。最新 (2026-07-22)：基差 -194.8 點，加權收 44,826。",
-      "tags": [
-        "期貨",
-        "基差",
-        "正逆價差",
-        "TX",
-        "12 年"
-      ],
-      "source_pipeline": "yuanta + yfinance",
-      "url": "reports/futures-basis.html",
-      "stats": [
-        {
-          "label": "最新基差",
-          "value": "-194.8",
-          "color": "down"
-        },
-        {
-          "label": "加權",
-          "value": "44,826",
-          "color": "neutral"
-        },
-        {
-          "label": "區間",
-          "value": "3023 日",
-          "color": "neutral"
         }
       ]
     },
@@ -562,6 +804,109 @@
         "大股東",
         "三大法人",
         "燈號"
+      ]
+    },
+    {
+      "id": "2026-07-21-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-07-21",
+      "time": "20:00",
+      "title": "2026-07-21 族群週報",
+      "title_em": "貨櫃航運",
+      "summary": "涵蓋 2026-07-15 ~ 2026-07-21。週領漲 貨櫃航運 +5.92%，週領跌 被動元件 -15.37%；資金焦點 晶圓代工。",
+      "tags": [
+        "貨櫃航運",
+        "被動元件",
+        "晶圓代工",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-07-21/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "貨櫃航運 +5.92%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "被動元件 -15.37%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "晶圓代工",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-21-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-07-21",
+      "time": "20:00",
+      "title": "2026-07-21 每日族群輪動雷達",
+      "title_em": "ABF載板",
+      "summary": "今日相對升溫以 ABF載板 最明顯，相對降溫以 農業科技 壓力最大；今日轉強力道大於轉弱力道。",
+      "tags": [
+        "ABF載板",
+        "農業科技",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-07-21/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "ABF載板 +12.35 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "農業科技 -1.96 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-21-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-07-21",
+      "time": "20:00",
+      "title": "2026-07-21 族群盤後快報",
+      "title_em": "ABF載板",
+      "summary": "全 74 族群、成交 9427.0 億；領漲 ABF載板 +9.19%，領跌 矽晶圓 -1.51%；漲多族群 70/74，全族群均漲 +2.17%。",
+      "tags": [
+        "ABF載板",
+        "矽晶圓",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-07-21/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "ABF載板 +9.19%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "矽晶圓 -1.51%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "16.2%",
+          "color": "neutral"
+        }
       ]
     },
     {
