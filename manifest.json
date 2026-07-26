@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-26T21:18:55+08:00",
+  "updated_at": "2026-07-26T21:24:22+08:00",
   "today": "2026-07-24",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,42 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "three-factor-ranking",
+      "category": "chips",
+      "type": "ranking",
+      "date": "2026-07-24",
+      "time": "21:10",
+      "title": "三因子波段排行榜",
+      "title_em": "外資×營收×強勢",
+      "summary": "外資連買 >= 3 日、最新月營收創高、20/60 日趨勢仍強。 本次三因子同步 11 檔。 榜首：6414 樺漢，外資連買 27 日，營收 YoY +57.0%，前 20 日 +33.9%。",
+      "tags": [
+        "波段",
+        "外資連買",
+        "營收創高",
+        "強者恆強",
+        "排行榜"
+      ],
+      "source_pipeline": "stock_chip_crawler+mops_index",
+      "url": "reports/three-factor-ranking.html",
+      "stats": [
+        {
+          "label": "三因子同步",
+          "value": "11 檔",
+          "color": "up"
+        },
+        {
+          "label": "營收期別",
+          "value": "2026-06",
+          "color": "neutral"
+        },
+        {
+          "label": "榜首",
+          "value": "6414 85.9",
+          "color": "up"
+        }
+      ]
+    },
     {
       "id": "options-atm",
       "category": "txo",
@@ -435,42 +471,6 @@
         {
           "label": "三率完整",
           "value": "454",
-          "color": "up"
-        }
-      ]
-    },
-    {
-      "id": "three-factor-ranking",
-      "category": "chips",
-      "type": "ranking",
-      "date": "2026-07-22",
-      "time": "21:10",
-      "title": "三因子波段排行榜",
-      "title_em": "外資×營收×強勢",
-      "summary": "外資連買 >= 3 日、最新月營收創高、20/60 日趨勢仍強。 本次三因子同步 11 檔。 榜首：6414 樺漢，外資連買 25 日，營收 YoY +57.0%，前 20 日 +29.8%。",
-      "tags": [
-        "波段",
-        "外資連買",
-        "營收創高",
-        "強者恆強",
-        "排行榜"
-      ],
-      "source_pipeline": "stock_chip_crawler+mops_index",
-      "url": "reports/three-factor-ranking.html",
-      "stats": [
-        {
-          "label": "三因子同步",
-          "value": "11 檔",
-          "color": "up"
-        },
-        {
-          "label": "營收期別",
-          "value": "2026-06",
-          "color": "neutral"
-        },
-        {
-          "label": "榜首",
-          "value": "6414 87.3",
           "color": "up"
         }
       ]
