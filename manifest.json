@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-26T22:14:19+08:00",
-  "today": "2026-07-24",
+  "updated_at": "2026-07-27T16:32:52+08:00",
+  "today": "2026-07-27",
   "volume_number": 1,
   "market_summary": {
     "date": "2026-05-22",
@@ -21,6 +21,112 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "options-annual-2026",
+      "category": "txo",
+      "type": "options_annual",
+      "date": "2026-07-27",
+      "time": "15:10",
+      "title": "2026 台股選擇權年度合併報告（簡易版）",
+      "title_em": "年度合併",
+      "summary": "彙整 2026 年 30 份 簡易版 週報，期間 2026-01-01 至 2026-07-27，共 20 個交易日。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "年度合併",
+        "簡易版",
+        "v2.5-lite"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5-lite",
+      "url": "reports/options/annual_reports/2026/台股選擇權年度合併報告_2026_v2.5_lite.html",
+      "stats": [
+        {
+          "label": "週報",
+          "value": "30",
+          "color": "neutral"
+        },
+        {
+          "label": "交易日",
+          "value": "20",
+          "color": "neutral"
+        },
+        {
+          "label": "期間",
+          "value": "2026-01-01 → 2026-07-27",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "options-weekly-20260727-20260731",
+      "category": "txo",
+      "type": "options_weekly",
+      "date": "2026-07-27",
+      "time": "15:00",
+      "title": "台股選擇權籌碼週報 · 20260727-20260731（簡易版）",
+      "title_em": "選擇權",
+      "summary": "簡易版 v2.5 週報，涵蓋 2026-07-27 至 2026-07-27，共 1 個交易日。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "週報",
+        "簡易版",
+        "v2.5-lite"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5-lite",
+      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260727-20260731_v2.5_lite.html",
+      "stats": [
+        {
+          "label": "週期",
+          "value": "20260727-20260731",
+          "color": "neutral"
+        },
+        {
+          "label": "交易日",
+          "value": "1",
+          "color": "neutral"
+        },
+        {
+          "label": "版本",
+          "value": "v2.5-lite",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "financial-calendar",
+      "category": "calendar",
+      "type": "calendar",
+      "date": "2026-07-27",
+      "time": "08:30",
+      "title": "市場行事曆",
+      "title_em": "法說會",
+      "summary": "台股區塊每日更新未來一個月法說會公司，僅列日期、股號、股名與時間；其他市場事件保留原行事曆資料。",
+      "tags": [
+        "行事曆",
+        "台股",
+        "法說會"
+      ],
+      "source_pipeline": "financial_calendar_service investor_conference_calendar",
+      "url": "reports/financial-calendar.html",
+      "stats": [
+        {
+          "label": "事件",
+          "value": "118",
+          "color": "neutral"
+        },
+        {
+          "label": "高重要",
+          "value": "35",
+          "color": "up"
+        },
+        {
+          "label": "台股法說",
+          "value": "63",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "three-factor-ranking",
       "category": "chips",
@@ -302,58 +408,23 @@
       ]
     },
     {
-      "id": "options-annual-2026",
-      "category": "txo",
-      "type": "options_annual",
-      "date": "2026-07-24",
-      "time": "15:10",
-      "title": "2026 台股選擇權年度合併報告",
-      "title_em": "年度合併",
-      "summary": "彙整 2026 年 29 份 v2.5 週報，期間 2026-01-01 至 2026-07-24，共 19 個交易日。",
-      "tags": [
-        "選擇權",
-        "TXO",
-        "年度合併",
-        "v2.5"
-      ],
-      "source_pipeline": "stock_project options_report_v2.5",
-      "url": "reports/options/annual_reports/2026/台股選擇權年度合併報告_2026_v2.5.html",
-      "stats": [
-        {
-          "label": "週報",
-          "value": "29",
-          "color": "neutral"
-        },
-        {
-          "label": "交易日",
-          "value": "19",
-          "color": "neutral"
-        },
-        {
-          "label": "期間",
-          "value": "2026-01-01 → 2026-07-24",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
       "id": "options-weekly-20260720-20260724",
       "category": "txo",
       "type": "options_weekly",
       "date": "2026-07-24",
       "time": "15:00",
-      "title": "台股選擇權籌碼週報 · 20260720-20260724",
+      "title": "台股選擇權籌碼週報 · 20260720-20260724（簡易版）",
       "title_em": "選擇權",
-      "summary": "v2.5 定價與期現結構版週報，涵蓋 2026-07-20 至 2026-07-24，共 5 個交易日。",
+      "summary": "簡易版 v2.5 週報，涵蓋 2026-07-20 至 2026-07-24，共 5 個交易日。",
       "tags": [
         "選擇權",
         "TXO",
         "週報",
-        "Max Pain",
-        "P/C Ratio"
+        "簡易版",
+        "v2.5-lite"
       ],
-      "source_pipeline": "stock_project options_report_v2.5",
-      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260720-20260724_v2.5.html",
+      "source_pipeline": "stock_project options_report_v2.5-lite",
+      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260720-20260724_v2.5_lite.html",
       "stats": [
         {
           "label": "週期",
@@ -367,7 +438,7 @@
         },
         {
           "label": "版本",
-          "value": "v2.5",
+          "value": "v2.5-lite",
           "color": "neutral"
         }
       ]
@@ -1161,40 +1232,6 @@
       ]
     },
     {
-      "id": "financial-calendar",
-      "category": "calendar",
-      "type": "calendar",
-      "date": "2026-07-19",
-      "time": "08:30",
-      "title": "市場行事曆",
-      "title_em": "法說會",
-      "summary": "台股區塊每日更新未來一個月法說會公司，僅列日期、股號、股名與時間；其他市場事件保留原行事曆資料。",
-      "tags": [
-        "行事曆",
-        "台股",
-        "法說會"
-      ],
-      "source_pipeline": "financial_calendar_service investor_conference_calendar",
-      "url": "reports/financial-calendar.html",
-      "stats": [
-        {
-          "label": "事件",
-          "value": "97",
-          "color": "neutral"
-        },
-        {
-          "label": "高重要",
-          "value": "35",
-          "color": "up"
-        },
-        {
-          "label": "台股法說",
-          "value": "42",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
       "id": "2026-07-17-ai-research-daily-market",
       "category": "ai-research",
       "type": "daily-market",
@@ -1339,18 +1376,18 @@
       "type": "options_weekly",
       "date": "2026-07-17",
       "time": "15:00",
-      "title": "台股選擇權籌碼週報 · 20260713-20260717",
+      "title": "台股選擇權籌碼週報 · 20260713-20260717（簡易版）",
       "title_em": "選擇權",
-      "summary": "v2.5 定價與期現結構版週報，涵蓋 2026-07-13 至 2026-07-17，共 5 個交易日。",
+      "summary": "簡易版 v2.5 週報，涵蓋 2026-07-13 至 2026-07-17，共 5 個交易日。",
       "tags": [
         "選擇權",
         "TXO",
         "週報",
-        "Max Pain",
-        "P/C Ratio"
+        "簡易版",
+        "v2.5-lite"
       ],
-      "source_pipeline": "stock_project options_report_v2.5",
-      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260713-20260717_v2.5.html",
+      "source_pipeline": "stock_project options_report_v2.5-lite",
+      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260713-20260717_v2.5_lite.html",
       "stats": [
         {
           "label": "週期",
@@ -1364,7 +1401,7 @@
         },
         {
           "label": "版本",
-          "value": "v2.5",
+          "value": "v2.5-lite",
           "color": "neutral"
         }
       ]
