@@ -149,10 +149,10 @@
       "name_en": "Options",
       "tagline_zh": "TXO 籌碼 × 壓力支撐",
       "tagline_en": "Options flow",
-      "description": "台指選擇權週報、年度合併與價平波動代理",
+      "description": "台指選擇權週報（簡易版）、年度合併與價平波動代理",
       "enabled": true,
       "source_pipelines": [
-        "stock_project options_report_v2.5",
+        "stock_project options_report_v2.5-lite",
         "taifex + twse"
       ],
       "subcategories": [
