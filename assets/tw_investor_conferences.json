@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-27T22:09:05+08:00",
+  "generated_at": "2026-07-28T11:00:06+08:00",
   "source_id": "tw_moneylink_investor_conference",
   "source_url": "https://www.money-link.com.tw/stxba/imwcontent0.asp?page=INVC1&ID=INVC1",
   "events": [
@@ -453,6 +453,12 @@
       "code": "2886",
       "name": "兆豐金",
       "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-08-28",
+      "code": "2882",
+      "name": "國泰金",
+      "event_time": "14:00"
     }
   ]
 }
