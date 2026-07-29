@@ -74,7 +74,8 @@
       "description": "加權指數動能、籌碼結構與期現價差",
       "enabled": true,
       "source_pipelines": [
-        "industry_map"
+        "industry_map",
+        "stock_project weekly_extreme_movers_v2"
       ],
       "subcategories": [
         {
@@ -91,6 +92,13 @@
           "match_id_prefix": [
             "futures-basis"
           ]
+        },
+        {
+          "id": "extreme",
+          "name_zh": "極端漲跌",
+          "match_id_prefix": [
+            "extreme-movers"
+          ]
         }
       ],
       "report_types": [
@@ -98,6 +106,11 @@
           "id": "pulse",
           "name_zh": "市場脈動",
           "name_en": "Market Pulse"
+        },
+        {
+          "id": "extreme_movers",
+          "name_zh": "極端漲跌",
+          "name_en": "Extreme Movers"
         }
       ]
     },
