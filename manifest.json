@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-30T21:32:08+08:00",
+  "updated_at": "2026-07-30T22:07:58+08:00",
   "today": "2026-07-30",
   "volume_number": 1,
   "market_summary": {
@@ -445,14 +445,53 @@
       ]
     },
     {
+      "id": "2026-07-30-ai-research-daily-market-composite",
+      "category": "ai-research",
+      "type": "daily-market-composite",
+      "date": "2026-07-30",
+      "time": "15:30",
+      "title": "夜盤重挫後早盤V反沖高失守，櫃買遠弱於加權",
+      "title_em": "V反沖高失守",
+      "summary": "夜盤台指期大跌後日盤低開再探低，09:06起V型反攻並於09:43見高；午後回吐，加權收-0.264%、櫃買-2.396%。法人合計淨賣超約495億，權值樣品強弱分化。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤中結構",
+        "綜合觀察",
+        "廣度",
+        "籌碼"
+      ],
+      "source_pipeline": "market_structure_composite_v2",
+      "url": "reports/2026-07-30/ai-research-daily-market-composite.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "-0.264%",
+          "color": "down"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "-2.396%",
+          "color": "down"
+        },
+        {
+          "label": "台指期日盤",
+          "value": "-0.302%",
+          "color": "down"
+        }
+      ]
+    },
+    {
       "id": "2026-07-30-ai-research-daily-market",
       "category": "ai-research",
       "type": "daily-market",
       "date": "2026-07-30",
       "time": "15:30",
-      "title": "夜盤重挫後早盤急殺搶高，午後一氣回吐失守",
-      "title_em": "早盤急殺搶高，午後一氣回吐",
-      "summary": "夜盤自高點回落收在區間低檔，日盤開後再急殺創低，隨即V型衝上全日高點；中段震盪後午後壓回，加權與櫃買皆收在區間下半，期貨日盤收盤略優於現貨13:30。",
+      "title": "加權 -0.26%，櫃買相對更弱 -2.40%",
+      "title_em": "櫃買相對更弱",
+      "summary": "夜盤台指期開至收 -2.499%（40,661→39,645）；加權終場 39,933.30（-0.264%），收在全日區間 30.2%；櫃買終場 326.23（-2.396%），收在全日區間 19.4%；首根低點收盤跌破順序：台指期 09:03。",
       "tags": [
         "台股",
         "台指期",
@@ -475,8 +514,8 @@
         },
         {
           "label": "台指期日盤",
-          "value": "-0.302%",
-          "color": "down"
+          "value": "+0.657%",
+          "color": "up"
         }
       ]
     },
@@ -774,14 +813,53 @@
       ]
     },
     {
+      "id": "2026-07-29-ai-research-daily-market-composite",
+      "category": "ai-research",
+      "type": "daily-market-composite",
+      "date": "2026-07-29",
+      "time": "15:30",
+      "title": "夜盤偏強日盤失守，櫃買遠弱於加權且廣度重挫",
+      "title_em": "日盤失守、櫃買遠弱、廣度重挫",
+      "summary": "台指期夜盤收在區間偏上，日盤卻高開後跌破首根區間並一路下探；加權收跌3.76%、櫃買跌5.16%，櫃買明顯弱勢。廣度上跌停家數遠高於漲停，三大法人合計淨賣超約351億，權值樣品普遍開高走低，與指數結構同向偏空。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤中結構",
+        "綜合觀察",
+        "廣度",
+        "籌碼"
+      ],
+      "source_pipeline": "market_structure_composite_v2",
+      "url": "reports/2026-07-29/ai-research-daily-market-composite.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "-3.760%",
+          "color": "down"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "-5.159%",
+          "color": "down"
+        },
+        {
+          "label": "台指期日盤",
+          "value": "-2.934%",
+          "color": "down"
+        }
+      ]
+    },
+    {
       "id": "2026-07-29-ai-research-daily-market",
       "category": "ai-research",
       "type": "daily-market",
       "date": "2026-07-29",
       "time": "15:30",
-      "title": "夜盤偏多開高誘多失敗，早盤破首根後一路殺到底",
-      "title_em": "開高誘多失敗",
-      "summary": "夜盤台指期收在區間偏高，日盤卻開高後迅速失守首根低點；現貨小幅低開、日高僅在09:04出現，09:07即收破首根低點並展開多段下殺。櫃買弱勢更甚，跌停遠多於漲停，尾盤雖有技術性反彈，收盤仍困在全日低區。",
+      "title": "加權 -3.76%，櫃買相對更弱 -5.16%",
+      "title_em": "櫃買相對更弱",
+      "summary": "夜盤台指期開至收 +0.263%（41,779→41,889）；加權終場 40,039.18（-3.760%），收在全日區間 28.3%；櫃買終場 334.24（-5.159%），收在全日區間 24.4%；首根低點收盤跌破順序：台指期 08:59 → 櫃買 09:06 → 加權 09:07。",
       "tags": [
         "台股",
         "台指期",
@@ -804,7 +882,7 @@
         },
         {
           "label": "台指期日盤",
-          "value": "-2.934%",
+          "value": "-3.634%",
           "color": "down"
         }
       ]
@@ -913,14 +991,53 @@
       ]
     },
     {
+      "id": "2026-07-28-ai-research-daily-market-composite",
+      "category": "ai-research",
+      "type": "daily-market-composite",
+      "date": "2026-07-28",
+      "time": "15:30",
+      "title": "跳空弱開鎖高後單邊下殺，櫃買收在日低、廣度與籌碼同步承壓",
+      "title_em": "跳空弱開鎖高後單邊下殺",
+      "summary": "加權收41603.36（-4.654%）、櫃買收日低352.42（-6.789%），結構為開盤即高點後破首低未再收復；廣度跌停家數暴增、三大法人合計淨賣超約1176億，與指數弱勢同向，權值樣品中僅台積電、廣達開收小幅翻紅。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤中結構",
+        "綜合觀察",
+        "廣度",
+        "籌碼"
+      ],
+      "source_pipeline": "market_structure_composite_v2",
+      "url": "reports/2026-07-28/ai-research-daily-market-composite.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "-4.654%",
+          "color": "down"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "-6.789%",
+          "color": "down"
+        },
+        {
+          "label": "台指期日盤",
+          "value": "-5.225%",
+          "color": "down"
+        }
+      ]
+    },
+    {
       "id": "2026-07-28-ai-research-daily-market",
       "category": "ai-research",
       "type": "daily-market",
       "date": "2026-07-28",
       "time": "15:30",
-      "title": "開盤即高、首根破低確認後的單邊下殺日",
-      "title_em": "開盤即高、首根破低",
-      "summary": "夜盤先自高檔回落，日盤再裂缺口。加權開在全日高點後，09:12 收破首根低點，盤中低點落在 11:12，尾盤再壓；櫃買收在地板。現貨 13:30 收近低點，期貨 13:45 另見新低，不可回填為現貨反彈。",
+      "title": "三市偏弱，加權收盤 -4.65%、收在全日低檔區",
+      "title_em": "收在全日低檔區",
+      "summary": "夜盤台指期開至收 -1.784%（43,956→43,172）；加權終場 41,603.36（-4.654%），收在全日區間 2.3%；櫃買終場 352.42（-6.789%），收在全日區間 0.0%；首根低點收盤跌破順序：台指期 08:52 → 櫃買 09:11 → 加權 09:12。",
       "tags": [
         "台股",
         "台指期",
@@ -943,7 +1060,7 @@
         },
         {
           "label": "台指期日盤",
-          "value": "-5.225%",
+          "value": "-2.246%",
           "color": "down"
         }
       ]
@@ -1052,14 +1169,53 @@
       ]
     },
     {
+      "id": "2026-07-27-ai-research-daily-market-composite",
+      "category": "ai-research",
+      "type": "daily-market-composite",
+      "date": "2026-07-27",
+      "time": "15:30",
+      "title": "夜盤偏強日盤跳空後回補：午後拉回上緣、廣度仍偏弱",
+      "title_em": "午後拉回上緣、廣度仍偏弱",
+      "summary": "今日主結構為夜盤偏強後日盤跳空轉弱，早盤與中午前兩段下探，午後急速回補；加權收在日振幅上緣卻僅微跌，櫃買反而小漲。廣度層面族群平均為負、上漲集中度偏低，籌碼則呈外資偏多、自營偏空對沖，指數收復與內部熱度並未完全同向。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤中結構",
+        "綜合觀察",
+        "廣度",
+        "籌碼"
+      ],
+      "source_pipeline": "market_structure_composite_v2",
+      "url": "reports/2026-07-27/ai-research-daily-market-composite.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "-0.047%",
+          "color": "down"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "+0.122%",
+          "color": "up"
+        },
+        {
+          "label": "台指期日盤",
+          "value": "+0.005%",
+          "color": "up"
+        }
+      ]
+    },
+    {
       "id": "2026-07-27-ai-research-daily-market",
       "category": "ai-research",
       "type": "daily-market",
       "date": "2026-07-27",
       "time": "15:30",
-      "title": "夜盤強勢未能接棒，日盤先殺後彈收復首根高點",
-      "title_em": "先殺後彈收復首根高點",
-      "summary": "夜盤台指期收高，日盤卻跳空失守並在 09:29 見低；加權午盤二次下探後，尾盤於 13:19 收盤穿越首根高點，收在當日區間 92.7%，仍較前收微跌 0.047%。",
+      "title": "台指期先破首根低點，加權收 -0.05%",
+      "title_em": "先破首根低點",
+      "summary": "夜盤台指期開至收 +0.856%（43,820→44,195）；加權終場 43,634.19（-0.047%），收在全日區間 92.7%；櫃買終場 378.09（+0.122%），收在全日區間 91.4%；首根低點收盤跌破順序：台指期 08:56 → 櫃買 09:15 → 加權 09:06。",
       "tags": [
         "台股",
         "台指期",
@@ -1082,7 +1238,7 @@
         },
         {
           "label": "台指期日盤",
-          "value": "+0.005%",
+          "value": "+0.043%",
           "color": "up"
         }
       ]
@@ -1191,14 +1347,53 @@
       ]
     },
     {
+      "id": "2026-07-24-ai-research-daily-market-composite",
+      "category": "ai-research",
+      "type": "daily-market-composite",
+      "date": "2026-07-24",
+      "time": "15:30",
+      "title": "夜盤先弱、開盤即高點，指數貼低收；廣度與櫃買同向偏空",
+      "title_em": "開盤即高點，指數貼低收",
+      "summary": "2026-07-24主結構為夜盤先壓、日盤開盤即高後一路下修，加權收在日振幅4.1%近低位、櫃買更貼近0.6%極低位。綜合觀察見廣度偏空、外資大幅淨賣超，期現基差仍為正值，權值樣品中台積相對抗跌、緯穎獨強，無法完全解釋指數跌幅。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤中結構",
+        "綜合觀察",
+        "廣度",
+        "籌碼"
+      ],
+      "source_pipeline": "market_structure_composite_v2",
+      "url": "reports/2026-07-24/ai-research-daily-market-composite.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "-2.667%",
+          "color": "down"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "-3.693%",
+          "color": "down"
+        },
+        {
+          "label": "台指期日盤",
+          "value": "-2.281%",
+          "color": "down"
+        }
+      ]
+    },
+    {
       "id": "2026-07-24-ai-research-daily-market",
       "category": "ai-research",
       "type": "daily-market",
       "date": "2026-07-24",
       "time": "15:30",
-      "title": "日高落在首分、反彈失敗後收在區間底部",
-      "title_em": "日高落在首分",
-      "summary": "夜盤已先下修，日盤台指期低開；現貨開盤即日高，早盤反彈未收破首根高點，中午前收盤跌破首根低點，終場加權、櫃買皆貼近日低，廣度與外資同步偏弱。",
+      "title": "三市偏弱，加權收盤 -2.67%、收在全日低檔區",
+      "title_em": "收在全日低檔區",
+      "summary": "夜盤台指期開至收 -1.030%（44,853→44,391）；加權終場 43,654.84（-2.667%），收在全日區間 4.1%；櫃買終場 377.63（-3.693%），收在全日區間 0.6%；首根低點收盤跌破順序：台指期 09:03 → 櫃買 10:24 → 加權 10:34。",
       "tags": [
         "台股",
         "台指期",
@@ -1221,7 +1416,7 @@
         },
         {
           "label": "台指期日盤",
-          "value": "-2.281%",
+          "value": "-0.591%",
           "color": "down"
         }
       ]
@@ -1366,14 +1561,53 @@
       ]
     },
     {
+      "id": "2026-07-23-ai-research-daily-market-composite",
+      "category": "ai-research",
+      "type": "daily-market-composite",
+      "date": "2026-07-23",
+      "time": "15:30",
+      "title": "夜盤推升後日盤回吐，加權平盤收斂、櫃買明顯落後",
+      "title_em": "加權平盤收斂、櫃買明顯落後",
+      "summary": "夜盤台指期上漲1.307%後，日盤高開回吐；加權收+0.056%、櫃買-0.777%。結構屬先上後下再午後拉回；廣度偏弱（類股上漲20/74）、三大法人合計淨買超185.22億，指數與籌碼同向但與廣度、櫃買背離。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤中結構",
+        "綜合觀察",
+        "廣度",
+        "籌碼"
+      ],
+      "source_pipeline": "market_structure_composite_v2",
+      "url": "reports/2026-07-23/ai-research-daily-market-composite.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "+0.056%",
+          "color": "up"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "-0.777%",
+          "color": "down"
+        },
+        {
+          "label": "台指期日盤",
+          "value": "+0.670%",
+          "color": "up"
+        }
+      ]
+    },
+    {
       "id": "2026-07-23-ai-research-daily-market",
       "category": "ai-research",
       "type": "daily-market",
       "date": "2026-07-23",
       "time": "15:30",
-      "title": "夜盤先拉、日盤高開即見高，午前失守午後搶回：加權小紅、櫃買收黑",
-      "title_em": "高開即見高、午後搶回",
-      "summary": "台指期夜盤先行上攻，日盤再跳空高開後於開盤附近見高；現貨首根結構很快失守，午前至午間壓回，日低落在12:09附近。午後末段加權強勢回補至平盤上方，櫃買反彈力道偏弱，收在區間下緣。",
+      "title": "加權 +0.06%，櫃買相對更弱 -0.78%",
+      "title_em": "櫃買相對更弱",
+      "summary": "夜盤台指期開至收 +1.307%（44,453→45,034）；加權終場 44,850.81（+0.056%），收在全日區間 68.1%；櫃買終場 392.11（-0.777%），收在全日區間 26.4%；首根低點收盤跌破順序：台指期 09:01 → 櫃買 10:19 → 加權 09:07。",
       "tags": [
         "台股",
         "台指期",
@@ -1396,8 +1630,8 @@
         },
         {
           "label": "台指期日盤",
-          "value": "+0.670%",
-          "color": "up"
+          "value": "-0.839%",
+          "color": "down"
         }
       ]
     },
@@ -1501,6 +1735,45 @@
           "label": "漲停集中",
           "value": "19.7%",
           "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-22-ai-research-daily-market-composite",
+      "category": "ai-research",
+      "type": "daily-market-composite",
+      "date": "2026-07-22",
+      "time": "15:30",
+      "title": "高開急攻後回落，櫃買遠強於加權、期貨收近全日低點",
+      "title_em": "櫃買遠強於加權",
+      "summary": "2026-07-22 主結構為夜盤偏強後日盤高開急攻、早盤見高後震盪回落。加權收漲 1.340%、櫃買大漲 3.461%；廣度偏熱、三大法人合計淨買超，但台指期日盤開高走低收近全日低點，期現基差轉貼水，權值樣品多為開高走弱。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤中結構",
+        "綜合觀察",
+        "廣度",
+        "籌碼"
+      ],
+      "source_pipeline": "market_structure_composite_v2",
+      "url": "reports/2026-07-22/ai-research-daily-market-composite.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "+1.340%",
+          "color": "up"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "+3.461%",
+          "color": "up"
+        },
+        {
+          "label": "台指期日盤",
+          "value": "+0.572%",
+          "color": "up"
         }
       ]
     },
@@ -1644,6 +1917,45 @@
       ]
     },
     {
+      "id": "2026-07-21-ai-research-daily-market-composite",
+      "category": "ai-research",
+      "type": "daily-market-composite",
+      "date": "2026-07-21",
+      "time": "15:30",
+      "title": "開低即低、全日階梯上攻收在日高：廣度同向、外資與指數背離",
+      "title_em": "開低即低、全日階梯上攻收在日高",
+      "summary": "2026-07-21 台股主結構為開低即低、首根確認後全日階梯上攻，加權收在日高、區間位置 100%。廣度與權值樣品同向；法人合計淨流入但外資淨賣超與指數強勢背離；期現基差本日 packet 無此欄。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤中結構",
+        "綜合觀察",
+        "廣度",
+        "籌碼"
+      ],
+      "source_pipeline": "market_structure_composite_v2",
+      "url": "reports/2026-07-21/ai-research-daily-market-composite.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "+4.201%",
+          "color": "up"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "+3.644%",
+          "color": "up"
+        },
+        {
+          "label": "台指期日盤",
+          "value": "+4.071%",
+          "color": "up"
+        }
+      ]
+    },
+    {
       "id": "2026-07-21-ai-research-daily-market",
       "category": "ai-research",
       "type": "daily-market",
@@ -1779,6 +2091,45 @@
           "label": "漲停集中",
           "value": "0.9%",
           "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-20-ai-research-daily-market-composite",
+      "category": "ai-research",
+      "type": "daily-market-composite",
+      "date": "2026-07-20",
+      "time": "15:30",
+      "title": "高開急殺後震盪收斂，櫃買遠弱於加權",
+      "title_em": "高開急殺後震盪收斂",
+      "summary": "2026-07-20 台指期高開後一路回吐，現貨早盤急殺再震盪收斂；加權收 -0.519%、櫃買 -2.619%。廣度偏弱、跌停多於漲停，法人合計小幅淨買入但外資與自營為淨賣；正價差約 191 點，權值樣品強弱分歧。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤中結構",
+        "綜合觀察",
+        "廣度",
+        "籌碼"
+      ],
+      "source_pipeline": "market_structure_composite_v2",
+      "url": "reports/2026-07-20/ai-research-daily-market-composite.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "-0.519%",
+          "color": "down"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "-2.619%",
+          "color": "down"
+        },
+        {
+          "label": "台指期日盤",
+          "value": "-0.197%",
+          "color": "down"
         }
       ]
     },
@@ -1959,6 +2310,45 @@
       ]
     },
     {
+      "id": "2026-07-17-ai-research-daily-market-composite",
+      "category": "ai-research",
+      "type": "daily-market-composite",
+      "date": "2026-07-17",
+      "time": "15:30",
+      "title": "開高即高、收盤貼低的瀑布日：廣度與法人同步確認弱勢",
+      "title_em": "開高即高、收盤貼低",
+      "summary": "2026-07-17 台股主結構為開盤即日高、終盤貼日低的瀑布式下挫；加權、櫃買、台指期日盤同向重挫。廣度極度傾斜、三大法人合計淨賣超逾兩千六百億，與結構路徑高度同向；權值樣品全數開高走低，但跌幅離散。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤中結構",
+        "綜合觀察",
+        "廣度",
+        "籌碼"
+      ],
+      "source_pipeline": "market_structure_composite_v2",
+      "url": "reports/2026-07-17/ai-research-daily-market-composite.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "-6.474%",
+          "color": "down"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "-7.019%",
+          "color": "down"
+        },
+        {
+          "label": "台指期日盤",
+          "value": "-6.510%",
+          "color": "down"
+        }
+      ]
+    },
+    {
       "id": "2026-07-17-ai-research-daily-market",
       "category": "ai-research",
       "type": "daily-market",
@@ -2134,6 +2524,45 @@
       ]
     },
     {
+      "id": "2026-07-16-ai-research-daily-market-composite",
+      "category": "ai-research",
+      "type": "daily-market-composite",
+      "date": "2026-07-16",
+      "time": "15:30",
+      "title": "早盤急殺後收復、加權近平收與櫃買弱勢背離",
+      "title_em": "加權近平收與櫃買弱勢背離",
+      "summary": "夜盤偏強後日盤低開急殺，加權於09:35見低後翻轉收在日振幅上緣、僅小跌0.014%；櫃買全日弱勢收跌2.257%。廣度偏冷、外資大額淨賣超與加權收斂形成籌碼背離，台指期收盤升水約75點。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤中結構",
+        "綜合觀察",
+        "廣度",
+        "籌碼"
+      ],
+      "source_pipeline": "market_structure_composite_v2",
+      "url": "reports/2026-07-16/ai-research-daily-market-composite.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "-0.014%",
+          "color": "down"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "-2.257%",
+          "color": "down"
+        },
+        {
+          "label": "台指期日盤",
+          "value": "+0.550%",
+          "color": "up"
+        }
+      ]
+    },
+    {
       "id": "2026-07-16-ai-research-daily-market",
       "category": "ai-research",
       "type": "daily-market",
@@ -2273,6 +2702,45 @@
       ]
     },
     {
+      "id": "2026-07-15-ai-research-daily-market-composite",
+      "category": "ai-research",
+      "type": "daily-market-composite",
+      "date": "2026-07-15",
+      "time": "15:30",
+      "title": "跳空後一路偏強、收在區間上緣，廣度與內資同向、外資小幅背離",
+      "title_em": "一路偏強、收在區間上緣",
+      "summary": "加權收漲近2%、櫃買更強；夜盤偏多後日盤延續上攻，廣度與投信自營同向偏多，外資小賣與權值樣品強弱分歧為主要背離。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤中結構",
+        "綜合觀察",
+        "廣度",
+        "籌碼"
+      ],
+      "source_pipeline": "market_structure_composite_v2",
+      "url": "reports/2026-07-15/ai-research-daily-market-composite.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "+1.997%",
+          "color": "up"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "+2.209%",
+          "color": "up"
+        },
+        {
+          "label": "台指期日盤",
+          "value": "+1.417%",
+          "color": "up"
+        }
+      ]
+    },
+    {
       "id": "2026-07-15-ai-research-daily-market",
       "category": "ai-research",
       "type": "daily-market",
@@ -2408,6 +2876,45 @@
           "label": "漲停集中",
           "value": "2.1%",
           "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-14-ai-research-daily-market-composite",
+      "category": "ai-research",
+      "type": "daily-market-composite",
+      "date": "2026-07-14",
+      "time": "15:30",
+      "title": "高開轉弱午後修復，廣度與籌碼同步承壓",
+      "title_em": "高開轉弱午後修復",
+      "summary": "2026-07-14台股主結構為夜盤偏弱後日盤早段見高、隨後單邊下探、午盤低點後回升。加權開收-1.381%、櫃買-2.831%，廣度僅7/74族群上漲且法人合計淨賣超791.82億，指數修復與市場參與面不同步。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤中結構",
+        "綜合觀察",
+        "廣度",
+        "籌碼"
+      ],
+      "source_pipeline": "market_structure_composite_v2",
+      "url": "reports/2026-07-14/ai-research-daily-market-composite.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "-1.381%",
+          "color": "down"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "-2.831%",
+          "color": "down"
+        },
+        {
+          "label": "台指期日盤",
+          "value": "-0.513%",
+          "color": "down"
         }
       ]
     },
