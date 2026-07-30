@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-30T14:37:58+08:00",
+  "updated_at": "2026-07-30T15:30:23+08:00",
   "today": "2026-07-29",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,77 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "extreme-movers-2026",
+      "category": "taiex",
+      "type": "extreme_movers",
+      "date": "2026-07-30",
+      "time": "15:05",
+      "title": "2026 每週極端漲跌前 100 + 前 200 分布（還原）",
+      "title_em": "2026",
+      "summary": "2026-W01 → 2026-W31，共 30 個有交易週。報酬已還原除權息／增資／減資。",
+      "tags": [
+        "大盤",
+        "極端漲跌",
+        "2026",
+        "還原"
+      ],
+      "source_pipeline": "stock_project weekly_extreme_movers_v2",
+      "url": "reports/extreme-movers/weekly_extreme_movers_2026_viewer.html",
+      "stats": [
+        {
+          "label": "週數",
+          "value": "30",
+          "color": "neutral"
+        },
+        {
+          "label": "近週漲≥20%",
+          "value": "1",
+          "color": "up"
+        },
+        {
+          "label": "近週跌≤-20%",
+          "value": "130",
+          "color": "down"
+        }
+      ]
+    },
+    {
+      "id": "extreme-movers-hub",
+      "category": "taiex",
+      "type": "extreme_movers",
+      "date": "2026-07-30",
+      "time": "15:00",
+      "title": "每週極端漲跌 · 還原後前 200 分布（多年份）",
+      "title_em": "極端漲跌",
+      "summary": "普通股週報酬極端前 100 漲／跌與前 200 分布；已還原除權息／增資／減資。含全市場 ±20% 家數。涵蓋 2010–2026。",
+      "tags": [
+        "大盤",
+        "極端漲跌",
+        "還原",
+        "除權息",
+        "±20%"
+      ],
+      "source_pipeline": "stock_project weekly_extreme_movers_v2",
+      "url": "extreme-movers.html",
+      "stats": [
+        {
+          "label": "年度",
+          "value": "2010–2026",
+          "color": "neutral"
+        },
+        {
+          "label": "近週漲≥20%",
+          "value": "1",
+          "color": "up"
+        },
+        {
+          "label": "近週跌≤-20%",
+          "value": "130",
+          "color": "down"
+        }
+      ]
+    },
     {
       "id": "high-price-watch",
       "category": "stocks",
@@ -946,41 +1017,6 @@
       ]
     },
     {
-      "id": "extreme-movers-2026",
-      "category": "taiex",
-      "type": "extreme_movers",
-      "date": "2026-07-24",
-      "time": "15:05",
-      "title": "2026 每週極端漲跌前 100 + 前 200 分布（還原）",
-      "title_em": "2026",
-      "summary": "2026-W01 → 2026-W30，共 29 個有交易週。報酬已還原除權息／增資／減資。",
-      "tags": [
-        "大盤",
-        "極端漲跌",
-        "2026",
-        "還原"
-      ],
-      "source_pipeline": "stock_project weekly_extreme_movers_v2",
-      "url": "reports/extreme-movers/weekly_extreme_movers_2026_viewer.html",
-      "stats": [
-        {
-          "label": "週數",
-          "value": "29",
-          "color": "neutral"
-        },
-        {
-          "label": "近週漲≥20%",
-          "value": "19",
-          "color": "up"
-        },
-        {
-          "label": "近週跌≤-20%",
-          "value": "5",
-          "color": "down"
-        }
-      ]
-    },
-    {
       "id": "options-weekly-20260720-20260724",
       "category": "txo",
       "type": "options_weekly",
@@ -1013,42 +1049,6 @@
           "label": "版本",
           "value": "v2.5-lite",
           "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "extreme-movers-hub",
-      "category": "taiex",
-      "type": "extreme_movers",
-      "date": "2026-07-24",
-      "time": "15:00",
-      "title": "每週極端漲跌 · 還原後前 200 分布（多年份）",
-      "title_em": "極端漲跌",
-      "summary": "普通股週報酬極端前 100 漲／跌與前 200 分布；已還原除權息／增資／減資。含全市場 ±20% 家數。涵蓋 2023–2026。",
-      "tags": [
-        "大盤",
-        "極端漲跌",
-        "還原",
-        "除權息",
-        "±20%"
-      ],
-      "source_pipeline": "stock_project weekly_extreme_movers_v2",
-      "url": "extreme-movers.html",
-      "stats": [
-        {
-          "label": "年度",
-          "value": "2023–2026",
-          "color": "neutral"
-        },
-        {
-          "label": "近週漲≥20%",
-          "value": "19",
-          "color": "up"
-        },
-        {
-          "label": "近週跌≤-20%",
-          "value": "5",
-          "color": "down"
         }
       ]
     },
@@ -15299,6 +15299,41 @@
       ]
     },
     {
+      "id": "extreme-movers-2022",
+      "category": "taiex",
+      "type": "extreme_movers",
+      "date": "2022-12-30",
+      "time": "15:05",
+      "title": "2022 每週極端漲跌前 100 + 前 200 分布（還原）",
+      "title_em": "2022",
+      "summary": "2022-W01 → 2022-W52，共 51 個有交易週。報酬已還原除權息／增資／減資。",
+      "tags": [
+        "大盤",
+        "極端漲跌",
+        "2022",
+        "還原"
+      ],
+      "source_pipeline": "stock_project weekly_extreme_movers_v2",
+      "url": "reports/extreme-movers/weekly_extreme_movers_2022_viewer.html",
+      "stats": [
+        {
+          "label": "週數",
+          "value": "51",
+          "color": "neutral"
+        },
+        {
+          "label": "近週漲≥20%",
+          "value": "2",
+          "color": "up"
+        },
+        {
+          "label": "近週跌≤-20%",
+          "value": "0",
+          "color": "down"
+        }
+      ]
+    },
+    {
       "id": "options-weekly-20221226-20221230",
       "category": "txo",
       "type": "options_weekly",
@@ -17207,6 +17242,41 @@
       ]
     },
     {
+      "id": "extreme-movers-2021",
+      "category": "taiex",
+      "type": "extreme_movers",
+      "date": "2021-12-30",
+      "time": "15:05",
+      "title": "2021 每週極端漲跌前 100 + 前 200 分布（還原）",
+      "title_em": "2021",
+      "summary": "2021-W01 → 2021-W52，共 51 個有交易週。報酬已還原除權息／增資／減資。",
+      "tags": [
+        "大盤",
+        "極端漲跌",
+        "2021",
+        "還原"
+      ],
+      "source_pipeline": "stock_project weekly_extreme_movers_v2",
+      "url": "reports/extreme-movers/weekly_extreme_movers_2021_viewer.html",
+      "stats": [
+        {
+          "label": "週數",
+          "value": "51",
+          "color": "neutral"
+        },
+        {
+          "label": "近週漲≥20%",
+          "value": "19",
+          "color": "up"
+        },
+        {
+          "label": "近週跌≤-20%",
+          "value": "0",
+          "color": "down"
+        }
+      ]
+    },
+    {
       "id": "options-weekly-20211220-20211224",
       "category": "txo",
       "type": "options_weekly",
@@ -19003,6 +19073,391 @@
           "label": "版本",
           "value": "v2.5-lite",
           "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "extreme-movers-2020",
+      "category": "taiex",
+      "type": "extreme_movers",
+      "date": "2020-12-31",
+      "time": "15:05",
+      "title": "2020 每週極端漲跌前 100 + 前 200 分布（還原）",
+      "title_em": "2020",
+      "summary": "2020-W01 → 2020-W53，共 53 個有交易週。報酬已還原除權息／增資／減資。",
+      "tags": [
+        "大盤",
+        "極端漲跌",
+        "2020",
+        "還原"
+      ],
+      "source_pipeline": "stock_project weekly_extreme_movers_v2",
+      "url": "reports/extreme-movers/weekly_extreme_movers_2020_viewer.html",
+      "stats": [
+        {
+          "label": "週數",
+          "value": "53",
+          "color": "neutral"
+        },
+        {
+          "label": "近週漲≥20%",
+          "value": "24",
+          "color": "up"
+        },
+        {
+          "label": "近週跌≤-20%",
+          "value": "0",
+          "color": "down"
+        }
+      ]
+    },
+    {
+      "id": "extreme-movers-2019",
+      "category": "taiex",
+      "type": "extreme_movers",
+      "date": "2019-12-27",
+      "time": "15:05",
+      "title": "2019 每週極端漲跌前 100 + 前 200 分布（還原）",
+      "title_em": "2019",
+      "summary": "2019-W01 → 2019-W52，共 51 個有交易週。報酬已還原除權息／增資／減資。",
+      "tags": [
+        "大盤",
+        "極端漲跌",
+        "2019",
+        "還原"
+      ],
+      "source_pipeline": "stock_project weekly_extreme_movers_v2",
+      "url": "reports/extreme-movers/weekly_extreme_movers_2019_viewer.html",
+      "stats": [
+        {
+          "label": "週數",
+          "value": "51",
+          "color": "neutral"
+        },
+        {
+          "label": "近週漲≥20%",
+          "value": "11",
+          "color": "up"
+        },
+        {
+          "label": "近週跌≤-20%",
+          "value": "0",
+          "color": "down"
+        }
+      ]
+    },
+    {
+      "id": "extreme-movers-2018",
+      "category": "taiex",
+      "type": "extreme_movers",
+      "date": "2018-12-28",
+      "time": "15:05",
+      "title": "2018 每週極端漲跌前 100 + 前 200 分布（還原）",
+      "title_em": "2018",
+      "summary": "2018-W01 → 2018-W52，共 52 個有交易週。報酬已還原除權息／增資／減資。",
+      "tags": [
+        "大盤",
+        "極端漲跌",
+        "2018",
+        "還原"
+      ],
+      "source_pipeline": "stock_project weekly_extreme_movers_v2",
+      "url": "reports/extreme-movers/weekly_extreme_movers_2018_viewer.html",
+      "stats": [
+        {
+          "label": "週數",
+          "value": "52",
+          "color": "neutral"
+        },
+        {
+          "label": "近週漲≥20%",
+          "value": "7",
+          "color": "up"
+        },
+        {
+          "label": "近週跌≤-20%",
+          "value": "0",
+          "color": "down"
+        }
+      ]
+    },
+    {
+      "id": "extreme-movers-2017",
+      "category": "taiex",
+      "type": "extreme_movers",
+      "date": "2017-12-29",
+      "time": "15:05",
+      "title": "2017 每週極端漲跌前 100 + 前 200 分布（還原）",
+      "title_em": "2017",
+      "summary": "2017-W01 → 2017-W52，共 52 個有交易週。報酬已還原除權息／增資／減資。",
+      "tags": [
+        "大盤",
+        "極端漲跌",
+        "2017",
+        "還原"
+      ],
+      "source_pipeline": "stock_project weekly_extreme_movers_v2",
+      "url": "reports/extreme-movers/weekly_extreme_movers_2017_viewer.html",
+      "stats": [
+        {
+          "label": "週數",
+          "value": "52",
+          "color": "neutral"
+        },
+        {
+          "label": "近週漲≥20%",
+          "value": "9",
+          "color": "up"
+        },
+        {
+          "label": "近週跌≤-20%",
+          "value": "1",
+          "color": "down"
+        }
+      ]
+    },
+    {
+      "id": "extreme-movers-2016",
+      "category": "taiex",
+      "type": "extreme_movers",
+      "date": "2016-12-30",
+      "time": "15:05",
+      "title": "2016 每週極端漲跌前 100 + 前 200 分布（還原）",
+      "title_em": "2016",
+      "summary": "2016-W01 → 2016-W52，共 51 個有交易週。報酬已還原除權息／增資／減資。",
+      "tags": [
+        "大盤",
+        "極端漲跌",
+        "2016",
+        "還原"
+      ],
+      "source_pipeline": "stock_project weekly_extreme_movers_v2",
+      "url": "reports/extreme-movers/weekly_extreme_movers_2016_viewer.html",
+      "stats": [
+        {
+          "label": "週數",
+          "value": "51",
+          "color": "neutral"
+        },
+        {
+          "label": "近週漲≥20%",
+          "value": "3",
+          "color": "up"
+        },
+        {
+          "label": "近週跌≤-20%",
+          "value": "0",
+          "color": "down"
+        }
+      ]
+    },
+    {
+      "id": "extreme-movers-2015",
+      "category": "taiex",
+      "type": "extreme_movers",
+      "date": "2015-12-31",
+      "time": "15:05",
+      "title": "2015 每週極端漲跌前 100 + 前 200 分布（還原）",
+      "title_em": "2015",
+      "summary": "2015-W01 → 2015-W53，共 50 個有交易週。報酬已還原除權息／增資／減資。",
+      "tags": [
+        "大盤",
+        "極端漲跌",
+        "2015",
+        "還原"
+      ],
+      "source_pipeline": "stock_project weekly_extreme_movers_v2",
+      "url": "reports/extreme-movers/weekly_extreme_movers_2015_viewer.html",
+      "stats": [
+        {
+          "label": "週數",
+          "value": "50",
+          "color": "neutral"
+        },
+        {
+          "label": "近週漲≥20%",
+          "value": "4",
+          "color": "up"
+        },
+        {
+          "label": "近週跌≤-20%",
+          "value": "0",
+          "color": "down"
+        }
+      ]
+    },
+    {
+      "id": "extreme-movers-2014",
+      "category": "taiex",
+      "type": "extreme_movers",
+      "date": "2014-12-26",
+      "time": "15:05",
+      "title": "2014 每週極端漲跌前 100 + 前 200 分布（還原）",
+      "title_em": "2014",
+      "summary": "2014-W01 → 2014-W52，共 52 個有交易週。報酬已還原除權息／增資／減資。",
+      "tags": [
+        "大盤",
+        "極端漲跌",
+        "2014",
+        "還原"
+      ],
+      "source_pipeline": "stock_project weekly_extreme_movers_v2",
+      "url": "reports/extreme-movers/weekly_extreme_movers_2014_viewer.html",
+      "stats": [
+        {
+          "label": "週數",
+          "value": "52",
+          "color": "neutral"
+        },
+        {
+          "label": "近週漲≥20%",
+          "value": "8",
+          "color": "up"
+        },
+        {
+          "label": "近週跌≤-20%",
+          "value": "0",
+          "color": "down"
+        }
+      ]
+    },
+    {
+      "id": "extreme-movers-2013",
+      "category": "taiex",
+      "type": "extreme_movers",
+      "date": "2013-12-27",
+      "time": "15:05",
+      "title": "2013 每週極端漲跌前 100 + 前 200 分布（還原）",
+      "title_em": "2013",
+      "summary": "2013-W01 → 2013-W52，共 51 個有交易週。報酬已還原除權息／增資／減資。",
+      "tags": [
+        "大盤",
+        "極端漲跌",
+        "2013",
+        "還原"
+      ],
+      "source_pipeline": "stock_project weekly_extreme_movers_v2",
+      "url": "reports/extreme-movers/weekly_extreme_movers_2013_viewer.html",
+      "stats": [
+        {
+          "label": "週數",
+          "value": "51",
+          "color": "neutral"
+        },
+        {
+          "label": "近週漲≥20%",
+          "value": "14",
+          "color": "up"
+        },
+        {
+          "label": "近週跌≤-20%",
+          "value": "0",
+          "color": "down"
+        }
+      ]
+    },
+    {
+      "id": "extreme-movers-2012",
+      "category": "taiex",
+      "type": "extreme_movers",
+      "date": "2012-12-28",
+      "time": "15:05",
+      "title": "2012 每週極端漲跌前 100 + 前 200 分布（還原）",
+      "title_em": "2012",
+      "summary": "2012-W01 → 2012-W52，共 51 個有交易週。報酬已還原除權息／增資／減資。",
+      "tags": [
+        "大盤",
+        "極端漲跌",
+        "2012",
+        "還原"
+      ],
+      "source_pipeline": "stock_project weekly_extreme_movers_v2",
+      "url": "reports/extreme-movers/weekly_extreme_movers_2012_viewer.html",
+      "stats": [
+        {
+          "label": "週數",
+          "value": "51",
+          "color": "neutral"
+        },
+        {
+          "label": "近週漲≥20%",
+          "value": "15",
+          "color": "up"
+        },
+        {
+          "label": "近週跌≤-20%",
+          "value": "2",
+          "color": "down"
+        }
+      ]
+    },
+    {
+      "id": "extreme-movers-2011",
+      "category": "taiex",
+      "type": "extreme_movers",
+      "date": "2011-12-30",
+      "time": "15:05",
+      "title": "2011 每週極端漲跌前 100 + 前 200 分布（還原）",
+      "title_em": "2011",
+      "summary": "2011-W01 → 2011-W52，共 51 個有交易週。報酬已還原除權息／增資／減資。",
+      "tags": [
+        "大盤",
+        "極端漲跌",
+        "2011",
+        "還原"
+      ],
+      "source_pipeline": "stock_project weekly_extreme_movers_v2",
+      "url": "reports/extreme-movers/weekly_extreme_movers_2011_viewer.html",
+      "stats": [
+        {
+          "label": "週數",
+          "value": "51",
+          "color": "neutral"
+        },
+        {
+          "label": "近週漲≥20%",
+          "value": "6",
+          "color": "up"
+        },
+        {
+          "label": "近週跌≤-20%",
+          "value": "2",
+          "color": "down"
+        }
+      ]
+    },
+    {
+      "id": "extreme-movers-2010",
+      "category": "taiex",
+      "type": "extreme_movers",
+      "date": "2010-12-31",
+      "time": "15:05",
+      "title": "2010 每週極端漲跌前 100 + 前 200 分布（還原）",
+      "title_em": "2010",
+      "summary": "2010-W01 → 2010-W52，共 52 個有交易週。報酬已還原除權息／增資／減資。",
+      "tags": [
+        "大盤",
+        "極端漲跌",
+        "2010",
+        "還原"
+      ],
+      "source_pipeline": "stock_project weekly_extreme_movers_v2",
+      "url": "reports/extreme-movers/weekly_extreme_movers_2010_viewer.html",
+      "stats": [
+        {
+          "label": "週數",
+          "value": "52",
+          "color": "neutral"
+        },
+        {
+          "label": "近週漲≥20%",
+          "value": "4",
+          "color": "up"
+        },
+        {
+          "label": "近週跌≤-20%",
+          "value": "0",
+          "color": "down"
         }
       ]
     }
