@@ -484,42 +484,6 @@
       ]
     },
     {
-      "id": "2026-07-30-ai-research-daily-market",
-      "category": "ai-research",
-      "type": "daily-market",
-      "date": "2026-07-30",
-      "time": "15:30",
-      "title": "加權 -0.26%，櫃買相對更弱 -2.40%",
-      "title_em": "櫃買相對更弱",
-      "summary": "夜盤台指期開至收 -2.499%（40,661→39,645）；加權終場 39,933.30（-0.264%），收在全日區間 30.2%；櫃買終場 326.23（-2.396%），收在全日區間 19.4%；首根低點收盤跌破順序：台指期 09:03。",
-      "tags": [
-        "台股",
-        "台指期",
-        "加權指數",
-        "櫃買指數",
-        "盤中結構"
-      ],
-      "source_pipeline": "market_structure_analysis",
-      "url": "reports/2026-07-30/ai-research-daily-market.html",
-      "stats": [
-        {
-          "label": "加權指數",
-          "value": "-0.264%",
-          "color": "down"
-        },
-        {
-          "label": "櫃買指數",
-          "value": "-2.396%",
-          "color": "down"
-        },
-        {
-          "label": "台指期日盤",
-          "value": "+0.657%",
-          "color": "up"
-        }
-      ]
-    },
-    {
       "id": "extreme-movers-2026",
       "category": "taiex",
       "type": "extreme_movers",
@@ -852,42 +816,6 @@
       ]
     },
     {
-      "id": "2026-07-29-ai-research-daily-market",
-      "category": "ai-research",
-      "type": "daily-market",
-      "date": "2026-07-29",
-      "time": "15:30",
-      "title": "加權 -3.76%，櫃買相對更弱 -5.16%",
-      "title_em": "櫃買相對更弱",
-      "summary": "夜盤台指期開至收 +0.263%（41,779→41,889）；加權終場 40,039.18（-3.760%），收在全日區間 28.3%；櫃買終場 334.24（-5.159%），收在全日區間 24.4%；首根低點收盤跌破順序：台指期 08:59 → 櫃買 09:06 → 加權 09:07。",
-      "tags": [
-        "台股",
-        "台指期",
-        "加權指數",
-        "櫃買指數",
-        "盤中結構"
-      ],
-      "source_pipeline": "market_structure_analysis",
-      "url": "reports/2026-07-29/ai-research-daily-market.html",
-      "stats": [
-        {
-          "label": "加權指數",
-          "value": "-3.760%",
-          "color": "down"
-        },
-        {
-          "label": "櫃買指數",
-          "value": "-5.159%",
-          "color": "down"
-        },
-        {
-          "label": "台指期日盤",
-          "value": "-3.634%",
-          "color": "down"
-        }
-      ]
-    },
-    {
       "id": "2026-07-28-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -1025,42 +953,6 @@
         {
           "label": "台指期日盤",
           "value": "-5.225%",
-          "color": "down"
-        }
-      ]
-    },
-    {
-      "id": "2026-07-28-ai-research-daily-market",
-      "category": "ai-research",
-      "type": "daily-market",
-      "date": "2026-07-28",
-      "time": "15:30",
-      "title": "三市偏弱，加權收盤 -4.65%、收在全日低檔區",
-      "title_em": "收在全日低檔區",
-      "summary": "夜盤台指期開至收 -1.784%（43,956→43,172）；加權終場 41,603.36（-4.654%），收在全日區間 2.3%；櫃買終場 352.42（-6.789%），收在全日區間 0.0%；首根低點收盤跌破順序：台指期 08:52 → 櫃買 09:11 → 加權 09:12。",
-      "tags": [
-        "台股",
-        "台指期",
-        "加權指數",
-        "櫃買指數",
-        "盤中結構"
-      ],
-      "source_pipeline": "market_structure_analysis",
-      "url": "reports/2026-07-28/ai-research-daily-market.html",
-      "stats": [
-        {
-          "label": "加權指數",
-          "value": "-4.654%",
-          "color": "down"
-        },
-        {
-          "label": "櫃買指數",
-          "value": "-6.789%",
-          "color": "down"
-        },
-        {
-          "label": "台指期日盤",
-          "value": "-2.246%",
           "color": "down"
         }
       ]
@@ -1208,42 +1100,6 @@
       ]
     },
     {
-      "id": "2026-07-27-ai-research-daily-market",
-      "category": "ai-research",
-      "type": "daily-market",
-      "date": "2026-07-27",
-      "time": "15:30",
-      "title": "台指期先破首根低點，加權收 -0.05%",
-      "title_em": "先破首根低點",
-      "summary": "夜盤台指期開至收 +0.856%（43,820→44,195）；加權終場 43,634.19（-0.047%），收在全日區間 92.7%；櫃買終場 378.09（+0.122%），收在全日區間 91.4%；首根低點收盤跌破順序：台指期 08:56 → 櫃買 09:15 → 加權 09:06。",
-      "tags": [
-        "台股",
-        "台指期",
-        "加權指數",
-        "櫃買指數",
-        "盤中結構"
-      ],
-      "source_pipeline": "market_structure_analysis",
-      "url": "reports/2026-07-27/ai-research-daily-market.html",
-      "stats": [
-        {
-          "label": "加權指數",
-          "value": "-0.047%",
-          "color": "down"
-        },
-        {
-          "label": "櫃買指數",
-          "value": "+0.122%",
-          "color": "up"
-        },
-        {
-          "label": "台指期日盤",
-          "value": "+0.043%",
-          "color": "up"
-        }
-      ]
-    },
-    {
       "id": "2026-07-24-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -1381,42 +1237,6 @@
         {
           "label": "台指期日盤",
           "value": "-2.281%",
-          "color": "down"
-        }
-      ]
-    },
-    {
-      "id": "2026-07-24-ai-research-daily-market",
-      "category": "ai-research",
-      "type": "daily-market",
-      "date": "2026-07-24",
-      "time": "15:30",
-      "title": "三市偏弱，加權收盤 -2.67%、收在全日低檔區",
-      "title_em": "收在全日低檔區",
-      "summary": "夜盤台指期開至收 -1.030%（44,853→44,391）；加權終場 43,654.84（-2.667%），收在全日區間 4.1%；櫃買終場 377.63（-3.693%），收在全日區間 0.6%；首根低點收盤跌破順序：台指期 09:03 → 櫃買 10:24 → 加權 10:34。",
-      "tags": [
-        "台股",
-        "台指期",
-        "加權指數",
-        "櫃買指數",
-        "盤中結構"
-      ],
-      "source_pipeline": "market_structure_analysis",
-      "url": "reports/2026-07-24/ai-research-daily-market.html",
-      "stats": [
-        {
-          "label": "加權指數",
-          "value": "-2.667%",
-          "color": "down"
-        },
-        {
-          "label": "櫃買指數",
-          "value": "-3.693%",
-          "color": "down"
-        },
-        {
-          "label": "台指期日盤",
-          "value": "-0.591%",
           "color": "down"
         }
       ]
@@ -1600,42 +1420,6 @@
       ]
     },
     {
-      "id": "2026-07-23-ai-research-daily-market",
-      "category": "ai-research",
-      "type": "daily-market",
-      "date": "2026-07-23",
-      "time": "15:30",
-      "title": "加權 +0.06%，櫃買相對更弱 -0.78%",
-      "title_em": "櫃買相對更弱",
-      "summary": "夜盤台指期開至收 +1.307%（44,453→45,034）；加權終場 44,850.81（+0.056%），收在全日區間 68.1%；櫃買終場 392.11（-0.777%），收在全日區間 26.4%；首根低點收盤跌破順序：台指期 09:01 → 櫃買 10:19 → 加權 09:07。",
-      "tags": [
-        "台股",
-        "台指期",
-        "加權指數",
-        "櫃買指數",
-        "盤中結構"
-      ],
-      "source_pipeline": "market_structure_analysis",
-      "url": "reports/2026-07-23/ai-research-daily-market.html",
-      "stats": [
-        {
-          "label": "加權指數",
-          "value": "+0.056%",
-          "color": "up"
-        },
-        {
-          "label": "櫃買指數",
-          "value": "-0.777%",
-          "color": "down"
-        },
-        {
-          "label": "台指期日盤",
-          "value": "-0.839%",
-          "color": "down"
-        }
-      ]
-    },
-    {
       "id": "2026-07-22-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -1774,42 +1558,6 @@
           "label": "台指期日盤",
           "value": "+0.572%",
           "color": "up"
-        }
-      ]
-    },
-    {
-      "id": "2026-07-22-ai-research-daily-market",
-      "category": "ai-research",
-      "type": "daily-market",
-      "date": "2026-07-22",
-      "time": "15:30",
-      "title": "櫃買相對抗跌，加權收 +1.34%",
-      "title_em": "櫃買相對抗跌",
-      "summary": "夜盤台指期開至收 +0.870%（44,573→44,961）；加權終場 44,825.78（+1.340%），收在全日區間 38.5%；櫃買終場 395.18（+3.461%），收在全日區間 72.0%；首根低點收盤跌破順序：台指期 09:32。",
-      "tags": [
-        "台股",
-        "台指期",
-        "加權指數",
-        "櫃買指數",
-        "盤中結構"
-      ],
-      "source_pipeline": "market_structure_analysis",
-      "url": "reports/2026-07-22/ai-research-daily-market.html",
-      "stats": [
-        {
-          "label": "加權指數",
-          "value": "+1.340%",
-          "color": "up"
-        },
-        {
-          "label": "櫃買指數",
-          "value": "+3.461%",
-          "color": "up"
-        },
-        {
-          "label": "台指期日盤",
-          "value": "-0.820%",
-          "color": "down"
         }
       ]
     },
@@ -1956,42 +1704,6 @@
       ]
     },
     {
-      "id": "2026-07-21-ai-research-daily-market",
-      "category": "ai-research",
-      "type": "daily-market",
-      "date": "2026-07-21",
-      "time": "15:30",
-      "title": "期現同向走高，加權收 +4.20% 並靠近日高",
-      "title_em": "靠近日高",
-      "summary": "夜盤台指期開至收 +0.793%（42,641→42,979）；加權終場 44,232.87（+4.201%），收在全日區間 100.0%；櫃買終場 381.96（+3.644%），收在全日區間 95.1%。",
-      "tags": [
-        "台股",
-        "台指期",
-        "加權指數",
-        "櫃買指數",
-        "盤中結構"
-      ],
-      "source_pipeline": "market_structure_analysis",
-      "url": "reports/2026-07-21/ai-research-daily-market.html",
-      "stats": [
-        {
-          "label": "加權指數",
-          "value": "+4.201%",
-          "color": "up"
-        },
-        {
-          "label": "櫃買指數",
-          "value": "+3.644%",
-          "color": "up"
-        },
-        {
-          "label": "台指期日盤",
-          "value": "+2.494%",
-          "color": "up"
-        }
-      ]
-    },
-    {
       "id": "2026-07-20-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -2129,42 +1841,6 @@
         {
           "label": "台指期日盤",
           "value": "-0.197%",
-          "color": "down"
-        }
-      ]
-    },
-    {
-      "id": "2026-07-20-ai-research-daily-market",
-      "category": "ai-research",
-      "type": "daily-market",
-      "date": "2026-07-20",
-      "time": "15:30",
-      "title": "加權 -0.52%，櫃買相對更弱 -2.62%",
-      "title_em": "櫃買相對更弱",
-      "summary": "夜盤台指期開至收 +0.457%（42,700→42,895）；加權終場 42,449.70（-0.519%），收在全日區間 43.2%；櫃買終場 368.53（-2.619%），收在全日區間 54.0%；首根低點收盤跌破順序：台指期 08:53 → 櫃買 09:13 → 加權 09:15。",
-      "tags": [
-        "台股",
-        "台指期",
-        "加權指數",
-        "櫃買指數",
-        "盤中結構"
-      ],
-      "source_pipeline": "market_structure_analysis",
-      "url": "reports/2026-07-20/ai-research-daily-market.html",
-      "stats": [
-        {
-          "label": "加權指數",
-          "value": "-0.519%",
-          "color": "down"
-        },
-        {
-          "label": "櫃買指數",
-          "value": "-2.619%",
-          "color": "down"
-        },
-        {
-          "label": "台指期日盤",
-          "value": "-1.975%",
           "color": "down"
         }
       ]
@@ -2349,42 +2025,6 @@
       ]
     },
     {
-      "id": "2026-07-17-ai-research-daily-market",
-      "category": "ai-research",
-      "type": "daily-market",
-      "date": "2026-07-17",
-      "time": "15:30",
-      "title": "三市偏弱，加權收盤 -6.47%、收在全日低檔區",
-      "title_em": "收在全日低檔區",
-      "summary": "夜盤台指期開至收 -1.617%（45,450→44,715）；加權終場 42,671.27（-6.474%），收在全日區間 0.0%；櫃買終場 378.44（-7.019%），收在全日區間 1.0%；首根低點收盤跌破順序：台指期 09:34 → 櫃買 09:06 → 加權 09:06。",
-      "tags": [
-        "台股",
-        "台指期",
-        "加權指數",
-        "櫃買指數",
-        "盤中結構"
-      ],
-      "source_pipeline": "market_structure_analysis",
-      "url": "reports/2026-07-17/ai-research-daily-market.html",
-      "stats": [
-        {
-          "label": "加權指數",
-          "value": "-6.474%",
-          "color": "down"
-        },
-        {
-          "label": "櫃買指數",
-          "value": "-7.019%",
-          "color": "down"
-        },
-        {
-          "label": "台指期日盤",
-          "value": "-3.446%",
-          "color": "down"
-        }
-      ]
-    },
-    {
       "id": "options-weekly-20260713-20260717",
       "category": "txo",
       "type": "options_weekly",
@@ -2563,42 +2203,6 @@
       ]
     },
     {
-      "id": "2026-07-16-ai-research-daily-market",
-      "category": "ai-research",
-      "type": "daily-market",
-      "date": "2026-07-16",
-      "time": "15:30",
-      "title": "加權 -0.01%，櫃買相對更弱 -2.26%",
-      "title_em": "櫃買相對更弱",
-      "summary": "夜盤台指期開至收 +0.639%（45,526→45,817）；加權終場 45,624.98（-0.014%），收在全日區間 74.0%；櫃買終場 407.01（-2.257%），收在全日區間 21.2%；首根低點收盤跌破順序：台指期 09:13 → 櫃買 09:06 → 加權 09:06。",
-      "tags": [
-        "台股",
-        "台指期",
-        "加權指數",
-        "櫃買指數",
-        "盤中結構"
-      ],
-      "source_pipeline": "market_structure_analysis",
-      "url": "reports/2026-07-16/ai-research-daily-market.html",
-      "stats": [
-        {
-          "label": "加權指數",
-          "value": "-0.014%",
-          "color": "neutral"
-        },
-        {
-          "label": "櫃買指數",
-          "value": "-2.257%",
-          "color": "down"
-        },
-        {
-          "label": "台指期日盤",
-          "value": "+0.398%",
-          "color": "up"
-        }
-      ]
-    },
-    {
       "id": "2026-07-15-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -2741,42 +2345,6 @@
       ]
     },
     {
-      "id": "2026-07-15-ai-research-daily-market",
-      "category": "ai-research",
-      "type": "daily-market",
-      "date": "2026-07-15",
-      "time": "15:30",
-      "title": "期現同向走高，加權收 +2.00% 並靠近日高",
-      "title_em": "靠近日高",
-      "summary": "夜盤台指期開至收 +0.529%（44,778→45,015）；加權終場 45,631.59（+1.997%），收在全日區間 75.7%；櫃買終場 416.41（+2.209%），收在全日區間 84.1%；首根低點收盤跌破順序：台指期 09:02。",
-      "tags": [
-        "台股",
-        "台指期",
-        "加權指數",
-        "櫃買指數",
-        "盤中結構"
-      ],
-      "source_pipeline": "market_structure_analysis",
-      "url": "reports/2026-07-15/ai-research-daily-market.html",
-      "stats": [
-        {
-          "label": "加權指數",
-          "value": "+1.997%",
-          "color": "up"
-        },
-        {
-          "label": "櫃買指數",
-          "value": "+2.209%",
-          "color": "up"
-        },
-        {
-          "label": "台指期日盤",
-          "value": "+0.214%",
-          "color": "up"
-        }
-      ]
-    },
-    {
       "id": "2026-07-14-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -2900,42 +2468,6 @@
       ],
       "source_pipeline": "market_structure_composite_v2",
       "url": "reports/2026-07-14/ai-research-daily-market-composite.html",
-      "stats": [
-        {
-          "label": "加權指數",
-          "value": "-1.381%",
-          "color": "down"
-        },
-        {
-          "label": "櫃買指數",
-          "value": "-2.831%",
-          "color": "down"
-        },
-        {
-          "label": "台指期日盤",
-          "value": "-0.513%",
-          "color": "down"
-        }
-      ]
-    },
-    {
-      "id": "2026-07-14-ai-research-daily-market",
-      "category": "ai-research",
-      "type": "daily-market",
-      "date": "2026-07-14",
-      "time": "15:30",
-      "title": "加權 -1.38%，櫃買相對更弱 -2.83%",
-      "title_em": "櫃買相對更弱",
-      "summary": "夜盤台指期開至收 -0.956%（45,493→45,058）；加權終場 44,737.95（-1.381%），收在全日區間 63.4%；櫃買終場 407.41（-2.831%），收在全日區間 55.9%；首根低點收盤跌破順序：台指期 09:14 → 櫃買 09:07 → 加權 09:07。",
-      "tags": [
-        "台股",
-        "台指期",
-        "加權指數",
-        "櫃買指數",
-        "盤中結構"
-      ],
-      "source_pipeline": "market_structure_analysis",
-      "url": "reports/2026-07-14/ai-research-daily-market.html",
       "stats": [
         {
           "label": "加權指數",
