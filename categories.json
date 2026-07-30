@@ -106,11 +106,6 @@
           "id": "pulse",
           "name_zh": "市場脈動",
           "name_en": "Market Pulse"
-        },
-        {
-          "id": "extreme_movers",
-          "name_zh": "極端漲跌",
-          "name_en": "Extreme Movers"
         }
       ]
     },
