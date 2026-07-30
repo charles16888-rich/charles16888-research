@@ -25,6 +25,7 @@
     rotation: '輪動偵測',
     focus: '焦點深度',
     pulse: '市場脈動',
+    extreme_movers: '極端漲跌',
     options_weekly: '選擇權週報',
     options_annual: '年度合併',
     deep_card_full: '深度卡 · 完整版',

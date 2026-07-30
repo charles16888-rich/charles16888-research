@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-29T20:27:54+08:00",
+  "updated_at": "2026-07-30T14:37:58+08:00",
   "today": "2026-07-29",
   "volume_number": 1,
   "market_summary": {
@@ -29,7 +29,7 @@
       "time": "21:40",
       "title": "高價股觀測 · 排名熱圖",
       "title_em": "排名熱圖",
-      "summary": "高價股追蹤 40 檔，新進 27 檔、淡出 27 檔；榜首 3661 世芯-KY 收盤 2,805。",
+      "summary": "高價股追蹤 40 檔，新進 28 檔、淡出 28 檔；榜首 3661 世芯-KY 收盤 2,805。",
       "tags": [
         "個股",
         "高價股",
@@ -46,7 +46,7 @@
         },
         {
           "label": "新進",
-          "value": "27 檔",
+          "value": "28 檔",
           "color": "up"
         },
         {
@@ -88,6 +88,42 @@
         {
           "label": "三率完整",
           "value": "458",
+          "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "three-factor-ranking",
+      "category": "chips",
+      "type": "ranking",
+      "date": "2026-07-29",
+      "time": "21:10",
+      "title": "三因子波段排行榜",
+      "title_em": "外資×營收×強勢",
+      "summary": "外資連買 >= 3 日、最新月營收創高、20/60 日趨勢仍強。 本次三因子同步 2 檔。 榜首：9939 宏全，外資連買 3 日，營收 YoY +12.1%，前 20 日 +1.2%。",
+      "tags": [
+        "波段",
+        "外資連買",
+        "營收創高",
+        "強者恆強",
+        "排行榜"
+      ],
+      "source_pipeline": "stock_chip_crawler+mops_index",
+      "url": "reports/three-factor-ranking.html",
+      "stats": [
+        {
+          "label": "三因子同步",
+          "value": "2 檔",
+          "color": "up"
+        },
+        {
+          "label": "營收期別",
+          "value": "2026-06",
+          "color": "neutral"
+        },
+        {
+          "label": "榜首",
+          "value": "9939 63.4",
           "color": "up"
         }
       ]
@@ -447,7 +483,7 @@
       "id": "tri-source-lamp",
       "category": "chips",
       "title": "三源混合燈號",
-      "subtitle": "2026-07-29 · 三同買 4 / 三同賣 8",
+      "subtitle": "2026-07-29 · 三同買 8 / 三同賣 8",
       "date": "2026-07-29",
       "url": "reports/tri-source-lamp.html",
       "tags": [
@@ -455,42 +491,6 @@
         "大股東",
         "三大法人",
         "燈號"
-      ]
-    },
-    {
-      "id": "three-factor-ranking",
-      "category": "chips",
-      "type": "ranking",
-      "date": "2026-07-28",
-      "time": "21:10",
-      "title": "三因子波段排行榜",
-      "title_em": "外資×營收×強勢",
-      "summary": "外資連買 >= 3 日、最新月營收創高、20/60 日趨勢仍強。 本次三因子同步 2 檔。 榜首：4566 時碩工業，外資連買 7 日，營收 YoY +44.4%，前 20 日 +16.6%。",
-      "tags": [
-        "波段",
-        "外資連買",
-        "營收創高",
-        "強者恆強",
-        "排行榜"
-      ],
-      "source_pipeline": "stock_chip_crawler+mops_index",
-      "url": "reports/three-factor-ranking.html",
-      "stats": [
-        {
-          "label": "三因子同步",
-          "value": "2 檔",
-          "color": "up"
-        },
-        {
-          "label": "營收期別",
-          "value": "2026-06",
-          "color": "neutral"
-        },
-        {
-          "label": "榜首",
-          "value": "4566 70.9",
-          "color": "up"
-        }
       ]
     },
     {
@@ -946,6 +946,41 @@
       ]
     },
     {
+      "id": "extreme-movers-2026",
+      "category": "taiex",
+      "type": "extreme_movers",
+      "date": "2026-07-24",
+      "time": "15:05",
+      "title": "2026 每週極端漲跌前 100 + 前 200 分布（還原）",
+      "title_em": "2026",
+      "summary": "2026-W01 → 2026-W30，共 29 個有交易週。報酬已還原除權息／增資／減資。",
+      "tags": [
+        "大盤",
+        "極端漲跌",
+        "2026",
+        "還原"
+      ],
+      "source_pipeline": "stock_project weekly_extreme_movers_v2",
+      "url": "reports/extreme-movers/weekly_extreme_movers_2026_viewer.html",
+      "stats": [
+        {
+          "label": "週數",
+          "value": "29",
+          "color": "neutral"
+        },
+        {
+          "label": "近週漲≥20%",
+          "value": "19",
+          "color": "up"
+        },
+        {
+          "label": "近週跌≤-20%",
+          "value": "5",
+          "color": "down"
+        }
+      ]
+    },
+    {
       "id": "options-weekly-20260720-20260724",
       "category": "txo",
       "type": "options_weekly",
@@ -978,6 +1013,42 @@
           "label": "版本",
           "value": "v2.5-lite",
           "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "extreme-movers-hub",
+      "category": "taiex",
+      "type": "extreme_movers",
+      "date": "2026-07-24",
+      "time": "15:00",
+      "title": "每週極端漲跌 · 還原後前 200 分布（多年份）",
+      "title_em": "極端漲跌",
+      "summary": "普通股週報酬極端前 100 漲／跌與前 200 分布；已還原除權息／增資／減資。含全市場 ±20% 家數。涵蓋 2023–2026。",
+      "tags": [
+        "大盤",
+        "極端漲跌",
+        "還原",
+        "除權息",
+        "±20%"
+      ],
+      "source_pipeline": "stock_project weekly_extreme_movers_v2",
+      "url": "extreme-movers.html",
+      "stats": [
+        {
+          "label": "年度",
+          "value": "2023–2026",
+          "color": "neutral"
+        },
+        {
+          "label": "近週漲≥20%",
+          "value": "19",
+          "color": "up"
+        },
+        {
+          "label": "近週跌≤-20%",
+          "value": "5",
+          "color": "down"
         }
       ]
     },
@@ -9471,6 +9542,41 @@
       ]
     },
     {
+      "id": "extreme-movers-2025",
+      "category": "taiex",
+      "type": "extreme_movers",
+      "date": "2025-12-26",
+      "time": "15:05",
+      "title": "2025 每週極端漲跌前 100 + 前 200 分布（還原）",
+      "title_em": "2025",
+      "summary": "2025-W01 → 2025-W52，共 51 個有交易週。報酬已還原除權息／增資／減資。",
+      "tags": [
+        "大盤",
+        "極端漲跌",
+        "2025",
+        "還原"
+      ],
+      "source_pipeline": "stock_project weekly_extreme_movers_v2",
+      "url": "reports/extreme-movers/weekly_extreme_movers_2025_viewer.html",
+      "stats": [
+        {
+          "label": "週數",
+          "value": "51",
+          "color": "neutral"
+        },
+        {
+          "label": "近週漲≥20%",
+          "value": "24",
+          "color": "up"
+        },
+        {
+          "label": "近週跌≤-20%",
+          "value": "0",
+          "color": "down"
+        }
+      ]
+    },
+    {
       "id": "options-weekly-20251222-20251226",
       "category": "txo",
       "type": "options_weekly",
@@ -11339,6 +11445,41 @@
           "label": "版本",
           "value": "v2.5-lite",
           "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "extreme-movers-2024",
+      "category": "taiex",
+      "type": "extreme_movers",
+      "date": "2024-12-27",
+      "time": "15:05",
+      "title": "2024 每週極端漲跌前 100 + 前 200 分布（還原）",
+      "title_em": "2024",
+      "summary": "2024-W01 → 2024-W52，共 52 個有交易週。報酬已還原除權息／增資／減資。",
+      "tags": [
+        "大盤",
+        "極端漲跌",
+        "2024",
+        "還原"
+      ],
+      "source_pipeline": "stock_project weekly_extreme_movers_v2",
+      "url": "reports/extreme-movers/weekly_extreme_movers_2024_viewer.html",
+      "stats": [
+        {
+          "label": "週數",
+          "value": "52",
+          "color": "neutral"
+        },
+        {
+          "label": "近週漲≥20%",
+          "value": "18",
+          "color": "up"
+        },
+        {
+          "label": "近週跌≤-20%",
+          "value": "0",
+          "color": "down"
         }
       ]
     },
@@ -13247,6 +13388,41 @@
           "label": "期間",
           "value": "2023-01-02 → 2023-12-29",
           "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "extreme-movers-2023",
+      "category": "taiex",
+      "type": "extreme_movers",
+      "date": "2023-12-29",
+      "time": "15:05",
+      "title": "2023 每週極端漲跌前 100 + 前 200 分布（還原）",
+      "title_em": "2023",
+      "summary": "2023-W01 → 2023-W52，共 51 個有交易週。報酬已還原除權息／增資／減資。",
+      "tags": [
+        "大盤",
+        "極端漲跌",
+        "2023",
+        "還原"
+      ],
+      "source_pipeline": "stock_project weekly_extreme_movers_v2",
+      "url": "reports/extreme-movers/weekly_extreme_movers_2023_viewer.html",
+      "stats": [
+        {
+          "label": "週數",
+          "value": "51",
+          "color": "neutral"
+        },
+        {
+          "label": "近週漲≥20%",
+          "value": "9",
+          "color": "up"
+        },
+        {
+          "label": "近週跌≤-20%",
+          "value": "2",
+          "color": "down"
         }
       ]
     },

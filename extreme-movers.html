@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>每週極端漲跌 · 大盤 — charles16888</title>
+  <link rel="stylesheet" href="assets/fonts.css" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <style>
+    .year-grid { display:grid; grid-template-columns:1fr; gap:14px; margin:18px 0 40px; }
+    @media(min-width:720px) { .year-grid { grid-template-columns:1fr 1fr; } }
+    @media(min-width:1100px) { .year-grid { grid-template-columns:1fr 1fr 1fr 1fr; } }
+    .year-card {
+      display:block; text-decoration:none; color:inherit;
+      background:var(--surface, #fff); border:1px solid rgba(30,58,95,.08);
+      border-radius:14px; padding:18px 16px; box-shadow:0 8px 24px rgba(30,58,95,.06);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .year-card:hover { transform:translateY(-2px); box-shadow:0 12px 28px rgba(30,58,95,.1); }
+    .year-num { font-size:28px; font-weight:700; color:#1E3A5F; }
+    .year-sub { color:#6B7280; font-size:13px; margin-top:4px; }
+    .card-stats { margin-top:10px; display:flex; flex-direction:column; gap:4px; font-size:12.5px; }
+    .card-stats .up { color:#C62828; }
+    .card-stats .down { color:#2E7D32; }
+    .year-cta { margin-top:12px; font-size:13px; font-weight:600; color:#1E3A5F; }
+    .note { color:#6B7280; font-size:13px; line-height:1.6; max-width:72ch; }
+  </style>
+</head>
+<body data-page="report">
+  <header class="masthead">
+    <div class="container">
+      <div class="masthead__row">
+        <a class="brand" href="index.html">
+          <span class="brand__mark">charles<em>16888</em></span>
+          <span class="brand__plate">Market Edition · MMXXVI</span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a class="nav__link" href="category.html?cat=sectors">族群</a>
+          <a class="nav__link is-active" href="category.html?cat=taiex">大盤</a>
+          
+          <a class="nav__link" href="category.html?cat=txo">選擇權</a>
+          <a class="nav__link nav__link--disabled" href="#" aria-disabled="true">籌碼</a>
+          <a class="nav__link nav__link--disabled" href="#" aria-disabled="true">個股</a>
+          <a class="nav__link" href="category.html?cat=news">新聞</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">charles16888</a>
+      <span class="breadcrumb__sep">/</span>
+      <a href="category.html?cat=taiex">大盤</a>
+      <span class="breadcrumb__sep">/</span>
+      <span>每週極端漲跌</span>
+    </nav>
+
+    <section class="report-cover reveal reveal-d1">
+      <div class="report-meta-line">
+        <span class="pill">大盤</span>
+        <span class="pill">v2 還原</span>
+        <span class="pill">紅漲綠跌</span>
+      </div>
+      <h1 class="report-title">每週極端漲跌前 100 + 前 200 報酬分布</h1>
+      <p class="note">
+        以還原後週報酬計算（除權息／現金增資配股／減資恢復買賣）。
+        含全市場 ±20% 家數統計。最新年度：2026。
+        與選擇權報告同屬盤後研究產物，建議 15:00 後與選擇權一併更新。
+      </p>
+    </section>
+
+    <div class="year-grid">
+      
+      <a class="year-card" href="reports/extreme-movers/weekly_extreme_movers_2026_viewer.html">
+        <div class="year-num">2026</div>
+        <div class="year-sub">2026-W01 → 2026-W30 · 29 週 · v2_restored</div>
+        <div class="card-stats"><span class="up">近週漲≥20%：19 家</span><span class="down">跌≤-20%：5 家</span></div>
+        <div class="year-cta">開啟互動報告 →</div>
+      </a>
+
+      <a class="year-card" href="reports/extreme-movers/weekly_extreme_movers_2025_viewer.html">
+        <div class="year-num">2025</div>
+        <div class="year-sub">2025-W01 → 2025-W52 · 51 週 · v2_restored</div>
+        <div class="card-stats"><span class="up">近週漲≥20%：24 家</span><span class="down">跌≤-20%：0 家</span></div>
+        <div class="year-cta">開啟互動報告 →</div>
+      </a>
+
+      <a class="year-card" href="reports/extreme-movers/weekly_extreme_movers_2024_viewer.html">
+        <div class="year-num">2024</div>
+        <div class="year-sub">2024-W01 → 2024-W52 · 52 週 · v2_restored</div>
+        <div class="card-stats"><span class="up">近週漲≥20%：18 家</span><span class="down">跌≤-20%：0 家</span></div>
+        <div class="year-cta">開啟互動報告 →</div>
+      </a>
+
+      <a class="year-card" href="reports/extreme-movers/weekly_extreme_movers_2023_viewer.html">
+        <div class="year-num">2023</div>
+        <div class="year-sub">2023-W01 → 2023-W52 · 51 週 · v2_restored</div>
+        <div class="card-stats"><span class="up">近週漲≥20%：9 家</span><span class="down">跌≤-20%：2 家</span></div>
+        <div class="year-cta">開啟互動報告 →</div>
+      </a>
+    </div>
+  </main>
+</body>
+</html>
