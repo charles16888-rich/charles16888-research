@@ -318,10 +318,11 @@
       "name_en": "AI Research",
       "tagline_zh": "市場結構 × 當日走勢",
       "tagline_en": "Daily market structure",
-      "description": "以可追溯的市場資料整理當日走勢、期現互動與市場廣度。",
+      "description": "以可追溯的市場資料整理當日走勢、期現互動與市場廣度。 另提供綜合觀察版（廣度/籌碼/結構並陳）。",
       "enabled": true,
       "source_pipelines": [
-        "market_structure_analysis"
+        "market_structure_analysis",
+        "market_structure_composite_v2"
       ],
       "subcategories": [
         {
@@ -330,6 +331,14 @@
           "name_en": "Daily Market Analysis",
           "match_id_prefix": [
             "ai-research-daily-market"
+          ]
+        },
+        {
+          "id": "daily-market-composite",
+          "name_zh": "當日綜合走勢研析",
+          "name_en": "Daily Composite Analysis",
+          "match_id_prefix": [
+            "ai-research-daily-market-composite"
           ]
         }
       ],
