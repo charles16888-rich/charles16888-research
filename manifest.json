@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-07-31T20:49:18+08:00",
+  "updated_at": "2026-08-01T01:03:12+08:00",
   "today": "2026-07-31",
   "volume_number": 1,
   "market_summary": {
@@ -404,6 +404,45 @@
         {
           "label": "6月營收",
           "value": "4",
+          "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-31-ai-research-daily-market-composite",
+      "category": "ai-research",
+      "type": "daily-market-composite",
+      "date": "2026-07-31",
+      "time": "15:30",
+      "title": "開盤即走強、收近全日高點，櫃買與漲停廣度同步擴張",
+      "title_em": "開盤即走強、收近全日高點",
+      "summary": "2026-07-31 台股呈現「夜盤偏多→日盤續揚→收近高檔」主結構：加權開收+3.627%、櫃買+4.812%、台指期日盤+3.182%，區間位置皆偏高。廣度方面上市櫃漲停合計214檔、跌停僅1檔；法人合計淨買超873.14億，與指數同向。權值樣品則分化，台積電/鴻海上揚、台達電/廣達開收為負。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤中結構",
+        "綜合觀察",
+        "廣度",
+        "籌碼"
+      ],
+      "source_pipeline": "market_structure_composite_v2",
+      "url": "reports/2026-07-31/ai-research-daily-market-composite.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "+3.627%",
+          "color": "up"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "+4.812%",
+          "color": "up"
+        },
+        {
+          "label": "台指期日盤",
+          "value": "+3.182%",
           "color": "up"
         }
       ]
