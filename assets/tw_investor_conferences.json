@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-03T16:30:30+08:00",
+  "generated_at": "2026-08-03T20:10:18+08:00",
   "source_id": "tw_moneylink_investor_conference",
   "source_url": "https://www.money-link.com.tw/stxba/imwcontent0.asp?page=INVC1&ID=INVC1",
   "events": [
@@ -120,6 +120,12 @@
     },
     {
       "event_date": "2026-08-05",
+      "code": "6156",
+      "name": "松上",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-08-05",
       "code": "2385",
       "name": "群光",
       "event_time": "15:00"
@@ -132,9 +138,21 @@
     },
     {
       "event_date": "2026-08-05",
+      "code": "2409",
+      "name": "友達",
+      "event_time": "15:30"
+    },
+    {
+      "event_date": "2026-08-05",
       "code": "2412",
       "name": "中華電",
       "event_time": "16:00"
+    },
+    {
+      "event_date": "2026-08-06",
+      "code": "2409",
+      "name": "友達",
+      "event_time": "14:00"
     },
     {
       "event_date": "2026-08-06",
@@ -174,6 +192,12 @@
     },
     {
       "event_date": "2026-08-06",
+      "code": "3491",
+      "name": "昇達科",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-08-06",
       "code": "6531",
       "name": "愛普*",
       "event_time": "14:30"
@@ -182,6 +206,12 @@
       "event_date": "2026-08-06",
       "code": "6561",
       "name": "是方",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-08-06",
+      "code": "6913",
+      "name": "鴻呈",
       "event_time": "14:30"
     },
     {
@@ -384,8 +414,20 @@
     },
     {
       "event_date": "2026-08-13",
+      "code": "1504",
+      "name": "東元",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-08-13",
       "code": "7610",
       "name": "聯友金屬-創",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-08-13",
+      "code": "8069",
+      "name": "元太",
       "event_time": "14:30"
     },
     {
@@ -420,6 +462,12 @@
     },
     {
       "event_date": "2026-08-14",
+      "code": "7786",
+      "name": "東方風能",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-08-14",
       "code": "4153",
       "name": "鈺緯",
       "event_time": "15:00"
@@ -443,6 +491,12 @@
       "event_time": "14:00"
     },
     {
+      "event_date": "2026-08-17",
+      "code": "3388",
+      "name": "崇越電",
+      "event_time": "14:30"
+    },
+    {
       "event_date": "2026-08-18",
       "code": "2328",
       "name": "廣宇",
@@ -458,6 +512,12 @@
       "event_date": "2026-08-18",
       "code": "1476",
       "name": "儒鴻",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-08-18",
+      "code": "6416",
+      "name": "瑞祺電通",
       "event_time": "14:30"
     },
     {
