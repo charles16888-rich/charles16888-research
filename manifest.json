@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-04T23:16:10+08:00",
+  "updated_at": "2026-08-04T23:21:47+08:00",
   "today": "2026-08-04",
   "volume_number": 1,
   "market_summary": {
@@ -761,8 +761,8 @@
       "id": "tri-source-lamp",
       "category": "chips",
       "title": "三源混合燈號",
-      "subtitle": "2026-08-03 · 三同買 6 / 三同賣 8",
-      "date": "2026-08-03",
+      "subtitle": "2026-08-04 · 三同買 6 / 三同賣 3",
+      "date": "2026-08-04",
       "url": "reports/tri-source-lamp.html",
       "tags": [
         "分點",
