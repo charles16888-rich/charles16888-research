@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-04T15:04:36+08:00",
-  "today": "2026-08-03",
+  "updated_at": "2026-08-04T16:34:37+08:00",
+  "today": "2026-08-04",
   "volume_number": 1,
   "market_summary": {
     "date": "2026-05-22",
@@ -21,6 +21,45 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-08-04-ai-research-daily-market-composite",
+      "category": "ai-research",
+      "type": "daily-market-composite",
+      "date": "2026-08-04",
+      "time": "15:30",
+      "title": "夜盤偏強後日盤回測再衝高，櫃買遠強於加權、權值內部分化",
+      "title_em": "櫃買遠強於加權、權值內部分化",
+      "summary": "2026-08-04 台股主結構為夜盤偏強、日盤低點回測後早盤急攻、午前高點後午後消化。加權開收+0.622%、區間位置約45.7%；櫃買開收+2.804%、區間位置約86.6%，相對強勢明顯。權值樣品中電源/代工偏強、部分半導體偏弱，投信大幅淨買、外資與自營偏賣。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤中結構",
+        "綜合觀察",
+        "廣度",
+        "籌碼"
+      ],
+      "source_pipeline": "market_structure_composite_v2",
+      "url": "reports/2026-08-04/ai-research-daily-market-composite.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "+0.622%",
+          "color": "up"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "+2.804%",
+          "color": "up"
+        },
+        {
+          "label": "台指期日盤",
+          "value": "+1.420%",
+          "color": "up"
+        }
+      ]
+    },
     {
       "id": "options-annual-2026",
       "category": "txo",
@@ -79,6 +118,40 @@
         {
           "label": "版本",
           "value": "v2.5-lite",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "financial-calendar",
+      "category": "calendar",
+      "type": "calendar",
+      "date": "2026-08-04",
+      "time": "08:30",
+      "title": "市場行事曆",
+      "title_em": "法說會",
+      "summary": "台股區塊每日更新未來一個月法說會公司，僅列日期、股號、股名與時間；其他市場事件保留原行事曆資料。",
+      "tags": [
+        "行事曆",
+        "台股",
+        "法說會"
+      ],
+      "source_pipeline": "financial_calendar_service investor_conference_calendar",
+      "url": "reports/financial-calendar.html",
+      "stats": [
+        {
+          "label": "事件",
+          "value": "152",
+          "color": "neutral"
+        },
+        {
+          "label": "高重要",
+          "value": "35",
+          "color": "up"
+        },
+        {
+          "label": "台股法說",
+          "value": "97",
           "color": "neutral"
         }
       ]
@@ -471,40 +544,6 @@
           "label": "台指期日盤",
           "value": "+0.102%",
           "color": "up"
-        }
-      ]
-    },
-    {
-      "id": "financial-calendar",
-      "category": "calendar",
-      "type": "calendar",
-      "date": "2026-08-03",
-      "time": "08:30",
-      "title": "市場行事曆",
-      "title_em": "法說會",
-      "summary": "台股區塊每日更新未來一個月法說會公司，僅列日期、股號、股名與時間；其他市場事件保留原行事曆資料。",
-      "tags": [
-        "行事曆",
-        "台股",
-        "法說會"
-      ],
-      "source_pipeline": "financial_calendar_service investor_conference_calendar",
-      "url": "reports/financial-calendar.html",
-      "stats": [
-        {
-          "label": "事件",
-          "value": "149",
-          "color": "neutral"
-        },
-        {
-          "label": "高重要",
-          "value": "35",
-          "color": "up"
-        },
-        {
-          "label": "台股法說",
-          "value": "94",
-          "color": "neutral"
         }
       ]
     },
