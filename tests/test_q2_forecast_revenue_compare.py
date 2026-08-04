@@ -138,6 +138,31 @@ class Q2ForecastRevenueCompareTests(unittest.TestCase):
         self.assertIsNone(row["actual_revenue_m"])
         self.assertEqual(row["status_label"], "無研報營收預估（MOPS 無月營收）")
 
+    def test_marks_scale_mismatch_as_suspect_not_above(self):
+        """Quarterly forecast smaller than half a month is OCR/unit garbage."""
+        forecast = pd.DataFrame(
+            [{
+                "code": "8299",
+                "name": "群聯",
+                "sample_count": 18,
+                "forecast_revenue_m": 727.0,
+                "confidence": "高",
+            }]
+        )
+        revenue = pd.DataFrame(
+            [
+                {"code": "8299", "roc_year": 115, "month": 4, "period": "2026-04", "revenue_m": 20207.0},
+                {"code": "8299", "roc_year": 115, "month": 5, "period": "2026-05", "revenue_m": 22828.0},
+                {"code": "8299", "roc_year": 115, "month": 6, "period": "2026-06", "revenue_m": 24853.0},
+            ]
+        )
+        payload = q2_compare.build_comparison(forecast, revenue, latest_mops_period="2026-06")
+        row = payload["rows"][0]
+        self.assertEqual(row["status"], "suspect")
+        self.assertEqual(row["status_label"], "財測異常")
+        self.assertEqual(payload["stats"]["suspect_count"], 1)
+        self.assertEqual(payload["stats"]["above_count"], 0)
+
 
 if __name__ == "__main__":
     unittest.main()

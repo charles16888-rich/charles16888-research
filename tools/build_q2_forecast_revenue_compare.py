@@ -161,11 +161,37 @@ def load_mops_revenue(
     return df, latest_period
 
 
+# Flag OCR/unit-scale garbage so extreme ±% does not pollute above/below ranks.
+# - quarterly forecast smaller than half an average month ⇒ almost always unit/OCR error
+# - actual and forecast differ by >20x ⇒ scale mismatch, not a real beat/miss
+SUSPECT_MIN_MONTH_RATIO = 0.5
+SUSPECT_MAX_SCALE_RATIO = 20.0
+
+
+def _is_suspect_forecast(
+    forecast_revenue_m: float,
+    actual_revenue_m: float,
+    month_revenues: list[float],
+) -> bool:
+    if forecast_revenue_m <= 0 or actual_revenue_m is None:
+        return False
+    ratio = actual_revenue_m / forecast_revenue_m
+    if ratio >= SUSPECT_MAX_SCALE_RATIO or ratio <= 1.0 / SUSPECT_MAX_SCALE_RATIO:
+        return True
+    if month_revenues:
+        avg_month = sum(month_revenues) / len(month_revenues)
+        if avg_month > 0 and forecast_revenue_m < avg_month * SUSPECT_MIN_MONTH_RATIO:
+            return True
+    return False
+
+
 def _status_for(
     forecast_revenue_m: float | None,
     available_periods: set[str],
     actual_revenue_m: float | None,
     expected_periods: list[str],
+    *,
+    month_revenues: list[float] | None = None,
 ) -> tuple[str, float | None, float | None]:
     if forecast_revenue_m is None:
         return "no_forecast", None, None
@@ -176,6 +202,8 @@ def _status_for(
         return "incomplete", None, None
     diff_m = actual_revenue_m - forecast_revenue_m
     surprise_pct = diff_m / forecast_revenue_m * 100 if forecast_revenue_m else None
+    if _is_suspect_forecast(forecast_revenue_m, actual_revenue_m, month_revenues or []):
+        return "suspect", diff_m, surprise_pct
     if surprise_pct is not None and surprise_pct >= SURPRISE_THRESHOLD_PCT:
         return "above", diff_m, surprise_pct
     if surprise_pct is not None and surprise_pct <= -SURPRISE_THRESHOLD_PCT:
@@ -196,6 +224,7 @@ def _status_label(
         "below": "低於預期",
         "inline": "符合預期",
         "incomplete": "尚未完整",
+        "suspect": "財測異常",
     }
     if status != "no_forecast":
         return labels[status]
@@ -258,11 +287,17 @@ def build_comparison(
             and all(months.get(period, {}).get("revenue_m") is not None for period in expected_periods)
         )
         actual_revenue_m = available_sum if complete_actual else None
+        month_revenues = [
+            float(months[period]["revenue_m"])
+            for period in expected_periods
+            if months.get(period, {}).get("revenue_m") is not None
+        ]
         status, diff_m, surprise_pct = _status_for(
             forecast_revenue_m,
             available_periods,
             actual_revenue_m,
             expected_periods,
+            month_revenues=month_revenues,
         )
         rows_out.append(
             {
@@ -290,7 +325,14 @@ def build_comparison(
             }
         )
 
-    status_order = {"below": 0, "above": 1, "inline": 2, "incomplete": 3, "no_forecast": 4}
+    status_order = {
+        "below": 0,
+        "above": 1,
+        "inline": 2,
+        "suspect": 3,
+        "incomplete": 4,
+        "no_forecast": 5,
+    }
     rows_out.sort(
         key=lambda r: (
             status_order.get(r["status"], 9),
@@ -306,6 +348,7 @@ def build_comparison(
         "above_count": sum(1 for r in rows_out if r["status"] == "above"),
         "below_count": sum(1 for r in rows_out if r["status"] == "below"),
         "inline_count": sum(1 for r in rows_out if r["status"] == "inline"),
+        "suspect_count": sum(1 for r in rows_out if r["status"] == "suspect"),
         "incomplete_count": sum(1 for r in rows_out if r["status"] == "incomplete"),
         "no_forecast_count": sum(1 for r in rows_out if r["status"] == "no_forecast"),
         "mops_complete_count": sum(1 for r in rows_out if r["actual_revenue_m"] is not None),
