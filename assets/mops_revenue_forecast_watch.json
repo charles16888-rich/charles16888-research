@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-08-04T20:50:23.125623+08:00",
+  "generated_at": "2026-08-04T20:58:37.124754+08:00",
   "event_date": "2026-08-04",
   "quarter": "2026Q2",
-  "forecast_generated_at": "2026-08-04T20:50:10.834720+08:00",
+  "forecast_generated_at": "2026-08-04T20:58:36.934645+08:00",
   "forecast_latest_mops_period": "2026-07",
   "source": {
     "events": "E:\\stock_data\\mops_index.db mops_events",
@@ -54,7 +54,7 @@
       "forecast_name": "喬山",
       "sample_count": 2,
       "confidence": "中",
-      "forecast_revenue_m": 3998.0,
+      "forecast_revenue_m": 13303.0,
       "prior_q2_revenue_m": 8059.127,
       "partial_q2_revenue_m": null,
       "prior_missing_months": [],
