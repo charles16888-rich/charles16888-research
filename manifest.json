@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-04T18:23:43+08:00",
+  "updated_at": "2026-08-04T20:45:28+08:00",
   "today": "2026-08-04",
   "volume_number": 1,
   "market_summary": {
@@ -237,6 +237,143 @@
       ]
     },
     {
+      "id": "market-pulse",
+      "category": "taiex",
+      "type": "pulse",
+      "date": "2026-08-04",
+      "time": "20:00",
+      "title": "市場脈動 · 漲跌停 × 全族群均幅",
+      "title_em": "脈動",
+      "summary": "近 73 個交易日漲跌停家數、總成交額、族群平均漲幅、漲停集中度。最新 (2026-08-04)：漲停 77、跌停 4、全族群均幅 +1.43%。",
+      "tags": [
+        "市場脈動",
+        "漲跌停",
+        "成交額"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/market-pulse.html",
+      "stats": [
+        {
+          "label": "漲停",
+          "value": "77",
+          "color": "up"
+        },
+        {
+          "label": "跌停",
+          "value": "4",
+          "color": "down"
+        },
+        {
+          "label": "成交額",
+          "value": "11,556 億",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-04-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-08-04",
+      "time": "20:00",
+      "title": "2026-08-04 族群週報",
+      "title_em": "ABF載板",
+      "summary": "涵蓋 2026-07-29 ~ 2026-08-04。週領漲 ABF載板 +15.97%，週領跌 電信服務 -3.51%；資金焦點 晶圓代工。",
+      "tags": [
+        "ABF載板",
+        "電信服務",
+        "晶圓代工",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-08-04/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "ABF載板 +15.97%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "電信服務 -3.51%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "晶圓代工",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-04-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-08-04",
+      "time": "20:00",
+      "title": "2026-08-04 每日族群輪動雷達",
+      "title_em": "化合物半導體",
+      "summary": "今日相對升溫以 化合物半導體 最明顯，相對降溫以 整車車廠 壓力最大；今日轉強力道大於轉弱力道。",
+      "tags": [
+        "化合物半導體",
+        "整車車廠",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-08-04/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "化合物半導體 +9.57 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "整車車廠 -3.05 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-04-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-08-04",
+      "time": "20:00",
+      "title": "2026-08-04 族群盤後快報",
+      "title_em": "ABF載板",
+      "summary": "全 74 族群、成交 11556.4 億；領漲 ABF載板 +8.79%，領跌 銀行 -3.09%；漲多族群 54/74，全族群均漲 +1.43%。",
+      "tags": [
+        "ABF載板",
+        "銀行",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-08-04/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "ABF載板 +8.79%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "銀行 -3.09%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "18.4%",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "mops-revenue-forecast-watch-20260804",
       "category": "research",
       "type": "mops_watch",
@@ -438,40 +575,6 @@
         {
           "label": "區間",
           "value": "771 日",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "market-pulse",
-      "category": "taiex",
-      "type": "pulse",
-      "date": "2026-08-03",
-      "time": "20:00",
-      "title": "市場脈動 · 漲跌停 × 全族群均幅",
-      "title_em": "脈動",
-      "summary": "近 72 個交易日漲跌停家數、總成交額、族群平均漲幅、漲停集中度。最新 (2026-08-03)：漲停 110、跌停 1、全族群均幅 +1.56%。",
-      "tags": [
-        "市場脈動",
-        "漲跌停",
-        "成交額"
-      ],
-      "source_pipeline": "industry_map",
-      "url": "reports/market-pulse.html",
-      "stats": [
-        {
-          "label": "漲停",
-          "value": "110",
-          "color": "up"
-        },
-        {
-          "label": "跌停",
-          "value": "1",
-          "color": "down"
-        },
-        {
-          "label": "成交額",
-          "value": "9,088 億",
           "color": "neutral"
         }
       ]
