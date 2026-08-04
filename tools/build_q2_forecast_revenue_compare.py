@@ -25,6 +25,7 @@ ROOT = Path(__file__).resolve().parent.parent
 FORECAST_REPORT = ROOT / "reports" / "q2-forecast-2026q2.html"
 REVENUE_DB = Path(r"E:\stock_data\mops_index.db")
 DATA_OUT = ROOT / "assets" / "q2_forecast_revenue_compare.json"
+OVERRIDES_PATH = ROOT / "assets" / "q2_forecast_revenue_overrides.json"
 TPE = ZoneInfo("Asia/Taipei")
 
 QUARTER = "2026Q2"
@@ -117,6 +118,15 @@ def load_forecast_table(path: Path = FORECAST_REPORT) -> pd.DataFrame:
             "confidence": df["信心"].astype(str).str.strip(),
         }
     )
+    overrides = load_forecast_overrides()
+    if overrides:
+        def _apply_override(row):
+            code = str(row["code"])
+            if code in overrides:
+                return overrides[code]
+            return row["forecast_revenue_m"]
+
+        out["forecast_revenue_m"] = out.apply(_apply_override, axis=1)
     return out
 
 
@@ -161,11 +171,12 @@ def load_mops_revenue(
     return df, latest_period
 
 
-# Flag OCR/unit-scale garbage so extreme ±% does not pollute above/below ranks.
-# - quarterly forecast smaller than half an average month ⇒ almost always unit/OCR error
-# - actual and forecast differ by >20x ⇒ scale mismatch, not a real beat/miss
+# Flag understated OCR/unit-scale garbage so it does not pollute above ranks.
+# Overstated forecasts (actual << forecast) can be real misses (e.g. construction
+# 交屋遞延、生技授權遞延), so we only auto-suspect when the quarterly forecast
+# is implausibly small versus monthly actuals.
 SUSPECT_MIN_MONTH_RATIO = 0.5
-SUSPECT_MAX_SCALE_RATIO = 20.0
+SUSPECT_MAX_UNDERSTATE_RATIO = 20.0
 
 
 def _is_suspect_forecast(
@@ -175,14 +186,28 @@ def _is_suspect_forecast(
 ) -> bool:
     if forecast_revenue_m <= 0 or actual_revenue_m is None:
         return False
-    ratio = actual_revenue_m / forecast_revenue_m
-    if ratio >= SUSPECT_MAX_SCALE_RATIO or ratio <= 1.0 / SUSPECT_MAX_SCALE_RATIO:
+    if actual_revenue_m / forecast_revenue_m >= SUSPECT_MAX_UNDERSTATE_RATIO:
         return True
     if month_revenues:
         avg_month = sum(month_revenues) / len(month_revenues)
         if avg_month > 0 and forecast_revenue_m < avg_month * SUSPECT_MIN_MONTH_RATIO:
             return True
     return False
+
+
+def load_forecast_overrides(path: Path = OVERRIDES_PATH) -> dict[str, float | None]:
+    if not path.exists():
+        return {}
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    rows = payload.get("overrides") or {}
+    out: dict[str, float | None] = {}
+    for code, row in rows.items():
+        if not isinstance(row, dict):
+            continue
+        if "forecast_revenue_m" not in row:
+            continue
+        out[_code(code)] = _to_float(row.get("forecast_revenue_m"))
+    return out
 
 
 def _status_for(
@@ -365,10 +390,11 @@ def build_comparison(
         "surprise_threshold_pct": SURPRISE_THRESHOLD_PCT,
         "source": {
             "forecast": "reports/q2-forecast-2026q2.html anonymized consensus table",
+            "forecast_overrides": "assets/q2_forecast_revenue_overrides.json",
             "mops": "E:\\stock_data\\mops_index.db mops_revenue",
             "mops_url": MOPS_REVENUE_URL,
         },
-        "note": "僅追蹤匿名財測營收與 MOPS 月營收加總差異，不構成投資建議。",
+        "note": "僅追蹤匿名財測營收與 MOPS 月營收加總差異，不構成投資建議。財測異常列為單位/OCR 可疑；已人工覆核者見 overrides。",
         "stats": stats,
         "rows": rows_out,
     }
