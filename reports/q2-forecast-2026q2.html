@@ -81,17 +81,19 @@
   .q2-stat { border-top: 2px solid rgba(138,101,11,.55); padding-top: 8px; }
   .q2-stat span, .q2-stat small { display: block; color: var(--ink-dim, #5b5144); font-size: 12px; font-weight: 700; }
   .q2-stat strong { display: block; font-size: clamp(22px, 2.6vw, 32px); line-height: 1.1; margin: 2px 0; }
-  .q2-table-wrap { overflow-x: auto; border-top: 1px solid rgba(138,101,11,.42); }
-  table.q2-table { width: 100%; border-collapse: collapse; font-size: 13px; }
-  .q2-table th, .q2-table td { padding: 9px 8px; border-bottom: 1px solid rgba(21,17,13,.12); vertical-align: middle; white-space: nowrap; }
-  .q2-table th { position: sticky; top: 0; background: rgba(20,17,14,.96); z-index: 1; text-align: left; font-size: 12px; color: var(--ink-dim, #d2c7b4); }
+  .q2-table-wrap { overflow-x: auto; border: 1px solid rgba(21,17,13,.16); border-radius: 4px; background: #fffdf8; }
+  table.q2-table { width: 100%; border-collapse: collapse; font-size: 13px; color: #1a1612; }
+  .q2-table th, .q2-table td { padding: 10px 9px; border-bottom: 1px solid rgba(21,17,13,.1); vertical-align: middle; white-space: nowrap; }
+  .q2-table th { position: sticky; top: 0; background: #1a1612; z-index: 2; text-align: left; font-size: 12px; font-weight: 800; color: #f3ead8; letter-spacing: .02em; line-height: 1.35; border-bottom: 1px solid rgba(243,234,216,.18); }
+  .q2-table th small { display: block; margin-top: 2px; font-size: 10px; font-weight: 700; color: #cbb99a; }
   .q2-table td.num, .q2-table th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .q2-table tbody td { font-weight: 600; }
   .mono { font-variant-numeric: tabular-nums; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
-  .muted { color: rgba(61,51,38,.5); }
-  .badge { display: inline-flex; align-items: center; justify-content: center; min-width: 2.2em; padding: 3px 8px; border-radius: 999px; font-size: 12px; font-weight: 800; }
-  .badge--high { background: rgba(20,122,69,.12); color: #147a45; }
-  .badge--medium { background: rgba(138,101,11,.14); color: #8a650b; }
-  .badge--low { background: rgba(61,51,38,.10); color: #5b5144; }
+  .muted { color: #8a7d6a; }
+  .badge { display: inline-flex; align-items: center; justify-content: center; min-width: 2.2em; padding: 3px 8px; border-radius: 999px; font-size: 12px; font-weight: 800; border: 1px solid transparent; }
+  .badge--high { background: rgba(15,122,67,.16); color: #0a5c32; border-color: rgba(15,122,67,.35); }
+  .badge--medium { background: rgba(138,101,11,.16); color: #6b4f08; border-color: rgba(138,101,11,.38); }
+  .badge--low { background: rgba(75,64,50,.12); color: #3d3428; border-color: rgba(75,64,50,.28); }
   @media (max-width: 720px) { .q2-coverage { grid-template-columns: repeat(2, minmax(0,1fr)); } .q2-table th, .q2-table td { padding: 8px 6px; } }
 
   .q2-mops { margin: 24px 0 28px; padding: 18px 0 6px; border-top: 1px solid rgba(138,101,11,.32); border-bottom: 1px solid rgba(138,101,11,.22); }
@@ -102,26 +104,40 @@
   .q2-mops-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(126px, 1fr)); gap: 10px; margin: 14px 0 16px; }
   .q2-mops-card { border-top: 2px solid rgba(138,101,11,.55); padding-top: 8px; min-height: 72px; }
   .q2-mops-card span, .q2-mops-card small { display: block; color: var(--ink-dim, #5b5144); font-size: 12px; font-weight: 700; }
-  .q2-mops-card strong { display: block; margin: 2px 0; font-size: clamp(22px, 2.3vw, 30px); line-height: 1.1; font-variant-numeric: tabular-nums; }
+  .q2-mops-card strong { display: block; margin: 2px 0; font-size: clamp(22px, 2.3vw, 30px); line-height: 1.1; font-variant-numeric: tabular-nums; color: var(--ink, #15110d); }
   .q2-mops-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 12px; }
-  .q2-mops-tab { border: 1px solid rgba(138,101,11,.35); background: rgba(255,255,255,.58); color: inherit; min-height: 34px; padding: 7px 10px; border-radius: 6px; font: inherit; font-size: 12px; font-weight: 800; cursor: pointer; }
-  .q2-mops-tab[aria-pressed="true"] { background: #b88a17; border-color: #b88a17; color: #fffdf8; }
-  .q2-mops-table-wrap { overflow-x: auto; border-top: 1px solid rgba(138,101,11,.42); }
-  table.q2-mops-table { width: 100%; border-collapse: collapse; font-size: 12px; }
-  .q2-mops-table th, .q2-mops-table td { padding: 9px 8px; border-bottom: 1px solid rgba(21,17,13,.12); vertical-align: middle; white-space: nowrap; }
-  .q2-mops-table th { position: sticky; top: 0; background: rgba(20,17,14,.96); z-index: 1; text-align: left; color: var(--ink-dim, #d2c7b4); }
-  .q2-mops-table td.num, .q2-mops-table th.num { text-align: right; font-variant-numeric: tabular-nums; }
-  .q2-status { display: inline-flex; align-items: center; justify-content: center; min-width: 5em; padding: 3px 8px; border-radius: 999px; font-size: 12px; font-weight: 800; }
-  .q2-status--above { background: rgba(20,122,69,.12); color: #147a45; }
-  .q2-status--below { background: rgba(164,60,43,.12); color: #a43c2b; }
-  .q2-status--inline { background: rgba(138,101,11,.14); color: #8a650b; }
-  .q2-status--incomplete, .q2-status--no_forecast { background: rgba(61,51,38,.10); color: #5b5144; }
-  .q2-status--watch, .q2-status--partial, .q2-status--needs_review { background: rgba(138,101,11,.14); color: #8a650b; }
-  .q2-status--announced_no_forecast, .q2-status--not_in_forecast { background: rgba(61,51,38,.10); color: #5b5144; }
-  .q2-event .q2-mops-table td.summary { min-width: 260px; white-space: normal; line-height: 1.55; }
+  .q2-mops-tab { border: 1.5px solid rgba(138,101,11,.4); background: #fffdf8; color: var(--ink, #15110d); min-height: 36px; padding: 7px 12px; border-radius: 6px; font: inherit; font-size: 13px; font-weight: 800; cursor: pointer; transition: background .12s, border-color .12s, color .12s, box-shadow .12s; }
+  .q2-mops-tab:hover { border-color: rgba(138,101,11,.7); background: #fff8eb; }
+  .q2-mops-tab[aria-pressed="true"] { background: #8a650b; border-color: #8a650b; color: #fffdf8; box-shadow: 0 1px 0 rgba(21,17,13,.18); }
+  .q2-mops-tab[data-status="above"][aria-pressed="true"] { background: #0f7a43; border-color: #0f7a43; color: #fff; }
+  .q2-mops-tab[data-status="below"][aria-pressed="true"] { background: #b62634; border-color: #b62634; color: #fff; }
+  .q2-mops-tab[data-status="inline"][aria-pressed="true"] { background: #8a650b; border-color: #8a650b; color: #fffdf8; }
+  .q2-mops-tab[data-status="incomplete"][aria-pressed="true"],
+  .q2-mops-tab[data-status="no_forecast"][aria-pressed="true"] { background: #4b4032; border-color: #4b4032; color: #fffdf8; }
+  .q2-mops-table-wrap { overflow-x: auto; border: 1px solid rgba(21,17,13,.16); border-radius: 4px; background: #fffdf8; }
+  table.q2-mops-table { width: 100%; border-collapse: collapse; font-size: 13px; color: var(--ink, #15110d); }
+  .q2-mops-table th, .q2-mops-table td { padding: 11px 10px; border-bottom: 1px solid rgba(21,17,13,.1); vertical-align: middle; white-space: nowrap; }
+  .q2-mops-table th { position: sticky; top: 0; background: #1a1612; z-index: 2; text-align: left; color: #f3ead8 !important; font-size: 12px; font-weight: 800; letter-spacing: .02em; line-height: 1.35; border-bottom: 1px solid rgba(243,234,216,.18); }
+  .q2-mops-table th small { display: block; margin-top: 2px; font-size: 10px; font-weight: 700; color: #cbb99a; letter-spacing: 0; }
+  .q2-mops-table td.num, .q2-mops-table th.num { text-align: right; font-variant-numeric: tabular-nums; font-feature-settings: "tnum" 1; }
+  .q2-mops-table tbody tr:nth-child(even) { background: rgba(242,234,219,.55); }
+  .q2-mops-table tbody tr:hover { background: rgba(184,138,23,.12); }
+  .q2-mops-table tbody td { color: #1a1612; font-weight: 600; }
+  .q2-mops-table tbody td.mono { font-weight: 800; letter-spacing: .02em; color: #15110d; }
+  .q2-mops-table .muted { color: #8a7d6a; font-weight: 600; }
+  .q2-status { display: inline-flex; align-items: center; justify-content: center; min-width: 5.2em; padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 800; border: 1px solid transparent; letter-spacing: .01em; }
+  .q2-status--above { background: rgba(15,122,67,.16); color: #0a5c32; border-color: rgba(15,122,67,.35); }
+  .q2-status--below { background: rgba(182,38,52,.14); color: #8f1c28; border-color: rgba(182,38,52,.32); }
+  .q2-status--inline { background: rgba(138,101,11,.16); color: #6b4f08; border-color: rgba(138,101,11,.38); }
+  .q2-status--incomplete, .q2-status--no_forecast { background: rgba(75,64,50,.12); color: #3d3428; border-color: rgba(75,64,50,.28); }
+  .q2-status--watch, .q2-status--partial, .q2-status--needs_review { background: rgba(138,101,11,.16); color: #6b4f08; border-color: rgba(138,101,11,.38); }
+  .q2-status--announced_no_forecast, .q2-status--not_in_forecast { background: rgba(75,64,50,.12); color: #3d3428; border-color: rgba(75,64,50,.28); }
+  .q2-event .q2-mops-table td.summary { min-width: 260px; white-space: normal; line-height: 1.55; font-weight: 600; }
   .q2-event .q2-mops-table td.time { min-width: 112px; }
-  .num-pos { color: #147a45; font-weight: 800; }
-  .num-neg { color: #a43c2b; font-weight: 800; }
+  .num-pos { color: #0a5c32 !important; font-weight: 800; }
+  .num-neg { color: #8f1c28 !important; font-weight: 800; }
+  .q2-table tbody tr:nth-child(even) { background: rgba(242,234,219,.45); }
+  .q2-table tbody tr:hover { background: rgba(184,138,23,.1); }
 
 </style>
 <p class="q2-note">期間：2026-03-24 到 2026-08-04。公開版僅呈現匿名彙總欄位，不公開研究機構、原始檔名、樣本日期、產業、報告原文或報告內引用片段；數值為 OCR/文字萃取後的追蹤統計，非投資建議。</p>
