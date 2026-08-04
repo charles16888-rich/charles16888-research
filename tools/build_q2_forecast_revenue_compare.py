@@ -11,6 +11,7 @@ from __future__ import annotations
 import argparse
 import json
 import math
+import re
 import sqlite3
 import sys
 from datetime import datetime
@@ -210,6 +211,46 @@ def load_forecast_overrides(path: Path = OVERRIDES_PATH) -> dict[str, float | No
     return out
 
 
+def _fmt_html_amount(value: float | None) -> str:
+    if value is None:
+        return '<span class="muted">—</span>'
+    if abs(value) >= 100:
+        return f"{value:,.0f}"
+    if abs(value) >= 10:
+        text = f"{value:,.1f}".rstrip("0").rstrip(".")
+        return text
+    text = f"{value:,.2f}".rstrip("0").rstrip(".")
+    return text
+
+
+def sync_overrides_into_forecast_html(
+    report_path: Path = FORECAST_REPORT,
+    overrides: dict[str, float | None] | None = None,
+) -> int:
+    """Keep the public anonymized revenue column aligned with manual overrides."""
+    overrides = overrides if overrides is not None else load_forecast_overrides()
+    if not overrides or not report_path.exists():
+        return 0
+    html = report_path.read_text(encoding="utf-8")
+    patched = 0
+    for code, value in overrides.items():
+        pattern = re.compile(
+            rf'(<tr data-search="{re.escape(code)} [^"]+"[^>]*>'
+            rf'<td class="mono">{re.escape(code)}</td>'
+            rf'<td>[^<]*</td>'
+            rf'<td class="num">\d+</td>'
+            rf'<td class="num">)(.*?)(</td>)'
+        )
+        cell = _fmt_html_amount(value)
+        html2, n = pattern.subn(rf"\g<1>{cell}\g<3>", html, count=1)
+        if n:
+            html = html2
+            patched += n
+    if patched:
+        report_path.write_text(html, encoding="utf-8")
+    return patched
+
+
 def _status_for(
     forecast_revenue_m: float | None,
     available_periods: set[str],
@@ -407,7 +448,12 @@ def main() -> int:
     parser.add_argument("--out", default=str(DATA_OUT))
     args = parser.parse_args()
 
-    forecast = load_forecast_table(Path(args.forecast_report))
+    report_path = Path(args.forecast_report)
+    overrides = load_forecast_overrides()
+    synced = sync_overrides_into_forecast_html(report_path, overrides)
+    if synced:
+        print(f"[INFO] synced {synced} override(s) into {report_path.name}")
+    forecast = load_forecast_table(report_path)
     revenue, latest = load_mops_revenue(Path(args.revenue_db))
     payload = build_comparison(forecast, revenue, latest_mops_period=latest)
     out_path = Path(args.out)
@@ -419,7 +465,8 @@ def main() -> int:
         f"forecast={payload['stats']['revenue_forecast_count']} "
         f"complete={payload['stats']['complete_count']} "
         f"incomplete={payload['stats']['incomplete_count']} "
-        f"latest_mops={payload['latest_mops_period']}"
+        f"latest_mops={payload['latest_mops_period']} "
+        f"overrides={len(overrides)}"
     )
     return 0
 

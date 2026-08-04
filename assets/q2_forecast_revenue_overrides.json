@@ -43,6 +43,10 @@
       "forecast_revenue_m": 3302.0,
       "note": "宏遠：2Q26 營收 33.02 億元"
     },
+    "2530": {
+      "forecast_revenue_m": 653.0,
+      "note": "群益表 2Q26F 653 百萬（原誤抓 3Q25=2,560）；交屋遞延仍可能大幅低於財測"
+    },
     "2542": {
       "forecast_revenue_m": 17040.0,
       "note": "文本：2Q26 營收 170.4 億元"
@@ -115,6 +119,10 @@
       "forecast_revenue_m": 81.0,
       "note": "表序列 2Q26 約 81 百萬"
     },
+    "4442": {
+      "forecast_revenue_m": 471.0,
+      "note": "合庫表 2Q26F 471 百萬（原誤抓 3Q25=360）"
+    },
     "4506": {
       "forecast_revenue_m": 1510.0,
       "note": "宏遠表 2Q26 營業收入 1,510 百萬"
@@ -155,6 +163,10 @@
       "forecast_revenue_m": 3470.0,
       "note": "文本：2Q26 營收 34.7 億元"
     },
+    "6187": {
+      "forecast_revenue_m": 2000.0,
+      "note": "JPM：2Q26 營收上修至 NT$2.0bn"
+    },
     "6415": {
       "forecast_revenue_m": 5470.0,
       "note": "永豐：2Q26 營收 54.7 億元"
@@ -170,6 +182,10 @@
     "6515": {
       "forecast_revenue_m": 3329.0,
       "note": "多份 2Q26 預估中位（原誤抓 3Q25=1,804）"
+    },
+    "6533": {
+      "forecast_revenue_m": 419.0,
+      "note": "富邦表 2Q26F 419 百萬"
     },
     "6581": {
       "forecast_revenue_m": 602.0,
@@ -223,6 +239,10 @@
       "forecast_revenue_m": 353.0,
       "note": "宏遠表 2Q26 353 百萬"
     },
+    "7760": {
+      "forecast_revenue_m": 290.0,
+      "note": "群益表 2Q26F 290 百萬（原誤抓 1H25=691）"
+    },
     "7769": {
       "forecast_revenue_m": 12913.0,
       "note": "研報 2Q26 預估約 129.13 億"
@@ -242,6 +262,10 @@
     "7818": {
       "forecast_revenue_m": 3300.0,
       "note": "表 2Q26F 3,300 百萬（原誤抓過大）"
+    },
+    "7827": {
+      "forecast_revenue_m": 10.0,
+      "note": "國票：2Q26 營收 954.2 萬元≈10 百萬（原誤抓 3Q26F 授權金 532）"
     },
     "7828": {
       "forecast_revenue_m": 360.0,
