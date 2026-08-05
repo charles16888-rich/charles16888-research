@@ -1,0 +1,299 @@
+{
+  "generated_for": "2026Q2",
+  "unit": "NT$ million",
+  "note": "Manual re-read of research report text/tables for OCR/wrong-period bad rows (rounds 1-3 full site audit).",
+  "overrides": {
+    "1436": {
+      "forecast_revenue_m": 2276.0,
+      "note": "表 2Q26F 2,276 百萬（原誤抓 2Q25=2,039）"
+    },
+    "1527": {
+      "forecast_revenue_m": 710.0,
+      "note": "宏遠：2Q26 營收 7.10 億元"
+    },
+    "1593": {
+      "forecast_revenue_m": 312.0,
+      "note": "宏遠表 2Q26 312 百萬（原誤抓全年 1,320）"
+    },
+    "1597": {
+      "forecast_revenue_m": 395.0,
+      "note": "表 2Q26F 395 百萬（原誤抓 3Q25=280）"
+    },
+    "1736": {
+      "forecast_revenue_m": 13303.0,
+      "note": "宏遠：2Q26 營收 133.03 億元"
+    },
+    "2072": {
+      "forecast_revenue_m": null,
+      "note": "晨報誤抓，專報無清楚 2Q26 營收財測"
+    },
+    "2337": {
+      "forecast_revenue_m": 15266.0,
+      "note": "多份研報 2Q26 營收中位約 15,266 百萬"
+    },
+    "2348": {
+      "forecast_revenue_m": 1807.0,
+      "note": "表 2Q26 約 1,807 百萬"
+    },
+    "2359": {
+      "forecast_revenue_m": 1432.0,
+      "note": "表 2Q26F 1,432 百萬（原誤抓 2Q25=921）"
+    },
+    "2458": {
+      "forecast_revenue_m": 3302.0,
+      "note": "宏遠：2Q26 營收 33.02 億元"
+    },
+    "2530": {
+      "forecast_revenue_m": 653.0,
+      "note": "群益表 2Q26F 653 百萬（原誤抓 3Q25=2,560）；交屋遞延仍可能大幅低於財測"
+    },
+    "2542": {
+      "forecast_revenue_m": 17040.0,
+      "note": "文本：2Q26 營收 170.4 億元"
+    },
+    "2912": {
+      "forecast_revenue_m": 91684.0,
+      "note": "中信/富邦表 90832~92536 中位"
+    },
+    "3014": {
+      "forecast_revenue_m": 1795.0,
+      "note": "宏遠：2Q26 營收 17.95 億元"
+    },
+    "3022": {
+      "forecast_revenue_m": 2210.0,
+      "note": "群益表 2Q26F 2,210 百萬"
+    },
+    "3081": {
+      "forecast_revenue_m": 1216.0,
+      "note": "文本：2Q26 營收 12.16 億元（原誤抓 2Q25=553）"
+    },
+    "3162": {
+      "forecast_revenue_m": 2261.0,
+      "note": "文本：2Q26 營收 22.61 億元"
+    },
+    "3189": {
+      "forecast_revenue_m": 12900.0,
+      "note": "元富：2Q26 營收預估 129 億元"
+    },
+    "3227": {
+      "forecast_revenue_m": 2565.0,
+      "note": "宏遠：2Q26 營收 25.65 億元"
+    },
+    "3260": {
+      "forecast_revenue_m": 34454.0,
+      "note": "表 2Q26F 營業收入 34,454 百萬（原抓到 2Q25）"
+    },
+    "3290": {
+      "forecast_revenue_m": 990.0,
+      "note": "表 2Q26F 990 百萬（原誤抓 3Q25=628）"
+    },
+    "3303": {
+      "forecast_revenue_m": 882.0,
+      "note": "宏遠：2Q26 營收 8.82 億元"
+    },
+    "3491": {
+      "forecast_revenue_m": 1020.0,
+      "note": "多份 2Q26 約 1,020 百萬（原誤抓過大值）"
+    },
+    "3556": {
+      "forecast_revenue_m": 309.0,
+      "note": "表 2Q26F 309 百萬（原誤抓 3Q25=212）"
+    },
+    "3557": {
+      "forecast_revenue_m": 831.0,
+      "note": "宏遠：2Q26 營收 8.31 億元"
+    },
+    "3622": {
+      "forecast_revenue_m": 374.0,
+      "note": "永豐表 2Q26 營業收入 374 百萬"
+    },
+    "3706": {
+      "forecast_revenue_m": 31860.0,
+      "note": "文本 2Q26 約 318.6 億（原誤抓全年）"
+    },
+    "4107": {
+      "forecast_revenue_m": 584.0,
+      "note": "永豐表 2Q26 營業收入 584 百萬"
+    },
+    "4178": {
+      "forecast_revenue_m": 81.0,
+      "note": "表序列 2Q26 約 81 百萬"
+    },
+    "4442": {
+      "forecast_revenue_m": 471.0,
+      "note": "合庫表 2Q26F 471 百萬（原誤抓 3Q25=360）"
+    },
+    "4506": {
+      "forecast_revenue_m": 1510.0,
+      "note": "宏遠表 2Q26 營業收入 1,510 百萬"
+    },
+    "4590": {
+      "forecast_revenue_m": 271.0,
+      "note": "宏遠：2Q26 營收 2.71 億元"
+    },
+    "4726": {
+      "forecast_revenue_m": 238.0,
+      "note": "表 2Q26 約 238 百萬（原誤抓 3Q25=131）"
+    },
+    "4966": {
+      "forecast_revenue_m": 4240.0,
+      "note": "多份研報 2Q26 約 4,240 百萬（原誤抓全年）"
+    },
+    "4991": {
+      "forecast_revenue_m": 792.0,
+      "note": "多份 2Q26 約 792 百萬（原誤抓過大）"
+    },
+    "5263": {
+      "forecast_revenue_m": 425.0,
+      "note": "宏遠：2Q26 營收 4.25 億元"
+    },
+    "5289": {
+      "forecast_revenue_m": 16159.0,
+      "note": "多份 2Q26 預估中位（排除已公告重述）"
+    },
+    "5522": {
+      "forecast_revenue_m": 2868.0,
+      "note": "表 2Q26F 2,868 百萬（原誤抓 3Q25=8,697）"
+    },
+    "6163": {
+      "forecast_revenue_m": 1720.0,
+      "note": "永豐：2Q26 營收 17.2 億元"
+    },
+    "6177": {
+      "forecast_revenue_m": 3470.0,
+      "note": "文本：2Q26 營收 34.7 億元"
+    },
+    "6187": {
+      "forecast_revenue_m": 2000.0,
+      "note": "JPM：2Q26 營收上修至 NT$2.0bn"
+    },
+    "6415": {
+      "forecast_revenue_m": 5470.0,
+      "note": "永豐：2Q26 營收 54.7 億元"
+    },
+    "6456": {
+      "forecast_revenue_m": 12519.0,
+      "note": "群益表 2Q26F 12,519 百萬（原誤為 0）"
+    },
+    "6472": {
+      "forecast_revenue_m": 5486.0,
+      "note": "多份研報 2Q26 營收中位約 5,486 百萬"
+    },
+    "6515": {
+      "forecast_revenue_m": 3329.0,
+      "note": "多份 2Q26 預估中位（原誤抓 3Q25=1,804）"
+    },
+    "6533": {
+      "forecast_revenue_m": 419.0,
+      "note": "富邦表 2Q26F 419 百萬"
+    },
+    "6581": {
+      "forecast_revenue_m": 602.0,
+      "note": "合庫表 2Q26F 602 百萬（原誤抓 3Q25=497）"
+    },
+    "6596": {
+      "forecast_revenue_m": 718.0,
+      "note": "表 2Q26=718 百萬（原誤抓）"
+    },
+    "6609": {
+      "forecast_revenue_m": 592.0,
+      "note": "文本：2Q26 營收 5.92 億元"
+    },
+    "6613": {
+      "forecast_revenue_m": 2766.0,
+      "note": "中信表 2Q26F 2,766 百萬（原誤抓 3Q25）"
+    },
+    "6620": {
+      "forecast_revenue_m": 218.0,
+      "note": "文本：2Q26 營收 2.18 億元"
+    },
+    "6843": {
+      "forecast_revenue_m": 215.0,
+      "note": "宏遠：2Q26 營收 2.15 億元"
+    },
+    "6857": {
+      "forecast_revenue_m": null,
+      "note": "Advantest 美元財測與 MOPS 台幣口徑不一致，留白"
+    },
+    "6894": {
+      "forecast_revenue_m": 590.0,
+      "note": "文本：2Q26 營收 5.90 億元"
+    },
+    "6903": {
+      "forecast_revenue_m": 1893.0,
+      "note": "表/文本 2Q26 約 1,893 百萬"
+    },
+    "6957": {
+      "forecast_revenue_m": 1134.0,
+      "note": "宏遠表 2Q26 營業收入 1,134 百萬"
+    },
+    "6986": {
+      "forecast_revenue_m": 79.0,
+      "note": "表序列 2Q26 約 79 百萬（原誤抓 2Q25=57）"
+    },
+    "7689": {
+      "forecast_revenue_m": 1726.0,
+      "note": "表 2Q26F 1,726 百萬（原誤抓 2026F 全年 7,204）"
+    },
+    "7709": {
+      "forecast_revenue_m": 353.0,
+      "note": "宏遠表 2Q26 353 百萬"
+    },
+    "7760": {
+      "forecast_revenue_m": 290.0,
+      "note": "群益表 2Q26F 290 百萬（原誤抓 1H25=691）"
+    },
+    "7769": {
+      "forecast_revenue_m": 12913.0,
+      "note": "研報 2Q26 預估約 129.13 億"
+    },
+    "7772": {
+      "forecast_revenue_m": 94.0,
+      "note": "表序列 2Q26 約 94 百萬"
+    },
+    "7810": {
+      "forecast_revenue_m": 200.0,
+      "note": "永豐表 2Q26 營業收入 200 百萬"
+    },
+    "7811": {
+      "forecast_revenue_m": 734.0,
+      "note": "文本/表 2Q26 營收 7.34 億（原誤抓全年 2,980）"
+    },
+    "7818": {
+      "forecast_revenue_m": 3300.0,
+      "note": "表 2Q26F 3,300 百萬（原誤抓過大）"
+    },
+    "7827": {
+      "forecast_revenue_m": 10.0,
+      "note": "國票：2Q26 營收 954.2 萬元≈10 百萬（原誤抓 3Q26F 授權金 532）"
+    },
+    "7828": {
+      "forecast_revenue_m": 360.0,
+      "note": "凱基表季營收序列對應 2Q 約 360 百萬"
+    },
+    "7842": {
+      "forecast_revenue_m": 955.0,
+      "note": "永豐表序列 2Q 約 955 百萬"
+    },
+    "8091": {
+      "forecast_revenue_m": 719.0,
+      "note": "永豐表 2Q26 營業收入 719 百萬"
+    },
+    "8299": {
+      "forecast_revenue_m": 65717.0,
+      "note": "宏遠：2Q26 營收 657.17 億元"
+    },
+    "8341": {
+      "forecast_revenue_m": 1095.0,
+      "note": "研報 2Q26 營收文本中位約 10.95 億"
+    },
+    "8446": {
+      "forecast_revenue_m": 380.0,
+      "note": "宏遠：2Q26 營收 3.8 億元"
+    },
+    "8487": {
+      "forecast_revenue_m": 522.0,
+      "note": "宏遠：2Q26 營收 5.22 億元"
+    }
+  }
+}
