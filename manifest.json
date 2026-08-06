@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-05T23:29:29+08:00",
+  "updated_at": "2026-08-06T15:04:59+08:00",
   "today": "2026-08-05",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,68 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "options-annual-2026",
+      "category": "txo",
+      "type": "options_annual",
+      "date": "2026-08-06",
+      "time": "15:10",
+      "title": "2026 台股選擇權年度合併報告（簡易版）",
+      "title_em": "年度合併",
+      "summary": "2026 年度合併（簡易版）",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "年度合併",
+        "簡易版",
+        "v2.5-lite"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5-lite",
+      "url": "reports/options/annual_reports/2026/台股選擇權年度合併報告_2026_v2.5_lite.html",
+      "stats": [
+        {
+          "label": "版本",
+          "value": "v2.5-lite",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "options-weekly-20260803-20260807",
+      "category": "txo",
+      "type": "options_weekly",
+      "date": "2026-08-06",
+      "time": "15:00",
+      "title": "台股選擇權籌碼週報 · 20260803-20260807（簡易版）",
+      "title_em": "選擇權",
+      "summary": "簡易版 v2.5 週報，涵蓋 2026-08-03 至 2026-08-07，共 4 個交易日。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "週報",
+        "簡易版",
+        "v2.5-lite"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5-lite",
+      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260803-20260807_v2.5_lite.html",
+      "stats": [
+        {
+          "label": "週期",
+          "value": "20260803-20260807",
+          "color": "neutral"
+        },
+        {
+          "label": "交易日",
+          "value": "4",
+          "color": "neutral"
+        },
+        {
+          "label": "版本",
+          "value": "v2.5-lite",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "high-price-watch",
       "category": "stocks",
@@ -516,68 +578,6 @@
           "label": "台指期日盤",
           "value": "-0.311%",
           "color": "down"
-        }
-      ]
-    },
-    {
-      "id": "options-annual-2026",
-      "category": "txo",
-      "type": "options_annual",
-      "date": "2026-08-05",
-      "time": "15:10",
-      "title": "2026 台股選擇權年度合併報告（簡易版）",
-      "title_em": "年度合併",
-      "summary": "2026 年度合併（簡易版）",
-      "tags": [
-        "選擇權",
-        "TXO",
-        "年度合併",
-        "簡易版",
-        "v2.5-lite"
-      ],
-      "source_pipeline": "stock_project options_report_v2.5-lite",
-      "url": "reports/options/annual_reports/2026/台股選擇權年度合併報告_2026_v2.5_lite.html",
-      "stats": [
-        {
-          "label": "版本",
-          "value": "v2.5-lite",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "options-weekly-20260803-20260807",
-      "category": "txo",
-      "type": "options_weekly",
-      "date": "2026-08-05",
-      "time": "15:00",
-      "title": "台股選擇權籌碼週報 · 20260803-20260807（簡易版）",
-      "title_em": "選擇權",
-      "summary": "簡易版 v2.5 週報，涵蓋 2026-08-03 至 2026-08-07，共 3 個交易日。",
-      "tags": [
-        "選擇權",
-        "TXO",
-        "週報",
-        "簡易版",
-        "v2.5-lite"
-      ],
-      "source_pipeline": "stock_project options_report_v2.5-lite",
-      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260803-20260807_v2.5_lite.html",
-      "stats": [
-        {
-          "label": "週期",
-          "value": "20260803-20260807",
-          "color": "neutral"
-        },
-        {
-          "label": "交易日",
-          "value": "3",
-          "color": "neutral"
-        },
-        {
-          "label": "版本",
-          "value": "v2.5-lite",
-          "color": "neutral"
         }
       ]
     },
