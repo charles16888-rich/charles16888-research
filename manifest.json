@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-06T20:10:20+08:00",
+  "updated_at": "2026-08-06T20:33:39+08:00",
   "today": "2026-08-06",
   "volume_number": 1,
   "market_summary": {
@@ -29,7 +29,7 @@
       "time": "21:40",
       "title": "高價股觀測 · 排名熱圖",
       "title_em": "排名熱圖",
-      "summary": "高價股追蹤 40 檔，新進 18 檔、淡出 18 檔；榜首 3017 奇鋐 收盤 2,940。",
+      "summary": "高價股追蹤 40 檔，新進 28 檔、淡出 28 檔；榜首 3017 奇鋐 收盤 2,940。",
       "tags": [
         "個股",
         "高價股",
@@ -46,7 +46,7 @@
         },
         {
           "label": "新進",
-          "value": "18 檔",
+          "value": "28 檔",
           "color": "up"
         },
         {
@@ -123,7 +123,7 @@
         },
         {
           "label": "榜首",
-          "value": "2408 83.2",
+          "value": "2408 83.4",
           "color": "up"
         }
       ]
@@ -165,6 +165,41 @@
       ]
     },
     {
+      "id": "chip-concentration",
+      "category": "chips",
+      "type": "ranking",
+      "date": "2026-08-06",
+      "time": "21:00",
+      "title": "籌碼集中度 · 分點 Top 50 排行",
+      "title_em": "集中度",
+      "summary": "5 個時段 · 每邊 Top 50 · 過濾成交量 < 1,000 張。 今日買超集中 #1：2031 新光鋼 +55.1%。 賣超集中 #1：2540 愛山林 -55.8%。",
+      "tags": [
+        "籌碼",
+        "分點",
+        "集中度",
+        "排行榜"
+      ],
+      "source_pipeline": "stock_chip_crawler",
+      "url": "reports/chip-concentration.html",
+      "stats": [
+        {
+          "label": "時段數",
+          "value": "5",
+          "color": "neutral"
+        },
+        {
+          "label": "Top 買超",
+          "value": "2031 +55%",
+          "color": "up"
+        },
+        {
+          "label": "Top 賣超",
+          "value": "2540 -56%",
+          "color": "down"
+        }
+      ]
+    },
+    {
       "id": "shortage-weekly-2026-08-06",
       "category": "stocks",
       "type": "weekly",
@@ -172,7 +207,7 @@
       "time": "20:30",
       "title": "2026-08-06 缺貨偵探近四週週報",
       "title_em": "ABF／高階載板",
-      "summary": "最新一週較明確的新事件集中在 HBM／先進記憶體、ABF／高階載板、MLCC／被動元件；其餘週別保留供需訊號供回溯。",
+      "summary": "最新一週較明確的新事件集中在 HBM／先進記憶體、ABF／高階載板、MCU；其餘週別保留供需訊號供回溯。",
       "tags": [
         "ABF／高階載板",
         "HBM／先進記憶體",
@@ -191,7 +226,7 @@
         },
         {
           "label": "訊號數",
-          "value": "57",
+          "value": "63",
           "color": "neutral"
         },
         {
@@ -417,7 +452,7 @@
       "time": "19:30",
       "title": "2026-08-06 MOPS 營收公告追蹤",
       "title_em": "MOPS 追蹤",
-      "summary": "公開 MOPS 營收相關重大訊息 15 筆；其中 8 筆出現在匿名財測名單，5 筆明確揭露 6 月營收。僅做追蹤與統計，不構成投資建議。",
+      "summary": "公開 MOPS 營收相關重大訊息 17 筆；其中 9 筆出現在匿名財測名單，6 筆明確揭露 6 月營收。僅做追蹤與統計，不構成投資建議。",
       "tags": [
         "MOPS",
         "重大訊息",
@@ -430,17 +465,17 @@
       "stats": [
         {
           "label": "公告",
-          "value": "15",
+          "value": "17",
           "color": "neutral"
         },
         {
           "label": "財測名單",
-          "value": "8",
+          "value": "9",
           "color": "gold"
         },
         {
           "label": "6月營收",
-          "value": "5",
+          "value": "6",
           "color": "up"
         }
       ]
@@ -592,41 +627,6 @@
         "大股東",
         "三大法人",
         "燈號"
-      ]
-    },
-    {
-      "id": "chip-concentration",
-      "category": "chips",
-      "type": "ranking",
-      "date": "2026-08-05",
-      "time": "21:00",
-      "title": "籌碼集中度 · 分點 Top 50 排行",
-      "title_em": "集中度",
-      "summary": "5 個時段 · 每邊 Top 50 · 過濾成交量 < 1,000 張。 今日買超集中 #1：8050 廣積 +60.4%。 賣超集中 #1：9907 統一實 -59.4%。",
-      "tags": [
-        "籌碼",
-        "分點",
-        "集中度",
-        "排行榜"
-      ],
-      "source_pipeline": "stock_chip_crawler",
-      "url": "reports/chip-concentration.html",
-      "stats": [
-        {
-          "label": "時段數",
-          "value": "5",
-          "color": "neutral"
-        },
-        {
-          "label": "Top 買超",
-          "value": "8050 +60%",
-          "color": "up"
-        },
-        {
-          "label": "Top 賣超",
-          "value": "9907 -59%",
-          "color": "down"
-        }
       ]
     },
     {
