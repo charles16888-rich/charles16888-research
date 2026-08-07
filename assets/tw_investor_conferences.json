@@ -1,141 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-06T20:10:20+08:00",
+  "generated_at": "2026-08-07T16:42:20+08:00",
   "source_id": "tw_moneylink_investor_conference",
   "source_url": "https://www.money-link.com.tw/stxba/imwcontent0.asp?page=INVC1&ID=INVC1",
   "events": [
-    {
-      "event_date": "2026-08-06",
-      "code": "2327",
-      "name": "國巨*",
-      "event_time": "09:00"
-    },
-    {
-      "event_date": "2026-08-06",
-      "code": "2409",
-      "name": "友達",
-      "event_time": "14:00"
-    },
-    {
-      "event_date": "2026-08-06",
-      "code": "2838",
-      "name": "聯邦銀",
-      "event_time": "14:00"
-    },
-    {
-      "event_date": "2026-08-06",
-      "code": "3592",
-      "name": "瑞鼎",
-      "event_time": "14:00"
-    },
-    {
-      "event_date": "2026-08-06",
-      "code": "4162",
-      "name": "智擎",
-      "event_time": "14:00"
-    },
-    {
-      "event_date": "2026-08-06",
-      "code": "2241",
-      "name": "艾姆勒",
-      "event_time": "14:30"
-    },
-    {
-      "event_date": "2026-08-06",
-      "code": "3036",
-      "name": "文曄",
-      "event_time": "14:30"
-    },
-    {
-      "event_date": "2026-08-06",
-      "code": "3221",
-      "name": "台嘉碩",
-      "event_time": "14:30"
-    },
-    {
-      "event_date": "2026-08-06",
-      "code": "3260",
-      "name": "威剛",
-      "event_time": "14:30"
-    },
-    {
-      "event_date": "2026-08-06",
-      "code": "3416",
-      "name": "融程電",
-      "event_time": "14:30"
-    },
-    {
-      "event_date": "2026-08-06",
-      "code": "3491",
-      "name": "昇達科",
-      "event_time": "14:30"
-    },
-    {
-      "event_date": "2026-08-06",
-      "code": "6182",
-      "name": "合晶",
-      "event_time": "14:30"
-    },
-    {
-      "event_date": "2026-08-06",
-      "code": "6531",
-      "name": "愛普*",
-      "event_time": "14:30"
-    },
-    {
-      "event_date": "2026-08-06",
-      "code": "6561",
-      "name": "是方",
-      "event_time": "14:30"
-    },
-    {
-      "event_date": "2026-08-06",
-      "code": "6913",
-      "name": "鴻呈",
-      "event_time": "14:30"
-    },
-    {
-      "event_date": "2026-08-06",
-      "code": "1339",
-      "name": "昭輝",
-      "event_time": "15:00"
-    },
-    {
-      "event_date": "2026-08-06",
-      "code": "2344",
-      "name": "華邦電",
-      "event_time": "15:00"
-    },
-    {
-      "event_date": "2026-08-06",
-      "code": "3034",
-      "name": "聯詠",
-      "event_time": "15:00"
-    },
-    {
-      "event_date": "2026-08-06",
-      "code": "7856",
-      "name": "漢測",
-      "event_time": "15:00"
-    },
-    {
-      "event_date": "2026-08-06",
-      "code": "4904",
-      "name": "遠傳",
-      "event_time": "16:00"
-    },
-    {
-      "event_date": "2026-08-06",
-      "code": "4972",
-      "name": "湯石照明",
-      "event_time": "16:00"
-    },
-    {
-      "event_date": "2026-08-06",
-      "code": "6789",
-      "name": "采鈺",
-      "event_time": "16:00"
-    },
     {
       "event_date": "2026-08-07",
       "code": "2059",
@@ -656,6 +524,18 @@
       "event_date": "2026-08-19",
       "code": "3479",
       "name": "安勤",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-08-20",
+      "code": "2634",
+      "name": "漢翔",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-08-21",
+      "code": "6693",
+      "name": "廣閎科",
       "event_time": "14:30"
     },
     {
