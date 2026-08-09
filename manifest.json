@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-09T20:22:03+08:00",
+  "updated_at": "2026-08-09T20:40:29+08:00",
   "today": "2026-08-07",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,41 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "high-price-watch",
+      "category": "stocks",
+      "type": "high_price_watch",
+      "date": "2026-08-07",
+      "time": "21:40",
+      "title": "高價股觀測 · 排名熱圖",
+      "title_em": "排名熱圖",
+      "summary": "高價股追蹤 40 檔，新進 17 檔、淡出 17 檔；榜首 3017 奇鋐 收盤 2,940。",
+      "tags": [
+        "個股",
+        "高價股",
+        "排名熱圖",
+        "Telegram第四頁"
+      ],
+      "source_pipeline": "lynus_chip_history_high_price_watch",
+      "url": "reports/high-price-watch.html",
+      "stats": [
+        {
+          "label": "最新樣本",
+          "value": "40 檔",
+          "color": "neutral"
+        },
+        {
+          "label": "新進",
+          "value": "17 檔",
+          "color": "up"
+        },
+        {
+          "label": "最高收盤",
+          "value": "2,940",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "three-factor-ranking",
       "category": "chips",
@@ -58,6 +93,149 @@
       ]
     },
     {
+      "id": "foreign-sell-records",
+      "category": "chips",
+      "type": "ranking",
+      "date": "2026-08-07",
+      "time": "21:05",
+      "title": "外資史上賣超紀錄 · 個股 / 大盤金額 Top 20",
+      "title_em": "賣超",
+      "summary": "外資單日淨賣超史上 Top 20，並加入大盤外資淨賣超金額 Top 20。追蹤事件後 1/3/5/10/20/30/60 日走勢。 最大紀錄：2026-05-28 3481 群創 -289,338 張。 大盤最大金額：2026-06-24 -1,955.5億。",
+      "tags": [
+        "籌碼",
+        "外資",
+        "賣超",
+        "成交額",
+        "事件追蹤"
+      ],
+      "source_pipeline": "stock_chip_crawler",
+      "url": "reports/foreign-sell-records.html?v=20260807-official",
+      "stats": [
+        {
+          "label": "個股最大",
+          "value": "3481 -289,338張",
+          "color": "down"
+        },
+        {
+          "label": "大盤金額",
+          "value": "-1,955.5億",
+          "color": "down"
+        },
+        {
+          "label": "走勢",
+          "value": "1-60日",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "chip-concentration",
+      "category": "chips",
+      "type": "ranking",
+      "date": "2026-08-07",
+      "time": "21:00",
+      "title": "籌碼集中度 · 分點 Top 50 排行",
+      "title_em": "集中度",
+      "summary": "5 個時段 · 每邊 Top 50 · 過濾成交量 < 1,000 張。 今日買超集中 #1：2103 台橡 +65.6%。 賣超集中 #1：6613 朋億* -59.5%。",
+      "tags": [
+        "籌碼",
+        "分點",
+        "集中度",
+        "排行榜"
+      ],
+      "source_pipeline": "stock_chip_crawler",
+      "url": "reports/chip-concentration.html",
+      "stats": [
+        {
+          "label": "時段數",
+          "value": "5",
+          "color": "neutral"
+        },
+        {
+          "label": "Top 買超",
+          "value": "2103 +66%",
+          "color": "up"
+        },
+        {
+          "label": "Top 賣超",
+          "value": "6613 -60%",
+          "color": "down"
+        }
+      ]
+    },
+    {
+      "id": "shortage-weekly-2026-08-07",
+      "category": "stocks",
+      "type": "weekly",
+      "date": "2026-08-07",
+      "time": "20:30",
+      "title": "2026-08-07 缺貨偵探近四週週報",
+      "title_em": "ABF／高階載板",
+      "summary": "最新一週較明確的新事件集中在 HBM／先進記憶體、ABF／高階載板、石英元件；其餘週別保留供需訊號供回溯。",
+      "tags": [
+        "ABF／高階載板",
+        "HBM／先進記憶體",
+        "MCU",
+        "MLCC／被動元件",
+        "缺貨偵探",
+        "週報"
+      ],
+      "source_pipeline": "shortage_detective",
+      "url": "reports/shortage/2026-08-07/weekly.html",
+      "stats": [
+        {
+          "label": "事件數",
+          "value": "3",
+          "color": "neutral"
+        },
+        {
+          "label": "訊號數",
+          "value": "62",
+          "color": "neutral"
+        },
+        {
+          "label": "主題",
+          "value": "ABF／高階載板",
+          "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "options-atm",
+      "category": "txo",
+      "type": "pulse",
+      "date": "2026-08-07",
+      "time": "20:00",
+      "title": "選擇權價平和 · 隱含波動代理",
+      "title_em": "價平和",
+      "summary": "近 774 個交易日（2023-05-30 → 2026-08-07）TXO ATM Call+Put 加總。最新 (2026-08-07)：近期 1215 點（到期 202608W2）、次遠期 1580 點。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "價平和",
+        "隱波"
+      ],
+      "source_pipeline": "taifex + twse",
+      "url": "reports/options-atm.html",
+      "stats": [
+        {
+          "label": "近期 C+P",
+          "value": "1215",
+          "color": "neutral"
+        },
+        {
+          "label": "次遠期 C+P",
+          "value": "1580",
+          "color": "neutral"
+        },
+        {
+          "label": "區間",
+          "value": "774 日",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "market-pulse",
       "category": "taiex",
       "type": "pulse",
@@ -87,6 +265,42 @@
         {
           "label": "成交額",
           "value": "9,928 億",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "futures-basis",
+      "category": "taiex",
+      "type": "pulse",
+      "date": "2026-08-07",
+      "time": "20:00",
+      "title": "期貨正逆價差 · 12 年期現對照",
+      "title_em": "12 年",
+      "summary": "近 3034 個交易日（2014-02-14 → 2026-08-07）台指期 TXF1 vs 加權指數價差。最新 (2026-08-07)：基差 +123.1 點，加權收 44,226。",
+      "tags": [
+        "期貨",
+        "基差",
+        "正逆價差",
+        "TX",
+        "12 年"
+      ],
+      "source_pipeline": "yuanta + yfinance",
+      "url": "reports/futures-basis.html",
+      "stats": [
+        {
+          "label": "最新基差",
+          "value": "+123.1",
+          "color": "up"
+        },
+        {
+          "label": "加權",
+          "value": "44,226",
+          "color": "neutral"
+        },
+        {
+          "label": "區間",
+          "value": "3034 日",
           "color": "neutral"
         }
       ]
@@ -411,41 +625,6 @@
       ]
     },
     {
-      "id": "high-price-watch",
-      "category": "stocks",
-      "type": "high_price_watch",
-      "date": "2026-08-06",
-      "time": "21:40",
-      "title": "高價股觀測 · 排名熱圖",
-      "title_em": "排名熱圖",
-      "summary": "高價股追蹤 40 檔，新進 28 檔、淡出 28 檔；榜首 3017 奇鋐 收盤 2,940。",
-      "tags": [
-        "個股",
-        "高價股",
-        "排名熱圖",
-        "Telegram第四頁"
-      ],
-      "source_pipeline": "lynus_chip_history_high_price_watch",
-      "url": "reports/high-price-watch.html",
-      "stats": [
-        {
-          "label": "最新樣本",
-          "value": "40 檔",
-          "color": "neutral"
-        },
-        {
-          "label": "新進",
-          "value": "28 檔",
-          "color": "up"
-        },
-        {
-          "label": "最高收盤",
-          "value": "2,940",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
       "id": "q2-forecast-2026q2",
       "category": "research",
       "type": "forecast",
@@ -478,185 +657,6 @@
           "label": "三率完整",
           "value": "463",
           "color": "up"
-        }
-      ]
-    },
-    {
-      "id": "foreign-sell-records",
-      "category": "chips",
-      "type": "ranking",
-      "date": "2026-08-06",
-      "time": "21:05",
-      "title": "外資史上賣超紀錄 · 個股 / 大盤金額 Top 20",
-      "title_em": "賣超",
-      "summary": "外資單日淨賣超史上 Top 20，並加入大盤外資淨賣超金額 Top 20。追蹤事件後 1/3/5/10/20/30/60 日走勢。 最大紀錄：2026-05-28 3481 群創 -289,338 張。 大盤最大金額：2026-06-24 -1,955.5億。",
-      "tags": [
-        "籌碼",
-        "外資",
-        "賣超",
-        "成交額",
-        "事件追蹤"
-      ],
-      "source_pipeline": "stock_chip_crawler",
-      "url": "reports/foreign-sell-records.html?v=20260806-official",
-      "stats": [
-        {
-          "label": "個股最大",
-          "value": "3481 -289,338張",
-          "color": "down"
-        },
-        {
-          "label": "大盤金額",
-          "value": "-1,955.5億",
-          "color": "down"
-        },
-        {
-          "label": "走勢",
-          "value": "1-60日",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "chip-concentration",
-      "category": "chips",
-      "type": "ranking",
-      "date": "2026-08-06",
-      "time": "21:00",
-      "title": "籌碼集中度 · 分點 Top 50 排行",
-      "title_em": "集中度",
-      "summary": "5 個時段 · 每邊 Top 50 · 過濾成交量 < 1,000 張。 今日買超集中 #1：2031 新光鋼 +55.1%。 賣超集中 #1：2540 愛山林 -55.8%。",
-      "tags": [
-        "籌碼",
-        "分點",
-        "集中度",
-        "排行榜"
-      ],
-      "source_pipeline": "stock_chip_crawler",
-      "url": "reports/chip-concentration.html",
-      "stats": [
-        {
-          "label": "時段數",
-          "value": "5",
-          "color": "neutral"
-        },
-        {
-          "label": "Top 買超",
-          "value": "2031 +55%",
-          "color": "up"
-        },
-        {
-          "label": "Top 賣超",
-          "value": "2540 -56%",
-          "color": "down"
-        }
-      ]
-    },
-    {
-      "id": "shortage-weekly-2026-08-06",
-      "category": "stocks",
-      "type": "weekly",
-      "date": "2026-08-06",
-      "time": "20:30",
-      "title": "2026-08-06 缺貨偵探近四週週報",
-      "title_em": "ABF／高階載板",
-      "summary": "最新一週較明確的新事件集中在 HBM／先進記憶體、ABF／高階載板、MCU；其餘週別保留供需訊號供回溯。",
-      "tags": [
-        "ABF／高階載板",
-        "HBM／先進記憶體",
-        "MCU",
-        "MLCC／被動元件",
-        "缺貨偵探",
-        "週報"
-      ],
-      "source_pipeline": "shortage_detective",
-      "url": "reports/shortage/2026-08-06/weekly.html",
-      "stats": [
-        {
-          "label": "事件數",
-          "value": "4",
-          "color": "neutral"
-        },
-        {
-          "label": "訊號數",
-          "value": "63",
-          "color": "neutral"
-        },
-        {
-          "label": "主題",
-          "value": "ABF／高階載板",
-          "color": "up"
-        }
-      ]
-    },
-    {
-      "id": "options-atm",
-      "category": "txo",
-      "type": "pulse",
-      "date": "2026-08-06",
-      "time": "20:00",
-      "title": "選擇權價平和 · 隱含波動代理",
-      "title_em": "價平和",
-      "summary": "近 773 個交易日（2023-05-30 → 2026-08-06）TXO ATM Call+Put 加總。最新 (2026-08-06)：近期 740 點（到期 202608F1）、次遠期 1440 點。",
-      "tags": [
-        "選擇權",
-        "TXO",
-        "價平和",
-        "隱波"
-      ],
-      "source_pipeline": "taifex + twse",
-      "url": "reports/options-atm.html",
-      "stats": [
-        {
-          "label": "近期 C+P",
-          "value": "740",
-          "color": "neutral"
-        },
-        {
-          "label": "次遠期 C+P",
-          "value": "1440",
-          "color": "neutral"
-        },
-        {
-          "label": "區間",
-          "value": "773 日",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "futures-basis",
-      "category": "taiex",
-      "type": "pulse",
-      "date": "2026-08-06",
-      "time": "20:00",
-      "title": "期貨正逆價差 · 12 年期現對照",
-      "title_em": "12 年",
-      "summary": "近 3033 個交易日（2014-02-14 → 2026-08-06）台指期 TXF1 vs 加權指數價差。最新 (2026-08-06)：基差 -116.7 點，加權收 44,397。",
-      "tags": [
-        "期貨",
-        "基差",
-        "正逆價差",
-        "TX",
-        "12 年"
-      ],
-      "source_pipeline": "yuanta + yfinance",
-      "url": "reports/futures-basis.html",
-      "stats": [
-        {
-          "label": "最新基差",
-          "value": "-116.7",
-          "color": "down"
-        },
-        {
-          "label": "加權",
-          "value": "44,397",
-          "color": "neutral"
-        },
-        {
-          "label": "區間",
-          "value": "3033 日",
-          "color": "neutral"
         }
       ]
     },
@@ -842,8 +842,8 @@
       "id": "tri-source-lamp",
       "category": "chips",
       "title": "三源混合燈號",
-      "subtitle": "2026-08-06 · 三同買 5 / 三同賣 4",
-      "date": "2026-08-06",
+      "subtitle": "2026-08-07 · 三同買 8 / 三同賣 5",
+      "date": "2026-08-07",
       "url": "reports/tri-source-lamp.html",
       "tags": [
         "分點",
