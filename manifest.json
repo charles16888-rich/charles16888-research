@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-10T22:45:59+08:00",
-  "today": "2026-08-10",
+  "updated_at": "2026-08-11T19:44:02+08:00",
+  "today": "2026-08-11",
   "volume_number": 1,
   "market_summary": {
     "date": "2026-05-22",
@@ -21,6 +21,45 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-08-11-ai-research-daily-market-composite",
+      "category": "ai-research",
+      "type": "daily-market-composite",
+      "date": "2026-08-11",
+      "time": "15:30",
+      "title": "夜盤偏弱後日盤翻升，加權收在高檔、櫃買僅持平",
+      "title_em": "日盤翻升收高檔",
+      "summary": "夜盤台指期收在區間低檔後，日盤先探低再翻升；加權收漲0.473%、區間位置90.1%，櫃買僅微漲0.018%。三大法人合計淨買超281.79億與結構同向，權值樣品則明顯分歧。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤中結構",
+        "綜合觀察",
+        "廣度",
+        "籌碼"
+      ],
+      "source_pipeline": "market_structure_composite_v2",
+      "url": "reports/2026-08-11/ai-research-daily-market-composite.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "+0.473%",
+          "color": "up"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "+0.018%",
+          "color": "up"
+        },
+        {
+          "label": "台指期日盤",
+          "value": "+0.229%",
+          "color": "up"
+        }
+      ]
+    },
     {
       "id": "q3-july-mops-compare",
       "category": "research",
