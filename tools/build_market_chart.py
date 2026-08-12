@@ -421,12 +421,23 @@ def main() -> int:
     # rather than littering archive with 'one entry per build' noise.
     cats_path = LYNUS_ROOT / "categories.json"
     cats = json.loads(cats_path.read_text(encoding="utf-8"))
+    pulse_type = {"id": "pulse", "name_zh": "市場脈動", "name_en": "Market Pulse"}
     for c in cats["categories"]:
         if c["id"] == "taiex":
             c["enabled"] = True
             if "industry_map" not in c.get("source_pipelines", []):
                 c.setdefault("source_pipelines", []).append("industry_map")
-            c["report_types"] = [{"id": "pulse", "name_zh": "市場脈動", "name_en": "Market Pulse"}]
+            # Upsert pulse only — never wipe sibling report_types (e.g. extreme_movers).
+            types = list(c.get("report_types") or [])
+            replaced = False
+            for i, rt in enumerate(types):
+                if isinstance(rt, dict) and rt.get("id") == "pulse":
+                    types[i] = {**rt, **pulse_type}
+                    replaced = True
+                    break
+            if not replaced:
+                types.append(pulse_type)
+            c["report_types"] = types
     cats_path.write_text(json.dumps(cats, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"[OK] categories.json — taiex enabled")
 
