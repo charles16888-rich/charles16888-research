@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-13T22:51:38+08:00",
+  "updated_at": "2026-08-13T23:10:39+08:00",
   "today": "2026-08-14",
   "volume_number": 1,
   "market_summary": {
@@ -245,7 +245,7 @@
       "time": "20:30",
       "title": "2026-08-13 缺貨偵探近四週週報",
       "title_em": "ABF／高階載板",
-      "summary": "最新一週較明確的新事件集中在 ABF／高階載板、MLCC／被動元件、HBM／先進記憶體；其餘週別保留供需訊號供回溯。",
+      "summary": "最新一週較明確的新事件集中在 ABF／高階載板、探針卡／測試 Socket、MLCC／被動元件；其餘週別保留供需訊號供回溯。",
       "tags": [
         "ABF／高階載板",
         "HBM／先進記憶體",
@@ -264,7 +264,7 @@
         },
         {
           "label": "訊號數",
-          "value": "51",
+          "value": "54",
           "color": "neutral"
         },
         {
