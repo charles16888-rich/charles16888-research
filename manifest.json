@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-13T23:28:41+08:00",
+  "updated_at": "2026-08-13T23:48:25+08:00",
   "today": "2026-08-13",
   "volume_number": 1,
   "market_summary": {
@@ -635,6 +635,75 @@
         "大股東",
         "三大法人",
         "燈號"
+      ]
+    },
+    {
+      "id": "2026-08-12-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-08-12",
+      "time": "20:00",
+      "title": "2026-08-12 族群週報",
+      "title_em": "自行車",
+      "summary": "涵蓋 2026-08-06 ~ 2026-08-12。週領漲 自行車 +23.59%，週領跌 空運 -7.10%；資金焦點 記憶體。",
+      "tags": [
+        "自行車",
+        "空運",
+        "記憶體",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-08-12/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "自行車 +23.59%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "空運 -7.10%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "記憶體",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-12-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-08-12",
+      "time": "20:00",
+      "title": "2026-08-12 每日族群輪動雷達",
+      "title_em": "矽晶圓",
+      "summary": "今日相對升溫以 矽晶圓 最明顯，相對降溫以 自行車 壓力最大；今日轉強力道大於轉弱力道。",
+      "tags": [
+        "矽晶圓",
+        "自行車",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-08-12/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "矽晶圓 +7.16 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "自行車 -6.80 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
       ]
     },
     {
@@ -1288,11 +1357,13 @@
       "time": "15:00",
       "title": "台股選擇權籌碼週報 · 20260803-20260807（簡易版）",
       "title_em": "選擇權",
-      "summary": "簡易版 v2.5 週報，涵蓋 2026-08-03 至 2026-08-07，共 5 個交易日。",
+      "summary": "簡易版 v2.5 週報，涵蓋 2026-08-03 至 2026-08-07，目前共 5 個交易日。",
       "tags": [
         "選擇權",
         "TXO",
         "週報",
+        "Max Pain",
+        "P/C Ratio",
         "簡易版",
         "v2.5-lite"
       ],
