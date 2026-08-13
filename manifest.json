@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-13T11:53:15+08:00",
-  "today": "2026-08-12",
+  "updated_at": "2026-08-13T22:51:38+08:00",
+  "today": "2026-08-14",
   "volume_number": 1,
   "market_summary": {
     "date": "2026-05-22",
@@ -22,44 +22,20 @@
   },
   "entries": [
     {
-      "id": "options-annual-2026",
-      "category": "txo",
-      "type": "options_annual",
-      "date": "2026-08-13",
-      "time": "15:10",
-      "title": "2026 台股選擇權年度合併報告（簡易版）",
-      "title_em": "年度合併",
-      "summary": "2026 年度合併（簡易版）",
-      "tags": [
-        "選擇權",
-        "TXO",
-        "年度合併",
-        "簡易版",
-        "v2.5-lite"
-      ],
-      "source_pipeline": "stock_project options_report_v2.5-lite",
-      "url": "reports/options/annual_reports/2026/台股選擇權年度合併報告_2026_v2.5_lite.html",
-      "stats": [
-        {
-          "label": "版本",
-          "value": "v2.5-lite",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
       "id": "options-weekly-20260810-20260814",
       "category": "txo",
       "type": "options_weekly",
-      "date": "2026-08-13",
+      "date": "2026-08-14",
       "time": "15:00",
       "title": "台股選擇權籌碼週報 · 20260810-20260814（簡易版）",
       "title_em": "選擇權",
-      "summary": "簡易版 v2.5 週報，涵蓋 2026-08-10 至 2026-08-14，共 4 個交易日。",
+      "summary": "簡易版 v2.5 週報，涵蓋 2026-08-10 至 2026-08-14，目前共 5 個交易日。",
       "tags": [
         "選擇權",
         "TXO",
         "週報",
+        "Max Pain",
+        "P/C Ratio",
         "簡易版",
         "v2.5-lite"
       ],
@@ -73,7 +49,7 @@
         },
         {
           "label": "交易日",
-          "value": "4",
+          "value": "5",
           "color": "neutral"
         },
         {
@@ -87,11 +63,11 @@
       "id": "high-price-watch",
       "category": "stocks",
       "type": "high_price_watch",
-      "date": "2026-08-12",
+      "date": "2026-08-13",
       "time": "21:40",
       "title": "高價股觀測 · 排名熱圖",
       "title_em": "排名熱圖",
-      "summary": "高價股追蹤 40 檔，新進 27 檔、淡出 27 檔；榜首 2383 台光電 收盤 5,730。",
+      "summary": "高價股追蹤 40 檔，新進 25 檔、淡出 25 檔；榜首 6669 緯穎 收盤 6,070。",
       "tags": [
         "個股",
         "高價股",
@@ -108,12 +84,12 @@
         },
         {
           "label": "新進",
-          "value": "27 檔",
+          "value": "25 檔",
           "color": "up"
         },
         {
           "label": "最高收盤",
-          "value": "5,730",
+          "value": "6,070",
           "color": "neutral"
         }
       ]
@@ -122,11 +98,11 @@
       "id": "q2-forecast-2026q2",
       "category": "research",
       "type": "forecast",
-      "date": "2026-08-12",
+      "date": "2026-08-13",
       "time": "21:30",
       "title": "2026 Q2 財測匿名彙總",
       "title_em": "財測匿名",
-      "summary": "2026-03-24 至 2026-08-12 台股研究報告匿名財測彙總，共 601 檔公司；高/中信心 527 檔。公開版不含研究機構、檔名、原文或報告引用。",
+      "summary": "2026-03-24 至 2026-08-13 台股研究報告匿名財測彙總，共 601 檔公司；高/中信心 527 檔。公開版不含研究機構、檔名、原文或報告引用。",
       "tags": [
         "研報統計",
         "財測",
@@ -158,11 +134,11 @@
       "id": "three-factor-ranking",
       "category": "chips",
       "type": "ranking",
-      "date": "2026-08-12",
+      "date": "2026-08-13",
       "time": "21:10",
       "title": "三因子波段排行榜",
       "title_em": "外資×營收×強勢",
-      "summary": "外資連買 >= 3 日、最新月營收創高、20/60 日趨勢仍強。 本次三因子同步 9 檔。 榜首：5351 鈺創，外資連買 9 日，營收 YoY +590.8%，前 20 日 +16.8%。",
+      "summary": "外資連買 >= 3 日、最新月營收創高、20/60 日趨勢仍強。 本次三因子同步 11 檔。 榜首：5351 鈺創，外資連買 10 日，營收 YoY +590.8%，前 20 日 +32.0%。",
       "tags": [
         "波段",
         "外資連買",
@@ -175,7 +151,7 @@
       "stats": [
         {
           "label": "三因子同步",
-          "value": "9 檔",
+          "value": "11 檔",
           "color": "up"
         },
         {
@@ -185,7 +161,7 @@
         },
         {
           "label": "榜首",
-          "value": "5351 95.4",
+          "value": "5351 98.6",
           "color": "up"
         }
       ]
@@ -194,7 +170,7 @@
       "id": "foreign-sell-records",
       "category": "chips",
       "type": "ranking",
-      "date": "2026-08-12",
+      "date": "2026-08-13",
       "time": "21:05",
       "title": "外資史上賣超紀錄 · 個股 / 大盤金額 Top 20",
       "title_em": "賣超",
@@ -207,7 +183,7 @@
         "事件追蹤"
       ],
       "source_pipeline": "stock_chip_crawler",
-      "url": "reports/foreign-sell-records.html?v=20260812-official",
+      "url": "reports/foreign-sell-records.html?v=20260813-official",
       "stats": [
         {
           "label": "個股最大",
@@ -230,11 +206,11 @@
       "id": "chip-concentration",
       "category": "chips",
       "type": "ranking",
-      "date": "2026-08-12",
+      "date": "2026-08-13",
       "time": "21:00",
       "title": "籌碼集中度 · 分點 Top 50 排行",
       "title_em": "集中度",
-      "summary": "5 個時段 · 每邊 Top 50 · 過濾成交量 < 1,000 張。 今日買超集中 #1：8071 能率網通 +62.0%。 賣超集中 #1：5522 遠雄 -57.6%。",
+      "summary": "5 個時段 · 每邊 Top 50 · 過濾成交量 < 1,000 張。 今日買超集中 #1：0052 富邦科技 +55.4%。 賣超集中 #1：2211 長榮鋼 -61.9%。",
       "tags": [
         "籌碼",
         "分點",
@@ -251,25 +227,25 @@
         },
         {
           "label": "Top 買超",
-          "value": "8071 +62%",
+          "value": "0052 +55%",
           "color": "up"
         },
         {
           "label": "Top 賣超",
-          "value": "5522 -58%",
+          "value": "2211 -62%",
           "color": "down"
         }
       ]
     },
     {
-      "id": "shortage-weekly-2026-08-12",
+      "id": "shortage-weekly-2026-08-13",
       "category": "stocks",
       "type": "weekly",
-      "date": "2026-08-12",
+      "date": "2026-08-13",
       "time": "20:30",
-      "title": "2026-08-12 缺貨偵探近四週週報",
+      "title": "2026-08-13 缺貨偵探近四週週報",
       "title_em": "ABF／高階載板",
-      "summary": "最新一週較明確的新事件集中在 ABF／高階載板、HBM／先進記憶體、MLCC／被動元件；其餘週別保留供需訊號供回溯。",
+      "summary": "最新一週較明確的新事件集中在 ABF／高階載板、MLCC／被動元件、HBM／先進記憶體；其餘週別保留供需訊號供回溯。",
       "tags": [
         "ABF／高階載板",
         "HBM／先進記憶體",
@@ -279,7 +255,7 @@
         "週報"
       ],
       "source_pipeline": "shortage_detective",
-      "url": "reports/shortage/2026-08-12/weekly.html",
+      "url": "reports/shortage/2026-08-13/weekly.html",
       "stats": [
         {
           "label": "事件數",
@@ -288,7 +264,7 @@
         },
         {
           "label": "訊號數",
-          "value": "53",
+          "value": "51",
           "color": "neutral"
         },
         {
@@ -302,11 +278,11 @@
       "id": "options-atm",
       "category": "txo",
       "type": "pulse",
-      "date": "2026-08-12",
+      "date": "2026-08-13",
       "time": "20:00",
       "title": "選擇權價平和 · 隱含波動代理",
       "title_em": "價平和",
-      "summary": "近 777 個交易日（2023-05-30 → 2026-08-12）TXO ATM Call+Put 加總。最新 (2026-08-12)：近期 902 點（到期 202608F2）、次遠期 1450 點。",
+      "summary": "近 778 個交易日（2023-05-30 → 2026-08-13）TXO ATM Call+Put 加總。最新 (2026-08-13)：近期 546 點（到期 202608F2）、次遠期 1260 點。",
       "tags": [
         "選擇權",
         "TXO",
@@ -318,17 +294,17 @@
       "stats": [
         {
           "label": "近期 C+P",
-          "value": "902",
+          "value": "546",
           "color": "neutral"
         },
         {
           "label": "次遠期 C+P",
-          "value": "1450",
+          "value": "1260",
           "color": "neutral"
         },
         {
           "label": "區間",
-          "value": "777 日",
+          "value": "778 日",
           "color": "neutral"
         }
       ]
@@ -337,11 +313,11 @@
       "id": "market-pulse",
       "category": "taiex",
       "type": "pulse",
-      "date": "2026-08-12",
+      "date": "2026-08-13",
       "time": "20:00",
       "title": "市場脈動 · 漲跌停 × 全族群均幅",
       "title_em": "脈動",
-      "summary": "近 79 個交易日漲跌停家數、總成交額、族群平均漲幅、漲停集中度。最新 (2026-08-12)：漲停 54、跌停 2、全族群均幅 +0.97%。",
+      "summary": "近 80 個交易日漲跌停家數、總成交額、族群平均漲幅、漲停集中度。最新 (2026-08-13)：漲停 43、跌停 4、全族群均幅 +0.23%。",
       "tags": [
         "市場脈動",
         "漲跌停",
@@ -352,17 +328,17 @@
       "stats": [
         {
           "label": "漲停",
-          "value": "54",
+          "value": "43",
           "color": "up"
         },
         {
           "label": "跌停",
-          "value": "2",
+          "value": "4",
           "color": "down"
         },
         {
           "label": "成交額",
-          "value": "10,261 億",
+          "value": "12,644 億",
           "color": "neutral"
         }
       ]
@@ -371,11 +347,11 @@
       "id": "futures-basis",
       "category": "taiex",
       "type": "pulse",
-      "date": "2026-08-12",
+      "date": "2026-08-13",
       "time": "20:00",
       "title": "期貨正逆價差 · 12 年期現對照",
       "title_em": "12 年",
-      "summary": "近 3037 個交易日（2014-02-14 → 2026-08-12）台指期 TXF1 vs 加權指數價差。最新 (2026-08-12)：基差 +9.9 點，加權收 45,518。",
+      "summary": "近 3038 個交易日（2014-02-14 → 2026-08-13）台指期 TXF1 vs 加權指數價差。最新 (2026-08-13)：基差 -16.5 點，加權收 46,021。",
       "tags": [
         "期貨",
         "基差",
@@ -388,19 +364,277 @@
       "stats": [
         {
           "label": "最新基差",
-          "value": "+9.9",
-          "color": "up"
+          "value": "-16.5",
+          "color": "down"
         },
         {
           "label": "加權",
-          "value": "45,518",
+          "value": "46,021",
           "color": "neutral"
         },
         {
           "label": "區間",
-          "value": "3037 日",
+          "value": "3038 日",
           "color": "neutral"
         }
+      ]
+    },
+    {
+      "id": "2026-08-13-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-08-13",
+      "time": "20:00",
+      "title": "2026-08-13 族群週報",
+      "title_em": "電源供應",
+      "summary": "涵蓋 2026-08-07 ~ 2026-08-13。週領漲 電源供應 +12.20%，週領跌 空運 -7.21%；資金焦點 記憶體。",
+      "tags": [
+        "電源供應",
+        "空運",
+        "記憶體",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-08-13/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "電源供應 +12.20%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "空運 -7.21%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "記憶體",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-13-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-08-13",
+      "time": "20:00",
+      "title": "2026-08-13 每日族群輪動雷達",
+      "title_em": "鏡頭光學",
+      "summary": "今日相對升溫以 鏡頭光學 最明顯，相對降溫以 自行車 壓力最大；今日轉弱力道大於轉強力道。",
+      "tags": [
+        "鏡頭光學",
+        "自行車",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-08-13/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "鏡頭光學 +4.34 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "自行車 -10.42 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-13-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-08-13",
+      "time": "20:00",
+      "title": "2026-08-13 族群盤後快報",
+      "title_em": "電源供應",
+      "summary": "全 74 族群、成交 12643.8 億；領漲 電源供應 +5.31%，領跌 自行車 -6.01%；漲多族群 37/74，全族群均漲 +0.23%。",
+      "tags": [
+        "電源供應",
+        "自行車",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-08-13/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "電源供應 +5.31%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "自行車 -6.01%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "10.9%",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "mops-revenue-forecast-watch-20260813",
+      "category": "research",
+      "type": "mops_watch",
+      "date": "2026-08-13",
+      "time": "19:30",
+      "title": "2026-08-13 MOPS 營收公告追蹤",
+      "title_em": "MOPS 追蹤",
+      "summary": "公開 MOPS 營收相關重大訊息 8 筆；其中 3 筆出現在匿名財測名單，3 筆明確揭露 6 月營收。僅做追蹤與統計，不構成投資建議。",
+      "tags": [
+        "MOPS",
+        "重大訊息",
+        "營收公告",
+        "財測追蹤",
+        "2026Q2"
+      ],
+      "source_pipeline": "mops_revenue_forecast_watch",
+      "url": "reports/q2-forecast-2026q2.html#q2-mops-events",
+      "stats": [
+        {
+          "label": "公告",
+          "value": "8",
+          "color": "neutral"
+        },
+        {
+          "label": "財測名單",
+          "value": "3",
+          "color": "gold"
+        },
+        {
+          "label": "6月營收",
+          "value": "3",
+          "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-13-ai-research-daily-market-composite",
+      "category": "ai-research",
+      "type": "daily-market-composite",
+      "date": "2026-08-13",
+      "time": "15:30",
+      "title": "夜盤抬升帶動高開攻高，盤中回吐後中段收斂；法人淨流入與權值樣品明顯分化",
+      "title_em": "高開攻高後中段收斂",
+      "summary": "夜盤台指延續上揚並帶動現貨高開，加權與櫃買皆收紅、日內高點出現在早盤；盤中由高點回落後進入中段震盪。籌碼面三大法人合計淨流入逾九百億，但權值樣品強弱分歧，鴻海開收大跌與聯發科、台達電走強並存，指數上漲並非單一權值一致推動。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤中結構",
+        "綜合觀察",
+        "廣度",
+        "籌碼"
+      ],
+      "source_pipeline": "market_structure_composite_v2",
+      "url": "reports/2026-08-13/ai-research-daily-market-composite.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "+0.998%",
+          "color": "up"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "+1.020%",
+          "color": "up"
+        },
+        {
+          "label": "台指期日盤",
+          "value": "+1.048%",
+          "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "options-annual-2026",
+      "category": "txo",
+      "type": "options_annual",
+      "date": "2026-08-13",
+      "time": "15:10",
+      "title": "2026 台股選擇權年度合併報告（簡易版）",
+      "title_em": "選擇權",
+      "summary": "2026 年度合併（簡易版），更新至 2026-08-13。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "年度合併",
+        "週報",
+        "簡易版",
+        "v2.5-lite"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5-lite",
+      "url": "reports/options/annual_reports/2026/台股選擇權年度合併報告_2026_v2.5_lite.html",
+      "stats": [
+        {
+          "label": "年度",
+          "value": "2026",
+          "color": "neutral"
+        },
+        {
+          "label": "版本",
+          "value": "v2.5-lite",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "financial-calendar",
+      "category": "calendar",
+      "type": "calendar",
+      "date": "2026-08-13",
+      "time": "08:30",
+      "title": "市場行事曆",
+      "title_em": "法說會",
+      "summary": "台股區塊每日更新未來一個月法說會公司，僅列日期、股號、股名與時間；其他市場事件保留原行事曆資料。",
+      "tags": [
+        "行事曆",
+        "台股",
+        "法說會"
+      ],
+      "source_pipeline": "financial_calendar_service investor_conference_calendar",
+      "url": "reports/financial-calendar.html",
+      "stats": [
+        {
+          "label": "事件",
+          "value": "200",
+          "color": "neutral"
+        },
+        {
+          "label": "高重要",
+          "value": "35",
+          "color": "up"
+        },
+        {
+          "label": "台股法說",
+          "value": "145",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "tri-source-lamp",
+      "category": "chips",
+      "title": "三源混合燈號",
+      "subtitle": "2026-08-13 · 三同買 21 / 三同賣 13",
+      "date": "2026-08-13",
+      "url": "reports/tri-source-lamp.html",
+      "tags": [
+        "分點",
+        "大股東",
+        "三大法人",
+        "燈號"
       ]
     },
     {
@@ -434,42 +668,6 @@
           "label": "漲停集中",
           "value": "13.3%",
           "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "mops-revenue-forecast-watch-20260812",
-      "category": "research",
-      "type": "mops_watch",
-      "date": "2026-08-12",
-      "time": "19:30",
-      "title": "2026-08-12 MOPS 營收公告追蹤",
-      "title_em": "MOPS 追蹤",
-      "summary": "公開 MOPS 營收相關重大訊息 9 筆；其中 5 筆出現在匿名財測名單，2 筆明確揭露 6 月營收。僅做追蹤與統計，不構成投資建議。",
-      "tags": [
-        "MOPS",
-        "重大訊息",
-        "營收公告",
-        "財測追蹤",
-        "2026Q2"
-      ],
-      "source_pipeline": "mops_revenue_forecast_watch",
-      "url": "reports/q2-forecast-2026q2.html#q2-mops-events",
-      "stats": [
-        {
-          "label": "公告",
-          "value": "9",
-          "color": "neutral"
-        },
-        {
-          "label": "財測名單",
-          "value": "5",
-          "color": "gold"
-        },
-        {
-          "label": "6月營收",
-          "value": "2",
-          "color": "up"
         }
       ]
     },
@@ -510,54 +708,6 @@
           "value": "+0.971%",
           "color": "up"
         }
-      ]
-    },
-    {
-      "id": "financial-calendar",
-      "category": "calendar",
-      "type": "calendar",
-      "date": "2026-08-12",
-      "time": "08:30",
-      "title": "市場行事曆",
-      "title_em": "法說會",
-      "summary": "台股區塊每日更新未來一個月法說會公司，僅列日期、股號、股名與時間；其他市場事件保留原行事曆資料。",
-      "tags": [
-        "行事曆",
-        "台股",
-        "法說會"
-      ],
-      "source_pipeline": "financial_calendar_service investor_conference_calendar",
-      "url": "reports/financial-calendar.html",
-      "stats": [
-        {
-          "label": "事件",
-          "value": "190",
-          "color": "neutral"
-        },
-        {
-          "label": "高重要",
-          "value": "35",
-          "color": "up"
-        },
-        {
-          "label": "台股法說",
-          "value": "135",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "tri-source-lamp",
-      "category": "chips",
-      "title": "三源混合燈號",
-      "subtitle": "2026-08-12 · 三同買 26 / 三同賣 11",
-      "date": "2026-08-12",
-      "url": "reports/tri-source-lamp.html",
-      "tags": [
-        "分點",
-        "大股東",
-        "三大法人",
-        "燈號"
       ]
     },
     {
@@ -1174,7 +1324,7 @@
       "time": "15:00",
       "title": "每週極端漲跌 · 還原後前 200 分布（多年份）",
       "title_em": "極端漲跌",
-      "summary": "普通股週報酬極端前 100 漲／跌與前 200 分布；已還原除權息／增資／減資。含全市場 ±20% 家數。涵蓋 2025–2026。",
+      "summary": "普通股週報酬極端前 100 漲／跌與前 200 分布；已還原除權息／增資／減資。含全市場 ±20% 家數。涵蓋 2010–2026。",
       "tags": [
         "大盤",
         "極端漲跌",
@@ -1187,7 +1337,7 @@
       "stats": [
         {
           "label": "年度",
-          "value": "2025–2026",
+          "value": "2010–2026",
           "color": "neutral"
         },
         {
@@ -13148,6 +13298,41 @@
       ]
     },
     {
+      "id": "extreme-movers-2024",
+      "category": "taiex",
+      "type": "extreme_movers",
+      "date": "2024-12-27",
+      "time": "15:05",
+      "title": "2024 每週極端漲跌前 100 + 前 200 分布（還原）",
+      "title_em": "2024",
+      "summary": "2024-W01 → 2024-W52，共 52 個有交易週。報酬已還原除權息／增資／減資。",
+      "tags": [
+        "大盤",
+        "極端漲跌",
+        "2024",
+        "還原"
+      ],
+      "source_pipeline": "stock_project weekly_extreme_movers_v2",
+      "url": "reports/extreme-movers/weekly_extreme_movers_2024_viewer.html",
+      "stats": [
+        {
+          "label": "週數",
+          "value": "52",
+          "color": "neutral"
+        },
+        {
+          "label": "近週漲≥20%",
+          "value": "18",
+          "color": "up"
+        },
+        {
+          "label": "近週跌≤-20%",
+          "value": "0",
+          "color": "down"
+        }
+      ]
+    },
+    {
       "id": "options-weekly-20241223-20241227",
       "category": "txo",
       "type": "options_weekly",
@@ -15056,6 +15241,41 @@
       ]
     },
     {
+      "id": "extreme-movers-2023",
+      "category": "taiex",
+      "type": "extreme_movers",
+      "date": "2023-12-29",
+      "time": "15:05",
+      "title": "2023 每週極端漲跌前 100 + 前 200 分布（還原）",
+      "title_em": "2023",
+      "summary": "2023-W01 → 2023-W52，共 51 個有交易週。報酬已還原除權息／增資／減資。",
+      "tags": [
+        "大盤",
+        "極端漲跌",
+        "2023",
+        "還原"
+      ],
+      "source_pipeline": "stock_project weekly_extreme_movers_v2",
+      "url": "reports/extreme-movers/weekly_extreme_movers_2023_viewer.html",
+      "stats": [
+        {
+          "label": "週數",
+          "value": "51",
+          "color": "neutral"
+        },
+        {
+          "label": "近週漲≥20%",
+          "value": "9",
+          "color": "up"
+        },
+        {
+          "label": "近週跌≤-20%",
+          "value": "2",
+          "color": "down"
+        }
+      ]
+    },
+    {
       "id": "options-weekly-20231225-20231229",
       "category": "txo",
       "type": "options_weekly",
@@ -16924,6 +17144,41 @@
           "label": "期間",
           "value": "2022-01-03 → 2022-12-30",
           "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "extreme-movers-2022",
+      "category": "taiex",
+      "type": "extreme_movers",
+      "date": "2022-12-30",
+      "time": "15:05",
+      "title": "2022 每週極端漲跌前 100 + 前 200 分布（還原）",
+      "title_em": "2022",
+      "summary": "2022-W01 → 2022-W52，共 51 個有交易週。報酬已還原除權息／增資／減資。",
+      "tags": [
+        "大盤",
+        "極端漲跌",
+        "2022",
+        "還原"
+      ],
+      "source_pipeline": "stock_project weekly_extreme_movers_v2",
+      "url": "reports/extreme-movers/weekly_extreme_movers_2022_viewer.html",
+      "stats": [
+        {
+          "label": "週數",
+          "value": "51",
+          "color": "neutral"
+        },
+        {
+          "label": "近週漲≥20%",
+          "value": "2",
+          "color": "up"
+        },
+        {
+          "label": "近週跌≤-20%",
+          "value": "0",
+          "color": "down"
         }
       ]
     },
@@ -18836,6 +19091,41 @@
       ]
     },
     {
+      "id": "extreme-movers-2021",
+      "category": "taiex",
+      "type": "extreme_movers",
+      "date": "2021-12-30",
+      "time": "15:05",
+      "title": "2021 每週極端漲跌前 100 + 前 200 分布（還原）",
+      "title_em": "2021",
+      "summary": "2021-W01 → 2021-W52，共 51 個有交易週。報酬已還原除權息／增資／減資。",
+      "tags": [
+        "大盤",
+        "極端漲跌",
+        "2021",
+        "還原"
+      ],
+      "source_pipeline": "stock_project weekly_extreme_movers_v2",
+      "url": "reports/extreme-movers/weekly_extreme_movers_2021_viewer.html",
+      "stats": [
+        {
+          "label": "週數",
+          "value": "51",
+          "color": "neutral"
+        },
+        {
+          "label": "近週漲≥20%",
+          "value": "19",
+          "color": "up"
+        },
+        {
+          "label": "近週跌≤-20%",
+          "value": "0",
+          "color": "down"
+        }
+      ]
+    },
+    {
       "id": "options-weekly-20211220-20211224",
       "category": "txo",
       "type": "options_weekly",
@@ -20632,6 +20922,391 @@
           "label": "版本",
           "value": "v2.5-lite",
           "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "extreme-movers-2020",
+      "category": "taiex",
+      "type": "extreme_movers",
+      "date": "2020-12-31",
+      "time": "15:05",
+      "title": "2020 每週極端漲跌前 100 + 前 200 分布（還原）",
+      "title_em": "2020",
+      "summary": "2020-W01 → 2020-W53，共 53 個有交易週。報酬已還原除權息／增資／減資。",
+      "tags": [
+        "大盤",
+        "極端漲跌",
+        "2020",
+        "還原"
+      ],
+      "source_pipeline": "stock_project weekly_extreme_movers_v2",
+      "url": "reports/extreme-movers/weekly_extreme_movers_2020_viewer.html",
+      "stats": [
+        {
+          "label": "週數",
+          "value": "53",
+          "color": "neutral"
+        },
+        {
+          "label": "近週漲≥20%",
+          "value": "24",
+          "color": "up"
+        },
+        {
+          "label": "近週跌≤-20%",
+          "value": "0",
+          "color": "down"
+        }
+      ]
+    },
+    {
+      "id": "extreme-movers-2019",
+      "category": "taiex",
+      "type": "extreme_movers",
+      "date": "2019-12-27",
+      "time": "15:05",
+      "title": "2019 每週極端漲跌前 100 + 前 200 分布（還原）",
+      "title_em": "2019",
+      "summary": "2019-W01 → 2019-W52，共 51 個有交易週。報酬已還原除權息／增資／減資。",
+      "tags": [
+        "大盤",
+        "極端漲跌",
+        "2019",
+        "還原"
+      ],
+      "source_pipeline": "stock_project weekly_extreme_movers_v2",
+      "url": "reports/extreme-movers/weekly_extreme_movers_2019_viewer.html",
+      "stats": [
+        {
+          "label": "週數",
+          "value": "51",
+          "color": "neutral"
+        },
+        {
+          "label": "近週漲≥20%",
+          "value": "11",
+          "color": "up"
+        },
+        {
+          "label": "近週跌≤-20%",
+          "value": "0",
+          "color": "down"
+        }
+      ]
+    },
+    {
+      "id": "extreme-movers-2018",
+      "category": "taiex",
+      "type": "extreme_movers",
+      "date": "2018-12-28",
+      "time": "15:05",
+      "title": "2018 每週極端漲跌前 100 + 前 200 分布（還原）",
+      "title_em": "2018",
+      "summary": "2018-W01 → 2018-W52，共 52 個有交易週。報酬已還原除權息／增資／減資。",
+      "tags": [
+        "大盤",
+        "極端漲跌",
+        "2018",
+        "還原"
+      ],
+      "source_pipeline": "stock_project weekly_extreme_movers_v2",
+      "url": "reports/extreme-movers/weekly_extreme_movers_2018_viewer.html",
+      "stats": [
+        {
+          "label": "週數",
+          "value": "52",
+          "color": "neutral"
+        },
+        {
+          "label": "近週漲≥20%",
+          "value": "7",
+          "color": "up"
+        },
+        {
+          "label": "近週跌≤-20%",
+          "value": "0",
+          "color": "down"
+        }
+      ]
+    },
+    {
+      "id": "extreme-movers-2017",
+      "category": "taiex",
+      "type": "extreme_movers",
+      "date": "2017-12-29",
+      "time": "15:05",
+      "title": "2017 每週極端漲跌前 100 + 前 200 分布（還原）",
+      "title_em": "2017",
+      "summary": "2017-W01 → 2017-W52，共 52 個有交易週。報酬已還原除權息／增資／減資。",
+      "tags": [
+        "大盤",
+        "極端漲跌",
+        "2017",
+        "還原"
+      ],
+      "source_pipeline": "stock_project weekly_extreme_movers_v2",
+      "url": "reports/extreme-movers/weekly_extreme_movers_2017_viewer.html",
+      "stats": [
+        {
+          "label": "週數",
+          "value": "52",
+          "color": "neutral"
+        },
+        {
+          "label": "近週漲≥20%",
+          "value": "9",
+          "color": "up"
+        },
+        {
+          "label": "近週跌≤-20%",
+          "value": "1",
+          "color": "down"
+        }
+      ]
+    },
+    {
+      "id": "extreme-movers-2016",
+      "category": "taiex",
+      "type": "extreme_movers",
+      "date": "2016-12-30",
+      "time": "15:05",
+      "title": "2016 每週極端漲跌前 100 + 前 200 分布（還原）",
+      "title_em": "2016",
+      "summary": "2016-W01 → 2016-W52，共 51 個有交易週。報酬已還原除權息／增資／減資。",
+      "tags": [
+        "大盤",
+        "極端漲跌",
+        "2016",
+        "還原"
+      ],
+      "source_pipeline": "stock_project weekly_extreme_movers_v2",
+      "url": "reports/extreme-movers/weekly_extreme_movers_2016_viewer.html",
+      "stats": [
+        {
+          "label": "週數",
+          "value": "51",
+          "color": "neutral"
+        },
+        {
+          "label": "近週漲≥20%",
+          "value": "3",
+          "color": "up"
+        },
+        {
+          "label": "近週跌≤-20%",
+          "value": "0",
+          "color": "down"
+        }
+      ]
+    },
+    {
+      "id": "extreme-movers-2015",
+      "category": "taiex",
+      "type": "extreme_movers",
+      "date": "2015-12-31",
+      "time": "15:05",
+      "title": "2015 每週極端漲跌前 100 + 前 200 分布（還原）",
+      "title_em": "2015",
+      "summary": "2015-W01 → 2015-W53，共 50 個有交易週。報酬已還原除權息／增資／減資。",
+      "tags": [
+        "大盤",
+        "極端漲跌",
+        "2015",
+        "還原"
+      ],
+      "source_pipeline": "stock_project weekly_extreme_movers_v2",
+      "url": "reports/extreme-movers/weekly_extreme_movers_2015_viewer.html",
+      "stats": [
+        {
+          "label": "週數",
+          "value": "50",
+          "color": "neutral"
+        },
+        {
+          "label": "近週漲≥20%",
+          "value": "4",
+          "color": "up"
+        },
+        {
+          "label": "近週跌≤-20%",
+          "value": "0",
+          "color": "down"
+        }
+      ]
+    },
+    {
+      "id": "extreme-movers-2014",
+      "category": "taiex",
+      "type": "extreme_movers",
+      "date": "2014-12-26",
+      "time": "15:05",
+      "title": "2014 每週極端漲跌前 100 + 前 200 分布（還原）",
+      "title_em": "2014",
+      "summary": "2014-W01 → 2014-W52，共 52 個有交易週。報酬已還原除權息／增資／減資。",
+      "tags": [
+        "大盤",
+        "極端漲跌",
+        "2014",
+        "還原"
+      ],
+      "source_pipeline": "stock_project weekly_extreme_movers_v2",
+      "url": "reports/extreme-movers/weekly_extreme_movers_2014_viewer.html",
+      "stats": [
+        {
+          "label": "週數",
+          "value": "52",
+          "color": "neutral"
+        },
+        {
+          "label": "近週漲≥20%",
+          "value": "8",
+          "color": "up"
+        },
+        {
+          "label": "近週跌≤-20%",
+          "value": "0",
+          "color": "down"
+        }
+      ]
+    },
+    {
+      "id": "extreme-movers-2013",
+      "category": "taiex",
+      "type": "extreme_movers",
+      "date": "2013-12-27",
+      "time": "15:05",
+      "title": "2013 每週極端漲跌前 100 + 前 200 分布（還原）",
+      "title_em": "2013",
+      "summary": "2013-W01 → 2013-W52，共 51 個有交易週。報酬已還原除權息／增資／減資。",
+      "tags": [
+        "大盤",
+        "極端漲跌",
+        "2013",
+        "還原"
+      ],
+      "source_pipeline": "stock_project weekly_extreme_movers_v2",
+      "url": "reports/extreme-movers/weekly_extreme_movers_2013_viewer.html",
+      "stats": [
+        {
+          "label": "週數",
+          "value": "51",
+          "color": "neutral"
+        },
+        {
+          "label": "近週漲≥20%",
+          "value": "14",
+          "color": "up"
+        },
+        {
+          "label": "近週跌≤-20%",
+          "value": "0",
+          "color": "down"
+        }
+      ]
+    },
+    {
+      "id": "extreme-movers-2012",
+      "category": "taiex",
+      "type": "extreme_movers",
+      "date": "2012-12-28",
+      "time": "15:05",
+      "title": "2012 每週極端漲跌前 100 + 前 200 分布（還原）",
+      "title_em": "2012",
+      "summary": "2012-W01 → 2012-W52，共 51 個有交易週。報酬已還原除權息／增資／減資。",
+      "tags": [
+        "大盤",
+        "極端漲跌",
+        "2012",
+        "還原"
+      ],
+      "source_pipeline": "stock_project weekly_extreme_movers_v2",
+      "url": "reports/extreme-movers/weekly_extreme_movers_2012_viewer.html",
+      "stats": [
+        {
+          "label": "週數",
+          "value": "51",
+          "color": "neutral"
+        },
+        {
+          "label": "近週漲≥20%",
+          "value": "15",
+          "color": "up"
+        },
+        {
+          "label": "近週跌≤-20%",
+          "value": "2",
+          "color": "down"
+        }
+      ]
+    },
+    {
+      "id": "extreme-movers-2011",
+      "category": "taiex",
+      "type": "extreme_movers",
+      "date": "2011-12-30",
+      "time": "15:05",
+      "title": "2011 每週極端漲跌前 100 + 前 200 分布（還原）",
+      "title_em": "2011",
+      "summary": "2011-W01 → 2011-W52，共 51 個有交易週。報酬已還原除權息／增資／減資。",
+      "tags": [
+        "大盤",
+        "極端漲跌",
+        "2011",
+        "還原"
+      ],
+      "source_pipeline": "stock_project weekly_extreme_movers_v2",
+      "url": "reports/extreme-movers/weekly_extreme_movers_2011_viewer.html",
+      "stats": [
+        {
+          "label": "週數",
+          "value": "51",
+          "color": "neutral"
+        },
+        {
+          "label": "近週漲≥20%",
+          "value": "6",
+          "color": "up"
+        },
+        {
+          "label": "近週跌≤-20%",
+          "value": "2",
+          "color": "down"
+        }
+      ]
+    },
+    {
+      "id": "extreme-movers-2010",
+      "category": "taiex",
+      "type": "extreme_movers",
+      "date": "2010-12-31",
+      "time": "15:05",
+      "title": "2010 每週極端漲跌前 100 + 前 200 分布（還原）",
+      "title_em": "2010",
+      "summary": "2010-W01 → 2010-W52，共 52 個有交易週。報酬已還原除權息／增資／減資。",
+      "tags": [
+        "大盤",
+        "極端漲跌",
+        "2010",
+        "還原"
+      ],
+      "source_pipeline": "stock_project weekly_extreme_movers_v2",
+      "url": "reports/extreme-movers/weekly_extreme_movers_2010_viewer.html",
+      "stats": [
+        {
+          "label": "週數",
+          "value": "52",
+          "color": "neutral"
+        },
+        {
+          "label": "近週漲≥20%",
+          "value": "4",
+          "color": "up"
+        },
+        {
+          "label": "近週跌≤-20%",
+          "value": "0",
+          "color": "down"
         }
       ]
     }
