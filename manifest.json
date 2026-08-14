@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-14T19:42:53+08:00",
+  "updated_at": "2026-08-14T20:32:16+08:00",
   "today": "2026-08-14",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,325 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "high-price-watch",
+      "category": "stocks",
+      "type": "high_price_watch",
+      "date": "2026-08-14",
+      "time": "21:40",
+      "title": "高價股觀測 · 排名熱圖",
+      "title_em": "排名熱圖",
+      "summary": "高價股追蹤 40 檔，新進 22 檔、淡出 22 檔；榜首 6669 緯穎 收盤 6,435。",
+      "tags": [
+        "個股",
+        "高價股",
+        "排名熱圖",
+        "Telegram第四頁"
+      ],
+      "source_pipeline": "lynus_chip_history_high_price_watch",
+      "url": "reports/high-price-watch.html",
+      "stats": [
+        {
+          "label": "最新樣本",
+          "value": "40 檔",
+          "color": "neutral"
+        },
+        {
+          "label": "新進",
+          "value": "22 檔",
+          "color": "up"
+        },
+        {
+          "label": "最高收盤",
+          "value": "6,435",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "q2-forecast-2026q2",
+      "category": "research",
+      "type": "forecast",
+      "date": "2026-08-14",
+      "time": "21:30",
+      "title": "2026 Q2 財測匿名彙總",
+      "title_em": "財測匿名",
+      "summary": "2026-03-24 至 2026-08-14 台股研究報告匿名財測彙總，共 601 檔公司；高/中信心 527 檔。公開版不含研究機構、檔名、原文或報告引用。",
+      "tags": [
+        "研報統計",
+        "財測",
+        "OCR",
+        "匿名彙總",
+        "2026Q2"
+      ],
+      "source_pipeline": "research_reports_ocr_anonymous_forecast",
+      "url": "reports/q2-forecast-2026q2.html",
+      "stats": [
+        {
+          "label": "公司數",
+          "value": "601",
+          "color": "neutral"
+        },
+        {
+          "label": "營收覆蓋",
+          "value": "522",
+          "color": "up"
+        },
+        {
+          "label": "三率完整",
+          "value": "469",
+          "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "three-factor-ranking",
+      "category": "chips",
+      "type": "ranking",
+      "date": "2026-08-14",
+      "time": "21:10",
+      "title": "三因子波段排行榜",
+      "title_em": "外資×營收×強勢",
+      "summary": "外資連買 >= 3 日、最新月營收創高、20/60 日趨勢仍強。 本次三因子同步 16 檔。 榜首：5351 鈺創，外資連買 11 日，營收 YoY +590.8%，前 20 日 +51.1%。",
+      "tags": [
+        "波段",
+        "外資連買",
+        "營收創高",
+        "強者恆強",
+        "排行榜"
+      ],
+      "source_pipeline": "stock_chip_crawler+mops_index",
+      "url": "reports/three-factor-ranking.html",
+      "stats": [
+        {
+          "label": "三因子同步",
+          "value": "16 檔",
+          "color": "up"
+        },
+        {
+          "label": "營收期別",
+          "value": "2026-07",
+          "color": "neutral"
+        },
+        {
+          "label": "榜首",
+          "value": "5351 98.7",
+          "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "foreign-sell-records",
+      "category": "chips",
+      "type": "ranking",
+      "date": "2026-08-14",
+      "time": "21:05",
+      "title": "外資史上賣超紀錄 · 個股 / 大盤金額 Top 20",
+      "title_em": "賣超",
+      "summary": "外資單日淨賣超史上 Top 20，並加入大盤外資淨賣超金額 Top 20。追蹤事件後 1/3/5/10/20/30/60 日走勢。 最大紀錄：2026-05-28 3481 群創 -289,338 張。 大盤最大金額：2026-06-24 -1,955.5億。",
+      "tags": [
+        "籌碼",
+        "外資",
+        "賣超",
+        "成交額",
+        "事件追蹤"
+      ],
+      "source_pipeline": "stock_chip_crawler",
+      "url": "reports/foreign-sell-records.html?v=20260814-official",
+      "stats": [
+        {
+          "label": "個股最大",
+          "value": "3481 -289,338張",
+          "color": "down"
+        },
+        {
+          "label": "大盤金額",
+          "value": "-1,955.5億",
+          "color": "down"
+        },
+        {
+          "label": "走勢",
+          "value": "1-60日",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "chip-concentration",
+      "category": "chips",
+      "type": "ranking",
+      "date": "2026-08-14",
+      "time": "21:00",
+      "title": "籌碼集中度 · 分點 Top 50 排行",
+      "title_em": "集中度",
+      "summary": "5 個時段 · 每邊 Top 50 · 過濾成交量 < 1,000 張。 今日買超集中 #1：0056 元大高股息 +57.3%。 賣超集中 #1：3217 優群 -63.9%。",
+      "tags": [
+        "籌碼",
+        "分點",
+        "集中度",
+        "排行榜"
+      ],
+      "source_pipeline": "stock_chip_crawler",
+      "url": "reports/chip-concentration.html",
+      "stats": [
+        {
+          "label": "時段數",
+          "value": "5",
+          "color": "neutral"
+        },
+        {
+          "label": "Top 買超",
+          "value": "0056 +57%",
+          "color": "up"
+        },
+        {
+          "label": "Top 賣超",
+          "value": "3217 -64%",
+          "color": "down"
+        }
+      ]
+    },
+    {
+      "id": "shortage-weekly-2026-08-14",
+      "category": "stocks",
+      "type": "weekly",
+      "date": "2026-08-14",
+      "time": "20:30",
+      "title": "2026-08-14 缺貨偵探近四週週報",
+      "title_em": "ABF／高階載板",
+      "summary": "最新一週較明確的新事件集中在 液冷板／CDU、探針卡／測試 Socket、ABF／高階載板；其餘週別保留供需訊號供回溯。",
+      "tags": [
+        "ABF／高階載板",
+        "HBM／先進記憶體",
+        "MCU",
+        "MLCC／被動元件",
+        "缺貨偵探",
+        "週報"
+      ],
+      "source_pipeline": "shortage_detective",
+      "url": "reports/shortage/2026-08-14/weekly.html",
+      "stats": [
+        {
+          "label": "事件數",
+          "value": "4",
+          "color": "neutral"
+        },
+        {
+          "label": "訊號數",
+          "value": "54",
+          "color": "neutral"
+        },
+        {
+          "label": "主題",
+          "value": "ABF／高階載板",
+          "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "market-pulse",
+      "category": "taiex",
+      "type": "pulse",
+      "date": "2026-08-14",
+      "time": "20:00",
+      "title": "市場脈動 · 漲跌停 × 全族群均幅",
+      "title_em": "脈動",
+      "summary": "近 81 個交易日漲跌停家數、總成交額、族群平均漲幅、漲停集中度。最新 (2026-08-14)：漲停 29、跌停 7、全族群均幅 -0.53%。",
+      "tags": [
+        "市場脈動",
+        "漲跌停",
+        "成交額"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/market-pulse.html",
+      "stats": [
+        {
+          "label": "漲停",
+          "value": "29",
+          "color": "up"
+        },
+        {
+          "label": "跌停",
+          "value": "7",
+          "color": "down"
+        },
+        {
+          "label": "成交額",
+          "value": "12,444 億",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-14-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-08-14",
+      "time": "20:00",
+      "title": "2026-08-14 族群盤後快報",
+      "title_em": "ABF載板",
+      "summary": "全 74 族群、成交 12443.9 億；領漲 ABF載板 +3.57%，領跌 太陽能 -5.82%；漲多族群 20/74，全族群均漲 -0.53%。",
+      "tags": [
+        "ABF載板",
+        "太陽能",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-08-14/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "ABF載板 +3.57%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "太陽能 -5.82%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "5.5%",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "mops-revenue-forecast-watch-20260814",
+      "category": "research",
+      "type": "mops_watch",
+      "date": "2026-08-14",
+      "time": "19:30",
+      "title": "2026-08-14 MOPS 營收公告追蹤",
+      "title_em": "MOPS 追蹤",
+      "summary": "公開 MOPS 營收相關重大訊息 11 筆；其中 7 筆出現在匿名財測名單，4 筆明確揭露 6 月營收。僅做追蹤與統計，不構成投資建議。",
+      "tags": [
+        "MOPS",
+        "重大訊息",
+        "營收公告",
+        "財測追蹤",
+        "2026Q2"
+      ],
+      "source_pipeline": "mops_revenue_forecast_watch",
+      "url": "reports/q2-forecast-2026q2.html#q2-mops-events",
+      "stats": [
+        {
+          "label": "公告",
+          "value": "11",
+          "color": "neutral"
+        },
+        {
+          "label": "財測名單",
+          "value": "7",
+          "color": "gold"
+        },
+        {
+          "label": "6月營收",
+          "value": "4",
+          "color": "up"
+        }
+      ]
+    },
     {
       "id": "2026-08-14-ai-research-daily-market-composite",
       "category": "ai-research",
@@ -61,218 +380,121 @@
       ]
     },
     {
-      "id": "high-price-watch",
-      "category": "stocks",
-      "type": "high_price_watch",
-      "date": "2026-08-13",
-      "time": "21:40",
-      "title": "高價股觀測 · 排名熱圖",
-      "title_em": "排名熱圖",
-      "summary": "高價股追蹤 40 檔，新進 25 檔、淡出 25 檔；榜首 6669 緯穎 收盤 6,070。",
+      "id": "options-annual-2026",
+      "category": "txo",
+      "type": "options_annual",
+      "date": "2026-08-14",
+      "time": "15:10",
+      "title": "2026 台股選擇權年度合併報告（簡易版）",
+      "title_em": "選擇權",
+      "summary": "2026 年度合併（簡易版），更新至 2026-08-14。",
       "tags": [
-        "個股",
-        "高價股",
-        "排名熱圖",
-        "Telegram第四頁"
+        "選擇權",
+        "TXO",
+        "年度合併",
+        "週報",
+        "簡易版",
+        "v2.5-lite"
       ],
-      "source_pipeline": "lynus_chip_history_high_price_watch",
-      "url": "reports/high-price-watch.html",
+      "source_pipeline": "stock_project options_report_v2.5-lite",
+      "url": "reports/options/annual_reports/2026/台股選擇權年度合併報告_2026_v2.5_lite.html",
       "stats": [
         {
-          "label": "最新樣本",
-          "value": "40 檔",
+          "label": "年度",
+          "value": "2026",
           "color": "neutral"
         },
         {
-          "label": "新進",
-          "value": "25 檔",
-          "color": "up"
-        },
-        {
-          "label": "最高收盤",
-          "value": "6,070",
+          "label": "版本",
+          "value": "v2.5-lite",
           "color": "neutral"
         }
       ]
     },
     {
-      "id": "q2-forecast-2026q2",
-      "category": "research",
-      "type": "forecast",
-      "date": "2026-08-13",
-      "time": "21:30",
-      "title": "2026 Q2 財測匿名彙總",
-      "title_em": "財測匿名",
-      "summary": "2026-03-24 至 2026-08-13 台股研究報告匿名財測彙總，共 601 檔公司；高/中信心 527 檔。公開版不含研究機構、檔名、原文或報告引用。",
+      "id": "options-weekly-20260810-20260814",
+      "category": "txo",
+      "type": "options_weekly",
+      "date": "2026-08-14",
+      "time": "15:00",
+      "title": "台股選擇權籌碼週報 · 20260810-20260814（簡易版）",
+      "title_em": "選擇權",
+      "summary": "簡易版 v2.5 週報，涵蓋 2026-08-10 至 2026-08-14，目前共 5 個交易日。",
       "tags": [
-        "研報統計",
-        "財測",
-        "OCR",
-        "匿名彙總",
-        "2026Q2"
+        "選擇權",
+        "TXO",
+        "週報",
+        "Max Pain",
+        "P/C Ratio",
+        "簡易版",
+        "v2.5-lite"
       ],
-      "source_pipeline": "research_reports_ocr_anonymous_forecast",
-      "url": "reports/q2-forecast-2026q2.html",
+      "source_pipeline": "stock_project options_report_v2.5-lite",
+      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260810-20260814_v2.5_lite.html",
       "stats": [
         {
-          "label": "公司數",
-          "value": "601",
+          "label": "週期",
+          "value": "20260810-20260814",
           "color": "neutral"
         },
         {
-          "label": "營收覆蓋",
-          "value": "522",
-          "color": "up"
-        },
-        {
-          "label": "三率完整",
-          "value": "469",
-          "color": "up"
-        }
-      ]
-    },
-    {
-      "id": "three-factor-ranking",
-      "category": "chips",
-      "type": "ranking",
-      "date": "2026-08-13",
-      "time": "21:10",
-      "title": "三因子波段排行榜",
-      "title_em": "外資×營收×強勢",
-      "summary": "外資連買 >= 3 日、最新月營收創高、20/60 日趨勢仍強。 本次三因子同步 11 檔。 榜首：5351 鈺創，外資連買 10 日，營收 YoY +590.8%，前 20 日 +32.0%。",
-      "tags": [
-        "波段",
-        "外資連買",
-        "營收創高",
-        "強者恆強",
-        "排行榜"
-      ],
-      "source_pipeline": "stock_chip_crawler+mops_index",
-      "url": "reports/three-factor-ranking.html",
-      "stats": [
-        {
-          "label": "三因子同步",
-          "value": "11 檔",
-          "color": "up"
-        },
-        {
-          "label": "營收期別",
-          "value": "2026-07",
-          "color": "neutral"
-        },
-        {
-          "label": "榜首",
-          "value": "5351 98.6",
-          "color": "up"
-        }
-      ]
-    },
-    {
-      "id": "foreign-sell-records",
-      "category": "chips",
-      "type": "ranking",
-      "date": "2026-08-13",
-      "time": "21:05",
-      "title": "外資史上賣超紀錄 · 個股 / 大盤金額 Top 20",
-      "title_em": "賣超",
-      "summary": "外資單日淨賣超史上 Top 20，並加入大盤外資淨賣超金額 Top 20。追蹤事件後 1/3/5/10/20/30/60 日走勢。 最大紀錄：2026-05-28 3481 群創 -289,338 張。 大盤最大金額：2026-06-24 -1,955.5億。",
-      "tags": [
-        "籌碼",
-        "外資",
-        "賣超",
-        "成交額",
-        "事件追蹤"
-      ],
-      "source_pipeline": "stock_chip_crawler",
-      "url": "reports/foreign-sell-records.html?v=20260813-official",
-      "stats": [
-        {
-          "label": "個股最大",
-          "value": "3481 -289,338張",
-          "color": "down"
-        },
-        {
-          "label": "大盤金額",
-          "value": "-1,955.5億",
-          "color": "down"
-        },
-        {
-          "label": "走勢",
-          "value": "1-60日",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "chip-concentration",
-      "category": "chips",
-      "type": "ranking",
-      "date": "2026-08-13",
-      "time": "21:00",
-      "title": "籌碼集中度 · 分點 Top 50 排行",
-      "title_em": "集中度",
-      "summary": "5 個時段 · 每邊 Top 50 · 過濾成交量 < 1,000 張。 今日買超集中 #1：0052 富邦科技 +55.4%。 賣超集中 #1：2211 長榮鋼 -61.9%。",
-      "tags": [
-        "籌碼",
-        "分點",
-        "集中度",
-        "排行榜"
-      ],
-      "source_pipeline": "stock_chip_crawler",
-      "url": "reports/chip-concentration.html",
-      "stats": [
-        {
-          "label": "時段數",
+          "label": "交易日",
           "value": "5",
           "color": "neutral"
         },
         {
-          "label": "Top 買超",
-          "value": "0052 +55%",
-          "color": "up"
-        },
-        {
-          "label": "Top 賣超",
-          "value": "2211 -62%",
-          "color": "down"
+          "label": "版本",
+          "value": "v2.5-lite",
+          "color": "neutral"
         }
       ]
     },
     {
-      "id": "shortage-weekly-2026-08-13",
-      "category": "stocks",
-      "type": "weekly",
-      "date": "2026-08-13",
-      "time": "20:30",
-      "title": "2026-08-13 缺貨偵探近四週週報",
-      "title_em": "ABF／高階載板",
-      "summary": "最新一週較明確的新事件集中在 ABF／高階載板、探針卡／測試 Socket、MLCC／被動元件；其餘週別保留供需訊號供回溯。",
+      "id": "financial-calendar",
+      "category": "calendar",
+      "type": "calendar",
+      "date": "2026-08-14",
+      "time": "08:30",
+      "title": "市場行事曆",
+      "title_em": "法說會",
+      "summary": "台股區塊每日更新未來一個月法說會公司，僅列日期、股號、股名與時間；其他市場事件保留原行事曆資料。",
       "tags": [
-        "ABF／高階載板",
-        "HBM／先進記憶體",
-        "MCU",
-        "MLCC／被動元件",
-        "缺貨偵探",
-        "週報"
+        "行事曆",
+        "台股",
+        "法說會"
       ],
-      "source_pipeline": "shortage_detective",
-      "url": "reports/shortage/2026-08-13/weekly.html",
+      "source_pipeline": "financial_calendar_service investor_conference_calendar",
+      "url": "reports/financial-calendar.html",
       "stats": [
         {
-          "label": "事件數",
-          "value": "4",
+          "label": "事件",
+          "value": "198",
           "color": "neutral"
         },
         {
-          "label": "訊號數",
-          "value": "54",
-          "color": "neutral"
-        },
-        {
-          "label": "主題",
-          "value": "ABF／高階載板",
+          "label": "高重要",
+          "value": "35",
           "color": "up"
+        },
+        {
+          "label": "台股法說",
+          "value": "143",
+          "color": "neutral"
         }
+      ]
+    },
+    {
+      "id": "tri-source-lamp",
+      "category": "chips",
+      "title": "三源混合燈號",
+      "subtitle": "2026-08-14 · 三同買 17 / 三同賣 12",
+      "date": "2026-08-14",
+      "url": "reports/tri-source-lamp.html",
+      "tags": [
+        "分點",
+        "大股東",
+        "三大法人",
+        "燈號"
       ]
     },
     {
@@ -306,40 +528,6 @@
         {
           "label": "區間",
           "value": "778 日",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "market-pulse",
-      "category": "taiex",
-      "type": "pulse",
-      "date": "2026-08-13",
-      "time": "20:00",
-      "title": "市場脈動 · 漲跌停 × 全族群均幅",
-      "title_em": "脈動",
-      "summary": "近 80 個交易日漲跌停家數、總成交額、族群平均漲幅、漲停集中度。最新 (2026-08-13)：漲停 43、跌停 4、全族群均幅 +0.23%。",
-      "tags": [
-        "市場脈動",
-        "漲跌停",
-        "成交額"
-      ],
-      "source_pipeline": "industry_map",
-      "url": "reports/market-pulse.html",
-      "stats": [
-        {
-          "label": "漲停",
-          "value": "43",
-          "color": "up"
-        },
-        {
-          "label": "跌停",
-          "value": "4",
-          "color": "down"
-        },
-        {
-          "label": "成交額",
-          "value": "12,644 億",
           "color": "neutral"
         }
       ]
@@ -484,42 +672,6 @@
       ]
     },
     {
-      "id": "mops-revenue-forecast-watch-20260813",
-      "category": "research",
-      "type": "mops_watch",
-      "date": "2026-08-13",
-      "time": "19:30",
-      "title": "2026-08-13 MOPS 營收公告追蹤",
-      "title_em": "MOPS 追蹤",
-      "summary": "公開 MOPS 營收相關重大訊息 8 筆；其中 3 筆出現在匿名財測名單，3 筆明確揭露 6 月營收。僅做追蹤與統計，不構成投資建議。",
-      "tags": [
-        "MOPS",
-        "重大訊息",
-        "營收公告",
-        "財測追蹤",
-        "2026Q2"
-      ],
-      "source_pipeline": "mops_revenue_forecast_watch",
-      "url": "reports/q2-forecast-2026q2.html#q2-mops-events",
-      "stats": [
-        {
-          "label": "公告",
-          "value": "8",
-          "color": "neutral"
-        },
-        {
-          "label": "財測名單",
-          "value": "3",
-          "color": "gold"
-        },
-        {
-          "label": "6月營收",
-          "value": "3",
-          "color": "up"
-        }
-      ]
-    },
-    {
       "id": "2026-08-13-ai-research-daily-market-composite",
       "category": "ai-research",
       "type": "daily-market-composite",
@@ -556,124 +708,6 @@
           "value": "+1.048%",
           "color": "up"
         }
-      ]
-    },
-    {
-      "id": "options-annual-2026",
-      "category": "txo",
-      "type": "options_annual",
-      "date": "2026-08-13",
-      "time": "15:10",
-      "title": "2026 台股選擇權年度合併報告（簡易版）",
-      "title_em": "選擇權",
-      "summary": "2026 年度合併（簡易版），更新至 2026-08-13。",
-      "tags": [
-        "選擇權",
-        "TXO",
-        "年度合併",
-        "週報",
-        "簡易版",
-        "v2.5-lite"
-      ],
-      "source_pipeline": "stock_project options_report_v2.5-lite",
-      "url": "reports/options/annual_reports/2026/台股選擇權年度合併報告_2026_v2.5_lite.html",
-      "stats": [
-        {
-          "label": "年度",
-          "value": "2026",
-          "color": "neutral"
-        },
-        {
-          "label": "版本",
-          "value": "v2.5-lite",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "options-weekly-20260810-20260814",
-      "category": "txo",
-      "type": "options_weekly",
-      "date": "2026-08-13",
-      "time": "15:00",
-      "title": "台股選擇權籌碼週報 · 20260810-20260814（簡易版）",
-      "title_em": "選擇權",
-      "summary": "簡易版 v2.5 週報，涵蓋 2026-08-10 至 2026-08-14，目前共 4 個交易日。",
-      "tags": [
-        "選擇權",
-        "TXO",
-        "週報",
-        "Max Pain",
-        "P/C Ratio",
-        "簡易版",
-        "v2.5-lite"
-      ],
-      "source_pipeline": "stock_project options_report_v2.5-lite",
-      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260810-20260814_v2.5_lite.html",
-      "stats": [
-        {
-          "label": "週期",
-          "value": "20260810-20260814",
-          "color": "neutral"
-        },
-        {
-          "label": "交易日",
-          "value": "4",
-          "color": "neutral"
-        },
-        {
-          "label": "版本",
-          "value": "v2.5-lite",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "financial-calendar",
-      "category": "calendar",
-      "type": "calendar",
-      "date": "2026-08-13",
-      "time": "08:30",
-      "title": "市場行事曆",
-      "title_em": "法說會",
-      "summary": "台股區塊每日更新未來一個月法說會公司，僅列日期、股號、股名與時間；其他市場事件保留原行事曆資料。",
-      "tags": [
-        "行事曆",
-        "台股",
-        "法說會"
-      ],
-      "source_pipeline": "financial_calendar_service investor_conference_calendar",
-      "url": "reports/financial-calendar.html",
-      "stats": [
-        {
-          "label": "事件",
-          "value": "200",
-          "color": "neutral"
-        },
-        {
-          "label": "高重要",
-          "value": "35",
-          "color": "up"
-        },
-        {
-          "label": "台股法說",
-          "value": "145",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "tri-source-lamp",
-      "category": "chips",
-      "title": "三源混合燈號",
-      "subtitle": "2026-08-13 · 三同買 21 / 三同賣 13",
-      "date": "2026-08-13",
-      "url": "reports/tri-source-lamp.html",
-      "tags": [
-        "分點",
-        "大股東",
-        "三大法人",
-        "燈號"
       ]
     },
     {
