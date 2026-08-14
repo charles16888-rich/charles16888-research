@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>高開後一路滑落收近低，櫃買更弱、法人合計淨買與指數背離 — charles16888</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="../../assets/fonts.css" />
+  <link rel="stylesheet" href="../../assets/style.css" />
+</head>
+<body data-page="report">
+
+  <header class="masthead">
+    <div class="container">
+      <div class="masthead__row">
+        <a class="brand" href="../../index.html">
+          <span class="brand__mark">charles<em>16888</em></span>
+          <span class="brand__plate">Market Edition · MMXXVI</span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a class="nav__link" href="../../category.html?cat=sectors">族群</a>
+          <a class="nav__link" href="../../category.html?cat=taiex">大盤</a>
+          <a class="nav__link" href="../../category.html?cat=calendar">行事曆</a>
+          <a class="nav__link" href="../../category.html?cat=txo">選擇權</a>
+          <a class="nav__link" href="../../category.html?cat=chips">籌碼</a>
+          <a class="nav__link" href="../../category.html?cat=stocks">個股</a>
+          <a class="nav__link" href="../../category.html?cat=research">研報統計</a>
+          <a class="nav__link" href="../../category.html?cat=ai-research">AI 研析</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../../index.html">charles16888</a>
+      <span class="breadcrumb__sep">/</span>
+      <a href="../../category.html?cat=ai-research">AI 研究報告</a>
+      <span class="breadcrumb__sep">/</span>
+      <span>2026-08-14</span>
+    </nav>
+
+    <section class="report-cover reveal reveal-d1" aria-label="Report cover">
+      <div class="report-meta-line">
+        <span><strong>AI 研究報告</strong> · 當日綜合走勢研析</span>
+        <span>2026-08-14 · 15:30</span>
+        <span>VOLUME 01</span>
+      </div>
+
+      <h1 class="report-title"><em>高開後一路滑落收近低</em>，櫃買更弱、法人合計淨買與指數背離</h1>
+
+      <p class="report-lead">今日主結構為「夜盤抬升、日盤高開後由高至近低」的回吐路徑，櫃買弱於加權，法人籌碼與指數方向背離。</p>
+
+      <div class="stat-row stat-row--3">
+        <div class="stat">
+          <div class="stat__label">加權指數</div>
+          <div class="stat__value stat__value--sm num-down">-0.351%</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">櫃買指數</div>
+          <div class="stat__value stat__value--sm num-down">-1.273%</div>
+        </div>
+        <div class="stat">
+          <div class="stat__label">台指期日盤</div>
+          <div class="stat__value stat__value--sm num-down">-0.356%</div>
+        </div></div>
+    </section>
+
+    <article class="report-body scroll-fade">
+      <h2>1. 綜合摘要</h2>
+<p>今日主結構可概括為：<strong>夜盤偏強抬升 → 日盤高開 → 全日高點出現在開盤附近 → 分時逐步下修 → 收在全日區間近低</strong>。加權指數收 45811.01，較昨收 45972.29 跌 <strong>0.351%</strong>；開盤相對昨收高開 <strong>0.286%</strong>，但開盤至收盤回落 <strong>0.635%</strong>，區間位置僅 <strong>2.1%</strong>（近全日低點）。</p>
+<p>兩層最醒目的綜合觀察：
+1. <strong>櫃買明顯弱於加權</strong>：櫃買較昨收 <strong>-1.273%</strong>，開盤至收盤 <strong>-1.353%</strong>，遠大於加權跌幅。
+2. <strong>法人籌碼與指數方向背離</strong>：三大法人合計淨買約 <strong>508.86 億元</strong>，但加權與台指期日盤均收跌；樣品權值多數開高走低，與指數回落同向，僅少數個股開收翻正。</p>
+<p>廣度（<code>market_pulse</code>）與期現基差（<code>futures_basis</code>）本日 packet 無此欄。</p>
+<hr>
+<h2>2. 盤中結構重播</h2>
+<h3>夜盤至開盤前</h3>
+<p>台指期夜盤至開盤前（15:01–05:00）由 45950 開至 46389 收，區間開收 <strong>+0.955%</strong>；高 46574、低 45878，收盤區間位置 <strong>73.4%</strong>，屬偏高位收盤。路徑樣本可見晚間自約 21:34 附近 46122 一帶跳升，22:04 後站上 46400 上方，凌晨高位震盪後略回，仍以偏強收束。</p>
+<p>夜盤收盤至日盤開盤銜接：日盤開 46466，相對夜盤收 46389 約 <strong>+0.166%</strong>（packet 欄位 <code>txf_night_to_day_open_gap_pct</code>），顯示日盤開盤仍延續夜盤偏高的開價。</p>
+<h3>日盤開盤與首根確認</h3>
+<table class="data-table">
+<thead>
+<tr>
+<th>標的</th>
+<th>昨收</th>
+<th>開盤</th>
+<th>高開幅度</th>
+<th>日高（時間）</th>
+<th>日低（時間）</th>
+<th>收盤</th>
+<th>較昨收</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>加權</td>
+<td class="num">45972.29</td>
+<td class="num">46103.81</td>
+<td class="num">+0.286%</td>
+<td>46402.6（09:02）</td>
+<td>45798.31（13:11）</td>
+<td class="num">45811.01</td>
+<td class="num">-0.351%</td>
+</tr>
+<tr>
+<td>櫃買</td>
+<td class="num">406.12</td>
+<td class="num">406.45</td>
+<td class="num">+0.081%</td>
+<td>409.29（09:02）</td>
+<td>399.48（13:11）</td>
+<td class="num">400.95</td>
+<td class="num">-1.273%</td>
+</tr>
+<tr>
+<td>台指期日盤</td>
+<td class="num">46005</td>
+<td class="num">46466</td>
+<td class="num">+1.002%</td>
+<td>46470（08:46）</td>
+<td>45676（13:10）</td>
+<td class="num">45841</td>
+<td class="num">-0.356%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>台指期日盤</strong>首 5 分鐘（08:46–08:50）即由 46466 回至 46351，<strong>開收 -0.247%</strong>；08:52 收盤跌破首窗低點（46328），且 <strong>first_close_break_up 為 null</strong>，全日未見收盤站回首窗高點的反轉確認。日高即在 08:46 的 46470，屬「開盤即高」型態。</p>
+<p><strong>加權</strong>首 5 分鐘（09:01–09:05）仍偏強：開 46103.81、收 46286.79，<strong>+0.397%</strong>，日高 46402.6 出現在 09:02。但 <strong>09:18</strong> 收盤 46094.53 跌破首窗低點 46103.81，同樣沒有 first_close_break_up。此後結構由「早盤衝高」轉為「破首低後的回吐」。</p>
+<p><strong>櫃買</strong>同步：日高 409.29 在 09:02，首窗開收 +0.332%，同樣在 <strong>09:18</strong>（405.84）跌破首窗低點，且無向上突破確認。</p>
+<h3>分時窗與收盤位置</h3>
+<p>加權分時窗（開收變化）：
+- <strong>09:06–09:45</strong>：-0.251%（低點已下探至 46009.24）
+- <strong>09:01–10:30</strong>：+0.166%（前段高點仍在，收 46180.16）
+- <strong>10:31–11:30</strong>：+0.100%（震盪略偏持平偏多）
+- <strong>11:31–12:30</strong>：-0.239%
+- <strong>12:31–13:30</strong>：<strong>-0.510%</strong>（尾盤下修最明顯）</p>
+<p>15 分樣本顯示：11:16 附近已回至 46067.88；12:16 後持續下移；13:11 附近觸及日低 45798.31；13:30 收 45811.01，幾乎貼近日低。區間位置 <strong>2.1%</strong> 說明收盤極接近全日低端。</p>
+<p>櫃買則更早失速：10:31–11:30 開收 <strong>-0.618%</strong>，11:31–12:30 再 <strong>-0.773%</strong>；尾盤 12:31–13:30 僅微幅 <strong>+0.077%</strong>，收 400.95，區間位置 <strong>15.0%</strong>，仍偏弱但略優於加權的「貼底」程度。</p>
+<p>台指期日盤路徑與現貨同向：08:46–09:00 開收 -0.306%；09:01–10:30 -0.466%；11:31–12:30 -0.453%；12:31–13:30 再 -0.335%。日低 45676 在 13:10，日盤收 45841，區間位置 <strong>20.8%</strong>，相對加權的 2.1% 略高，但開盤至收盤回落幅度達 <strong>-1.345%</strong>，反映「高開回吐」在期貨端更劇烈。</p>
+<p><strong>結構結論（期現）</strong>：夜盤偏強 → 日盤高開 → 開盤附近見高 → 首窗破位後震盪下修 → 午后至尾盤加速貼近低端。非 V 型翻轉，而是典型 <strong>高開回落、收近低</strong> 路徑。</p>
+<hr>
+<h2>3. 廣度與族群熱度（market_pulse）</h2>
+<p><strong>本日 packet 無此欄</strong>（<code>market_pulse</code> 為 null；<code>composite_layers_available.market_pulse</code> 為 false）。</p>
+<p>因此無法以漲跌家數、漲停/跌停、成交熱度分佈等廣度指標驗證「指數小跌是否對應內部惡化」。僅能就現貨雙指數相對表現指出：櫃買跌幅約為加權的 3.6 倍量級（-1.273% vs -0.351%），結構上偏「中小型/櫃買風險偏好較差」，但細節族群熱度無法由本 packet 證實。</p>
+<hr>
+<h2>4. 籌碼對照（institutional）</h2>
+<p>證交所三大法人（單位：億元，packet 欄位 <code>*_net_yi</code>）：</p>
+<table class="data-table">
+<thead>
+<tr>
+<th>項目</th>
+<th>金額（億元）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>外資</td>
+<td class="num">+453.51</td>
+</tr>
+<tr>
+<td>投信</td>
+<td class="num">+71.96</td>
+</tr>
+<tr>
+<td>自營商</td>
+<td class="num">-16.61</td>
+</tr>
+<tr>
+<td><strong>合計</strong></td>
+<td><strong>+508.86</strong></td>
+</tr>
+</tbody>
+</table>
+<p>觀察要點：
+- <strong>合計與指數方向背離</strong>：法人合計大幅淨買，但加權收跌 0.351%、櫃買跌 1.273%、台指期日盤跌 0.356%。
+- <strong>結構內部</strong>：外資、投信同向淨買，自營商小幅淨賣；主導項為外資。
+- 本 packet 未提供現貨成交總額、借券、期貨法人分項，故僅能做「現貨法人合計 vs 指數收盤方向」的對照，無法推論期貨端是否對沖。</p>
+<p>此層意義是描述性的：<strong>價格路徑偏空（高開收近低），現貨法人合計卻偏多</strong>，形成籌碼—價格背離；是否反映「買在回檔」或「指數權重與法人標的錯位」，本 packet 無進一步貢獻度資料可驗證。</p>
+<hr>
+<h2>5. 期現基差（futures_basis）</h2>
+<p><strong>本日 packet 無此欄</strong>（<code>futures_basis</code> 為 null）。</p>
+<p>可旁證但不替代基差的結構事實：
+- 台指期日盤高開 <strong>+1.002%</strong>（相對昨收 46005），加權僅高開 <strong>+0.286%</strong>，開盤端期貨溢價感較強（非正式基差計算）。
+- 收盤時加權 -0.351%、期貨日盤 -0.356%，收盤方向大致同步。
+- 期貨日盤開收 -1.345%、區間位置 20.8%；加權開收 -0.635%、區間位置 2.1%——<strong>開盤回吐幅度期貨更大，但收盤貼底程度現貨更深</strong>。</p>
+<p>正式升/貼水、近遠月價差等仍因欄位缺漏無法陳述。</p>
+<hr>
+<h2>6. 權值樣品是否解釋指數</h2>
+<p>樣品 8 檔（開盤→收盤變化）：</p>
+<table class="data-table">
+<thead>
+<tr>
+<th>代號</th>
+<th>名稱</th>
+<th>開→收</th>
+<th>備註（packet 內）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="num">2330</td>
+<td>台積電</td>
+<td><strong>-1.643%</strong></td>
+<td>收 2395 = 日低</td>
+</tr>
+<tr>
+<td class="num">2454</td>
+<td>聯發科</td>
+<td><strong>-4.318%</strong></td>
+<td>開=高 4400，收近低 4210</td>
+</tr>
+<tr>
+<td class="num">2303</td>
+<td>聯電</td>
+<td><strong>-3.200%</strong></td>
+<td>量大 約 1.15 億股</td>
+</tr>
+<tr>
+<td class="num">2308</td>
+<td>台達電</td>
+<td><strong>-3.085%</strong></td>
+<td>高 1975 → 收 1885</td>
+</tr>
+<tr>
+<td class="num">3711</td>
+<td>日月光投控</td>
+<td><strong>-2.992%</strong></td>
+<td>開=高 635</td>
+</tr>
+<tr>
+<td class="num">2317</td>
+<td>鴻海</td>
+<td><strong>-0.954%</strong></td>
+<td>相對抗跌於多數權值</td>
+</tr>
+<tr>
+<td class="num">2382</td>
+<td>廣達</td>
+<td><strong>+0.769%</strong></td>
+<td>樣品中少數開收翻正</td>
+</tr>
+<tr>
+<td class="num">6669</td>
+<td>緯穎</td>
+<td><strong>+4.719%</strong></td>
+<td>高 6650，開收最強</td>
+</tr>
+</tbody>
+</table>
+<p>解讀（僅限樣品）：
+- <strong>多數權值與加權同向偏弱</strong>，且台積電、聯發科、聯電、台達電、日月光的開收跌幅均明顯大於加權的 -0.635%，可部分解釋「指數收近低」並非單一因子，而是權值族群普遍開高走低。
+- <strong>台積電收在日低</strong> 與加權區間位置 2.1% 同向，權重指標對指數貼底具解釋力。
+- <strong>廣達、緯穎開收為正</strong>，與大盤背離，顯示樣品內部並非全面同步；但兩檔無法翻轉整體指數路徑。
+- 本 packet <strong>無指數貢獻度</strong>（<code>index_contribution</code> 為 false），故無法量化「誰拖累幾點」，僅能做方向一致性描述。</p>
+<hr>
+<h2>7. 綜合判斷（各層同向／背離）</h2>
+<table class="data-table">
+<thead>
+<tr>
+<th>觀察層</th>
+<th>資料狀態</th>
+<th>與「指數收跌／收近低」之關係</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>盤中結構（加權）</td>
+<td>有</td>
+<td><strong>同向</strong>：高開→破首低→尾盤下修→區間 2.1%</td>
+</tr>
+<tr>
+<td>盤中結構（櫃買）</td>
+<td>有</td>
+<td><strong>同向且更弱</strong>：-1.273%，開收 -1.353%</td>
+</tr>
+<tr>
+<td>盤中結構（台指期日盤）</td>
+<td>有</td>
+<td><strong>同向</strong>：高開 1.002% 後開收 -1.345%，收跌 0.356%</td>
+</tr>
+<tr>
+<td>夜盤結構</td>
+<td>有</td>
+<td><strong>與日盤路徑背離</strong>：夜盤開收 +0.955%、區間 73.4%；日盤反手回吐</td>
+</tr>
+<tr>
+<td>廣度 market_pulse</td>
+<td><strong>無</strong></td>
+<td>本日 packet 無此欄</td>
+</tr>
+<tr>
+<td>法人籌碼</td>
+<td>有</td>
+<td><strong>背離</strong>：合計淨買 508.86 億，指數收跌</td>
+</tr>
+<tr>
+<td>期現基差</td>
+<td><strong>無</strong></td>
+<td>本日 packet 無此欄</td>
+</tr>
+<tr>
+<td>權值樣品</td>
+<td>有</td>
+<td><strong>多數同向偏弱</strong>；廣達、緯穎開收為正屬樣品內背離</td>
+</tr>
+<tr>
+<td>族群明細／選擇權／貢獻度</td>
+<td><strong>無</strong></td>
+<td>本日 packet 無此欄</td>
+</tr>
+</tbody>
+</table>
+<p><strong>一句收斂</strong>：今日是「夜盤偏強被日盤完整回吐」的結構日；櫃買與多數樣品權值強化空方分時敘事，法人合計淨買則構成最清楚的跨層背離。廣度與基差缺漏，限制了對「內部擴散」與「期現定價」的驗證。</p>
+<hr>
+<h2>8. 方法與限制</h2>
+<ul>
+<li><strong>資料範圍</strong>：僅使用 2026-08-14 當日 packet 內既有欄位與數值；時間為 Asia/Taipei。</li>
+<li><strong>結構定義</strong>：以開高低收、分時窗、首窗突破、15 分路徑樣本與區間位置描述「怎麼走」，不做因果 trans 定或策略暗示。</li>
+<li><strong>綜合層</strong>：v2 要求對照廣度、籌碼、基差、權值樣品；其中 <code>market_pulse</code>、<code>futures_basis</code>、族群明細、選擇權、指數貢獻度等為 null／false，已標明「本日 packet 無此欄」，未補造。</li>
+<li><strong>法人單位</strong>：<code>*_net_yi</code> 依 packet 以「億元」陳述；未提供分產業或現貨／期貨拆分。</li>
+<li><strong>權值樣品</strong>：8 檔為抽樣，非全市場，不可外推為完整權重歸因。</li>
+<li><strong>用途限制</strong>：本文為研究網站之描述性統計與結構重播，不含個別標的操作指示，亦不輸出價格目標。</li>
+</ul>
+<hr>
+<p><em>資料來源管線：market_structure_composite_v2｜交易日：2026-08-14｜前一交易日：2026-08-13</em></p>
+    </article>
+
+
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div id="footer-line" class="footer__row"></div>
+    </div>
+  </footer>
+
+  <script src="../../assets/main.js" defer></script>
+</body>
+</html>
