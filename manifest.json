@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-13T23:48:25+08:00",
-  "today": "2026-08-13",
+  "updated_at": "2026-08-14T19:42:53+08:00",
+  "today": "2026-08-14",
   "volume_number": 1,
   "market_summary": {
     "date": "2026-05-22",
@@ -21,6 +21,45 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-08-14-ai-research-daily-market-composite",
+      "category": "ai-research",
+      "type": "daily-market-composite",
+      "date": "2026-08-14",
+      "time": "15:30",
+      "title": "高開後一路滑落收近低，櫃買更弱、法人合計淨買與指數背離",
+      "title_em": "高開後一路滑落收近低",
+      "summary": "夜盤偏強、日盤高開後自開盤高點回落，加權收在全日區間近低、較昨收-0.351%；櫃買更弱-1.273%。法人合計淨買約509億與指數回落背離；廣度與基差本日無資料。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤中結構",
+        "綜合觀察",
+        "廣度",
+        "籌碼"
+      ],
+      "source_pipeline": "market_structure_composite_v2",
+      "url": "reports/2026-08-14/ai-research-daily-market-composite.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "-0.351%",
+          "color": "down"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "-1.273%",
+          "color": "down"
+        },
+        {
+          "label": "台指期日盤",
+          "value": "-0.356%",
+          "color": "down"
+        }
+      ]
+    },
     {
       "id": "high-price-watch",
       "category": "stocks",
