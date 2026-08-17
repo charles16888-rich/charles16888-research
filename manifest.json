@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-17T21:33:34+08:00",
+  "updated_at": "2026-08-17T22:04:28+08:00",
   "today": "2026-08-17",
   "volume_number": 1,
   "market_summary": {
@@ -237,6 +237,214 @@
       ]
     },
     {
+      "id": "options-atm",
+      "category": "txo",
+      "type": "pulse",
+      "date": "2026-08-17",
+      "time": "20:00",
+      "title": "選擇權價平和 · 隱含波動代理",
+      "title_em": "價平和",
+      "summary": "近 780 個交易日（2023-05-30 → 2026-08-17）TXO ATM Call+Put 加總。最新 (2026-08-17)：近期 693 點（到期 202608）、次遠期 978 點。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "價平和",
+        "隱波"
+      ],
+      "source_pipeline": "taifex + twse",
+      "url": "reports/options-atm.html",
+      "stats": [
+        {
+          "label": "近期 C+P",
+          "value": "693",
+          "color": "neutral"
+        },
+        {
+          "label": "次遠期 C+P",
+          "value": "978",
+          "color": "neutral"
+        },
+        {
+          "label": "區間",
+          "value": "780 日",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "market-pulse",
+      "category": "taiex",
+      "type": "pulse",
+      "date": "2026-08-17",
+      "time": "20:00",
+      "title": "市場脈動 · 漲跌停 × 全族群均幅",
+      "title_em": "脈動",
+      "summary": "近 82 個交易日漲跌停家數、總成交額、族群平均漲幅、漲停集中度。最新 (2026-08-17)：漲停 32、跌停 6、全族群均幅 +0.63%。",
+      "tags": [
+        "市場脈動",
+        "漲跌停",
+        "成交額"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/market-pulse.html",
+      "stats": [
+        {
+          "label": "漲停",
+          "value": "32",
+          "color": "up"
+        },
+        {
+          "label": "跌停",
+          "value": "6",
+          "color": "down"
+        },
+        {
+          "label": "成交額",
+          "value": "10,632 億",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "futures-basis",
+      "category": "taiex",
+      "type": "pulse",
+      "date": "2026-08-17",
+      "time": "20:00",
+      "title": "期貨正逆價差 · 12 年期現對照",
+      "title_em": "12 年",
+      "summary": "近 3040 個交易日（2014-02-14 → 2026-08-17）台指期 TXF1 vs 加權指數價差。最新 (2026-08-17)：基差 +30.7 點，加權收 45,857。",
+      "tags": [
+        "期貨",
+        "基差",
+        "正逆價差",
+        "TX",
+        "12 年"
+      ],
+      "source_pipeline": "yuanta + yfinance",
+      "url": "reports/futures-basis.html",
+      "stats": [
+        {
+          "label": "最新基差",
+          "value": "+30.7",
+          "color": "up"
+        },
+        {
+          "label": "加權",
+          "value": "45,857",
+          "color": "neutral"
+        },
+        {
+          "label": "區間",
+          "value": "3040 日",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-17-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-08-17",
+      "time": "20:00",
+      "title": "2026-08-17 族群週報",
+      "title_em": "鏡頭光學",
+      "summary": "涵蓋 2026-08-11 ~ 2026-08-17。週領漲 鏡頭光學 +19.52%，週領跌 自行車 -4.60%；資金焦點 記憶體。",
+      "tags": [
+        "鏡頭光學",
+        "自行車",
+        "記憶體",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-08-17/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "鏡頭光學 +19.52%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "自行車 -4.60%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "記憶體",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-17-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-08-17",
+      "time": "20:00",
+      "title": "2026-08-17 每日族群輪動雷達",
+      "title_em": "鏡頭光學",
+      "summary": "今日相對升溫以 鏡頭光學 最明顯，相對降溫以 AI伺服器代工 壓力最大；今日轉強力道大於轉弱力道。",
+      "tags": [
+        "鏡頭光學",
+        "AI伺服器代工",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-08-17/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "鏡頭光學 +8.18 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "AI伺服器代工 -4.61 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-17-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-08-17",
+      "time": "20:00",
+      "title": "2026-08-17 族群盤後快報",
+      "title_em": "鏡頭光學",
+      "summary": "全 74 族群、成交 10631.9 億；領漲 鏡頭光學 +9.95%，領跌 AI伺服器代工 -3.05%；漲多族群 42/74，全族群均漲 +0.63%。",
+      "tags": [
+        "鏡頭光學",
+        "AI伺服器代工",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-08-17/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "鏡頭光學 +9.95%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "AI伺服器代工 -3.05%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "11.8%",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "mops-revenue-forecast-watch-20260817",
       "category": "research",
       "type": "mops_watch",
@@ -463,111 +671,6 @@
           "label": "主題",
           "value": "ABF／高階載板",
           "color": "up"
-        }
-      ]
-    },
-    {
-      "id": "options-atm",
-      "category": "txo",
-      "type": "pulse",
-      "date": "2026-08-14",
-      "time": "20:00",
-      "title": "選擇權價平和 · 隱含波動代理",
-      "title_em": "價平和",
-      "summary": "近 779 個交易日（2023-05-30 → 2026-08-14）TXO ATM Call+Put 加總。最新 (2026-08-14)：近期 965 點（到期 202608）、次遠期 1285 點。",
-      "tags": [
-        "選擇權",
-        "TXO",
-        "價平和",
-        "隱波"
-      ],
-      "source_pipeline": "taifex + twse",
-      "url": "reports/options-atm.html",
-      "stats": [
-        {
-          "label": "近期 C+P",
-          "value": "965",
-          "color": "neutral"
-        },
-        {
-          "label": "次遠期 C+P",
-          "value": "1285",
-          "color": "neutral"
-        },
-        {
-          "label": "區間",
-          "value": "779 日",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "market-pulse",
-      "category": "taiex",
-      "type": "pulse",
-      "date": "2026-08-14",
-      "time": "20:00",
-      "title": "市場脈動 · 漲跌停 × 全族群均幅",
-      "title_em": "脈動",
-      "summary": "近 81 個交易日漲跌停家數、總成交額、族群平均漲幅、漲停集中度。最新 (2026-08-14)：漲停 29、跌停 7、全族群均幅 -0.53%。",
-      "tags": [
-        "市場脈動",
-        "漲跌停",
-        "成交額"
-      ],
-      "source_pipeline": "industry_map",
-      "url": "reports/market-pulse.html",
-      "stats": [
-        {
-          "label": "漲停",
-          "value": "29",
-          "color": "up"
-        },
-        {
-          "label": "跌停",
-          "value": "7",
-          "color": "down"
-        },
-        {
-          "label": "成交額",
-          "value": "12,564 億",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "futures-basis",
-      "category": "taiex",
-      "type": "pulse",
-      "date": "2026-08-14",
-      "time": "20:00",
-      "title": "期貨正逆價差 · 12 年期現對照",
-      "title_em": "12 年",
-      "summary": "近 3039 個交易日（2014-02-14 → 2026-08-14）台指期 TXF1 vs 加權指數價差。最新 (2026-08-14)：基差 +30.0 點，加權收 45,811。",
-      "tags": [
-        "期貨",
-        "基差",
-        "正逆價差",
-        "TX",
-        "12 年"
-      ],
-      "source_pipeline": "yuanta + yfinance",
-      "url": "reports/futures-basis.html",
-      "stats": [
-        {
-          "label": "最新基差",
-          "value": "+30.0",
-          "color": "up"
-        },
-        {
-          "label": "加權",
-          "value": "45,811",
-          "color": "neutral"
-        },
-        {
-          "label": "區間",
-          "value": "3039 日",
-          "color": "neutral"
         }
       ]
     },
