@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-18T18:54:55+08:00",
+  "updated_at": "2026-08-18T20:37:31+08:00",
   "today": "2026-08-18",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,109 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-08-18-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-08-18",
+      "time": "20:00",
+      "title": "2026-08-18 族群週報",
+      "title_em": "鏡頭光學",
+      "summary": "涵蓋 2026-08-12 ~ 2026-08-18。週領漲 鏡頭光學 +24.46%，週領跌 自行車 -13.56%；資金焦點 記憶體。",
+      "tags": [
+        "鏡頭光學",
+        "自行車",
+        "記憶體",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-08-18/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "鏡頭光學 +24.46%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "自行車 -13.56%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "記憶體",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-18-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-08-18",
+      "time": "20:00",
+      "title": "2026-08-18 每日族群輪動雷達",
+      "title_em": "散裝航運",
+      "summary": "今日相對升溫以 散裝航運 最明顯，相對降溫以 化合物半導體 壓力最大；今日轉弱力道大於轉強力道。",
+      "tags": [
+        "散裝航運",
+        "化合物半導體",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-08-18/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "散裝航運 +1.97 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "化合物半導體 -5.84 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-18-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-08-18",
+      "time": "20:00",
+      "title": "2026-08-18 族群盤後快報",
+      "title_em": "貨櫃航運",
+      "summary": "全 74 族群、成交 11627.4 億；領漲 貨櫃航運 +3.66%，領跌 化合物半導體 -5.23%；漲多族群 15/74，全族群均漲 -1.06%。",
+      "tags": [
+        "貨櫃航運",
+        "化合物半導體",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-08-18/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "貨櫃航運 +3.66%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "化合物半導體 -5.23%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "0.7%",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "options-annual-2026",
       "category": "txo",
