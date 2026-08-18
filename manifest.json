@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-18T21:08:56+08:00",
+  "updated_at": "2026-08-18T22:52:45+08:00",
   "today": "2026-08-18",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,113 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "three-factor-ranking",
+      "category": "chips",
+      "type": "ranking",
+      "date": "2026-08-18",
+      "time": "21:10",
+      "title": "三因子波段排行榜",
+      "title_em": "外資×營收×強勢",
+      "summary": "外資連買 >= 3 日、最新月營收創高、20/60 日趨勢仍強。 本次三因子同步 12 檔。 榜首：5351 鈺創，外資連買 13 日，營收 YoY +590.8%，前 20 日 +37.2%。",
+      "tags": [
+        "波段",
+        "外資連買",
+        "營收創高",
+        "強者恆強",
+        "排行榜"
+      ],
+      "source_pipeline": "stock_chip_crawler+mops_index",
+      "url": "reports/three-factor-ranking.html",
+      "stats": [
+        {
+          "label": "三因子同步",
+          "value": "12 檔",
+          "color": "up"
+        },
+        {
+          "label": "營收期別",
+          "value": "2026-07",
+          "color": "neutral"
+        },
+        {
+          "label": "榜首",
+          "value": "5351 95.7",
+          "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "foreign-sell-records",
+      "category": "chips",
+      "type": "ranking",
+      "date": "2026-08-18",
+      "time": "21:05",
+      "title": "外資史上賣超紀錄 · 個股 / 大盤金額 Top 20",
+      "title_em": "賣超",
+      "summary": "外資單日淨賣超史上 Top 20，並加入大盤外資淨賣超金額 Top 20。追蹤事件後 1/3/5/10/20/30/60 日走勢。 最大紀錄：2026-05-28 3481 群創 -289,338 張。 大盤最大金額：2026-06-24 -1,955.5億。",
+      "tags": [
+        "籌碼",
+        "外資",
+        "賣超",
+        "成交額",
+        "事件追蹤"
+      ],
+      "source_pipeline": "stock_chip_crawler",
+      "url": "reports/foreign-sell-records.html?v=20260818-official",
+      "stats": [
+        {
+          "label": "個股最大",
+          "value": "3481 -289,338張",
+          "color": "down"
+        },
+        {
+          "label": "大盤金額",
+          "value": "-1,955.5億",
+          "color": "down"
+        },
+        {
+          "label": "走勢",
+          "value": "1-60日",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "chip-concentration",
+      "category": "chips",
+      "type": "ranking",
+      "date": "2026-08-18",
+      "time": "21:00",
+      "title": "籌碼集中度 · 分點 Top 50 排行",
+      "title_em": "集中度",
+      "summary": "5 個時段 · 每邊 Top 50 · 過濾成交量 < 1,000 張。 今日買超集中 #1：2542 興富發 +53.1%。 賣超集中 #1：1476 儒鴻 -55.6%。",
+      "tags": [
+        "籌碼",
+        "分點",
+        "集中度",
+        "排行榜"
+      ],
+      "source_pipeline": "stock_chip_crawler",
+      "url": "reports/chip-concentration.html",
+      "stats": [
+        {
+          "label": "時段數",
+          "value": "5",
+          "color": "neutral"
+        },
+        {
+          "label": "Top 買超",
+          "value": "2542 +53%",
+          "color": "up"
+        },
+        {
+          "label": "Top 賣超",
+          "value": "1476 -56%",
+          "color": "down"
+        }
+      ]
+    },
     {
       "id": "market-pulse",
       "category": "taiex",
@@ -51,6 +158,42 @@
         {
           "label": "成交額",
           "value": "11,627 億",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "futures-basis",
+      "category": "taiex",
+      "type": "pulse",
+      "date": "2026-08-18",
+      "time": "20:00",
+      "title": "期貨正逆價差 · 12 年期現對照",
+      "title_em": "12 年",
+      "summary": "近 3041 個交易日（2014-02-14 → 2026-08-18）台指期 TXF1 vs 加權指數價差。最新 (2026-08-18)：基差 -223.7 點，加權收 45,309。",
+      "tags": [
+        "期貨",
+        "基差",
+        "正逆價差",
+        "TX",
+        "12 年"
+      ],
+      "source_pipeline": "yuanta + yfinance",
+      "url": "reports/futures-basis.html",
+      "stats": [
+        {
+          "label": "最新基差",
+          "value": "-223.7",
+          "color": "down"
+        },
+        {
+          "label": "加權",
+          "value": "45,309",
+          "color": "neutral"
+        },
+        {
+          "label": "區間",
+          "value": "3041 日",
           "color": "neutral"
         }
       ]
@@ -268,6 +411,20 @@
       ]
     },
     {
+      "id": "tri-source-lamp",
+      "category": "chips",
+      "title": "三源混合燈號",
+      "subtitle": "2026-08-18 · 三同買 3 / 三同賣 17",
+      "date": "2026-08-18",
+      "url": "reports/tri-source-lamp.html",
+      "tags": [
+        "分點",
+        "大股東",
+        "三大法人",
+        "燈號"
+      ]
+    },
+    {
       "id": "high-price-watch",
       "category": "stocks",
       "type": "high_price_watch",
@@ -339,113 +496,6 @@
       ]
     },
     {
-      "id": "three-factor-ranking",
-      "category": "chips",
-      "type": "ranking",
-      "date": "2026-08-17",
-      "time": "21:10",
-      "title": "三因子波段排行榜",
-      "title_em": "外資×營收×強勢",
-      "summary": "外資連買 >= 3 日、最新月營收創高、20/60 日趨勢仍強。 本次三因子同步 14 檔。 榜首：5351 鈺創，外資連買 12 日，營收 YoY +590.8%，前 20 日 +63.6%。",
-      "tags": [
-        "波段",
-        "外資連買",
-        "營收創高",
-        "強者恆強",
-        "排行榜"
-      ],
-      "source_pipeline": "stock_chip_crawler+mops_index",
-      "url": "reports/three-factor-ranking.html",
-      "stats": [
-        {
-          "label": "三因子同步",
-          "value": "14 檔",
-          "color": "up"
-        },
-        {
-          "label": "營收期別",
-          "value": "2026-07",
-          "color": "neutral"
-        },
-        {
-          "label": "榜首",
-          "value": "5351 99.1",
-          "color": "up"
-        }
-      ]
-    },
-    {
-      "id": "foreign-sell-records",
-      "category": "chips",
-      "type": "ranking",
-      "date": "2026-08-17",
-      "time": "21:05",
-      "title": "外資史上賣超紀錄 · 個股 / 大盤金額 Top 20",
-      "title_em": "賣超",
-      "summary": "外資單日淨賣超史上 Top 20，並加入大盤外資淨賣超金額 Top 20。追蹤事件後 1/3/5/10/20/30/60 日走勢。 最大紀錄：2026-05-28 3481 群創 -289,338 張。 大盤最大金額：2026-06-24 -1,955.5億。",
-      "tags": [
-        "籌碼",
-        "外資",
-        "賣超",
-        "成交額",
-        "事件追蹤"
-      ],
-      "source_pipeline": "stock_chip_crawler",
-      "url": "reports/foreign-sell-records.html?v=20260817-official",
-      "stats": [
-        {
-          "label": "個股最大",
-          "value": "3481 -289,338張",
-          "color": "down"
-        },
-        {
-          "label": "大盤金額",
-          "value": "-1,955.5億",
-          "color": "down"
-        },
-        {
-          "label": "走勢",
-          "value": "1-60日",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "chip-concentration",
-      "category": "chips",
-      "type": "ranking",
-      "date": "2026-08-17",
-      "time": "21:00",
-      "title": "籌碼集中度 · 分點 Top 50 排行",
-      "title_em": "集中度",
-      "summary": "5 個時段 · 每邊 Top 50 · 過濾成交量 < 1,000 張。 今日買超集中 #1：2603 長榮 +57.9%。 賣超集中 #1：1477 聚陽 -64.0%。",
-      "tags": [
-        "籌碼",
-        "分點",
-        "集中度",
-        "排行榜"
-      ],
-      "source_pipeline": "stock_chip_crawler",
-      "url": "reports/chip-concentration.html",
-      "stats": [
-        {
-          "label": "時段數",
-          "value": "5",
-          "color": "neutral"
-        },
-        {
-          "label": "Top 買超",
-          "value": "2603 +58%",
-          "color": "up"
-        },
-        {
-          "label": "Top 賣超",
-          "value": "1477 -64%",
-          "color": "down"
-        }
-      ]
-    },
-    {
       "id": "shortage-weekly-2026-08-17",
       "category": "stocks",
       "type": "weekly",
@@ -513,42 +563,6 @@
         {
           "label": "區間",
           "value": "780 日",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "futures-basis",
-      "category": "taiex",
-      "type": "pulse",
-      "date": "2026-08-17",
-      "time": "20:00",
-      "title": "期貨正逆價差 · 12 年期現對照",
-      "title_em": "12 年",
-      "summary": "近 3040 個交易日（2014-02-14 → 2026-08-17）台指期 TXF1 vs 加權指數價差。最新 (2026-08-17)：基差 +30.7 點，加權收 45,857。",
-      "tags": [
-        "期貨",
-        "基差",
-        "正逆價差",
-        "TX",
-        "12 年"
-      ],
-      "source_pipeline": "yuanta + yfinance",
-      "url": "reports/futures-basis.html",
-      "stats": [
-        {
-          "label": "最新基差",
-          "value": "+30.7",
-          "color": "up"
-        },
-        {
-          "label": "加權",
-          "value": "45,857",
-          "color": "neutral"
-        },
-        {
-          "label": "區間",
-          "value": "3040 日",
           "color": "neutral"
         }
       ]
@@ -763,20 +777,6 @@
           "value": "151",
           "color": "neutral"
         }
-      ]
-    },
-    {
-      "id": "tri-source-lamp",
-      "category": "chips",
-      "title": "三源混合燈號",
-      "subtitle": "2026-08-17 · 三同買 15 / 三同賣 14",
-      "date": "2026-08-17",
-      "url": "reports/tri-source-lamp.html",
-      "tags": [
-        "分點",
-        "大股東",
-        "三大法人",
-        "燈號"
       ]
     },
     {
@@ -1922,6 +1922,19 @@
           "value": "v2.5-lite",
           "color": "neutral"
         }
+      ]
+    },
+    {
+      "id": "shareholder-divergence",
+      "category": "chips",
+      "title": "大股東 vs 股價背離掃描",
+      "subtitle": "2026-07-31 → 2026-08-07 週對週 · 2015 檔",
+      "date": "2026-08-07",
+      "url": "reports/shareholder-divergence.html",
+      "tags": [
+        "大股東",
+        "TDCC",
+        "背離"
       ]
     },
     {
@@ -6424,22 +6437,6 @@
           "color": "neutral"
         }
       ]
-    },
-    {
-      "id": "shareholder-divergence",
-      "category": "chips",
-      "title": "大股東 vs 股價背離掃描",
-      "subtitle": "2026-06-12 → 2026-06-18 週對週 · 2010 檔",
-      "date": "2026-06-18",
-      "url": "reports/shareholder-divergence.html",
-      "tags": [
-        "大股東",
-        "TDCC",
-        "背離"
-      ],
-      "type": "ranking",
-      "time": "21:00",
-      "summary": "掃描大股東持股變化與股價走勢背離，追蹤可能的籌碼分歧。"
     },
     {
       "id": "2026-06-18-sectors-weekly",
