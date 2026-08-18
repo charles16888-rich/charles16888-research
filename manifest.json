@@ -6429,17 +6429,14 @@
       "id": "shareholder-divergence",
       "category": "chips",
       "title": "大股東 vs 股價背離掃描",
-      "subtitle": "2026-06-12 → 2026-06-18 週對週 · 2010 檔",
-      "date": "2026-06-18",
+      "subtitle": "2026-07-31 → 2026-08-07 週對週 · 2015 檔",
+      "date": "2026-08-07",
       "url": "reports/shareholder-divergence.html",
       "tags": [
         "大股東",
         "TDCC",
         "背離"
-      ],
-      "type": "ranking",
-      "time": "21:00",
-      "summary": "掃描大股東持股變化與股價走勢背離，追蹤可能的籌碼分歧。"
+      ]
     },
     {
       "id": "2026-06-18-sectors-weekly",
