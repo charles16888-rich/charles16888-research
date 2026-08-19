@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-19T22:53:26+08:00",
+  "updated_at": "2026-08-19T22:55:18+08:00",
   "today": "2026-08-19",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,42 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "three-factor-ranking",
+      "category": "chips",
+      "type": "ranking",
+      "date": "2026-08-19",
+      "time": "21:10",
+      "title": "三因子波段排行榜",
+      "title_em": "外資×營收×強勢",
+      "summary": "外資連買 >= 3 日、最新月營收創高、20/60 日趨勢仍強。 本次三因子同步 10 檔。 榜首：6213 聯茂，外資連買 9 日，營收 YoY +96.9%，前 20 日 +31.9%。",
+      "tags": [
+        "波段",
+        "外資連買",
+        "營收創高",
+        "強者恆強",
+        "排行榜"
+      ],
+      "source_pipeline": "stock_chip_crawler+mops_index",
+      "url": "reports/three-factor-ranking.html",
+      "stats": [
+        {
+          "label": "三因子同步",
+          "value": "10 檔",
+          "color": "up"
+        },
+        {
+          "label": "營收期別",
+          "value": "2026-07",
+          "color": "neutral"
+        },
+        {
+          "label": "榜首",
+          "value": "6213 87.2",
+          "color": "up"
+        }
+      ]
+    },
     {
       "id": "chip-concentration",
       "category": "chips",
@@ -335,39 +371,17 @@
       ]
     },
     {
-      "id": "three-factor-ranking",
+      "id": "tri-source-lamp",
       "category": "chips",
-      "type": "ranking",
-      "date": "2026-08-18",
-      "time": "21:10",
-      "title": "三因子波段排行榜",
-      "title_em": "外資×營收×強勢",
-      "summary": "外資連買 >= 3 日、最新月營收創高、20/60 日趨勢仍強。 本次三因子同步 12 檔。 榜首：5351 鈺創，外資連買 13 日，營收 YoY +590.8%，前 20 日 +37.2%。",
+      "title": "三源混合燈號",
+      "subtitle": "2026-08-19 · 三同買 4 / 三同賣 7",
+      "date": "2026-08-19",
+      "url": "reports/tri-source-lamp.html",
       "tags": [
-        "波段",
-        "外資連買",
-        "營收創高",
-        "強者恆強",
-        "排行榜"
-      ],
-      "source_pipeline": "stock_chip_crawler+mops_index",
-      "url": "reports/three-factor-ranking.html",
-      "stats": [
-        {
-          "label": "三因子同步",
-          "value": "12 檔",
-          "color": "up"
-        },
-        {
-          "label": "營收期別",
-          "value": "2026-07",
-          "color": "neutral"
-        },
-        {
-          "label": "榜首",
-          "value": "5351 95.7",
-          "color": "up"
-        }
+        "分點",
+        "大股東",
+        "三大法人",
+        "燈號"
       ]
     },
     {
@@ -546,20 +560,6 @@
           "value": "-1.750%",
           "color": "down"
         }
-      ]
-    },
-    {
-      "id": "tri-source-lamp",
-      "category": "chips",
-      "title": "三源混合燈號",
-      "subtitle": "2026-08-19 · 三同買 4 / 三同賣 7",
-      "date": "2026-08-19",
-      "url": "reports/tri-source-lamp.html",
-      "tags": [
-        "分點",
-        "大股東",
-        "三大法人",
-        "燈號"
       ]
     },
     {
