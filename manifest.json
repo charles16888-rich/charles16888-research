@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-20T20:13:21+08:00",
+  "updated_at": "2026-08-20T20:13:52+08:00",
   "today": "2026-08-20",
   "volume_number": 1,
   "market_summary": {
@@ -466,7 +466,7 @@
       "stats": [
         {
           "label": "事件",
-          "value": "160",
+          "value": "195",
           "color": "neutral"
         },
         {
@@ -476,7 +476,7 @@
         },
         {
           "label": "台股法說",
-          "value": "105",
+          "value": "140",
           "color": "neutral"
         }
       ]
