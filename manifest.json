@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-20T09:18:38+08:00",
+  "updated_at": "2026-08-20T15:46:06+08:00",
   "today": "2026-08-20",
   "volume_number": 1,
   "market_summary": {
@@ -127,6 +127,45 @@
           "label": "6月營收",
           "value": "0",
           "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-20-ai-research-daily-market-composite",
+      "category": "ai-research",
+      "type": "daily-market-composite",
+      "date": "2026-08-20",
+      "time": "15:30",
+      "title": "高開回落後午後修復，櫃買明顯強於加權",
+      "title_em": "櫃買明顯強於加權",
+      "summary": "加權高開後早盤回落、午前見低再午後修復，收在區間偏上並較昨收上漲；櫃買同向但漲幅明顯較大。法人合計淨賣超，外資偏買、自營偏賣；權值樣品多開低走，台積電偏強與指數修復較同向。廣度與基差本日缺欄。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤中結構",
+        "綜合觀察",
+        "廣度",
+        "籌碼"
+      ],
+      "source_pipeline": "market_structure_composite_v2",
+      "url": "reports/2026-08-20/ai-research-daily-market-composite.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "+0.479%",
+          "color": "up"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "+1.344%",
+          "color": "up"
+        },
+        {
+          "label": "台指期日盤",
+          "value": "-0.182%",
+          "color": "down"
         }
       ]
     },
