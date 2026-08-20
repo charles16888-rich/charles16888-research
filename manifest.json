@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-20T20:11:16+08:00",
+  "updated_at": "2026-08-20T20:11:46+08:00",
   "today": "2026-08-20",
   "volume_number": 1,
   "market_summary": {
@@ -91,6 +91,109 @@
           "label": "主題",
           "value": "ABF／高階載板",
           "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-20-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-08-20",
+      "time": "20:00",
+      "title": "2026-08-20 族群週報",
+      "title_em": "貨櫃航運",
+      "summary": "涵蓋 2026-08-14 ~ 2026-08-20。週領漲 貨櫃航運 +20.29%，週領跌 太陽能 -11.30%；資金焦點 記憶體。",
+      "tags": [
+        "貨櫃航運",
+        "太陽能",
+        "記憶體",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-08-20/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "貨櫃航運 +20.29%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "太陽能 -11.30%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "記憶體",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-20-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-08-20",
+      "time": "20:00",
+      "title": "2026-08-20 每日族群輪動雷達",
+      "title_em": "記憶體",
+      "summary": "今日相對升溫以 記憶體 最明顯，相對降溫以 鏡頭光學 壓力最大；今日轉強力道大於轉弱力道。",
+      "tags": [
+        "記憶體",
+        "鏡頭光學",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-08-20/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "記憶體 +5.04 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "鏡頭光學 -4.20 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-20-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-08-20",
+      "time": "20:00",
+      "title": "2026-08-20 族群盤後快報",
+      "title_em": "記憶體",
+      "summary": "全 74 族群、成交 9528.7 億；領漲 記憶體 +3.86%，領跌 面板 -2.03%；漲多族群 64/74，全族群均漲 +0.82%。",
+      "tags": [
+        "記憶體",
+        "面板",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-08-20/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "記憶體 +3.86%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "面板 -2.03%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "2.1%",
+          "color": "neutral"
         }
       ]
     },
