@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-20T20:19:45+08:00",
+  "updated_at": "2026-08-20T20:20:37+08:00",
   "today": "2026-08-20",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,41 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "high-price-watch",
+      "category": "stocks",
+      "type": "high_price_watch",
+      "date": "2026-08-20",
+      "time": "21:40",
+      "title": "高價股觀測 · 排名熱圖",
+      "title_em": "排名熱圖",
+      "summary": "高價股追蹤 40 檔，新進 25 檔、淡出 25 檔；榜首 3017 奇鋐 收盤 2,985。",
+      "tags": [
+        "個股",
+        "高價股",
+        "排名熱圖",
+        "Telegram第四頁"
+      ],
+      "source_pipeline": "lynus_chip_history_high_price_watch",
+      "url": "reports/high-price-watch.html",
+      "stats": [
+        {
+          "label": "最新樣本",
+          "value": "40 檔",
+          "color": "neutral"
+        },
+        {
+          "label": "新進",
+          "value": "25 檔",
+          "color": "up"
+        },
+        {
+          "label": "最高收盤",
+          "value": "2,985",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "q2-forecast-2026q2",
       "category": "research",
@@ -600,41 +635,6 @@
         "大股東",
         "三大法人",
         "燈號"
-      ]
-    },
-    {
-      "id": "high-price-watch",
-      "category": "stocks",
-      "type": "high_price_watch",
-      "date": "2026-08-19",
-      "time": "21:40",
-      "title": "高價股觀測 · 排名熱圖",
-      "title_em": "排名熱圖",
-      "summary": "高價股追蹤 40 檔，新進 25 檔、淡出 25 檔；榜首 2383 台光電 收盤 5,880。",
-      "tags": [
-        "個股",
-        "高價股",
-        "排名熱圖",
-        "Telegram第四頁"
-      ],
-      "source_pipeline": "lynus_chip_history_high_price_watch",
-      "url": "reports/high-price-watch.html",
-      "stats": [
-        {
-          "label": "最新樣本",
-          "value": "40 檔",
-          "color": "neutral"
-        },
-        {
-          "label": "新進",
-          "value": "25 檔",
-          "color": "up"
-        },
-        {
-          "label": "最高收盤",
-          "value": "5,880",
-          "color": "neutral"
-        }
       ]
     },
     {
