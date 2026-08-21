@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-21T20:20:35+08:00",
+  "updated_at": "2026-08-21T20:21:22+08:00",
   "today": "2026-08-21",
   "volume_number": 1,
   "market_summary": {
@@ -408,6 +408,42 @@
       ]
     },
     {
+      "id": "mops-revenue-forecast-watch-20260821",
+      "category": "research",
+      "type": "mops_watch",
+      "date": "2026-08-21",
+      "time": "19:30",
+      "title": "2026-08-21 MOPS 營收公告追蹤",
+      "title_em": "MOPS 追蹤",
+      "summary": "公開 MOPS 營收相關重大訊息 0 筆；其中 0 筆出現在匿名財測名單，0 筆明確揭露 6 月營收。僅做追蹤與統計，不構成投資建議。",
+      "tags": [
+        "MOPS",
+        "重大訊息",
+        "營收公告",
+        "財測追蹤",
+        "2026Q2"
+      ],
+      "source_pipeline": "mops_revenue_forecast_watch",
+      "url": "reports/q2-forecast-2026q2.html#q2-mops-events",
+      "stats": [
+        {
+          "label": "公告",
+          "value": "0",
+          "color": "neutral"
+        },
+        {
+          "label": "財測名單",
+          "value": "0",
+          "color": "gold"
+        },
+        {
+          "label": "6月營收",
+          "value": "0",
+          "color": "up"
+        }
+      ]
+    },
+    {
       "id": "2026-08-21-ai-research-daily-market-composite",
       "category": "ai-research",
       "type": "daily-market-composite",
@@ -772,42 +808,6 @@
           "label": "漲停集中",
           "value": "2.1%",
           "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "mops-revenue-forecast-watch-20260820",
-      "category": "research",
-      "type": "mops_watch",
-      "date": "2026-08-20",
-      "time": "19:30",
-      "title": "2026-08-20 MOPS 營收公告追蹤",
-      "title_em": "MOPS 追蹤",
-      "summary": "公開 MOPS 營收相關重大訊息 0 筆；其中 0 筆出現在匿名財測名單，0 筆明確揭露 6 月營收。僅做追蹤與統計，不構成投資建議。",
-      "tags": [
-        "MOPS",
-        "重大訊息",
-        "營收公告",
-        "財測追蹤",
-        "2026Q2"
-      ],
-      "source_pipeline": "mops_revenue_forecast_watch",
-      "url": "reports/q2-forecast-2026q2.html#q2-mops-events",
-      "stats": [
-        {
-          "label": "公告",
-          "value": "0",
-          "color": "neutral"
-        },
-        {
-          "label": "財測名單",
-          "value": "0",
-          "color": "gold"
-        },
-        {
-          "label": "6月營收",
-          "value": "0",
-          "color": "up"
         }
       ]
     },
