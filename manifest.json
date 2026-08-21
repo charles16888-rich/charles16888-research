@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-20T20:23:59+08:00",
-  "today": "2026-08-20",
+  "updated_at": "2026-08-21T15:37:59+08:00",
+  "today": "2026-08-21",
   "volume_number": 1,
   "market_summary": {
     "date": "2026-05-22",
@@ -21,6 +21,45 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-08-21-ai-research-daily-market-composite",
+      "category": "ai-research",
+      "type": "daily-market-composite",
+      "date": "2026-08-21",
+      "time": "15:30",
+      "title": "早盤探底後加權收近高點，櫃買與權值樣品明顯背離",
+      "title_em": "加權收近高點、櫃買背離",
+      "summary": "早盤急探底後加權修復並收近高點（+0.647%，區間位置95.4%），櫃買收跌0.690%。三大法人合計淨超331.06億與加權同向；權值樣品中台積電、聯發科走強、廣達走弱。廣度與基差本日packet無此欄。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤中結構",
+        "綜合觀察",
+        "廣度",
+        "籌碼"
+      ],
+      "source_pipeline": "market_structure_composite_v2",
+      "url": "reports/2026-08-21/ai-research-daily-market-composite.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "+0.647%",
+          "color": "up"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "-0.690%",
+          "color": "down"
+        },
+        {
+          "label": "台指期日盤",
+          "value": "+0.624%",
+          "color": "up"
+        }
+      ]
+    },
     {
       "id": "high-price-watch",
       "category": "stocks",
