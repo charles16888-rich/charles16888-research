@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-24T20:28:52+08:00",
+  "updated_at": "2026-08-24T20:30:17+08:00",
   "today": "2026-08-24",
   "volume_number": 1,
   "market_summary": {
@@ -196,6 +196,43 @@
           "label": "Top 賣超",
           "value": "2645 -54%",
           "color": "down"
+        }
+      ]
+    },
+    {
+      "id": "shortage-weekly-2026-08-24",
+      "category": "stocks",
+      "type": "weekly",
+      "date": "2026-08-24",
+      "time": "20:30",
+      "title": "2026-08-24 缺貨偵探近四週週報",
+      "title_em": "ABF／高階載板",
+      "summary": "最新一週較明確的新事件集中在 ABF／高階載板、HBM／先進記憶體；其餘週別保留供需訊號供回溯。",
+      "tags": [
+        "ABF／高階載板",
+        "HBM／先進記憶體",
+        "MCU",
+        "MLCC／被動元件",
+        "缺貨偵探",
+        "週報"
+      ],
+      "source_pipeline": "shortage_detective",
+      "url": "reports/shortage/2026-08-24/weekly.html",
+      "stats": [
+        {
+          "label": "事件數",
+          "value": "2",
+          "color": "neutral"
+        },
+        {
+          "label": "訊號數",
+          "value": "44",
+          "color": "neutral"
+        },
+        {
+          "label": "主題",
+          "value": "ABF／高階載板",
+          "color": "up"
         }
       ]
     },
