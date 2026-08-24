@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-24T20:18:47+08:00",
+  "updated_at": "2026-08-24T20:19:13+08:00",
   "today": "2026-08-24",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,109 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-08-24-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-08-24",
+      "time": "20:00",
+      "title": "2026-08-24 族群週報",
+      "title_em": "貨櫃航運",
+      "summary": "涵蓋 2026-08-18 ~ 2026-08-24。週領漲 貨櫃航運 +16.93%，週領跌 ABF載板 -9.57%；資金焦點 記憶體。",
+      "tags": [
+        "貨櫃航運",
+        "ABF載板",
+        "記憶體",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-08-24/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "貨櫃航運 +16.93%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "ABF載板 -9.57%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "記憶體",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-24-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-08-24",
+      "time": "20:00",
+      "title": "2026-08-24 每日族群輪動雷達",
+      "title_em": "矽晶圓",
+      "summary": "今日相對升溫以 矽晶圓 最明顯，相對降溫以 光通訊 壓力最大；今日轉弱力道大於轉強力道。",
+      "tags": [
+        "矽晶圓",
+        "光通訊",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-08-24/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "矽晶圓 +6.70 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "光通訊 -5.82 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-24-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-08-24",
+      "time": "20:00",
+      "title": "2026-08-24 族群盤後快報",
+      "title_em": "矽晶圓",
+      "summary": "全 74 族群、成交 7858.0 億；領漲 矽晶圓 +5.91%，領跌 光通訊 -4.64%；漲多族群 21/74，全族群均漲 -0.45%。",
+      "tags": [
+        "矽晶圓",
+        "光通訊",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-08-24/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "矽晶圓 +5.91%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "光通訊 -4.64%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "3.1%",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "2026-08-24-ai-research-daily-market-composite",
       "category": "ai-research",
