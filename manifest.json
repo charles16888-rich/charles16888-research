@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-25T20:36:02+08:00",
+  "updated_at": "2026-08-25T20:41:29+08:00",
   "today": "2026-08-25",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,42 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "three-factor-ranking",
+      "category": "chips",
+      "type": "ranking",
+      "date": "2026-08-25",
+      "time": "21:10",
+      "title": "三因子波段排行榜",
+      "title_em": "外資×營收×強勢",
+      "summary": "外資連買 >= 3 日、最新月營收創高、20/60 日趨勢仍強。 本次三因子同步 0 檔。",
+      "tags": [
+        "波段",
+        "外資連買",
+        "營收創高",
+        "強者恆強",
+        "排行榜"
+      ],
+      "source_pipeline": "stock_chip_crawler+mops_index",
+      "url": "reports/three-factor-ranking.html",
+      "stats": [
+        {
+          "label": "三因子同步",
+          "value": "0 檔",
+          "color": "up"
+        },
+        {
+          "label": "營收期別",
+          "value": "2026-07",
+          "color": "neutral"
+        },
+        {
+          "label": "榜首",
+          "value": "—",
+          "color": "up"
+        }
+      ]
+    },
     {
       "id": "chip-concentration",
       "category": "chips",
@@ -408,6 +444,20 @@
       ]
     },
     {
+      "id": "tri-source-lamp",
+      "category": "chips",
+      "title": "三源混合燈號",
+      "subtitle": "2026-08-25 · 三同買 4 / 三同賣 16",
+      "date": "2026-08-25",
+      "url": "reports/tri-source-lamp.html",
+      "tags": [
+        "分點",
+        "大股東",
+        "三大法人",
+        "燈號"
+      ]
+    },
+    {
       "id": "high-price-watch",
       "category": "stocks",
       "type": "high_price_watch",
@@ -474,42 +524,6 @@
         {
           "label": "三率完整",
           "value": "481",
-          "color": "up"
-        }
-      ]
-    },
-    {
-      "id": "three-factor-ranking",
-      "category": "chips",
-      "type": "ranking",
-      "date": "2026-08-24",
-      "time": "21:10",
-      "title": "三因子波段排行榜",
-      "title_em": "外資×營收×強勢",
-      "summary": "外資連買 >= 3 日、最新月營收創高、20/60 日趨勢仍強。 本次三因子同步 9 檔。 榜首：7711 永擎，外資連買 9 日，營收 YoY +286.2%，前 20 日 +64.7%。",
-      "tags": [
-        "波段",
-        "外資連買",
-        "營收創高",
-        "強者恆強",
-        "排行榜"
-      ],
-      "source_pipeline": "stock_chip_crawler+mops_index",
-      "url": "reports/three-factor-ranking.html",
-      "stats": [
-        {
-          "label": "三因子同步",
-          "value": "9 檔",
-          "color": "up"
-        },
-        {
-          "label": "營收期別",
-          "value": "2026-07",
-          "color": "neutral"
-        },
-        {
-          "label": "榜首",
-          "value": "7711 91.0",
           "color": "up"
         }
       ]
@@ -763,20 +777,6 @@
           "value": "-0.855%",
           "color": "down"
         }
-      ]
-    },
-    {
-      "id": "tri-source-lamp",
-      "category": "chips",
-      "title": "三源混合燈號",
-      "subtitle": "2026-08-25 · 三同買 4 / 三同賣 16",
-      "date": "2026-08-25",
-      "url": "reports/tri-source-lamp.html",
-      "tags": [
-        "分點",
-        "大股東",
-        "三大法人",
-        "燈號"
       ]
     },
     {
