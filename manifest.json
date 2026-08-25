@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-25T20:10:40+08:00",
+  "updated_at": "2026-08-25T20:11:14+08:00",
   "today": "2026-08-25",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,109 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-08-25-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-08-25",
+      "time": "20:00",
+      "title": "2026-08-25 族群週報",
+      "title_em": "貨櫃航運",
+      "summary": "涵蓋 2026-08-19 ~ 2026-08-25。週領漲 貨櫃航運 +12.21%，週領跌 電源供應 -6.04%；資金焦點 記憶體。",
+      "tags": [
+        "貨櫃航運",
+        "電源供應",
+        "記憶體",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-08-25/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "貨櫃航運 +12.21%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "電源供應 -6.04%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "記憶體",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-25-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-08-25",
+      "time": "20:00",
+      "title": "2026-08-25 每日族群輪動雷達",
+      "title_em": "光通訊",
+      "summary": "今日相對升溫以 光通訊 最明顯，相對降溫以 餐飲連鎖 壓力最大；今日轉強力道大於轉弱力道。",
+      "tags": [
+        "光通訊",
+        "餐飲連鎖",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-08-25/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "光通訊 +7.77 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "餐飲連鎖 -4.56 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-25-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-08-25",
+      "time": "20:00",
+      "title": "2026-08-25 族群盤後快報",
+      "title_em": "光通訊",
+      "summary": "全 74 族群、成交 8296.5 億；領漲 光通訊 +6.88%，領跌 餐飲連鎖 -2.33%；漲多族群 36/74，全族群均漲 +0.38%。",
+      "tags": [
+        "光通訊",
+        "餐飲連鎖",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-08-25/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "光通訊 +6.88%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "餐飲連鎖 -2.33%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "8.0%",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "2026-08-25-ai-research-daily-market-composite",
       "category": "ai-research",
