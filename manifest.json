@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-26T20:26:21+08:00",
+  "updated_at": "2026-08-26T20:27:46+08:00",
   "today": "2026-08-26",
   "volume_number": 1,
   "market_summary": {
@@ -161,6 +161,43 @@
           "label": "走勢",
           "value": "1-60日",
           "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "shortage-weekly-2026-08-26",
+      "category": "stocks",
+      "type": "weekly",
+      "date": "2026-08-26",
+      "time": "20:30",
+      "title": "2026-08-26 缺貨偵探近四週週報",
+      "title_em": "ABF／高階載板",
+      "summary": "最新一週較明確的新事件集中在 石英元件、ABF／高階載板；其餘週別保留供需訊號供回溯。",
+      "tags": [
+        "ABF／高階載板",
+        "HBM／先進記憶體",
+        "MCU",
+        "MLCC／被動元件",
+        "缺貨偵探",
+        "週報"
+      ],
+      "source_pipeline": "shortage_detective",
+      "url": "reports/shortage/2026-08-26/weekly.html",
+      "stats": [
+        {
+          "label": "事件數",
+          "value": "2",
+          "color": "neutral"
+        },
+        {
+          "label": "訊號數",
+          "value": "46",
+          "color": "neutral"
+        },
+        {
+          "label": "主題",
+          "value": "ABF／高階載板",
+          "color": "up"
         }
       ]
     },
@@ -558,43 +595,6 @@
           "label": "Top 賣超",
           "value": "5388 -49%",
           "color": "down"
-        }
-      ]
-    },
-    {
-      "id": "shortage-weekly-2026-08-25",
-      "category": "stocks",
-      "type": "weekly",
-      "date": "2026-08-25",
-      "time": "20:30",
-      "title": "2026-08-25 缺貨偵探近四週週報",
-      "title_em": "ABF／高階載板",
-      "summary": "最新一週較明確的新事件集中在 HBM／先進記憶體、ABF／高階載板；其餘週別保留供需訊號供回溯。",
-      "tags": [
-        "ABF／高階載板",
-        "HBM／先進記憶體",
-        "MCU",
-        "MLCC／被動元件",
-        "缺貨偵探",
-        "週報"
-      ],
-      "source_pipeline": "shortage_detective",
-      "url": "reports/shortage/2026-08-25/weekly.html",
-      "stats": [
-        {
-          "label": "事件數",
-          "value": "2",
-          "color": "neutral"
-        },
-        {
-          "label": "訊號數",
-          "value": "39",
-          "color": "neutral"
-        },
-        {
-          "label": "主題",
-          "value": "ABF／高階載板",
-          "color": "up"
         }
       ]
     },
