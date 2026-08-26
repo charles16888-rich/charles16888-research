@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-26T20:17:03+08:00",
+  "updated_at": "2026-08-26T20:17:37+08:00",
   "today": "2026-08-26",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,40 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "market-pulse",
+      "category": "taiex",
+      "type": "pulse",
+      "date": "2026-08-26",
+      "time": "20:00",
+      "title": "市場脈動 · 漲跌停 × 全族群均幅",
+      "title_em": "脈動",
+      "summary": "近 89 個交易日漲跌停家數、總成交額、族群平均漲幅、漲停集中度。最新 (2026-08-26)：漲停 68、跌停 3、全族群均幅 +1.35%。",
+      "tags": [
+        "市場脈動",
+        "漲跌停",
+        "成交額"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/market-pulse.html",
+      "stats": [
+        {
+          "label": "漲停",
+          "value": "68",
+          "color": "up"
+        },
+        {
+          "label": "跌停",
+          "value": "3",
+          "color": "down"
+        },
+        {
+          "label": "成交額",
+          "value": "10,089 億",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "2026-08-26-sectors-weekly",
       "category": "sectors",
@@ -440,40 +474,6 @@
         {
           "label": "區間",
           "value": "786 日",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "market-pulse",
-      "category": "taiex",
-      "type": "pulse",
-      "date": "2026-08-25",
-      "time": "20:00",
-      "title": "市場脈動 · 漲跌停 × 全族群均幅",
-      "title_em": "脈動",
-      "summary": "近 88 個交易日漲跌停家數、總成交額、族群平均漲幅、漲停集中度。最新 (2026-08-25)：漲停 31、跌停 3、全族群均幅 +0.38%。",
-      "tags": [
-        "市場脈動",
-        "漲跌停",
-        "成交額"
-      ],
-      "source_pipeline": "industry_map",
-      "url": "reports/market-pulse.html",
-      "stats": [
-        {
-          "label": "漲停",
-          "value": "31",
-          "color": "up"
-        },
-        {
-          "label": "跌停",
-          "value": "3",
-          "color": "down"
-        },
-        {
-          "label": "成交額",
-          "value": "8,296 億",
           "color": "neutral"
         }
       ]
