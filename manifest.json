@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-27T20:21:50+08:00",
+  "updated_at": "2026-08-27T20:22:22+08:00",
   "today": "2026-08-27",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,41 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "high-price-watch",
+      "category": "stocks",
+      "type": "high_price_watch",
+      "date": "2026-08-27",
+      "time": "21:40",
+      "title": "高價股觀測 · 排名熱圖",
+      "title_em": "排名熱圖",
+      "summary": "高價股追蹤 40 檔，新進 32 檔、淡出 21 檔；榜首 3443 創意 收盤 5,920。",
+      "tags": [
+        "個股",
+        "高價股",
+        "排名熱圖",
+        "Telegram第四頁"
+      ],
+      "source_pipeline": "lynus_chip_history_high_price_watch",
+      "url": "reports/high-price-watch.html",
+      "stats": [
+        {
+          "label": "最新樣本",
+          "value": "40 檔",
+          "color": "neutral"
+        },
+        {
+          "label": "新進",
+          "value": "32 檔",
+          "color": "up"
+        },
+        {
+          "label": "最高收盤",
+          "value": "5,920",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "three-factor-ranking",
       "category": "chips",
@@ -452,41 +487,6 @@
         "大股東",
         "三大法人",
         "燈號"
-      ]
-    },
-    {
-      "id": "high-price-watch",
-      "category": "stocks",
-      "type": "high_price_watch",
-      "date": "2026-08-26",
-      "time": "21:40",
-      "title": "高價股觀測 · 排名熱圖",
-      "title_em": "排名熱圖",
-      "summary": "高價股追蹤 40 檔，新進 16 檔、淡出 16 檔；榜首 2383 台光電 收盤 5,895。",
-      "tags": [
-        "個股",
-        "高價股",
-        "排名熱圖",
-        "Telegram第四頁"
-      ],
-      "source_pipeline": "lynus_chip_history_high_price_watch",
-      "url": "reports/high-price-watch.html",
-      "stats": [
-        {
-          "label": "最新樣本",
-          "value": "40 檔",
-          "color": "neutral"
-        },
-        {
-          "label": "新進",
-          "value": "16 檔",
-          "color": "up"
-        },
-        {
-          "label": "最高收盤",
-          "value": "5,895",
-          "color": "neutral"
-        }
       ]
     },
     {
