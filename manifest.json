@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-27T20:10:42+08:00",
+  "updated_at": "2026-08-27T20:13:49+08:00",
   "today": "2026-08-27",
   "volume_number": 1,
   "market_summary": {
@@ -511,6 +511,45 @@
         {
           "label": "6月營收",
           "value": "0",
+          "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "2026-08-26-ai-research-daily-market-composite",
+      "category": "ai-research",
+      "type": "daily-market-composite",
+      "date": "2026-08-26",
+      "time": "15:30",
+      "title": "早盤探低翻升、收在區間高位，廣度與法人同向",
+      "title_em": "早盤探低翻升",
+      "summary": "今日主結構為夜盤偏強、日盤開盤回測後翻升，加權與櫃買皆收在全日區間高位。廣度（漲停遠多於跌停、類股多數上漲）與三大法人合計淨買超同向；權值樣品中緯穎、聯發科、台達電明顯強於指數，聯電則背離走弱。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤中結構",
+        "綜合觀察",
+        "廣度",
+        "籌碼"
+      ],
+      "source_pipeline": "market_structure_composite_v2",
+      "url": "reports/2026-08-26/ai-research-daily-market-composite.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "+1.468%",
+          "color": "up"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "+1.605%",
+          "color": "up"
+        },
+        {
+          "label": "台指期日盤",
+          "value": "+2.185%",
           "color": "up"
         }
       ]
