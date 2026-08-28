@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-28T20:25:58+08:00",
+  "updated_at": "2026-08-28T22:18:09+08:00",
   "today": "2026-08-28",
   "volume_number": 1,
   "market_summary": {
@@ -656,6 +656,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-08-28",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-08-28",
+      "time": "07:45",
+      "title": "8/28 無新賣方確認：DRAM、T-glass、變壓器 維持",
+      "title_em": "賣方市場",
+      "summary": "8/28 沒有新的賣方確認。雷達命中 0 則供需異常標題。 當日合併檔偏薄。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-08-28/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "0",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "tri-source-lamp",
       "category": "chips",
       "title": "三源混合燈號",
@@ -768,6 +799,37 @@
         {
           "label": "漲停集中",
           "value": "16.1%",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-08-27",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-08-27",
+      "time": "07:45",
+      "title": "8/27 無新賣方確認：DRAM、T-glass、變壓器 維持",
+      "title_em": "賣方市場",
+      "summary": "8/27 沒有新的賣方確認。雷達命中 4 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-08-27/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "4",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
           "color": "neutral"
         }
       ]
@@ -915,6 +977,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-08-26",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-08-26",
+      "time": "07:45",
+      "title": "8/26 無新賣方確認：DRAM、T-glass、變壓器 維持",
+      "title_em": "賣方市場",
+      "summary": "8/26 沒有新的賣方確認。雷達命中 5 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-08-26/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "5",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-08-25-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -1057,6 +1150,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-08-25",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-08-25",
+      "time": "07:45",
+      "title": "8/25 無新賣方確認：DRAM、T-glass、變壓器 維持",
+      "title_em": "賣方市場",
+      "summary": "8/25 沒有新的賣方確認。雷達命中 3 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-08-25/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "3",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-08-24-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -1195,6 +1319,99 @@
           "label": "台指期日盤",
           "value": "-0.855%",
           "color": "down"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-08-24",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-08-24",
+      "time": "07:45",
+      "title": "8/24 無新賣方確認：DRAM、T-glass、變壓器 維持",
+      "title_em": "賣方市場",
+      "summary": "8/24 沒有新的賣方確認。雷達命中 8 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-08-24/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "8",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-08-23",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-08-23",
+      "time": "07:45",
+      "title": "8/23 無新賣方確認：DRAM、T-glass 維持加速，200G EML 進入新增深挖",
+      "title_em": "賣方市場",
+      "summary": "今天沒有新的賣方確認。權力結構仍是 T-glass、DRAM 晶圓分配、以及已進入深挖的 200G EML。日月光「三年產能預訂」再被轉載一次，仍不足以把 OSAT／ABF 從「尚未確認」拉上來。記憶體「2027 產能開出後漲勢降溫」是供給時間的再敘述，不夠把 DRAM 從加速位置拉下來。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-08-23/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "0",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-08-22",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-08-22",
+      "time": "07:45",
+      "title": "8/22 無新增確認：DRAM、T-glass 維持加速，需求破壞成最大新增風險",
+      "title_em": "賣方市場",
+      "summary": "8/22 的增量研究。真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-08-22/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "1",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
         }
       ]
     },
@@ -1416,6 +1633,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-08-21",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-08-21",
+      "time": "07:45",
+      "title": "8/21 200G EML 進入賣方市場",
+      "title_em": "賣方市場",
+      "summary": "200G EML 在 2026-08-21 的證據帳本下通過確認門檻。當日標題只是雷達，不自動升階段。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-08-21/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "4",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "shareholder-divergence",
       "category": "chips",
       "title": "大股東 vs 股價背離掃描",
@@ -1571,6 +1819,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-08-20",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-08-20",
+      "time": "07:45",
+      "title": "8/20 無新賣方確認：DRAM、T-glass、變壓器 維持",
+      "title_em": "賣方市場",
+      "summary": "8/20 沒有新的賣方確認。雷達命中 5 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-08-20/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "5",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-08-19-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -1709,6 +1988,37 @@
           "label": "台指期日盤",
           "value": "+0.263%",
           "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-08-19",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-08-19",
+      "time": "07:45",
+      "title": "8/19 無新賣方確認：DRAM、T-glass、變壓器 維持",
+      "title_em": "賣方市場",
+      "summary": "8/19 沒有新的賣方確認。雷達命中 5 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-08-19/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "5",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
         }
       ]
     },
@@ -1855,6 +2165,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-08-18",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-08-18",
+      "time": "07:45",
+      "title": "8/18 無新賣方確認：DRAM、T-glass、變壓器 維持",
+      "title_em": "賣方市場",
+      "summary": "8/18 沒有新的賣方確認。雷達命中 6 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-08-18/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "6",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-08-17-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -1993,6 +2334,99 @@
           "label": "台指期日盤",
           "value": "+0.103%",
           "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-08-17",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-08-17",
+      "time": "07:45",
+      "title": "8/17 無新賣方確認：DRAM、T-glass、變壓器 維持",
+      "title_em": "賣方市場",
+      "summary": "8/17 沒有新的賣方確認。雷達命中 3 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-08-17/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "3",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-08-16",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-08-16",
+      "time": "07:45",
+      "title": "8/16 無新賣方確認：DRAM、T-glass、變壓器 維持",
+      "title_em": "賣方市場",
+      "summary": "8/16 沒有新的賣方確認。雷達命中 0 則供需異常標題。 當日合併檔偏薄。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-08-16/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "0",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-08-15",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-08-15",
+      "time": "07:45",
+      "title": "8/15 無新賣方確認：DRAM、T-glass、變壓器 維持",
+      "title_em": "賣方市場",
+      "summary": "8/15 沒有新的賣方確認。雷達命中 0 則供需異常標題。 當日合併檔偏薄。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-08-15/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "0",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
         }
       ]
     },
@@ -2214,6 +2648,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-08-14",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-08-14",
+      "time": "07:45",
+      "title": "8/14 無新賣方確認：DRAM、T-glass、變壓器 維持",
+      "title_em": "賣方市場",
+      "summary": "8/14 沒有新的賣方確認。雷達命中 6 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-08-14/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "6",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-08-13-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -2352,6 +2817,37 @@
           "label": "台指期日盤",
           "value": "+1.048%",
           "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-08-13",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-08-13",
+      "time": "07:45",
+      "title": "8/13 無新賣方確認：DRAM、T-glass、變壓器 維持",
+      "title_em": "賣方市場",
+      "summary": "8/13 沒有新的賣方確認。雷達命中 8 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-08-13/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "8",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
         }
       ]
     },
@@ -2498,6 +2994,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-08-12",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-08-12",
+      "time": "07:45",
+      "title": "8/12 無新賣方確認：DRAM、T-glass、變壓器 維持",
+      "title_em": "賣方市場",
+      "summary": "8/12 沒有新的賣方確認。雷達命中 8 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-08-12/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "8",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-08-11-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -2636,6 +3163,37 @@
           "label": "台指期日盤",
           "value": "+0.229%",
           "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-08-11",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-08-11",
+      "time": "07:45",
+      "title": "8/11 無新賣方確認：DRAM、T-glass、變壓器 維持",
+      "title_em": "賣方市場",
+      "summary": "8/11 沒有新的賣方確認。雷達命中 4 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-08-11/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "4",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
         }
       ]
     },
@@ -2850,6 +3408,99 @@
           "label": "台指期日盤",
           "value": "+1.439%",
           "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-08-10",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-08-10",
+      "time": "07:45",
+      "title": "8/10 無新賣方確認：DRAM、T-glass、變壓器 維持",
+      "title_em": "賣方市場",
+      "summary": "8/10 沒有新的賣方確認。雷達命中 5 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-08-10/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "5",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-08-09",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-08-09",
+      "time": "07:45",
+      "title": "8/9 無新賣方確認：DRAM、T-glass、變壓器 維持",
+      "title_em": "賣方市場",
+      "summary": "8/9 沒有新的賣方確認。雷達命中 0 則供需異常標題。 當日合併檔偏薄。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-08-09/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "0",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-08-08",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-08-08",
+      "time": "07:45",
+      "title": "8/8 無新賣方確認：DRAM、T-glass、變壓器 維持",
+      "title_em": "賣方市場",
+      "summary": "8/8 沒有新的賣方確認。雷達命中 4 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-08-08/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "4",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
         }
       ]
     },
@@ -3071,6 +3722,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-08-07",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-08-07",
+      "time": "07:45",
+      "title": "8/7 無新賣方確認：DRAM、T-glass、變壓器 維持",
+      "title_em": "賣方市場",
+      "summary": "8/7 沒有新的賣方確認。雷達命中 0 則供需異常標題。 當日合併檔偏薄。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-08-07/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "0",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-08-06-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -3209,6 +3891,37 @@
           "label": "台指期日盤",
           "value": "+0.233%",
           "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-08-06",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-08-06",
+      "time": "07:45",
+      "title": "8/6 無新賣方確認：DRAM、T-glass、變壓器 維持",
+      "title_em": "賣方市場",
+      "summary": "8/6 沒有新的賣方確認。雷達命中 9 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-08-06/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "9",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
         }
       ]
     },
@@ -3355,6 +4068,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-08-05",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-08-05",
+      "time": "07:45",
+      "title": "8/5 DRAM 進入賣方市場",
+      "title_em": "賣方市場",
+      "summary": "DRAM 在 2026-08-05 的證據帳本下通過確認門檻。當日標題只是雷達，不自動升階段。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-08-05/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "6",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-08-04-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -3497,6 +4241,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-08-04",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-08-04",
+      "time": "07:45",
+      "title": "8/4 無新賣方確認：T-glass、變壓器、銅 維持",
+      "title_em": "賣方市場",
+      "summary": "8/4 沒有新的賣方確認。雷達命中 4 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-08-04/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "4",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-08-03-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -3635,6 +4410,99 @@
           "label": "台指期日盤",
           "value": "+0.102%",
           "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-08-03",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-08-03",
+      "time": "07:45",
+      "title": "8/3 無新賣方確認：T-glass、變壓器、銅 維持",
+      "title_em": "賣方市場",
+      "summary": "8/3 沒有新的賣方確認。雷達命中 6 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-08-03/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "6",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-08-02",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-08-02",
+      "time": "07:45",
+      "title": "8/2 無新賣方確認：T-glass、變壓器、銅 維持",
+      "title_em": "賣方市場",
+      "summary": "8/2 沒有新的賣方確認。雷達命中 0 則供需異常標題。 當日合併檔偏薄。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-08-02/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "0",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-08-01",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-08-01",
+      "time": "07:45",
+      "title": "8/1 無新賣方確認：T-glass、變壓器、銅 維持",
+      "title_em": "賣方市場",
+      "summary": "8/1 沒有新的賣方確認。雷達命中 0 則供需異常標題。 當日合併檔偏薄。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-08-01/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "0",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
         }
       ]
     },
@@ -3854,6 +4722,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-07-31",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-07-31",
+      "time": "07:45",
+      "title": "7/31 無新賣方確認：T-glass、變壓器、銅 維持",
+      "title_em": "賣方市場",
+      "summary": "7/31 沒有新的賣方確認。雷達命中 2 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-07-31/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "2",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-07-30-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -3992,6 +4891,37 @@
           "label": "台指期日盤",
           "value": "-0.302%",
           "color": "down"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-07-30",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-07-30",
+      "time": "07:45",
+      "title": "7/30 無新賣方確認：T-glass、變壓器、銅 維持",
+      "title_em": "賣方市場",
+      "summary": "7/30 沒有新的賣方確認。雷達命中 8 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-07-30/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "8",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
         }
       ]
     },
@@ -4138,6 +5068,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-07-29",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-07-29",
+      "time": "07:45",
+      "title": "7/29 無新賣方確認：T-glass、變壓器、銅 維持",
+      "title_em": "賣方市場",
+      "summary": "7/29 沒有新的賣方確認。雷達命中 2 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-07-29/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "2",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-07-28-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -4280,6 +5241,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-07-28",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-07-28",
+      "time": "07:45",
+      "title": "7/28 無新賣方確認：T-glass、變壓器、銅 維持",
+      "title_em": "賣方市場",
+      "summary": "7/28 沒有新的賣方確認。雷達命中 3 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-07-28/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "3",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-07-27-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -4418,6 +5410,99 @@
           "label": "台指期日盤",
           "value": "+0.005%",
           "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-07-27",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-07-27",
+      "time": "07:45",
+      "title": "7/27 無新賣方確認：T-glass、變壓器、銅 維持",
+      "title_em": "賣方市場",
+      "summary": "7/27 沒有新的賣方確認。雷達命中 5 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-07-27/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "5",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-07-26",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-07-26",
+      "time": "07:45",
+      "title": "7/26 無新賣方確認：T-glass、變壓器、銅 維持",
+      "title_em": "賣方市場",
+      "summary": "7/26 沒有新的賣方確認。雷達命中 1 則供需異常標題。 當日合併檔偏薄。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-07-26/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "1",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-07-25",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-07-25",
+      "time": "07:45",
+      "title": "7/25 無新賣方確認：T-glass、變壓器、銅 維持",
+      "title_em": "賣方市場",
+      "summary": "7/25 沒有新的賣方確認。雷達命中 0 則供需異常標題。 當日合併檔偏薄。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-07-25/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "0",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
         }
       ]
     },
@@ -4600,6 +5685,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-07-24",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-07-24",
+      "time": "07:45",
+      "title": "7/24 無新賣方確認：T-glass、變壓器、銅 維持",
+      "title_em": "賣方市場",
+      "summary": "7/24 沒有新的賣方確認。雷達命中 4 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-07-24/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "4",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-07-23-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -4738,6 +5854,37 @@
           "label": "台指期日盤",
           "value": "+0.670%",
           "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-07-23",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-07-23",
+      "time": "07:45",
+      "title": "7/23 無新賣方確認：T-glass、變壓器、銅 維持",
+      "title_em": "賣方市場",
+      "summary": "7/23 沒有新的賣方確認。雷達命中 4 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-07-23/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "4",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
         }
       ]
     },
@@ -4884,6 +6031,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-07-22",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-07-22",
+      "time": "07:45",
+      "title": "7/22 無新賣方確認：T-glass、變壓器、銅 維持",
+      "title_em": "賣方市場",
+      "summary": "7/22 沒有新的賣方確認。雷達命中 0 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-07-22/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "0",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-07-21-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -5022,6 +6200,37 @@
           "label": "台指期日盤",
           "value": "+4.071%",
           "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-07-21",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-07-21",
+      "time": "07:45",
+      "title": "7/21 無新賣方確認：T-glass、變壓器、銅 維持",
+      "title_em": "賣方市場",
+      "summary": "7/21 沒有新的賣方確認。雷達命中 6 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-07-21/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "6",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
         }
       ]
     },
@@ -5168,6 +6377,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-07-20",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-07-20",
+      "time": "07:45",
+      "title": "7/20 無新賣方確認：T-glass、變壓器、銅 維持",
+      "title_em": "賣方市場",
+      "summary": "7/20 沒有新的賣方確認。雷達命中 9 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-07-20/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "9",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "shortage-weekly-2026-07-19",
       "category": "stocks",
       "type": "weekly",
@@ -5201,6 +6441,68 @@
           "label": "主題",
           "value": "ABF／高階載板",
           "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-07-19",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-07-19",
+      "time": "07:45",
+      "title": "7/19 無新賣方確認：T-glass、變壓器、銅 維持",
+      "title_em": "賣方市場",
+      "summary": "7/19 沒有新的賣方確認。雷達命中 1 則供需異常標題。 當日合併檔偏薄。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-07-19/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "1",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-07-18",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-07-18",
+      "time": "07:45",
+      "title": "7/18 無新賣方確認：T-glass、變壓器、銅 維持",
+      "title_em": "賣方市場",
+      "summary": "7/18 沒有新的賣方確認。雷達命中 0 則供需異常標題。 當日合併檔偏薄。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-07-18/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "0",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
         }
       ]
     },
@@ -5383,6 +6685,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-07-17",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-07-17",
+      "time": "07:45",
+      "title": "7/17 無新賣方確認：T-glass、變壓器、銅 維持",
+      "title_em": "賣方市場",
+      "summary": "7/17 沒有新的賣方確認。雷達命中 8 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-07-17/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "8",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-07-16-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -5521,6 +6854,37 @@
           "label": "台指期日盤",
           "value": "+0.550%",
           "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-07-16",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-07-16",
+      "time": "07:45",
+      "title": "7/16 無新賣方確認：T-glass、變壓器、銅 維持",
+      "title_em": "賣方市場",
+      "summary": "7/16 沒有新的賣方確認。雷達命中 11 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-07-16/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "11",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
         }
       ]
     },
@@ -5667,6 +7031,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-07-15",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-07-15",
+      "time": "07:45",
+      "title": "7/15 無新賣方確認：T-glass、變壓器、銅 維持",
+      "title_em": "賣方市場",
+      "summary": "7/15 沒有新的賣方確認。雷達命中 17 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-07-15/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "17",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-07-14-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -5809,6 +7204,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-07-14",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-07-14",
+      "time": "07:45",
+      "title": "7/14 無新賣方確認：T-glass、變壓器、銅 維持",
+      "title_em": "賣方市場",
+      "summary": "7/14 沒有新的賣方確認。雷達命中 3 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-07-14/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "3",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-07-13-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -5912,6 +7338,99 @@
       ]
     },
     {
+      "id": "seller-market-2026-07-13",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-07-13",
+      "time": "07:45",
+      "title": "7/13 無新賣方確認：T-glass、變壓器、銅 維持",
+      "title_em": "賣方市場",
+      "summary": "7/13 沒有新的賣方確認。雷達命中 21 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-07-13/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "21",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-07-12",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-07-12",
+      "time": "07:45",
+      "title": "7/12 無新賣方確認：T-glass、變壓器、銅 維持",
+      "title_em": "賣方市場",
+      "summary": "7/12 沒有新的賣方確認。雷達命中 4 則供需異常標題。 當日合併檔偏薄。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-07-12/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "4",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-07-11",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-07-11",
+      "time": "07:45",
+      "title": "7/11 無新賣方確認：T-glass、變壓器、銅 維持",
+      "title_em": "賣方市場",
+      "summary": "7/11 沒有新的賣方確認。雷達命中 7 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-07-11/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "7",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "options-weekly-20260706-20260710",
       "category": "txo",
       "type": "options_weekly",
@@ -5943,6 +7462,37 @@
         {
           "label": "版本",
           "value": "v2.5-lite",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-07-10",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-07-10",
+      "time": "07:45",
+      "title": "7/10 無新賣方確認：T-glass、變壓器、銅 維持",
+      "title_em": "賣方市場",
+      "summary": "7/10 沒有新的賣方確認。雷達命中 2 則供需異常標題。 當日合併檔偏薄。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-07-10/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "2",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
           "color": "neutral"
         }
       ]
@@ -6088,6 +7638,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-07-09",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-07-09",
+      "time": "07:45",
+      "title": "7/9 變壓器 進入賣方市場",
+      "title_em": "賣方市場",
+      "summary": "變壓器 在 2026-07-09 的證據帳本下通過確認門檻。當日標題只是雷達，不自動升階段。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-07-09/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "7",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-07-08-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -6186,6 +7767,37 @@
         {
           "label": "漲停集中",
           "value": "6.7%",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-07-08",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-07-08",
+      "time": "07:45",
+      "title": "7/8 無新賣方確認：T-glass、銅 維持",
+      "title_em": "賣方市場",
+      "summary": "7/8 沒有新的賣方確認。雷達命中 11 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-07-08/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "11",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
           "color": "neutral"
         }
       ]
@@ -6294,6 +7906,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-07-07",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-07-07",
+      "time": "07:45",
+      "title": "7/7 無新賣方確認：T-glass、銅 維持",
+      "title_em": "賣方市場",
+      "summary": "7/7 沒有新的賣方確認。雷達命中 8 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-07-07/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "8",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-07-06-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -6397,6 +8040,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-07-06",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-07-06",
+      "time": "07:45",
+      "title": "7/6 無新賣方確認：T-glass、銅 維持",
+      "title_em": "賣方市場",
+      "summary": "7/6 沒有新的賣方確認。雷達命中 14 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-07-06/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "14",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "shortage-weekly-2026-07-05",
       "category": "stocks",
       "type": "weekly",
@@ -6430,6 +8104,68 @@
           "label": "主題",
           "value": "ABF／高階載板",
           "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-07-05",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-07-05",
+      "time": "07:45",
+      "title": "7/5 無新賣方確認：T-glass、銅 維持",
+      "title_em": "賣方市場",
+      "summary": "7/5 沒有新的賣方確認。雷達命中 5 則供需異常標題。 當日合併檔偏薄。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-07-05/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "5",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-07-04",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-07-04",
+      "time": "07:45",
+      "title": "7/4 無新賣方確認：T-glass、銅 維持",
+      "title_em": "賣方市場",
+      "summary": "7/4 沒有新的賣方確認。雷達命中 2 則供需異常標題。 當日合併檔偏薄。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-07-04/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "2",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
         }
       ]
     },
@@ -6573,6 +8309,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-07-03",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-07-03",
+      "time": "07:45",
+      "title": "7/3 無新賣方確認：T-glass、銅 維持",
+      "title_em": "賣方市場",
+      "summary": "7/3 沒有新的賣方確認。雷達命中 13 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-07-03/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "13",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-07-02-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -6671,6 +8438,37 @@
         {
           "label": "漲停集中",
           "value": "9.1%",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-07-02",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-07-02",
+      "time": "07:45",
+      "title": "7/2 無新賣方確認：T-glass、銅 維持",
+      "title_em": "賣方市場",
+      "summary": "7/2 沒有新的賣方確認。雷達命中 8 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-07-02/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "8",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
           "color": "neutral"
         }
       ]
@@ -6779,6 +8577,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-07-01",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-07-01",
+      "time": "07:45",
+      "title": "7/1 無新賣方確認：T-glass、銅 維持",
+      "title_em": "賣方市場",
+      "summary": "7/1 沒有新的賣方確認。雷達命中 11 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-07-01/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "11",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-06-30-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -6882,6 +8711,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-06-30",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-06-30",
+      "time": "07:45",
+      "title": "6/30 無新賣方確認：T-glass、銅 維持",
+      "title_em": "賣方市場",
+      "summary": "6/30 沒有新的賣方確認。雷達命中 21 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-06-30/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "21",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-06-29-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -6980,6 +8840,99 @@
         {
           "label": "漲停集中",
           "value": "2.3%",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-06-29",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-06-29",
+      "time": "07:45",
+      "title": "6/29 無新賣方確認：T-glass、銅 維持",
+      "title_em": "賣方市場",
+      "summary": "6/29 沒有新的賣方確認。雷達命中 12 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-06-29/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "12",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-06-28",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-06-28",
+      "time": "07:45",
+      "title": "6/28 無新賣方確認：T-glass、銅 維持",
+      "title_em": "賣方市場",
+      "summary": "6/28 沒有新的賣方確認。雷達命中 2 則供需異常標題。 當日合併檔偏薄。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-06-28/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "2",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-06-27",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-06-27",
+      "time": "07:45",
+      "title": "6/27 無新賣方確認：T-glass、銅 維持",
+      "title_em": "賣方市場",
+      "summary": "6/27 沒有新的賣方確認。雷達命中 0 則供需異常標題。 當日合併檔偏薄。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-06-27/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "0",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
           "color": "neutral"
         }
       ]
@@ -7124,6 +9077,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-06-26",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-06-26",
+      "time": "07:45",
+      "title": "6/26 無新賣方確認：T-glass、銅 維持",
+      "title_em": "賣方市場",
+      "summary": "6/26 沒有新的賣方確認。雷達命中 12 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-06-26/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "12",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-06-25-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -7222,6 +9206,37 @@
         {
           "label": "漲停集中",
           "value": "8.7%",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-06-25",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-06-25",
+      "time": "07:45",
+      "title": "6/25 無新賣方確認：T-glass、銅 維持",
+      "title_em": "賣方市場",
+      "summary": "6/25 沒有新的賣方確認。雷達命中 14 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-06-25/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "14",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
           "color": "neutral"
         }
       ]
@@ -7330,6 +9345,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-06-24",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-06-24",
+      "time": "07:45",
+      "title": "6/24 無新賣方確認：T-glass、銅 維持",
+      "title_em": "賣方市場",
+      "summary": "6/24 沒有新的賣方確認。雷達命中 15 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-06-24/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "15",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-06-23-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -7428,6 +9474,37 @@
         {
           "label": "漲停集中",
           "value": "3.6%",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-06-23",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-06-23",
+      "time": "07:45",
+      "title": "6/23 無新賣方確認：T-glass、銅 維持",
+      "title_em": "賣方市場",
+      "summary": "6/23 沒有新的賣方確認。雷達命中 11 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-06-23/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "11",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
           "color": "neutral"
         }
       ]
@@ -7536,6 +9613,99 @@
       ]
     },
     {
+      "id": "seller-market-2026-06-22",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-06-22",
+      "time": "07:45",
+      "title": "6/22 銅 進入賣方市場",
+      "title_em": "賣方市場",
+      "summary": "銅 在 2026-06-22 的證據帳本下通過確認門檻。當日標題只是雷達，不自動升階段。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-06-22/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "11",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-06-21",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-06-21",
+      "time": "07:45",
+      "title": "6/21 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "6/21 沒有新的賣方確認。雷達命中 1 則供需異常標題。 當日合併檔偏薄。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-06-21/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "1",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-06-20",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-06-20",
+      "time": "07:45",
+      "title": "6/20 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "6/20 沒有新的賣方確認。雷達命中 1 則供需異常標題。 當日合併檔偏薄。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-06-20/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "1",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "options-weekly-20260615-20260619",
       "category": "txo",
       "type": "options_weekly",
@@ -7567,6 +9737,37 @@
         {
           "label": "版本",
           "value": "v2.5-lite",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-06-19",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-06-19",
+      "time": "07:45",
+      "title": "6/19 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "6/19 沒有新的賣方確認。雷達命中 0 則供需異常標題。 當日合併檔偏薄。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-06-19/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "0",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
           "color": "neutral"
         }
       ]
@@ -7675,6 +9876,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-06-18",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-06-18",
+      "time": "07:45",
+      "title": "6/18 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "6/18 沒有新的賣方確認。雷達命中 6 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-06-18/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "6",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-06-17-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -7773,6 +10005,37 @@
         {
           "label": "漲停集中",
           "value": "10.9%",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-06-17",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-06-17",
+      "time": "07:45",
+      "title": "6/17 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "6/17 沒有新的賣方確認。雷達命中 5 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-06-17/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "5",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
           "color": "neutral"
         }
       ]
@@ -7881,6 +10144,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-06-16",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-06-16",
+      "time": "07:45",
+      "title": "6/16 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "6/16 沒有新的賣方確認。雷達命中 13 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-06-16/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "13",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-06-15-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -7979,6 +10273,99 @@
         {
           "label": "漲停集中",
           "value": "17.8%",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-06-15",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-06-15",
+      "time": "07:45",
+      "title": "6/15 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "6/15 沒有新的賣方確認。雷達命中 14 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-06-15/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "14",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-06-14",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-06-14",
+      "time": "07:45",
+      "title": "6/14 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "6/14 沒有新的賣方確認。雷達命中 0 則供需異常標題。 當日合併檔偏薄。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-06-14/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "0",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-06-13",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-06-13",
+      "time": "07:45",
+      "title": "6/13 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "6/13 沒有新的賣方確認。雷達命中 1 則供需異常標題。 當日合併檔偏薄。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-06-13/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "1",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
           "color": "neutral"
         }
       ]
@@ -8123,6 +10510,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-06-12",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-06-12",
+      "time": "07:45",
+      "title": "6/12 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "6/12 沒有新的賣方確認。雷達命中 8 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-06-12/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "8",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-06-11-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -8221,6 +10639,37 @@
         {
           "label": "漲停集中",
           "value": "4.2%",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-06-11",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-06-11",
+      "time": "07:45",
+      "title": "6/11 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "6/11 沒有新的賣方確認。雷達命中 11 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-06-11/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "11",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
           "color": "neutral"
         }
       ]
@@ -8329,6 +10778,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-06-10",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-06-10",
+      "time": "07:45",
+      "title": "6/10 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "6/10 沒有新的賣方確認。雷達命中 10 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-06-10/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "10",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-06-09-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -8432,6 +10912,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-06-09",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-06-09",
+      "time": "07:45",
+      "title": "6/9 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "6/9 沒有新的賣方確認。雷達命中 9 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-06-09/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "9",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-06-08-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -8530,6 +11041,99 @@
         {
           "label": "漲停集中",
           "value": "2.5%",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-06-08",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-06-08",
+      "time": "07:45",
+      "title": "6/8 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "6/8 沒有新的賣方確認。雷達命中 12 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-06-08/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "12",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-06-07",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-06-07",
+      "time": "07:45",
+      "title": "6/7 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "6/7 沒有新的賣方確認。雷達命中 2 則供需異常標題。 當日合併檔偏薄。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-06-07/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "2",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-06-06",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-06-06",
+      "time": "07:45",
+      "title": "6/6 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "6/6 沒有新的賣方確認。雷達命中 0 則供需異常標題。 當日合併檔偏薄。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-06-06/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "0",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
           "color": "neutral"
         }
       ]
@@ -8674,6 +11278,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-06-05",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-06-05",
+      "time": "07:45",
+      "title": "6/5 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "6/5 沒有新的賣方確認。雷達命中 4 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-06-05/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "4",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-06-04-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -8772,6 +11407,37 @@
         {
           "label": "漲停集中",
           "value": "2.8%",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-06-04",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-06-04",
+      "time": "07:45",
+      "title": "6/4 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "6/4 沒有新的賣方確認。雷達命中 9 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-06-04/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "9",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
           "color": "neutral"
         }
       ]
@@ -8880,6 +11546,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-06-03",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-06-03",
+      "time": "07:45",
+      "title": "6/3 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "6/3 沒有新的賣方確認。雷達命中 9 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-06-03/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "9",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-06-02-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -8983,6 +11680,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-06-02",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-06-02",
+      "time": "07:45",
+      "title": "6/2 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "6/2 沒有新的賣方確認。雷達命中 5 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-06-02/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "5",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-06-01-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -9081,6 +11809,99 @@
         {
           "label": "漲停集中",
           "value": "14.3%",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-06-01",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-06-01",
+      "time": "07:45",
+      "title": "6/1 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "6/1 沒有新的賣方確認。雷達命中 5 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-06-01/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "5",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-05-31",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-05-31",
+      "time": "07:45",
+      "title": "5/31 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "5/31 沒有新的賣方確認。雷達命中 1 則供需異常標題。 當日合併檔偏薄。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-05-31/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "1",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-05-30",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-05-30",
+      "time": "07:45",
+      "title": "5/30 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "5/30 沒有新的賣方確認。雷達命中 1 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-05-30/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "1",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
           "color": "neutral"
         }
       ]
@@ -9260,6 +12081,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-05-29",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-05-29",
+      "time": "07:45",
+      "title": "5/29 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "5/29 沒有新的賣方確認。雷達命中 6 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-05-29/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "6",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-05-28-chip-concentration",
       "category": "chips",
       "type": "ranking",
@@ -9393,6 +12245,37 @@
         {
           "label": "漲停集中",
           "value": "2.9%",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-05-28",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-05-28",
+      "time": "07:45",
+      "title": "5/28 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "5/28 沒有新的賣方確認。雷達命中 6 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-05-28/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "6",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
           "color": "neutral"
         }
       ]
@@ -9536,6 +12419,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-05-27",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-05-27",
+      "time": "07:45",
+      "title": "5/27 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "5/27 沒有新的賣方確認。雷達命中 13 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-05-27/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "13",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-05-26-chip-concentration",
       "category": "chips",
       "type": "ranking",
@@ -9674,6 +12588,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-05-26",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-05-26",
+      "time": "07:45",
+      "title": "5/26 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "5/26 沒有新的賣方確認。雷達命中 2 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-05-26/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "2",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-05-25-chip-concentration",
       "category": "chips",
       "type": "ranking",
@@ -9807,6 +12752,99 @@
         {
           "label": "漲停集中",
           "value": "20.6%",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-05-25",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-05-25",
+      "time": "07:45",
+      "title": "5/25 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "5/25 沒有新的賣方確認。雷達命中 8 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-05-25/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "8",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-05-24",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-05-24",
+      "time": "07:45",
+      "title": "5/24 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "5/24 沒有新的賣方確認。雷達命中 0 則供需異常標題。 當日合併檔偏薄。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-05-24/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "0",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-05-23",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-05-23",
+      "time": "07:45",
+      "title": "5/23 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "5/23 沒有新的賣方確認。雷達命中 0 則供需異常標題。 當日合併檔偏薄。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-05-23/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "0",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
           "color": "neutral"
         }
       ]
@@ -9951,6 +12989,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-05-22",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-05-22",
+      "time": "07:45",
+      "title": "5/22 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "5/22 沒有新的賣方確認。雷達命中 7 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-05-22/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "7",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-05-21-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -10049,6 +13118,37 @@
         {
           "label": "漲停集中",
           "value": "21.6%",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-05-21",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-05-21",
+      "time": "07:45",
+      "title": "5/21 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "5/21 沒有新的賣方確認。雷達命中 9 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-05-21/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "9",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
           "color": "neutral"
         }
       ]
@@ -10157,6 +13257,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-05-20",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-05-20",
+      "time": "07:45",
+      "title": "5/20 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "5/20 沒有新的賣方確認。雷達命中 9 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-05-20/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "9",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-05-19-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -10260,6 +13391,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-05-19",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-05-19",
+      "time": "07:45",
+      "title": "5/19 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "5/19 沒有新的賣方確認。雷達命中 14 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-05-19/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "14",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-05-18-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -10358,6 +13520,99 @@
         {
           "label": "漲停集中",
           "value": "11.1%",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-05-18",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-05-18",
+      "time": "07:45",
+      "title": "5/18 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "5/18 沒有新的賣方確認。雷達命中 7 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-05-18/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "7",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-05-17",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-05-17",
+      "time": "07:45",
+      "title": "5/17 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "5/17 沒有新的賣方確認。雷達命中 1 則供需異常標題。 當日合併檔偏薄。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-05-17/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "1",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-05-16",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-05-16",
+      "time": "07:45",
+      "title": "5/16 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "5/16 沒有新的賣方確認。雷達命中 1 則供需異常標題。 當日合併檔偏薄。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-05-16/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "1",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
           "color": "neutral"
         }
       ]
@@ -10502,6 +13757,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-05-15",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-05-15",
+      "time": "07:45",
+      "title": "5/15 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "5/15 沒有新的賣方確認。雷達命中 6 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-05-15/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "6",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-05-14-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -10600,6 +13886,37 @@
         {
           "label": "漲停集中",
           "value": "14.8%",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-05-14",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-05-14",
+      "time": "07:45",
+      "title": "5/14 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "5/14 沒有新的賣方確認。雷達命中 9 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-05-14/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "9",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
           "color": "neutral"
         }
       ]
@@ -10708,6 +14025,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-05-13",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-05-13",
+      "time": "07:45",
+      "title": "5/13 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "5/13 沒有新的賣方確認。雷達命中 7 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-05-13/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "7",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-05-12-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -10811,6 +14159,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-05-12",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-05-12",
+      "time": "07:45",
+      "title": "5/12 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "5/12 沒有新的賣方確認。雷達命中 12 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-05-12/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "12",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-05-11-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -10909,6 +14288,99 @@
         {
           "label": "漲停集中",
           "value": "19.6%",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-05-11",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-05-11",
+      "time": "07:45",
+      "title": "5/11 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "5/11 沒有新的賣方確認。雷達命中 14 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-05-11/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "14",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-05-10",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-05-10",
+      "time": "07:45",
+      "title": "5/10 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "5/10 沒有新的賣方確認。雷達命中 2 則供需異常標題。 當日合併檔偏薄。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-05-10/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "2",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-05-09",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-05-09",
+      "time": "07:45",
+      "title": "5/9 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "5/9 沒有新的賣方確認。雷達命中 5 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-05-09/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "5",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
           "color": "neutral"
         }
       ]
@@ -11053,6 +14525,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-05-08",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-05-08",
+      "time": "07:45",
+      "title": "5/8 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "5/8 沒有新的賣方確認。雷達命中 10 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-05-08/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "10",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-05-07-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -11151,6 +14654,37 @@
         {
           "label": "漲停集中",
           "value": "13.5%",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-05-07",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-05-07",
+      "time": "07:45",
+      "title": "5/7 無新賣方確認：T-glass 維持",
+      "title_em": "賣方市場",
+      "summary": "5/7 沒有新的賣方確認。雷達命中 16 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-05-07/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "16",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
           "color": "neutral"
         }
       ]
@@ -11259,6 +14793,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-05-06",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-05-06",
+      "time": "07:45",
+      "title": "5/6 T-glass 進入賣方市場",
+      "title_em": "賣方市場",
+      "summary": "T-glass 在 2026-05-06 的證據帳本下通過確認門檻。當日標題只是雷達，不自動升階段。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-05-06/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "23",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-05-05-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -11357,6 +14922,37 @@
         {
           "label": "漲停集中",
           "value": "13.6%",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-05-05",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-05-05",
+      "time": "07:45",
+      "title": "5/5 無新賣方確認：觀察名單 維持",
+      "title_em": "賣方市場",
+      "summary": "5/5 沒有新的賣方確認。雷達命中 16 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-05-05/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "16",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
           "color": "neutral"
         }
       ]
@@ -11465,6 +15061,99 @@
       ]
     },
     {
+      "id": "seller-market-2026-05-04",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-05-04",
+      "time": "07:45",
+      "title": "5/4 無新賣方確認：觀察名單 維持",
+      "title_em": "賣方市場",
+      "summary": "5/4 沒有新的賣方確認。雷達命中 11 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-05-04/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "11",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-05-03",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-05-03",
+      "time": "07:45",
+      "title": "5/3 無新賣方確認：觀察名單 維持",
+      "title_em": "賣方市場",
+      "summary": "5/3 沒有新的賣方確認。雷達命中 0 則供需異常標題。 當日合併檔偏薄。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-05-03/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "0",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-05-02",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-05-02",
+      "time": "07:45",
+      "title": "5/2 無新賣方確認：觀察名單 維持",
+      "title_em": "賣方市場",
+      "summary": "5/2 沒有新的賣方確認。雷達命中 0 則供需異常標題。 當日合併檔偏薄。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-05-02/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "0",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "options-weekly-20260427-20260501",
       "category": "txo",
       "type": "options_weekly",
@@ -11496,6 +15185,37 @@
         {
           "label": "版本",
           "value": "v2.5-lite",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-05-01",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-05-01",
+      "time": "07:45",
+      "title": "5/1 無新賣方確認：觀察名單 維持",
+      "title_em": "賣方市場",
+      "summary": "5/1 沒有新的賣方確認。雷達命中 2 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-05-01/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "2",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
           "color": "neutral"
         }
       ]
@@ -11604,6 +15324,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-04-30",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-04-30",
+      "time": "07:45",
+      "title": "4/30 無新賣方確認：觀察名單 維持",
+      "title_em": "賣方市場",
+      "summary": "4/30 沒有新的賣方確認。雷達命中 15 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-04-30/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "15",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-04-29-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -11702,6 +15453,37 @@
         {
           "label": "漲停集中",
           "value": "4.0%",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-04-29",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-04-29",
+      "time": "07:45",
+      "title": "4/29 無新賣方確認：觀察名單 維持",
+      "title_em": "賣方市場",
+      "summary": "4/29 沒有新的賣方確認。雷達命中 14 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-04-29/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "14",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
           "color": "neutral"
         }
       ]
@@ -11810,6 +15592,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-04-28",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-04-28",
+      "time": "07:45",
+      "title": "4/28 無新賣方確認：觀察名單 維持",
+      "title_em": "賣方市場",
+      "summary": "4/28 沒有新的賣方確認。雷達命中 14 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-04-28/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "14",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-04-27-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -11908,6 +15721,68 @@
         {
           "label": "漲停集中",
           "value": "9.7%",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-04-27",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-04-27",
+      "time": "07:45",
+      "title": "4/27 無新賣方確認：觀察名單 維持",
+      "title_em": "賣方市場",
+      "summary": "4/27 沒有新的賣方確認。雷達命中 12 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-04-27/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "12",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-04-25",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-04-25",
+      "time": "07:45",
+      "title": "4/25 無新賣方確認：觀察名單 維持",
+      "title_em": "賣方市場",
+      "summary": "4/25 沒有新的賣方確認。雷達命中 1 則供需異常標題。 當日合併檔偏薄。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-04-25/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "1",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
           "color": "neutral"
         }
       ]
@@ -12052,6 +15927,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-04-24",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-04-24",
+      "time": "07:45",
+      "title": "4/24 無新賣方確認：觀察名單 維持",
+      "title_em": "賣方市場",
+      "summary": "4/24 沒有新的賣方確認。雷達命中 14 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-04-24/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "14",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-04-23-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -12150,6 +16056,37 @@
         {
           "label": "漲停集中",
           "value": "2.2%",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-04-23",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-04-23",
+      "time": "07:45",
+      "title": "4/23 無新賣方確認：觀察名單 維持",
+      "title_em": "賣方市場",
+      "summary": "4/23 沒有新的賣方確認。雷達命中 17 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-04-23/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "17",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
           "color": "neutral"
         }
       ]
@@ -12258,6 +16195,37 @@
       ]
     },
     {
+      "id": "seller-market-2026-04-22",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-04-22",
+      "time": "07:45",
+      "title": "4/22 無新賣方確認：觀察名單 維持",
+      "title_em": "賣方市場",
+      "summary": "4/22 沒有新的賣方確認。雷達命中 10 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-04-22/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "10",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "2026-04-21-sectors-weekly",
       "category": "sectors",
       "type": "weekly",
@@ -12356,6 +16324,37 @@
         {
           "label": "漲停集中",
           "value": "13.1%",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-04-21",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-04-21",
+      "time": "07:45",
+      "title": "4/21 無新賣方確認：觀察名單 維持",
+      "title_em": "賣方市場",
+      "summary": "4/21 沒有新的賣方確認。雷達命中 11 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-04-21/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "11",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
           "color": "neutral"
         }
       ]
@@ -12481,6 +16480,99 @@
       ]
     },
     {
+      "id": "seller-market-2026-04-20",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-04-20",
+      "time": "07:45",
+      "title": "4/20 無新賣方確認：觀察名單 維持",
+      "title_em": "賣方市場",
+      "summary": "4/20 沒有新的賣方確認。雷達命中 11 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-04-20/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "11",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-04-19",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-04-19",
+      "time": "07:45",
+      "title": "4/19 無新賣方確認：觀察名單 維持",
+      "title_em": "賣方市場",
+      "summary": "4/19 沒有新的賣方確認。雷達命中 1 則供需異常標題。 當日合併檔偏薄。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-04-19/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "1",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-04-18",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-04-18",
+      "time": "07:45",
+      "title": "4/18 無新賣方確認：觀察名單 維持",
+      "title_em": "賣方市場",
+      "summary": "4/18 沒有新的賣方確認。雷達命中 1 則供需異常標題。 當日合併檔偏薄。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-04-18/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "1",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "options-weekly-20260413-20260417",
       "category": "txo",
       "type": "options_weekly",
@@ -12512,6 +16604,192 @@
         {
           "label": "版本",
           "value": "v2.5-lite",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-04-17",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-04-17",
+      "time": "07:45",
+      "title": "4/17 無新賣方確認：觀察名單 維持",
+      "title_em": "賣方市場",
+      "summary": "4/17 沒有新的賣方確認。雷達命中 9 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-04-17/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "9",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-04-16",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-04-16",
+      "time": "07:45",
+      "title": "4/16 無新賣方確認：觀察名單 維持",
+      "title_em": "賣方市場",
+      "summary": "4/16 沒有新的賣方確認。雷達命中 13 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-04-16/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "13",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-04-15",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-04-15",
+      "time": "07:45",
+      "title": "4/15 無新賣方確認：觀察名單 維持",
+      "title_em": "賣方市場",
+      "summary": "4/15 沒有新的賣方確認。雷達命中 12 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-04-15/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "12",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-04-14",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-04-14",
+      "time": "07:45",
+      "title": "4/14 無新賣方確認：觀察名單 維持",
+      "title_em": "賣方市場",
+      "summary": "4/14 沒有新的賣方確認。雷達命中 7 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-04-14/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "7",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-04-13",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-04-13",
+      "time": "07:45",
+      "title": "4/13 無新賣方確認：觀察名單 維持",
+      "title_em": "賣方市場",
+      "summary": "4/13 沒有新的賣方確認。雷達命中 15 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-04-13/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "15",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-04-12",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-04-12",
+      "time": "07:45",
+      "title": "4/12 無新賣方確認：觀察名單 維持",
+      "title_em": "賣方市場",
+      "summary": "4/12 沒有新的賣方確認。雷達命中 1 則供需異常標題。 當日合併檔偏薄。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-04-12/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "1",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
           "color": "neutral"
         }
       ]
@@ -12553,6 +16831,161 @@
       ]
     },
     {
+      "id": "seller-market-2026-04-10",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-04-10",
+      "time": "07:45",
+      "title": "4/10 無新賣方確認：觀察名單 維持",
+      "title_em": "賣方市場",
+      "summary": "4/10 沒有新的賣方確認。雷達命中 6 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-04-10/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "6",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-04-09",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-04-09",
+      "time": "07:45",
+      "title": "4/9 無新賣方確認：觀察名單 維持",
+      "title_em": "賣方市場",
+      "summary": "4/9 沒有新的賣方確認。雷達命中 4 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-04-09/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "4",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-04-08",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-04-08",
+      "time": "07:45",
+      "title": "4/8 無新賣方確認：觀察名單 維持",
+      "title_em": "賣方市場",
+      "summary": "4/8 沒有新的賣方確認。雷達命中 12 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-04-08/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "12",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-04-07",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-04-07",
+      "time": "07:45",
+      "title": "4/7 無新賣方確認：觀察名單 維持",
+      "title_em": "賣方市場",
+      "summary": "4/7 沒有新的賣方確認。雷達命中 7 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-04-07/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "7",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-04-06",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-04-06",
+      "time": "07:45",
+      "title": "4/6 無新賣方確認：觀察名單 維持",
+      "title_em": "賣方市場",
+      "summary": "4/6 沒有新的賣方確認。雷達命中 0 則供需異常標題。 當日合併檔偏薄。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-04-06/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "0",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
       "id": "options-weekly-20260330-20260403",
       "category": "txo",
       "type": "options_weekly",
@@ -12584,6 +17017,99 @@
         {
           "label": "版本",
           "value": "v2.5-lite",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-04-03",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-04-03",
+      "time": "07:45",
+      "title": "4/3 無新賣方確認：觀察名單 維持",
+      "title_em": "賣方市場",
+      "summary": "4/3 沒有新的賣方確認。雷達命中 0 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-04-03/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "0",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-04-02",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-04-02",
+      "time": "07:45",
+      "title": "4/2 無新賣方確認：觀察名單 維持",
+      "title_em": "賣方市場",
+      "summary": "4/2 沒有新的賣方確認。雷達命中 2 則供需異常標題。 當日合併檔偏薄。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-04-02/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "2",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "seller-market-2026-04-01",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-04-01",
+      "time": "07:45",
+      "title": "4/1 無新賣方確認：觀察名單 維持",
+      "title_em": "賣方市場",
+      "summary": "4/1 沒有新的賣方確認。雷達命中 9 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-04-01/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "9",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
           "color": "neutral"
         }
       ]

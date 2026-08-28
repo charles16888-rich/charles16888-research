@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>全球賣方市場雷達　2026-05-20</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --bg: #0e100d;
+  --ink: #ebe6d6;
+  --dim: #9a937f;
+  --brass: #c9a227;
+  --moss: #7aa56a;
+  --rust: #c45c2a;
+  --amber: #d4a24a;
+  --line: #2c3228;
+  --paper: #171a15;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--ink); }
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 16.5px;
+  line-height: 1.7;
+}
+a { color: var(--brass); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.page { max-width: 1120px; margin: 0 auto; padding: 36px 28px 96px; }
+.mast { padding: 8px 0 28px; border-bottom: 1px solid var(--line); margin-bottom: 36px; }
+.kicker { letter-spacing: .28em; font-size: 11px; color: var(--brass); text-transform: uppercase; }
+h1 {
+  font-family: "Noto Serif TC", serif;
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.28;
+  font-weight: 700;
+  margin: 14px 0 12px;
+  max-width: 18em;
+}
+.tagline { color: var(--dim); font-size: 18px; max-width: 36em; margin: 0 0 16px; }
+.meta { color: var(--dim); font-size: 13px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+.cov-btn {
+  background: transparent; color: var(--amber); border: 1px solid var(--amber);
+  font-size: 11px; letter-spacing: .08em; padding: 2px 8px; cursor: pointer;
+}
+.cov-panel { color: var(--dim); font-size: 14px; margin-top: 10px; max-width: 36em; }
+.cov-panel[hidden] { display: none; }
+nav.jump { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 22px; font-size: 13.5px; }
+nav.jump a { color: var(--dim); }
+h2 {
+  font-family: "Noto Serif TC", serif;
+  font-size: 22px;
+  font-weight: 700;
+  margin: 56px 0 8px;
+}
+.lede { color: var(--dim); margin: 0 0 22px; max-width: 40em; }
+.dec {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px 24px;
+  margin: 18px 0 8px;
+}
+@media (max-width: 860px) { .dec { grid-template-columns: 1fr 1fr; } h1 { max-width: none; } }
+.dec h3 { margin: 0 0 8px; font-size: 13px; letter-spacing: .14em; color: var(--brass); font-weight: 500; }
+.dec ul { list-style: none; margin: 0; padding: 0; }
+.dec li { margin: 0 0 6px; }
+.dec .empty { color: var(--dim); }
+.bands { display: grid; grid-template-columns: 1fr 1fr; gap: 48px 40px; }
+@media (max-width: 800px) { .bands { grid-template-columns: 1fr; } }
+.band h3 {
+  font-family: "Noto Serif TC", serif;
+  font-size: 15px;
+  letter-spacing: .12em;
+  color: var(--dim);
+  font-weight: 600;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 8px;
+  margin: 0 0 20px;
+}
+.icard { padding: 0 0 28px; margin: 0 0 8px; border: 0; border-bottom: 1px solid var(--line); }
+.icard .nm {
+  font-family: "Noto Serif TC", serif;
+  font-size: 26px;
+  margin: 0 0 6px;
+}
+.icard .st { font-size: 15px; }
+.icard .st b { font-weight: 600; }
+.icard .row { color: var(--dim); font-size: 14px; margin: 4px 0 10px; }
+.icard p { margin: 0 0 8px; max-width: 36em; }
+.icard .chg { color: var(--ink); }
+.icard .stg { color: var(--dim); font-size: 12px; margin-left: 8px; }
+.moss { color: var(--moss); }
+.amber { color: var(--amber); }
+.rust { color: var(--rust); }
+.dim { color: var(--dim); }
+figure.viz { margin: 24px 0 8px; padding: 0; }
+figure.viz figcaption { font-size: 14px; margin: 0 0 8px; color: var(--ink); }
+figure.viz figcaption .q { display: block; color: var(--dim); font-weight: 400; font-size: 13.5px; margin-top: 2px; }
+.life {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+  margin-top: 18px;
+}
+@media (max-width: 900px) { .life { grid-template-columns: 1fr 1fr; } }
+.life h3 { margin: 0 0 8px; font-size: 13px; color: var(--brass); letter-spacing: .1em; font-weight: 500; }
+.chip { display: block; padding: 2px 0; color: var(--ink); }
+.trig { width: 100%; border-collapse: collapse; font-size: 15px; }
+.trig th { text-align: left; color: var(--dim); font-weight: 500; font-size: 13px; border-bottom: 1px solid var(--line); padding: 8px 12px 8px 0; }
+.trig td { border-bottom: 1px solid var(--line); padding: 10px 12px 10px 0; vertical-align: top; }
+.co { margin: 0 0 14px; }
+.co b { font-family: "Noto Serif TC", serif; }
+.mk { margin-top: 28px; }
+.foot { margin-top: 72px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--dim); font-size: 13.5px; }
+.notes {
+  margin-top: 28px;
+  color: var(--dim);
+  font-size: 13.5px;
+}
+.notes > summary {
+  cursor: pointer;
+  list-style: none;
+  color: var(--dim);
+  letter-spacing: .14em;
+  font-size: 13px;
+  padding: 8px 0;
+}
+.notes > summary::-webkit-details-marker { display: none; }
+.notes > summary::before { content: "＋  "; color: var(--brass); }
+.notes[open] > summary { color: var(--brass); }
+.notes[open] > summary::before { content: "－  "; }
+.notes-body { margin-top: 12px; max-width: 52em; }
+.notes-body h3 {
+  font-family: "Noto Serif TC", serif;
+  font-size: 15px;
+  color: var(--brass);
+  letter-spacing: 0;
+  margin: 22px 0 8px;
+  font-weight: 600;
+}
+.notes-body p { margin: 0 0 10px; }
+.notes-body ul { margin: 0 0 12px; padding-left: 1.2em; }
+.notes-body table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+.notes-body th, .notes-body td {
+  border-bottom: 1px solid var(--line);
+  padding: 8px 10px 8px 0;
+  text-align: left;
+  vertical-align: top;
+}
+.notes-body th { color: var(--dim); font-weight: 500; font-size: 12px; }
+.hero { display: grid; grid-template-columns: 1.4fr .8fr; gap: 40px; align-items: end; margin: 8px 0 40px; }
+@media (max-width: 800px) { .hero { grid-template-columns: 1fr; } }
+.hero h1 { margin-top: 8px; }
+.status3 { display: grid; gap: 14px; padding-bottom: 8px; }
+.status3 div { font-size: 16px; }
+.status3 span { display: block; color: var(--dim); font-size: 12px; letter-spacing: .12em; }
+.thesis { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 40px; margin: 28px 0 8px; }
+@media (max-width: 800px) { .thesis { grid-template-columns: 1fr; } }
+.thesis dt { color: var(--brass); font-size: 13px; letter-spacing: .08em; }
+.thesis dd { margin: 0 0 10px; }
+.stable { margin: 8px 0 32px; color: var(--ink); max-width: 42em; }
+.stable p { margin: 0 0 12px; }
+.players { margin: 0; padding-left: 1.1em; }
+.inv-panel { margin: 8px 0 24px; }
+.inv-panel .col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin: 12px 0 16px; }
+.inv-panel h3 { margin: 0 0 6px; font-size: 13px; letter-spacing: .12em; color: var(--dim); font-weight: 500; }
+.inv-panel .pos { font-family: "Noto Serif TC", serif; font-size: 22px; margin: 8px 0 0; max-width: 20em; }
+.audit-btn {
+  background: transparent; color: var(--dim); border: 1px solid var(--line);
+  padding: 8px 14px; cursor: pointer; font-size: 14px;
+}
+.drawer {
+  position: fixed; top: 0; right: 0; width: min(520px, 100%); height: 100%;
+  background: #141712; color: var(--ink); overflow: auto; padding: 28px 24px 80px;
+  border-left: 1px solid var(--line); z-index: 20;
+}
+.drawer[hidden] { display: none; }
+.drawer h2 { margin-top: 8px; }
+.drawer .tiny, .tiny { color: var(--dim); font-size: 13.5px; }
+.drawer table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+.drawer td, .drawer th { border-bottom: 1px solid var(--line); padding: 6px 8px 6px 0; text-align: left; vertical-align: top; }
+.pass { color: var(--moss); } .fail { color: var(--rust); }
+.num { font-variant-numeric: tabular-nums; }
+.back { color: var(--dim); font-size: 13.5px; }
+.hbar { display: grid; grid-template-columns: 110px 1fr 36px; gap: 8px; align-items: center; margin: 4px 0; font-size: 14px; }
+.hb { background: #2e332b; height: 8px; } .hb i { display: block; height: 8px; background: var(--brass); }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <header class="mast">
+    <div class="kicker">全球產業賣方市場雷達　·　產業判斷 ≠ 股票判斷</div>
+    <h1>5/20 無新賣方確認：T-glass 維持</h1>
+    <p class="tagline">真正缺的不是 AI，而是已被配完的規格與產能。</p>
+    <div class="meta">
+      <span>2026-05-20</span>
+
+    </div>
+    <nav class="jump">
+      <a href="../../../category.html?cat=stocks">最新日報</a>
+      <a href="#dec">研究決策</a>
+      <a href="#map">賣方市場</a>
+      <a href="#mx">機會矩陣</a>
+      <a href="#five">五件事</a>
+      <a href="#life">生命周期</a>
+      <a href="#co">公司</a>
+      <a href="../dram.html">DRAM 專題</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2>今天</h2>
+    <p class="lede">5/20 沒有新的賣方確認。雷達命中 9 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。</p>
+  </section>
+
+  <section id="dec"><h2>今日研究決策</h2><p class="lede">今天研究時間如何配置。不是股票買賣建議。同一瓶頸每天只屬一類。</p><div class="dec"><div><h3>新增深挖</h3><ul><li class='empty'>今日無</li></ul></div><div><h3>維持高優先</h3><ul><li>T-glass</li></ul></div><div><h3>只等觸發</h3><ul><li><a href="../dram.html">DRAM</a></li><li>變壓器</li><li>200G EML</li><li>OSAT</li><li>ABF</li><li>鍺／石英</li></ul></div><div><h3>暫停投入</h3><ul><li>銅</li></ul></div></div></section>
+  <section id="map"><h2>全球賣方市場</h2><p class="lede">按生命週期分組。點 DRAM 進入永久專題。</p><div class="bands"><div class='band'><h3>已確認賣方市場</h3>
+<article class="icard">
+  <div class="nm">T-glass</div>
+  <div class="st moss"><b>賣方市場加速</b><span class="stg">5</span></div>
+  <div class="row">證據：強　·　1–6M：中高</div>
+  <p>真正缺的是日本低 CTE 玻纖布；有配額的 CCL 只是受惠者，不是瓶頸。</p>
+  <p class="chg">今日：今日無狀態變化。</p>
+</article>
+</div><div class='band'><h3>早期候選</h3>
+<article class="icard">
+  <div class="nm"><a href="../dram.html">DRAM</a></div>
+  <div class="st amber"><b>高度疑似／尚未確認</b><span class="stg">3</span></div>
+  <div class="row">證據：弱　·　1–6M：中高</div>
+  <p>HBM 把 DRAM 晶圓吃掉，三家已在配 2027 的貨；通用 DRAM 是被減供，不是循環見底。</p>
+  <p class="chg">今日：當日標題命中，不自動升階段。</p>
+</article>
+
+<article class="icard">
+  <div class="nm">變壓器</div>
+  <div class="st amber"><b>高度疑似／尚未確認</b><span class="stg">3</span></div>
+  <div class="row">證據：弱　·　1–6M：中</div>
+  <p>GSU 交期 160 週。資料中心被電氣設備卡住，不是被 GPU 卡住。</p>
+  <p class="chg">今日：今日無狀態變化。</p>
+</article>
+
+<article class="icard">
+  <div class="nm">200G EML</div>
+  <div class="st amber"><b>高度疑似／尚未確認</b><span class="stg">3</span></div>
+  <div class="row">證據：弱　·　1–6M：中</div>
+  <p>Lumentum 官方確認 EML 仍出貨落後需求；3–4x 價比與良率仍未獲原廠數字。</p>
+  <p class="chg">今日：今日無狀態變化。</p>
+</article>
+
+<article class="icard">
+  <div class="nm">OSAT</div>
+  <div class="st amber"><b>高度疑似／尚未確認</b><span class="stg">3</span></div>
+  <div class="row">證據：弱　·　1–6M：中</div>
+  <p>日月光說三年產能已訂。這是一條高品質口供，還不足以單獨確認賣方市場。</p>
+  <p class="chg">今日：今日無狀態變化。</p>
+</article>
+
+<article class="icard">
+  <div class="nm">ABF</div>
+  <div class="st amber"><b>高度疑似／尚未確認</b><span class="stg">3</span></div>
+  <div class="row">證據：弱　·　1–6M：中</div>
+  <p>日月光點名 ABF 高度集中。這是瓶頸假說，不是已確認的賣方市場。</p>
+  <p class="chg">今日：今日無狀態變化。</p>
+</article>
+
+<article class="icard">
+  <div class="nm">銅</div>
+  <div class="st amber"><b>高度疑似／尚未確認</b><span class="stg">3</span></div>
+  <div class="row">證據：不足　·　1–6M：中低</div>
+  <p>礦山有權、冶煉沒權。價格已經告訴所有人這件事。</p>
+  <p class="chg">今日：今日無狀態變化。</p>
+</article>
+
+<article class="icard">
+  <div class="nm">鍺／石英</div>
+  <div class="st amber"><b>高度疑似／尚未確認</b><span class="stg">3</span></div>
+  <div class="row">證據：弱　·　1–6M：中低</div>
+  <p>交期行為值得追，獨立價格序列仍缺，維持高度疑似。</p>
+  <p class="chg">今日：今日無狀態變化。</p>
+</article>
+</div><div class='band'><h3>成熟／風險</h3><p class='dim'>無</p></div><div class='band'><h3>反轉／退潮</h3><p class='dim'>無</p></div></div></section>
+
+  <section id="mx">
+    <h2>研究機會矩陣</h2>
+    <p class="lede">氣泡大小＝1–6 個月研究吸引力。左上是甜蜜區。</p>
+    <figure class="viz" data-role="matrix"><figcaption><b>研究機會矩陣</b><span class='q'>研究問題：哪裡又強、市場又還沒充分認知？</span></figcaption>
+<svg viewBox="0 0 640 340" width="100%" height="340">
+  <rect x="56" y="56" width="264.0" height="114.0" fill="#162018" fill-opacity=".55"/>
+  <rect x="320.0" y="56" width="264.0" height="114.0" fill="#1c1a12" fill-opacity=".55"/>
+  <rect x="56" y="170.0" width="264.0" height="114.0" fill="#181b16" fill-opacity=".4"/>
+  <rect x="320.0" y="170.0" width="264.0" height="114.0" fill="#1a1412" fill-opacity=".55"/>
+  <text x="64" y="74" fill="#7aa56a" font-size="11">甜蜜區　強 + 尚未充分認知</text>
+  <text x="328.0" y="74" fill="#d4a24a" font-size="11">強但擁擠</text>
+  <text x="64" y="274" fill="#9a937f" font-size="11">早期探索</text>
+  <text x="328.0" y="274" fill="#c45c2a" font-size="11">避免區</text>
+  <text x="320.0" y="328" text-anchor="middle" fill="#9a937f" font-size="12">市場認知 →</text>
+  <text x="16" y="170.0" fill="#9a937f" font-size="12" transform="rotate(-90 16 170.0)">賣方強度 →</text>
+  <circle cx="504.8" cy="208.0" r="8.9" fill="#d4a24a" fill-opacity="0.85"><title>DRAM　高度疑似／尚未確認　認知 85</title></circle><text x="516.7" y="212.0" fill="#ebe6d6" font-size="12">DRAM</text><circle cx="383.4" cy="157.3" r="9.0" fill="#7aa56a" fill-opacity="0.85"><title>T-glass　賣方市場加速　認知 62</title></circle><text x="395.3" y="161.3" fill="#ebe6d6" font-size="12">T-glass</text><circle cx="425.6" cy="208.0" r="8.7" fill="#d4a24a" fill-opacity="0.85"><title>變壓器　高度疑似／尚未確認　認知 70</title></circle><text x="437.3" y="212.0" fill="#ebe6d6" font-size="12">變壓器</text><circle cx="309.4" cy="208.0" r="8.8" fill="#d4a24a" fill-opacity="0.85"><title>200G EML　高度疑似／尚未確認　認知 48</title></circle><text x="321.2" y="212.0" fill="#ebe6d6" font-size="12">200G EML</text><circle cx="467.8" cy="208.0" r="8.5" fill="#d4a24a" fill-opacity="0.85"><title>OSAT　高度疑似／尚未確認　認知 78</title></circle><text x="479.4" y="212.0" fill="#ebe6d6" font-size="12">OSAT</text><circle cx="436.2" cy="208.0" r="8.5" fill="#d4a24a" fill-opacity="0.85"><title>ABF　高度疑似／尚未確認　認知 72</title></circle><text x="447.6" y="212.0" fill="#ebe6d6" font-size="12">ABF</text><circle cx="520.6" cy="208.0" r="8.4" fill="#d4a24a" fill-opacity="0.85"><title>銅　高度疑似／尚未確認　認知 88</title></circle><text x="532.0" y="212.0" fill="#ebe6d6" font-size="12">銅</text><circle cx="293.6" cy="208.0" r="8.4" fill="#d4a24a" fill-opacity="0.85"><title>鍺／石英　高度疑似／尚未確認　認知 45</title></circle><text x="305.0" y="212.0" fill="#ebe6d6" font-size="12">鍺／石英</text>
+</svg>
+</figure>
+  </section>
+
+
+<section id="five">
+  <h2>未來只盯 5 件事</h2>
+  <table class="trig">
+    <thead><tr><th>標的</th><th>Watch</th><th>Upgrade</th><th>Downgrade</th></tr></thead>
+    <tbody><tr><td>DRAM</td><td>DDR4/DDR5 spot</td><td>原廠公開再降 allocation</td><td>現貨連續兩週下降</td></tr><tr><td>T-glass</td><td>Nittobo 產能／報價</td><td>Nittobo 再宣布漲價或配額下修</td><td>台灣玻璃通過 NVIDIA/CSP 板材認證</td></tr><tr><td>200G EML</td><td>LITE/COHR 交期與 ASP</td><td>LITE 或 COHR 公開 ASP／價比接近 3x</td><td>官方交期縮短一個季度</td></tr><tr><td>銅</td><td>LME 庫存週變化</td><td>LME 庫存連續兩週下降且現貨升水擴大</td><td>LME 庫存連續四周增加</td></tr><tr><td>鍺／石英</td><td>現貨價</td><td>出現獨立現貨價加速</td><td>清關週期回到 2024 水準</td></tr></tbody>
+  </table>
+</section>
+
+  <section id="life"><h2>生命周期</h2><p class="lede">一眼看哪些瓶頸正在出生與死亡。</p><div class="life"><div><h3>形成</h3><span class='chip'>DRAM</span><span class='chip'>變壓器</span><span class='chip'>200G EML</span><span class='chip'>OSAT</span><span class='chip'>ABF</span><span class='chip'>銅</span><span class='chip'>鍺／石英</span></div><div><h3>賣方市場</h3><span class='chip'>T-glass</span></div><div><h3>成熟</h3><span class='chip dim'>—</span></div><div><h3>反轉</h3><span class='chip dim'>—</span></div><div><h3>買方市場</h3><span class='chip dim'>—</span></div></div></section>
+  <section id="co"><h2>Top Companies</h2><p class="lede">每個市場最多三家。排序：瓶頸是否已確認 × 公司曝險 × 1–6M。不是同產業關聯排名。</p><div class='mk'><h3>台股</h3><div class='co'><span class='dim'>價格彈性</span>　<b>2383 台光電</b><div class='tiny'>Direct beneficiary，不是 T-glass 賣方　·　T-glass</div></div><div class='co'><span class='dim'>價格彈性</span>　<b>6274 台燿</b><div class='tiny'>韓廠鎖貨對象之一　·　T-glass</div></div><div class='co'><span class='dim'>次級受惠</span>　<b>6213 聯茂</b><div class='tiny'>同產業不自動等於有配額　·　T-glass</div></div></div><div class='mk'><h3>美股</h3><div class='co'><span class='dim'>潛在賣方</span>　<b>MU Micron</b><div class='tiny'>三寡占持有稀缺晶圓　·　DRAM</div></div><div class='co'><span class='dim'>潛在賣方</span>　<b>LITE Lumentum</b><div class='tiny'>200G EML 賣方；Q4 官方確認短缺　·　200G EML</div></div><div class='co'><span class='dim'>潛在賣方</span>　<b>COHR Coherent</b><div class='tiny'>同上　·　200G EML</div></div></div><div class='mk'><h3>中國</h3><div class='co'><span class='dim'>題材有限</span>　<b>600183 CH 生益科技</b><div class='tiny'>高階 AI 規格受惠有限　·　T-glass</div></div><div class='co'><span class='dim'>次級受惠</span>　<b>300308 CH 中際旭創</b><div class='tiny'>出貨受惠、毛利兩面刃　·　200G EML</div></div><div class='co'><span class='dim'>反轉觀察</span>　<b>CXMT 長鑫</b><div class='tiny'>未來供給干擾，不是本輪受惠　·　DRAM</div></div></div></section>
+
+  <section class="foot">
+    <p>供需權力研究，不是買賣建議。</p>
+
+<details class="notes">
+  <summary>附註　資料來源與相關資訊</summary>
+  <div class="notes-body">
+    <h3>這份報告</h3>
+    <ul><li>日期：2026-05-20</li><li>編號：SMR-20260520-D</li><li>上一份：SMR-20260519-D</li><li>性質：DAILY_AUTO</li></ul>
+    <p>回放 2026-05-20。證據帳本切在當天。DIGITIMES 當日標題是雷達，不灌獨立鏈。</p>
+    <h3>資料覆蓋</h3><ul><li>每日自動 2026-05-20：只用該日（含）以前的證據帳本</li><li>DIGITIMES 當日標題是雷達，不灌獨立證據鏈</li><li>當日雷達命中 9 則</li></ul>
+    <h3>資料來源</h3>
+    <table><thead><tr><th>標的</th><th>來源</th><th>日期</th><th>內容</th><th></th></tr></thead><tbody><tr><td>T-glass</td><td><a href="https://www.compositesworld.com/news/on-the-radar-the-role-of-t-glass-in-ai">Nittobo IR / WSJ / CompositesWorld</a></td><td>2026-02-20</td><td>T-glass 近壟斷，有效新產能 earliest 2027 中</td><td>證據</td></tr><tr><td>T-glass</td><td><a href="https://www.pcbshop.org/en/articles/detail.asp?serno=281">韓國關稅廳 / TPCA</a></td><td>2026-05-06</td><td>下游 CCL 進口單價年增 74.5%，獨立海關數字</td><td>證據</td></tr><tr><td>T-glass</td><td><a href="https://www.trendforce.com/news/2026/05/06/news-ai-demand-tightens-ccl-supply-drives-advance-orders-price-hikes-and-expansion/">韓國媒體 / TPCA / TrendForce</a></td><td>2026-05-06</td><td>客戶向有配額的 CCL 廠鎖貨，高成本行為</td><td>證據</td></tr><tr><td>T-glass</td><td>產業轉述台灣玻璃</td><td>2026-01-12</td><td>台灣玻璃量產若良率達標，壟斷溢價下降</td><td>反證</td></tr><tr><td>銅</td><td><a href="https://www.iea.org/commentaries/copper-prices-have-hit-record-highs-but-smelters-face-mounting-strategic-pressures">IEA</a></td><td>2026-03-02</td><td>負 TC/RC = 礦端有權、冶煉沒權</td><td>證據</td></tr><tr><td>鍺／石英</td><td><a href="https://www.cirs-group.com/en/chemicals/china-temporarily-suspends-export-controls-on-key-raw-materials-including-rare-earths-lithium-batteries-and-diamond">MOFCOM / CIRS</a></td><td>2025-11-12</td><td>政策可逆；2026-11-10 是事件日</td><td>反證</td></tr></tbody></table>
+    <h3>當日雷達標題</h3><table><thead><tr><th>訊號</th><th>標的</th><th>標題</th></tr></thead><tbody><tr><td>未歸戶</td><td>未歸戶／待拆規格</td><td><a href="https://www.digitimes.com.tw/tech/dt/n/shwnws.asp?CnlID=9&amp;id=0000755925_4ER8HPVZ3CTHF84L8BIDB&amp;wpidx=5">ASML CEO：High-NA晶片數月內推出 AI發展瓶頸在晶圓廠擴產速度</a></td></tr><tr><td>未歸戶</td><td>未歸戶／待拆規格</td><td><a href="https://www.digitimes.com.tw/tech/dt/n/shwnws.asp?CnlID=1&amp;cat=50&amp;id=0000755815_MWR9MEV8062A0Y6HVZ7M2">人形機器人關節瓶頸浮現 日廠精密減速機成爭搶資源</a></td></tr><tr><td>未歸戶</td><td>未歸戶／待拆規格</td><td><a href="https://www.digitimes.com.tw/tech/dt/n/shwnws.asp?CnlID=1&amp;id=0000755769_64W88XMI5EQN8ZLVTC1SY&amp;wpidx=5">日本擬推軍民兩用新創支援案 擬導入軍工研發預付款機制</a></td></tr><tr><td>未歸戶</td><td>未歸戶／待拆規格</td><td><a href="https://www.digitimes.com.tw/tech/dt/n/shwnws.asp?CnlID=1&amp;id=0000755940_PLD83IDN5S88ERLOVK61A&amp;wpidx=5">稼動率103%、產量增54% 樂金車用電子1Q26交出亮眼成績</a></td></tr><tr><td>台股研報</td><td>未歸戶／待拆規格</td><td>基板短缺將持續改善，今明年營運動能明確（中國信託證券投顧 4971）</td></tr><tr><td>台股研報</td><td>HBM 晶圓轉換／通用 DRAM 配貨</td><td>AI需求,記憶體漲價帶動獲利倍增,維持區間操作（合庫投顧 3702）</td></tr><tr><td>台股研報</td><td>HBM 晶圓轉換／通用 DRAM 配貨</td><td>AI推動HBM GPU CPU需求，通路商獲利能力可望延續（康和投顧 3702）</td></tr><tr><td>台股研報</td><td>未歸戶／待拆規格</td><td>20260520_兆豐國際投顧_早報 周報 月報_晨間盤勢報告_回測4萬關卡醞釀反彈，續抱旺季漲價及高殖利率股（周報 月報_晨間盤勢報告_回測4萬關卡醞釀反彈，續抱旺季漲價及高殖利率股 202605）</td></tr><tr><td>台股研報</td><td>未歸戶／待拆規格</td><td>[2026.05.20] 永豐投顧-新聞評析｜AI伺服器推高階MLCC交期翻倍 日韓被動元件大廠傳暫停接單_20260520</td></tr></tbody></table>
+    <h3>相關資訊</h3>
+    <p>供需權力研究，不是買賣建議。機器欄位在 DRAM 專題的「查看研究依據」。</p>
+
+  </div>
+</details>
+
+  </section>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DRAM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --bg: #0e100d;
+  --ink: #ebe6d6;
+  --dim: #9a937f;
+  --brass: #c9a227;
+  --moss: #7aa56a;
+  --rust: #c45c2a;
+  --amber: #d4a24a;
+  --line: #2c3228;
+  --paper: #171a15;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--ink); }
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 16.5px;
+  line-height: 1.7;
+}
+a { color: var(--brass); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.page { max-width: 1120px; margin: 0 auto; padding: 36px 28px 96px; }
+.mast { padding: 8px 0 28px; border-bottom: 1px solid var(--line); margin-bottom: 36px; }
+.kicker { letter-spacing: .28em; font-size: 11px; color: var(--brass); text-transform: uppercase; }
+h1 {
+  font-family: "Noto Serif TC", serif;
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.28;
+  font-weight: 700;
+  margin: 14px 0 12px;
+  max-width: 18em;
+}
+.tagline { color: var(--dim); font-size: 18px; max-width: 36em; margin: 0 0 16px; }
+.meta { color: var(--dim); font-size: 13px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+.cov-btn {
+  background: transparent; color: var(--amber); border: 1px solid var(--amber);
+  font-size: 11px; letter-spacing: .08em; padding: 2px 8px; cursor: pointer;
+}
+.cov-panel { color: var(--dim); font-size: 14px; margin-top: 10px; max-width: 36em; }
+.cov-panel[hidden] { display: none; }
+nav.jump { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 22px; font-size: 13.5px; }
+nav.jump a { color: var(--dim); }
+h2 {
+  font-family: "Noto Serif TC", serif;
+  font-size: 22px;
+  font-weight: 700;
+  margin: 56px 0 8px;
+}
+.lede { color: var(--dim); margin: 0 0 22px; max-width: 40em; }
+.dec {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px 24px;
+  margin: 18px 0 8px;
+}
+@media (max-width: 860px) { .dec { grid-template-columns: 1fr 1fr; } h1 { max-width: none; } }
+.dec h3 { margin: 0 0 8px; font-size: 13px; letter-spacing: .14em; color: var(--brass); font-weight: 500; }
+.dec ul { list-style: none; margin: 0; padding: 0; }
+.dec li { margin: 0 0 6px; }
+.dec .empty { color: var(--dim); }
+.bands { display: grid; grid-template-columns: 1fr 1fr; gap: 48px 40px; }
+@media (max-width: 800px) { .bands { grid-template-columns: 1fr; } }
+.band h3 {
+  font-family: "Noto Serif TC", serif;
+  font-size: 15px;
+  letter-spacing: .12em;
+  color: var(--dim);
+  font-weight: 600;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 8px;
+  margin: 0 0 20px;
+}
+.icard { padding: 0 0 28px; margin: 0 0 8px; border: 0; border-bottom: 1px solid var(--line); }
+.icard .nm {
+  font-family: "Noto Serif TC", serif;
+  font-size: 26px;
+  margin: 0 0 6px;
+}
+.icard .st { font-size: 15px; }
+.icard .st b { font-weight: 600; }
+.icard .row { color: var(--dim); font-size: 14px; margin: 4px 0 10px; }
+.icard p { margin: 0 0 8px; max-width: 36em; }
+.icard .chg { color: var(--ink); }
+.icard .stg { color: var(--dim); font-size: 12px; margin-left: 8px; }
+.moss { color: var(--moss); }
+.amber { color: var(--amber); }
+.rust { color: var(--rust); }
+.dim { color: var(--dim); }
+figure.viz { margin: 24px 0 8px; padding: 0; }
+figure.viz figcaption { font-size: 14px; margin: 0 0 8px; color: var(--ink); }
+figure.viz figcaption .q { display: block; color: var(--dim); font-weight: 400; font-size: 13.5px; margin-top: 2px; }
+.life {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+  margin-top: 18px;
+}
+@media (max-width: 900px) { .life { grid-template-columns: 1fr 1fr; } }
+.life h3 { margin: 0 0 8px; font-size: 13px; color: var(--brass); letter-spacing: .1em; font-weight: 500; }
+.chip { display: block; padding: 2px 0; color: var(--ink); }
+.trig { width: 100%; border-collapse: collapse; font-size: 15px; }
+.trig th { text-align: left; color: var(--dim); font-weight: 500; font-size: 13px; border-bottom: 1px solid var(--line); padding: 8px 12px 8px 0; }
+.trig td { border-bottom: 1px solid var(--line); padding: 10px 12px 10px 0; vertical-align: top; }
+.co { margin: 0 0 14px; }
+.co b { font-family: "Noto Serif TC", serif; }
+.mk { margin-top: 28px; }
+.foot { margin-top: 72px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--dim); font-size: 13.5px; }
+.notes {
+  margin-top: 28px;
+  color: var(--dim);
+  font-size: 13.5px;
+}
+.notes > summary {
+  cursor: pointer;
+  list-style: none;
+  color: var(--dim);
+  letter-spacing: .14em;
+  font-size: 13px;
+  padding: 8px 0;
+}
+.notes > summary::-webkit-details-marker { display: none; }
+.notes > summary::before { content: "＋  "; color: var(--brass); }
+.notes[open] > summary { color: var(--brass); }
+.notes[open] > summary::before { content: "－  "; }
+.notes-body { margin-top: 12px; max-width: 52em; }
+.notes-body h3 {
+  font-family: "Noto Serif TC", serif;
+  font-size: 15px;
+  color: var(--brass);
+  letter-spacing: 0;
+  margin: 22px 0 8px;
+  font-weight: 600;
+}
+.notes-body p { margin: 0 0 10px; }
+.notes-body ul { margin: 0 0 12px; padding-left: 1.2em; }
+.notes-body table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+.notes-body th, .notes-body td {
+  border-bottom: 1px solid var(--line);
+  padding: 8px 10px 8px 0;
+  text-align: left;
+  vertical-align: top;
+}
+.notes-body th { color: var(--dim); font-weight: 500; font-size: 12px; }
+.hero { display: grid; grid-template-columns: 1.4fr .8fr; gap: 40px; align-items: end; margin: 8px 0 40px; }
+@media (max-width: 800px) { .hero { grid-template-columns: 1fr; } }
+.hero h1 { margin-top: 8px; }
+.status3 { display: grid; gap: 14px; padding-bottom: 8px; }
+.status3 div { font-size: 16px; }
+.status3 span { display: block; color: var(--dim); font-size: 12px; letter-spacing: .12em; }
+.thesis { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 40px; margin: 28px 0 8px; }
+@media (max-width: 800px) { .thesis { grid-template-columns: 1fr; } }
+.thesis dt { color: var(--brass); font-size: 13px; letter-spacing: .08em; }
+.thesis dd { margin: 0 0 10px; }
+.stable { margin: 8px 0 32px; color: var(--ink); max-width: 42em; }
+.stable p { margin: 0 0 12px; }
+.players { margin: 0; padding-left: 1.1em; }
+.inv-panel { margin: 8px 0 24px; }
+.inv-panel .col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin: 12px 0 16px; }
+.inv-panel h3 { margin: 0 0 6px; font-size: 13px; letter-spacing: .12em; color: var(--dim); font-weight: 500; }
+.inv-panel .pos { font-family: "Noto Serif TC", serif; font-size: 22px; margin: 8px 0 0; max-width: 20em; }
+.audit-btn {
+  background: transparent; color: var(--dim); border: 1px solid var(--line);
+  padding: 8px 14px; cursor: pointer; font-size: 14px;
+}
+.drawer {
+  position: fixed; top: 0; right: 0; width: min(520px, 100%); height: 100%;
+  background: #141712; color: var(--ink); overflow: auto; padding: 28px 24px 80px;
+  border-left: 1px solid var(--line); z-index: 20;
+}
+.drawer[hidden] { display: none; }
+.drawer h2 { margin-top: 8px; }
+.drawer .tiny, .tiny { color: var(--dim); font-size: 13.5px; }
+.drawer table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+.drawer td, .drawer th { border-bottom: 1px solid var(--line); padding: 6px 8px 6px 0; text-align: left; vertical-align: top; }
+.pass { color: var(--moss); } .fail { color: var(--rust); }
+.num { font-variant-numeric: tabular-nums; }
+.back { color: var(--dim); font-size: 13.5px; }
+.hbar { display: grid; grid-template-columns: 110px 1fr 36px; gap: 8px; align-items: center; margin: 4px 0; font-size: 14px; }
+.hb { background: #2e332b; height: 8px; } .hb i { display: block; height: 8px; background: var(--brass); }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <p class="back"><a href="../../index.html">← 每日雷達</a></p>
+  <header class="hero">
+    <div>
+      <div class="kicker">永久產業專題　·　2026-08-28</div>
+      <h1>DRAM</h1>
+      <p class="tagline">HBM 正在吃掉通用 DRAM 晶圓，原廠仍掌握分配權，但 2027 新供給正在成為下一個主要風險。</p>
+    </div>
+    <div class="status3">
+      <div><span>賣方市場</span><b class="moss">賣方市場加速</b></div>
+      <div><span>證據</span><b>強</b></div>
+      <div><span>投資位置</span><b>趨勢仍強，但預期差已縮小</b></div>
+    </div>
+  </header>
+
+  <section>
+    <h2>先回答這七件事</h2>
+    <dl class="thesis"><div><dt>缺什麼</dt><dd>被 HBM 吃掉之後，還能賣的通用 DRAM 晶圓與 2027 的分配量。</dd></div><div><dt>為什麼缺</dt><dd>AI 要把頻寬做上去，晶圓先被 HBM 拿走；新廠 2026–27 解不了。</dd></div><div><dt>誰有權</dt><dd>SK hynix、Micron、Samsung Memory。</dd></div><div><dt>缺多久</dt><dd>緊到 2027；結構高價可能看到 2028。</dd></div><div><dt>誰賺</dt><dd>三寡占拿定價權；南亞科／華邦拿價格彈性，不是瓶頸本身。</dd></div><div><dt>現在還早嗎</dt><dd>不早。市場認知已經高，預期差縮小。</dd></div><div><dt>什麼會失效</dt><dd>現貨連兩週下跌、PC／mobile 分配回補、CSP 資本支出明顯下修、HBM 良率超預期把晶圓吐回去。</dd></div></dl>
+  </section>
+
+  <section>
+    <h2>今日市場</h2>
+    <p>今日無狀態變化。</p>
+    <p class="lede">配貨中；客戶接受 60–70%；現貨與終端同步漲　供給反應：有效新產能 2027 下半年起、量能 2028；Y2／Idaho 解不了 2026–27</p>
+  </section>
+
+  <figure class="viz primary-visual" data-role="proof"><figcaption><b>DDR4 1Gx8 3200 現貨</b><span class='q'>研究問題：現貨是否確認供應方定價權？</span></figcaption>
+<svg viewBox="0 0 640 180" width="100%" height="180" role="img">
+  <polyline fill="none" stroke="#7aa56a" stroke-width="2" points="52.0,148.0 166.4,23.1 280.8,22.7 395.2,20.5 509.6,18.2 624.0,16.0"/>
+  <circle cx="52.0" cy="148.0" r="3.2" fill="#c9a227"><title>2026-05-29 20.0 USD</title></circle><circle cx="166.4" cy="23.1" r="3.2" fill="#c9a227"><title>2026-07-29 42.04 USD</title></circle><circle cx="280.8" cy="22.7" r="3.2" fill="#c9a227"><title>2026-08-04 42.11 USD</title></circle><circle cx="395.2" cy="20.5" r="3.2" fill="#c9a227"><title>2026-08-10 42.5 USD</title></circle><circle cx="509.6" cy="18.2" r="3.2" fill="#c9a227"><title>2026-08-18 42.9 USD</title></circle><circle cx="624.0" cy="16.0" r="3.2" fill="#c9a227"><title>2026-08-21 43.29 USD</title></circle><text x="52.0" y="170" fill="#9a937f" font-size="11" text-anchor="middle">05-29</text><text x="624.0" y="170" fill="#9a937f" font-size="11" text-anchor="middle">08-21</text>
+  <text x="8" y="26" fill="#9a937f" font-size="11">43.29</text>
+  <text x="8" y="148" fill="#9a937f" font-size="11">20</text>
+</svg>
+</figure>
+  <figure class="viz primary-visual" data-role="why"><figcaption><b>為什麼原廠拿到定價權</b><span class='q'>研究問題：產能何時真正形成供給？有效供給為什麼下降？</span></figcaption><svg viewBox="0 0 720 210" width="100%" height="210"><rect x="16" y="18" width="118" height="58" fill="none" stroke="#7aa56a" stroke-width="1.4"/><text x="75.0" y="40" text-anchor="middle" fill="#c9a227" font-size="12">需求</text><text x="75.0" y="60" text-anchor="middle" fill="#ebe6d6" font-size="11">AI／HBM</text><path d="M140 47 L152 47" stroke="#9a937f" stroke-width="1.2"/><rect x="158" y="18" width="118" height="58" fill="none" stroke="#7aa56a" stroke-width="1.4"/><text x="217.0" y="40" text-anchor="middle" fill="#c9a227" font-size="12">產能轉移</text><text x="217.0" y="60" text-anchor="middle" fill="#ebe6d6" font-size="11">晶圓轉去 HBM</text><path d="M282 47 L294 47" stroke="#9a937f" stroke-width="1.2"/><rect x="300" y="18" width="118" height="58" fill="none" stroke="#7aa56a" stroke-width="1.4"/><text x="359.0" y="40" text-anchor="middle" fill="#c9a227" font-size="12">有效供給↓</text><text x="359.0" y="60" text-anchor="middle" fill="#ebe6d6" font-size="11">DDR5／DDR4 被減</text><path d="M424 47 L436 47" stroke="#9a937f" stroke-width="1.2"/><rect x="442" y="18" width="118" height="58" fill="none" stroke="#7aa56a" stroke-width="1.4"/><text x="501.0" y="40" text-anchor="middle" fill="#c9a227" font-size="12">Allocation</text><text x="501.0" y="60" text-anchor="middle" fill="#ebe6d6" font-size="11">2027 約 60–70%</text><path d="M566 47 L578 47" stroke="#9a937f" stroke-width="1.2"/><rect x="584" y="18" width="118" height="58" fill="none" stroke="#7aa56a" stroke-width="1.4"/><text x="643.0" y="40" text-anchor="middle" fill="#c9a227" font-size="12">定價權</text><text x="643.0" y="60" text-anchor="middle" fill="#ebe6d6" font-size="11">現貨＋終端漲價</text><line x1="24" y1="128" x2="696" y2="128" stroke="#3a4034"/><circle cx="48.0" cy="128" r="6" fill="#7aa56a"/><text x="48.0" y="112" text-anchor="middle" fill="#c9a227" font-size="11">2026</text><text x="48.0" y="150" text-anchor="middle" fill="#ebe6d6" font-size="11">既有產能</text><text x="48.0" y="168" text-anchor="middle" fill="#9a937f" font-size="10">HBM 持續抽走晶圓</text><circle cx="268.0" cy="128" r="6" fill="#7aa56a"/><text x="268.0" y="112" text-anchor="middle" fill="#c9a227" font-size="11">2026-08</text><text x="268.0" y="150" text-anchor="middle" fill="#ebe6d6" font-size="11">2027 已在配</text><text x="268.0" y="168" text-anchor="middle" fill="#9a937f" font-size="10">客戶拿到約 60–70%（產業人士，</text><circle cx="488.0" cy="128" r="6" fill="#c9a227"/><text x="488.0" y="112" text-anchor="middle" fill="#c9a227" font-size="11">2027 H2</text><text x="488.0" y="150" text-anchor="middle" fill="#ebe6d6" font-size="11">新廠最早有效</text><text x="488.0" y="168" text-anchor="middle" fill="#9a937f" font-size="10">SK hynix Y2／Idaho </text><circle cx="708.0" cy="128" r="6" fill="#c9a227"/><text x="708.0" y="112" text-anchor="middle" fill="#c9a227" font-size="11">2028</text><text x="708.0" y="150" text-anchor="middle" fill="#ebe6d6" font-size="11">量能</text><text x="708.0" y="168" text-anchor="middle" fill="#9a937f" font-size="10">供給反應以年計</text></svg></figure>
+  <figure class="viz primary-visual" data-role="investability"><figcaption><b>現在還早嗎</b><span class='q'>研究問題：基本面成立後，股票現在還值得研究嗎？</span></figcaption>
+<div class="inv-panel">
+  <div class="col">
+    <div><h3>主要加分</h3><ul><li>供需仍強</li><li>EPS 上修</li><li>價格確認</li></ul></div>
+    <div><h3>主要扣分</h3><ul><li>市場認知高</li><li>交易擁擠</li><li>預期差已小</li></ul></div>
+  </div>
+  <div class="pos">趨勢仍強，但預期差已縮小</div>
+</div>
+</figure>
+
+  <section>
+    <h2>產業怎麼運作</h2>
+    <div class="stable">
+      <p>DRAM 不是單一市場。HBM 與通用 DRAM 搶同一塊晶圓。真正的瓶頸是三家原廠把晶圓轉去 HBM 之後，剩下來可賣的 DDR5／DDR4。通用 DRAM 本輪是被減供，不是循環見底。</p>
+      <p>利潤留在能決定「誰拿到貨」的原廠。沒有 HBM 的標準 DRAM 廠吃價格，不吃分配權。PC／主機吃成本。</p>
+      <ul class="players"><li>SK hynix　HBM 領先、晶圓持有者</li><li>Micron　HBM＋DRAM 三寡占</li><li>Samsung Memory　三寡占</li><li>南亞科／華邦　無 HBM，吃通用 DRAM 價格彈性</li><li>長鑫　未來干擾通用 DRAM，不是本輪瓶頸持有者</li></ul>
+    </div>
+    <figure class="viz" data-role="why-stable"><figcaption><b>供應鏈</b><span class='q'>研究問題：價值如何從晶圓走到終端？</span></figcaption><svg viewBox="0 0 720 120" width="100%" height="120"><rect x="12.0" y="22" width="104.0" height="70" fill="none" stroke="#7aa56a" stroke-dasharray="0"/><text x="64.0" y="48" text-anchor="middle" fill="#c9a227" font-size="11">DRAM 晶圓</text><text x="64.0" y="68" text-anchor="middle" fill="#ebe6d6" font-size="10">Samsung／SK</text><path d="M118.0 57 L128.0 57" stroke="#9a937f"/><rect x="128.7" y="22" width="104.0" height="70" fill="none" stroke="#7aa56a" stroke-dasharray="0"/><text x="180.7" y="48" text-anchor="middle" fill="#c9a227" font-size="11">產能分流</text><text x="180.7" y="68" text-anchor="middle" fill="#ebe6d6" font-size="10">HBM 堆疊 vs </text><path d="M234.7 57 L244.7 57" stroke="#9a937f"/><rect x="245.3" y="22" width="104.0" height="70" fill="none" stroke="#7aa56a" stroke-dasharray="0"/><text x="297.3" y="48" text-anchor="middle" fill="#c9a227" font-size="11">HBM</text><text x="297.3" y="68" text-anchor="middle" fill="#ebe6d6" font-size="10">AI 伺服器，已在配</text><path d="M351.3 57 L361.3 57" stroke="#9a937f"/><rect x="362.0" y="22" width="104.0" height="70" fill="none" stroke="#7aa56a" stroke-dasharray="0"/><text x="414.0" y="48" text-anchor="middle" fill="#c9a227" font-size="11">通用 DRAM</text><text x="414.0" y="68" text-anchor="middle" fill="#ebe6d6" font-size="10">有效供給被吃掉</text><path d="M468.0 57 L478.0 57" stroke="#9a937f"/><rect x="478.7" y="22" width="104.0" height="70" fill="none" stroke="#7aa56a" stroke-dasharray="0"/><text x="530.7" y="48" text-anchor="middle" fill="#c9a227" font-size="11">模組／OEM</text><text x="530.7" y="68" text-anchor="middle" fill="#ebe6d6" font-size="10">筆電、主機、入門伺服</text><path d="M584.7 57 L594.7 57" stroke="#9a937f"/><rect x="595.3" y="22" width="104.0" height="70" fill="none" stroke="#7aa56a" stroke-dasharray="0"/><text x="647.3" y="48" text-anchor="middle" fill="#c9a227" font-size="11">終端</text><text x="647.3" y="68" text-anchor="middle" fill="#ebe6d6" font-size="10">已出現漲價轉嫁</text></svg></figure>
+  </section>
+
+  <section>
+    <h2>誰站在瓶頸上</h2>
+    <div class='co'><span class='dim'>已確認核心賣方</span>　<b>MU Micron</b><div class='tiny'>三寡占持有稀缺晶圓</div></div><div class='co'><span class='dim'>價格彈性</span>　<b>2408 南亞科</b><div class='tiny'>吃通用 DRAM 減供後的價格，不是 HBM 卡位</div></div><div class='co'><span class='dim'>價格彈性</span>　<b>2344 華邦</b><div class='tiny'>價格彈性，不是瓶頸持有者</div></div><div class='co'><span class='dim'>次級受惠</span>　<b>8299 群聯</b><div class='tiny'>出貨受惠、成本同步升</div></div><div class='co'><span class='dim'>反轉觀察</span>　<b>CXMT 長鑫</b><div class='tiny'>未來供給干擾，不是本輪受惠</div></div>
+  </section>
+
+  <section>
+    <h2>什麼會讓論點失效</h2>
+    <ul><li>原廠下修 2027 合約價</li><li>CSP 單季 capex 合計明顯下修</li><li>HBM 良率超預期使晶圓回流通用 DRAM</li></ul>
+  </section>
+
+  <aside id="audit-drawer" class="drawer" hidden>
+    <p><button type="button" class="audit-btn" id="audit-close">關閉</button></p>
+    <h2>研究依據</h2>
+
+<p>Stage 5　·　Signal Confidence 88%</p>
+<p>Gate 1 <span class="pass">PASS</span>　Gate 2 <span class="pass">PASS</span>　Gate 3 <span class="pass">PASS</span></p>
+<p>Evidence Quality A　·　Independent Chains 5
+CHAIN_DRAM_SPOT, CHAIN_DT_ALLOC, CHAIN_MSFT_OEM, CHAIN_NINTENDO, CHAIN_SKH_CAPEX</p>
+<p>Evidence Coverage 8/10　·　Counter Pressure HIGH　·　Counter Coverage STRONG</p>
+
+<h3>Evidence Ledger</h3>
+<table><thead><tr><th>ID</th><th>Chain</th><th>Finding</th><th>Source</th></tr></thead><tbody><tr><td>E001</td><td>CHAIN_DRAM_SPOT</td><td>DDR4 1Gx8 現貨 5 月約 $20 → 8/7 $42.45；8/18 週均 $42.90；8/21 session avg $43.288 仍小漲、成交量低</td><td>TrendForce DRAMeXchange / Capital and Compute</td></tr><tr><td>E002</td><td>CHAIN_MSFT_OEM</td><td>終端接受漲價：Xbox 稱儲存+記憶體成本 &gt;2.5x 並再漲價</td><td>Microsoft Xbox 官方</td></tr><tr><td>E003</td><td>CHAIN_DT_ALLOC</td><td>三家 2027 產能傳已配完，客戶只拿到 60–70%</td><td>DIGITIMES via Seeking Alpha</td></tr><tr><td>E004</td><td>CHAIN_SKH_CAPEX</td><td>SK hynix 核准約 $381 億新廠，有效供給不在 2026–27</td><td>SK hynix 董事會 / CNBC</td></tr><tr><td>E005</td><td>CHAIN_NINTENDO</td><td>Nintendo 因 DRAM 成本再漲價，獨立於 Microsoft 的終端行為</td><td>Nintendo / shattered.io 彙整</td></tr></tbody></table>
+<h3>Counter</h3>
+<table><thead><tr><th>ID</th><th>Chain</th><th>Finding</th></tr></thead><tbody><tr><td>C001</td><td>CHAIN_CXMT</td><td>中國新增供給可能先打 DDR4／低階 DDR5</td></tr><tr><td>C002</td><td>CHAIN_DEMAND_DESTROY</td><td>終端漲價是需求破壞；若 AI capex 同步放緩缺口會更快收斂</td></tr><tr><td>C003</td><td>CHAIN_DT_ALLOC</td><td>2027 配完未經三家原廠財報確認</td></tr><tr><td>C004</td><td>CHAIN_TF_CONTRACT</td><td>合約仍漲但升幅收斂；筆電出貨下滑。需求破壞升高，尚未翻轉原廠議價權</td></tr></tbody></table>
+<h3>Model B weights（中期）</h3>
+<table><thead><tr><th>factor</th><th>score</th><th>weight</th></tr></thead><tbody><tr><td>industry_trend_strength</td><td class='num'>92</td><td class='num'>0.28</td></tr><tr><td>earnings_revision_potential</td><td class='num'>83</td><td class='num'>0.22</td></tr><tr><td>expectation_gap</td><td class='num'>35</td><td class='num'>0.18</td></tr><tr><td>valuation</td><td class='num'>42</td><td class='num'>0.12</td></tr><tr><td>crowding</td><td class='num'>30</td><td class='num'>0.08</td></tr><tr><td>catalyst_strength</td><td class='num'>70</td><td class='num'>0.06</td></tr><tr><td>price_confirmation</td><td class='num'>80</td><td class='num'>0.04</td></tr><tr><td>risk_reward</td><td class='num'>55</td><td class='num'>0.02</td></tr></tbody></table>
+
+  </aside>
+
+  <section class="foot">
+    <p>供需權力研究，不是買賣建議。</p>
+
+<details class="notes">
+  <summary>附註　資料來源與相關資訊</summary>
+  <div class="notes-body">
+    <h3>這份報告</h3>
+    <ul><li>日期：2026-08-28</li><li>編號：SMR-20260823-001</li><li>上一份：SMR-20260827-D</li><li>性質：DAILY_AUTO</li></ul>
+    <p>回放 2026-08-28。證據帳本切在當天。DIGITIMES 當日標題是雷達，不灌獨立鏈。 當日合併檔偏薄。</p>
+    <h3>資料覆蓋</h3><ul><li>每日自動 2026-08-28：只用該日（含）以前的證據帳本</li><li>DIGITIMES 當日標題是雷達，不灌獨立證據鏈</li><li>當日合併檔偏薄或缺失</li></ul>
+    <h3>資料來源</h3>
+    <table><thead><tr><th>標的</th><th>來源</th><th>日期</th><th>內容</th><th></th></tr></thead><tbody><tr><td>DRAM</td><td><a href="https://tech-insider.org/dram-ram-price-crisis-2026/">TrendForce DRAMeXchange / Capital and Compute</a></td><td>2026-08-09</td><td>DDR4 1Gx8 現貨 5 月約 $20 → 8/7 $42.45；8/18 週均 $42.90；8/21 session avg $43.288 仍小漲、成交量低</td><td>證據</td></tr><tr><td>DRAM</td><td><a href="https://news.xbox.com/2026/06/25/">Microsoft Xbox 官方</a></td><td>2026-06-25</td><td>終端接受漲價：Xbox 稱儲存+記憶體成本 &gt;2.5x 並再漲價</td><td>證據</td></tr><tr><td>DRAM</td><td><a href="https://seekingalpha.com/news/4625688-samsung-sk-hynix-micron-sell-out-2027-memory-chip-supply-report">DIGITIMES via Seeking Alpha</a></td><td>2026-08-05</td><td>三家 2027 產能傳已配完，客戶只拿到 60–70%</td><td>證據</td></tr><tr><td>DRAM</td><td><a href="https://www.astutegroup.com/news/memory-shortages/sk-hynix-stakes-38bn-on-memory-but-relief-is-three-years-out/">SK hynix 董事會 / CNBC</a></td><td>2026-08-07</td><td>SK hynix 核准約 $381 億新廠，有效供給不在 2026–27</td><td>證據</td></tr><tr><td>DRAM</td><td><a href="https://shattered.io/ram-prices-ai-memory-shortage-2026/">Nintendo / shattered.io 彙整</a></td><td>2026-07-08</td><td>Nintendo 因 DRAM 成本再漲價，獨立於 Microsoft 的終端行為</td><td>證據</td></tr><tr><td>DRAM</td><td>DIGITIMES</td><td>2026-08-20</td><td>中國新增供給可能先打 DDR4／低階 DDR5</td><td>反證</td></tr><tr><td>DRAM</td><td>Xbox / Nintendo 漲價本身</td><td>2026-08-01</td><td>終端漲價是需求破壞；若 AI capex 同步放緩缺口會更快收斂</td><td>反證</td></tr><tr><td>DRAM</td><td>internal</td><td>2026-08-05</td><td>2027 配完未經三家原廠財報確認</td><td>反證</td></tr><tr><td>DRAM</td><td><a href="https://www.trendforce.com/price/dram/dram_spot">TrendForce DRAM Contract Price Jul. 2026</a></td><td>2026-08-21</td><td>合約仍漲但升幅收斂；筆電出貨下滑。需求破壞升高，尚未翻轉原廠議價權</td><td>反證</td></tr></tbody></table>
+
+    <h3>相關資訊</h3>
+    <p>供需權力研究，不是買賣建議。機器欄位在 DRAM 專題的「查看研究依據」。</p>
+    <p>穩定層上次結構更新：2026-08-22。單一新聞不會改底圖。</p><p><button type="button" class="audit-btn" id="audit-open">查看研究依據</button>　<a href="../../../category.html?cat=stocks">完整 Audit 頁</a></p>
+  </div>
+</details>
+
+  </section>
+</div>
+<script>
+(function(){
+  var d=document.getElementById('audit-drawer');
+  var o=document.getElementById('audit-open');
+  var c=document.getElementById('audit-close');
+  if(o) o.onclick=function(){ d.hidden=false; };
+  if(c) c.onclick=function(){ d.hidden=true; };
+})();
+</script>
+
+</body>
+</html>
