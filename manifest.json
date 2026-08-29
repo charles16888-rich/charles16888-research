@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-28T22:18:09+08:00",
-  "today": "2026-08-28",
+  "updated_at": "2026-08-29T11:29:40+08:00",
+  "today": "2026-08-29",
   "volume_number": 1,
   "market_summary": {
     "date": "2026-05-22",
@@ -21,6 +21,37 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "seller-market-2026-08-29",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-08-29",
+      "time": "07:45",
+      "title": "8/29 無新賣方確認：DRAM、T-glass、變壓器 維持",
+      "title_em": "賣方市場",
+      "summary": "8/29 沒有新的賣方確認。雷達命中 0 則供需異常標題。 當日合併檔偏薄。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-08-29/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "0",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "high-price-watch",
       "category": "stocks",
