@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-29T11:29:40+08:00",
+  "updated_at": "2026-08-29T11:59:43+08:00",
   "today": "2026-08-29",
   "volume_number": 1,
   "market_summary": {
@@ -27,9 +27,9 @@
       "type": "seller_market",
       "date": "2026-08-29",
       "time": "07:45",
-      "title": "8/29 無新賣方確認：DRAM、T-glass、變壓器 維持",
+      "title": "8/29 無新賣方確認：DRAM、T-glass 維持加速，200G EML 維持新增深挖",
       "title_em": "賣方市場",
-      "summary": "8/29 沒有新的賣方確認。雷達命中 0 則供需異常標題。 當日合併檔偏薄。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "summary": "今天沒有新的賣方確認。權力結構仍是 T-glass、DRAM 晶圓分配、以及已進入深挖的 200G EML。OSAT／ABF 維持尚未確認。真正瓶頸仍看規格，不要把 AI 四個字當成賣方市場。",
       "tags": [
         "賣方市場",
         "DRAM",
@@ -692,9 +692,9 @@
       "type": "seller_market",
       "date": "2026-08-28",
       "time": "07:45",
-      "title": "8/28 無新賣方確認：DRAM、T-glass、變壓器 維持",
+      "title": "8/28 無新賣方確認：DRAM、T-glass 維持加速，200G EML 維持新增深挖",
       "title_em": "賣方市場",
-      "summary": "8/28 沒有新的賣方確認。雷達命中 0 則供需異常標題。 當日合併檔偏薄。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "summary": "今天沒有新的賣方確認。權力結構仍是 T-glass、DRAM 晶圓分配、以及已進入深挖的 200G EML。當日標題「Cerebras推Nexus機櫃 晶圓級AI堆疊DRAM」、「SK海力士美國先進封装廠正式動工 打造「美國製」HBM、」只是雷達，不自動升階段。OSAT／ABF 若再被轉載，仍不足以確認。",
       "tags": [
         "賣方市場",
         "DRAM",
@@ -707,7 +707,7 @@
       "stats": [
         {
           "label": "雷達則數",
-          "value": "0",
+          "value": "15",
           "color": "neutral"
         },
         {
@@ -840,9 +840,9 @@
       "type": "seller_market",
       "date": "2026-08-27",
       "time": "07:45",
-      "title": "8/27 無新賣方確認：DRAM、T-glass、變壓器 維持",
+      "title": "8/27 無新賣方確認：DRAM、T-glass 維持加速，200G EML 維持新增深挖",
       "title_em": "賣方市場",
-      "summary": "8/27 沒有新的賣方確認。雷達命中 4 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "summary": "今天沒有新的賣方確認。權力結構仍是 T-glass、DRAM 晶圓分配、以及已進入深挖的 200G EML。當日標題「HBM4散熱問題浮現？ 傳NVIDIA策略生變、三星與S」、「《路克相談室》EP60：小米自研晶片能到2奈米嗎？ / 」只是雷達，不自動升階段。OSAT／ABF 若再被轉載，仍不足以確認。",
       "tags": [
         "賣方市場",
         "DRAM",
@@ -855,7 +855,7 @@
       "stats": [
         {
           "label": "雷達則數",
-          "value": "4",
+          "value": "10",
           "color": "neutral"
         },
         {
@@ -1013,9 +1013,9 @@
       "type": "seller_market",
       "date": "2026-08-26",
       "time": "07:45",
-      "title": "8/26 無新賣方確認：DRAM、T-glass、變壓器 維持",
+      "title": "8/26 無新賣方確認：DRAM、T-glass 維持加速，200G EML 維持新增深挖",
       "title_em": "賣方市場",
-      "summary": "8/26 沒有新的賣方確認。雷達命中 5 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "summary": "今天沒有新的賣方確認。權力結構仍是 T-glass、DRAM 晶圓分配、以及已進入深挖的 200G EML。當日標題「AI晶片提高製程要求 ifm以精密感測守住半導體設備稼動」、「OpenAI Jalapeño力壓NVIDIA GB30」只是雷達，不自動升階段。OSAT／ABF 若再被轉載，仍不足以確認。",
       "tags": [
         "賣方市場",
         "DRAM",
@@ -1028,7 +1028,7 @@
       "stats": [
         {
           "label": "雷達則數",
-          "value": "5",
+          "value": "10",
           "color": "neutral"
         },
         {
@@ -1186,9 +1186,9 @@
       "type": "seller_market",
       "date": "2026-08-25",
       "time": "07:45",
-      "title": "8/25 無新賣方確認：DRAM、T-glass、變壓器 維持",
+      "title": "8/25 無新賣方確認：DRAM、T-glass 維持加速，200G EML 維持新增深挖",
       "title_em": "賣方市場",
-      "summary": "8/25 沒有新的賣方確認。雷達命中 3 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "summary": "今天沒有新的賣方確認。權力結構仍是 T-glass、DRAM 晶圓分配、以及已進入深挖的 200G EML。當日標題「NVIDIA漲價15%牽動AI供應鏈 晶片界：推論ASI」、「中國先進晶片供應未來十年激增 然微影技術瓶頸仍難突破」只是雷達，不自動升階段。OSAT／ABF 若再被轉載，仍不足以確認。",
       "tags": [
         "賣方市場",
         "DRAM",
@@ -1201,7 +1201,7 @@
       "stats": [
         {
           "label": "雷達則數",
-          "value": "3",
+          "value": "5",
           "color": "neutral"
         },
         {
@@ -1359,9 +1359,9 @@
       "type": "seller_market",
       "date": "2026-08-24",
       "time": "07:45",
-      "title": "8/24 無新賣方確認：DRAM、T-glass、變壓器 維持",
+      "title": "8/24 無新賣方確認：DRAM、T-glass 維持加速，200G EML 維持新增深挖",
       "title_em": "賣方市場",
-      "summary": "8/24 沒有新的賣方確認。雷達命中 8 則供需異常標題。 真正瓶頸仍看規格：T-glass、DRAM 分配、EML。",
+      "summary": "今天沒有新的賣方確認。權力結構仍是 T-glass、DRAM 晶圓分配、以及已進入深挖的 200G EML。當日標題「AI掀半導體材料短缺 富士軟片擴產CMP後清潔液」、「SK海力士揭示HBM先進封裝 混合鍵合、英特爾EMIB一」只是雷達，不自動升階段。OSAT／ABF 若再被轉載，仍不足以確認。",
       "tags": [
         "賣方市場",
         "DRAM",
@@ -1374,7 +1374,7 @@
       "stats": [
         {
           "label": "雷達則數",
-          "value": "8",
+          "value": "11",
           "color": "neutral"
         },
         {
