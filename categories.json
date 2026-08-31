@@ -282,11 +282,12 @@
       "name_en": "Stocks",
       "tagline_zh": "高價股 × 個股追蹤",
       "tagline_en": "Single-name watch",
-      "description": "個股觀測、高價股排名、缺貨供應鏈與事件追蹤",
+      "description": "個股觀測、高價股排名、缺貨供應鏈與事件追蹤、賣方市場雷達",
       "enabled": true,
       "source_pipelines": [
         "high_price_watch",
-        "shortage_detective"
+        "shortage_detective",
+        "seller_market_radar"
       ],
       "subcategories": [
         {
@@ -304,6 +305,14 @@
           "match_id_prefix": [
             "shortage-weekly"
           ]
+        },
+        {
+          "id": "seller-market",
+          "name_zh": "賣方市場",
+          "name_en": "Seller Market",
+          "match_id_prefix": [
+            "seller-market"
+          ]
         }
       ],
       "report_types": [
@@ -316,6 +325,11 @@
           "id": "shortage_weekly",
           "name_zh": "缺貨週報",
           "name_en": "Shortage Weekly"
+        },
+        {
+          "id": "seller_market",
+          "name_zh": "賣方市場日報",
+          "name_en": "Seller Market Daily"
         }
       ]
     },
