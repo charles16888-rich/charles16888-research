@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-01T20:11:41+08:00",
+  "updated_at": "2026-09-01T20:17:04+08:00",
   "today": "2026-09-01",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,109 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-09-01-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-09-01",
+      "time": "20:00",
+      "title": "2026-09-01 族群週報",
+      "title_em": "鏡頭光學",
+      "summary": "涵蓋 2026-08-26 ~ 2026-09-01。週領漲 鏡頭光學 +39.03%，週領跌 貨櫃航運 -7.37%；資金焦點 電子零組件。",
+      "tags": [
+        "鏡頭光學",
+        "貨櫃航運",
+        "電子零組件",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-09-01/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "鏡頭光學 +39.03%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "貨櫃航運 -7.37%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "電子零組件",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-01-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-09-01",
+      "time": "20:00",
+      "title": "2026-09-01 每日族群輪動雷達",
+      "title_em": "太陽能",
+      "summary": "今日相對升溫以 太陽能 最明顯，相對降溫以 鏡頭光學 壓力最大；今日轉強力道大於轉弱力道。",
+      "tags": [
+        "太陽能",
+        "鏡頭光學",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-09-01/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "太陽能 +4.35 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "鏡頭光學 -8.56 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-01-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-09-01",
+      "time": "20:00",
+      "title": "2026-09-01 族群盤後快報",
+      "title_em": "化合物半導體",
+      "summary": "全 74 族群、成交 12804.2 億；領漲 化合物半導體 +7.09%，領跌 記憶體 -1.29%；漲多族群 57/74，全族群均漲 +0.88%。",
+      "tags": [
+        "化合物半導體",
+        "記憶體",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-09-01/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "化合物半導體 +7.09%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "記憶體 -1.29%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "10.4%",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "options-annual-2026",
       "category": "txo",
