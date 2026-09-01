@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-01T10:45:17+08:00",
+  "updated_at": "2026-09-01T20:10:16+08:00",
   "today": "2026-09-01",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,76 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "options-annual-2026",
+      "category": "txo",
+      "type": "options_annual",
+      "date": "2026-09-01",
+      "time": "15:10",
+      "title": "2026 台股選擇權年度合併報告（簡易版）",
+      "title_em": "選擇權",
+      "summary": "2026 年度合併（簡易版），更新至 2026-09-01。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "年度合併",
+        "週報",
+        "簡易版",
+        "v2.5-lite"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5-lite",
+      "url": "reports/options/annual_reports/2026/台股選擇權年度合併報告_2026_v2.5_lite.html",
+      "stats": [
+        {
+          "label": "年度",
+          "value": "2026",
+          "color": "neutral"
+        },
+        {
+          "label": "版本",
+          "value": "v2.5-lite",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "options-weekly-20260831-20260904",
+      "category": "txo",
+      "type": "options_weekly",
+      "date": "2026-09-01",
+      "time": "15:00",
+      "title": "台股選擇權籌碼週報 · 20260831-20260904（簡易版）",
+      "title_em": "選擇權",
+      "summary": "簡易版 v2.5 週報，涵蓋 2026-08-31 至 2026-09-04，目前共 2 個交易日。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "週報",
+        "Max Pain",
+        "P/C Ratio",
+        "簡易版",
+        "v2.5-lite"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5-lite",
+      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260831-20260904_v2.5_lite.html",
+      "stats": [
+        {
+          "label": "週期",
+          "value": "20260831-20260904",
+          "color": "neutral"
+        },
+        {
+          "label": "交易日",
+          "value": "2",
+          "color": "neutral"
+        },
+        {
+          "label": "版本",
+          "value": "v2.5-lite",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "seller-market-2026-09-01",
       "category": "stocks",
@@ -508,76 +578,6 @@
           "label": "6月營收",
           "value": "0",
           "color": "up"
-        }
-      ]
-    },
-    {
-      "id": "options-annual-2026",
-      "category": "txo",
-      "type": "options_annual",
-      "date": "2026-08-31",
-      "time": "15:10",
-      "title": "2026 台股選擇權年度合併報告（簡易版）",
-      "title_em": "選擇權",
-      "summary": "2026 年度合併（簡易版），更新至 2026-08-31。",
-      "tags": [
-        "選擇權",
-        "TXO",
-        "年度合併",
-        "週報",
-        "簡易版",
-        "v2.5-lite"
-      ],
-      "source_pipeline": "stock_project options_report_v2.5-lite",
-      "url": "reports/options/annual_reports/2026/台股選擇權年度合併報告_2026_v2.5_lite.html",
-      "stats": [
-        {
-          "label": "年度",
-          "value": "2026",
-          "color": "neutral"
-        },
-        {
-          "label": "版本",
-          "value": "v2.5-lite",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "options-weekly-20260831-20260904",
-      "category": "txo",
-      "type": "options_weekly",
-      "date": "2026-08-31",
-      "time": "15:00",
-      "title": "台股選擇權籌碼週報 · 20260831-20260904（簡易版）",
-      "title_em": "選擇權",
-      "summary": "簡易版 v2.5 週報，涵蓋 2026-08-31 至 2026-09-04，目前共 1 個交易日。",
-      "tags": [
-        "選擇權",
-        "TXO",
-        "週報",
-        "Max Pain",
-        "P/C Ratio",
-        "簡易版",
-        "v2.5-lite"
-      ],
-      "source_pipeline": "stock_project options_report_v2.5-lite",
-      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20260831-20260904_v2.5_lite.html",
-      "stats": [
-        {
-          "label": "週期",
-          "value": "20260831-20260904",
-          "color": "neutral"
-        },
-        {
-          "label": "交易日",
-          "value": "1",
-          "color": "neutral"
-        },
-        {
-          "label": "版本",
-          "value": "v2.5-lite",
-          "color": "neutral"
         }
       ]
     },
