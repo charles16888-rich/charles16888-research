@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-02T20:23:34+08:00",
+  "updated_at": "2026-09-02T20:24:33+08:00",
   "today": "2026-09-02",
   "volume_number": 1,
   "market_summary": {
@@ -53,6 +53,42 @@
           "label": "最高收盤",
           "value": "4,065",
           "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "q2-forecast-2026q2",
+      "category": "research",
+      "type": "forecast",
+      "date": "2026-09-02",
+      "time": "21:30",
+      "title": "2026 Q2 財測匿名彙總",
+      "title_em": "財測匿名",
+      "summary": "2026-03-24 至 2026-09-02 台股研究報告匿名財測彙總，共 658 檔公司；高/中信心 573 檔。公開版不含研究機構、檔名、原文或報告引用。",
+      "tags": [
+        "研報統計",
+        "財測",
+        "OCR",
+        "匿名彙總",
+        "2026Q2"
+      ],
+      "source_pipeline": "research_reports_ocr_anonymous_forecast",
+      "url": "reports/q2-forecast-2026q2.html",
+      "stats": [
+        {
+          "label": "公司數",
+          "value": "658",
+          "color": "neutral"
+        },
+        {
+          "label": "營收覆蓋",
+          "value": "576",
+          "color": "up"
+        },
+        {
+          "label": "三率完整",
+          "value": "486",
+          "color": "up"
         }
       ]
     },
@@ -518,42 +554,6 @@
         "大股東",
         "三大法人",
         "燈號"
-      ]
-    },
-    {
-      "id": "q2-forecast-2026q2",
-      "category": "research",
-      "type": "forecast",
-      "date": "2026-09-01",
-      "time": "21:30",
-      "title": "2026 Q2 財測匿名彙總",
-      "title_em": "財測匿名",
-      "summary": "2026-03-24 至 2026-09-01 台股研究報告匿名財測彙總，共 658 檔公司；高/中信心 573 檔。公開版不含研究機構、檔名、原文或報告引用。",
-      "tags": [
-        "研報統計",
-        "財測",
-        "OCR",
-        "匿名彙總",
-        "2026Q2"
-      ],
-      "source_pipeline": "research_reports_ocr_anonymous_forecast",
-      "url": "reports/q2-forecast-2026q2.html",
-      "stats": [
-        {
-          "label": "公司數",
-          "value": "658",
-          "color": "neutral"
-        },
-        {
-          "label": "營收覆蓋",
-          "value": "576",
-          "color": "up"
-        },
-        {
-          "label": "三率完整",
-          "value": "486",
-          "color": "up"
-        }
       ]
     },
     {
