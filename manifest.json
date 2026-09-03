@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-03T20:10:45+08:00",
+  "updated_at": "2026-09-03T20:14:38+08:00",
   "today": "2026-09-03",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,109 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-09-03-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-09-03",
+      "time": "20:00",
+      "title": "2026-09-03 族群週報",
+      "title_em": "鏡頭光學",
+      "summary": "涵蓋 2026-08-28 ~ 2026-09-03。週領漲 鏡頭光學 +10.94%，週領跌 ABF載板 -17.73%；資金焦點 電子零組件。",
+      "tags": [
+        "鏡頭光學",
+        "ABF載板",
+        "電子零組件",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-09-03/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "鏡頭光學 +10.94%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "ABF載板 -17.73%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "電子零組件",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-03-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-09-03",
+      "time": "20:00",
+      "title": "2026-09-03 每日族群輪動雷達",
+      "title_em": "貨櫃航運",
+      "summary": "今日相對升溫以 貨櫃航運 最明顯，相對降溫以 鏡頭光學 壓力最大；今日轉弱力道大於轉強力道。",
+      "tags": [
+        "貨櫃航運",
+        "鏡頭光學",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-09-03/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "貨櫃航運 +1.92 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "鏡頭光學 -12.68 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-03-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-09-03",
+      "time": "20:00",
+      "title": "2026-09-03 族群盤後快報",
+      "title_em": "金控",
+      "summary": "全 74 族群、成交 11546.1 億；領漲 金控 +2.24%，領跌 ABF載板 -7.88%；漲多族群 16/74，全族群均漲 -1.29%。",
+      "tags": [
+        "金控",
+        "ABF載板",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-09-03/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "金控 +2.24%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "ABF載板 -7.88%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "0.4%",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "options-annual-2026",
       "category": "txo",
