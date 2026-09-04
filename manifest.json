@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-04T20:11:03+08:00",
+  "updated_at": "2026-09-04T20:15:19+08:00",
   "today": "2026-09-04",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,109 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-09-04-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-09-04",
+      "time": "20:00",
+      "title": "2026-09-04 族群週報",
+      "title_em": "鏡頭光學",
+      "summary": "涵蓋 2026-08-31 ~ 2026-09-04。週領漲 鏡頭光學 +9.80%，週領跌 ABF載板 -14.04%；資金焦點 電子零組件。",
+      "tags": [
+        "鏡頭光學",
+        "ABF載板",
+        "電子零組件",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-09-04/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "鏡頭光學 +9.80%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "ABF載板 -14.04%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "電子零組件",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-04-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-09-04",
+      "time": "20:00",
+      "title": "2026-09-04 每日族群輪動雷達",
+      "title_em": "被動元件",
+      "summary": "今日相對升溫以 被動元件 最明顯，相對降溫以 貨櫃航運 壓力最大；今日轉強力道大於轉弱力道。",
+      "tags": [
+        "被動元件",
+        "貨櫃航運",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-09-04/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "被動元件 +8.07 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "貨櫃航運 -1.07 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-04-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-09-04",
+      "time": "20:00",
+      "title": "2026-09-04 族群盤後快報",
+      "title_em": "被動元件",
+      "summary": "全 74 族群、成交 9839.2 億；領漲 被動元件 +7.13%，領跌 面板級封裝FOPLP -1.02%；漲多族群 64/74，全族群均漲 +1.14%。",
+      "tags": [
+        "被動元件",
+        "面板級封裝FOPLP",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-09-04/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "被動元件 +7.13%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "面板級封裝FOPLP -1.02%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "10.0%",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "options-annual-2026",
       "category": "txo",
