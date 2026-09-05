@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-04T20:29:24+08:00",
-  "today": "2026-09-04",
+  "updated_at": "2026-09-05T09:33:07+08:00",
+  "today": "2026-09-05",
   "volume_number": 1,
   "market_summary": {
     "date": "2026-05-22",
@@ -21,6 +21,37 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "seller-market-2026-09-05",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-09-05",
+      "time": "07:45",
+      "title": "9/5 無新賣方確認：DRAM、T-glass 維持加速，200G EML 維持新增深挖",
+      "title_em": "賣方市場",
+      "summary": "今天沒有新的賣方確認。權力結構仍是 T-glass、DRAM 晶圓分配、以及已進入深挖的 200G EML。OSAT／ABF 維持尚未確認。真正瓶頸仍看規格，不要把 AI 四個字當成賣方市場。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-09-05/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "0",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "high-price-watch",
       "category": "stocks",
