@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-07T20:10:44+08:00",
+  "updated_at": "2026-09-07T20:21:38+08:00",
   "today": "2026-09-07",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,45 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-09-07-ai-research-daily-market-composite",
+      "category": "ai-research",
+      "type": "daily-market-composite",
+      "date": "2026-09-07",
+      "time": "15:30",
+      "title": "高開推升收近高點，權值樣品半導體與組裝分化",
+      "title_em": "高開推升收近高點",
+      "summary": "加權跳空高開、低點在開盤，09:36突破首根高點、10:45見高，收在日內區間85.4%、較前收+1.665%；櫃買同步+1.702%。三資合計淨買超1138.65億與指數同向；權值樣品半導體強、組裝弱。廣度與基差本日packet無此欄。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤中結構",
+        "綜合觀察",
+        "廣度",
+        "籌碼"
+      ],
+      "source_pipeline": "market_structure_composite_v2",
+      "url": "reports/2026-09-07/ai-research-daily-market-composite.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "+1.665%",
+          "color": "up"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "+1.702%",
+          "color": "down"
+        },
+        {
+          "label": "台指期日盤",
+          "value": "+1.640%",
+          "color": "up"
+        }
+      ]
+    },
     {
       "id": "options-annual-2026",
       "category": "txo",
