@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-07T20:22:52+08:00",
+  "updated_at": "2026-09-07T20:23:32+08:00",
   "today": "2026-09-07",
   "volume_number": 1,
   "market_summary": {
@@ -51,6 +51,42 @@
         {
           "label": "成交額",
           "value": "10,971 億",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "futures-basis",
+      "category": "taiex",
+      "type": "pulse",
+      "date": "2026-09-07",
+      "time": "20:00",
+      "title": "期貨正逆價差 · 12 年期現對照",
+      "title_em": "12 年",
+      "summary": "近 3055 個交易日（2014-02-14 → 2026-09-07）台指期 TXF1 vs 加權指數價差。最新 (2026-09-07)：基差 +143.7 點，加權收 47,326。",
+      "tags": [
+        "期貨",
+        "基差",
+        "正逆價差",
+        "TX",
+        "12 年"
+      ],
+      "source_pipeline": "yuanta + yfinance",
+      "url": "reports/futures-basis.html",
+      "stats": [
+        {
+          "label": "最新基差",
+          "value": "+143.7",
+          "color": "up"
+        },
+        {
+          "label": "加權",
+          "value": "47,326",
+          "color": "neutral"
+        },
+        {
+          "label": "區間",
+          "value": "3055 日",
           "color": "neutral"
         }
       ]
@@ -606,42 +642,6 @@
         {
           "label": "區間",
           "value": "794 日",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "futures-basis",
-      "category": "taiex",
-      "type": "pulse",
-      "date": "2026-09-04",
-      "time": "20:00",
-      "title": "期貨正逆價差 · 12 年期現對照",
-      "title_em": "12 年",
-      "summary": "近 3054 個交易日（2014-02-14 → 2026-09-04）台指期 TXF1 vs 加權指數價差。最新 (2026-09-04)：基差 +152.9 點，加權收 46,551。",
-      "tags": [
-        "期貨",
-        "基差",
-        "正逆價差",
-        "TX",
-        "12 年"
-      ],
-      "source_pipeline": "yuanta + yfinance",
-      "url": "reports/futures-basis.html",
-      "stats": [
-        {
-          "label": "最新基差",
-          "value": "+152.9",
-          "color": "up"
-        },
-        {
-          "label": "加權",
-          "value": "46,551",
-          "color": "neutral"
-        },
-        {
-          "label": "區間",
-          "value": "3054 日",
           "color": "neutral"
         }
       ]
