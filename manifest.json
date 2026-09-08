@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-08T20:21:37+08:00",
+  "updated_at": "2026-09-08T20:22:14+08:00",
   "today": "2026-09-08",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,109 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-09-08-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-09-08",
+      "time": "20:00",
+      "title": "2026-09-08 族群週報",
+      "title_em": "金控",
+      "summary": "涵蓋 2026-09-02 ~ 2026-09-08。週領漲 金控 +5.66%，週領跌 化合物半導體 -10.42%；資金焦點 電子零組件。",
+      "tags": [
+        "金控",
+        "化合物半導體",
+        "電子零組件",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-09-08/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "金控 +5.66%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "化合物半導體 -10.42%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "電子零組件",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-08-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-09-08",
+      "time": "20:00",
+      "title": "2026-09-08 每日族群輪動雷達",
+      "title_em": "AI_ASIC設計",
+      "summary": "今日相對升溫以 AI_ASIC設計 最明顯，相對降溫以 連接器 壓力最大；今日轉弱力道大於轉強力道。",
+      "tags": [
+        "AI_ASIC設計",
+        "連接器",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-09-08/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "AI_ASIC設計 +2.59 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "連接器 -4.12 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-08-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-09-08",
+      "time": "20:00",
+      "title": "2026-09-08 族群盤後快報",
+      "title_em": "AI_ASIC設計",
+      "summary": "全 74 族群、成交 10577.3 億；領漲 AI_ASIC設計 +2.89%，領跌 連接器 -4.02%；漲多族群 18/74，全族群均漲 -0.65%。",
+      "tags": [
+        "AI_ASIC設計",
+        "連接器",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-09-08/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "AI_ASIC設計 +2.89%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "連接器 -4.02%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "1.4%",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "2026-09-08-ai-research-daily-market-composite",
       "category": "ai-research",
