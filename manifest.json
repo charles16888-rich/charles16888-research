@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-08T20:10:46+08:00",
+  "updated_at": "2026-09-08T20:21:37+08:00",
   "today": "2026-09-08",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,45 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-09-08-ai-research-daily-market-composite",
+      "category": "ai-research",
+      "type": "daily-market-composite",
+      "date": "2026-09-08",
+      "time": "15:30",
+      "title": "早盤拉高午後轉弱，期貨收近低點且權值多數開高走低",
+      "title_em": "早盤拉高午後轉弱",
+      "summary": "今日主結構為早盤拉高、11:31起轉弱並收在區間低檔。加權相對前日-0.466%，台指期日盤-1.032%、收近全日低點，權值樣品多數開高走低、與指數同向但幅度更大；外資淨超與自營商淨超方向相反。廣度與基差本日packet無此欄。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤中結構",
+        "綜合觀察",
+        "廣度",
+        "籌碼"
+      ],
+      "source_pipeline": "market_structure_composite_v2",
+      "url": "reports/2026-09-08/ai-research-daily-market-composite.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "-0.466%",
+          "color": "down"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "-0.523%",
+          "color": "down"
+        },
+        {
+          "label": "台指期日盤",
+          "value": "-1.032%",
+          "color": "down"
+        }
+      ]
+    },
     {
       "id": "options-annual-2026",
       "category": "txo",
