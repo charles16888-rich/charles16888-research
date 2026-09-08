@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-07T20:24:40+08:00",
+  "generated_at": "2026-09-08T20:24:36+08:00",
   "source_id": "tw_moneylink_investor_conference",
   "source_url": "https://www.money-link.com.tw/stxba/imwcontent0.asp?page=INVC1&ID=INVC1",
   "events": [
@@ -90,6 +90,12 @@
     },
     {
       "event_date": "2026-09-09",
+      "code": "4772",
+      "name": "台特化",
+      "event_time": "09:30"
+    },
+    {
+      "event_date": "2026-09-09",
       "code": "4958",
       "name": "臻鼎-KY",
       "event_time": "09:30"
@@ -138,8 +144,20 @@
     },
     {
       "event_date": "2026-09-09",
+      "code": "2637",
+      "name": "慧洋-KY",
+      "event_time": "13:30"
+    },
+    {
+      "event_date": "2026-09-09",
       "code": "6613",
       "name": "朋億*",
+      "event_time": "13:30"
+    },
+    {
+      "event_date": "2026-09-09",
+      "code": "6739",
+      "name": "竹陞科技",
       "event_time": "13:30"
     },
     {
@@ -168,6 +186,18 @@
     },
     {
       "event_date": "2026-09-09",
+      "code": "7415",
+      "name": "元澄半導體",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-09-09",
+      "code": "2608",
+      "name": "嘉里大榮",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-09-09",
       "code": "5536",
       "name": "聖暉*",
       "event_time": "14:30"
@@ -186,8 +216,32 @@
     },
     {
       "event_date": "2026-09-09",
+      "code": "3715",
+      "name": "定穎投控",
+      "event_time": "15:00"
+    },
+    {
+      "event_date": "2026-09-09",
+      "code": "6937",
+      "name": "天虹",
+      "event_time": "15:00"
+    },
+    {
+      "event_date": "2026-09-09",
+      "code": "7768",
+      "name": "頌勝科技",
+      "event_time": "15:00"
+    },
+    {
+      "event_date": "2026-09-09",
       "code": "4966",
       "name": "譜瑞-KY",
+      "event_time": "15:30"
+    },
+    {
+      "event_date": "2026-09-09",
+      "code": "6147",
+      "name": "頎邦",
       "event_time": "15:30"
     },
     {
@@ -246,6 +300,12 @@
     },
     {
       "event_date": "2026-09-10",
+      "code": "3236",
+      "name": "千如",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-09-10",
       "code": "6173",
       "name": "信昌電",
       "event_time": "14:00"
@@ -288,6 +348,12 @@
     },
     {
       "event_date": "2026-09-10",
+      "code": "6965",
+      "name": "中傑-KY",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-09-10",
       "code": "8916",
       "name": "光隆",
       "event_time": "14:30"
@@ -302,6 +368,12 @@
       "event_date": "2026-09-10",
       "code": "2481",
       "name": "強茂",
+      "event_time": "15:20"
+    },
+    {
+      "event_date": "2026-09-10",
+      "code": "6442",
+      "name": "光聖",
       "event_time": "15:20"
     },
     {
@@ -321,6 +393,12 @@
       "code": "6136",
       "name": "富爾特",
       "event_time": "16:00"
+    },
+    {
+      "event_date": "2026-09-11",
+      "code": "2327",
+      "name": "國巨*",
+      "event_time": "14:00"
     },
     {
       "event_date": "2026-09-11",
@@ -504,6 +582,12 @@
     },
     {
       "event_date": "2026-09-15",
+      "code": "8462",
+      "name": "柏文",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-09-15",
       "code": "4807",
       "name": "日成-KY",
       "event_time": "14:30"
@@ -558,6 +642,12 @@
     },
     {
       "event_date": "2026-09-16",
+      "code": "4142",
+      "name": "國光生",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-09-16",
       "code": "6467",
       "name": "泰合",
       "event_time": "14:30"
@@ -594,6 +684,12 @@
     },
     {
       "event_date": "2026-09-17",
+      "code": "2239",
+      "name": "英利-KY",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-09-17",
       "code": "3605",
       "name": "宏致",
       "event_time": "14:30"
@@ -602,6 +698,12 @@
       "event_date": "2026-09-17",
       "code": "6870",
       "name": "騰雲",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-09-17",
+      "code": "6933",
+      "name": "AMAX-KY",
       "event_time": "14:30"
     },
     {
