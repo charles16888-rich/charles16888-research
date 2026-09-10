@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-10T20:10:45+08:00",
+  "updated_at": "2026-09-10T20:19:32+08:00",
   "today": "2026-09-10",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,45 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-09-10-ai-research-daily-market-composite",
+      "category": "ai-research",
+      "type": "daily-market-composite",
+      "date": "2026-09-10",
+      "time": "15:30",
+      "title": "夜盤先轉弱、日盤低開探底後午後回升，櫃買與法人層不同步",
+      "title_em": "午後回升但櫃買與法人層不同步",
+      "summary": "9月10日主結構為夜盤先跌、日盤低開並於09:37附近探低後午後回升。加權收46940.49點、較前日-0.515%，收在當日區間65.8%；櫃買較弱、收在區間43.8%。三大法人合計淨額-503.12億元，與午後指數回升形成籌碼層背離。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤中結構",
+        "綜合觀察",
+        "廣度",
+        "籌碼"
+      ],
+      "source_pipeline": "market_structure_composite_v2",
+      "url": "reports/2026-09-10/ai-research-daily-market-composite.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "-0.515%",
+          "color": "down"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "-0.698%",
+          "color": "down"
+        },
+        {
+          "label": "台指期日盤",
+          "value": "-0.672%",
+          "color": "down"
+        }
+      ]
+    },
     {
       "id": "options-annual-2026",
       "category": "txo",
