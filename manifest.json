@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-10T20:19:32+08:00",
+  "updated_at": "2026-09-10T20:20:06+08:00",
   "today": "2026-09-10",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,109 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-09-10-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-09-10",
+      "time": "20:00",
+      "title": "2026-09-10 族群週報",
+      "title_em": "被動元件",
+      "summary": "涵蓋 2026-09-04 ~ 2026-09-10。週領漲 被動元件 +9.62%，週領跌 電源供應 -4.83%；資金焦點 晶圓代工。",
+      "tags": [
+        "被動元件",
+        "電源供應",
+        "晶圓代工",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-09-10/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "被動元件 +9.62%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "電源供應 -4.83%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "晶圓代工",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-10-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-09-10",
+      "time": "20:00",
+      "title": "2026-09-10 每日族群輪動雷達",
+      "title_em": "電池模組",
+      "summary": "今日相對升溫以 電池模組 最明顯，相對降溫以 電源供應 壓力最大；今日轉弱力道大於轉強力道。",
+      "tags": [
+        "電池模組",
+        "電源供應",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-09-10/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "電池模組 +1.23 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "電源供應 -7.45 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-10-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-09-10",
+      "time": "20:00",
+      "title": "2026-09-10 族群盤後快報",
+      "title_em": "被動元件",
+      "summary": "全 74 族群、成交 8584.9 億；領漲 被動元件 +1.49%，領跌 電源供應 -6.69%；漲多族群 12/74，全族群均漲 -0.67%。",
+      "tags": [
+        "被動元件",
+        "電源供應",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-09-10/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "被動元件 +1.49%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "電源供應 -6.69%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "2.1%",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "2026-09-10-ai-research-daily-market-composite",
       "category": "ai-research",
