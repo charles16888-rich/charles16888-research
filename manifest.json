@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-11T20:10:44+08:00",
+  "updated_at": "2026-09-11T20:20:41+08:00",
   "today": "2026-09-11",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,45 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-09-11-ai-research-daily-market-composite",
+      "category": "ai-research",
+      "type": "daily-market-composite",
+      "date": "2026-09-11",
+      "time": "15:30",
+      "title": "現貨開高走低、櫃買更深，期貨自缺口低檔回升",
+      "title_em": "現貨開高走低",
+      "summary": "夜盤重挫後現貨開高走低：加權 -1.61%、櫃買 -2.399%，高點皆在開盤。台指期日盤較前收 -1.391%，但低開後開收 +0.869%、收在區間偏上。三大法人合計 -1,123.73 億；廣度與基差本日 packet 無此欄。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤中結構",
+        "綜合觀察",
+        "廣度",
+        "籌碼"
+      ],
+      "source_pipeline": "market_structure_composite_v2",
+      "url": "reports/2026-09-11/ai-research-daily-market-composite.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "-1.61%",
+          "color": "down"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "-2.399%",
+          "color": "down"
+        },
+        {
+          "label": "台指期日盤",
+          "value": "-1.391%",
+          "color": "down"
+        }
+      ]
+    },
     {
       "id": "options-annual-2026",
       "category": "txo",
