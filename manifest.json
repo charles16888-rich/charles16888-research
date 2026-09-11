@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-11T20:20:41+08:00",
+  "updated_at": "2026-09-11T20:21:16+08:00",
   "today": "2026-09-11",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,109 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-09-11-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-09-11",
+      "time": "20:00",
+      "title": "2026-09-11 族群週報",
+      "title_em": "晶圓代工",
+      "summary": "涵蓋 2026-09-07 ~ 2026-09-11。週領漲 晶圓代工 +4.12%，週領跌 自行車 -11.76%；資金焦點 晶圓代工。",
+      "tags": [
+        "晶圓代工",
+        "自行車",
+        "晶圓代工",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-09-11/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "晶圓代工 +4.12%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "自行車 -11.76%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "晶圓代工",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-11-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-09-11",
+      "time": "20:00",
+      "title": "2026-09-11 每日族群輪動雷達",
+      "title_em": "貨櫃航運",
+      "summary": "今日相對升溫以 貨櫃航運 最明顯，相對降溫以 自行車 壓力最大；今日轉弱力道大於轉強力道。",
+      "tags": [
+        "貨櫃航運",
+        "自行車",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-09-11/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "貨櫃航運 +2.24 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "自行車 -9.37 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-11-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-09-11",
+      "time": "20:00",
+      "title": "2026-09-11 族群盤後快報",
+      "title_em": "貨櫃航運",
+      "summary": "全 74 族群、成交 8520.1 億；領漲 貨櫃航運 +1.76%，領跌 自行車 -9.96%；漲多族群 9/74，全族群均漲 -1.30%。",
+      "tags": [
+        "貨櫃航運",
+        "自行車",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-09-11/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "貨櫃航運 +1.76%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "自行車 -9.96%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "1.8%",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "2026-09-11-ai-research-daily-market-composite",
       "category": "ai-research",
