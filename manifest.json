@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-15T11:22:24+08:00",
+  "updated_at": "2026-09-15T11:27:39+08:00",
   "today": "2026-09-15",
   "volume_number": 1,
   "market_summary": {
@@ -48,6 +48,109 @@
         {
           "label": "分類",
           "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-14-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-09-14",
+      "time": "20:00",
+      "title": "2026-09-14 族群週報",
+      "title_em": "金控",
+      "summary": "涵蓋 2026-09-08 ~ 2026-09-14。週領漲 金控 +3.75%，週領跌 電源供應 -12.43%；資金焦點 晶圓代工。",
+      "tags": [
+        "金控",
+        "電源供應",
+        "晶圓代工",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-09-14/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "金控 +3.75%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "電源供應 -12.43%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "晶圓代工",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-14-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-09-14",
+      "time": "20:00",
+      "title": "2026-09-14 每日族群輪動雷達",
+      "title_em": "AI_ASIC設計",
+      "summary": "今日相對升溫以 AI_ASIC設計 最明顯，相對降溫以 鏡頭光學 壓力最大；今日轉弱力道大於轉強力道。",
+      "tags": [
+        "AI_ASIC設計",
+        "鏡頭光學",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-09-14/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "AI_ASIC設計 +3.03 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "鏡頭光學 -9.14 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-14-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-09-14",
+      "time": "20:00",
+      "title": "2026-09-14 族群盤後快報",
+      "title_em": "AI_ASIC設計",
+      "summary": "全 74 族群、成交 7574.2 億；領漲 AI_ASIC設計 +2.82%，領跌 鏡頭光學 -9.99%；漲多族群 25/74，全族群均漲 -0.32%。",
+      "tags": [
+        "AI_ASIC設計",
+        "鏡頭光學",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-09-14/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "AI_ASIC設計 +2.82%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "鏡頭光學 -9.99%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "1.6%",
           "color": "neutral"
         }
       ]
