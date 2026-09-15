@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-15T20:36:49+08:00",
+  "updated_at": "2026-09-15T20:38:39+08:00",
   "today": "2026-09-15",
   "volume_number": 1,
   "market_summary": {
@@ -226,7 +226,7 @@
         },
         {
           "label": "訊號數",
-          "value": "42",
+          "value": "51",
           "color": "neutral"
         },
         {
