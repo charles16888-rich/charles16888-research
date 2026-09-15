@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-15T20:10:54+08:00",
+  "updated_at": "2026-09-15T20:23:04+08:00",
   "today": "2026-09-15",
   "volume_number": 1,
   "market_summary": {
@@ -127,6 +127,45 @@
           "label": "6月營收",
           "value": "0",
           "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-15-ai-research-daily-market-composite",
+      "category": "ai-research",
+      "type": "daily-market-composite",
+      "date": "2026-09-15",
+      "time": "15:30",
+      "title": "早高後收近低點，櫃買更弱、權值內部分化",
+      "title_em": "早高後收近低點",
+      "summary": "加權自開盤至收盤跌0.732%，收在當日區間3.8%位置；櫃買跌1.485%並收在低點。主結構為09:28見高後午後逐段走弱。三大法人合計淨賣超791.25億與指數同向，權值樣品內部分化，台達電、緯穎開收上漲，台積電、聯發科走弱。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤中結構",
+        "綜合觀察",
+        "廣度",
+        "籌碼"
+      ],
+      "source_pipeline": "market_structure_composite_v2",
+      "url": "reports/2026-09-15/ai-research-daily-market-composite.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "-0.732%",
+          "color": "down"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "-1.485%",
+          "color": "down"
+        },
+        {
+          "label": "台指期日盤",
+          "value": "-0.371%",
+          "color": "down"
         }
       ]
     },
