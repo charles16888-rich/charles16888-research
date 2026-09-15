@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-15T20:23:04+08:00",
+  "updated_at": "2026-09-15T20:23:53+08:00",
   "today": "2026-09-15",
   "volume_number": 1,
   "market_summary": {
@@ -91,6 +91,109 @@
           "label": "主題",
           "value": "ABF／高階載板",
           "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-15-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-09-15",
+      "time": "20:00",
+      "title": "2026-09-15 族群週報",
+      "title_em": "資訊服務",
+      "summary": "涵蓋 2026-09-09 ~ 2026-09-15。週領漲 資訊服務 +5.36%，週領跌 記憶體 -8.57%；資金焦點 晶圓代工。",
+      "tags": [
+        "資訊服務",
+        "記憶體",
+        "晶圓代工",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-09-15/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "資訊服務 +5.36%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "記憶體 -8.57%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "晶圓代工",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-15-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-09-15",
+      "time": "20:00",
+      "title": "2026-09-15 每日族群輪動雷達",
+      "title_em": "電源供應",
+      "summary": "今日相對升溫以 電源供應 最明顯，相對降溫以 液冷散熱 壓力最大；今日轉弱力道大於轉強力道。",
+      "tags": [
+        "電源供應",
+        "液冷散熱",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-09-15/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "電源供應 +5.68 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "液冷散熱 -4.19 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-15-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-09-15",
+      "time": "20:00",
+      "title": "2026-09-15 族群盤後快報",
+      "title_em": "電源供應",
+      "summary": "全 74 族群、成交 7415.9 億；領漲 電源供應 +3.09%，領跌 液冷散熱 -4.61%；漲多族群 13/74，全族群均漲 -0.82%。",
+      "tags": [
+        "電源供應",
+        "液冷散熱",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-09-15/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "電源供應 +3.09%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "液冷散熱 -4.61%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "0.5%",
+          "color": "neutral"
         }
       ]
     },
