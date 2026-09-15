@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-15T11:27:39+08:00",
+  "updated_at": "2026-09-15T11:28:24+08:00",
   "today": "2026-09-15",
   "volume_number": 1,
   "market_summary": {
@@ -48,6 +48,40 @@
         {
           "label": "分類",
           "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "market-pulse",
+      "category": "taiex",
+      "type": "pulse",
+      "date": "2026-09-14",
+      "time": "20:00",
+      "title": "市場脈動 · 漲跌停 × 全族群均幅",
+      "title_em": "脈動",
+      "summary": "近 102 個交易日漲跌停家數、總成交額、族群平均漲幅、漲停集中度。最新 (2026-09-14)：漲停 25、跌停 9、全族群均幅 -0.32%。",
+      "tags": [
+        "市場脈動",
+        "漲跌停",
+        "成交額"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/market-pulse.html",
+      "stats": [
+        {
+          "label": "漲停",
+          "value": "25",
+          "color": "up"
+        },
+        {
+          "label": "跌停",
+          "value": "9",
+          "color": "down"
+        },
+        {
+          "label": "成交額",
+          "value": "7,574 億",
           "color": "neutral"
         }
       ]
@@ -564,40 +598,6 @@
         {
           "label": "區間",
           "value": "799 日",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "market-pulse",
-      "category": "taiex",
-      "type": "pulse",
-      "date": "2026-09-11",
-      "time": "20:00",
-      "title": "市場脈動 · 漲跌停 × 全族群均幅",
-      "title_em": "脈動",
-      "summary": "近 101 個交易日漲跌停家數、總成交額、族群平均漲幅、漲停集中度。最新 (2026-09-11)：漲停 17、跌停 11、全族群均幅 -1.30%。",
-      "tags": [
-        "市場脈動",
-        "漲跌停",
-        "成交額"
-      ],
-      "source_pipeline": "industry_map",
-      "url": "reports/market-pulse.html",
-      "stats": [
-        {
-          "label": "漲停",
-          "value": "17",
-          "color": "up"
-        },
-        {
-          "label": "跌停",
-          "value": "11",
-          "color": "down"
-        },
-        {
-          "label": "成交額",
-          "value": "8,520 億",
           "color": "neutral"
         }
       ]
