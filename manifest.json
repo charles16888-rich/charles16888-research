@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-15T11:32:38+08:00",
+  "updated_at": "2026-09-15T11:35:58+08:00",
   "today": "2026-09-15",
   "volume_number": 1,
   "market_summary": {
@@ -83,6 +83,42 @@
           "label": "分類",
           "value": "個股",
           "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "three-factor-ranking",
+      "category": "chips",
+      "type": "ranking",
+      "date": "2026-09-14",
+      "time": "21:10",
+      "title": "三因子波段排行榜",
+      "title_em": "外資×營收×強勢",
+      "summary": "外資連買 >= 3 日、最新月營收創高、20/60 日趨勢仍強。 本次三因子同步 2 檔。 榜首：2455 全新，外資連買 9 日，營收 YoY +71.2%，前 20 日 +28.3%。",
+      "tags": [
+        "波段",
+        "外資連買",
+        "營收創高",
+        "強者恆強",
+        "排行榜"
+      ],
+      "source_pipeline": "stock_chip_crawler+mops_index",
+      "url": "reports/three-factor-ranking.html",
+      "stats": [
+        {
+          "label": "三因子同步",
+          "value": "2 檔",
+          "color": "up"
+        },
+        {
+          "label": "營收期別",
+          "value": "2026-08",
+          "color": "neutral"
+        },
+        {
+          "label": "榜首",
+          "value": "2455 85.5",
+          "color": "up"
         }
       ]
     },
@@ -431,6 +467,20 @@
       ]
     },
     {
+      "id": "tri-source-lamp",
+      "category": "chips",
+      "title": "三源混合燈號",
+      "subtitle": "2026-09-14 · 三同買 3 / 三同賣 27",
+      "date": "2026-09-14",
+      "url": "reports/tri-source-lamp.html",
+      "tags": [
+        "分點",
+        "大股東",
+        "三大法人",
+        "燈號"
+      ]
+    },
+    {
       "id": "seller-market-2026-09-13",
       "category": "stocks",
       "type": "seller_market",
@@ -559,42 +609,6 @@
         {
           "label": "三率完整",
           "value": "495",
-          "color": "up"
-        }
-      ]
-    },
-    {
-      "id": "three-factor-ranking",
-      "category": "chips",
-      "type": "ranking",
-      "date": "2026-09-11",
-      "time": "21:10",
-      "title": "三因子波段排行榜",
-      "title_em": "外資×營收×強勢",
-      "summary": "外資連買 >= 3 日、最新月營收創高、20/60 日趨勢仍強。 本次三因子同步 1 檔。 榜首：6227 茂綸，外資連買 3 日，營收 YoY +168.8%，前 20 日 +2.8%。",
-      "tags": [
-        "波段",
-        "外資連買",
-        "營收創高",
-        "強者恆強",
-        "排行榜"
-      ],
-      "source_pipeline": "stock_chip_crawler+mops_index",
-      "url": "reports/three-factor-ranking.html",
-      "stats": [
-        {
-          "label": "三因子同步",
-          "value": "1 檔",
-          "color": "up"
-        },
-        {
-          "label": "營收期別",
-          "value": "2026-08",
-          "color": "neutral"
-        },
-        {
-          "label": "榜首",
-          "value": "6227 72.1",
           "color": "up"
         }
       ]
@@ -991,17 +1005,16 @@
       ]
     },
     {
-      "id": "tri-source-lamp",
+      "id": "shareholder-divergence",
       "category": "chips",
-      "title": "三源混合燈號",
-      "subtitle": "2026-09-14 · 三同買 3 / 三同賣 27",
-      "date": "2026-09-14",
-      "url": "reports/tri-source-lamp.html",
+      "title": "大股東 vs 股價背離掃描",
+      "subtitle": "2026-09-04 → 2026-09-11 週對週 · 2015 檔",
+      "date": "2026-09-11",
+      "url": "reports/shareholder-divergence.html",
       "tags": [
-        "分點",
         "大股東",
-        "三大法人",
-        "燈號"
+        "TDCC",
+        "背離"
       ]
     },
     {
@@ -1965,19 +1978,6 @@
           "value": "個股",
           "color": "neutral"
         }
-      ]
-    },
-    {
-      "id": "shareholder-divergence",
-      "category": "chips",
-      "title": "大股東 vs 股價背離掃描",
-      "subtitle": "2026-09-04 → 2026-09-11 週對週 · 2015 檔",
-      "date": "2026-09-11",
-      "url": "reports/shareholder-divergence.html",
-      "tags": [
-        "大股東",
-        "TDCC",
-        "背離"
       ]
     },
     {
