@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-16T20:12:55+08:00",
+  "updated_at": "2026-09-16T20:13:32+08:00",
   "today": "2026-09-16",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,41 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "options-atm",
+      "category": "txo",
+      "type": "pulse",
+      "date": "2026-09-16",
+      "time": "20:00",
+      "title": "選擇權價平和 · 隱含波動代理",
+      "title_em": "價平和",
+      "summary": "近 802 個交易日（2023-05-30 → 2026-09-16）TXO ATM Call+Put 加總。最新 (2026-09-16)：近期 783 點（到期 202609F3）、次遠期 1095 點。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "價平和",
+        "隱波"
+      ],
+      "source_pipeline": "taifex + twse",
+      "url": "reports/options-atm.html",
+      "stats": [
+        {
+          "label": "近期 C+P",
+          "value": "783",
+          "color": "neutral"
+        },
+        {
+          "label": "次遠期 C+P",
+          "value": "1095",
+          "color": "neutral"
+        },
+        {
+          "label": "區間",
+          "value": "802 日",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "market-pulse",
       "category": "taiex",
@@ -507,41 +542,6 @@
           "label": "主題",
           "value": "ABF／高階載板",
           "color": "up"
-        }
-      ]
-    },
-    {
-      "id": "options-atm",
-      "category": "txo",
-      "type": "pulse",
-      "date": "2026-09-15",
-      "time": "20:00",
-      "title": "選擇權價平和 · 隱含波動代理",
-      "title_em": "價平和",
-      "summary": "近 801 個交易日（2023-05-30 → 2026-09-15）TXO ATM Call+Put 加總。最新 (2026-09-15)：近期 437 點（到期 202609）、次遠期 900 點。",
-      "tags": [
-        "選擇權",
-        "TXO",
-        "價平和",
-        "隱波"
-      ],
-      "source_pipeline": "taifex + twse",
-      "url": "reports/options-atm.html",
-      "stats": [
-        {
-          "label": "近期 C+P",
-          "value": "437",
-          "color": "neutral"
-        },
-        {
-          "label": "次遠期 C+P",
-          "value": "900",
-          "color": "neutral"
-        },
-        {
-          "label": "區間",
-          "value": "801 日",
-          "color": "neutral"
         }
       ]
     },
