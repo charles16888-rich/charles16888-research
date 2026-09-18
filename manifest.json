@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-18T20:25:46+08:00",
+  "updated_at": "2026-09-18T20:26:24+08:00",
   "today": "2026-09-18",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,109 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-09-18-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-09-18",
+      "time": "20:00",
+      "title": "2026-09-18 族群週報",
+      "title_em": "面板級封裝FOPLP",
+      "summary": "涵蓋 2026-09-14 ~ 2026-09-18。週領漲 面板級封裝FOPLP +10.91%，週領跌 鏡頭光學 -5.78%；資金焦點 晶圓代工。",
+      "tags": [
+        "面板級封裝FOPLP",
+        "鏡頭光學",
+        "晶圓代工",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-09-18/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "面板級封裝FOPLP +10.91%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "鏡頭光學 -5.78%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "晶圓代工",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-18-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-09-18",
+      "time": "20:00",
+      "title": "2026-09-18 每日族群輪動雷達",
+      "title_em": "AI_ASIC設計",
+      "summary": "今日相對升溫以 AI_ASIC設計 最明顯，相對降溫以 貨櫃航運 壓力最大；今日轉強力道大於轉弱力道。",
+      "tags": [
+        "AI_ASIC設計",
+        "貨櫃航運",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-09-18/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "AI_ASIC設計 +7.15 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "貨櫃航運 -2.18 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-18-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-09-18",
+      "time": "20:00",
+      "title": "2026-09-18 族群盤後快報",
+      "title_em": "AI_ASIC設計",
+      "summary": "全 74 族群、成交 12923.2 億；領漲 AI_ASIC設計 +6.68%，領跌 銀行 -1.04%；漲多族群 57/74，全族群均漲 +1.34%。",
+      "tags": [
+        "AI_ASIC設計",
+        "銀行",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-09-18/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "AI_ASIC設計 +6.68%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "銀行 -1.04%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "10.2%",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "2026-09-18-ai-research-daily-market-composite",
       "category": "ai-research",
