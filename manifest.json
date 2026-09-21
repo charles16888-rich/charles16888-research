@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-21T20:20:51+08:00",
+  "updated_at": "2026-09-21T20:21:35+08:00",
   "today": "2026-09-21",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,109 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-09-21-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-09-21",
+      "time": "20:00",
+      "title": "2026-09-21 族群週報",
+      "title_em": "電源供應",
+      "summary": "涵蓋 2026-09-15 ~ 2026-09-21。週領漲 電源供應 +15.74%，週領跌 整車車廠 -1.81%；資金焦點 晶圓代工。",
+      "tags": [
+        "電源供應",
+        "整車車廠",
+        "晶圓代工",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-09-21/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "電源供應 +15.74%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "整車車廠 -1.81%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "晶圓代工",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-21-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-09-21",
+      "time": "20:00",
+      "title": "2026-09-21 每日族群輪動雷達",
+      "title_em": "電源供應",
+      "summary": "今日相對升溫以 電源供應 最明顯，相對降溫以 化合物半導體 壓力最大；今日轉強力道大於轉弱力道。",
+      "tags": [
+        "電源供應",
+        "化合物半導體",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-09-21/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "電源供應 +6.67 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "化合物半導體 -3.46 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-21-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-09-21",
+      "time": "20:00",
+      "title": "2026-09-21 族群盤後快報",
+      "title_em": "電源供應",
+      "summary": "全 74 族群、成交 9849.1 億；領漲 電源供應 +8.07%，領跌 化合物半導體 -1.63%；漲多族群 46/74，全族群均漲 +0.74%。",
+      "tags": [
+        "電源供應",
+        "化合物半導體",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-09-21/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "電源供應 +8.07%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "化合物半導體 -1.63%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "5.9%",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "2026-09-21-ai-research-daily-market-composite",
       "category": "ai-research",
