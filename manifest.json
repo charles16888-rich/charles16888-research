@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-23T20:20:44+08:00",
+  "updated_at": "2026-09-23T20:21:21+08:00",
   "today": "2026-09-23",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,109 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-09-23-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-09-23",
+      "time": "20:00",
+      "title": "2026-09-23 族群週報",
+      "title_em": "太陽能",
+      "summary": "涵蓋 2026-09-17 ~ 2026-09-23。週領漲 太陽能 +22.17%，週領跌 鏡頭光學 -5.31%；資金焦點 晶圓代工。",
+      "tags": [
+        "太陽能",
+        "鏡頭光學",
+        "晶圓代工",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-09-23/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "太陽能 +22.17%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "鏡頭光學 -5.31%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "晶圓代工",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-23-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-09-23",
+      "time": "20:00",
+      "title": "2026-09-23 每日族群輪動雷達",
+      "title_em": "生技新藥",
+      "summary": "今日相對升溫以 生技新藥 最明顯，相對降溫以 矽晶圓 壓力最大；今日轉弱力道大於轉強力道。",
+      "tags": [
+        "生技新藥",
+        "矽晶圓",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-09-23/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "生技新藥 +1.45 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "矽晶圓 -6.70 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-23-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-09-23",
+      "time": "20:00",
+      "title": "2026-09-23 族群盤後快報",
+      "title_em": "太陽能",
+      "summary": "全 74 族群、成交 10708.7 億；領漲 太陽能 +3.74%，領跌 矽晶圓 -3.74%；漲多族群 35/74，全族群均漲 -0.17%。",
+      "tags": [
+        "太陽能",
+        "矽晶圓",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-09-23/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "太陽能 +3.74%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "矽晶圓 -3.74%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "4.9%",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "2026-09-23-ai-research-daily-market-composite",
       "category": "ai-research",
