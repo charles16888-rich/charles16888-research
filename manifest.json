@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-28T20:22:54+08:00",
+  "updated_at": "2026-09-28T20:23:39+08:00",
   "today": "2026-09-28",
   "volume_number": 1,
   "market_summary": {
@@ -53,6 +53,43 @@
         {
           "label": "三率完整",
           "value": "506",
+          "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "shortage-weekly-2026-09-28",
+      "category": "stocks",
+      "type": "weekly",
+      "date": "2026-09-28",
+      "time": "20:30",
+      "title": "2026-09-28 缺貨偵探近四週週報",
+      "title_em": "ABF／高階載板",
+      "summary": "最新一週較明確的新事件集中在 ABF／高階載板、液冷板／CDU、MCU；其餘週別保留供需訊號供回溯。",
+      "tags": [
+        "ABF／高階載板",
+        "MCU",
+        "MLCC／被動元件",
+        "探針卡／測試 Socket",
+        "缺貨偵探",
+        "週報"
+      ],
+      "source_pipeline": "shortage_detective",
+      "url": "reports/shortage/2026-09-28/weekly.html",
+      "stats": [
+        {
+          "label": "事件數",
+          "value": "3",
+          "color": "neutral"
+        },
+        {
+          "label": "訊號數",
+          "value": "44",
+          "color": "neutral"
+        },
+        {
+          "label": "主題",
+          "value": "ABF／高階載板",
           "color": "up"
         }
       ]
