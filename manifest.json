@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-02T20:22:51+08:00",
+  "updated_at": "2026-10-02T20:23:39+08:00",
   "today": "2026-10-02",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,109 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-10-02-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-10-02",
+      "time": "20:00",
+      "title": "2026-10-02 族群週報",
+      "title_em": "矽晶圓",
+      "summary": "涵蓋 2026-09-24 ~ 2026-10-02。週領漲 矽晶圓 +23.15%，週領跌 零售百貨 -3.09%；資金焦點 半導體其他。",
+      "tags": [
+        "矽晶圓",
+        "零售百貨",
+        "半導體其他",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-10-02/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "矽晶圓 +23.15%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "零售百貨 -3.09%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "半導體其他",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-10-02-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-10-02",
+      "time": "20:00",
+      "title": "2026-10-02 每日族群輪動雷達",
+      "title_em": "光通訊",
+      "summary": "今日相對升溫以 光通訊 最明顯，相對降溫以 生技新藥 壓力最大；今日轉強力道大於轉弱力道。",
+      "tags": [
+        "光通訊",
+        "生技新藥",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-10-02/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "光通訊 +7.27 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "生技新藥 -1.35 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-10-02-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-10-02",
+      "time": "20:00",
+      "title": "2026-10-02 族群盤後快報",
+      "title_em": "化合物半導體",
+      "summary": "全 74 族群、成交 11302.3 億；領漲 化合物半導體 +7.10%，領跌 零售百貨 -1.08%；漲多族群 44/74，全族群均漲 +0.78%。",
+      "tags": [
+        "化合物半導體",
+        "零售百貨",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-10-02/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "化合物半導體 +7.10%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "零售百貨 -1.08%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "14.3%",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "2026-10-02-ai-research-daily-market-composite",
       "category": "ai-research",
