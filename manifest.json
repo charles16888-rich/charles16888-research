@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-02T20:11:09+08:00",
+  "updated_at": "2026-10-02T20:22:51+08:00",
   "today": "2026-10-02",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,45 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-10-02-ai-research-daily-market-composite",
+      "category": "ai-research",
+      "type": "daily-market-composite",
+      "date": "2026-10-02",
+      "time": "15:30",
+      "title": "夜盤回吐後現貨修復收高，櫃買遠強於加權、權值樣品開收偏弱",
+      "title_em": "櫃買遠強於加權",
+      "summary": "夜盤台指期開收 -0.302%，日盤加權先探低再修復，收在區間 94.4%；櫃買開低收最高、較前日 +1.936%，遠強於加權。三大法人合計淨買超 95.57 億元同向，權值樣品多數開收為負則與指數背離。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤中結構",
+        "綜合觀察",
+        "廣度",
+        "籌碼"
+      ],
+      "source_pipeline": "market_structure_composite_v2",
+      "url": "reports/2026-10-02/ai-research-daily-market-composite.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "+0.253%",
+          "color": "up"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "+1.936%",
+          "color": "up"
+        },
+        {
+          "label": "台指期日盤",
+          "value": "-0.029%",
+          "color": "down"
+        }
+      ]
+    },
     {
       "id": "options-annual-2026",
       "category": "txo",
