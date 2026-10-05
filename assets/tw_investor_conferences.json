@@ -1,26 +1,14 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-02T20:26:22+08:00",
+  "generated_at": "2026-10-05T20:25:14+08:00",
   "source_id": "tw_moneylink_investor_conference",
   "source_url": "https://www.money-link.com.tw/stxba/imwcontent0.asp?page=INVC1&ID=INVC1",
   "events": [
     {
-      "event_date": "2026-10-02",
-      "code": "2329",
-      "name": "華泰",
-      "event_time": "14:30"
-    },
-    {
-      "event_date": "2026-10-02",
-      "code": "2399",
-      "name": "映泰",
-      "event_time": "14:30"
-    },
-    {
-      "event_date": "2026-10-02",
-      "code": "9908",
-      "name": "大台北",
-      "event_time": "14:30"
+      "event_date": "2026-10-06",
+      "code": "1402",
+      "name": "遠東新",
+      "event_time": "14:00"
     },
     {
       "event_date": "2026-10-06",
@@ -48,6 +36,12 @@
     },
     {
       "event_date": "2026-10-06",
+      "code": "8390",
+      "name": "金益鼎",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-10-06",
       "code": "9919",
       "name": "康那香",
       "event_time": "14:30"
@@ -66,8 +60,20 @@
     },
     {
       "event_date": "2026-10-07",
+      "code": "6120",
+      "name": "達運",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-10-07",
       "code": "6174",
       "name": "安碁",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-10-07",
+      "code": "7848",
+      "name": "騏億鑫",
       "event_time": "14:30"
     },
     {
@@ -81,6 +87,18 @@
       "code": "3008",
       "name": "大立光",
       "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-10-08",
+      "code": "2603",
+      "name": "長榮",
+      "event_time": "15:00"
+    },
+    {
+      "event_date": "2026-10-08",
+      "code": "2607",
+      "name": "榮運",
+      "event_time": "16:00"
     },
     {
       "event_date": "2026-10-12",
@@ -125,6 +143,12 @@
       "event_time": "15:00"
     },
     {
+      "event_date": "2026-10-19",
+      "code": "2889",
+      "name": "國票金",
+      "event_time": "14:00"
+    },
+    {
       "event_date": "2026-10-21",
       "code": "1731",
       "name": "美吾華",
@@ -147,6 +171,24 @@
       "code": "2409",
       "name": "友達",
       "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-11-04",
+      "code": "7869",
+      "name": "宏于電機",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-11-04",
+      "code": "2412",
+      "name": "中華電",
+      "event_time": "15:00"
+    },
+    {
+      "event_date": "2026-11-04",
+      "code": "2395",
+      "name": "研華",
+      "event_time": "15:30"
     }
   ]
 }
