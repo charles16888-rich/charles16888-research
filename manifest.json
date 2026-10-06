@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-06T20:11:11+08:00",
+  "updated_at": "2026-10-06T20:21:45+08:00",
   "today": "2026-10-06",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,45 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-10-06-ai-research-daily-market-composite",
+      "category": "ai-research",
+      "type": "daily-market-composite",
+      "date": "2026-10-06",
+      "time": "15:30",
+      "title": "早高回落午後收復，加權與櫃買、法人籌碼背離",
+      "title_em": "加權與櫃買、法人籌碼背離",
+      "summary": "加權早盤09:02見高後回落，10:51見低、午後收復，收49822.55、較昨收+0.222%、位於日內區間70.1%。櫃買同早高卻收跌0.375%。三大法人合計淨賣超207.87億，權值樣品漲跌分歧，指數與籌碼、櫃買呈現背離。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤中結構",
+        "綜合觀察",
+        "廣度",
+        "籌碼"
+      ],
+      "source_pipeline": "market_structure_composite_v2",
+      "url": "reports/2026-10-06/ai-research-daily-market-composite.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "+0.222%",
+          "color": "up"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "-0.375%",
+          "color": "down"
+        },
+        {
+          "label": "台指期日盤",
+          "value": "+0.222%",
+          "color": "up"
+        }
+      ]
+    },
     {
       "id": "options-annual-2026",
       "category": "txo",
