@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-05T20:25:14+08:00",
+  "generated_at": "2026-10-06T20:25:12+08:00",
   "source_id": "tw_moneylink_investor_conference",
   "source_url": "https://www.money-link.com.tw/stxba/imwcontent0.asp?page=INVC1&ID=INVC1",
   "events": [
@@ -9,6 +9,12 @@
       "code": "1402",
       "name": "遠東新",
       "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-10-06",
+      "code": "3194",
+      "name": "圓方科技",
+      "event_time": "14:30"
     },
     {
       "event_date": "2026-10-06",
@@ -48,6 +54,12 @@
     },
     {
       "event_date": "2026-10-07",
+      "code": "3624",
+      "name": "光頡",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-10-07",
       "code": "5309",
       "name": "系統電",
       "event_time": "14:00"
@@ -74,6 +86,12 @@
       "event_date": "2026-10-07",
       "code": "7848",
       "name": "騏億鑫",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-10-07",
+      "code": "8421",
+      "name": "旭源",
       "event_time": "14:30"
     },
     {
@@ -141,6 +159,12 @@
       "code": "7754",
       "name": "安基生技",
       "event_time": "15:00"
+    },
+    {
+      "event_date": "2026-10-16",
+      "code": "6414",
+      "name": "樺漢",
+      "event_time": "14:00"
     },
     {
       "event_date": "2026-10-19",
