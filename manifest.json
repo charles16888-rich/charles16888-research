@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-08T20:23:19+08:00",
+  "updated_at": "2026-10-08T20:24:08+08:00",
   "today": "2026-10-08",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,109 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-10-08-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-10-08",
+      "time": "20:00",
+      "title": "2026-10-08 族群週報",
+      "title_em": "化合物半導體",
+      "summary": "涵蓋 2026-10-02 ~ 2026-10-08。週領漲 化合物半導體 +20.65%，週領跌 太陽能 -5.60%；資金焦點 電子零組件。",
+      "tags": [
+        "化合物半導體",
+        "太陽能",
+        "電子零組件",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-10-08/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "化合物半導體 +20.65%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "太陽能 -5.60%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "電子零組件",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-10-08-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-10-08",
+      "time": "20:00",
+      "title": "2026-10-08 每日族群輪動雷達",
+      "title_em": "農業科技",
+      "summary": "今日相對升溫以 農業科技 最明顯，相對降溫以 鏡頭光學 壓力最大；今日轉弱力道大於轉強力道。",
+      "tags": [
+        "農業科技",
+        "鏡頭光學",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-10-08/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "農業科技 +2.30 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "鏡頭光學 -6.00 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-10-08-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-10-08",
+      "time": "20:00",
+      "title": "2026-10-08 族群盤後快報",
+      "title_em": "化合物半導體",
+      "summary": "全 74 族群、成交 11003.2 億；領漲 化合物半導體 +4.40%，領跌 矽晶圓 -3.45%；漲多族群 36/74，全族群均漲 -0.10%。",
+      "tags": [
+        "化合物半導體",
+        "矽晶圓",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-10-08/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "化合物半導體 +4.40%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "矽晶圓 -3.45%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "2.9%",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "2026-10-08-ai-research-daily-market-composite",
       "category": "ai-research",
