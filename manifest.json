@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-12T20:10:56+08:00",
+  "updated_at": "2026-10-12T20:24:16+08:00",
   "today": "2026-10-12",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,45 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-10-12-ai-research-daily-market-composite",
+      "category": "ai-research",
+      "type": "daily-market-composite",
+      "date": "2026-10-12",
+      "time": "15:30",
+      "title": "低開探底後高檔收復，櫃買轉正對上期貨收盤偏弱與外資淨超賣",
+      "title_em": "高檔收復",
+      "summary": "加權低開0.327%後開盤即創全日低點，午後收復至區間相對位置82.8%；櫃買相對前收轉正，台指期收盤位置僅58.3%。三大法人合計淨超賣593.69億，權值樣品開收漲跌分歧。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤中結構",
+        "綜合觀察",
+        "廣度",
+        "籌碼"
+      ],
+      "source_pipeline": "market_structure_composite_v2",
+      "url": "reports/2026-10-12/ai-research-daily-market-composite.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "-0.266%",
+          "color": "down"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "+0.279%",
+          "color": "up"
+        },
+        {
+          "label": "台指期日盤",
+          "value": "-0.081%",
+          "color": "down"
+        }
+      ]
+    },
     {
       "id": "options-annual-2026",
       "category": "txo",
