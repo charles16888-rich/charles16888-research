@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-09T20:14:14+08:00",
+  "generated_at": "2026-10-12T20:27:26+08:00",
   "source_id": "tw_moneylink_investor_conference",
   "source_url": "https://www.money-link.com.tw/stxba/imwcontent0.asp?page=INVC1&ID=INVC1",
   "events": [
@@ -18,14 +18,32 @@
     },
     {
       "event_date": "2026-10-12",
+      "code": "4934",
+      "name": "太極",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-10-12",
       "code": "2408",
       "name": "南亞科",
       "event_time": "15:00"
     },
     {
       "event_date": "2026-10-13",
+      "code": "2412",
+      "name": "中華電",
+      "event_time": "12:30"
+    },
+    {
+      "event_date": "2026-10-13",
       "code": "2221",
       "name": "大甲",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-10-13",
+      "code": "3570",
+      "name": "大塚",
       "event_time": "14:00"
     },
     {
@@ -36,14 +54,38 @@
     },
     {
       "event_date": "2026-10-13",
+      "code": "6465",
+      "name": "威潤",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-10-13",
+      "code": "1303",
+      "name": "南亞",
+      "event_time": "15:00"
+    },
+    {
+      "event_date": "2026-10-13",
       "code": "2356",
       "name": "英業達",
       "event_time": "15:00"
     },
     {
       "event_date": "2026-10-14",
+      "code": "2707",
+      "name": "晶華",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-10-14",
       "code": "7776",
       "name": "奧孟亞",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-10-14",
+      "code": "8222",
+      "name": "寶一",
       "event_time": "14:00"
     },
     {
@@ -113,6 +155,12 @@
       "event_time": "14:00"
     },
     {
+      "event_date": "2026-10-19",
+      "code": "3540",
+      "name": "曜越",
+      "event_time": "14:30"
+    },
+    {
       "event_date": "2026-10-21",
       "code": "1731",
       "name": "美吾華",
@@ -141,6 +189,12 @@
       "code": "3105",
       "name": "穩懋",
       "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-10-27",
+      "code": "3035",
+      "name": "智原",
+      "event_time": "14:30"
     },
     {
       "event_date": "2026-10-27",
@@ -180,9 +234,27 @@
     },
     {
       "event_date": "2026-11-04",
+      "code": "6412",
+      "name": "群電",
+      "event_time": "15:00"
+    },
+    {
+      "event_date": "2026-11-04",
       "code": "2395",
       "name": "研華",
       "event_time": "15:30"
+    },
+    {
+      "event_date": "2026-11-06",
+      "code": "6719",
+      "name": "力智",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-11-12",
+      "code": "3045",
+      "name": "台灣大",
+      "event_time": "16:00"
     }
   ]
 }
