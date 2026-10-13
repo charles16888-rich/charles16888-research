@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-13T20:10:53+08:00",
+  "updated_at": "2026-10-13T20:22:27+08:00",
   "today": "2026-10-13",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,45 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-10-13-ai-research-daily-market-composite",
+      "category": "ai-research",
+      "type": "daily-market-composite",
+      "date": "2026-10-13",
+      "time": "15:30",
+      "title": "夜盤收在低檔後低開單邊，櫃買遠弱於加權",
+      "title_em": "櫃買遠弱於加權",
+      "summary": "夜盤收在區間低檔後，日盤加權低開且開盤即全日高，收跌1.949%、位於區間下段。櫃買跌3.176%，遠弱於加權。法人合計淨賣超1984億與指數同向；權值樣品內部分化，台積電抗跌、廣達與聯發科開收上漲。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤中結構",
+        "綜合觀察",
+        "廣度",
+        "籌碼"
+      ],
+      "source_pipeline": "market_structure_composite_v2",
+      "url": "reports/2026-10-13/ai-research-daily-market-composite.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "-1.949%",
+          "color": "down"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "-3.176%",
+          "color": "down"
+        },
+        {
+          "label": "台指期日盤",
+          "value": "-1.843%",
+          "color": "down"
+        }
+      ]
+    },
     {
       "id": "options-annual-2026",
       "category": "txo",
