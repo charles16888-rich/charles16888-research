@@ -1,51 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-13T20:25:50+08:00",
+  "generated_at": "2026-10-14T20:24:16+08:00",
   "source_id": "tw_moneylink_investor_conference",
   "source_url": "https://www.money-link.com.tw/stxba/imwcontent0.asp?page=INVC1&ID=INVC1",
   "events": [
-    {
-      "event_date": "2026-10-13",
-      "code": "2412",
-      "name": "中華電",
-      "event_time": "12:30"
-    },
-    {
-      "event_date": "2026-10-13",
-      "code": "2221",
-      "name": "大甲",
-      "event_time": "14:00"
-    },
-    {
-      "event_date": "2026-10-13",
-      "code": "3570",
-      "name": "大塚",
-      "event_time": "14:00"
-    },
-    {
-      "event_date": "2026-10-13",
-      "code": "1725",
-      "name": "元禎",
-      "event_time": "14:30"
-    },
-    {
-      "event_date": "2026-10-13",
-      "code": "6465",
-      "name": "威潤",
-      "event_time": "14:30"
-    },
-    {
-      "event_date": "2026-10-13",
-      "code": "1303",
-      "name": "南亞",
-      "event_time": "15:00"
-    },
-    {
-      "event_date": "2026-10-13",
-      "code": "2356",
-      "name": "英業達",
-      "event_time": "15:00"
-    },
     {
       "event_date": "2026-10-14",
       "code": "1319",
@@ -126,6 +84,18 @@
     },
     {
       "event_date": "2026-10-15",
+      "code": "2317",
+      "name": "鴻海",
+      "event_time": "09:00"
+    },
+    {
+      "event_date": "2026-10-15",
+      "code": "2881",
+      "name": "富邦金",
+      "event_time": "10:00"
+    },
+    {
+      "event_date": "2026-10-15",
       "code": "1540",
       "name": "喬福",
       "event_time": "14:00"
@@ -156,6 +126,12 @@
     },
     {
       "event_date": "2026-10-16",
+      "code": "4566",
+      "name": "時碩工業",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-10-16",
       "code": "6414",
       "name": "樺漢",
       "event_time": "14:00"
@@ -177,6 +153,12 @@
       "code": "3540",
       "name": "曜越",
       "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-10-20",
+      "code": "2317",
+      "name": "鴻海",
+      "event_time": "15:00"
     },
     {
       "event_date": "2026-10-21",
@@ -228,6 +210,30 @@
     },
     {
       "event_date": "2026-10-28",
+      "code": "4966",
+      "name": "譜瑞-KY",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-10-28",
+      "code": "3718",
+      "name": "中光電投控",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-10-28",
+      "code": "5203",
+      "name": "訊連",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-10-28",
+      "code": "6510",
+      "name": "精測",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-10-28",
       "code": "2303",
       "name": "聯電",
       "event_time": "17:00"
@@ -249,6 +255,12 @@
       "code": "6202",
       "name": "盛群",
       "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-10-30",
+      "code": "4968",
+      "name": "立積",
+      "event_time": "15:30"
     },
     {
       "event_date": "2026-11-03",
