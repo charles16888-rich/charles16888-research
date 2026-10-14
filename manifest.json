@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-14T20:21:00+08:00",
+  "updated_at": "2026-10-14T20:21:40+08:00",
   "today": "2026-10-14",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,109 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-10-14-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-10-14",
+      "time": "20:00",
+      "title": "2026-10-14 族群週報",
+      "title_em": "塑化",
+      "summary": "涵蓋 2026-10-07 ~ 2026-10-14。週領漲 塑化 +14.05%，週領跌 電源供應 -12.93%；資金焦點 電子零組件。",
+      "tags": [
+        "塑化",
+        "電源供應",
+        "電子零組件",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-10-14/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "塑化 +14.05%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "電源供應 -12.93%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "電子零組件",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-10-14-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-10-14",
+      "time": "20:00",
+      "title": "2026-10-14 每日族群輪動雷達",
+      "title_em": "光通訊",
+      "summary": "今日相對升溫以 光通訊 最明顯，相對降溫以 鏡頭光學 壓力最大；今日轉強力道大於轉弱力道。",
+      "tags": [
+        "光通訊",
+        "鏡頭光學",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-10-14/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "光通訊 +6.27 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "鏡頭光學 -9.36 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-10-14-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-10-14",
+      "time": "20:00",
+      "title": "2026-10-14 族群盤後快報",
+      "title_em": "塑化",
+      "summary": "全 74 族群、成交 11231.2 億；領漲 塑化 +4.97%，領跌 鏡頭光學 -7.40%；漲多族群 67/74，全族群均漲 +1.13%。",
+      "tags": [
+        "塑化",
+        "鏡頭光學",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-10-14/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "塑化 +4.97%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "鏡頭光學 -7.40%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "6.2%",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "2026-10-14-ai-research-daily-market-composite",
       "category": "ai-research",
