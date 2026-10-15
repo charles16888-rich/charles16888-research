@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-15T20:21:03+08:00",
+  "updated_at": "2026-10-15T20:21:42+08:00",
   "today": "2026-10-15",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,109 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-10-15-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-10-15",
+      "time": "20:00",
+      "title": "2026-10-15 族群週報",
+      "title_em": "貨櫃航運",
+      "summary": "涵蓋 2026-10-08 ~ 2026-10-15。週領漲 貨櫃航運 +8.14%，週領跌 電源供應 -18.09%；資金焦點 電子零組件。",
+      "tags": [
+        "貨櫃航運",
+        "電源供應",
+        "電子零組件",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-10-15/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "貨櫃航運 +8.14%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "電源供應 -18.09%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "電子零組件",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-10-15-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-10-15",
+      "time": "20:00",
+      "title": "2026-10-15 每日族群輪動雷達",
+      "title_em": "電信服務",
+      "summary": "今日相對升溫以 電信服務 最明顯，相對降溫以 化合物半導體 壓力最大；今日轉弱力道大於轉強力道。",
+      "tags": [
+        "電信服務",
+        "化合物半導體",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-10-15/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "電信服務 +3.08 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "化合物半導體 -9.36 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-10-15-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-10-15",
+      "time": "20:00",
+      "title": "2026-10-15 族群盤後快報",
+      "title_em": "電信服務",
+      "summary": "全 74 族群、成交 14325.6 億；領漲 電信服務 +3.63%，領跌 面板級封裝FOPLP -8.94%；漲多族群 10/74，全族群均漲 -2.21%。",
+      "tags": [
+        "電信服務",
+        "面板級封裝FOPLP",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-10-15/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "電信服務 +3.63%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "面板級封裝FOPLP -8.94%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "0.2%",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "2026-10-15-ai-research-daily-market-composite",
       "category": "ai-research",
