@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-16T20:25:01+08:00",
+  "updated_at": "2026-10-16T20:27:33+08:00",
   "today": "2026-10-16",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,41 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "chip-concentration",
+      "category": "chips",
+      "type": "ranking",
+      "date": "2026-10-16",
+      "time": "21:00",
+      "title": "籌碼集中度 · 分點 Top 50 排行",
+      "title_em": "集中度",
+      "summary": "5 個時段 · 每邊 Top 50 · 過濾成交量 < 1,000 張。 今日買超集中 #1：5314 世紀* +64.8%。 賣超集中 #1：6139 亞翔 -49.0%。",
+      "tags": [
+        "籌碼",
+        "分點",
+        "集中度",
+        "排行榜"
+      ],
+      "source_pipeline": "stock_chip_crawler",
+      "url": "reports/chip-concentration.html",
+      "stats": [
+        {
+          "label": "時段數",
+          "value": "5",
+          "color": "neutral"
+        },
+        {
+          "label": "Top 買超",
+          "value": "5314 +65%",
+          "color": "up"
+        },
+        {
+          "label": "Top 賣超",
+          "value": "6139 -49%",
+          "color": "down"
+        }
+      ]
+    },
     {
       "id": "options-atm",
       "category": "txo",
@@ -614,41 +649,6 @@
           "label": "走勢",
           "value": "1-60日",
           "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "chip-concentration",
-      "category": "chips",
-      "type": "ranking",
-      "date": "2026-10-15",
-      "time": "21:00",
-      "title": "籌碼集中度 · 分點 Top 50 排行",
-      "title_em": "集中度",
-      "summary": "5 個時段 · 每邊 Top 50 · 過濾成交量 < 1,000 張。 今日買超集中 #1：2727 王品 +61.4%。 賣超集中 #1：0056 元大高股息 -69.1%。",
-      "tags": [
-        "籌碼",
-        "分點",
-        "集中度",
-        "排行榜"
-      ],
-      "source_pipeline": "stock_chip_crawler",
-      "url": "reports/chip-concentration.html",
-      "stats": [
-        {
-          "label": "時段數",
-          "value": "5",
-          "color": "neutral"
-        },
-        {
-          "label": "Top 買超",
-          "value": "2727 +61%",
-          "color": "up"
-        },
-        {
-          "label": "Top 賣超",
-          "value": "0056 -69%",
-          "color": "down"
         }
       ]
     },
