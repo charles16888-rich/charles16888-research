@@ -1,56 +1,14 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-15T20:24:21+08:00",
+  "generated_at": "2026-10-16T20:25:01+08:00",
   "source_id": "tw_moneylink_investor_conference",
   "source_url": "https://www.money-link.com.tw/stxba/imwcontent0.asp?page=INVC1&ID=INVC1",
   "events": [
     {
-      "event_date": "2026-10-15",
-      "code": "2317",
-      "name": "鴻海",
-      "event_time": "09:00"
-    },
-    {
-      "event_date": "2026-10-15",
-      "code": "2881",
-      "name": "富邦金",
-      "event_time": "10:00"
-    },
-    {
-      "event_date": "2026-10-15",
-      "code": "1540",
-      "name": "喬福",
-      "event_time": "14:00"
-    },
-    {
-      "event_date": "2026-10-15",
-      "code": "2330",
-      "name": "台積電",
-      "event_time": "14:00"
-    },
-    {
-      "event_date": "2026-10-15",
-      "code": "3224",
-      "name": "三顧",
-      "event_time": "14:00"
-    },
-    {
-      "event_date": "2026-10-15",
-      "code": "2402",
-      "name": "毅嘉",
-      "event_time": "14:30"
-    },
-    {
-      "event_date": "2026-10-15",
-      "code": "3230",
-      "name": "錦明",
-      "event_time": "14:30"
-    },
-    {
-      "event_date": "2026-10-15",
-      "code": "7754",
-      "name": "安基生技",
-      "event_time": "15:00"
+      "event_date": "2026-10-16",
+      "code": "6902",
+      "name": "GOGOLOOK",
+      "event_time": "10:30"
     },
     {
       "event_date": "2026-10-16",
@@ -75,6 +33,12 @@
       "code": "6657",
       "name": "華安",
       "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-10-19",
+      "code": "2474",
+      "name": "可成",
+      "event_time": "12:00"
     },
     {
       "event_date": "2026-10-19",
@@ -117,6 +81,12 @@
       "code": "4188",
       "name": "安克",
       "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-10-21",
+      "code": "3052",
+      "name": "夆典",
+      "event_time": "15:00"
     },
     {
       "event_date": "2026-10-21",
@@ -234,6 +204,24 @@
     },
     {
       "event_date": "2026-10-30",
+      "code": "4919",
+      "name": "新唐",
+      "event_time": "13:30"
+    },
+    {
+      "event_date": "2026-10-30",
+      "code": "8215",
+      "name": "明基材",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-10-30",
+      "code": "2454",
+      "name": "聯發科",
+      "event_time": "15:00"
+    },
+    {
+      "event_date": "2026-10-30",
       "code": "4968",
       "name": "立積",
       "event_time": "15:30"
@@ -287,6 +275,12 @@
       "event_time": "14:30"
     },
     {
+      "event_date": "2026-11-06",
+      "code": "8299",
+      "name": "群聯",
+      "event_time": "17:00"
+    },
+    {
       "event_date": "2026-11-10",
       "code": "1590",
       "name": "亞德客-KY",
@@ -297,6 +291,12 @@
       "code": "3045",
       "name": "台灣大",
       "event_time": "16:00"
+    },
+    {
+      "event_date": "2026-11-13",
+      "code": "7750",
+      "name": "新代",
+      "event_time": "14:00"
     },
     {
       "event_date": "2026-11-13",
