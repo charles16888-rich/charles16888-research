@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-16T20:21:46+08:00",
+  "updated_at": "2026-10-16T20:22:24+08:00",
   "today": "2026-10-16",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,109 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-10-16-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-10-16",
+      "time": "20:00",
+      "title": "2026-10-16 族群週報",
+      "title_em": "貨櫃航運",
+      "summary": "涵蓋 2026-10-12 ~ 2026-10-16。週領漲 貨櫃航運 +10.82%，週領跌 電源供應 -16.79%；資金焦點 晶圓代工。",
+      "tags": [
+        "貨櫃航運",
+        "電源供應",
+        "晶圓代工",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-10-16/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "貨櫃航運 +10.82%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "電源供應 -16.79%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "晶圓代工",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-10-16-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-10-16",
+      "time": "20:00",
+      "title": "2026-10-16 每日族群輪動雷達",
+      "title_em": "記憶體",
+      "summary": "今日相對升溫以 記憶體 最明顯，相對降溫以 鏡頭光學 壓力最大；今日轉強力道大於轉弱力道。",
+      "tags": [
+        "記憶體",
+        "鏡頭光學",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-10-16/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "記憶體 +5.47 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "鏡頭光學 -2.99 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-10-16-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-10-16",
+      "time": "20:00",
+      "title": "2026-10-16 族群盤後快報",
+      "title_em": "網通設備",
+      "summary": "全 74 族群、成交 11166.7 億；領漲 網通設備 +3.96%，領跌 鏡頭光學 -2.90%；漲多族群 64/74，全族群均漲 +0.72%。",
+      "tags": [
+        "網通設備",
+        "鏡頭光學",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-10-16/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "網通設備 +3.96%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "鏡頭光學 -2.90%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "5.5%",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "2026-10-16-ai-research-daily-market-composite",
       "category": "ai-research",
