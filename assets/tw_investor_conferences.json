@@ -1,38 +1,14 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-16T20:25:01+08:00",
+  "generated_at": "2026-10-19T20:26:34+08:00",
   "source_id": "tw_moneylink_investor_conference",
   "source_url": "https://www.money-link.com.tw/stxba/imwcontent0.asp?page=INVC1&ID=INVC1",
   "events": [
     {
-      "event_date": "2026-10-16",
-      "code": "6902",
-      "name": "GOGOLOOK",
-      "event_time": "10:30"
-    },
-    {
-      "event_date": "2026-10-16",
-      "code": "3531",
-      "name": "先益",
-      "event_time": "14:00"
-    },
-    {
-      "event_date": "2026-10-16",
-      "code": "4566",
-      "name": "時碩工業",
-      "event_time": "14:00"
-    },
-    {
-      "event_date": "2026-10-16",
-      "code": "6414",
-      "name": "樺漢",
-      "event_time": "14:00"
-    },
-    {
-      "event_date": "2026-10-16",
-      "code": "6657",
-      "name": "華安",
-      "event_time": "14:30"
+      "event_date": "2026-10-19",
+      "code": "6610",
+      "name": "安成生技",
+      "event_time": "07:30"
     },
     {
       "event_date": "2026-10-19",
@@ -60,9 +36,21 @@
     },
     {
       "event_date": "2026-10-20",
+      "code": "3325",
+      "name": "旭品",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-10-20",
       "code": "2317",
       "name": "鴻海",
       "event_time": "15:00"
+    },
+    {
+      "event_date": "2026-10-21",
+      "code": "4102",
+      "name": "永日",
+      "event_time": "14:00"
     },
     {
       "event_date": "2026-10-21",
@@ -210,6 +198,12 @@
     },
     {
       "event_date": "2026-10-30",
+      "code": "2301",
+      "name": "光寶科",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-10-30",
       "code": "8215",
       "name": "明基材",
       "event_time": "14:30"
@@ -276,6 +270,12 @@
     },
     {
       "event_date": "2026-11-06",
+      "code": "6967",
+      "name": "汎瑋材料",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-11-06",
       "code": "8299",
       "name": "群聯",
       "event_time": "17:00"
@@ -303,6 +303,18 @@
       "code": "3529",
       "name": "力旺",
       "event_time": "16:00"
+    },
+    {
+      "event_date": "2026-11-17",
+      "code": "1730",
+      "name": "花仙子",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-11-17",
+      "code": "6538",
+      "name": "倉和",
+      "event_time": "14:30"
     }
   ]
 }
