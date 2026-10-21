@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-21T20:11:31+08:00",
+  "updated_at": "2026-10-21T20:13:15+08:00",
   "today": "2026-10-21",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,109 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-10-21-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-10-21",
+      "time": "20:00",
+      "title": "2026-10-21 族群週報",
+      "title_em": "電信服務",
+      "summary": "涵蓋 2026-10-15 ~ 2026-10-21。週領漲 電信服務 +3.53%，週領跌 塑化 -9.16%；資金焦點 電子零組件。",
+      "tags": [
+        "電信服務",
+        "塑化",
+        "電子零組件",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-10-21/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "電信服務 +3.53%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "塑化 -9.16%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "電子零組件",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-10-21-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-10-21",
+      "time": "20:00",
+      "title": "2026-10-21 每日族群輪動雷達",
+      "title_em": "鏡頭光學",
+      "summary": "今日相對升溫以 鏡頭光學 最明顯，相對降溫以 自行車 壓力最大；今日轉強力道大於轉弱力道。",
+      "tags": [
+        "鏡頭光學",
+        "自行車",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-10-21/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "鏡頭光學 +9.52 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "自行車 -3.92 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-10-21-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-10-21",
+      "time": "20:00",
+      "title": "2026-10-21 族群盤後快報",
+      "title_em": "太陽能",
+      "summary": "全 74 族群、成交 10059.1 億；領漲 太陽能 +6.59%，領跌 自行車 -3.42%；漲多族群 53/74，全族群均漲 +1.07%。",
+      "tags": [
+        "太陽能",
+        "自行車",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-10-21/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "太陽能 +6.59%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "自行車 -3.42%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "4.9%",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "options-annual-2026",
       "category": "txo",
