@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-22T20:11:03+08:00",
+  "updated_at": "2026-10-22T20:24:03+08:00",
   "today": "2026-10-22",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,45 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-10-22-ai-research-daily-market-composite",
+      "category": "ai-research",
+      "type": "daily-market-composite",
+      "date": "2026-10-22",
+      "time": "15:30",
+      "title": "早盤衝高失敗後階梯走低，櫃買與權值樣品同步擴大弱勢",
+      "title_em": "衝高失敗後階梯走低",
+      "summary": "夜盤偏強後日盤高開衝高失敗，加權收在日低跌1.805%，櫃買跌3.472%明顯更弱。權值樣品中聯發科、日月光、緯穎、台達電開收跌逾4.8%；三大法人合計淨超額-1001.6億與結構同向。廣度與基差本日packet無此欄。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤中結構",
+        "綜合觀察",
+        "廣度",
+        "籌碼"
+      ],
+      "source_pipeline": "market_structure_composite_v2",
+      "url": "reports/2026-10-22/ai-research-daily-market-composite.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "-1.805%",
+          "color": "down"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "-3.472%",
+          "color": "down"
+        },
+        {
+          "label": "台指期日盤",
+          "value": "-1.891%",
+          "color": "down"
+        }
+      ]
+    },
     {
       "id": "options-annual-2026",
       "category": "txo",
