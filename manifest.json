@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-26T20:13:51+08:00",
+  "updated_at": "2026-10-26T20:15:35+08:00",
   "today": "2026-10-26",
   "volume_number": 1,
   "market_summary": {
@@ -353,20 +353,6 @@
           "value": "個股",
           "color": "neutral"
         }
-      ]
-    },
-    {
-      "id": "tri-source-lamp",
-      "category": "chips",
-      "title": "三源混合燈號",
-      "subtitle": "2026-10-22 · 三同買 0 / 三同賣 2",
-      "date": "2026-10-22",
-      "url": "reports/tri-source-lamp.html",
-      "tags": [
-        "分點",
-        "大股東",
-        "三大法人",
-        "燈號"
       ]
     },
     {
@@ -861,6 +847,20 @@
           "value": "個股",
           "color": "neutral"
         }
+      ]
+    },
+    {
+      "id": "tri-source-lamp",
+      "category": "chips",
+      "title": "三源混合燈號",
+      "subtitle": "2026-10-22 · 三同買 0 / 三同賣 2",
+      "date": "2026-10-22",
+      "url": "reports/tri-source-lamp.html",
+      "tags": [
+        "分點",
+        "大股東",
+        "三大法人",
+        "燈號"
       ]
     },
     {
