@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-26T20:10:59+08:00",
+  "generated_at": "2026-10-27T20:21:56+08:00",
   "source_id": "tw_moneylink_investor_conference",
   "source_url": "https://www.money-link.com.tw/stxba/imwcontent0.asp?page=INVC1&ID=INVC1",
   "events": [
@@ -38,12 +38,6 @@
       "event_date": "2026-10-27",
       "code": "4169",
       "name": "泰宗",
-      "event_time": "14:30"
-    },
-    {
-      "event_date": "2026-10-27",
-      "code": "6125",
-      "name": "廣運",
       "event_time": "14:30"
     },
     {
@@ -86,6 +80,12 @@
       "event_date": "2026-10-28",
       "code": "4966",
       "name": "譜瑞-KY",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-10-28",
+      "code": "6020",
+      "name": "大展證",
       "event_time": "14:00"
     },
     {
@@ -168,6 +168,18 @@
     },
     {
       "event_date": "2026-10-29",
+      "code": "6581",
+      "name": "鋼聯",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-10-29",
+      "code": "1467",
+      "name": "南緯",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-10-29",
       "code": "6202",
       "name": "盛群",
       "event_time": "14:30"
@@ -186,6 +198,12 @@
     },
     {
       "event_date": "2026-10-29",
+      "code": "6109",
+      "name": "亞元",
+      "event_time": "15:00"
+    },
+    {
+      "event_date": "2026-10-29",
       "code": "1590",
       "name": "亞德客-KY",
       "event_time": "16:00"
@@ -200,6 +218,12 @@
       "event_date": "2026-10-29",
       "code": "2379",
       "name": "瑞昱",
+      "event_time": "16:00"
+    },
+    {
+      "event_date": "2026-10-29",
+      "code": "8467",
+      "name": "波力-KY",
       "event_time": "16:00"
     },
     {
@@ -258,6 +282,12 @@
     },
     {
       "event_date": "2026-11-02",
+      "code": "3006",
+      "name": "晶豪科",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-11-02",
       "code": "4967",
       "name": "十銓",
       "event_time": "14:30"
@@ -266,6 +296,12 @@
       "event_date": "2026-11-03",
       "code": "6561",
       "name": "是方",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-11-03",
+      "code": "6945",
+      "name": "圓祥生技",
       "event_time": "14:30"
     },
     {
@@ -342,6 +378,12 @@
     },
     {
       "event_date": "2026-11-05",
+      "code": "5484",
+      "name": "慧友",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-11-05",
       "code": "2458",
       "name": "義隆",
       "event_time": "14:30"
@@ -368,6 +410,12 @@
       "event_date": "2026-11-06",
       "code": "6643",
       "name": "M31",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-11-06",
+      "code": "8210",
+      "name": "勤誠",
       "event_time": "14:00"
     },
     {
@@ -408,6 +456,18 @@
     },
     {
       "event_date": "2026-11-09",
+      "code": "8454",
+      "name": "富邦媒",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-11-09",
+      "code": "3715",
+      "name": "定穎投控",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-11-09",
       "code": "4438",
       "name": "廣越",
       "event_time": "14:30"
@@ -426,9 +486,21 @@
     },
     {
       "event_date": "2026-11-10",
+      "code": "2049",
+      "name": "上銀",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-11-10",
       "code": "3090",
       "name": "日電貿",
       "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-11-10",
+      "code": "1560",
+      "name": "中砂",
+      "event_time": "15:00"
     },
     {
       "event_date": "2026-11-12",
@@ -459,6 +531,12 @@
       "code": "3529",
       "name": "力旺",
       "event_time": "16:00"
+    },
+    {
+      "event_date": "2026-11-16",
+      "code": "2459",
+      "name": "敦吉",
+      "event_time": "14:30"
     },
     {
       "event_date": "2026-11-16",
@@ -501,6 +579,18 @@
       "code": "1323",
       "name": "永裕",
       "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-11-27",
+      "code": "2882",
+      "name": "國泰金",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-11-27",
+      "code": "2892",
+      "name": "第一金",
+      "event_time": "15:00"
     }
   ]
 }
