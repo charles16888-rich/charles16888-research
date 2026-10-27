@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-27T20:21:12+08:00",
+  "updated_at": "2026-10-27T20:21:20+08:00",
   "today": "2026-10-27",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,109 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-10-27-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-10-27",
+      "time": "20:00",
+      "title": "2026-10-27 族群週報",
+      "title_em": "太陽能",
+      "summary": "涵蓋 2026-10-19 ~ 2026-10-27。週領漲 太陽能 +9.51%，週領跌 矽晶圓 -9.06%；資金焦點 電子零組件。",
+      "tags": [
+        "太陽能",
+        "矽晶圓",
+        "電子零組件",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-10-27/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "太陽能 +9.51%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "矽晶圓 -9.06%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "電子零組件",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-10-27-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-10-27",
+      "time": "20:00",
+      "title": "2026-10-27 每日族群輪動雷達",
+      "title_em": "自行車",
+      "summary": "今日相對升溫以 自行車 最明顯，相對降溫以 PCB_載板 壓力最大；今日轉強力道大於轉弱力道。",
+      "tags": [
+        "自行車",
+        "PCB_載板",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-10-27/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "自行車 +4.20 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "PCB_載板 -3.59 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-10-27-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-10-27",
+      "time": "20:00",
+      "title": "2026-10-27 族群盤後快報",
+      "title_em": "記憶體",
+      "summary": "全 74 族群、成交 10878.0 億；領漲 記憶體 +3.22%，領跌 PCB_載板 -4.28%；漲多族群 41/74，全族群均漲 -0.04%。",
+      "tags": [
+        "記憶體",
+        "PCB_載板",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-10-27/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "記憶體 +3.22%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "PCB_載板 -4.28%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "1.0%",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "2026-10-27-ai-research-daily-market-composite",
       "category": "ai-research",
