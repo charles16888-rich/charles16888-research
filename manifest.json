@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-28T20:21:11+08:00",
+  "updated_at": "2026-10-28T20:21:25+08:00",
   "today": "2026-10-28",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,109 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-10-28-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-10-28",
+      "time": "20:00",
+      "title": "2026-10-28 族群週報",
+      "title_em": "太陽能",
+      "summary": "涵蓋 2026-10-20 ~ 2026-10-28。週領漲 太陽能 +16.35%，週領跌 自行車 -9.41%；資金焦點 電子零組件。",
+      "tags": [
+        "太陽能",
+        "自行車",
+        "電子零組件",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-10-28/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "太陽能 +16.35%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "自行車 -9.41%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "電子零組件",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-10-28-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-10-28",
+      "time": "20:00",
+      "title": "2026-10-28 每日族群輪動雷達",
+      "title_em": "AI_ASIC設計",
+      "summary": "今日相對升溫以 AI_ASIC設計 最明顯，相對降溫以 電信服務 壓力最大；今日轉強力道大於轉弱力道。",
+      "tags": [
+        "AI_ASIC設計",
+        "電信服務",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-10-28/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "AI_ASIC設計 +8.87 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "電信服務 -1.85 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-10-28-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-10-28",
+      "time": "20:00",
+      "title": "2026-10-28 族群盤後快報",
+      "title_em": "AI_ASIC設計",
+      "summary": "全 74 族群、成交 8513.6 億；領漲 AI_ASIC設計 +8.03%，領跌 電信服務 -1.40%；漲多族群 55/74，全族群均漲 +1.60%。",
+      "tags": [
+        "AI_ASIC設計",
+        "電信服務",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-10-28/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "AI_ASIC設計 +8.03%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "電信服務 -1.40%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "12.8%",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "2026-10-28-ai-research-daily-market-composite",
       "category": "ai-research",
