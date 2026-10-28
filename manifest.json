@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-28T20:10:25+08:00",
+  "updated_at": "2026-10-28T20:21:11+08:00",
   "today": "2026-10-28",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,45 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-10-28-ai-research-daily-market-composite",
+      "category": "ai-research",
+      "type": "daily-market-composite",
+      "date": "2026-10-28",
+      "time": "15:30",
+      "title": "夜盤墊高後高開高走，櫃買收在全日高點、權值樣品內部分化",
+      "title_em": "櫃買收在全日高點",
+      "summary": "夜盤墊高後高開高走：加權收47035.58、較前收+2.038%、區間位置96.2%；櫃買+4.064%收在全日高點。法人合計淨超額298.95億與指數同向，權值樣品內部分化（台積電開收僅+0.207%，聯發科、日月光偏強）。廣度與基差本日 packet 無此欄。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤中結構",
+        "綜合觀察",
+        "廣度",
+        "籌碼"
+      ],
+      "source_pipeline": "market_structure_composite_v2",
+      "url": "reports/2026-10-28/ai-research-daily-market-composite.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "+2.038%",
+          "color": "up"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "+4.064%",
+          "color": "up"
+        },
+        {
+          "label": "台指期日盤",
+          "value": "+2.524%",
+          "color": "up"
+        }
+      ]
+    },
     {
       "id": "options-annual-2026",
       "category": "txo",
