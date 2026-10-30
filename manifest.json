@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-30T20:10:21+08:00",
+  "updated_at": "2026-10-30T20:21:01+08:00",
   "today": "2026-10-30",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,45 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-10-30-ai-research-daily-market-composite",
+      "category": "ai-research",
+      "type": "daily-market-composite",
+      "date": "2026-10-30",
+      "time": "15:30",
+      "title": "開盤即高、早盤急殺後弱反彈，櫃買遠弱於加權",
+      "title_em": "開盤即高、早盤急殺",
+      "summary": "夜盤壓低後現貨開盤即高、早盤急殺，加權收跌2.494%、櫃買跌4.417%。法人合計淨超額-1,398.44億與指數同向；權值樣品中聯發科、廣達開收翻紅，與指數路徑背離。廣度與基差本日packet無此欄。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤中結構",
+        "綜合觀察",
+        "廣度",
+        "籌碼"
+      ],
+      "source_pipeline": "market_structure_composite_v2",
+      "url": "reports/2026-10-30/ai-research-daily-market-composite.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "-2.494%",
+          "color": "down"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "-4.417%",
+          "color": "down"
+        },
+        {
+          "label": "台指期日盤",
+          "value": "-2.740%",
+          "color": "down"
+        }
+      ]
+    },
     {
       "id": "options-annual-2026",
       "category": "txo",
