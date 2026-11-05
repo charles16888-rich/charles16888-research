@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-05T20:20:01+08:00",
+  "updated_at": "2026-11-05T20:20:12+08:00",
   "today": "2026-11-05",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,109 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-11-05-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-11-05",
+      "time": "20:00",
+      "title": "2026-11-05 族群週報",
+      "title_em": "空運",
+      "summary": "涵蓋 2026-10-30 ~ 2026-11-05。週領漲 空運 +6.22%，週領跌 鏡頭光學 -25.89%；資金焦點 晶圓代工。",
+      "tags": [
+        "空運",
+        "鏡頭光學",
+        "晶圓代工",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-11-05/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "空運 +6.22%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "鏡頭光學 -25.89%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "晶圓代工",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-05-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-11-05",
+      "time": "20:00",
+      "title": "2026-11-05 每日族群輪動雷達",
+      "title_em": "空運",
+      "summary": "今日相對升溫以 空運 最明顯，相對降溫以 化合物半導體 壓力最大；今日轉弱力道大於轉強力道。",
+      "tags": [
+        "空運",
+        "化合物半導體",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-11-05/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "空運 +3.91 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "化合物半導體 -6.50 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-05-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-11-05",
+      "time": "20:00",
+      "title": "2026-11-05 族群盤後快報",
+      "title_em": "空運",
+      "summary": "全 74 族群、成交 9788.2 億；領漲 空運 +4.35%，領跌 ABF載板 -9.96%；漲多族群 4/74，全族群均漲 -3.15%。",
+      "tags": [
+        "空運",
+        "ABF載板",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-11-05/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "空運 +4.35%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "ABF載板 -9.96%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "0.2%",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "2026-11-05-ai-research-daily-market-composite",
       "category": "ai-research",
