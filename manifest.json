@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-06T20:18:53+08:00",
+  "updated_at": "2026-11-06T20:19:02+08:00",
   "today": "2026-11-06",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,109 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-11-06-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-11-06",
+      "time": "20:00",
+      "title": "2026-11-06 族群週報",
+      "title_em": "自行車",
+      "summary": "涵蓋 2026-11-02 ~ 2026-11-06。週領漲 自行車 +3.79%，週領跌 ABF載板 -26.98%；資金焦點 晶圓代工。",
+      "tags": [
+        "自行車",
+        "ABF載板",
+        "晶圓代工",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-11-06/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "自行車 +3.79%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "ABF載板 -26.98%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "晶圓代工",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-06-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-11-06",
+      "time": "20:00",
+      "title": "2026-11-06 每日族群輪動雷達",
+      "title_em": "矽晶圓",
+      "summary": "今日相對升溫以 矽晶圓 最明顯，相對降溫以 ABF載板 壓力最大；今日轉弱力道大於轉強力道。",
+      "tags": [
+        "矽晶圓",
+        "ABF載板",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-11-06/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "矽晶圓 +4.49 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "ABF載板 -4.55 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-06-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-11-06",
+      "time": "20:00",
+      "title": "2026-11-06 族群盤後快報",
+      "title_em": "太陽能",
+      "summary": "全 74 族群、成交 12069.0 億；領漲 太陽能 +3.54%，領跌 ABF載板 -9.48%；漲多族群 4/74，全族群均漲 -3.15%。",
+      "tags": [
+        "太陽能",
+        "ABF載板",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-11-06/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "太陽能 +3.54%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "ABF載板 -9.48%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "0.2%",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "2026-11-06-ai-research-daily-market-composite",
       "category": "ai-research",
