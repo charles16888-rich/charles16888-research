@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-09T20:10:12+08:00",
+  "updated_at": "2026-11-09T20:18:50+08:00",
   "today": "2026-11-09",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,109 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-11-09-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-11-09",
+      "time": "20:00",
+      "title": "2026-11-09 族群週報",
+      "title_em": "太陽能",
+      "summary": "涵蓋 2026-11-03 ~ 2026-11-09。週領漲 太陽能 +8.62%，週領跌 ABF載板 -23.17%；資金焦點 晶圓代工。",
+      "tags": [
+        "太陽能",
+        "ABF載板",
+        "晶圓代工",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-11-09/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "太陽能 +8.62%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "ABF載板 -23.17%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "晶圓代工",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-09-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-11-09",
+      "time": "20:00",
+      "title": "2026-11-09 每日族群輪動雷達",
+      "title_em": "電源供應",
+      "summary": "今日相對升溫以 電源供應 最明顯，相對降溫以 電信服務 壓力最大；今日轉強力道大於轉弱力道。",
+      "tags": [
+        "電源供應",
+        "電信服務",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-11-09/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "電源供應 +14.50 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "電信服務 -3.21 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-09-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-11-09",
+      "time": "20:00",
+      "title": "2026-11-09 族群盤後快報",
+      "title_em": "電源供應",
+      "summary": "全 74 族群、成交 8661.4 億；領漲 電源供應 +9.95%，領跌 電信服務 -3.20%；漲多族群 68/74，全族群均漲 +3.28%。",
+      "tags": [
+        "電源供應",
+        "電信服務",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-11-09/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "電源供應 +9.95%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "電信服務 -3.20%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "24.7%",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "seller-market-2026-11-09",
       "category": "stocks",
