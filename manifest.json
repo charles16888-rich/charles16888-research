@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-10T20:20:12+08:00",
+  "updated_at": "2026-11-10T20:20:22+08:00",
   "today": "2026-11-10",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,109 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-11-10-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-11-10",
+      "time": "20:00",
+      "title": "2026-11-10 族群週報",
+      "title_em": "太陽能",
+      "summary": "涵蓋 2026-11-04 ~ 2026-11-10。週領漲 太陽能 +13.19%，週領跌 ABF載板 -7.76%；資金焦點 晶圓代工。",
+      "tags": [
+        "太陽能",
+        "ABF載板",
+        "晶圓代工",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-11-10/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "太陽能 +13.19%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "ABF載板 -7.76%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "晶圓代工",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-10-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-11-10",
+      "time": "20:00",
+      "title": "2026-11-10 每日族群輪動雷達",
+      "title_em": "ABF載板",
+      "summary": "今日相對升溫以 ABF載板 最明顯，相對降溫以 自行車 壓力最大；今日轉強力道大於轉弱力道。",
+      "tags": [
+        "ABF載板",
+        "自行車",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-11-10/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "ABF載板 +13.30 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "自行車 -5.29 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-10-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-11-10",
+      "time": "20:00",
+      "title": "2026-11-10 族群盤後快報",
+      "title_em": "電源供應",
+      "summary": "全 74 族群、成交 11261.1 億；領漲 電源供應 +9.91%，領跌 自行車 -4.32%；漲多族群 43/74，全族群均漲 +1.26%。",
+      "tags": [
+        "電源供應",
+        "自行車",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-11-10/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "電源供應 +9.91%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "自行車 -4.32%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "14.1%",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "2026-11-10-ai-research-daily-market-composite",
       "category": "ai-research",
