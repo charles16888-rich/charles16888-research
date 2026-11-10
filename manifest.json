@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-10T20:10:22+08:00",
+  "updated_at": "2026-11-10T20:20:12+08:00",
   "today": "2026-11-10",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,45 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-11-10-ai-research-daily-market-composite",
+      "category": "ai-research",
+      "type": "daily-market-composite",
+      "date": "2026-11-10",
+      "time": "15:30",
+      "title": "夜盤高收領銜跳空，早盤衝高午盤回測，櫃買更強、期現路徑分化",
+      "title_em": "期現路徑分化",
+      "summary": "夜盤台指期自低檔翻升、收在區間94.1%。日盤加權跳空1.125%後早盤衝高、11:46見低再收復，收漲2.521%；櫃買更強漲3.416%且未跌破首根低點。期貨開高走平、法人合計賣超，與現貨上漲背離。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤中結構",
+        "綜合觀察",
+        "廣度",
+        "籌碼"
+      ],
+      "source_pipeline": "market_structure_composite_v2",
+      "url": "reports/2026-11-10/ai-research-daily-market-composite.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "+2.521%",
+          "color": "up"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "+3.416%",
+          "color": "up"
+        },
+        {
+          "label": "台指期日盤",
+          "value": "+2.897%",
+          "color": "up"
+        }
+      ]
+    },
     {
       "id": "options-annual-2026",
       "category": "txo",
@@ -574,6 +613,45 @@
         {
           "label": "6月營收",
           "value": "0",
+          "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-09-ai-research-daily-market-composite",
+      "category": "ai-research",
+      "type": "daily-market-composite",
+      "date": "2026-11-09",
+      "time": "15:30",
+      "title": "早盤單邊推升、櫃買收近高點，廣度熱絡與外資淨超額背離",
+      "title_em": "廣度熱絡與外資淨超額背離",
+      "summary": "加權高開1.626%後開盤即為日低，午前單邊推升至10:35日高，午後回落收在區間65.7%。櫃買更強、收近高點。廣度全面偏多，但外資與自營商淨超額為負、期現折價，價格與籌碼不同向。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤中結構",
+        "綜合觀察",
+        "廣度",
+        "籌碼"
+      ],
+      "source_pipeline": "market_structure_composite_v2",
+      "url": "reports/2026-11-09/ai-research-daily-market-composite.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "+4.937%",
+          "color": "up"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "+5.904%",
+          "color": "up"
+        },
+        {
+          "label": "台指期日盤",
+          "value": "+4.115%",
           "color": "up"
         }
       ]
