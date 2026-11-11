@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-11T20:10:20+08:00",
+  "updated_at": "2026-11-11T20:20:57+08:00",
   "today": "2026-11-11",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,45 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-11-11-ai-research-daily-market-composite",
+      "category": "ai-research",
+      "type": "daily-market-composite",
+      "date": "2026-11-11",
+      "time": "15:30",
+      "title": "高開回測後階梯走高，加權與櫃買同收全日高",
+      "title_em": "同收全日高",
+      "summary": "加權高開0.992%後於09:12見全日低，隨後階梯走高，13:30收在區間上緣44257.15、較前收+3.618%；櫃買同樣收在全日高。法人合計淨超買202.56億，外資小幅淨超賣；權值樣品中台積電、聯發科、聯電收高，緯穎開收為負。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤中結構",
+        "綜合觀察",
+        "廣度",
+        "籌碼"
+      ],
+      "source_pipeline": "market_structure_composite_v2",
+      "url": "reports/2026-11-11/ai-research-daily-market-composite.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "+3.618%",
+          "color": "up"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "+3.346%",
+          "color": "up"
+        },
+        {
+          "label": "台指期日盤",
+          "value": "+3.444%",
+          "color": "up"
+        }
+      ]
+    },
     {
       "id": "options-annual-2026",
       "category": "txo",
