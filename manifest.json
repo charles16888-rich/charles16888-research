@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-13T20:20:16+08:00",
+  "updated_at": "2026-11-13T20:20:28+08:00",
   "today": "2026-11-13",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,109 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-11-13-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-11-13",
+      "time": "20:00",
+      "title": "2026-11-13 族群週報",
+      "title_em": "AI_ASIC設計",
+      "summary": "涵蓋 2026-11-09 ~ 2026-11-13。週領漲 AI_ASIC設計 +29.20%，週領跌 自行車 -3.64%；資金焦點 晶圓代工。",
+      "tags": [
+        "AI_ASIC設計",
+        "自行車",
+        "晶圓代工",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-11-13/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "AI_ASIC設計 +29.20%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "自行車 -3.64%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "晶圓代工",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-13-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-11-13",
+      "time": "20:00",
+      "title": "2026-11-13 每日族群輪動雷達",
+      "title_em": "AI_ASIC設計",
+      "summary": "今日相對升溫以 AI_ASIC設計 最明顯，相對降溫以 太陽能 壓力最大；今日轉強力道大於轉弱力道。",
+      "tags": [
+        "AI_ASIC設計",
+        "太陽能",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-11-13/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "AI_ASIC設計 +6.33 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "太陽能 -7.04 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-13-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-11-13",
+      "time": "20:00",
+      "title": "2026-11-13 族群盤後快報",
+      "title_em": "AI_ASIC設計",
+      "summary": "全 74 族群、成交 10577.6 億；領漲 AI_ASIC設計 +8.73%，領跌 太陽能 -4.85%；漲多族群 68/74，全族群均漲 +1.58%。",
+      "tags": [
+        "AI_ASIC設計",
+        "太陽能",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-11-13/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "AI_ASIC設計 +8.73%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "太陽能 -4.85%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "8.4%",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "2026-11-13-ai-research-daily-market-composite",
       "category": "ai-research",
