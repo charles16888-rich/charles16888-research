@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-17T20:23:35+08:00",
+  "updated_at": "2026-11-17T20:25:18+08:00",
   "today": "2026-11-17",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,42 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "three-factor-ranking",
+      "category": "chips",
+      "type": "ranking",
+      "date": "2026-11-17",
+      "time": "21:10",
+      "title": "三因子波段排行榜",
+      "title_em": "外資×營收×強勢",
+      "summary": "外資連買 >= 3 日、最新月營收創高、20/60 日趨勢仍強。 本次三因子同步 0 檔。",
+      "tags": [
+        "波段",
+        "外資連買",
+        "營收創高",
+        "強者恆強",
+        "排行榜"
+      ],
+      "source_pipeline": "stock_chip_crawler+mops_index",
+      "url": "reports/three-factor-ranking.html",
+      "stats": [
+        {
+          "label": "三因子同步",
+          "value": "0 檔",
+          "color": "up"
+        },
+        {
+          "label": "營收期別",
+          "value": "2026-10",
+          "color": "neutral"
+        },
+        {
+          "label": "榜首",
+          "value": "—",
+          "color": "up"
+        }
+      ]
+    },
     {
       "id": "chip-concentration",
       "category": "chips",
@@ -439,6 +475,20 @@
       ]
     },
     {
+      "id": "tri-source-lamp",
+      "category": "chips",
+      "title": "三源混合燈號",
+      "subtitle": "2026-11-17 · 三同買 6 / 三同賣 0",
+      "date": "2026-11-17",
+      "url": "reports/tri-source-lamp.html",
+      "tags": [
+        "分點",
+        "大股東",
+        "三大法人",
+        "燈號"
+      ]
+    },
+    {
       "id": "high-price-watch",
       "category": "stocks",
       "type": "high_price_watch",
@@ -505,42 +555,6 @@
         {
           "label": "三率完整",
           "value": "556",
-          "color": "up"
-        }
-      ]
-    },
-    {
-      "id": "three-factor-ranking",
-      "category": "chips",
-      "type": "ranking",
-      "date": "2026-11-16",
-      "time": "21:10",
-      "title": "三因子波段排行榜",
-      "title_em": "外資×營收×強勢",
-      "summary": "外資連買 >= 3 日、最新月營收創高、20/60 日趨勢仍強。 本次三因子同步 3 檔。 榜首：5230 雷笛克光學，外資連買 8 日，營收 YoY +22.7%，前 20 日 +19.6%。",
-      "tags": [
-        "波段",
-        "外資連買",
-        "營收創高",
-        "強者恆強",
-        "排行榜"
-      ],
-      "source_pipeline": "stock_chip_crawler+mops_index",
-      "url": "reports/three-factor-ranking.html",
-      "stats": [
-        {
-          "label": "三因子同步",
-          "value": "3 檔",
-          "color": "up"
-        },
-        {
-          "label": "營收期別",
-          "value": "2026-10",
-          "color": "neutral"
-        },
-        {
-          "label": "榜首",
-          "value": "5230 78.3",
           "color": "up"
         }
       ]
@@ -788,20 +802,6 @@
           "value": "個股",
           "color": "neutral"
         }
-      ]
-    },
-    {
-      "id": "tri-source-lamp",
-      "category": "chips",
-      "title": "三源混合燈號",
-      "subtitle": "2026-11-17 · 三同買 6 / 三同賣 0",
-      "date": "2026-11-17",
-      "url": "reports/tri-source-lamp.html",
-      "tags": [
-        "分點",
-        "大股東",
-        "三大法人",
-        "燈號"
       ]
     },
     {
@@ -1146,6 +1146,19 @@
           "value": "個股",
           "color": "neutral"
         }
+      ]
+    },
+    {
+      "id": "shareholder-divergence",
+      "category": "chips",
+      "title": "大股東 vs 股價背離掃描",
+      "subtitle": "2026-11-06 → 2026-11-13 週對週 · 2028 檔",
+      "date": "2026-11-13",
+      "url": "reports/shareholder-divergence.html",
+      "tags": [
+        "大股東",
+        "TDCC",
+        "背離"
       ]
     },
     {
@@ -2180,19 +2193,6 @@
           "value": "個股",
           "color": "neutral"
         }
-      ]
-    },
-    {
-      "id": "shareholder-divergence",
-      "category": "chips",
-      "title": "大股東 vs 股價背離掃描",
-      "subtitle": "2026-11-06 → 2026-11-13 週對週 · 2028 檔",
-      "date": "2026-11-13",
-      "url": "reports/shareholder-divergence.html",
-      "tags": [
-        "大股東",
-        "TDCC",
-        "背離"
       ]
     },
     {
