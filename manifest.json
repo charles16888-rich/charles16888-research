@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-18T20:17:38+08:00",
+  "updated_at": "2026-11-18T20:17:48+08:00",
   "today": "2026-11-18",
   "volume_number": 1,
   "market_summary": {
@@ -56,6 +56,109 @@
           "label": "台指期日盤",
           "value": "-0.12%",
           "color": "down"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-18-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-11-18",
+      "time": "20:00",
+      "title": "2026-11-18 族群週報",
+      "title_em": "連接器",
+      "summary": "涵蓋 2026-11-12 ~ 2026-11-18。週領漲 連接器 +1.01%，週領跌 ABF載板 -24.49%；資金焦點 晶圓代工。",
+      "tags": [
+        "連接器",
+        "ABF載板",
+        "晶圓代工",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-11-18/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "連接器 +1.01%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "ABF載板 -24.49%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "晶圓代工",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-18-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-11-18",
+      "time": "20:00",
+      "title": "2026-11-18 每日族群輪動雷達",
+      "title_em": "ABF載板",
+      "summary": "今日相對升溫以 ABF載板 最明顯，相對降溫以 資訊服務 壓力最大；今日轉強力道大於轉弱力道。",
+      "tags": [
+        "ABF載板",
+        "資訊服務",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-11-18/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "ABF載板 +7.99 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "資訊服務 -4.09 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-18-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-11-18",
+      "time": "20:00",
+      "title": "2026-11-18 族群盤後快報",
+      "title_em": "連接器",
+      "summary": "全 74 族群、成交 11392.4 億；領漲 連接器 +4.25%，領跌 金控 -3.61%；漲多族群 43/74，全族群均漲 +0.21%。",
+      "tags": [
+        "連接器",
+        "金控",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-11-18/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "連接器 +4.25%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "金控 -3.61%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "7.4%",
+          "color": "neutral"
         }
       ]
     },
