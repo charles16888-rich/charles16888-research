@@ -262,7 +262,9 @@
           "id": "forecast",
           "name_zh": "財測追蹤",
           "match_id_prefix": [
-            "q2-forecast-2026q2"
+            "q3-forecast-2026q3",
+            "q2-forecast-2026q2",
+            "q3-july-mops-compare"
           ]
         }
       ],
