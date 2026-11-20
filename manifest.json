@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-20T20:10:21+08:00",
+  "updated_at": "2026-11-20T20:25:27+08:00",
   "today": "2026-11-20",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,44 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-11-20-ai-research-daily-market-composite",
+      "category": "ai-research",
+      "type": "daily-market-composite",
+      "date": "2026-11-20",
+      "time": "20:25",
+      "title": "意外跳空延續跌 × 第一根低點全日沒回 × 出量長黑被收回",
+      "title_em": "意外跳空延續跌",
+      "summary": "趨勢盤單邊下跌，電子金融同步、權值一面倒。關鍵是開盤跳在夜盤低點之外，09:35 收破第一根低點之後全日沒收回。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤中結構",
+        "走勢圖",
+        "分時覆盤"
+      ],
+      "source_pipeline": "market_structure_composite_v2",
+      "url": "reports/2026-11-20/ai-research-daily-market-composite.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "-6.23%",
+          "color": "down"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "-7.72%",
+          "color": "down"
+        },
+        {
+          "label": "台指期日盤",
+          "value": "-7.18%",
+          "color": "down"
+        }
+      ]
+    },
     {
       "id": "options-annual-2026",
       "category": "txo",
