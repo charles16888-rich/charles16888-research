@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-23T20:10:12+08:00",
+  "updated_at": "2026-11-23T20:32:56+08:00",
   "today": "2026-11-23",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,44 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-11-23-ai-research-daily-market-composite",
+      "category": "ai-research",
+      "type": "daily-market-composite",
+      "date": "2026-11-23",
+      "time": "20:32",
+      "title": "第一根出量收過沒回 × 電金不同步當震盪 × 預估量下修仍單邊",
+      "title_em": "第一根出量收過沒回",
+      "summary": "單邊上漲的趨勢盤，電子帶、金融拖。關鍵在第一根五分 K 收過高點後全日沒跌回；電金不同步和預估量下修這兩招今天都沒成立。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤中結構",
+        "走勢圖",
+        "分時覆盤"
+      ],
+      "source_pipeline": "market_structure_composite_v2",
+      "url": "reports/2026-11-23/ai-research-daily-market-composite.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "+2.16%",
+          "color": "up"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "+2.88%",
+          "color": "up"
+        },
+        {
+          "label": "台指期日盤",
+          "value": "+1.95%",
+          "color": "up"
+        }
+      ]
+    },
     {
       "id": "seller-market-2026-11-23",
       "category": "stocks",
