@@ -1,297 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-20T20:26:16+08:00",
+  "generated_at": "2026-11-23T20:33:57+08:00",
   "source_id": "tw_moneylink_investor_conference",
   "source_url": "https://www.money-link.com.tw/stxba/imwcontent0.asp?page=INVC1&ID=INVC1",
   "events": [
-    {
-      "event_date": "2026-11-20",
-      "code": "5536",
-      "name": "聖暉*",
-      "event_time": "10:00"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "6213",
-      "name": "聯茂",
-      "event_time": "11:00"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "2354",
-      "name": "鴻準",
-      "event_time": "13:20"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "2606",
-      "name": "裕民",
-      "event_time": "13:20"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "3644",
-      "name": "凌嘉科",
-      "event_time": "13:20"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "4760",
-      "name": "勤凱",
-      "event_time": "13:20"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "5533",
-      "name": "皇鼎",
-      "event_time": "13:30"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "1304",
-      "name": "台聚",
-      "event_time": "14:00"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "1308",
-      "name": "亞聚",
-      "event_time": "14:00"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "1313",
-      "name": "聯成",
-      "event_time": "14:00"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "1413",
-      "name": "宏洲",
-      "event_time": "14:00"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "1452",
-      "name": "宏益",
-      "event_time": "14:00"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "1457",
-      "name": "宜進",
-      "event_time": "14:00"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "1473",
-      "name": "台南",
-      "event_time": "14:00"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "1514",
-      "name": "亞力",
-      "event_time": "14:00"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "1773",
-      "name": "勝一",
-      "event_time": "14:00"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "2723",
-      "name": "美食-KY",
-      "event_time": "14:00"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "3466",
-      "name": "德晉",
-      "event_time": "14:00"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "4420",
-      "name": "光明",
-      "event_time": "14:00"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "4768",
-      "name": "晶呈科技",
-      "event_time": "14:00"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "5601",
-      "name": "台聯櫃",
-      "event_time": "14:00"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "6005",
-      "name": "群益證",
-      "event_time": "14:00"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "6270",
-      "name": "倍微",
-      "event_time": "14:00"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "8069",
-      "name": "元太",
-      "event_time": "14:00"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "3596",
-      "name": "智易",
-      "event_time": "14:20"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "2009",
-      "name": "第一銅",
-      "event_time": "14:30"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "2207",
-      "name": "和泰車",
-      "event_time": "14:30"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "2616",
-      "name": "山隆",
-      "event_time": "14:30"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "4766",
-      "name": "南寶",
-      "event_time": "14:30"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "5876",
-      "name": "上海商銀",
-      "event_time": "14:30"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "6203",
-      "name": "海韻電",
-      "event_time": "14:30"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "6209",
-      "name": "今國光",
-      "event_time": "14:30"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "7799",
-      "name": "禾榮科",
-      "event_time": "14:30"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "8924",
-      "name": "大田",
-      "event_time": "14:30"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "8931",
-      "name": "大汽電",
-      "event_time": "14:30"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "3587",
-      "name": "閎康",
-      "event_time": "14:50"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "2613",
-      "name": "中櫃",
-      "event_time": "15:00"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "3054",
-      "name": "立萬利",
-      "event_time": "15:00"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "5703",
-      "name": "亞都",
-      "event_time": "15:00"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "6613",
-      "name": "朋億*",
-      "event_time": "15:00"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "7703",
-      "name": "銳澤",
-      "event_time": "15:00"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "1590",
-      "name": "亞德客-KY",
-      "event_time": "15:20"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "3324",
-      "name": "雙鴻",
-      "event_time": "15:20"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "6937",
-      "name": "天虹",
-      "event_time": "15:20"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "7805",
-      "name": "威聯通",
-      "event_time": "15:20"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "1309",
-      "name": "台達化",
-      "event_time": "15:30"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "6506",
-      "name": "雙邦",
-      "event_time": "15:30"
-    },
-    {
-      "event_date": "2026-11-20",
-      "code": "9904",
-      "name": "寶成",
-      "event_time": "16:00"
-    },
     {
       "event_date": "2026-11-23",
       "code": "1477",
@@ -414,6 +126,12 @@
     },
     {
       "event_date": "2026-11-23",
+      "code": "6187",
+      "name": "萬潤",
+      "event_time": "13:00"
+    },
+    {
+      "event_date": "2026-11-23",
       "code": "6213",
       "name": "聯茂",
       "event_time": "13:00"
@@ -516,6 +234,12 @@
     },
     {
       "event_date": "2026-11-23",
+      "code": "4771",
+      "name": "望隼",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-11-23",
       "code": "5381",
       "name": "光譜",
       "event_time": "14:30"
@@ -564,6 +288,12 @@
     },
     {
       "event_date": "2026-11-24",
+      "code": "2383",
+      "name": "台光電",
+      "event_time": "09:00"
+    },
+    {
+      "event_date": "2026-11-24",
       "code": "2412",
       "name": "中華電",
       "event_time": "09:00"
@@ -576,8 +306,20 @@
     },
     {
       "event_date": "2026-11-24",
+      "code": "3189",
+      "name": "景碩",
+      "event_time": "09:00"
+    },
+    {
+      "event_date": "2026-11-24",
       "code": "3231",
       "name": "緯創",
+      "event_time": "09:00"
+    },
+    {
+      "event_date": "2026-11-24",
+      "code": "3711",
+      "name": "日月光投控",
       "event_time": "09:00"
     },
     {
@@ -591,6 +333,18 @@
       "code": "6239",
       "name": "力成",
       "event_time": "09:00"
+    },
+    {
+      "event_date": "2026-11-24",
+      "code": "7769",
+      "name": "鴻勁",
+      "event_time": "09:00"
+    },
+    {
+      "event_date": "2026-11-24",
+      "code": "1504",
+      "name": "東元",
+      "event_time": "10:00"
     },
     {
       "event_date": "2026-11-24",
@@ -636,6 +390,12 @@
     },
     {
       "event_date": "2026-11-24",
+      "code": "9921",
+      "name": "巨大",
+      "event_time": "10:00"
+    },
+    {
+      "event_date": "2026-11-24",
       "code": "3481",
       "name": "群創",
       "event_time": "11:00"
@@ -654,14 +414,56 @@
     },
     {
       "event_date": "2026-11-24",
+      "code": "1788",
+      "name": "杏昌",
+      "event_time": "13:30"
+    },
+    {
+      "event_date": "2026-11-24",
+      "code": "3044",
+      "name": "健鼎",
+      "event_time": "13:30"
+    },
+    {
+      "event_date": "2026-11-24",
       "code": "7765",
       "name": "中華資安",
       "event_time": "13:30"
     },
     {
       "event_date": "2026-11-24",
+      "code": "1295",
+      "name": "生合",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-11-24",
+      "code": "1466",
+      "name": "聚隆",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-11-24",
+      "code": "1472",
+      "name": "三洋實業",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-11-24",
+      "code": "2020",
+      "name": "美亞",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-11-24",
       "code": "2327",
       "name": "國巨*",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-11-24",
+      "code": "2349",
+      "name": "錸德",
       "event_time": "14:00"
     },
     {
@@ -678,8 +480,32 @@
     },
     {
       "event_date": "2026-11-24",
+      "code": "3050",
+      "name": "鈺德",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-11-24",
+      "code": "3615",
+      "name": "安可",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-11-24",
       "code": "4129",
       "name": "聯合",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-11-24",
+      "code": "4931",
+      "name": "新盛力",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-11-24",
+      "code": "5522",
+      "name": "遠雄",
       "event_time": "14:00"
     },
     {
@@ -708,6 +534,24 @@
     },
     {
       "event_date": "2026-11-24",
+      "code": "7816",
+      "name": "來穎",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-11-24",
+      "code": "8101",
+      "name": "華冠",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-11-24",
+      "code": "8104",
+      "name": "錸寶",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-11-24",
       "code": "2820",
       "name": "華票",
       "event_time": "14:30"
@@ -716,6 +560,12 @@
       "event_date": "2026-11-24",
       "code": "2886",
       "name": "兆豐金",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-11-24",
+      "code": "3206",
+      "name": "志豐",
       "event_time": "14:30"
     },
     {
@@ -744,6 +594,24 @@
     },
     {
       "event_date": "2026-11-24",
+      "code": "5285",
+      "name": "界霖",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-11-24",
+      "code": "5403",
+      "name": "中菲",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-11-24",
+      "code": "6637",
+      "name": "醫影",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-11-24",
       "code": "6690",
       "name": "安碁資訊",
       "event_time": "14:30"
@@ -768,6 +636,12 @@
     },
     {
       "event_date": "2026-11-24",
+      "code": "7942",
+      "name": "東佑達",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-11-24",
       "code": "8499",
       "name": "鼎炫-KY",
       "event_time": "14:30"
@@ -783,6 +657,18 @@
       "code": "4126",
       "name": "太醫",
       "event_time": "14:50"
+    },
+    {
+      "event_date": "2026-11-24",
+      "code": "1342",
+      "name": "八貫",
+      "event_time": "15:00"
+    },
+    {
+      "event_date": "2026-11-24",
+      "code": "2373",
+      "name": "震旦行",
+      "event_time": "15:00"
     },
     {
       "event_date": "2026-11-24",
@@ -822,6 +708,12 @@
     },
     {
       "event_date": "2026-11-24",
+      "code": "6884",
+      "name": "海柏特",
+      "event_time": "15:40"
+    },
+    {
+      "event_date": "2026-11-24",
       "code": "1446",
       "name": "宏和",
       "event_time": "16:00"
@@ -833,10 +725,22 @@
       "event_time": "16:00"
     },
     {
+      "event_date": "2026-11-24",
+      "code": "2433",
+      "name": "互盛電",
+      "event_time": "16:00"
+    },
+    {
       "event_date": "2026-11-25",
       "code": "2317",
       "name": "鴻海",
       "event_time": "09:00"
+    },
+    {
+      "event_date": "2026-11-25",
+      "code": "1712",
+      "name": "興農",
+      "event_time": "14:00"
     },
     {
       "event_date": "2026-11-25",
@@ -878,6 +782,30 @@
       "event_date": "2026-11-25",
       "code": "4527",
       "name": "方方土霖",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-11-25",
+      "code": "4562",
+      "name": "穎漢",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-11-25",
+      "code": "5468",
+      "name": "凱鈺",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-11-25",
+      "code": "6024",
+      "name": "群益期",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-11-25",
+      "code": "8092",
+      "name": "建暐",
       "event_time": "14:00"
     },
     {
@@ -924,8 +852,20 @@
     },
     {
       "event_date": "2026-11-25",
+      "code": "6236",
+      "name": "中湛",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-11-25",
       "code": "6955",
       "name": "邦睿生技-創",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-11-25",
+      "code": "6965",
+      "name": "中傑-KY",
       "event_time": "14:30"
     },
     {
@@ -948,8 +888,20 @@
     },
     {
       "event_date": "2026-11-25",
+      "code": "8403",
+      "name": "盛弘",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-11-25",
       "code": "5302",
       "name": "太欣",
+      "event_time": "15:00"
+    },
+    {
+      "event_date": "2026-11-25",
+      "code": "6814",
+      "name": "路迦生醫",
       "event_time": "15:00"
     },
     {
@@ -981,6 +933,18 @@
       "code": "2755",
       "name": "揚秦",
       "event_time": "16:30"
+    },
+    {
+      "event_date": "2026-11-26",
+      "code": "1104",
+      "name": "環泥",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-11-26",
+      "code": "2327",
+      "name": "國巨*",
+      "event_time": "14:00"
     },
     {
       "event_date": "2026-11-26",
@@ -1062,6 +1026,12 @@
     },
     {
       "event_date": "2026-11-26",
+      "code": "4549",
+      "name": "桓達",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-11-26",
       "code": "4911",
       "name": "德英",
       "event_time": "14:30"
@@ -1106,6 +1076,12 @@
       "event_date": "2026-11-26",
       "code": "2880",
       "name": "華南金",
+      "event_time": "15:00"
+    },
+    {
+      "event_date": "2026-11-26",
+      "code": "3171",
+      "name": "炎洲流通",
       "event_time": "15:00"
     },
     {
@@ -1155,6 +1131,12 @@
       "code": "2317",
       "name": "鴻海",
       "event_time": "09:00"
+    },
+    {
+      "event_date": "2026-11-27",
+      "code": "6223",
+      "name": "旺矽",
+      "event_time": "13:30"
     },
     {
       "event_date": "2026-11-27",
@@ -1247,6 +1229,12 @@
       "event_time": "16:00"
     },
     {
+      "event_date": "2026-11-27",
+      "code": "4745",
+      "name": "合富-KY",
+      "event_time": "16:30"
+    },
+    {
       "event_date": "2026-11-30",
       "code": "2369",
       "name": "菱生",
@@ -1265,6 +1253,48 @@
       "event_time": "14:00"
     },
     {
+      "event_date": "2026-11-30",
+      "code": "1264",
+      "name": "德麥",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-11-30",
+      "code": "1580",
+      "name": "新麥",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-11-30",
+      "code": "2355",
+      "name": "敬鵬",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-11-30",
+      "code": "5880",
+      "name": "合庫金",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-11-30",
+      "code": "6276",
+      "name": "安鈦克",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-11-30",
+      "code": "6671",
+      "name": "三能-KY",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-11-30",
+      "code": "6233",
+      "name": "旺玖",
+      "event_time": "15:00"
+    },
+    {
       "event_date": "2026-12-01",
       "code": "2301",
       "name": "光寶科",
@@ -1272,9 +1302,45 @@
     },
     {
       "event_date": "2026-12-01",
+      "code": "4171",
+      "name": "瑞基",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-12-01",
+      "code": "6904",
+      "name": "伯鑫",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-12-01",
+      "code": "7811",
+      "name": "民盛",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-12-01",
+      "code": "8450",
+      "name": "霹靂",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-12-01",
+      "code": "3073",
+      "name": "天方能源",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-12-01",
       "code": "3518",
       "name": "柏騰",
       "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-12-01",
+      "code": "6670",
+      "name": "復盛應用",
+      "event_time": "15:00"
     },
     {
       "event_date": "2026-12-02",
@@ -1296,8 +1362,20 @@
     },
     {
       "event_date": "2026-12-02",
+      "code": "8454",
+      "name": "富邦媒",
+      "event_time": "14:00"
+    },
+    {
+      "event_date": "2026-12-02",
       "code": "2881",
       "name": "富邦金",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-12-02",
+      "code": "3022",
+      "name": "威強電",
       "event_time": "14:30"
     },
     {
@@ -1319,6 +1397,24 @@
       "event_time": "15:00"
     },
     {
+      "event_date": "2026-12-02",
+      "code": "6691",
+      "name": "洋基工程",
+      "event_time": "15:00"
+    },
+    {
+      "event_date": "2026-12-03",
+      "code": "6533",
+      "name": "晶心科",
+      "event_time": "13:30"
+    },
+    {
+      "event_date": "2026-12-03",
+      "code": "6728",
+      "name": "上洋",
+      "event_time": "14:30"
+    },
+    {
       "event_date": "2026-12-03",
       "code": "3665",
       "name": "貿聯-KY",
@@ -1334,6 +1430,12 @@
       "event_date": "2026-12-07",
       "code": "2308",
       "name": "台達電",
+      "event_time": "14:30"
+    },
+    {
+      "event_date": "2026-12-08",
+      "code": "6275",
+      "name": "元山",
       "event_time": "14:30"
     },
     {
