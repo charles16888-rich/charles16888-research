@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-24T20:10:24+08:00",
+  "updated_at": "2026-11-24T20:25:02+08:00",
   "today": "2026-11-24",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,44 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-11-24-ai-research-daily-market-composite",
+      "category": "ai-research",
+      "type": "daily-market-composite",
+      "date": "2026-11-24",
+      "time": "20:25",
+      "title": "夜盤先反應完 × 第一根收過沒回 × 量縮拉大不拉小",
+      "title_em": "夜盤先反應完",
+      "summary": "震盪偏多。漲幅幾乎全在夜盤和開盤跳空，台指期日盤只多 200 點就卡在高點；量縮、櫃買跟不上，電金同漲撐住沒掉。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤中結構",
+        "走勢圖",
+        "分時覆盤"
+      ],
+      "source_pipeline": "market_structure_composite_v2",
+      "url": "reports/2026-11-24/ai-research-daily-market-composite.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "+8.99%",
+          "color": "up"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "+8.24%",
+          "color": "up"
+        },
+        {
+          "label": "台指期日盤",
+          "value": "+10.25%",
+          "color": "up"
+        }
+      ]
+    },
     {
       "id": "options-annual-2026",
       "category": "txo",
