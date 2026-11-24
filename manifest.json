@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-24T20:25:02+08:00",
+  "updated_at": "2026-11-24T20:25:13+08:00",
   "today": "2026-11-24",
   "volume_number": 1,
   "market_summary": {
@@ -56,6 +56,108 @@
           "label": "台指期日盤",
           "value": "+10.25%",
           "color": "up"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-24-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-11-24",
+      "time": "20:00",
+      "title": "2026-11-24 族群週報",
+      "title_em": "連接器",
+      "summary": "涵蓋 2026-11-18 ~ 2026-11-24。週領漲 連接器 +6.20%，週領跌 鏡頭光學 -11.14%；資金焦點 晶圓代工。",
+      "tags": [
+        "連接器",
+        "鏡頭光學",
+        "晶圓代工",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-11-24/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "連接器 +6.20%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "鏡頭光學 -11.14%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "晶圓代工",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-24-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-11-24",
+      "time": "20:00",
+      "title": "2026-11-24 每日族群輪動雷達",
+      "title_em": "鏡頭光學",
+      "summary": "今日相對升溫以 鏡頭光學 最明顯，相對降溫以 餐飲連鎖 壓力最大；今日轉強力道大於轉弱力道。",
+      "tags": [
+        "鏡頭光學",
+        "餐飲連鎖",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-11-24/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "鏡頭光學 +15.30 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "餐飲連鎖 +1.97 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-24-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-11-24",
+      "time": "20:00",
+      "title": "2026-11-24 族群盤後快報",
+      "title_em": "太陽能",
+      "summary": "全 74 族群、成交 3171.9 億；領漲 太陽能 +9.97%，領跌  %；漲多族群 74/74，全族群均漲 +6.51%。",
+      "tags": [
+        "太陽能",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-11-24/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "太陽能 +9.97%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "—",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "43.7%",
+          "color": "neutral"
         }
       ]
     },
