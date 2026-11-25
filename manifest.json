@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-25T20:24:48+08:00",
+  "updated_at": "2026-11-25T20:25:00+08:00",
   "today": "2026-11-25",
   "volume_number": 1,
   "market_summary": {
@@ -56,6 +56,109 @@
           "label": "台指期日盤",
           "value": "-5.61%",
           "color": "down"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-25-sectors-weekly",
+      "category": "sectors",
+      "type": "weekly",
+      "date": "2026-11-25",
+      "time": "20:00",
+      "title": "2026-11-25 族群週報",
+      "title_em": "電源供應",
+      "summary": "涵蓋 2026-11-19 ~ 2026-11-25。週領漲 電源供應 +-0.47%，週領跌 光通訊 -16.77%；資金焦點 晶圓代工。",
+      "tags": [
+        "電源供應",
+        "光通訊",
+        "晶圓代工",
+        "週報"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-11-25/sectors-weekly.html",
+      "stats": [
+        {
+          "label": "週領漲",
+          "value": "電源供應 +-0.47%",
+          "color": "up"
+        },
+        {
+          "label": "週領跌",
+          "value": "光通訊 -16.77%",
+          "color": "down"
+        },
+        {
+          "label": "資金焦點",
+          "value": "晶圓代工",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-25-sectors-rotation",
+      "category": "sectors",
+      "type": "rotation",
+      "date": "2026-11-25",
+      "time": "20:00",
+      "title": "2026-11-25 每日族群輪動雷達",
+      "title_em": "鏡頭光學",
+      "summary": "今日相對升溫以 鏡頭光學 最明顯，相對降溫以 記憶體 壓力最大；今日轉弱力道大於轉強力道。",
+      "tags": [
+        "鏡頭光學",
+        "記憶體",
+        "輪動雷達"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-11-25/sectors-rotation.html",
+      "stats": [
+        {
+          "label": "最大升溫",
+          "value": "鏡頭光學 +1.41 pct",
+          "color": "up"
+        },
+        {
+          "label": "最大降溫",
+          "value": "記憶體 -9.68 pct",
+          "color": "down"
+        },
+        {
+          "label": "核心指標",
+          "value": "今日動能差",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-25-sectors-daily",
+      "category": "sectors",
+      "type": "daily",
+      "date": "2026-11-25",
+      "time": "20:00",
+      "title": "2026-11-25 族群盤後快報",
+      "title_em": "貨櫃航運",
+      "summary": "全 74 族群、成交 11715.1 億；領漲 貨櫃航運 +0.29%，領跌 記憶體 -9.41%；漲多族群 1/74，全族群均漲 -4.47%。",
+      "tags": [
+        "貨櫃航運",
+        "記憶體",
+        "族群盤後"
+      ],
+      "source_pipeline": "industry_map",
+      "url": "reports/2026-11-25/sectors-daily.html",
+      "stats": [
+        {
+          "label": "領漲族群",
+          "value": "貨櫃航運 +0.29%",
+          "color": "up"
+        },
+        {
+          "label": "領跌族群",
+          "value": "記憶體 -9.41%",
+          "color": "down"
+        },
+        {
+          "label": "漲停集中",
+          "value": "0.3%",
+          "color": "neutral"
         }
       ]
     },
