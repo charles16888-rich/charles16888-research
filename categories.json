@@ -388,6 +388,35 @@
           "name_en": "Daily Market Analysis"
         }
       ]
+    },
+    {
+      "id": "news-analysis",
+      "name_zh": "新聞解析",
+      "name_en": "News Analysis",
+      "tagline_zh": "回到原始文件 × 台灣影響試算",
+      "tagline_en": "Primary sources and Taiwan impact",
+      "description": "挑選有官方原始文件可以核對的重要新聞：原文寫了什麼、時間線、各方說法，並試算對台灣產品與產業的影響。資訊整理，不是投資建議。",
+      "enabled": true,
+      "source_pipelines": [
+        "news_analysis"
+      ],
+      "subcategories": [
+        {
+          "id": "policy",
+          "name_zh": "政策與關稅",
+          "name_en": "Policy & Tariffs",
+          "match_id_prefix": [
+            "news-analysis-policy-"
+          ]
+        }
+      ],
+      "report_types": [
+        {
+          "id": "news-analysis",
+          "name_zh": "新聞解析",
+          "name_en": "News Analysis"
+        }
+      ]
     }
   ]
 }
