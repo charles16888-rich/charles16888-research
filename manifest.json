@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-26T20:10:20+08:00",
+  "updated_at": "2026-11-26T20:25:18+08:00",
   "today": "2026-11-26",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,44 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "2026-11-26-ai-research-daily-market-composite",
+      "category": "ai-research",
+      "type": "daily-market-composite",
+      "date": "2026-11-26",
+      "time": "20:25",
+      "title": "跳空短線有延續 × 兩根出量K都被收過 × 尾盤現貨壓低",
+      "title_em": "跳空短線有延續",
+      "summary": "震盪偏多的量縮反彈。櫃買強過加權，電子金融同向；跳空之後早盤來回掃，尾盤現貨壓低、期貨沒跟。",
+      "tags": [
+        "台股",
+        "台指期",
+        "加權指數",
+        "櫃買指數",
+        "盤中結構",
+        "走勢圖",
+        "分時覆盤"
+      ],
+      "source_pipeline": "market_structure_composite_v2",
+      "url": "reports/2026-11-26/ai-research-daily-market-composite.html",
+      "stats": [
+        {
+          "label": "加權指數",
+          "value": "+2.50%",
+          "color": "up"
+        },
+        {
+          "label": "櫃買指數",
+          "value": "+5.03%",
+          "color": "up"
+        },
+        {
+          "label": "台指期日盤",
+          "value": "+3.66%",
+          "color": "up"
+        }
+      ]
+    },
     {
       "id": "options-annual-2026",
       "category": "txo",
