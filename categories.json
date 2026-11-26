@@ -332,6 +332,35 @@
       ]
     },
     {
+      "id": "us-watch",
+      "name_zh": "美股觀察",
+      "name_en": "US Market Watch",
+      "tagline_zh": "市場寬度 × 大盤環境",
+      "tagline_en": "Breadth & market environment",
+      "description": "照 Mark Minervini 公開講過的觀察法整理的美股大盤儀表板：站上 50／200 日線的股票比例、趨勢樣板與四階段家數、突破留得住的比例、派發日與跟進日，附個股熱力圖、類股輪動與言論對照。美股收盤後、台灣時間上午更新。",
+      "enabled": true,
+      "source_pipelines": [
+        "us_breadth"
+      ],
+      "subcategories": [
+        {
+          "id": "breadth",
+          "name_zh": "市場寬度儀表板",
+          "name_en": "Market Breadth",
+          "match_id_prefix": [
+            "us-watch-"
+          ]
+        }
+      ],
+      "report_types": [
+        {
+          "id": "breadth",
+          "name_zh": "市場寬度儀表板",
+          "name_en": "Market Breadth"
+        }
+      ]
+    },
+    {
       "id": "ai-research",
       "name_zh": "AI 研究報告",
       "name_en": "AI Research",
