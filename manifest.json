@@ -39316,6 +39316,43 @@
           "color": "neutral"
         }
       ]
+    },
+    {
+      "id": "news-analysis-policy-2026-11-26-us-301-excess-capacity",
+      "category": "news-analysis",
+      "type": "news-analysis",
+      "date": "2026-11-26",
+      "time": "17:12",
+      "title": "美國「產能過剩」301 關稅：原文寫了什麼、台灣排在哪一級",
+      "title_em": "產能過剩 301 關稅",
+      "summary": "USTR 11/25 認定 14 個經濟體並提出稅率，目前只是提案、尚未生效。台灣提案合計最高 15%（含一般關稅、不疊加），談不攏的替代方案是一般關稅再加 25%；電腦、伺服器、手機、晶片在豁免清單上，電路板、連接器不在。文中附 17 項台灣產品在三種情況下的稅率試算。",
+      "tags": [
+        "新聞解析",
+        "關稅",
+        "301",
+        "美國",
+        "台灣出口",
+        "政策"
+      ],
+      "source_pipeline": "news_analysis",
+      "url": "reports/news-analysis/2026-11-26-us-301-excess-capacity.html",
+      "stats": [
+        {
+          "label": "台灣提案上限",
+          "value": "15%",
+          "color": "neutral"
+        },
+        {
+          "label": "談不攏方案",
+          "value": "一般關稅+25%",
+          "color": "neutral"
+        },
+        {
+          "label": "附件 A 稅則",
+          "value": "2,234",
+          "color": "neutral"
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,918 @@
+<!doctype html>
+<html lang="zh-Hant" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="robots" content="noindex, nofollow">
+<title>美國產能過剩 301 關稅解析</title>
+<style>
+:root{
+  --bg:#f5f6f8; --card:#ffffff; --ink:#1b2230; --muted:#5a6577; --line:#dfe3ea; --soft:#eef1f5;
+  --acc:#1a5fd0; --acc-bg:#e1ecfd;
+  --tw:#c2410c; --tw-bg:#fdecdb;
+  --ok:#14804a; --ok-bg:#dcf3e6;
+  --mid:#a86b00; --mid-bg:#fbefd4;
+  --bad:#c0392b; --bad-bg:#fbe3df;
+  --b-net:#1a5fd0; --b-add:#8fb3ef; --b-oth:#7d8796;
+  --s-mfn:#7d8796; --s-old:#1a5fd0; --s-new:#c2410c;
+  --shadow:0 1px 2px rgba(16,24,40,.05),0 6px 18px rgba(16,24,40,.05);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#10141b; --card:#1a202b; --ink:#e7ebf2; --muted:#9ba7b9; --line:#2d3646; --soft:#222a37;
+    --acc:#86b4ff; --acc-bg:#172a4b;
+    --tw:#ffa06b; --tw-bg:#3e2815;
+    --ok:#4cc586; --ok-bg:#12341f;
+    --mid:#e8ab3c; --mid-bg:#3a2c0c;
+    --bad:#ff7b6e; --bad-bg:#3d1a16;
+    --b-net:#5b9bff; --b-add:#2f4f86; --b-oth:#7d8796;
+    --s-mfn:#7d8796; --s-old:#5b9bff; --s-new:#ff8a4c;
+    --shadow:none;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#10141b; --card:#1a202b; --ink:#e7ebf2; --muted:#9ba7b9; --line:#2d3646; --soft:#222a37;
+  --acc:#86b4ff; --acc-bg:#172a4b;
+  --tw:#ffa06b; --tw-bg:#3e2815;
+  --ok:#4cc586; --ok-bg:#12341f;
+  --mid:#e8ab3c; --mid-bg:#3a2c0c;
+  --bad:#ff7b6e; --bad-bg:#3d1a16;
+  --b-net:#5b9bff; --b-add:#2f4f86; --b-oth:#7d8796;
+  --s-mfn:#7d8796; --s-old:#5b9bff; --s-new:#ff8a4c;
+  --shadow:none;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 "Noto Sans TC","Microsoft JhengHei UI","Microsoft JhengHei","PingFang TC",system-ui,sans-serif;overflow-wrap:anywhere}
+.wrap{max-width:1080px;margin:0 auto;padding:28px 16px 64px}
+h1,h2,h3,h4,p{margin:0}
+sup{font-size:.7em;line-height:0}
+sup a{color:var(--acc);text-decoration:none;padding:0 1px}
+sup a + a::before{content:",";color:var(--muted);padding-right:1px}
+.kicker{font-size:13px;font-weight:700;color:var(--muted);letter-spacing:.03em}
+h1{font-size:clamp(23px,3.3vw,33px);line-height:1.32;margin-top:4px}
+.trial{margin-top:12px;font-size:14px;color:var(--muted);background:var(--card);border:1px dashed var(--line);border-radius:10px;padding:8px 12px}
+.trial b{color:var(--ink)}
+.three{margin-top:16px;background:var(--card);border:2px solid var(--ink);border-radius:16px;padding:16px 18px;box-shadow:var(--shadow)}
+.three h2{font-size:17px}
+.three ol{margin:8px 0 0;padding-left:1.4em;display:grid;gap:8px;font-size:16px}
+.legend{display:flex;flex-wrap:wrap;gap:8px 10px;margin-top:14px;align-items:center;font-size:13px;color:var(--muted)}
+.lv{display:inline-flex;align-items:center;font-size:12px;font-weight:700;border-radius:6px;padding:0 7px;line-height:1.7;white-space:nowrap}
+.lvA{color:var(--ok);background:var(--ok-bg)}
+.lvB{color:var(--acc);background:var(--acc-bg)}
+.lvC{color:var(--mid);background:var(--mid-bg)}
+.lvU{color:var(--tw);background:var(--tw-bg)}
+.rj{background:var(--mid-bg);border-radius:4px;padding:0 4px;font-size:.92em;white-space:nowrap}
+.toc{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.toc a{font-size:13.5px;color:var(--ink);text-decoration:none;border:1px solid var(--line);background:var(--card);border-radius:8px;padding:3px 11px}
+
+section{margin-top:42px}
+h2.sec{font-size:clamp(20px,2.4vw,24px);line-height:1.35}
+.take{margin-top:8px;font-size:16px;max-width:54em}
+.note{margin-top:10px;font-size:13.5px;color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}
+
+/* 進度 */
+.ladder{list-style:none;margin:16px 0 0;padding:0;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
+.ladder li{position:relative;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 10px 12px;font-size:13px;line-height:1.5}
+.ladder li b{display:block;font-size:14.5px;line-height:1.35;margin-bottom:3px}
+.ladder li span{color:var(--muted)}
+.ladder li.done{border-top:5px solid var(--ok)}
+.ladder li.now{border:2px solid var(--tw);border-top-width:5px;background:var(--tw-bg)}
+.ladder li.now::before{content:"現在在這";position:absolute;top:-13px;left:8px;background:var(--tw);color:#fff;font-size:11.5px;font-weight:700;border-radius:999px;padding:0 8px;line-height:1.8}
+.ladder li.next{border-top:5px dashed var(--line)}
+
+/* 稅率比較 */
+.rates{margin-top:16px;padding:14px 16px}
+.rr{display:grid;grid-template-columns:92px minmax(0,1fr) 128px;gap:10px;align-items:center;padding:4px 0}
+.rr .nm{font-size:14.5px;font-weight:700;text-align:right}
+.rr.tw .nm{color:var(--tw)}
+.rr .tr{position:relative;height:24px;background:var(--soft);border-radius:6px;overflow:hidden}
+.rr .tr i{position:absolute;left:0;top:0;bottom:0;border-radius:6px}
+.rr .tr i.net{background:var(--b-net)}
+.rr .tr i.add{background:var(--b-add)}
+.rr .tr i.oth{background:var(--b-oth)}
+.rr.tw .tr{outline:2px solid var(--tw);outline-offset:1px}
+.rr .v{font-size:14px;line-height:1.35}
+.rr .v b{font-size:15.5px}
+.rr .v small{display:block;color:var(--muted);font-size:12px}
+.rkey{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:10px;font-size:13.5px}
+.rkey span{display:inline-flex;align-items:center;gap:6px}
+.rkey i{width:14px;height:12px;border-radius:3px;display:inline-block}
+
+/* 不疊加的算法 */
+.stk{margin-top:16px;padding:14px 16px;display:grid;gap:10px}
+.sr{display:grid;grid-template-columns:150px minmax(0,1fr) 58px;gap:10px;align-items:center}
+.sr .nm{font-size:14px;line-height:1.4;font-weight:700}
+.sr .nm small{display:block;font-weight:400;color:var(--muted);font-size:12px}
+.sr .bar{display:flex;height:30px;border-radius:6px;overflow:hidden;background:var(--soft)}
+.sr .bar i{display:flex;align-items:center;justify-content:center;font-style:normal;font-size:12.5px;font-weight:700;color:#fff;white-space:nowrap;min-width:0}
+.sr .bar .mfn{background:var(--s-mfn)}
+.sr .bar .old{background:var(--s-old)}
+.sr .bar .new{background:var(--s-new)}
+.sr .tot{font-size:18px;font-weight:800;text-align:right}
+
+/* 時間線 */
+.tl{list-style:none;margin:16px 0 0;padding:0;position:relative}
+.tl::before{content:"";position:absolute;left:131px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.tl li{position:relative;display:grid;grid-template-columns:118px minmax(0,1fr);gap:28px;padding:6px 0}
+.tl li::before{content:"";position:absolute;left:126px;top:14px;width:12px;height:12px;border-radius:50%;background:var(--card);border:2px solid var(--muted)}
+.tl li.us::before{border-color:var(--acc);background:var(--acc)}
+.tl li.tw::before{border-color:var(--tw);background:var(--tw)}
+.tl li.fut::before{border-style:dashed;background:var(--card)}
+.tl li.big::before{width:16px;height:16px;left:124px;top:12px;border-color:var(--tw);background:var(--tw);box-shadow:0 0 0 4px var(--tw-bg)}
+.tl .d{font-size:14px;font-weight:700;text-align:right;line-height:1.5;padding-top:4px}
+.tl .d small{display:block;font-weight:400;color:var(--muted);font-size:12px}
+.tl .e{font-size:15px;line-height:1.6;padding-top:3px}
+.tl .e .lv{margin-left:6px;vertical-align:1px}
+
+/* 豁免三欄 */
+.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}
+.gc{padding:14px 16px;border-top:5px solid var(--c)}
+.gc h3{font-size:16px;color:var(--c);line-height:1.4}
+.gc p.sub{font-size:13px;color:var(--muted);margin-top:2px}
+.gc ul{margin:10px 0 0;padding:0;list-style:none;display:grid;gap:7px}
+.gc li{font-size:14px;line-height:1.55;padding-left:12px;border-left:3px solid var(--line)}
+.gc li small{color:var(--muted)}
+.gok{--c:var(--ok)} .g232{--c:var(--acc)} .gno{--c:var(--bad)}
+.cnt{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:12px}
+.cnt div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px}
+.cnt b{display:block;font-size:22px;line-height:1.2}
+.cnt span{font-size:13px;color:var(--muted)}
+
+/* 標題對原文 */
+.vs{display:grid;gap:10px;margin-top:16px}
+.vr{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.6fr);border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--card);box-shadow:var(--shadow)}
+.vr .h{background:var(--soft);padding:12px 14px;font-size:15px;font-weight:700;line-height:1.5}
+.vr .h small{display:block;font-size:12px;color:var(--muted);font-weight:400}
+.vr .o{padding:12px 16px;font-size:14.5px;line-height:1.65}
+.vr .o small{display:block;font-size:12px;color:var(--muted);margin-bottom:2px}
+.vr .o q{font-family:Consolas,"Cascadia Mono",monospace;font-size:13px;color:var(--muted);quotes:"“" "”"}
+
+/* 官方說法 */
+.cl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:16px}
+.cc{padding:12px 16px}
+.cc .top{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:4px}
+.cc p{font-size:14.5px;line-height:1.65}
+.cc p.chk{font-size:13px;color:var(--muted);margin-top:6px}
+
+/* 接下來 */
+.nx{display:grid;gap:8px;margin-top:16px}
+.nr{display:grid;grid-template-columns:132px minmax(0,1fr);gap:14px;align-items:baseline;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px}
+.nr .d{font-weight:700;font-size:14.5px}
+.nr .d.u{color:var(--muted)}
+.nr .t{font-size:14.5px;line-height:1.6}
+.miss{margin-top:16px;background:var(--soft);border:1px dashed var(--muted);border-radius:12px;padding:12px 16px}
+.miss h3{font-size:15.5px}
+.miss ul{margin:6px 0 0;padding-left:1.2em;font-size:14.5px;display:grid;gap:4px}
+
+/* 來源 */
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:16px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px}
+.stat b{display:block;font-size:clamp(19px,5vw,23px);line-height:1.25;white-space:nowrap}
+.stat span{display:block;font-size:13px;color:var(--muted)}
+.fn{margin-top:16px;padding:12px 16px}
+.fn ol{margin:0;padding-left:1.8em;display:grid;gap:7px;font-size:13.5px;line-height:1.6}
+.fn li .lv{margin-right:4px}
+.fn a{color:var(--acc);word-break:break-all}
+.foot{margin-top:18px;font-size:12.5px;color:var(--muted);line-height:1.7}
+
+/* 新增：先搞懂背景與 17 項產品舉例 */
+.subh{margin-top:22px;font-size:16.5px;line-height:1.4}
+.bg-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:14px}
+.bgc{padding:14px 16px;display:grid;gap:8px;align-content:start}
+.bgc h3{font-size:16px;line-height:1.4}
+.bgc p{font-size:14.5px;line-height:1.65}
+.bgc ul{margin:0;padding-left:1.2em;display:grid;gap:5px;font-size:14px;line-height:1.55}
+.myth{margin-top:14px;background:var(--tw-bg);border:1px solid var(--tw);border-radius:12px;padding:12px 16px;font-size:14.5px;line-height:1.65}
+.myth h3{font-size:15.5px;color:var(--tw);margin-bottom:4px}
+.myth ul{margin:4px 0 0;padding-left:1.25em;display:grid;gap:5px}
+
+.tbl-wrap{margin-top:14px;overflow-x:auto;-webkit-overflow-scrolling:touch;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}
+.ctbl,.ptbl{width:100%;border-collapse:collapse;font-size:13.5px;line-height:1.55}
+.ctbl{min-width:540px}
+.ptbl{min-width:760px}
+.ctbl th,.ctbl td,.ptbl th,.ptbl td{padding:9px 11px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.ctbl thead th,.ptbl thead th{background:var(--soft);font-size:13px;font-weight:700;white-space:nowrap}
+.ctbl tbody tr:last-child td,.ptbl tbody tr:last-child td{border-bottom:none}
+.ptbl th.num,.ptbl td.num{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.ptbl td.num b{font-size:14.5px}
+.ptbl tr.grp td{background:var(--soft);font-weight:700;font-size:13.5px;color:var(--ink);padding:7px 11px}
+.ptbl .code{display:block;font-size:12px;color:var(--muted);font-family:Consolas,"Cascadia Mono",monospace}
+.ptbl .subv{display:block;font-size:11.5px;color:var(--muted);font-weight:400}
+.ptbl .hi{color:var(--tw)}
+.ptbl .ok{color:var(--ok)}
+.ptbl .bad{color:var(--bad)}
+
+.chain{list-style:none;margin:14px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.chain li{position:relative;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:14px;line-height:1.6;box-shadow:var(--shadow)}
+.chain li .step{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:4px;font-size:12.5px;font-weight:700;color:var(--muted)}
+.chain li .num{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:999px;background:var(--acc);color:#fff;font-size:12px;font-weight:700;flex-shrink:0}
+.chain li.now-step{border:2px solid var(--tw);background:var(--tw-bg)}
+.chain li.now-step .num{background:var(--tw)}
+.chain li b{display:block;font-size:15px;line-height:1.4;margin-bottom:4px}
+.chain li .src{margin-top:6px;display:flex;flex-wrap:wrap;gap:5px;align-items:center;font-size:12px;color:var(--muted)}
+
+.gloss{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:14px}
+.gloss div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:14px;line-height:1.6}
+.gloss b{display:block;font-size:14.5px;margin-bottom:2px}
+
+.f3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:14px}
+.fc{padding:12px 14px;border-top:4px solid var(--c)}
+.fc h3{font-size:15px;color:var(--c);line-height:1.35}
+.fc p{font-size:13.5px;line-height:1.6;margin-top:5px}
+.fc .eq{margin-top:6px;background:var(--soft);border-radius:8px;padding:6px 9px;font-size:13px;font-weight:700}
+.f-now{--c:var(--s-old)} .f-prop{--c:var(--tw)} .f-alt{--c:var(--bad)}
+
+.assume{margin-top:14px;background:var(--mid-bg);border:1px dashed var(--mid);border-radius:12px;padding:11px 15px;font-size:14px;line-height:1.65}
+.assume b{color:var(--ink)}
+
+.pchart{margin-top:16px;padding:14px 16px;display:grid;gap:14px}
+.pr{display:grid;grid-template-columns:168px minmax(0,1fr);gap:12px;align-items:center}
+.pr .pn{font-size:14px;font-weight:700;line-height:1.4}
+.pr .pn small{display:block;font-weight:400;color:var(--muted);font-size:12px}
+.pr .bars{display:grid;gap:5px}
+.pr .br{display:grid;grid-template-columns:56px minmax(0,1fr) 48px;gap:8px;align-items:center;font-size:12.5px}
+.pr .br .lb{color:var(--muted);text-align:right;white-space:nowrap}
+.pr .br .tr{height:16px;background:var(--soft);border-radius:5px;overflow:hidden;position:relative}
+.pr .br .tr i{display:block;height:100%;border-radius:5px}
+.pr .br .tr i.c-now{background:var(--s-old)}
+.pr .br .tr i.c-prop{background:var(--s-new)}
+.pr .br .tr i.c-alt{background:var(--bad)}
+.pr .br .tr i.c-zero{background:var(--ok);min-width:4px}
+.pr .br .val{font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+.scroll-hint{font-size:12.5px;color:var(--muted);margin-top:12px}
+
+@media (max-width:900px){
+  .ladder{grid-template-columns:repeat(4,minmax(0,1fr));row-gap:18px}
+  .g3,.cnt,.bg-cards,.chain,.f3{grid-template-columns:minmax(0,1fr)}
+  .cl,.gloss{grid-template-columns:minmax(0,1fr)}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:640px){
+  .ladder{grid-template-columns:minmax(0,1fr);row-gap:14px}
+  .ladder li.now{margin-top:6px}
+  .rr{grid-template-columns:64px minmax(0,1fr) 96px;gap:8px}
+  .rr .nm{font-size:13.5px}
+  .rr .v{font-size:13px}
+  .sr{grid-template-columns:minmax(0,1fr) 52px;row-gap:4px}
+  .sr .nm{grid-column:1 / -1}
+  .pr{grid-template-columns:minmax(0,1fr);gap:6px}
+  .pr .br{grid-template-columns:50px minmax(0,1fr) 46px;gap:6px}
+  .tl::before{left:7px}
+  .tl li{grid-template-columns:minmax(0,1fr);gap:2px;padding:6px 0 6px 28px}
+  .tl li::before{left:2px}
+  .tl li.big::before{left:0}
+  .tl .d{text-align:left}
+  .vr{grid-template-columns:minmax(0,1fr)}
+  .nr{grid-template-columns:minmax(0,1fr);gap:2px}
+}
+.backlink{margin:0 0 8px;font-size:14px}.backlink a{color:var(--acc);text-decoration:none}.backlink a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <p class="backlink"><a href="../../category.html?cat=news-analysis">← 新聞解析</a></p>
+  <p class="kicker">新聞解析｜資料截至 2026-11-26 17:12（台灣時間）</p>
+  <h1>美國「產能過剩」301 關稅：原文寫了什麼、台灣排在哪一級</h1>
+  <p class="trial"><b>這篇怎麼寫的：</b>重要說法都回到美方與台灣官方原文核對，引用的原文句逐字比對過；稅率試算照原文規則推算。對個別台股公司的影響與股價反應，這篇沒有談。</p>
+
+  <div class="three">
+    <h2>三句話結論</h2>
+    <ol>
+      <li><b>這是提案，還沒生效。</b>美方 11/25 認定台灣等 14 個經濟體「產能過剩」，提議對台灣全部商品課稅，合計最高 15%（含原本的關稅）；談不攏時另有最高 25% 的方案。1/5 意見截止、1/25 開聽證會，生效日沒寫。<sup><a href="#fn1">1</a></sup></li>
+      <li><b>台灣在最低的一級</b>，和日本、韓國、歐盟、瑞士一樣是「合計最高 15%」；東南亞多是 18% 另外再加原本的關稅，越南最高 35%。<sup><a href="#fn2">2</a></sup></li>
+      <li><b>豁免清單蓋到台灣電子出口的主力</b>：電腦與伺服器、主機板、手機、交換器、晶片都在清單上；電路板、連接器、線材、電源供應器不在清單上。<span class="rj">研究者比對附件整理</span><sup><a href="#fn1">1</a></sup></li>
+    </ol>
+  </div>
+
+  <div class="legend">
+    <span>來源等級：</span>
+    <span class="lv lvA">A 當事機關原文</span>
+    <span class="lv lvB">B 兩個以上來源一致</span>
+    <span class="lv lvC">C 單一媒體或事務所</span>
+    <span class="lv lvU">單方說法</span>
+    <span class="rj">研究者推算／整理</span>
+  </div>
+  <nav class="toc">
+    <a href="#s0">先搞懂背景</a><a href="#s1">走到哪一步</a><a href="#s2">各國稅率</a><a href="#s3">「不疊加」怎麼算</a><a href="#s3b">17 項產品試算</a><a href="#s4">時間線</a>
+    <a href="#s5">豁免什麼</a><a href="#s6">標題和原文差在哪</a><a href="#s7">台灣官方怎麼說</a><a href="#s8">接下來看什麼</a><a href="#s9">來源</a>
+  </nav>
+</header>
+
+<section id="s0">
+  <h2 class="sec">先搞懂背景：301 是什麼、為什麼 2026 年一連出現兩個？</h2>
+  <p class="take">2026 年美方先後推出「強迫勞動 301」與「產能過剩 301」，背景是最高法院 2 月推翻了美國 2025 年原本的關稅法源，美方改用《1974 年貿易法》第 301 條重新建立關稅。<sup><a href="#fn8">8</a><a href="#fn9">9</a></sup></p>
+
+  <div class="bg-cards">
+    <div class="card bgc">
+      <h3>1. 「301」是什麼？</h3>
+      <p><b>法律：</b>美國《1974 年貿易法》第 301 條（Section 301 of the Trade Act of 1974）。<sup><a href="#fn1">1</a><a href="#fn2">2</a></sup></p>
+      <p><b>誰在用：</b>美國貿易代表署（USTR）可主動發起調查，並由跨部會的 301 委員會召開聽證與諮詢；必要時依總統指示採取行動。<sup><a href="#fn1">1</a><a href="#fn13">13</a></sup></p>
+      <p><b>可以做什麼：</b>只要美方認定外國政府的做法「不合理、不公正或歧視性」（即使未違反國際法，只要美方認為不公平即可），且對美國商業造成負擔，就能對該國商品加徵關稅或限制進口，迫使對方改變政策。<sup><a href="#fn1">1</a><a href="#fn13">13</a></sup></p>
+    </div>
+
+    <div class="card bgc">
+      <h3>2. 「強迫勞動 301」指什麼？</h3>
+      <p><b>美方指控的是什麼：</b>原文全名是指控各經濟體「<b>未能立法禁止、或未能有效執行禁止進口以強迫勞動製造的商品</b>」。<sup><a href="#fn13">13</a></sup></p>
+      <p><b>對象與時程：</b>針對台灣、歐盟、日韓、中、加、英等 <b>60 個經濟體</b>，2026-03-12 發起（3/17 刊登聯邦公報<sup><a href="#fn13">13</a></sup>），6/2 認定 60 個經濟體都有可採取行動的做法，7 月做成最終行動並於 <b>7/24 起生效</b>（7/28 刊登聯邦公報）。<sup><a href="#fn4">4</a></sup></p>
+      <p><b>台灣被課多少：</b>合計 <b>10%</b>（扣除原本一般關稅後的淨額，不疊加）；原本一般關稅已達 10% 以上者，這筆 301 是 0%。<sup><a href="#fn4">4</a></sup></p>
+    </div>
+
+    <div class="card bgc">
+      <h3>3. 「產能過剩 301」又是什麼？</h3>
+      <p><b>美方指控的是什麼：</b>指各國靠政府政策或干預，讓製造業產能與產量長期超過正常市場水準，靠大量出口消化產能，造成美國長期貿易逆差與製造業受損。<sup><a href="#fn1">1</a><a href="#fn13">13</a></sup></p>
+      <p><b>對台灣的指控：</b>美方列出 9 項做法：①數十年的產業計畫，造成產業結構失衡、依賴出口；②以《產業創新條例》為核心的獎勵與支援體系；③政府主導與支持的研發機構；④政府主導與支持的產業聚落；⑤各種鼓勵擴產的融資管道；⑥沒有充分管制全球過剩產能的進口，包括來自非市場經濟體的工業原料；⑦等同「金融壓抑」的做法；⑧過去購買受美國制裁的俄羅斯原料，用在產能過剩產業的上游；⑨對國際公認勞工權利保障不足。點名的重點產業是半導體、塑膠、鋼鐵。<sup><a href="#fn1">1</a></sup></p>
+      <p><b>為什麼說「不合理」：</b>美方給四個理由：以出口帶動成長為目標；扭曲公平競爭（包括沒有處理非市場經濟體的進口）；沒有相應提高內需與消費；損害台灣勞工與大眾的福利，進而傷到美國勞工。說明中多次點名資通訊（ICT）產業。<sup><a href="#fn1">1</a></sup></p>
+      <p><b>對象與進度：</b>3/11 對 <b>16 個經濟體</b>發起調查；11/25 認定 14 個並提出稅率，<b>目前只是提案，尚未生效</b>。<sup><a href="#fn1">1</a><a href="#fn2">2</a></sup></p>
+    </div>
+  </div>
+
+  <div class="myth">
+    <h3>讀者最容易誤會的三件事</h3>
+    <ul>
+      <li><b>誤會一：「強迫勞動 301」是在說台灣工廠用強迫勞動？</b>不是。美方針對的是各國「海關與法規沒有有效擋下強迫勞動商品<b>進口</b>」，所以連歐盟、日本、韓國、加拿大、英國等 60 個主要貿易夥伴都一起被調查與課稅。<sup><a href="#fn9">9</a><a href="#fn13">13</a></sup></li>
+      <li><b>誤會二：台灣現在的 10%，是原本關稅再加 10%？</b>不是。對台灣是「合計 10%」，原本的一般關稅算在裡面（不疊加）。另外，豁免清單上的品項也不必課這筆 301。<sup><a href="#fn4">4</a><a href="#fn7">7</a></sup></li>
+      <li><b>誤會三：兩個 301 會重複疊加收兩次？</b>不會。11 月「產能過剩 301」對台灣的主提案寫明「扣除一般關稅與既有 301」，意思是把現行 10% 的上限往上補到最高 15%，不是 10% 再加 15%。談不攏時的 25% 方案也扣除既有 301，但不再扣一般關稅。<sup><a href="#fn1">1</a></sup></li>
+    </ul>
+  </div>
+
+  <h3 class="subh">兩個 301 怎麼分？一張表看差別</h3>
+  <div class="tbl-wrap">
+    <table class="ctbl">
+      <thead>
+        <tr>
+          <th>比較項目</th>
+          <th>強迫勞動 301（現行）</th>
+          <th>產能過剩 301（本次新提案）</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>美方指控重點</b></td>
+          <td>沒有禁止或未有效執行「禁止<b>進口</b>強迫勞動商品」<sup><a href="#fn13">13</a></sup></td>
+          <td>政府政策造成製造業「結構性產能過剩」與長期對美順差<sup><a href="#fn1">1</a></sup></td>
+        </tr>
+        <tr>
+          <td><b>調查對象</b></td>
+          <td>60 個經濟體（涵蓋多數美國貿易夥伴）<sup><a href="#fn13">13</a></sup></td>
+          <td>16 個經濟體（11/25 已認定 14 個，墨西哥、挪威未定）<sup><a href="#fn2">2</a></sup></td>
+        </tr>
+        <tr>
+          <td><b>發起與刊登</b></td>
+          <td>2026-03-12 發起，3/17 刊登公報；6/2 認定<sup><a href="#fn4">4</a><a href="#fn13">13</a></sup></td>
+          <td>2026-03-11 發起，3/17 刊登公報<sup><a href="#fn1">1</a><a href="#fn13">13</a></sup></td>
+        </tr>
+        <tr>
+          <td><b>目前進度</b></td>
+          <td><b>已定案並生效</b>（2026-07-24 起適用，7/28 刊登公報；有法院訴訟進行中）<sup><a href="#fn4">4</a><a href="#fn9">9</a></sup></td>
+          <td><b>僅認定與提案，尚未生效</b>（2027-01-05 意見截止、01-25 聽證）<sup><a href="#fn1">1</a></sup></td>
+        </tr>
+        <tr>
+          <td><b>台灣稅率與算法</b></td>
+          <td>合計 10%（扣一般關稅，不疊加）；經濟部稱享 2,231 項豁免 <span class="lv lvU">單方說法</span><sup><a href="#fn4">4</a><a href="#fn7">7</a></sup></td>
+          <td>提案合計最高 15%（扣一般關稅與既有 301）；談不攏最高 25%（只扣既有 301，另加一般關稅）；附件 A 約 2,234 個稅則<sup><a href="#fn1">1</a></sup></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="subh">前因後果：為什麼 2026 年會一連冒出這兩個 301？</h3>
+  <ol class="chain">
+    <li>
+      <div class="step"><span>2025-04-02</span><span class="num">1</span></div>
+      <b>美國開徵全球「對等關稅」</b>
+      白宮發布第 14257 號行政命令，援引《國際緊急經濟權力法》（IEEPA）對各國加徵對等關稅，理由是縮減長期商品貿易逆差。
+      <div class="src"><span class="lv lvA">A 官方原文</span>（行政命令見美台協定）<span class="lv lvB">B</span>（援引 IEEPA 見事務所）<sup><a href="#fn5">5</a><a href="#fn8">8</a><a href="#fn9">9</a></sup></div>
+    </li>
+    <li>
+      <div class="step"><span>2026-02-12</span><span class="num">2</span></div>
+      <b>美台簽署「對等貿易協定」（ART）</b>
+      美台簽約，台灣開放部分市場與採購，換取台灣商品在美對等關稅改為「合計 15%、不疊加一般關稅」（部分品項豁免）。
+      <div class="src"><span class="lv lvA">A 官方原文</span>（協定與通知註腳）<sup><a href="#fn1">1</a><a href="#fn5">5</a></sup></div>
+    </li>
+    <li>
+      <div class="step"><span>2026-02-20</span><span class="num">3</span></div>
+      <b>美國最高法院推翻 IEEPA 關稅</b>
+      最高法院判決總統不能用緊急經濟權力法（IEEPA）課關稅，2025 年的對等關稅失去法源，美國政府必須另找法律工具補位。
+      <div class="src"><span class="lv lvB">B 兩家律師事務所一致</span>（2/20 日期見 [9]）<sup><a href="#fn8">8</a><a href="#fn9">9</a></sup></div>
+    </li>
+    <li>
+      <div class="step"><span>2026-03-11～17</span><span class="num">4</span></div>
+      <b>美方改用 301 條款，雙線發起調查</b>
+      判決不到一個月，USTR 啟動兩波 301 調查：3/11 對 16 經濟體查「產能過剩」、同月對 60 經濟體查「強迫勞動進口禁令」，雙雙於 3/17 刊登公報。
+      <div class="src"><span class="lv lvA">A 官方原文</span>（聯邦公報發起公告）<sup><a href="#fn1">1</a><a href="#fn13">13</a></sup></div>
+    </li>
+    <li>
+      <div class="step"><span>2026-07-24</span><span class="num">5</span></div>
+      <b>「強迫勞動 301」率先上路</b>
+      範圍較廣的強迫勞動 301 先定案（7/28 刊登公報），7/24 起對台灣課徵合計 10%（扣一般關稅），成為目前實際在收的 301 關稅。
+      <div class="src"><span class="lv lvA">A 官方原文</span>（7 月聯邦公報）<sup><a href="#fn4">4</a></sup></div>
+    </li>
+    <li class="now-step">
+      <div class="step"><span>2026-11-25（美東）</span><span class="num">6</span></div>
+      <b>「產能過剩 301」提案接軌 15%</b>
+      USTR 認定台灣等 14 經濟體產能過剩，參考 2 月美台協定，提議台灣合計最高 15%（不疊加）；若談不攏則另提最高 25%（疊加一般關稅）。
+      <div class="src"><span class="lv lvA">A 官方原文</span>（USTR 通知與新聞稿）<sup><a href="#fn1">1</a><a href="#fn2">2</a></sup></div>
+    </li>
+  </ol>
+
+  <h3 class="subh">五個關鍵名詞，一句話看懂</h3>
+  <div class="gloss">
+    <div><b>一般關稅（MFN，最惠國稅率）</b>美國對大多數 WTO 會員國原本就在收的基本關稅，不同商品差很大，從 0%（如伺服器）到 32%（如合成纖維毛衣）都有。<sup><a href="#fn14">14</a></sup></div>
+    <div><b>232 關稅</b>美國依《1962 年貿易擴張法》第 232 條，以「國家安全」名義對鋼鋁銅、汽車零件、木製品、專利藥、半導體等特定類別課徵的關稅；這次 301 把已在課 232 的品項豁免。<sup><a href="#fn1">1</a></sup></div>
+    <div><b>301 關稅</b>美國依《1974 年貿易法》第 301 條，認定外國貿易做法「不合理或歧視」後加徵的關稅；2026 年有 7 月上路的「強迫勞動」與 11 月提案的「產能過剩」兩波。<sup><a href="#fn1">1</a><a href="#fn4">4</a></sup></div>
+    <div><b>IEEPA（《國際緊急經濟權力法》）</b>美國總統在國家緊急狀態下可動用的經濟權力法律；2025 年美方原本靠它直接開徵全球對等關稅，但在 2026 年 2 月被最高法院判定不能拿來課關稅。<sup><a href="#fn8">8</a><a href="#fn9">9</a></sup></div>
+    <div><b>「不疊加」（扣除原稅後的淨額）</b>不是在原本關稅之上硬再多加一筆，而是先設總上限（如 10% 或 15%），扣掉原本關稅後只補差額；原本關稅已超過上限，新關稅就是 0%。<sup><a href="#fn1">1</a><a href="#fn4">4</a></sup></div>
+  </div>
+</section>
+
+<section id="s1">
+  <h2 class="sec">走到哪一步：認定已經做了，稅率還只是提案</h2>
+  <p class="take">美方的程序是先調查、再認定、再提出稅率徵求意見，最後才決定和生效。11/25 做完的是「認定」和「提出稅率」，後面還有三步。<sup><a href="#fn1">1</a></sup></p>
+  <ol class="ladder">
+    <li class="done"><b>發起調查</b><span>2026-03-11，16 個經濟體</span></li>
+    <li class="done"><b>諮商、公聽</b><span>美台諮商 05-20，沒有解決美方疑慮</span></li>
+    <li class="now"><b>認定＋提出稅率</b><span>2026-11-25（美東）</span></li>
+    <li class="next"><b>徵求意見</b><span>2027-01-05 截止</span></li>
+    <li class="next"><b>聽證會</b><span>2027-01-25 起</span></li>
+    <li class="next"><b>最終決定</b><span>日期未定</span></li>
+    <li class="next"><b>生效</b><span>日期未定</span></li>
+  </ol>
+  <p class="note">美方新聞稿說，認定的通知目前只是「預發布版」，放在 USTR 網站；11/26 下午查聯邦公報系統，正式刊登版還沒出現。<sup><a href="#fn12">12</a></sup></p>
+</section>
+
+<section id="s2">
+  <h2 class="sec">14 個經濟體的提案稅率：台灣在最低的一級</h2>
+  <p class="take">深藍色的五個（含台灣）是「合計最高 15%，原本的關稅算在裡面」；淺藍色是「這個數字之外，原本的關稅另外再加」。所以同樣寫 15% 和 18%，實際差距比 3 個百分點大。<sup><a href="#fn2">2</a></sup></p>
+  <div class="card rates" role="img" aria-label="各經濟體提案最高稅率：歐盟、日本、韓國、瑞士、台灣 15%；泰國、馬來西亞、印尼、柬埔寨、孟加拉 18%；新加坡、中國 20%；印度 25%；越南 35%">
+    <div class="rr tw"><div class="nm">台灣</div><div class="tr"><i class="net" style="width:42.9%"></i></div><div class="v"><b>最高 15%</b><small>含原本的關稅</small></div></div>
+    <div class="rr"><div class="nm">日本</div><div class="tr"><i class="net" style="width:42.9%"></i></div><div class="v"><b>最高 15%</b><small>含原本的關稅</small></div></div>
+    <div class="rr"><div class="nm">韓國</div><div class="tr"><i class="net" style="width:42.9%"></i></div><div class="v"><b>最高 15%</b><small>含原本的關稅</small></div></div>
+    <div class="rr"><div class="nm">瑞士</div><div class="tr"><i class="net" style="width:42.9%"></i></div><div class="v"><b>最高 15%</b><small>含原本的關稅</small></div></div>
+    <div class="rr"><div class="nm">歐盟</div><div class="tr"><i class="net" style="width:42.9%"></i></div><div class="v"><b>15%</b><small>含原本的關稅；沒寫「最高」</small></div></div>
+    <div class="rr"><div class="nm">泰國</div><div class="tr"><i class="add" style="width:51.4%"></i></div><div class="v"><b>最高 18%</b><small>另加原本的關稅</small></div></div>
+    <div class="rr"><div class="nm">馬來西亞</div><div class="tr"><i class="add" style="width:51.4%"></i></div><div class="v"><b>最高 18%</b><small>另加原本的關稅</small></div></div>
+    <div class="rr"><div class="nm">印尼</div><div class="tr"><i class="add" style="width:51.4%"></i></div><div class="v"><b>最高 18%</b><small>另加原本的關稅</small></div></div>
+    <div class="rr"><div class="nm">柬埔寨</div><div class="tr"><i class="add" style="width:51.4%"></i></div><div class="v"><b>最高 18%</b><small>另加原本的關稅</small></div></div>
+    <div class="rr"><div class="nm">孟加拉</div><div class="tr"><i class="add" style="width:51.4%"></i></div><div class="v"><b>最高 18%</b><small>另加原本的關稅</small></div></div>
+    <div class="rr"><div class="nm">新加坡</div><div class="tr"><i class="add" style="width:57.1%"></i></div><div class="v"><b>最高 20%</b><small>另加；簽協議可調到 10%</small></div></div>
+    <div class="rr"><div class="nm">中國</div><div class="tr"><i class="oth" style="width:57.1%"></i></div><div class="v"><b>最高 20%</b><small>算法不同，見下方說明</small></div></div>
+    <div class="rr"><div class="nm">印度</div><div class="tr"><i class="add" style="width:71.4%"></i></div><div class="v"><b>最高 25%</b><small>另加原本的關稅</small></div></div>
+    <div class="rr"><div class="nm">越南</div><div class="tr"><i class="add" style="width:100%"></i></div><div class="v"><b>最高 35%</b><small>另加原本的關稅</small></div></div>
+    <div class="rkey">
+      <span><i style="background:var(--b-net)"></i>合計最高（原本的關稅算在裡面）</span>
+      <span><i style="background:var(--b-add)"></i>另外再加原本的關稅</span>
+      <span><i style="background:var(--b-oth)"></i>其他算法</span>
+    </div>
+  </div>
+  <p class="note">「原本的關稅」指一般關稅（MFN）和已經在課的其他 301 關稅；「另外再加」的那一組只扣既有 301、不扣一般關稅。中國的提案是：大多數商品最高 20%（扣掉強迫勞動 301 的部分），附件列的商品最高 10%。墨西哥和挪威還沒認定。多數國家另有談不攏時的較高替代稅率，律師事務所整理是 20%～40%。<sup><a href="#fn2">2</a><a href="#fn8">8</a></sup></p>
+</section>
+
+<section id="s3">
+  <h2 class="sec">「不疊加」怎麼算：拿一個一般關稅 3% 的產品來看</h2>
+  <p class="take">美方原文寫「扣除一般關稅和既有 301 之後的淨額」，意思是三種稅加起來最多 15%，新的 301 只補差額。談不攏時的 25% 方案只扣既有 301、不扣一般關稅，所以一般關稅會再疊上去。<sup><a href="#fn1">1</a></sup></p>
+  <div class="card stk" role="img" aria-label="一般關稅 3% 的產品：現在合計 10%，提案合計最高 15%，替代方案合計最高 28%">
+    <div class="sr"><div class="nm">現在<small>強迫勞動 301，7/24 起</small></div><div class="bar"><i class="mfn" style="width:10%">3</i><i class="old" style="width:23.3%">7</i></div><div class="tot">10%</div></div>
+    <div class="sr"><div class="nm">提案<small>最高 15%，原本的算在裡面</small></div><div class="bar"><i class="mfn" style="width:10%">3</i><i class="old" style="width:23.3%">7</i><i class="new" style="width:16.7%">5</i></div><div class="tot">15%</div></div>
+    <div class="sr"><div class="nm">談不攏時<small>最高 25%，只扣既有 301</small></div><div class="bar"><i class="mfn" style="width:10%">3</i><i class="old" style="width:23.3%">7</i><i class="new" style="width:60%">18</i></div><div class="tot">28%</div></div>
+    <div class="rkey">
+      <span><i style="background:var(--s-mfn)"></i>一般關稅（MFN）</span>
+      <span><i style="background:var(--s-old)"></i>既有的強迫勞動 301</span>
+      <span><i style="background:var(--s-new)"></i>這次新提的 301</span>
+    </div>
+  </div>
+  <p class="note"><span class="rj">研究者推算</span>照原文字面算，假設這個產品現在沒有被強迫勞動 301 豁免；一般關稅已經在 10% 以上的產品，現行 301 是 0。最終算法以美方公告為準。現行 10% 的規定見 7 月的聯邦公報，15% 的算法和 2 月簽的美台對等貿易協定一致。<sup><a href="#fn4">4</a><a href="#fn5">5</a></sup></p>
+</section>
+
+<section id="s3b">
+  <h2 class="sec">台灣產品舉例：17 項產品在不同條件下會被課多少？</h2>
+  <p class="take">同樣是台灣出口到美國的商品，稅率差距極大：有沒有在豁免清單上、用途是不是民用航空器、原本一般關稅高不高、是不是屬 232 類別，四個條件決定結果。<sup><a href="#fn1">1</a><a href="#fn14">14</a></sup></p>
+
+  <div class="f3">
+    <div class="card fc f-now">
+      <h3>時點一：現在（7/24 起）</h3>
+      <p>強迫勞動 301 對台灣採「10% 扣一般關稅」。未豁免品項若原本關稅低於 10%，補到 10%；原本就 10% 以上，這筆 301 是 0%。<sup><a href="#fn4">4</a></sup></p>
+      <div class="eq">未豁免合計 ＝ 原本關稅與 10% 取較高者</div>
+    </div>
+    <div class="card fc f-prop">
+      <h3>時點二：提案通過（最高）</h3>
+      <p>產能過剩 301 主方案採「最高 15%，扣一般關稅與既有 301」。豁免品項不加 301；未豁免品項最多補到合計 15%。<sup><a href="#fn1">1</a></sup></p>
+      <div class="eq">未豁免合計最高 ＝ 原本關稅與 15% 取較高者</div>
+    </div>
+    <div class="card fc f-alt">
+      <h3>時點三：談不攏替代方案（最高）</h3>
+      <p>原文採「最高 25%，只扣既有 301、<b>不扣一般關稅</b>」。同一套豁免清單照用；但未豁免品項會把原本一般關稅直接疊加上去。<sup><a href="#fn1">1</a></sup></p>
+      <div class="eq">未豁免合計最高 ＝ 原本關稅 ＋ 25%</div>
+    </div>
+  </div>
+
+  <div class="assume">
+    <span class="rj">研究者推算</span> <b>試算前必看的一項重要假設：</b>7 月強迫勞動 301 聯邦公報的附件豁免表格無法轉成文字，沒有逐項比對。經濟部簡報稱強迫勞動 301 台灣有 <b>2,231 項</b>產品豁免（<span class="lv lvU">單方說法</span>），與新 301 附件 A 約 <b>2,234 個</b>稅則非常接近。<sup><a href="#fn1">1</a><a href="#fn7">7</a></sup>因此下圖與下表的<b>「現在」一欄，假設兩份豁免清單（含用途限制）完全相同</b>；若某項產品 7 月實際豁免狀態與附件 A 不同，「現在」欄就會變動。但對「不在附件 A」的品項，即使 7 月實際上是豁免的，提案最高（15% 上限）與替代方案最高（原本關稅＋25%）的合計結果都不會改變。
+  </div>
+
+  <h3 class="subh">挑 7 個代表產品看差距：條件不同，稅率怎麼跳？</h3>
+  <div class="card pchart" role="img" aria-label="七項代表台灣產品在現在、提案最高與談不攏替代方案最高三個時點的合計關稅比較">
+    <div class="pr">
+      <div class="pn">伺服器<small>MFN 0%｜在附件 A 豁免</small></div>
+      <div class="bars">
+        <div class="br"><span class="lb">現在*</span><div class="tr"><i class="c-zero" style="width:1%"></i></div><span class="val ok">0%</span></div>
+        <div class="br"><span class="lb">提案</span><div class="tr"><i class="c-zero" style="width:1%"></i></div><span class="val ok">0%</span></div>
+        <div class="br"><span class="lb">談不攏</span><div class="tr"><i class="c-zero" style="width:1%"></i></div><span class="val ok">0%</span></div>
+      </div>
+    </div>
+    <div class="pr">
+      <div class="pn">印刷電路板（空板）<small>MFN 0%｜不在附件 A</small></div>
+      <div class="bars">
+        <div class="br"><span class="lb">現在*</span><div class="tr"><i class="c-now" style="width:16.7%"></i></div><span class="val">10%</span></div>
+        <div class="br"><span class="lb">提案</span><div class="tr"><i class="c-prop" style="width:25%"></i></div><span class="val hi">15%</span></div>
+        <div class="br"><span class="lb">談不攏</span><div class="tr"><i class="c-alt" style="width:41.7%"></i></div><span class="val bad">25%</span></div>
+      </div>
+    </div>
+    <div class="pr">
+      <div class="pn">電源供應器（一般用途）<small>MFN 0%｜僅航空器用途豁免</small></div>
+      <div class="bars">
+        <div class="br"><span class="lb">現在*</span><div class="tr"><i class="c-now" style="width:16.7%"></i></div><span class="val">10%</span></div>
+        <div class="br"><span class="lb">提案</span><div class="tr"><i class="c-prop" style="width:25%"></i></div><span class="val hi">15%</span></div>
+        <div class="br"><span class="lb">談不攏</span><div class="tr"><i class="c-alt" style="width:41.7%"></i></div><span class="val bad">25%</span></div>
+      </div>
+    </div>
+    <div class="pr">
+      <div class="pn">車床（數控）<small>MFN 4.4%｜不在附件 A</small></div>
+      <div class="bars">
+        <div class="br"><span class="lb">現在*</span><div class="tr"><i class="c-now" style="width:16.7%"></i></div><span class="val">10%</span></div>
+        <div class="br"><span class="lb">提案</span><div class="tr"><i class="c-prop" style="width:25%"></i></div><span class="val hi">15%</span></div>
+        <div class="br"><span class="lb">談不攏</span><div class="tr"><i class="c-alt" style="width:49%"></i></div><span class="val bad">29.4%</span></div>
+      </div>
+    </div>
+    <div class="pr">
+      <div class="pn">扳手（手工具）<small>MFN 9%｜不在附件 A</small></div>
+      <div class="bars">
+        <div class="br"><span class="lb">現在*</span><div class="tr"><i class="c-now" style="width:16.7%"></i></div><span class="val">10%</span></div>
+        <div class="br"><span class="lb">提案</span><div class="tr"><i class="c-prop" style="width:25%"></i></div><span class="val hi">15%</span></div>
+        <div class="br"><span class="lb">談不攏</span><div class="tr"><i class="c-alt" style="width:56.7%"></i></div><span class="val bad">34%</span></div>
+      </div>
+    </div>
+    <div class="pr">
+      <div class="pn">聚酯長纖布料<small>MFN 14.9%｜不在附件 A</small></div>
+      <div class="bars">
+        <div class="br"><span class="lb">現在*</span><div class="tr"><i class="c-now" style="width:24.8%"></i></div><span class="val">14.9%</span></div>
+        <div class="br"><span class="lb">提案</span><div class="tr"><i class="c-prop" style="width:25%"></i></div><span class="val hi">15%</span></div>
+        <div class="br"><span class="lb">談不攏</span><div class="tr"><i class="c-alt" style="width:66.5%"></i></div><span class="val bad">39.9%</span></div>
+      </div>
+    </div>
+    <div class="pr">
+      <div class="pn">合成纖維毛衣<small>MFN 32%｜不在附件 A</small></div>
+      <div class="bars">
+        <div class="br"><span class="lb">現在*</span><div class="tr"><i class="c-now" style="width:53.3%"></i></div><span class="val">32%</span></div>
+        <div class="br"><span class="lb">提案</span><div class="tr"><i class="c-prop" style="width:53.3%"></i></div><span class="val">32%</span></div>
+        <div class="br"><span class="lb">談不攏</span><div class="tr"><i class="c-alt" style="width:95%"></i></div><span class="val bad">57%</span></div>
+      </div>
+    </div>
+    <div class="rkey">
+      <span><i style="background:var(--ok)"></i>0%（豁免）</span>
+      <span><i style="background:var(--s-old)"></i>現在合計（*假設現行豁免同附件 A）</span>
+      <span><i style="background:var(--s-new)"></i>提案通過（最高）</span>
+      <span><i style="background:var(--bad)"></i>談不攏替代方案（最高，疊加一般關稅）</span>
+    </div>
+  </div>
+  <p class="note">從長條圖最能看出兩件事：① 一般關稅原本就高（如布料 14.9%、毛衣 32%）的商品，走主提案 15% 幾乎或完全不加稅，但一旦談不攏改走替代方案、變成疊加，總稅率會暴增 25 個百分點；② 電源供應器若改用於民用航空器，三個時點都是 0%。</p>
+
+  <h3 class="subh">17 項台灣產品完整試算表（依條件分 7 組）</h3>
+  <p class="scroll-hint">提示：手機版可左右滑動表格查看完整欄位。表內合計稅率皆為 <span class="rj">研究者推算</span>，一般關稅（MFN）查自美國 USITC 稅則系統。<sup><a href="#fn14">14</a></sup></p>
+  <div class="tbl-wrap">
+    <table class="ptbl">
+      <thead>
+        <tr>
+          <th>台灣產品與稅則</th>
+          <th class="num">一般關稅<br>（MFN）</th>
+          <th>附件 A／232 狀態</th>
+          <th class="num">現在合計*<br>（強迫勞動 301）</th>
+          <th class="num">提案通過<br>（最高）</th>
+          <th class="num">談不攏替代<br>（最高）</th>
+          <th>說明與未查證假設</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="grp"><td colspan="7">一、在附件 A、沒有用途限制（5 項）：提案與替代方案皆豁免 301</td></tr>
+        <tr>
+          <td><b>伺服器</b><span class="code">8471.50.01</span></td>
+          <td class="num">0%</td>
+          <td>在附件 A、無限制</td>
+          <td class="num ok"><b>0%</b></td>
+          <td class="num ok"><b>0%</b></td>
+          <td class="num ok"><b>0%</b></td>
+          <td>豁免新 301；「現在」假設同附件 A。</td>
+        </tr>
+        <tr>
+          <td><b>筆記型電腦</b><span class="code">8471.30.01</span></td>
+          <td class="num">0%</td>
+          <td>在附件 A、無限制</td>
+          <td class="num ok"><b>0%</b></td>
+          <td class="num ok"><b>0%</b></td>
+          <td class="num ok"><b>0%</b></td>
+          <td>同上。</td>
+        </tr>
+        <tr>
+          <td><b>電腦用印刷電路組件（主機板等）</b><span class="code">8473.30.11</span></td>
+          <td class="num">0%</td>
+          <td>在附件 A、無限制</td>
+          <td class="num ok"><b>0%</b></td>
+          <td class="num ok"><b>0%</b></td>
+          <td class="num ok"><b>0%</b></td>
+          <td>主機板已組裝在清單上；空板不在（見下組）。</td>
+        </tr>
+        <tr>
+          <td><b>交換器、路由器</b><span class="code">8517.62.00</span></td>
+          <td class="num">0%</td>
+          <td>在附件 A、無限制</td>
+          <td class="num ok"><b>0%</b></td>
+          <td class="num ok"><b>0%</b></td>
+          <td class="num ok"><b>0%</b></td>
+          <td>網通主力品項，豁免新 301。</td>
+        </tr>
+        <tr>
+          <td><b>處理器晶片</b><span class="code">8542.31.00</span></td>
+          <td class="num">0%</td>
+          <td>在附件 A、無限制；亦涉 232 半導體</td>
+          <td class="num ok"><b>0%</b><span class="subv">（僅計 301）</span></td>
+          <td class="num ok"><b>0%</b><span class="subv">（僅計 301）</span></td>
+          <td class="num ok"><b>0%</b><span class="subv">（僅計 301）</span></td>
+          <td>稅則列在附件 A 故豁免 301；但美方寫「目前已在課 232 的半導體製品」，經濟部說半導體 232「尚未提出」，兩邊說法不一，未來 232 稅率另計。<sup><a href="#fn1">1</a><a href="#fn6">6</a></sup></td>
+        </tr>
+
+        <tr class="grp"><td colspan="7">二、一般關稅 0%、不在附件 A（2 項）：原本免稅，但會被課足 301</td></tr>
+        <tr>
+          <td><b>印刷電路板（空板）</b><span class="code">8534.00.00</span></td>
+          <td class="num">0%</td>
+          <td>不在附件 A</td>
+          <td class="num"><b>10%</b><span class="subv">0+10</span></td>
+          <td class="num hi"><b>15%</b><span class="subv">0+10+5</span></td>
+          <td class="num bad"><b>25%</b><span class="subv">0+10+15</span></td>
+          <td>與主機板（8473.30）不同，空板不在豁免清單。</td>
+        </tr>
+        <tr>
+          <td><b>連接器（同軸、圓形多芯等）</b><span class="code">8536.69.40</span></td>
+          <td class="num">0%</td>
+          <td>不在附件 A</td>
+          <td class="num"><b>10%</b><span class="subv">0+10</span></td>
+          <td class="num hi"><b>15%</b><span class="subv">0+10+5</span></td>
+          <td class="num bad"><b>25%</b><span class="subv">0+10+15</span></td>
+          <td>電子零組件未列入附件 A。</td>
+        </tr>
+
+        <tr class="grp"><td colspan="7">三、在附件 A，但「只限民用航空器用途」（2 項）：一般用途照課，航空器用途豁免</td></tr>
+        <tr>
+          <td><b>電源供應器</b><span class="code">8504.40.95</span></td>
+          <td class="num">0%</td>
+          <td>附件 A 標註 Aircraft（限民用航空器）</td>
+          <td class="num"><b>10%</b><span class="subv">0+10</span></td>
+          <td class="num hi"><b>15%</b><span class="subv">0+10+5</span></td>
+          <td class="num bad"><b>25%</b><span class="subv">0+10+15</span></td>
+          <td>左列按一般用途（如伺服器電源）試算；若屬<b>民用航空器用途</b>，三時點皆豁免，合計 <b>0%</b>。<sup><a href="#fn1">1</a></sup></td>
+        </tr>
+        <tr>
+          <td><b>鋰電池</b><span class="code">8507.60.00</span></td>
+          <td class="num">3.4%</td>
+          <td>附件 A 標註 Aircraft（限民用航空器）</td>
+          <td class="num"><b>10%</b><span class="subv">3.4+6.6</span></td>
+          <td class="num hi"><b>15%</b><span class="subv">3.4+6.6+5</span></td>
+          <td class="num bad"><b>28.4%</b><span class="subv">3.4+25</span></td>
+          <td>左列按一般用途試算；若屬<b>民用航空器用途</b>，三時點皆豁免 301，僅課原本 MFN <b>3.4%</b>。<sup><a href="#fn1">1</a></sup></td>
+        </tr>
+
+        <tr class="grp"><td colspan="7">四、一般關稅低於 10%、不在附件 A（5 項）：現在補到 10%、提案補到 15%、談不攏再疊加原稅</td></tr>
+        <tr>
+          <td><b>自行車車架等零件</b><span class="code">8714.91.30</span></td>
+          <td class="num">3.9%</td>
+          <td>不在附件 A</td>
+          <td class="num"><b>10%</b><span class="subv">3.9+6.1</span></td>
+          <td class="num hi"><b>15%</b><span class="subv">3.9+6.1+5</span></td>
+          <td class="num bad"><b>28.9%</b><span class="subv">3.9+25</span></td>
+          <td>主提案下 3.9% 算在 15% 裡；替代方案會疊加。</td>
+        </tr>
+        <tr>
+          <td><b>水龍頭（銅製）</b><span class="code">8481.80.10</span></td>
+          <td class="num">4%</td>
+          <td>不在附件 A（232 銅未查證）</td>
+          <td class="num"><b>10%</b><span class="subv">4+6</span></td>
+          <td class="num hi"><b>15%</b><span class="subv">4+6+5</span></td>
+          <td class="num bad"><b>29%</b><span class="subv">4+25</span></td>
+          <td><span class="rj">未查證假設</span> 是否屬 232 銅製品未查證，左列<b>假設不屬於</b>；若屬 232 銅製品，則豁免 301、改課 232。</td>
+        </tr>
+        <tr>
+          <td><b>車床（數控）</b><span class="code">8458.11.00</span></td>
+          <td class="num">4.4%</td>
+          <td>不在附件 A</td>
+          <td class="num"><b>10%</b><span class="subv">4.4+5.6</span></td>
+          <td class="num hi"><b>15%</b><span class="subv">4.4+5.6+5</span></td>
+          <td class="num bad"><b>29.4%</b><span class="subv">4.4+25</span></td>
+          <td>工具機代表品項。</td>
+        </tr>
+        <tr>
+          <td><b>螺絲（直徑 6mm 以上）</b><span class="code">7318.15.80</span></td>
+          <td class="num">8.5%</td>
+          <td>不在附件 A（232 鋼鐵未查證）</td>
+          <td class="num"><b>10%</b><span class="subv">8.5+1.5</span></td>
+          <td class="num hi"><b>15%</b><span class="subv">8.5+1.5+5</span></td>
+          <td class="num bad"><b>33.5%</b><span class="subv">8.5+25</span></td>
+          <td><span class="rj">未查證假設</span> 是否屬 232 鋼鐵衍生品未查證，左列<b>假設不屬於</b>；若屬 232 鋼鐵衍生品，則豁免 301、改課 232。</td>
+        </tr>
+        <tr>
+          <td><b>扳手（手工具）</b><span class="code">8204.11.00</span></td>
+          <td class="num">9%</td>
+          <td>不在附件 A</td>
+          <td class="num"><b>10%</b><span class="subv">9+1</span></td>
+          <td class="num hi"><b>15%</b><span class="subv">9+1+5</span></td>
+          <td class="num bad"><b>34%</b><span class="subv">9+25</span></td>
+          <td>原稅已達 9%，現行 301 只補 1%，但談不攏會疊到 34%。</td>
+        </tr>
+
+        <tr class="grp"><td colspan="7">五、一般關稅介於 10%～15%、不在附件 A（1 項）：現行 301 是 0%，主提案幾乎不動，談不攏暴升</td></tr>
+        <tr>
+          <td><b>聚酯長纖布料</b><span class="code">5407.61.99</span></td>
+          <td class="num">14.9%</td>
+          <td>不在附件 A</td>
+          <td class="num"><b>14.9%</b><span class="subv">14.9+0</span></td>
+          <td class="num hi"><b>15%</b><span class="subv">14.9+0.1</span></td>
+          <td class="num bad"><b>39.9%</b><span class="subv">14.9+25</span></td>
+          <td>原本就超過 10%，現行 301 為 0%；主提案最多只加 0.1%，但替代方案不扣 MFN，直跳 39.9%。</td>
+        </tr>
+
+        <tr class="grp"><td colspan="7">六、一般關稅高於 15%、不在附件 A（1 項）：現在與主提案都不加 301，但談不攏疊加 25%</td></tr>
+        <tr>
+          <td><b>合成纖維毛衣</b><span class="code">6110.30.30</span></td>
+          <td class="num">32%</td>
+          <td>不在附件 A</td>
+          <td class="num"><b>32%</b><span class="subv">32+0</span></td>
+          <td class="num"><b>32%</b><span class="subv">32+0</span></td>
+          <td class="num bad"><b>57%</b><span class="subv">32+25</span></td>
+          <td>原本已高於 15%，現行與主提案的 301 都是 0%；若落入替代方案，直接變成 57%。</td>
+        </tr>
+
+        <tr class="grp"><td colspan="7">七、屬 232 關稅類別，不走 301（1 項）：豁免本次 301，改依 232 另計</td></tr>
+        <tr>
+          <td><b>汽車車身零件</b><span class="code">8708.29</span></td>
+          <td class="num">（另計）</td>
+          <td>不在附件 A；屬 232 汽車零件豁免</td>
+          <td class="num"><b>另計 232</b></td>
+          <td class="num"><b>另計 232</b></td>
+          <td class="num"><b>另計 232</b></td>
+          <td>新 301 原文把「目前已在課 232 的汽車零件」列為豁免。經濟部稱台灣 232 汽車零組件稅率 <b>15% 不疊加</b>（<span class="lv lvU">單方說法</span>，未核對美方 232 公告）。<sup><a href="#fn1">1</a><a href="#fn7">7</a></sup></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">*「現在合計」欄以「7 月強迫勞動 301 豁免清單與 11 月新 301 附件 A 相同」為假設試算。表內各欄小字為拆解：<code>MFN＋既有301（＋新301）</code>；替代方案因「只扣既有 301、不扣 MFN」，兩段 301 合計最高就是 25%，所以總稅率等於 <code>MFN＋25%</code>。實務報關時，最終稅率仍以美國海關（CBP）認定之稅則歸類與正式聯邦公報為準。</p>
+</section>
+
+<section id="s4">
+  <h2 class="sec">時間線：從最高法院判決到明年 1 月的聽證</h2>
+  <p class="take">這次的 301 是在補位：2 月最高法院判決總統不能用緊急經濟權力法課關稅，美方改用 301 調查重新建立關稅，7 月先上路的是強迫勞動 301。<sup><a href="#fn8">8</a><a href="#fn9">9</a></sup></p>
+  <ol class="tl">
+    <li class="us"><div class="d">2026-02-12</div><div class="e">美台簽署對等貿易協定：一般關稅低於 15% 的商品，加上額外關稅合計 15%。<span class="lv lvA">A</span></div></li>
+    <li class="us"><div class="d">2026-02-20</div><div class="e">美國最高法院判決總統不能用緊急經濟權力法（IEEPA）課關稅。<span class="lv lvB">B</span></div></li>
+    <li class="us"><div class="d">2026-03-11</div><div class="e">美國貿易代表署對 16 個經濟體發起「產能過剩」301 調查，台灣在內；3/17 刊登聯邦公報。<span class="lv lvA">A</span></div></li>
+    <li class="us"><div class="d">2026-05-20</div><div class="e">美台諮商，美方說沒有解決疑慮。<span class="lv lvA">A</span></div></li>
+    <li class="us"><div class="d">2026-07-24</div><div class="e">強迫勞動 301 開始對台灣課稅：合計 10%，一般關稅算在裡面。<span class="lv lvA">A</span></div></li>
+    <li class="big"><div class="d">2026-11-25<small>美東時間</small></div><div class="e"><b>認定 14 個經濟體並提出稅率</b>：台灣最高 15%，談不攏時最高 25%；墨西哥、挪威還沒認定。<span class="lv lvA">A</span></div></li>
+    <li class="tw"><div class="d">2026-11-26</div><div class="e">經濟部、行政院回應：台灣列最低稅率級別，有信心最後回到 15%。<span class="lv lvU">單方說法</span></div></li>
+    <li class="fut"><div class="d">2027-01-05</div><div class="e">書面意見、申請出席聽證截止。<span class="lv lvA">A</span></div></li>
+    <li class="fut"><div class="d">2027-01-25</div><div class="e">在華府開聽證會。<span class="lv lvA">A</span></div></li>
+    <li class="fut"><div class="d">未定</div><div class="e">最終決定與生效。美國貿易代表說可能要幾個月，另一位官員說最快 1 月。<span class="lv lvC">C 單一媒體</span></div></li>
+  </ol>
+  <p class="note">日期來源依序是：美方通知註腳、兩家律師事務所、美方通知、美方通知、7 月聯邦公報、美方新聞稿、經濟部新聞稿、美方通知、美方通知、CNBC。<sup><a href="#fn1">1</a><a href="#fn4">4</a><a href="#fn6">6</a><a href="#fn10">10</a></sup></p>
+</section>
+
+<section id="s5">
+  <h2 class="sec">豁免什麼：伺服器、手機、晶片在清單上，電路板和連接器不在</h2>
+  <p class="take">美方列了三類不加稅的東西：已經在課 232 關稅的品項、書籍與隨身行李這類、還有附件 A 逐項列出的稅則。對台灣最重要的是附件 A，本文逐列比對了台灣主力出口品項。<sup><a href="#fn1">1</a></sup></p>
+  <div class="g3">
+    <div class="card gc gok">
+      <h3>在附件 A，沒有用途限制</h3>
+      <p class="sub">提案通過也不加稅</p>
+      <ul>
+        <li>電腦與伺服器 <small>（8471，20 個稅則）</small></li>
+        <li>電腦零件，含主機板 <small>（8473.30）</small></li>
+        <li>智慧型手機 <small>（8517.13）</small></li>
+        <li>交換器、路由器等網通設備 <small>（8517.62）</small></li>
+        <li>固態硬碟等儲存媒體 <small>（8523.51）</small></li>
+        <li>積體電路 <small>（8542，處理器、記憶體等）</small></li>
+        <li>二極體、電晶體、LED <small>（8541）</small></li>
+        <li>半導體設備 <small>（8486）</small></li>
+      </ul>
+    </div>
+    <div class="card gc g232">
+      <h3>已在課 232 關稅，這次豁免</h3>
+      <p class="sub">原文第一類</p>
+      <ul>
+        <li>鋼、鋁、銅製品與衍生品</li>
+        <li>小客車、輕型卡車與零件</li>
+        <li>中重型車輛與零件</li>
+        <li>木製品、專利藥</li>
+        <li>半導體製品 <small>（經濟部說半導體 232 還沒提出，兩邊說法對不上，見下方）</small></li>
+      </ul>
+    </div>
+    <div class="card gc gno">
+      <h3>不在附件 A</h3>
+      <p class="sub">不屬 232 類別的話，提案通過後合計最高 15%</p>
+      <ul>
+        <li>印刷電路板 <small>（8534）</small></li>
+        <li>連接器 <small>（8536.69）</small></li>
+        <li>附接頭的電線電纜 <small>（8544.42）</small></li>
+        <li>液晶等光學裝置 <small>（9013.80）</small></li>
+        <li>電源供應器 <small>（8504.40，只有民用航空器用途豁免）</small></li>
+        <li>鋰電池 <small>（8507.60，同上）</small></li>
+        <li>自行車零件、手工具 <small>（8714、8467）</small></li>
+      </ul>
+    </div>
+  </div>
+  <div class="cnt">
+    <div><b>約 2,234 個</b><span>附件 A 列的稅則總數</span></div>
+    <div><b>約 1,008 個</b><span>沒有用途限制，直接豁免</span></div>
+    <div><b>約 1,226 個</b><span>只在特定用途才豁免：醫藥用途 698、民用航空器 528</span></div>
+  </div>
+  <p class="note"><span class="rj">研究者整理</span>依美方通知 PDF 轉出的文字逐列計數，再依稅則前幾碼歸類，是約數；同一大類裡可能有個別細項例外，表格欄位沒有逐列回 PDF 核對。「豁免約 2,200 項」的說法接近總數，但其中一半以上只在特定用途才算。現在的強迫勞動 301 豁免了哪些品項，這次沒有核對，所以不在清單的品項現在稅率多少不確定。</p>
+</section>
+
+<section id="s6">
+  <h2 class="sec">媒體標題和原文差在哪</h2>
+  <p class="take">大方向沒有報錯，但標題省掉的字，剛好是影響判斷的地方。</p>
+  <div class="vs">
+    <div class="vr"><div class="h">「美國對台灣加徵關稅」<small>標題常見說法</small></div><div class="o"><small>原文</small>是「認定」加「提議考慮」，要先徵求意見、開聽證才決定，通知裡沒有生效日。現在實際在課的是 7 月起的強迫勞動 301，合計 10%。<br><q>proposes … to consider applying tariffs</q><sup><a href="#fn1">1</a><a href="#fn9">9</a></sup></div></div>
+    <div class="vr"><div class="h">「台灣稅率 15%」</div><div class="o"><small>原文</small>是「最高 15%」，另外寫了談不攏時「最高 25%」的替代方案，多數報導沒提後者。<br><q>up to 15 percent … up to 25 percent</q><sup><a href="#fn1">1</a></sup></div></div>
+    <div class="vr"><div class="h">「15% 不疊加」</div><div class="o"><small>原文</small>是扣除一般關稅與既有 301 後的淨額，等於合計最高 15%；但 25% 的替代方案只扣既有 301，一般關稅會再疊上去。<br><q>net of MFN rates and existing Section 301 tariffs</q><sup><a href="#fn1">1</a></sup></div></div>
+    <div class="vr"><div class="h">「半導體豁免」</div><div class="o"><small>原文</small>豁免的是「目前已在課 232 關稅」的半導體製品；經濟部同一天說半導體 232 關稅「尚未提出」。兩份官方文件對不上，豁免實際涵蓋哪些晶片，要等美方的 232 半導體公告。另外，積體電路本身也列在附件 A。<br><q>articles and parts currently subject to tariffs under Section 232 … and semiconductor articles</q><sup><a href="#fn1">1</a><a href="#fn6">6</a></sup></div></div>
+    <div class="vr"><div class="h">「iPhone、晶片豁免」</div><div class="o"><small>原文</small>沒有「電子產品豁免」這種通則，是附件 A 逐個稅則列出。手機、電腦、交換器、晶片在清單上；電源供應器、鋰電池只有民用航空器用途才豁免；電路板、連接器不在清單上。<span class="rj">研究者整理</span><sup><a href="#fn1">1</a></sup></div></div>
+    <div class="vr"><div class="h">「1 月聽證」</div><div class="o"><small>原文</small>有兩個日期：1/5 書面意見截止，1/25 開聽證會。<sup><a href="#fn1">1</a></sup></div></div>
+    <div class="vr"><div class="h">「美國對 14 國課稅」</div><div class="o"><small>原文</small>是 14 個經濟體，歐盟算一個；原本調查 16 個，墨西哥和挪威還沒認定。<br><q>has not made determinations with respect to Mexico or Norway at this time</q><sup><a href="#fn2">2</a></sup></div></div>
+  </div>
+</section>
+
+<section id="s7">
+  <h2 class="sec">台灣官方怎麼說：最低級別對得上，「有信心回到 15%」是單方說法</h2>
+  <p class="take">經濟部 11/26 的新聞稿和簡報，有些能用美方文件核對，有些只能當台灣政府的立場。<sup><a href="#fn6">6</a><a href="#fn7">7</a></sup></p>
+  <div class="cl">
+    <div class="card cc"><div class="top"><span class="lv lvA">美方文件對得上</span></div><p>台灣和日本、韓國、歐盟、瑞士同列最低稅率級別，都是「15% 不疊加一般關稅」。</p><p class="chk">核對：美方新聞稿五者都寫「扣除一般關稅與既有 301」。</p></div>
+    <div class="card cc"><div class="top"><span class="lv lvA">美方文件對得上</span></div><p>現行強迫勞動 301，台灣是 10% 不疊加，比日本、韓國的 12.5% 低。</p><p class="chk">核對：7 月聯邦公報寫歐盟與台灣合計 10%；日、韓的 12.5% 這次沒有逐國核對。</p></div>
+    <div class="card cc"><div class="top"><span class="lv lvU">單方說法</span></div><p>有信心 301 最終稅率會反映談判結果，回到美台協定的「15% 不疊加」。</p><p class="chk">美方只寫「最高 15%」，並保留 25% 的替代方案。</p></div>
+    <div class="card cc"><div class="top"><span class="lv lvU">單方說法</span></div><p>半導體 232 關稅還沒提出，但台灣已在投資備忘錄先取得：赴美投資產能 2.5 倍的免稅配額，配額外 15%。</p><p class="chk">和美方豁免句裡「目前已在課 232 的半導體製品」對不上，待查。</p></div>
+    <div class="card cc"><div class="top"><span class="lv lvU">單方說法</span></div><p>台灣對美出口約 76% 涉及 232 關稅、24% 涉及 301 關稅。</p><p class="chk">這次沒有核對。</p></div>
+    <div class="card cc"><div class="top"><span class="lv lvU">單方說法</span></div><p>行政院：這份報告只是建議，要經過意見徵求與聽證才定案；定案前傳統工業與農產品仍適用強迫勞動 301 的 10%。</p><p class="chk">程序部分和美方通知一致。來源是中央社轉載。<sup><a href="#fn11">11</a></sup></p></div>
+  </div>
+</section>
+
+<section id="s8">
+  <h2 class="sec">接下來看什麼</h2>
+  <p class="take">最終稅率是 15% 還是 25%、什麼時候生效、半導體算不算豁免，這三件事決定影響大小，目前都還沒有答案。</p>
+  <div class="nx">
+    <div class="nr"><div class="d">2027-01-05</div><div class="t">書面意見截止。各方提交的意見會公開在美方的意見系統。</div></div>
+    <div class="nr"><div class="d">2027-01-25</div><div class="t">聽證會開始。看美方對「談不攏改 25%」的態度。</div></div>
+    <div class="nr"><div class="d u">日期未定</div><div class="t">聯邦公報正式刊登。11/26 下午還沒出現，只有美方網站上的預發布版。</div></div>
+    <div class="nr"><div class="d u">日期未定</div><div class="t">美方的 232 半導體公告：決定「半導體豁免」到底涵蓋什麼，也能確認經濟部說的配額待遇。</div></div>
+    <div class="nr"><div class="d u">日期未定</div><div class="t">最終決定與生效日；墨西哥、挪威的認定。強迫勞動 301 本身也有官司在打（律師事務所說法）。<sup><a href="#fn9">9</a></sup></div></div>
+  </div>
+  <div class="miss">
+    <h3>這篇沒涵蓋的</h3>
+    <ul>
+      <li>哪些台股公司對美出口的產品不在豁免清單上，影響占營收多少</li>
+      <li>台股和相關個股的價格已經反應多少（11/25～26 同時有通膨、升息預期和 AI 股賣壓，要分開看）</li>
+      <li>歷史類比：2018～2019 年美國對中國 301 從提案到生效的過程</li>
+      <li>智庫與學者的分析：事件剛發生，多數還沒出來</li>
+    </ul>
+  </div>
+</section>
+
+<section id="s9">
+  <h2 class="sec">來源與核對</h2>
+  <div class="stats">
+    <div class="stat"><b>15／15</b><span>文中引用的原文句，逐字核對過</span></div>
+    <div class="stat"><b>14</b><span>則來源；標 A 的是官方原始文件</span></div>
+  </div>
+  <div class="card fn">
+    <ol>
+      <li id="fn1"><span class="lv lvA">A</span>USTR，Notice of Determination and Request for Comments Concerning Proposed Action in the Section 301 Investigation of Acts, Policies, and Practices of Taiwan Relating to Structural Excess Capacity（預發布版，含附件 A），2026-11-25，<a href="https://ustr.gov/sites/default/files/files/Press/Releases/2026/Taiwan%20FRN.pdf">ustr.gov/…/Taiwan FRN.pdf</a>。附件 A 的統計與品項歸類是本文整理。</li>
+      <li id="fn2"><span class="lv lvA">A</span>USTR 新聞稿，USTR Makes Determinations and Proposes Actions in 14 Section 301 Investigations Relating to Structural Excess Capacity，2026-11-25，<a href="https://ustr.gov/about/policy-offices/press-office/press-releases/2026/november/ustr-makes-determinations-and-proposes-actions-14-section-301-investigations-relating-structural">ustr.gov 新聞稿</a>。各經濟體稅率取自此文逐國段落。</li>
+      <li id="fn3"><span class="lv lvA">A</span>USTR，台灣產能過剩 301 調查報告（186 頁），2026-11-25，<a href="https://ustr.gov/sites/default/files/files/Press/Releases/2026/Taiwan%20301%20Report.pdf">ustr.gov/…/Taiwan 301 Report.pdf</a>。本文沒有引用其內容。</li>
+      <li id="fn4"><span class="lv lvA">A</span>聯邦公報，強迫勞動 301 最終行動，2026-07-28（7/24 起適用），<a href="https://www.govinfo.gov/content/pkg/FR-2026-07-28/pdf/2026-15181.pdf">govinfo.gov/…/2026-15181.pdf</a>。附件表格沒有轉出文字，所以現行豁免品項沒有核對。</li>
+      <li id="fn5"><span class="lv lvA">A</span>美台對等貿易協定（AIT–TECRO ART），2026-02-12 簽署（日期見 [1] 註腳 2），<a href="https://ustr.gov/sites/default/files/files/Press/Releases/2026/AIT-TECRO%20ART%20sanitized.pdf">ustr.gov/…/ART sanitized.pdf</a>。</li>
+      <li id="fn6"><span class="lv lvU">單方</span>經濟部新聞稿，〈美國301結構性產能過剩調查 台灣列最低稅率級別〉，2026-11-26 14:05，<a href="https://www.moea.gov.tw/MNS/populace/news/News.aspx?kind=1&amp;menu_id=40&amp;news_id=124696">moea.gov.tw 新聞稿</a>。</li>
+      <li id="fn7"><span class="lv lvU">單方</span>經濟部附件簡報，〈美國課徵「301條款關稅對我產業影響」〉，2026-11-26，<a href="https://www.moea.gov.tw/MNS/populace/news/wHandNews_File.ashx?file_id=128946">moea.gov.tw 附件</a>。</li>
+      <li id="fn8"><span class="lv lvC">C</span>Holland &amp; Knight，USTR Proposes Tariffs Following 14 Section 301 Determinations，2026-11-25，<a href="https://www.hklaw.com/en/insights/publications/2026/11/ustr-proposes-tariffs-following-14-section-301">hklaw.com</a>。替代稅率範圍、最高法院 2 月判決。</li>
+      <li id="fn9"><span class="lv lvC">C</span>Global Trade &amp; Sanctions Law，USTR Proposes Section 301 Tariffs on 14 Economies，2026-11-25，<a href="https://www.globaltradeandsanctionslaw.com/ustr-proposes-section-301-tariffs-on-14-economies-in-structural-excess-capacity-investigations/">globaltradeandsanctionslaw.com</a>。通知沒有生效日、2/20 判決日、強迫勞動 301 的官司。和 [8] 合起來，最高法院判決算 B 級。</li>
+      <li id="fn10"><span class="lv lvC">C</span>CNBC，2026-11-26，<a href="https://www.cnbc.com/2026/11/26/us-tariffs-hike-trade-agreement.html">cnbc.com</a>。美國貿易代表與另一位官員對生效時間的說法。</li>
+      <li id="fn11"><span class="lv lvC">C</span>中央社轉載行政院說明，2026-11-26，<a href="https://www.cna.com.tw/news/aipl/202611260005.aspx">cna.com.tw</a>。行政院原文頁沒有找到。</li>
+      <li id="fn12"><span class="lv lvA">A</span>聯邦公報查詢系統（federalregister.gov API，文件與 public inspection），2026-11-26 下午查詢：USTR 的正式刊登版 0 筆。</li>
+      <li id="fn13"><span class="lv lvA">A</span>聯邦公報，產能過剩 301 發起調查公告（91 Fed. Reg. 12886，FR Doc. 2026-05214，2026-03-17；3/11 發起），同頁亦載有強迫勞動 301 發起調查公告（FR Doc. 2026-05151，含 60 個經濟體清單 Annex A），<a href="https://www.govinfo.gov/content/pkg/FR-2026-03-17/pdf/2026-05214.pdf">govinfo.gov/…/2026-05214.pdf</a>。</li>
+      <li id="fn14"><span class="lv lvA">A</span>美國國際貿易委員會（USITC）關稅稅則查詢系統（HTSUS General 欄，2026-11-26 查得 17 項產品之一般關稅 MFN），<a href="https://hts.usitc.gov/">hts.usitc.gov</a>。</li>
+    </ol>
+  </div>
+  <p class="foot">美方與台灣官方文件以原文為準；媒體與律師事務所的說法只做短引並附連結。這頁是資訊整理，不是投資或法律建議。</p>
+</section>
+
+</div>
+</body>
+</html>
