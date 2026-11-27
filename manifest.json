@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-27T10:54:40+08:00",
+  "updated_at": "2026-11-27T20:10:12+08:00",
   "today": "2026-11-27",
   "volume_number": 1,
   "market_summary": {
@@ -21,6 +21,76 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "options-annual-2026",
+      "category": "txo",
+      "type": "options_annual",
+      "date": "2026-11-27",
+      "time": "15:10",
+      "title": "2026 台股選擇權年度合併報告（簡易版）",
+      "title_em": "選擇權",
+      "summary": "2026 年度合併（簡易版），更新至 2026-11-27。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "年度合併",
+        "週報",
+        "簡易版",
+        "v2.5-lite"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5-lite",
+      "url": "reports/options/annual_reports/2026/台股選擇權年度合併報告_2026_v2.5_lite.html",
+      "stats": [
+        {
+          "label": "年度",
+          "value": "2026",
+          "color": "neutral"
+        },
+        {
+          "label": "版本",
+          "value": "v2.5-lite",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "options-weekly-20261123-20261127",
+      "category": "txo",
+      "type": "options_weekly",
+      "date": "2026-11-27",
+      "time": "15:00",
+      "title": "台股選擇權籌碼週報 · 20261123-20261127（簡易版）",
+      "title_em": "選擇權",
+      "summary": "簡易版 v2.5 週報，涵蓋 2026-11-23 至 2026-11-27，目前共 5 個交易日。",
+      "tags": [
+        "選擇權",
+        "TXO",
+        "週報",
+        "Max Pain",
+        "P/C Ratio",
+        "簡易版",
+        "v2.5-lite"
+      ],
+      "source_pipeline": "stock_project options_report_v2.5-lite",
+      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20261123-20261127_v2.5_lite.html",
+      "stats": [
+        {
+          "label": "週期",
+          "value": "20261123-20261127",
+          "color": "neutral"
+        },
+        {
+          "label": "交易日",
+          "value": "5",
+          "color": "neutral"
+        },
+        {
+          "label": "版本",
+          "value": "v2.5-lite",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "seller-market-2026-11-27",
       "category": "stocks",
@@ -513,71 +583,38 @@
       ]
     },
     {
-      "id": "options-annual-2026",
-      "category": "txo",
-      "type": "options_annual",
+      "id": "news-analysis-policy-2026-11-26-us-301-excess-capacity",
+      "category": "news-analysis",
+      "type": "news-analysis",
       "date": "2026-11-26",
-      "time": "15:10",
-      "title": "2026 台股選擇權年度合併報告（簡易版）",
-      "title_em": "選擇權",
-      "summary": "2026 年度合併（簡易版），更新至 2026-11-26。",
+      "time": "17:12",
+      "title": "美國「產能過剩」301 關稅：原文寫了什麼、台灣排在哪一級",
+      "title_em": "產能過剩 301 關稅",
+      "summary": "USTR 11/25 認定 14 個經濟體並提出稅率，目前只是提案、尚未生效。台灣提案合計最高 15%（含一般關稅、不疊加），談不攏的替代方案是一般關稅再加 25%；電腦、伺服器、手機、晶片在豁免清單上，電路板、連接器不在。文中附 17 項台灣產品在三種情況下的稅率試算。",
       "tags": [
-        "選擇權",
-        "TXO",
-        "年度合併",
-        "週報",
-        "簡易版",
-        "v2.5-lite"
+        "新聞解析",
+        "關稅",
+        "301",
+        "美國",
+        "台灣出口",
+        "政策"
       ],
-      "source_pipeline": "stock_project options_report_v2.5-lite",
-      "url": "reports/options/annual_reports/2026/台股選擇權年度合併報告_2026_v2.5_lite.html",
+      "source_pipeline": "news_analysis",
+      "url": "reports/news-analysis/2026-11-26-us-301-excess-capacity.html",
       "stats": [
         {
-          "label": "年度",
-          "value": "2026",
+          "label": "台灣提案上限",
+          "value": "15%",
           "color": "neutral"
         },
         {
-          "label": "版本",
-          "value": "v2.5-lite",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "options-weekly-20261123-20261127",
-      "category": "txo",
-      "type": "options_weekly",
-      "date": "2026-11-26",
-      "time": "15:00",
-      "title": "台股選擇權籌碼週報 · 20261123-20261127（簡易版）",
-      "title_em": "選擇權",
-      "summary": "簡易版 v2.5 週報，涵蓋 2026-11-23 至 2026-11-27，目前共 4 個交易日。",
-      "tags": [
-        "選擇權",
-        "TXO",
-        "週報",
-        "Max Pain",
-        "P/C Ratio",
-        "簡易版",
-        "v2.5-lite"
-      ],
-      "source_pipeline": "stock_project options_report_v2.5-lite",
-      "url": "reports/options/weekly_reports/2026/台股選擇權籌碼分析報告_20261123-20261127_v2.5_lite.html",
-      "stats": [
-        {
-          "label": "週期",
-          "value": "20261123-20261127",
+          "label": "談不攏方案",
+          "value": "一般關稅+25%",
           "color": "neutral"
         },
         {
-          "label": "交易日",
-          "value": "4",
-          "color": "neutral"
-        },
-        {
-          "label": "版本",
-          "value": "v2.5-lite",
+          "label": "附件 A 稅則",
+          "value": "2,234",
           "color": "neutral"
         }
       ]
@@ -798,6 +835,43 @@
         {
           "label": "漲停集中",
           "value": "0.3%",
+          "color": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "us-watch-breadth",
+      "category": "us-watch",
+      "type": "breadth",
+      "date": "2026-11-25",
+      "time": "19:53",
+      "title": "美股市場寬度儀表板",
+      "title_em": "寬度",
+      "summary": "資料日 2026-11-25（美東收盤）：全市場 3,277 檔中站上 50 日線 42%、站上 200 日線 44%，符合趨勢樣板 445 檔；標普 500 離高點 -8.1%，25 個交易日內派發日 11 個。警訊 7／10 亮、落底確認 2／10 成立。",
+      "tags": [
+        "美股",
+        "市場寬度",
+        "Minervini",
+        "趨勢樣板",
+        "派發日",
+        "熱力圖"
+      ],
+      "source_pipeline": "us_breadth",
+      "url": "reports/us-watch/index.html",
+      "stats": [
+        {
+          "label": "站上 50 日線",
+          "value": "42%",
+          "color": "neutral"
+        },
+        {
+          "label": "站上 200 日線",
+          "value": "44%",
+          "color": "neutral"
+        },
+        {
+          "label": "警訊",
+          "value": "7/10",
           "color": "neutral"
         }
       ]
@@ -39308,80 +39382,6 @@
           "label": "近週跌≤-20%",
           "value": "0",
           "color": "down"
-        }
-      ]
-    },
-    {
-      "id": "us-watch-breadth",
-      "category": "us-watch",
-      "type": "breadth",
-      "date": "2026-11-25",
-      "time": "19:53",
-      "title": "美股市場寬度儀表板",
-      "title_em": "寬度",
-      "summary": "資料日 2026-11-25（美東收盤）：全市場 3,277 檔中站上 50 日線 42%、站上 200 日線 44%，符合趨勢樣板 445 檔；標普 500 離高點 -8.1%，25 個交易日內派發日 11 個。警訊 7／10 亮、落底確認 2／10 成立。",
-      "tags": [
-        "美股",
-        "市場寬度",
-        "Minervini",
-        "趨勢樣板",
-        "派發日",
-        "熱力圖"
-      ],
-      "source_pipeline": "us_breadth",
-      "url": "reports/us-watch/index.html",
-      "stats": [
-        {
-          "label": "站上 50 日線",
-          "value": "42%",
-          "color": "neutral"
-        },
-        {
-          "label": "站上 200 日線",
-          "value": "44%",
-          "color": "neutral"
-        },
-        {
-          "label": "警訊",
-          "value": "7/10",
-          "color": "neutral"
-        }
-      ]
-    },
-    {
-      "id": "news-analysis-policy-2026-11-26-us-301-excess-capacity",
-      "category": "news-analysis",
-      "type": "news-analysis",
-      "date": "2026-11-26",
-      "time": "17:12",
-      "title": "美國「產能過剩」301 關稅：原文寫了什麼、台灣排在哪一級",
-      "title_em": "產能過剩 301 關稅",
-      "summary": "USTR 11/25 認定 14 個經濟體並提出稅率，目前只是提案、尚未生效。台灣提案合計最高 15%（含一般關稅、不疊加），談不攏的替代方案是一般關稅再加 25%；電腦、伺服器、手機、晶片在豁免清單上，電路板、連接器不在。文中附 17 項台灣產品在三種情況下的稅率試算。",
-      "tags": [
-        "新聞解析",
-        "關稅",
-        "301",
-        "美國",
-        "台灣出口",
-        "政策"
-      ],
-      "source_pipeline": "news_analysis",
-      "url": "reports/news-analysis/2026-11-26-us-301-excess-capacity.html",
-      "stats": [
-        {
-          "label": "台灣提案上限",
-          "value": "15%",
-          "color": "neutral"
-        },
-        {
-          "label": "談不攏方案",
-          "value": "一般關稅+25%",
-          "color": "neutral"
-        },
-        {
-          "label": "附件 A 稅則",
-          "value": "2,234",
-          "color": "neutral"
         }
       ]
     }
