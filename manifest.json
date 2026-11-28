@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-27T20:26:45+08:00",
-  "today": "2026-11-27",
+  "updated_at": "2026-11-28T10:54:13+08:00",
+  "today": "2026-11-28",
   "volume_number": 1,
   "market_summary": {
     "date": "2026-05-22",
@@ -21,6 +21,37 @@
     "leading_sector_pct": 9.87
   },
   "entries": [
+    {
+      "id": "seller-market-2026-11-28",
+      "category": "stocks",
+      "type": "seller_market",
+      "date": "2026-11-28",
+      "time": "07:45",
+      "title": "11/28 無新賣方確認：DRAM、T-glass 維持加速，200G EML 維持新增深挖",
+      "title_em": "賣方市場",
+      "summary": "今天沒有新的賣方確認。權力結構仍是 T-glass、DRAM 晶圓分配、以及已進入深挖的 200G EML。OSAT／ABF 維持尚未確認。真正瓶頸仍看規格，不要把 AI 四個字當成賣方市場。",
+      "tags": [
+        "賣方市場",
+        "DRAM",
+        "T-glass",
+        "電子時報",
+        "台股研報"
+      ],
+      "source_pipeline": "seller_market_radar",
+      "url": "reports/seller-market/2026-11-28/daily.html",
+      "stats": [
+        {
+          "label": "雷達則數",
+          "value": "0",
+          "color": "neutral"
+        },
+        {
+          "label": "分類",
+          "value": "個股",
+          "color": "neutral"
+        }
+      ]
+    },
     {
       "id": "high-price-watch",
       "category": "stocks",
@@ -1017,11 +1048,11 @@
       "id": "us-watch-breadth",
       "category": "us-watch",
       "type": "breadth",
-      "date": "2026-11-25",
-      "time": "19:53",
+      "date": "2026-11-27",
+      "time": "10:57",
       "title": "美股市場寬度儀表板",
       "title_em": "寬度",
-      "summary": "資料日 2026-11-25（美東收盤）：全市場 3,277 檔中站上 50 日線 42%、站上 200 日線 44%，符合趨勢樣板 445 檔；標普 500 離高點 -8.1%，25 個交易日內派發日 11 個。警訊 7／10 亮、落底確認 2／10 成立。",
+      "summary": "資料日 2026-11-27（美東收盤）：全市場 3,290 檔中站上 50 日線 47%、站上 200 日線 47%，符合趨勢樣板 490 檔；標普 500 離高點 -6.7%，25 個交易日內派發日 9 個。警訊 6／10 亮、落底確認 2／10 成立。",
       "tags": [
         "美股",
         "市場寬度",
@@ -1035,17 +1066,17 @@
       "stats": [
         {
           "label": "站上 50 日線",
-          "value": "42%",
+          "value": "47%",
           "color": "neutral"
         },
         {
           "label": "站上 200 日線",
-          "value": "44%",
+          "value": "47%",
           "color": "neutral"
         },
         {
           "label": "警訊",
-          "value": "7/10",
+          "value": "6/10",
           "color": "neutral"
         }
       ]
